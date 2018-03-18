@@ -24,7 +24,11 @@ Public Class Routes : Implements Chromosome(Of Routes)
     Public ReadOnly Anchors As (a As Point, b As Point)()
     Public ReadOnly Size As Size
 
-    Sub New(anchors As (a As Point, b As Point)(), size As Size, x As Vector, y As Vector)
+    Sub New(anchors As (a As Point, b As Point)(),
+            size As Size,
+            Optional x As Vector = Nothing,
+            Optional y As Vector = Nothing)
+
         Me.Anchors = anchors
         Me.Size = size
 
@@ -39,8 +43,8 @@ Public Class Routes : Implements Chromosome(Of Routes)
     Private Sub allocate()
         Dim i As int = 0, j As int = 0
 
-        X = New Vector(Anchors.Length * 3 - 1)
-        Y = New Vector(X.Length - 1)
+        X = New Vector(Anchors.Length * 3)
+        Y = New Vector(X.Length)
 
         For Each line In Anchors
             X(++i) = line.a.X
@@ -66,18 +70,23 @@ Public Class Routes : Implements Chromosome(Of Routes)
                 ' 如果长度不一致的话，需要对最短的向量进行补齐
                 If d > 0 Then
                     ' 补齐other
-                    otherX(i).Fill(otherX(i).Last, d)
-                    otherY(i).Fill(otherY(i).Last, d)
+                    otherX(i) = otherX(i).Fill(otherX(i).Last, d)
+                    otherY(i) = otherY(i).Fill(otherY(i).Last, d)
                 ElseIf d < 0 Then
                     ' 补齐this
                     d = -d
 
-                    thisX(i).Fill(thisX(i).Last, d)
-                    thisY(i).Fill(thisY(i).Last, d)
+                    thisX(i) = thisX(i).Fill(thisX(i).Last, d)
+                    thisY(i) = thisY(i).Fill(thisY(i).Last, d)
                 End If
 
                 Call .Crossover(thisX(i), otherX(i))
                 Call .Crossover(thisY(i), otherY(i))
+
+                Call thisX(i).Add(-1)
+                Call thisY(i).Add(-1)
+                Call otherX(i).Add(-1)
+                Call otherY(i).Add(-1)
             Next
         End With
 
