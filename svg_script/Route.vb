@@ -24,6 +24,8 @@ Public Class Routes : Implements Chromosome(Of Routes)
     Public ReadOnly Anchors As (a As Point, b As Point)()
     Public ReadOnly Size As Size
 
+    ReadOnly random As New Random
+
     Sub New(anchors As (a As Point, b As Point)(),
             size As Size,
             Optional x As Vector = Nothing,
@@ -68,7 +70,7 @@ Public Class Routes : Implements Chromosome(Of Routes)
         Dim thisX = X.Split(Function(v) v = -1.0R), thisY = Y.Split(Function(v) v = -1.0R)
         Dim otherX = another.X.Split(Function(v) v = -1.0R), otherY = another.Y.Split(Function(v) v = -1.0R)
 
-        With New Random
+        With random
             Dim d%
 
             For i As Integer = 0 To Anchors.Length - 1
@@ -123,7 +125,7 @@ Public Class Routes : Implements Chromosome(Of Routes)
         Dim Y = Me.Y.Split(Function(v) v = -1.0R)
         Dim dx, dy As New List(Of Double)
 
-        With New Random
+        With random
             Dim px, py As Double()
 
             For i As Integer = 0 To Anchors.Length - 1

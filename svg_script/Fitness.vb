@@ -2,6 +2,7 @@
 Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.ComponentModel.Algorithm.base
 Imports Microsoft.VisualBasic.Imaging.Math2D
+Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 
 Public Class Fitness : Implements Fitness(Of Routes)
@@ -16,6 +17,7 @@ Public Class Fitness : Implements Fitness(Of Routes)
         Dim length = Aggregate line In X Into Sum(line.Length)
         Dim hypotenuse%
         Dim anchors = chromosome.Anchors
+        Dim pathLength As New List(Of Double)
 
         ' 使用滑窗，计算前后两个节点之间是否存在斜线，存在斜线则加1
         For index As Integer = 0 To anchors.Length - 1
@@ -31,6 +33,7 @@ Public Class Fitness : Implements Fitness(Of Routes)
                 assertDoubleEquals(Y(index)(Y(index).Length - 1), anchor.b.Y) Then
 
                 hypotenuse += 10000
+                pathLength += 10000
                 Continue For
             End If
 
@@ -54,15 +57,17 @@ Public Class Fitness : Implements Fitness(Of Routes)
 
                 If angle Mod 45 = 0R Then
                     hypotenuse += 0
-                ElseIf angle Mod 30 = 0R Then
-                    hypotenuse += 0
+                    'ElseIf angle Mod 30 = 0R Then
+                    '    hypotenuse += 0
                 Else
                     hypotenuse += angle / Math.PI
                 End If
+
+                pathLength += a.Distance(b)
             Next
         Next
 
-        Dim fitness# = length * hypotenuse
+        Dim fitness# = length * hypotenuse + pathLength.Sum
         Return fitness
     End Function
 

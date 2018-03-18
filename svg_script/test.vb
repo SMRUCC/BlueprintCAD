@@ -19,7 +19,7 @@ Module test
         '   Dim out As New List(Of outPrint)
 
         ga.AddDefaultListener '(Sub(x) Call out.Add(x))
-        ga.Evolve(250)
+        ga.Evolve(550)
         '   out.SaveTo("./outPrint.csv")
 
         Dim solution = ga.Best
