@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.Models
 Imports Microsoft.VisualBasic.Math.LinearAlgebra
 
@@ -15,12 +16,22 @@ Public Class Routes : Implements Chromosome(Of Routes)
     Public X, Y As Vector
     ''' <summary>
     ''' 节点对之间的坐标
+    ''' 一个populate之中的所有的route的锚点都应该是一样的
+    ''' 即，这个域的值在一个种群内都是一致的
     ''' </summary>
-    Public ReadOnly Anchors As (a As PointF, b As PointF)()
+    Public ReadOnly Anchors As (a As Point, b As Point)()
+    Public ReadOnly Size As Size
 
-    Sub New(anchors As IEnumerable(Of (a As PointF, b As PointF)))
-        Me.Anchors = anchors.ToArray
-        Me.allocate()
+    Sub New(anchors As (a As Point, b As Point)(), size As Size, x As Vector, y As Vector)
+        Me.Anchors = anchors
+        Me.Size = size
+
+        If x Is Nothing OrElse y Is Nothing Then
+            Call allocate()
+        Else
+            Me.X = x
+            Me.Y = y
+        End If
     End Sub
 
     Private Sub allocate()
@@ -43,7 +54,47 @@ Public Class Routes : Implements Chromosome(Of Routes)
 
     End Function
 
+    ''' <summary>
+    ''' 可能发生的情况：
+    ''' 
+    ''' + 节点的坐标发生变化
+    ''' + 增加一个节点坐标
+    ''' + 减少一个节点坐标
+    ''' </summary>
+    ''' <returns></returns>
     Public Function Mutate() As Routes Implements Chromosome(Of Routes).Mutate
+        Dim X = Me.X.Split(Function(v) v = -1.0R)
+        Dim Y = Me.Y.Split(Function(v) v = -1.0R)
+        Dim dx, dy As New List(Of Double)
 
+        With New Random
+            Dim px, py As Double()
+
+            For i As Integer = 0 To Anchors.Length - 1
+                px = X(i)
+                py = Y(i)
+
+                Select Case .NextDouble
+                    Case <= 0.3
+                        px.Mutate(.ByRef)
+                        py.Mutate(.ByRef)
+                    Case <= 0.6
+                        px.Add(.Next(Size.Width))
+                        py.Add(.Next(Size.Height))
+                    Case Else
+                        Dim index = .Next(px.Length)
+
+                        Call px.Delete(index)
+                        Call py.Delete(index)
+                End Select
+
+                dx.AddRange(px)
+                dy.AddRange(py)
+                dx.Add(-1)
+                dy.Add(-1)
+            Next
+        End With
+
+        Return New Routes(Anchors, Size, dx.AsVector, dy.AsVector)
     End Function
 End Class
