@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.Models
 Imports Microsoft.VisualBasic.Math.LinearAlgebra
@@ -50,8 +51,38 @@ Public Class Routes : Implements Chromosome(Of Routes)
         Next
     End Sub
 
-    Public Function Crossover(another As Routes) As IList(Of Routes) Implements Chromosome(Of Routes).Crossover
+    Public Function Crossover(another As Routes) As IEnumerable(Of Routes) Implements Chromosome(Of Routes).Crossover
+        Dim thisX = X.Split(Function(v) v = -1.0R), thisY = Y.Split(Function(v) v = -1.0R)
+        Dim otherX = another.X.Split(Function(v) v = -1.0R), otherY = another.Y.Split(Function(v) v = -1.0R)
 
+        With New Random
+            Dim d%
+
+            For i As Integer = 0 To Anchors.Length - 1
+                d = thisX(i).Length - otherY(i).Length
+
+                ' 如果长度不一致的话，需要对最短的向量进行补齐
+                If d > 0 Then
+                    ' 补齐other
+                    otherX(i).Fill(-1, d)
+                    otherY(i).Fill(-1, d)
+                ElseIf d < 0 Then
+                    ' 补齐this
+                    d = -d
+
+                    thisX(i).Fill(-1, d)
+                    thisY(i).Fill(-1, d)
+                End If
+
+                Call .Crossover(thisX(i), otherX(i))
+                Call .Crossover(thisY(i), otherY(i))
+            Next
+        End With
+
+        Return {
+            New Routes(Anchors, Size, thisX.IteratesALL.AsVector, thisY.IteratesALL.AsVector),
+            New Routes(Anchors, Size, otherX.IteratesALL.AsVector, otherY.IteratesALL.AsVector)
+        }
     End Function
 
     ''' <summary>
