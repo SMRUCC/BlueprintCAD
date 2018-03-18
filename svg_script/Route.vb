@@ -56,6 +56,14 @@ Public Class Routes : Implements Chromosome(Of Routes)
         Next
     End Sub
 
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="another"></param>
+    ''' <returns></returns>
+    ''' <remarks>
+    ''' 在交叉的时候要特别注意不可以将首尾元素的锚点给修改了
+    ''' </remarks>
     Public Function Crossover(another As Routes) As IEnumerable(Of Routes) Implements Chromosome(Of Routes).Crossover
         Dim thisX = X.Split(Function(v) v = -1.0R), thisY = Y.Split(Function(v) v = -1.0R)
         Dim otherX = another.X.Split(Function(v) v = -1.0R), otherY = another.Y.Split(Function(v) v = -1.0R)
@@ -68,6 +76,9 @@ Public Class Routes : Implements Chromosome(Of Routes)
 
                 ' 因为在突变过程之中可能会增减网格节点，所以可能会出现长度不一致的情况
                 ' 如果长度不一致的话，需要对最短的向量进行补齐
+
+                ' 2018-3-18
+                ' 因为必须要保持首尾元素不变，所以在这里补齐的时候fill最后一个元素
                 If d > 0 Then
                     ' 补齐other
                     otherX(i) = otherX(i).Fill(otherX(i).Last, d)
@@ -104,6 +115,9 @@ Public Class Routes : Implements Chromosome(Of Routes)
     ''' + 减少一个节点坐标
     ''' </summary>
     ''' <returns></returns>
+    ''' <remarks>
+    ''' 在突变的时候要特别注意不可以将首尾的锚点给修改了
+    ''' </remarks>
     Public Function Mutate() As Routes Implements Chromosome(Of Routes).Mutate
         Dim X = Me.X.Split(Function(v) v = -1.0R)
         Dim Y = Me.Y.Split(Function(v) v = -1.0R)
