@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing
+Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
@@ -129,4 +130,16 @@ Public Class Routes : Implements Chromosome(Of Routes)
 
         Return New Routes(Anchors, Size, dx.AsVector, dy.AsVector)
     End Function
+
+    Public Overrides Function ToString() As String
+        Dim X = Me.X.ToString
+        Dim Y = Me.Y.ToString
+
+        Return $"[{X} | {Y}]"
+    End Function
+
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
+    Public Shared Narrowing Operator CType(routes As Routes) As String
+        Return routes.ToString
+    End Operator
 End Class
