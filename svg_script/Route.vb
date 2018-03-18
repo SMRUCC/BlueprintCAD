@@ -61,17 +61,18 @@ Public Class Routes : Implements Chromosome(Of Routes)
             For i As Integer = 0 To Anchors.Length - 1
                 d = thisX(i).Length - otherY(i).Length
 
+                ' 因为在突变过程之中可能会增减网格节点，所以可能会出现长度不一致的情况
                 ' 如果长度不一致的话，需要对最短的向量进行补齐
                 If d > 0 Then
                     ' 补齐other
-                    otherX(i).Fill(-1, d)
-                    otherY(i).Fill(-1, d)
+                    otherX(i).Fill(otherX(i).Last, d)
+                    otherY(i).Fill(otherY(i).Last, d)
                 ElseIf d < 0 Then
                     ' 补齐this
                     d = -d
 
-                    thisX(i).Fill(-1, d)
-                    thisY(i).Fill(-1, d)
+                    thisX(i).Fill(thisX(i).Last, d)
+                    thisY(i).Fill(thisY(i).Last, d)
                 End If
 
                 Call .Crossover(thisX(i), otherX(i))
