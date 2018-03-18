@@ -130,19 +130,27 @@ Public Class Routes : Implements Chromosome(Of Routes)
                 px = X(i)
                 py = Y(i)
 
-                Select Case .NextDouble
-                    Case <= 0.3
-                        px.Mutate(.ByRef)
-                        py.Mutate(.ByRef)
-                    Case <= 0.6
-                        px.Add(.Next(Size.Width))
-                        py.Add(.Next(Size.Height))
-                    Case Else
-                        Dim index = .Next(px.Length)
+                If px.Length = 2 Then
+                    ' 只有首尾两个元素，必须要向中间插入一个元素
+                    px.InsertAt(.Next(Size.Width), 1)
+                    py.InsertAt(.Next(Size.Height), 1)
+                Else
+                    Select Case .NextDouble
+                        Case <= 0.3
+                            px.Mutate(.ByRef)
+                            py.Mutate(.ByRef)
+                        Case <= 0.6
+                            Dim index = .Next(px.Length)
 
-                        Call px.Delete(index)
-                        Call py.Delete(index)
-                End Select
+                            px.InsertAt(.Next(Size.Width), index)
+                            py.InsertAt(.Next(Size.Height), index)
+                        Case Else
+                            Dim index = .Next(px.Length)
+
+                            Call px.Delete(index)
+                            Call py.Delete(index)
+                    End Select
+                End If
 
                 dx.AddRange(px)
                 dy.AddRange(py)

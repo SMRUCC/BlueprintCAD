@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing
+Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.ComponentModel.Algorithm.base
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
@@ -14,11 +15,24 @@ Public Class Fitness : Implements Fitness(Of Routes)
 
         Dim length = Aggregate line In X Into Sum(line.Length)
         Dim hypotenuse%
+        Dim anchors = chromosome.Anchors
 
         ' 使用滑窗，计算前后两个节点之间是否存在斜线，存在斜线则加1
-        For index As Integer = 0 To X.Length - 1
+        For index As Integer = 0 To anchors.Length - 1
             Dim linesX = X(index).SlideWindows(2).ToArray
             Dim linesY = Y(index).SlideWindows(2).ToArray
+            Dim anchor = anchors(index)
+
+            ' 如果首尾锚点已经发生了变动
+            ' 则这个解决方案肯定不可以被采用了
+            If assertDoubleEquals(X(index)(0), anchor.a.X) OrElse
+                assertDoubleEquals(Y(index)(0), anchor.a.Y) OrElse
+                assertDoubleEquals(X(index)(X(index).Length - 1), anchor.b.X) OrElse
+                assertDoubleEquals(Y(index)(Y(index).Length - 1), anchor.b.Y) Then
+
+                hypotenuse += 10000
+                Continue For
+            End If
 
             For i As Integer = 0 To linesX.Length - 1
                 Dim a As New PointF(linesX(i)(0), linesY(i)(0))
@@ -37,5 +51,10 @@ Public Class Fitness : Implements Fitness(Of Routes)
 
         Dim fitness# = length * hypotenuse
         Return fitness
+    End Function
+
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
+    Private Shared Function assertDoubleEquals(a#, b#) As Boolean
+        Return Math.Abs(a - b) > 0.00001
     End Function
 End Class
