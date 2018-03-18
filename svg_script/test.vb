@@ -13,7 +13,7 @@ Module test
         Dim size = New Size(25, 25)
         Dim anchors = {a, b, c, d, e}
 
-        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(100)
+        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(1000)
         Dim fitness As Fitness(Of Routes) = New Fitness
         Dim ga As New GeneticAlgorithm(Of Routes)(population, fitness)
         '   Dim out As New List(Of outPrint)

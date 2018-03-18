@@ -39,6 +39,19 @@ Public Class Fitness : Implements Fitness(Of Routes)
                 Dim b As New PointF(linesX(i)(1), linesY(i)(1))
                 Dim angle = Math.Abs(a.CalculateAngle(b))
 
+                If a.X < 0 Then
+                    hypotenuse += -a.X
+                End If
+                If a.Y < 0 Then
+                    hypotenuse += -a.Y
+                End If
+                If b.X < 0 Then
+                    hypotenuse += -b.X
+                End If
+                If b.Y < 0 Then
+                    hypotenuse += -b.Y
+                End If
+
                 If angle Mod 45 = 0R Then
                     hypotenuse += 0
                 ElseIf angle Mod 30 = 0R Then
