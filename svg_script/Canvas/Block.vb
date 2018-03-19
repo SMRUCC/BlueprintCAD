@@ -6,6 +6,10 @@ Imports Microsoft.VisualBasic.Imaging.Math2D
 ''' </summary>
 Public MustInherit Class Block
 
+    ''' <summary>
+    ''' The center location of this block object.
+    ''' </summary>
+    ''' <returns></returns>
     Public MustOverride ReadOnly Property Location As PointF
 
 End Class

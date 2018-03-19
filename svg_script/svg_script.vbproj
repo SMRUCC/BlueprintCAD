@@ -114,10 +114,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlueprintCanvas.vb" />
-    <Compile Include="Block.vb" />
-    <Compile Include="Fitness.vb" />
-    <Compile Include="Route.vb" />
+    <Compile Include="Canvas\BlueprintCanvas.vb" />
+    <Compile Include="Canvas\Block.vb" />
+    <Compile Include="GA\Fitness.vb" />
+    <Compile Include="GA\Route.vb" />
     <Compile Include="test.vb" />
     <Compile Include="Script.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
