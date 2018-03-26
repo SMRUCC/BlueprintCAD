@@ -132,7 +132,7 @@ Public Class Routes : Implements Chromosome(Of Routes)
                 px = X(i)
                 py = Y(i)
 
-                If px.Length <= 4 Then
+                If px.Length <= 3 Then
                     ' 只有首尾两个元素，必须要向中间插入一个元素
                     px.InsertAt(.Next(Size.Width), 1)
                     py.InsertAt(.Next(Size.Height), 1)

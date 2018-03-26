@@ -71,7 +71,7 @@ Public Class Fitness : Implements Fitness(Of Routes)
                 If i > 1 AndAlso i < linesX.Length - 2 Then
                     For Each block In blocks.SafeQuery
                         If block.Intersect(a, b) Then
-                            pathLength += 100
+                            pathLength += 2000
                         End If
                     Next
                 End If
