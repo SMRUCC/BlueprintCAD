@@ -18,7 +18,18 @@ End Class
 
 Public Class rect : Inherits Block
 
-    Public ReadOnly rectangle As Rectangle
+    Public Property rectangle As Rectangle
+        Get
+            Return rect
+        End Get
+        Set(value As Rectangle)
+            rect = value
+            polygon = New Polygon(rect)
+        End Set
+    End Property
+
+    Dim rect As Rectangle
+    Dim polygon As Polygon
 
     Public Overrides ReadOnly Property Location As Point
         Get
@@ -30,7 +41,7 @@ Public Class rect : Inherits Block
         If a.InRegion(rectangle) OrElse b.InRegion(rectangle) Then
             Return True
         Else
-
+            Return New Line(a, b).IntersectionOf(polygon) <> Intersection.None
         End If
     End Function
 End Class
@@ -39,6 +50,8 @@ Public Class Circle : Inherits Block
 
     Public Property center As Point
     Public Property radius As Single
+
+    Dim polygon As Polygon
 
     Public Overrides ReadOnly Property Location As Point
         Get
@@ -50,7 +63,7 @@ Public Class Circle : Inherits Block
         If Distance(a, center) <= radius OrElse Distance(b, center) <= radius Then
             Return True
         Else
-
+            Return New Line(a, b).IntersectionOf(polygon) <> Intersection.None
         End If
     End Function
 End Class
