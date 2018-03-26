@@ -62,7 +62,7 @@ Public Class Fitness : Implements Fitness(Of Routes)
                     'ElseIf angle Mod 30 = 0R Then
                     '    hypotenuse += 0
                 Else
-                    hypotenuse += angle / Math.PI
+                    hypotenuse += angle
                 End If
 
                 pathLength += a.Distance(b)
