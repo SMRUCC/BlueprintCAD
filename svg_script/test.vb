@@ -17,7 +17,7 @@ Module test
         Dim size = New Size(2600, 2500)
         Dim anchors = {a, b, c, d, e}
 
-        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(750)
+        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(550)
         Dim fitness As Fitness(Of Routes) = New Fitness With {
             .blocks = {
                 New rect With {.rectangle = New Rectangle(800, 1000, 100, 200)},
