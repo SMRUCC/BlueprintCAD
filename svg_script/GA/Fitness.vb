@@ -3,6 +3,7 @@ Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.ComponentModel.Algorithm.base
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 
 Public Class Fitness : Implements Fitness(Of Routes)
@@ -66,6 +67,14 @@ Public Class Fitness : Implements Fitness(Of Routes)
                 End If
 
                 pathLength += a.Distance(b)
+
+                If i > 1 AndAlso i < linesX.Length - 2 Then
+                    For Each block In blocks.SafeQuery
+                        If block.Intersect(a, b) Then
+                            pathLength += 100
+                        End If
+                    Next
+                End If
             Next
         Next
 
