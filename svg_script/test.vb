@@ -20,7 +20,8 @@ Module test
         Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(500)
         Dim fitness As Fitness(Of Routes) = New Fitness With {
             .blocks = {
-                New rect With {.rectangle = New Rectangle(800, 1000, 100, 200)}
+                New rect With {.rectangle = New Rectangle(800, 1000, 100, 200)},
+                New rect With {.rectangle = New Rectangle(1750, 2000, 300, 100)}
             }
         }
         Dim ga As New GeneticAlgorithm(Of Routes)(population, fitness)
