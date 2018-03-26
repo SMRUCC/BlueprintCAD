@@ -7,7 +7,7 @@ Module test
 
     Sub Main()
 
-        Call helperTest()
+        '  Call helperTest()
 
         Dim a = (New Point(100, 100), New Point(2000, 2000))
         Dim b = (New Point(500, 985), New Point(2500, 2000))
@@ -18,7 +18,11 @@ Module test
         Dim anchors = {a, b, c, d, e}
 
         Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(500)
-        Dim fitness As Fitness(Of Routes) = New Fitness
+        Dim fitness As Fitness(Of Routes) = New Fitness With {
+            .blocks = {
+                New rect With {.rectangle = New Rectangle(800, 1000, 100, 200)}
+            }
+        }
         Dim ga As New GeneticAlgorithm(Of Routes)(population, fitness)
         '   Dim out As New List(Of outPrint)
 
@@ -28,7 +32,7 @@ Module test
 
         Dim solution = ga.Best
 
-        Call solution.Draw().Save("./test_print.png")
+        Call solution.Draw(DirectCast(fitness, Fitness).blocks).Save("./test_print.png")
 
         Pause()
     End Sub
