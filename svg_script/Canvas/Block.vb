@@ -12,6 +12,8 @@ Public MustInherit Class Block
     ''' <returns></returns>
     Public MustOverride ReadOnly Property Location As PointF
 
+    Public MustOverride Function Intersect(a As PointF, b As PointF) As Boolean
+
 End Class
 
 Public Class rect : Inherits Block
@@ -24,6 +26,9 @@ Public Class rect : Inherits Block
         End Get
     End Property
 
+    Public Overrides Function Intersect(a As PointF, b As PointF) As Boolean
+        '  Return rectangle.inter
+    End Function
 End Class
 
 Public Class Circle : Inherits Block
@@ -37,4 +42,7 @@ Public Class Circle : Inherits Block
         End Get
     End Property
 
+    Public Overrides Function Intersect(a As PointF, b As PointF) As Boolean
+        Throw New NotImplementedException()
+    End Function
 End Class

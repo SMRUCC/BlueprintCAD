@@ -1,10 +1,14 @@
 ﻿Imports System.Drawing
+Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
 
 Module test
 
     Sub Main()
+
+        Call helperTest()
+
         Dim a = (New Point(100, 100), New Point(2000, 2000))
         Dim b = (New Point(500, 985), New Point(2500, 2000))
         Dim c = (New Point(1500, 100), New Point(2500, 1850))
@@ -25,6 +29,18 @@ Module test
         Dim solution = ga.Best
 
         Call solution.Draw().Save("./test_print.png")
+
+        Pause()
+    End Sub
+
+    Sub helperTest()
+
+        Dim ZERO = (New Point(1, 0), New Point(10, 0))
+
+        Dim d45 = (New Point(0, 0), New Point(5, 5))
+
+        Call GeomTransform.CalculateAngle(ZERO.Item1, ZERO.Item2).__DEBUG_ECHO
+        Call GeomTransform.CalculateAngle(d45.Item1, d45.Item2).__DEBUG_ECHO
 
         Pause()
     End Sub

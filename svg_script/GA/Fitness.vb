@@ -7,6 +7,8 @@ Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 
 Public Class Fitness : Implements Fitness(Of Routes)
 
+    Public blocks As Block()
+
     Public Function Calculate(chromosome As Routes) As Double Implements Fitness(Of Routes).Calculate
         ' 路径应该尽量短
         ' 路径间的交叉应该尽量少
