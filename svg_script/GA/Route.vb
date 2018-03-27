@@ -24,7 +24,7 @@ Public Class Routes : Implements Chromosome(Of Routes)
     Public ReadOnly Anchors As (a As Point, b As Point)()
     Public ReadOnly Size As Size
 
-    ReadOnly random As New Random
+    ReadOnly random As New Random(Now.Millisecond)
 
     Sub New(anchors As (a As Point, b As Point)(),
             size As Size,
@@ -135,9 +135,13 @@ Public Class Routes : Implements Chromosome(Of Routes)
                 py = Y(i)
 
                 If px.Length <= 3 Then
+
                     ' 只有首尾两个元素，必须要向中间插入一个元素
-                    px.InsertAt(.Next(Size.Width), 1)
-                    py.InsertAt(.Next(Size.Height), 1)
+                    For it As Integer = 0 To 3
+                        px.InsertAt(.Next(Size.Width), 1)
+                        py.InsertAt(.Next(Size.Height), 1)
+                    Next
+
                 Else
                     Select Case .NextDouble
                         Case <= 0.3

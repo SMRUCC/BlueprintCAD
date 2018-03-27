@@ -9,6 +9,7 @@ Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 Public Class Fitness : Implements Fitness(Of Routes)
 
     Public blocks As Block()
+    Public minNodes% = 5
 
     Public Function Calculate(chromosome As Routes) As Double Implements Fitness(Of Routes).Calculate
         ' 路径应该尽量短
@@ -31,13 +32,15 @@ Public Class Fitness : Implements Fitness(Of Routes)
             ' 如果首尾锚点已经发生了变动
             ' 则这个解决方案肯定不可以被采用了
             If assertDoubleEquals(X(index)(0), anchor.a.X) OrElse
-                assertDoubleEquals(Y(index)(0), anchor.a.Y) OrElse
-                assertDoubleEquals(X(index)(X(index).Length - 1), anchor.b.X) OrElse
-                assertDoubleEquals(Y(index)(Y(index).Length - 1), anchor.b.Y) Then
+               assertDoubleEquals(Y(index)(0), anchor.a.Y) OrElse
+               assertDoubleEquals(X(index)(X(index).Length - 1), anchor.b.X) OrElse
+               assertDoubleEquals(Y(index)(Y(index).Length - 1), anchor.b.Y) Then
 
                 hypotenuse += 10000
                 pathLength += 10000
                 Continue For
+            ElseIf linesX.Length <= minNodes Then
+                '  pathLength += 200000
             End If
 
             For i As Integer = 0 To linesX.Length - 1
@@ -60,8 +63,6 @@ Public Class Fitness : Implements Fitness(Of Routes)
 
                 If angle Mod 45 = 0R Then
                     hypotenuse += 0
-                    'ElseIf angle Mod 30 = 0R Then
-                    '    hypotenuse += 0
                 Else
                     hypotenuse += angle
                 End If

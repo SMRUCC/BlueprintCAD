@@ -15,12 +15,17 @@ Module test
         Dim c = (New Point(1500, 100), New Point(2500, 1850))
         Dim d = (a.Item1, b.Item1)
         Dim e = (c.Item1, b.Item1)
+        Dim f = (New Point(500, 2100), New Point(900, 1500))
+        Dim g = (New Point(300, 1800), New Point(600, 1400))
+        Dim h = (a.Item1, g.Item1)
+        Dim i = (c.Item2, f.Item2)
+
         Dim size = New Size(2600, 2500)
-        Dim anchors = {a, b, c, d, e}
+        Dim anchors = {a, b, c, d, e, f, g, h, i}
 
         Dim blocks = KEGGImports.ImportsMap("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\Metabolism\Carbohydrate metabolism\map00020.XML".LoadXml(Of Map))
 
-        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(600)
+        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(10000)
         Dim fitness As Fitness(Of Routes) = New Fitness With {
             .blocks = New Block() {
                 New rect With {.rectangle = New Rectangle(800, 1000, 100, 200)},
@@ -32,7 +37,7 @@ Module test
         '   Dim out As New List(Of outPrint)
 
         ga.AddDefaultListener '(Sub(x) Call out.Add(x))
-        ga.Evolve(3000)
+        ga.Evolve(100)
         '   out.SaveTo("./outPrint.csv")
 
         Dim solution = ga.Best
