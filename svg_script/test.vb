@@ -2,6 +2,7 @@
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
+Imports SMRUCC.genomics.Assembly.KEGG.WebServices
 
 Module test
 
@@ -17,13 +18,15 @@ Module test
         Dim size = New Size(2600, 2500)
         Dim anchors = {a, b, c, d, e}
 
+        Dim blocks = KEGGImports.ImportsMap("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\Metabolism\Carbohydrate metabolism\map00020.XML".LoadXml(Of Map))
+
         Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(550)
         Dim fitness As Fitness(Of Routes) = New Fitness With {
-            .blocks = {
+            .blocks = New Block() {
                 New rect With {.rectangle = New Rectangle(800, 1000, 100, 200)},
                 New rect With {.rectangle = New Rectangle(1750, 1700, 300, 100)},
                 New rect With {.rectangle = New Rectangle(1400, 1000, 300, 100)}
-            }
+            }.AsList + blocks.blocks
         }
         Dim ga As New GeneticAlgorithm(Of Routes)(population, fitness)
         '   Dim out As New List(Of outPrint)
