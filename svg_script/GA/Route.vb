@@ -67,8 +67,10 @@ Public Class Routes : Implements Chromosome(Of Routes)
     ''' 在交叉的时候要特别注意不可以将首尾元素的锚点给修改了
     ''' </remarks>
     Public Function Crossover(another As Routes) As IEnumerable(Of Routes) Implements Chromosome(Of Routes).Crossover
-        Dim thisX = X.Split(Function(v) v = -1.0R), thisY = Y.Split(Function(v) v = -1.0R)
-        Dim otherX = another.X.Split(Function(v) v = -1.0R), otherY = another.Y.Split(Function(v) v = -1.0R)
+        Dim thisX = X.Split(Function(v) v = -1.0R).ToArray
+        Dim thisY = Y.Split(Function(v) v = -1.0R).ToArray
+        Dim otherX = another.X.Split(Function(v) v = -1.0R).ToArray
+        Dim otherY = another.Y.Split(Function(v) v = -1.0R).ToArray
 
         With random
             Dim d%
