@@ -60,6 +60,10 @@ Public Class Circle : Inherits Block
     End Property
 
     Public Overrides Function Intersect(a As PointF, b As PointF) As Boolean
+        If polygon.Points Is Nothing Then
+            polygon = New Polygon(New Rectangle(center, New Size(radius, radius)))
+        End If
+
         If Distance(a, center) <= radius OrElse Distance(b, center) <= radius Then
             Return True
         Else

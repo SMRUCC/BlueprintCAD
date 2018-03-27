@@ -20,7 +20,7 @@ Module test
 
         Dim blocks = KEGGImports.ImportsMap("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\Metabolism\Carbohydrate metabolism\map00020.XML".LoadXml(Of Map))
 
-        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(550)
+        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(600)
         Dim fitness As Fitness(Of Routes) = New Fitness With {
             .blocks = New Block() {
                 New rect With {.rectangle = New Rectangle(800, 1000, 100, 200)},
@@ -32,7 +32,7 @@ Module test
         '   Dim out As New List(Of outPrint)
 
         ga.AddDefaultListener '(Sub(x) Call out.Add(x))
-        ga.Evolve(2000)
+        ga.Evolve(3000)
         '   out.SaveTo("./outPrint.csv")
 
         Dim solution = ga.Best
