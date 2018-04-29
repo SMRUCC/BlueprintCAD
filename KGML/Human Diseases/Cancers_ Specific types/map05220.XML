@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map05220" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+  -->
   <name>Chronic myeloid leukemia - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map05220</URL>
   <shapes>
     <area shape="circle" coords="506,174,4" href="/dbget-bin/www_bget?C05981">C05981 (Phosphatidylinositol-3,4,5-trisphosphate)</area>
-    <area shape="rect" coords="921,770,967,787" href="/dbget-bin/www_bget?K04462+K08367">K04462 (EVI1), K08367 (RUNX1)</area>
+    <area shape="rect" coords="921,770,967,787" href="/dbget-bin/www_bget?K04462+K08367">K04462 (MECOM), K08367 (RUNX1)</area>
     <area shape="rect" coords="1032,364,1078,381" href="/dbget-bin/www_bget?K04570">K04570 (BCL2L1)</area>
     <area shape="rect" coords="473,226,519,243" href="/dbget-bin/www_bget?K07293">K07293 (PTPN11)</area>
     <area shape="rect" coords="278,165,324,182" href="/dbget-bin/www_bget?K06619+K08878">K06619 (ABL1), K08878 (BCR1)</area>
@@ -12,7 +16,7 @@
     <area shape="rect" coords="146,812,192,829" href="/dbget-bin/www_bget?K13375+K13376+K13377">K13375 (TGFB1), K13376 (TGFB2), K13377 (TGFB3)</area>
     <area shape="rect" coords="1001,777,1047,794" href="/dbget-bin/www_bget?K06067">K06067 (HDAC1_2)</area>
     <area shape="rect" coords="1001,760,1047,777" href="/dbget-bin/www_bget?K04496">K04496 (CTBP)</area>
-    <area shape="rect" coords="921,748,967,765" href="/dbget-bin/www_bget?K04462">K04462 (EVI1)</area>
+    <area shape="rect" coords="921,748,967,765" href="/dbget-bin/www_bget?K04462">K04462 (MECOM)</area>
     <area shape="rect" coords="891,335,937,352" href="/dbget-bin/www_bget?K04377">K04377 (MYC)</area>
     <area shape="rect" coords="228,821,274,838" href="/dbget-bin/www_bget?K04388">K04388 (TGFBR2)</area>
     <area shape="rect" coords="228,804,274,821" href="/dbget-bin/www_bget?K04674">K04674 (TGFBR1)</area>
@@ -38,7 +42,7 @@
     <area shape="rect" coords="886,465,932,482" href="/dbget-bin/www_bget?K04451">K04451 (TP53)</area>
     <area shape="rect" coords="1033,604,1079,621" href="/dbget-bin/www_bget?K17454+K09389+K06620">K17454 (E2F1), K09389 (E2F2), K06620 (E2F3)</area>
     <area shape="rect" coords="1033,567,1079,584" href="/dbget-bin/www_bget?K06618">K06618 (RB1)</area>
-    <area shape="rect" coords="403,812,449,829" href="/dbget-bin/www_bget?hsa:4088+mmu:17127+rno:25631">4088, 17127, 25631</area>
+    <area shape="rect" coords="403,812,449,829" href="/dbget-bin/www_bget?hsa:4088+mmu:17127+rno:25631">4088 (SMAD3), 17127, 25631</area>
     <area shape="rect" coords="950,574,996,591" href="/dbget-bin/www_bget?K02089+K02091">K02089 (CDK4), K02091 (CDK6)</area>
     <area shape="rect" coords="950,557,996,574" href="/dbget-bin/www_bget?K04503">K04503 (CCND1)</area>
     <area shape="rect" coords="535,165,581,182" href="/dbget-bin/www_bget?K04456">K04456 (AKT)</area>
@@ -423,5 +427,6 @@
     umeucXbcJ11tPQAAAAB8l60m9nwR6sw19sb0fa9YU+8d1wz3XPcKawAAAACAT4m61S2eL16ducbemNz3ivVUrnDd1R4bAAAAADwj6la3eK54VZ2/XfifvtFcLT/qD/31crs/rx8bqrH9uNbeG9M76uuv1f7257Vczud2/luNOZvLx6P+phoHAAAAAGdttaXnikv9+bm9
     15dFftQXRtfM5/V/w9HYcG+udyafrzfKZ/2YatyZ49D3VWPP5gAAAADgHlFXusVzxaX+/L3rjfpa/ujcFk11nMdV/aE67sc3LV/1hVE+9Of2Y4/yoepr0RyNb0Z98TdHzgEAAADAo7Ya03NFpv78veuN+nK+GjPqr46r88OZa4Rot9zeuOZMvrpeOMqHZ47Dmb4+n0Xf
     Xj8AAAAAjGy1peeKS/35ub3Xlx2NG12zOr5nbNg7b3ROVuUjV53bjz3Kh2eOw5m+aszeeQAAAABwRtSVbvF8cam/xnbhrfXHaJ42Nvcf5frI/f1xaO2+fxTZPX0tmirft5sqf5Rr+Xwc+v7Q50btpu8HAAAAgHtt9aXnC0xnrqGQBQAAAAC/5WUFyLB3HcVHAAAAAPg9
-    Ly1AAgAAAABkCpAAAAAAwNsoQAIAAAAAb/O3ACmEEEIIIYQQQgghhBCvj//3//8XmviwPHVs5uoAAAAASUVORK5CYII=</KEGGmap>
+    Ly1AAgAAAABkCpAAAAAAwNsoQAIAAAAAb/O3ACmEEEIIIYQQQgghhBCvj//3//8XmviwPHVs5uoAAAAASUVORK5CYII=
+</KEGGmap>
 </Map>

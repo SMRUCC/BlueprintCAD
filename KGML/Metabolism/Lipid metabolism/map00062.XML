@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map00062" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+  -->
   <name>Fatty acid elongation - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map00062</URL>
   <shapes>
@@ -86,7 +90,7 @@
     <area shape="rect" coords="128,442,174,459" href="/dbget-bin/www_bget?1.3.1.8+R06985">1.3.1.8, 1.3.1.8, R06985</area>
     <area shape="rect" coords="528,834,574,851" href="/dbget-bin/www_bget?K10251+1.1.1.330+R10826">K10251 (HSD17B12), 1.1.1.330, R10826</area>
     <area shape="rect" coords="528,992,574,1009" href="/dbget-bin/www_bget?K10258+1.3.1.93+R10828">K10258 (TER), 1.3.1.93, R10828</area>
-    <area shape="rect" coords="528,914,574,931" href="/dbget-bin/www_bget?K10703+K18880+4.2.1.134+R10827">K10703 (PHS1), K18880 (HCD1), 4.2.1.134, R10827</area>
+    <area shape="rect" coords="528,914,574,931" href="/dbget-bin/www_bget?K10703+4.2.1.134+R10827">K10703 (PHS1), 4.2.1.134, R10827</area>
     <area shape="rect" coords="216,914,262,931" href="/dbget-bin/www_bget?4.2.1.74+R02685">4.2.1.74, 4.2.1.74, R02685</area>
     <area shape="rect" coords="166,914,212,931" href="/dbget-bin/www_bget?K07511+K07515+4.2.1.17+R02685">K07511 (ECHS1), K07515 (HADHA), 4.2.1.17, R02685</area>
     <area shape="rect" coords="166,834,212,851" href="/dbget-bin/www_bget?K00022+1.1.1.35+R01778">K00022 (HADH), 1.1.1.35, R01778</area>
@@ -95,7 +99,7 @@
     <area shape="rect" coords="166,992,212,1009" href="/dbget-bin/www_bget?K07512+1.3.1.38+R07162">K07512 (MECR), 1.3.1.38, R07162</area>
     <area shape="rect" coords="216,834,262,851" href="/dbget-bin/www_bget?K07515+1.1.1.211+R01778">K07515 (HADHA), 1.1.1.211, R01778</area>
     <area shape="rect" coords="192,1072,238,1089" href="/dbget-bin/www_bget?K01074+3.1.2.22+R01274">K01074 (PPT), 3.1.2.22, R01274</area>
-    <area shape="rect" coords="528,1073,573,1089" href="/dbget-bin/www_bget?K01068+K17360+3.1.2.2+R09450">K01068 (ACOT1_2_4), K17360 (ACOT7), 3.1.2.2, R09450</area>
+    <area shape="rect" coords="528,1073,573,1089" href="/dbget-bin/www_bget?K01068+K17360+K16339+K22554+3.1.2.2+R09450">K01068 (ACOT1_2_4), K17360 (ACOT7), K16339 (THEM4), K22554 (THEM5), 3.1.2.2, R09450</area>
     <area shape="rect" coords="529,759,575,776" href="/dbget-bin/www_bget?K15397+K10247+K10205+K10248+K10249+K10244+K10203+K10250+K10245+K10246+2.3.1.199+R10825">K15397 (KCS), K10247 (ELOVL1), K10205 (ELOVL2), K10248 (ELOVL3), K10249 (ELOVL4), K10244 (ELOVL5), K10203 (ELOVL6), K10250 (ELOVL7), K10245 (ELO2), K10246 (ELO3), 2.3.1.199, R10825</area>
     <area shape="rect" coords="626,570,753,595" href="/kegg-bin/show_pathway?map00071">map00071: Fatty acid degradation</area>
     <area shape="rect" coords="40,45,249,70" href="/dbget-bin/www_bget?map00062">map00062: Fatty acid elongation</area>
@@ -462,5 +466,6 @@
     z7r1pXi0zmxMi4r6PjFa65PP0HVX1liN+6bdrgcAAAAAvqm9p33+YrSyxijGj91xTd4Ta4oz6+5wDQAAAACA/8i71FE+f6FaWWMUY8fuuJ7IDutm+24AAAAAUJm8Sx3lsxeqaH5b+J+x3mdpf29c+PVs28/zsSKK9XHaHsV4szG/lv7187TP9tu2/RvFrPbZem9cRXEA
     AAAAUEV73/nshcfPt+3RmCX9vTHRW9PO83/FLFac7fNW+u16vX7Lx0RxK3Xhx6LY1T4AAAAAqETedY7y2QuPnz9arzem/bO5WlRUt3HRuIjqPl5pfzQmev3Cz/Wxs34RjWlRs3jVG5O/ttg+AAAAAKiqvfd89uLj54/W643Z/iimNx7Vo/liZQ0hbe0bxamV/mg9MesX
     n9TFypjvt2RsNA4AAAAAWbX3nc9eePx82x6NWbO43ppR/UysGM3rzbGifumL5vrYWb/4pC5WxqKY0TwAAAAAqEDedY7y+QuPX6Mt3Fr/6X2OxtrxWZ8vdtzXhbb9eK9YZ8a0qKjft1XUP+vTflsXflz4vl5b+XEAAAAAqKa983z+0rOyBi9XAAAAAICd3PZSLEbr8EIM
-    AAAAANjNrS/FAAAAAABkwksxAAAAAOBn8VIMAAAAAPhZf16KKRQKhUKhUCgUCoVC+b3y//7n/wMI0l86tJnhCwAAAABJRU5ErkJggg==</KEGGmap>
+    AAAAANjNrS/FAAAAAABkwksxAAAAAOBn8VIMAAAAAPhZf16KKRQKhUKhUCgUCoVC+b3y//7n/wMI0l86tJnhCwAAAABJRU5ErkJggg==
+</KEGGmap>
 </Map>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map00330" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+  -->
   <name>Arginine and proline metabolism - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map00330</URL>
   <shapes>
@@ -206,12 +210,12 @@
     <area shape="rect" coords="936,480,982,497" href="/dbget-bin/www_bget?K21672+1.4.1.12+R02825">K21672 (ord), 1.4.1.12, R02825</area>
     <area shape="rect" coords="986,480,1032,497" href="/dbget-bin/www_bget?K10793+K10794+1.21.4.1+R02825">K10793 (prdA), K10794 (prdB), 1.21.4.1, R02825</area>
     <area shape="rect" coords="889,445,935,462" href="/dbget-bin/www_bget?K17851+1.5.99.13+R09496">K17851 (dpd), 1.5.99.13, R09496</area>
-    <area shape="rect" coords="750,435,796,452" href="/dbget-bin/www_bget?K18384+4.2.1.77+R04374">K18384 (L3HYPDH), 4.2.1.77, R04374</area>
+    <area shape="rect" coords="750,435,796,452" href="/dbget-bin/www_bget?K18384+K22548+4.2.1.77+R04374">K18384 (L3HYPDH), K22548 (lhpL), 4.2.1.77, R04374</area>
     <area shape="rect" coords="961,271,1007,288" href="/dbget-bin/www_bget?K01259+K11142+3.4.11.5+R00135">K01259 (pip), K11142 (LAP3), 3.4.11.5, R00135</area>
     <area shape="rect" coords="572,379,618,396" href="/dbget-bin/www_bget?K01581+4.1.1.17+R00670">K01581 (E4.1.1.17), 4.1.1.17, R00670</area>
     <area shape="rect" coords="889,399,935,416" href="/dbget-bin/www_bget?K19742+1.5.1.49+R01246+R01249">K19742 (lhpI), 1.5.1.49, R01246, R01249</area>
-    <area shape="rect" coords="1103,461,1149,478" href="/dbget-bin/www_bget?K21060+K21061+R11428">K21060 (lhpB), K21061 (lhpB), R11428</area>
-    <area shape="rect" coords="750,485,796,502" href="/dbget-bin/www_bget?K21624+4.2.1.171+R11625">K21624 (c3lhypd), 4.2.1.171, R11625</area>
+    <area shape="rect" coords="1103,461,1149,478" href="/dbget-bin/www_bget?K21060+K22549+K21061+K22550+R11428">K21060 (lhpB), K22549 (lhpC), K21061 (lhpB), K22550 (lhpD), R11428</area>
+    <area shape="rect" coords="750,485,796,502" href="/dbget-bin/www_bget?K21624+K09123+4.2.1.171+R11625">K21624 (c3lhypd), K09123 (lhpI), 4.2.1.171, R11625</area>
     <area shape="rect" coords="204,485,250,502" href="/dbget-bin/www_bget?1.4.3.25+R11604">1.4.3.25, R11604</area>
     <area shape="rect" coords="40,45,333,70" href="/dbget-bin/www_bget?map00330">map00330: Arginine and proline metabolism</area>
     <area shape="rect" coords="739,912,872,946" href="/kegg-bin/show_pathway?map00250">map00250: Alanine, aspartate and glutamate metabolism</area>
@@ -813,5 +817,6 @@
     AAAAAP8j/xf7S8f+Qzbqvw38T1v2LK3P2oUfz5Z9Px8rolgfp+VWjNdr82Ppp++ndbbelu1nFFOts/msXUVxAAAAAAAAAPBV2/+XHvsPU9/fllttltRnbSIb0/bzn6IXK0brvEq9HS+rt3xMFFfJC98WxVbrAAAAAAAAAODL5P9Kf+nYf5j6/q3xsjat7/XVpKK8jYva
     RZT38UrrozaR1Qvf18f26kXUpkn14lXWJp822ToAAAAAAAAAwB/b/5se+49T3781XtZm66OYrD3KR/1FZQwhZa1rxalKfTSe6NWLI3lRafP1lrS12gEAAAAAAADgK7b/Lz32H6a+vy232qxeXDZmlB+JFa1+WR8rqpe6qK+P7dWLI3lRaYtiWv0AAAAAAAAA4Ivk/0p/
     6fh/mPoxtoG30h/ZczTWtvfqfLLtPi+07NuzZI20aVJRvS+rqL5Xp/U2L3y78HVZWfl2AAAAAAAAAPi67f9Mj/+naWUM/nMWAAAAAAAAADCz0/5TXbTG4T/UAQAAAAAAAACzO/U/1QEAAAAAAAAAWBn/qQ4AAAAAAAAAQBH/qQ4AAAAAAAAAQNF//6lOIpFIJBKJRCKR
-    SCQSiUQikUgkEqmX/r//9/8DQL8OOrNQU64AAAAASUVORK5CYII=</KEGGmap>
+    SCQSiUQikUgkEqmX/r//9/8DQL8OOrNQU64AAAAASUVORK5CYII=
+</KEGGmap>
 </Map>

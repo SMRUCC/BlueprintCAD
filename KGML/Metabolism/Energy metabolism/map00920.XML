@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map00920" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+  -->
   <name>Sulfur metabolism - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map00920</URL>
   <shapes>
@@ -92,7 +96,7 @@
     <area shape="rect" coords="802,299,848,316" href="/dbget-bin/www_bget?K01738+K12339+K13034+K10150+K17069+2.5.1.47+R00897">K01738 (cysK), K12339 (cysM), K13034 (ATCYSC1), K10150 (cysO), K17069 (MET17), 2.5.1.47, R00897</area>
     <area shape="rect" coords="763,203,809,220" href="/dbget-bin/www_bget?K00640+2.3.1.30+R00586">K00640 (cysE), 2.3.1.30, R00586</area>
     <area shape="rect" coords="474,560,520,577" href="/dbget-bin/www_bget?K17486+2.1.1.269+R10333">K17486 (dmdA), 2.1.1.269, R10333</area>
-    <area shape="rect" coords="136,98,182,115" href="/dbget-bin/www_bget?K17222+K17223+K17226+K17227+K17224+K17225+K08738+R10151">K17222 (soxA), K17223 (soxX), K17226 (soxY), K17227 (soxZ), K17224 (soxB), K17225 (soxC), K08738 (CYC), R10151</area>
+    <area shape="rect" coords="136,98,182,115" href="/dbget-bin/www_bget?K17222+K17223+K17226+K17227+K17224+K17225+K22622+R10151">K17222 (soxA), K17223 (soxX), K17226 (soxY), K17227 (soxZ), K17224 (soxB), K17225 (soxC), K22622 (soxD), R10151</area>
     <area shape="rect" coords="842,432,888,449" href="/dbget-bin/www_bget?K10764+R01288">K10764 (metZ), R01288</area>
     <area shape="rect" coords="842,411,888,428" href="/dbget-bin/www_bget?K01739+2.5.1.48+R01288">K01739 (metB), 2.5.1.48, R01288</area>
     <area shape="rect" coords="803,509,849,526" href="/dbget-bin/www_bget?K00651+2.3.1.46+R01777">K00651 (metA), 2.3.1.46, R01777</area>
@@ -117,8 +121,8 @@
     <area shape="rect" coords="395,869,441,886" href="/dbget-bin/www_bget?K17226">K17226 (soxY)</area>
     <area shape="rect" coords="395,886,441,903" href="/dbget-bin/www_bget?K17227">K17227 (soxZ)</area>
     <area shape="rect" coords="300,904,346,921" href="/dbget-bin/www_bget?K17224">K17224 (soxB)</area>
-    <area shape="rect" coords="338,960,384,977" href="/dbget-bin/www_bget?K17225">K17225 (soxC)</area>
-    <area shape="rect" coords="338,977,384,994" href="/dbget-bin/www_bget?K08738">K08738 (CYC)</area>
+    <area shape="rect" coords="338,960,384,977" href="/dbget-bin/www_bget?K17225+1.8.2.6">K17225 (soxC), 1.8.2.6</area>
+    <area shape="rect" coords="338,977,384,994" href="/dbget-bin/www_bget?K22622+1.8.2.6">K22622 (soxD), 1.8.2.6</area>
     <area shape="rect" coords="522,969,568,986" href="/dbget-bin/www_bget?K17224">K17224 (soxB)</area>
     <area shape="rect" coords="616,322,662,339" href="/dbget-bin/www_bget?K17995+K17996+K17993+K17994+1.12.98.4+R10390">K17995 (hydG), K17996 (hydB), K17993 (hydA), K17994 (hydD), 1.12.98.4, R10390</area>
     <area shape="rect" coords="410,518,456,535" href="/dbget-bin/www_bget?K20034+6.2.1.44+R10820">K20034 (dmdB), 6.2.1.44, R10820</area>
@@ -516,5 +520,6 @@
     y+05r/wNdXtpa9WFfBxaOaFXDwAAAMxl/f3uBzwAAADw+7wIAQAAAB7jpS9CtsbZaytRtOqu2BrrymeUcY+McTTvk2Y7HwAAAHin9bf59R/DR8bYyqnbXnFOtXeMGUbGneEcAAAA4Kni9/MS139EHxljKye3veJ8WmYY927/GwAAAPyS+P28xLUf0a3+68D/tPU+q9T3
     2kM9Xi7X/erc0Mqt80p5K6e211aPVf7W/Updrs/l/LeVc7QuH/fai1YeAAAA3NX6G/faj9y6fy5vtWVR32sLvTFzv/pv2MsNo3W1I/V5vF59Vue08o4ch7qtlXu0DgAAAO4sft8uce1Hbt1/a7xeW6nf61uiaB3nvFZ7aB3X+UWpb7WFXn2o+9a5e/Wh1Vai2Msvem3x
     N0euAwAAgF+x/ta99mO37r81Xq8t17dyeu2t41b/cGSMEOVSt5VXHKlvjRf26sOV43Ckra7Pom2rHQAAAO5i/Y177Udu3T+Xt9qyvbzemK3jkdyw1a/XJ2vVR12rb527Vx+uHIcjba2crX4AAABwR/H7donrP3LrMdaB19J/ep9TcnP7Xl0dub0+DqVct/ciG2krUbTq
-    63LRqt+rK/X5ONTtoa7rlYu6HQAAAO5u/Z17/YfukTH8oAYAAAC+6WUvQsLWOF6CAAAAAN/20hchAAAAADPzIgQAAAB4DC9CAAAAgMf4exEihBBCCCGEEEII8fvx//2f/x+mxvX+TDfmTwAAAABJRU5ErkJggg==</KEGGmap>
+    63LRqt+rK/X5ONTtoa7rlYu6HQAAAO5u/Z17/YfukTH8oAYAAAC+6WUvQsLWOF6CAAAAAN/20hchAAAAADPzIgQAAAB4DC9CAAAAgMf4exEihBBCCCGEEEII8fvx//2f/x+mxvX+TDfmTwAAAABJRU5ErkJggg==
+</KEGGmap>
 </Map>

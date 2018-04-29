@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map05200" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+  -->
   <name>Pathways in cancer - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map05200</URL>
   <shapes>
@@ -148,8 +152,8 @@
     <area shape="rect" coords="1465,399,1511,416" href="/dbget-bin/www_bget?K08736">K08736 (MSH3)</area>
     <area shape="rect" coords="1519,399,1565,416" href="/dbget-bin/www_bget?K04388">K04388 (TGFBR2)</area>
     <area shape="rect" coords="1466,422,1512,439" href="/dbget-bin/www_bget?K08737">K08737 (MSH6)</area>
-    <area shape="rect" coords="1674,277,1720,294" href="/dbget-bin/www_bget?K04462">K04462 (EVI1)</area>
-    <area shape="rect" coords="1674,299,1720,316" href="/dbget-bin/www_bget?K08367+K04462">K08367 (RUNX1), K04462 (EVI1)</area>
+    <area shape="rect" coords="1674,277,1720,294" href="/dbget-bin/www_bget?K04462">K04462 (MECOM)</area>
+    <area shape="rect" coords="1674,299,1720,316" href="/dbget-bin/www_bget?K08367+K04462">K08367 (RUNX1), K04462 (MECOM)</area>
     <area shape="rect" coords="1686,345,1732,362" href="/dbget-bin/www_bget?K04496">K04496 (CTBP)</area>
     <area shape="rect" coords="1686,362,1732,379" href="/dbget-bin/www_bget?K06067">K06067 (HDAC1_2)</area>
     <area shape="rect" coords="1790,180,1836,197" href="/dbget-bin/www_bget?hsa:2950">2950</area>
@@ -245,7 +249,7 @@
     <area shape="rect" coords="1468,20,1514,37" href="/dbget-bin/www_bget?K04389">K04389 (TNFSF6)</area>
     <area shape="rect" coords="30,1007,76,1024" href="/dbget-bin/www_bget?K05461">K05461 (KITLG)</area>
     <area shape="rect" coords="30,1029,76,1046" href="/dbget-bin/www_bget?K05454">K05454 (FLT3LG)</area>
-    <area shape="rect" coords="30,1077,76,1094" href="/dbget-bin/www_bget?K18496+K18497+K04358+K22428+K22429">K18496 (FGF1), K18497 (FGF2), K04358 (FGF), K22428 (FGF19_23), K22429 (FGF21)</area>
+    <area shape="rect" coords="30,1077,76,1094" href="/dbget-bin/www_bget?K18496+K18497+K04358+K22603+K22429+K22428">K18496 (FGF1), K18497 (FGF2), K04358 (FGF), K22603 (FGF19), K22429 (FGF21), K22428 (FGF23)</area>
     <area shape="rect" coords="108,442,154,459" href="/dbget-bin/www_bget?K03914+K04236+K04289+K04291+K04294+K04275+K08390+K04273+K04166">K03914 (F2R), K04236 (F2RL3), K04289 (LPAR1), K04291 (LPAR2), K04294 (LPAR3), K04275 (LPAR4), K08390 (LPAR5), K04273 (LPAR6), K04166 (AGTR1)</area>
     <area shape="rect" coords="108,513,154,530" href="/dbget-bin/www_bget?K04258+K04259+K04260+K04261">K04258 (PTGER1), K04259 (PTGER2), K04260 (PTGER3), K04261 (PTGER4)</area>
     <area shape="rect" coords="108,721,154,738" href="/dbget-bin/www_bget?K03915+K03916+K04197+K04198">K03915 (BDKRB1), K03916 (BDKRB2), K04197 (EDNRA), K04198 (EDNRB)</area>
@@ -1209,7 +1213,7 @@
     cV/c6SvrGnGckfp8Yl9P/T1mBC+CD7Wq37/F+J3lfXXe3hy3rI0OTy49ipH+1+ZERJ2bGf3WcySRU8o7mdfv2lh7SXst7c687k6r+83coYXsE4mSqPM+q9+7v3i0rEny9XVZYXXfRtq3dVrbGK3neVL3RJHGc9vcA9hvxnPkjWdRuubT6/IM9cncRowTndqvnGj97XHy
     PlntK+OOOM5IfT6xr7t/j1npcy+Cf535K92mlc5t2PwcW6ZUNqnlj9L9kPDk0nt417BppXMbLVrL5Tyt/4Qeqw3Nnrey7eXa0WU8kl8qUzJST19TwpNLb9HS/iozrmf7r8Py0lrZtp+01ctea8W19bh0eHLpNbbtnnZG6lhP6rbQfcxdq7UPLe3ofH2uw+YJL62ktRzq
     9Nzr8OTSPbY9iVye5qV7aa1G6nh2f/HQY5bweOWixIl29GvkGrZOaxuj9TxP6p4o0nhum3sAe816hqR2ogb+FXVeTu13tPm89b7Q47p1jCVfGXPEcUbq84l93f17zEqfexGc2LRamd5jy+al81L5pJY/Sq7thWbPR7W0q9Najktay+U8rf9EunYtpFwvW0e358nlee30
-    Gq1TCqGPe9h6o+2MmnG91EYthD4eYes/ba+VXCf9u+qa0nYuNHveY6QtXWbmtWdL7edC6OMaW1fz8krntbI1veWRl+ayFJo9rynVr7VdO+/xpK62+4tH6ncuMK40h7vmduQ6tk5PG1L26fie1j9NpPHcNvcA9uH5gZwZCDykAAB5p0lEQVSoe+PUfnOvnUGvwxfX5Ctj
+    Gq1TCqGPe9h6o+2MmnG91EYthD4eYes/ba+VXCf9u+qa0nYuNHveY6QtXWbmtWdL7edC6OMaW1fz8krntbI1veWRl+ayFJo9rynVr7VdO+/xpK62+4tH6ncuMK40h7vmduQ6tk5PG1L26fie1j9NpPHcNvcA9uH5gZwZCDykAAB5sUlEQVSoe+PUfnOvnUGvwxfX5Ctj
     5n77nt2/x6z0+RfBuX69lS5q+aNSu7WQcjPodnJt9qaXPO13a/1U7s3okStfaqf1Gr19SVKdlTFitN4sdgwrQ673hK3/tL1WMoaTYpSt29LWk+tps9rJSe23RCspa+vU0j06r1QuZ6QOfGkue6JHqbzNK533Xtd6Wl/s/uKR+l0L9NFzZudv53yOXOtpf2eMb+cc7RBl
     PLfNO4B9eH6gJOr+OLXf3G/n+eKafGXM3G/fs/v3mJU+/SK41Kdc3qz0mlTv7ahpKSt5LWWsUp2ckTra0/pPpGvnQrPnNS3l9XVyx55SXs5onVIIfdwrV9e7TpJLHzGrjVxYXloPW987z6XZ9B5S90kbNbqfXmj2vEetLXs9ObflRui23oxWUtbWqaUnrXVapXrE3pB5
     76HL27qt5zZ9RGrj5kC73NztnseR69k6PW1I2afjfFr/NFHGc9u8t0hj/uK4gdm4j1ASdX+wr9GCfQLchRfBfdIz8E+88yD0rvvr0O/Ml8ufkZ7SJHJKeU/oa9vQ7Lml80tlvbatXH6tnmekjva0/hPp2jY8ufQcr7x3DX3u5Xly6SWjdWx4cumtbNu2PTkvlRkxqw0b
@@ -1411,11 +1415,12 @@
     AABu8/usy4ddAAAAAAAA3M978eulAQAAANH9PufyQRcAAAAAAAB3K73wtXlybkN4aQAAAMBJfp9X+cAKAAAAAACAu9V+A7P5ufNaOQAAAOAE6XPqn+DDKgAAAAAAAO5W+w3M5rf+ZsZvawAAADhR+pz6J/iwCgAAAAAAgLvVfgOz+fq8VJff1gAAAHCi9Dn1T/BhFQAA
     AAAAAHf7/RD2O/ublydpXp5WygMAAADe8vscy4dVAAAAAAAA3O/3Y9jv7D9eWqLTvPwklw4AAAC87fc5lw+sAAAAAAAA+IbfD2J/hSeXLmr5AAAAwJt+n3X50AoAAAAAAABo3m9mkqbz+G0NAAAAJ0qfU/8EH1YBAAAAAAAA8fvR7J/I5QEAAACn+X1W5cMqAAAAAAAA
     AAAAANyCF8EAAAAAAAAAAAAAcBleBAMAAAAAAAAAAADAZXgRDAAAAAAAAAAAAACX4UUwAAAAAAAAAAAAAFyGF8EAAAAAAAAAAAAAcBleBAMAAAAAAAAAAADAZXgRDAAAAAAAAAAAAACX4UUwAAAAAAAAAAAAAFyGF8EAAAAAAAAAAAAAcBleBAMAAAAAAAAAAADAZXgR
-    DAAAAAAAAAAAAACX4UUwAAAAAAAAAAAAAFyGF8EAAAAAAAAAAAAAcBleBAMAAAAAAAAAAADAZaa9CP419P/D8vK8tKQ3XSuV0Wm5craMlasHAAAAAAAAAAAAACf5vdd89mLT1v9/7dnRjtwwCADA/v9Pt0GNK0qNk5W3bW41I6G1AZO7Z/J9NrvrfzWfXfV0s7Lc070f
-    VnMAAAAAAAAA/qdz57m31FwtSc8PnLe5Ue/mdPmV3FPPs/c19+odAAAAAAAA4Clin3nE3lLzzpJ09Y1R6+Z0+ZXcM+u/mrl6M6sBAAAAAAAAPEXsNI/YW2zW9928q3w3p8uv5J6uf9Vz5w0AAAAAAADAE8Ve84i95WZ9382b5XOum9PlO3f7c/7Om5Hr5gEAAAAAAAA8
-    Qew0j9hbbNb33byrvu5+1ZfNal1/zl994+oOAAAAAAAA8BSxzzxib6l5Z0m66hnnrmf1Nsv57u0w681q7uoOAAAAAAAA8BSxzzxif6l5DvptQTrLhZyv9VkudPkh13Pf+A21NszuXd8sDwAAAAAAAPAk517TYhMAAAAAAADgU1gEAwAAAAAAAHyYty6CV3OuaiOGWW7H
-    atbON8bcOzPu9v1LT/t7AAAAAAAAgH3nbnJ/GXhnxqqn1t7xN1V/Y2Z4Ze4T/gYAAAAAAADgs8X+8Ij9JeKdGaueXHvH3zPzhLlf7X8DAAAAAAAAvp7YHx6xt0ScvT8H/1HrvjXyXT3Uefle39XeMOutfeO+6qmuanXW+K3vRi7n8z3/znru5vK5qw+zPgAAAAAAAODZ
-    zh3f3pKvvs/3VS2LfFcL3cz8rv6Gq97waq66k8/zunxWe2Z9d86h1ma9d3MAAAAAAADA88V+74i9JV99v5rX1Ub+6u2IYXbOfbN6mJ1r/zDys1ro8qG+rb1X+TCrjRiu+oeuFr85cg4AAAAAAAD4Ws5d396yr75fzetqOT/r6eqz8+x9uDMjxH3kVn3DnfxsXrjKh51z
-    uFOr+SxqqzoAAAAAAADwLOeOb2/JV9/n+6qWXfV1M2fnV3rD6l33JpvlIzd7W3uv8mHnHO7UZj2rdwAAAAAAAMBzxX7viP0lX51xDj5vP3XfGb25fpWrkev1HMa91rvIXqmNGGb5eh9m+avcyOdzqPVQc919qHUAAAAAAADgazj3fPuLvjszLBQBAAAAAAAA/r63LYLD
-    ao4lMAAAAAAAAMC/8dZFMAAAAAAAAAD/n0UwAAAAAAAAwIexCAYAAAAAAAD4ML8WwUIIIYQQQgghhBBCCCGEEEIIIT4lvn3/Ac7bALQmDzsCAAAAAElFTkSuQmCC</KEGGmap>
+    DAAAAAAAAAAAAACX4UUwAAAAAAAAAAAAAFyGF8EAAAAAAAAAAAAAcBleBAMAAAAAAAAAAADAZaa9CP419P/D8vK8tKQ3PcerL3JttKR7ZVKaBAAAAAAAAAAAAAC87ff+8tkLzP/Xnr3luA3DAADs/S/dmqhVqKwoKVCazQYzALE2X85+M8/376PdVf+j+UrUZ7tG81U+
+    zGZX7wAAAAAAAACvdt82z46Xs2Po/YH7bazVqz1VvhL1vmd3fpRfze7uBgAAAAAAAHiVuFtecXa83DmGzr7RatWeKj8ymtmdH+V3Zluu2gsAAAAAAADwSnG7vOLsgJnnq32rfLWnymd9vnoOO/PNySwAAAAAAADAV4j75RVnR8w8X+0b5ftctafK92Y9O/Ph0b1Ny1V7
+    AQAAAAAAAF4pbpdXnB0w83y1b9VXva/6QuRG0Wq9/N6M8qvZ3d0AAAAAAAAArxJ3yyvOjpc7x9BZT3uuemazlWo2VPM731n1VLsBAAAAAAAAXiXullecHy/vRX8dQke50OdzfZQLVb7S+nb3jPI7PaHKAwAAAAAAAHyF+37pgAkAAAAAAADwKRyCAQAAAAAAAD7MUw/B
+    sz2rWotmlDsx23XyjbZ3Z8du3yu92+8BAAAAAAAAzt23yfNj4M6OWU+uPeM3Zf9jZ3hk7zv8BgAAAAAAAOCzxf3wivMj4s6OWU9fe8bvGXmHvd/tfwMAAAAAAAC+n7gfXnF2RBzN34v/qVXfavmqHvK+/j3P5d4w6s197X3Wk61qeVf7m+dars/37/3fUc9urn+u6s2o
+    DwAAAAAAAHhv943v7MiX5/v3Wa0X+aoWqp39XP4bVr3h0Vy2k+/3Vfle7hn17TyHXBv17uYAAAAAAACA9xf3vSvOjnx5fravqrX8arZFM3ru+0b1MHrO/U3Lj2qhyoc8m3tX+TCqtWhW/U1Vi7999DkAAAAAAADge7lvfWfHvjw/21fV+vyop6qPnkfzYWdHiPeWm/U1
+    O/nRvrDKh5PnsFPL+V7UZnUAAAAAAADgvdw3vrMjX57v32e13qqv2jl6fqQ3zOaqmd4oH7nRbO5d5cPJc9ipjXpmcwAAAAAAAMD7ivveFedHvrzjXny//VZ9p/X29VUuR1/Pz6G953oVvUdqLZpRPr83o/wq1/L9c8j1kHPVe5PrAAAAAAAAwPdw3/nOD307OxwUAQAA
+    AAAAAP6/px2Cw2yPIzAAAAAAAADAazz1EAwAAAAAAADA13MIBgAAAAAAAPgwDsEAAAAAAAAAH+bPIVgIIYQQQgghhBBCCCGEEEIIIcSnxI+fvwAoVNzJiDtF0gAAAABJRU5ErkJggg==
+</KEGGmap>
 </Map>

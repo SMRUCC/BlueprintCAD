@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map04660" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+  -->
   <name>T cell receptor signaling pathway - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map04660</URL>
   <shapes>
@@ -46,7 +50,7 @@
     <area shape="rect" coords="259,414,305,431" href="/dbget-bin/www_bget?K07366">K07366 (GRAP2)</area>
     <area shape="rect" coords="388,457,434,474" href="/dbget-bin/www_bget?K05730">K05730 (VAV)</area>
     <area shape="rect" coords="475,457,521,474" href="/dbget-bin/www_bget?K04393+K04513">K04393 (CDC42), K04513 (RHOA)</area>
-    <area shape="rect" coords="475,388,521,405" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05735+K05736">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05735 (PAK6), K05736 (PAK7)</area>
+    <area shape="rect" coords="475,388,521,405" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05736+K05735">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05736 (PAK5), K05735 (PAK6)</area>
     <area shape="rect" coords="373,388,419,405" href="/dbget-bin/www_bget?K07365+K19862">K07365 (NCK1), K19862 (NCK2)</area>
     <area shape="rect" coords="311,388,357,405" href="/dbget-bin/www_bget?K07361">K07361 (LCP2)</area>
     <area shape="rect" coords="271,344,317,361" href="/dbget-bin/www_bget?K07360">K07360 (ZAP70)</area>
@@ -71,7 +75,7 @@
     <area shape="rect" coords="672,630,718,647" href="/dbget-bin/www_bget?K04371">K04371 (MAPK1_3)</area>
     <area shape="rect" coords="540,737,586,754" href="/dbget-bin/www_bget?K04427">K04427 (MAP3K7)</area>
     <area shape="rect" coords="606,737,652,754" href="/dbget-bin/www_bget?K04431">K04431 (MAP2K7)</area>
-    <area shape="rect" coords="672,737,718,754" href="/dbget-bin/www_bget?hsa:5601+mmu:26420+rno:50658">5601, 26420, 50658</area>
+    <area shape="rect" coords="672,737,718,754" href="/dbget-bin/www_bget?hsa:5601+mmu:26420+rno:50658">5601 (MAPK9), 26420, 50658</area>
     <area shape="rect" coords="638,306,684,323" href="/dbget-bin/www_bget?K12076">K12076 (DLG1)</area>
     <area shape="rect" coords="672,344,718,361" href="/dbget-bin/www_bget?K04441">K04441 (P38)</area>
     <area shape="rect" coords="484,913,530,930" href="/dbget-bin/www_bget?K03083">K03083 (GSK3B)</area>
@@ -86,7 +90,7 @@
     <area shape="rect" coords="314,819,416,853" href="/kegg-bin/show_pathway?map04151">map04151: PI3K-Akt signaling pathway</area>
   </shapes>
   <KEGGmap>
-    iVBORw0KGgoAAAANSUhEUgAABKMAAAQECAYAAACm49hHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAMrhSURBVHhe7NyBkqaqkqjR++j7neYB55pTZHdWdqIgIKDfishoBQRE0PqJc/b/O/wvQRAEQRAEQRAEQRAEQTwU
+    iVBORw0KGgoAAAANSUhEUgAABKMAAAQECAYAAACm49hHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAMraSURBVHhe7NyBkqaqkqjR++j7neYB55pTZHdWdqIgIKDfishoBQRE0PqJc/b/O/wvQRAEQRAEQRAEQRAEQTwU
     PwcAAAAAAADASH82owAAAAAAAIDR2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADA
     Y9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADA
     Y9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBj2IwCAAAAAADAY9iMAgAAAAAAwGPYjAIAAAAAAMBjttiMSp0kCILY
@@ -427,10 +431,11 @@
     AADnSUZxmYjEUMScAAAAwHmSUVwmIjEUMScAAABwnmQUl4lIDEXMCQAAAJwnGcVlIhJDEXMCAAAA50lGcZmIxFDEnAAAAMB5klFcJiIxFDEnAAAAcJ5kFJeJSAxFzAkAAACcJxnFZSISQxFzAgAAAOdJRnGZiMRQxJwAAADAeZJRXCYiMRQxJwAAAHCeZBSXiUgMRcwJ
     AAAAnCcZxWUiEkMRcwIAAADnSUZxmYjEUMScAAAAwHmSUVwmIjEUMScAAABwnmQUl4lIDEXMCQAAAJwnGcVlIhJDEXMCAAAA50lGcZmIxFDEnAAAAMB5klFcJiIxFDEnAAAAcJ5kFJeJSAxFzAkAAACcJxnFZSISQxFzAgAAAOdJRnGZiMRQxJwAAADAeZJRXCYiMRQx
     JwAAAHCeZBSXiUgMRcwJAAAAnCcZxWUiEkMRcwIAAADnSUZxmYjEUMScAAAAwHmSUVwmIjEUMScAAABwnmQUl4lIDEXMCQAAAJwnGcVlIhJDEXMCAAAA50lGcZmIxFDEnAAAAMB5klFcJiIxFDEnAAAAcJ5kFAAAAABfIxkFAAAAwNdIRgEAAADwNZJRAAAAAHyNZBQA
-    AAAAXyMZBQAAAMDXSEYBAAAA8DWXJaPWE/1/9LTaemPq+lxu9c22+pR1W+dI6va9sakuBwAAAAB9aw5lLolSj2+db51oLf1Xb969fq1xo2PSa2t81mrfGrtXBgAAAOBfa35lLoEykpBZJ1pL/aRNb2ypN7a0NdfW+NR2ZOxeGQAAAIB/pdzJEnMJlL2ETC63Xsu+e/VZ
-    Xa7t9e+Nz/Vl+8jY1jgAAAAA/pbyJ0vMJVHq8WW5dZxej9aX6nKpPkcyMr6s6x0nrbFJrx4AAACAf6UcyhJziZR6fC5/un5L2Wdv/FZ5r2+S61ptAAAAAPwr5U+WmEui1ONzeT15M0q5fLR+S9lnb3wqtyK3lY6WAQAAAPhXyp0sMZdAGU3I5Ppe/6P1W3pjk73xR8bu
-    lQEAAAD4V8qdLDGfQFlPtJmMKdt6/Y/WZ2V72afu3+pTy22jY3v1AAAAAPxpzaFIogAAAADweZJRAAAAAHzNpcmorfPsteXIWnUzts41M0c+78g5Rvt9092uBwAAAHi3NT8yn5AYOcdWn7rtimuqfeKcyZHz3uEaAAAAAKKkHMYS84mMkXNs9Snbrrieljuc92nvDQAA
-    AOBKKYexxFwiozV+PfFfbb25cn2vPanPV5brcXXfpNW37pfLW31qe231ufJrPS7XlfVluXxt9RmtK4977VmrHwAAAMBZa55hLtFQjy/LW22lVN9rS3rnLMfVr8le3+RoXW2kvjxfr75U92n1GzlO6rZW39E6AAAAgBkpx7DEXKKhHr91vl5brt8bmyNrHZf9Wu1J67ju
-    n+X6VlvSq0/qsXXfvfqk1ZYj2+uf9drSaxllHQAAAMBV1nzDXMKhHr91vl5bWd/q02tvHbfGJyPnSFI51231y0bqW+dL9uqTmeNkpK2uL6W2rXYAAACAUWueYS7RUI8vy1ttpb1+vXO2jo/0TbbG9caUWvWprjW27rtXn8wcJyNtrT5b4wAAAADOSDmGJeYTDfU51hOv
-    pf/qzZP7lu17dXWU7fVxkst1ey9KR9pyZK36upy16vfqcn15nNTtSV3XK2d1OwAAAMCsNdcwn2wYOYekBgAAAMBvuywZlWydRyIKAAAAgEuTUQAAAACwRTIKAAAAgK+RjAIAAADga/5JRgkhhBBCCCGEEEII8fn4n//9P+tx8og54Ox7AAAAAElFTkSuQmCC</KEGGmap>
+    AAAAXyMZBQAAAMDXSEYBAAAA8DWXJaPWE/1/9LTaemPq+lxu9c22+pR1I+co7Y3NY1ptAAAAAPxrzaHMJVHq8a3zrROtpf/qzbvXrzVudEx6bY1P9upbY/fKAAAAAPxrza/MJVBGEjLrRGupn7TpjS31xpa25hqZI9sbO3JuAAAAAP4r5U6WmEug7CVkcrn1Wvbdq8/q
+    cm2vf6+cXo+OTcrxAAAAAPSl/MkSc0mUenxZbh2n16P1pbpcqs+RjJTLut5xUpezXj0AAAAA/0o5lCXmEin1+Fz+dP2Wss/e+K3yXt8k17XaAAAAAPhXyp8sMZdEqcfn8nryZpRy+Wj9lrLP3vit8sxYAAAAAP6UcidLzCVQRhMyub7X/2j9lt7YZO98V4wFAAAA4G8p
+    d7LEfAJlPdFmMqZs6/U/Wp+V7WWfun+rT9KqH+mT9OoBAAAA+NOaQ5FEAQAAAODzJKMAAAAA+JpLk1Fb59lry5G16mZsnWtmjnzekXOM9vumu10PAAAA8G5rfmQ+ITFyjq0+ddsV11T7xDmTI+e9wzUAAAAAREk5jCXmExkj59jqU7ZdcT0tdzjv094bAAAAwJVSDmOJ
+    uURGa/x64r/aenPl+l57Up+vLNfj6r5Jq2/dL5e3+tT22upz5dd6XK4r68ty+drqM1pXHvfas1Y/AAAAgLPWPMNcoqEeX5a32kqpvteW9M5Zjqtfk72+ydG62kh9eb5efanu0+o3cpzUba2+o3UAAAAAM1KOYYm5REM9fut8vbZcvzc2R9Y6Lvu12pPWcd0/y/WttqRX
+    n9Rj67579UmrLUe21z/rtaXXMso6AAAAgKus+Ya5hEM9fut8vbayvtWn1946bo1PRs6RpHKu2+qXjdS3zpfs1Sczx8lIW11fSm1b7QAAAACj1jzDXKKhHl+Wt9pKe/1652wdH+mbbI3rjSm16lNda2zdd68+mTlORtpafbbGAQAAAJyRcgxLzCca6nOsJ15L/9WbJ/ct
+    2/fq6ijb6+Mkl+v2XpSOtOXIWvV1OWvV79Xl+vI4qduTuq5Xzup2AAAAgFlrrmE+2TByDkkNAAAAgN92WTIq2TqPRBQAAAAAlyajAAAAAGCLZBQAAAAAXyMZBQAAAMDX/JOMEkIIIYQQQgghhBDi8/E///t/bA7yiKVbxZQAAAAASUVORK5CYII=
+</KEGGmap>
 </Map>

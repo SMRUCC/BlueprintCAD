@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map04360" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+  -->
   <name>Axon guidance - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map04360</URL>
   <shapes>
@@ -27,7 +31,7 @@
     <area shape="rect" coords="122,397,168,414" href="/dbget-bin/www_bget?K05725">K05725 (PTK2)</area>
     <area shape="rect" coords="657,547,703,564" href="/dbget-bin/www_bget?K04393">K04393 (CDC42)</area>
     <area shape="rect" coords="745,447,791,464" href="/dbget-bin/www_bget?K04514+K17388">K04514 (ROCK1), K17388 (ROCK2)</area>
-    <area shape="rect" coords="657,745,703,762" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05735+K05736">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05735 (PAK6), K05736 (PAK7)</area>
+    <area shape="rect" coords="657,745,703,762" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05736+K05735">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05736 (PAK5), K05735 (PAK6)</area>
     <area shape="rect" coords="657,790,703,807" href="/dbget-bin/www_bget?K04513">K04513 (RHOA)</area>
     <area shape="rect" coords="657,447,703,464" href="/dbget-bin/www_bget?K04513">K04513 (RHOA)</area>
     <area shape="rect" coords="476,868,522,885" href="/dbget-bin/www_bget?K05719">K05719 (ITGB1)</area>
@@ -69,7 +73,7 @@
     <area shape="rect" coords="570,547,616,564" href="/dbget-bin/www_bget?K07526">K07526 (SRGAP)</area>
     <area shape="rect" coords="474,685,520,702" href="/dbget-bin/www_bget?K06724">K06724 (NRP1)</area>
     <area shape="rect" coords="474,723,520,740" href="/dbget-bin/www_bget?K06550">K06550 (L1CAM)</area>
-    <area shape="rect" coords="745,414,791,431" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05735+K05736">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05735 (PAK6), K05736 (PAK7)</area>
+    <area shape="rect" coords="745,414,791,431" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05736+K05735">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05736 (PAK5), K05735 (PAK6)</area>
     <area shape="rect" coords="377,481,423,498" href="/dbget-bin/www_bget?K10031">K10031 (CXCL12)</area>
     <area shape="rect" coords="200,397,246,414" href="/dbget-bin/www_bget?K19862">K19862 (NCK2)</area>
     <area shape="rect" coords="475,96,521,113" href="/dbget-bin/www_bget?K16351">K16351 (LRRC4)</area>
@@ -98,7 +102,7 @@
     <area shape="rect" coords="657,1112,703,1129" href="/dbget-bin/www_bget?K12077">K12077 (PDK1)</area>
     <area shape="rect" coords="570,625,616,642" href="/dbget-bin/www_bget?K04392+K07860+K07861">K04392 (RAC1), K07860 (RAC2), K07861 (RAC3)</area>
     <area shape="rect" coords="570,708,616,725" href="/dbget-bin/www_bget?K05703">K05703 (FYN)</area>
-    <area shape="rect" coords="657,625,703,642" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05735+K05736">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05735 (PAK6), K05736 (PAK7)</area>
+    <area shape="rect" coords="657,625,703,642" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05736+K05735">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05736 (PAK5), K05735 (PAK6)</area>
     <area shape="rect" coords="745,694,791,711" href="/dbget-bin/www_bget?K07528">K07528 (DPYSL2)</area>
     <area shape="rect" coords="570,649,616,666" href="/dbget-bin/www_bget?K07530">K07530 (RHOD)</area>
     <area shape="rect" coords="745,677,791,694" href="/dbget-bin/www_bget?K07529">K07529 (DPYSL5)</area>
@@ -125,11 +129,11 @@
     <area shape="rect" coords="475,124,521,141" href="/dbget-bin/www_bget?K04964+K04966+K04967+K04968+K04969">K04964 (TRPC1), K04966 (TRPC3), K04967 (TRPC4), K04968 (TRPC5), K04969 (TRPC6)</area>
     <area shape="rect" coords="570,167,616,184" href="/dbget-bin/www_bget?K01116+K05859">K01116 (PLCG1), K05859 (PLCG2)</area>
     <area shape="rect" coords="570,589,616,606" href="/dbget-bin/www_bget?K19862">K19862 (NCK2)</area>
-    <area shape="rect" coords="570,572,616,589" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05735+K05736">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05735 (PAK6), K05736 (PAK7)</area>
+    <area shape="rect" coords="570,572,616,589" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05736+K05735">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05736 (PAK5), K05735 (PAK6)</area>
     <area shape="rect" coords="657,581,703,598" href="/dbget-bin/www_bget?K04392+K07860+K07861">K04392 (RAC1), K07860 (RAC2), K07861 (RAC3)</area>
     <area shape="rect" coords="476,963,522,980" href="/dbget-bin/www_bget?K20020">K20020 (BOC)</area>
     <area shape="rect" coords="476,997,522,1014" href="/dbget-bin/www_bget?K06226">K06226 (SMO)</area>
-    <area shape="rect" coords="657,226,703,243" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05735+K05736">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05735 (PAK6), K05736 (PAK7)</area>
+    <area shape="rect" coords="657,226,703,243" href="/dbget-bin/www_bget?K04409+K04410+K05733+K05734+K05736+K05735">K04409 (PAK1), K04410 (PAK2), K05733 (PAK3), K05734 (PAK4), K05736 (PAK5), K05735 (PAK6)</area>
     <area shape="rect" coords="570,195,616,212" href="/dbget-bin/www_bget?K05725">K05725 (PTK2)</area>
     <area shape="rect" coords="657,204,703,221" href="/dbget-bin/www_bget?K05704">K05704 (SRC)</area>
     <area shape="rect" coords="657,184,703,201" href="/dbget-bin/www_bget?K05703">K05703 (FYN)</area>
@@ -586,7 +590,7 @@
     YQG+rOc5n/dNy/lxLJfq07qg1HdPT9+nxN+6FVF6fFRtvrhWGrlSXYuj40ZKf2ctovS4VT6mZb7amFr/PUfHnRXW3YsoPd6S92uZo9Sn1jfaa49a+40Q1t6LKD3eko8LtsrxOO8T1epbnR1fE+aNcURpXG2u1jX2xrfMk/ZJx22NbZmXue3dYznATNZnmqQF+LLe53zs
     X/tvFMqltlK/KG/bEvp+JeLvOas0b1A7jvL+PeLYlkiV2muRKrUfjThfr9I8UWm+Wr9S31ZxfEukSu21SJXaaxGlx1tq44PaHGl9aVxJS58gztcSqVJ7LVKl9q2I0uOaWv84V4xUqS611dYizv/GyJXqglrf0jytdSV5v9I8JXFcS6RK7bVIldprkSq11yJVaq9FqtRe
     i1SpvRapUnstUqX2WqRq9fB2a95KXIAv633Ox/61/0ZpueU4yMtbevo+JZxjLXKlul7pHEfWOHIOV5z31cI51SJXqtuzNaa1LR4fWT84Ou6ssG4tcqW6kq1+tba0Ph7vrbfXHrX2GyGsXYtcqa6kNMfW2NhW67M1tsXZ8aOUzqv3Gmz9trQtHm/1T9X618a3zsu8rr7H
-    coYnhfxbQhICfFnvc37dHNbSf8tR3icqjc2jRWu/J+W/a+uct9pa7c1xtr3kivO+WjinPGq22mqOzpe21Y5bHRlzhbBuHjVbbakjc6T1tePcVluqtd8IYe08arbaorRP7Ti31682dmvOVGu/u13xW7d+W9pWO66JffK+tbEtczK3q++xnOFJIZuYGmcAABpMSURBVP+W
+    coYnhfxbQhICfFnvc37dHNbSf8tR3icqjc2jRWu/J+W/a+uct9pa7c1xtr3kivO+WjinPGq22mqOzpe21Y5bHRlzhbBuHjVbbakjc6T1tePcVluqtd8IYe08arbaorRP7Ti31682dmvOVGu/u13xW7d+W9pWO66JffK+tbEtczK3q++xnOFJIZuYGmcAABozSURBVP+W
     kIQAX3bkOZ+PKc2R1tWOc1ttuZ6+Twnn2HqeV/yerTnStlq/I+dwxXlfLZxT63ld/Ztb2/J+vefR2/8qYd3Wta/oV2rL6/bK0dY6qdZ+I4S1rzzPtE/tOJe3lfq29Knp6Xunlt+Z2uuft7e2lcT21nF78zG/q++xnOFJIf+WkIQAX3bkOZ+PKZVjpOX8OFerL+npO4Oz
     vyde19I8aVvap1TX6+i4t+g9/63rlbel5VgXtNZtae33pJZz3PrdaVsaqVJ9a11NS583aD3P9LfnkSu1leqCWv2e3v53KZ3X3rnG3x8jVWtrqUvLsS6o1ee22qBEzvCk9ZkmCQG+bNbn/Nf2J/fhGa77OK7tWK7vtUrn9bZzbT2fWXOD58gZnhTybwlJCPBlsz7nv7Y/
     uQ/PcN3HcW3Hcn2vVTqvt51r6/nMmhs8R87wpJB/S0hCgC+b9Tn/tf3JfXiG6z6OazuW63ut0nm97Vxbz2fW3KDd1fdYzvCkkH9LSEKAL1sf9lPGl5R+3ywxs9LvmSXernTOs8QMSuc9S8yidO6zBN929T2WMzxpfW5JQgB4g3/++eevGOnOtYB+s76j+7cFnHf135G/
@@ -625,11 +629,12 @@
     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
-    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</KEGGmap>
+    5MMTALzInR+D7lwLAIDf5MMTALzInR+D7lwLAIDf5MMTAAAAAEP48AQAAADAED48AQAAADCED08AAAAADOHDEwAAAABD+PAEAAAAwBA+PAEAAAAwhA9PAAAAAAzhwxMAAAAAQ/jwBAAAAMAQPjwBAAAAMIQPTwAAAAAM4cMTAAAAAENc9uFpnej/R03attc/b9vrH2z1
+    Seta5kjtjY1jSm0AAAAAv2r9XnLug0k+vjTfutCf49TZctA6Jvy3ND7Yqy+N3SsDAAAA/Kr1W8q5jyUtH1/WhdbS39L62thUbZ7U1pwta0R7Y1vmBgAAAPhF4TvJEuc+lux9fInl0jppXdqvVB/l5dxe/1o5/Ld3bJCOBwAAAOB/wreSJc59MMnHp+XacRDKeXupf1oX
+    5OVUPkfQUk7rasdBXo5q9QAAAAC/KnwvWeLcR5N8fCzX6nN7/VvnSaV99sZvlff6BrGu1AYAAADwq8K3kiXOfTDJx8fyOvl/Ihfr8ra9+i1pn73xW+UzYwEAAAB+WfhOssS5jyWtH1/26mvz1Oq31MYGe/NdMRYAAADg14XvJEuc/1iyTrT54SW2pX3z/r31Udqe9sn7
+    l/oEpfqWPkGtHgAAAOCXrd9LfDABAAAA4Fo+PAEAAAAwxKUfnrbm2WuLEZXqztia68wacd6WOVr73elt5wMAAAB8x/ot5PzHh5Y5tvrkbVecU27EnEHPvG84BwAAAIA7hO8VS5z/aNEyx1aftO2K8yl5w7yz/TYAAACAo8L3iiXOfbQojV8n/k9bba1YX2sP8vnScj4u
+    7xuU+ub9YnmrT26vLZ8r/jcfF+vS+rSc/rfUp7UuPa61R6V+AAAAAC3WbwrnPirk49PyVlsq1Nfagtqc6bj8v8Fe36C3LtdSn85Xq0/lfUr9Wo6DvK3Ut7UOAAAAoFX4nrDEuY8K+fit+WptsX5vbIyodJz2K7UHpeO8fxTrS21BrT7Ix+Z99+qDUluMaK9/VGsL/00j
+    rQMAAAA4Yv22cO7jQj5+a75aW1pf6lNrLx2XxgctcwShHOu2+kUt9aX5gr364Mxx0NKW16dC21Y7AAAAQMn6TeHcR4V8fFreakvt9avNWTru6RtsjauNSZXqQ11pbN53rz44cxy0tJX6bI0DAAAA2BO+Jyxx/qNCPsc68Vr6n9o6sW/avleXR9qeHwexnLfXItXTFiMq
+    1eflqFS/Vxfr0+Mgbw/yulo5ytsBAAAAeqzfFc5/WGiZwwcMAAAAgN9x2YenYGseH50AAAAAfsulH54AAAAAIPLhCQAAAIAhfHgCAAAAYIg/H56EEEIIIYQQQgghhLg2/s///X+gYAiQmGdA5gAAAABJRU5ErkJggg==
+</KEGGmap>
 </Map>
