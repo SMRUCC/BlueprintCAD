@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06427</ID>
+  <commonNames>S-adenosyl-L-methionine:dTDP-3-amino-3,4,6-trideoxy-alpha-D-glucopyranose 3-N,N-dimethyltransferase</commonNames>
+  <def>dTDP-3-amino-3,4,6-trideoxy-D-glucose + 2 S-Adenosyl-L-methionine &lt;=&gt; dTDP-D-desosamine + 2 S-Adenosyl-L-homocysteine</def>
+  <equation>C11910 + 2 C00019 &lt;=&gt; C11911 + 2 C00021</equation>
+  <enzymes>
+    <string>2.1.1.234</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00797">dTDP-D-desosamine biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13311" value="2.1.1.234">dTDP-3-amino-3,4,6-trideoxy-alpha-D-glucopyranose N,N-dimethyltransferase</KO:terms>
+    <KO:terms name="K13326" value="2.1.1">dTDP-3-amino-2,3,6-trideoxy-4-keto-D-glucose/dTDP-3-amino-3,4,6-trideoxy-alpha-D-glucopyranose N,N-dimethyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01515">C11910_C11911</data>
+  </class>
+</reaction>

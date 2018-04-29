@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07948</ID>
+  <def>2 2,3,6-Trihydroxypyridine + 2 Oxygen &lt;=&gt; Blue pigment + 2 Hydrogen peroxide</def>
+  <equation>2 C03458 + 2 C00007 &lt;=&gt; C16152 + 2 C00027</equation>
+  <enzymes />
+  <comment>O2 spontaneously non-enzymatic</comment>
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01928">C03458_C16152</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

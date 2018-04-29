@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03755</ID>
+  <commonNames>acyl-CoA:2-acylglycerol O-acyltransferase</commonNames>
+  <def>Acyl-CoA + 1-Acylglycerol &lt;=&gt; CoA + 1,2-Diacyl-sn-glycerol</def>
+  <equation>C00040 + C01885 &lt;=&gt; C00010 + C00641</equation>
+  <enzymes>
+    <string>2.3.1.22</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00561">Glycerolipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14456" value="2.3.1.20">2-acylglycerol O-acyltransferase 3</KO:terms>
+    <KO:terms name="K14457" value="2.3.1.22">2-acylglycerol O-acyltransferase 2</KO:terms>
+    <KO:terms name="K14458" value="2.3.1.22">2-acylglycerol O-acyltransferase 1</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00040</data>
+    <data name="RC00037">C00641_C01885</data>
+  </class>
+</reaction>

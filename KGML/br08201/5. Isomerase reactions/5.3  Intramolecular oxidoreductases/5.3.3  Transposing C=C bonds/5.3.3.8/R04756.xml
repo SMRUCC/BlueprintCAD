@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04756</ID>
+  <commonNames>cis,cis-3,6-Dodecadienoyl-CoA delta3-cis-delta2-trans-isomerase</commonNames>
+  <def>cis,cis-3,6-Dodecadienoyl-CoA &lt;=&gt; trans,cis-Lauro-2,6-dienoyl-CoA</def>
+  <equation>C05280 &lt;=&gt; C05279</equation>
+  <enzymes>
+    <string>5.3.3.8</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00071">Fatty acid degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01825" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase / enoyl-CoA hydratase / 3-hydroxybutyryl-CoA epimerase / enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K07514" value="4.2.1.17">enoyl-CoA hydratase / 3-hydroxyacyl-CoA dehydrogenase / 3,2-trans-enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K07517" value="5.3.3.8">Delta3-Delta2-enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K13238" value="5.3.3.8">Delta3-Delta2-enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K13239" value="5.3.3.8">Delta3-Delta2-enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K18880" value="5.3.3.8">Delta3-Delta2-enoyl-CoA isomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01078">C05279_C05280</data>
+  </class>
+</reaction>

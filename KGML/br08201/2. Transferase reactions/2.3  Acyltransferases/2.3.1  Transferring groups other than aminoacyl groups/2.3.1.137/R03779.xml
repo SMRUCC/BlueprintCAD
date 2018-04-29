@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03779</ID>
+  <commonNames>Octanoyl-CoA:L-carnitine O-octanoyltransferase</commonNames>
+  <def>Octanoyl-CoA + L-Carnitine &lt;=&gt; CoA + L-Octanoylcarnitine</def>
+  <equation>C01944 + C00318 &lt;=&gt; C00010 + C02838</equation>
+  <enzymes>
+    <string>2.3.1.137</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C01944</data>
+    <data name="RC00037">C00318_C02838</data>
+  </class>
+</reaction>

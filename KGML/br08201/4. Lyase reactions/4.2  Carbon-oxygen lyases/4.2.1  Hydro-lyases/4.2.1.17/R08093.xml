@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08093</ID>
+  <commonNames>3-hydroxy-5-methylhex-4-enoyl-CoA hydro-lyase</commonNames>
+  <def>(2E)-5-Methylhexa-2,4-dienoyl-CoA + H2O &lt;=&gt; 3-Hydroxy-5-methylhex-4-enoyl-CoA</def>
+  <equation>C16468 + C00001 &lt;=&gt; C16469</equation>
+  <enzymes>
+    <string>4.2.1.17</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00281">Geraniol degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01692" value="4.2.1.17">enoyl-CoA hydratase</KO:terms>
+    <KO:terms name="K01782" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase / enoyl-CoA hydratase / 3-hydroxybutyryl-CoA epimerase</KO:terms>
+    <KO:terms name="K01825" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase / enoyl-CoA hydratase / 3-hydroxybutyryl-CoA epimerase / enoyl-CoA isomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02115">C16468_C16469</data>
+  </class>
+</reaction>

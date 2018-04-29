@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01713</ID>
+  <commonNames>Pyridoxamine:oxaloacetate aminotransferase</commonNames>
+  <def>Pyridoxamine + Oxaloacetate &lt;=&gt; Pyridoxal + L-Aspartate</def>
+  <equation>C00534 + C00036 &lt;=&gt; C00250 + C00049</equation>
+  <enzymes>
+    <string>2.6.1.31</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00750">Vitamin B6 metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00006">C00036_C00049</data>
+    <data name="RC00048">C00250_C00534</data>
+  </class>
+</reaction>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00858</ID>
+  <commonNames>hydrogen-sulfide:NADP+ oxidoreductase</commonNames>
+  <def>Hydrogen sulfide + 3 NADP+ + 3 H2O &lt;=&gt; Sulfite + 3 NADPH + 3 H+</def>
+  <equation>C00283 + 3 C00006 + 3 C00001 &lt;=&gt; C00094 + 3 C00005 + 3 C00080</equation>
+  <enzymes>
+    <string>1.8.1.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00920">Sulfur metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00176">Assimilatory sulfate reduction, sulfate =&gt; H2S</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00380" value="1.8.1.2">sulfite reductase (NADPH) flavoprotein alpha-component</KO:terms>
+    <KO:terms name="K00381" value="1.8.1.2">sulfite reductase (NADPH) hemoprotein beta-component</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00065">C00094_C00283</data>
+  </class>
+</reaction>

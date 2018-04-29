@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04611</ID>
+  <commonNames>UDP-N-acetylmuramoyl-L-alanyl-gamma-D-glutamyl-L-lysyl-D-alanyl-D-alanine carboxypeptidase</commonNames>
+  <def>UDPMurNAc(oyl-L-Ala-D-gamma-Glu-L-Lys-D-Ala-D-Ala) + H2O &lt;=&gt; UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-L-lysyl-D-alanine + D-Alanine</def>
+  <equation>C04702 + C00001 &lt;=&gt; C06432 + C00133</equation>
+  <enzymes>
+    <string>3.4.17.8</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00064">C00133_C04702</data>
+    <data name="RC00141">C04702_C06432</data>
+  </class>
+</reaction>

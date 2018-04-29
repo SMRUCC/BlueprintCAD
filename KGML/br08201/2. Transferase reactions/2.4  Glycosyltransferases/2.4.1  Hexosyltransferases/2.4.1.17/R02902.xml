@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02902</ID>
+  <def>Retinoate + UDP-glucuronate &lt;=&gt; all-trans-Retinoyl-beta-glucuronide + UDP</def>
+  <equation>C00777 + C00167 &lt;=&gt; C11061 + C00015</equation>
+  <enzymes>
+    <string>2.4.1.17</string>
+  </enzymes>
+  <comment>Ref:1. Biochim Biophys Acta 1996; 1289(2): 284-290 UGT2B7</comment>
+  <pathway>
+    <data name="rn00830">Retinol metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00699" value="2.4.1.17">glucuronosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00167</data>
+    <data name="RC00523">C00777_C11061</data>
+  </class>
+</reaction>

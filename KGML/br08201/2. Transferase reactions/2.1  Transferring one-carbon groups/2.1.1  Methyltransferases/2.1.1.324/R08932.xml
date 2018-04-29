@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08932</ID>
+  <commonNames>S-adenosyl-L-methionine:dTDP-4-amino-2,3,4,6-tetradeoxy-D-glucose N,N-dimethyltransferase</commonNames>
+  <def>dTDP-4-amino-2,3,4,6-tetradeoxy-D-glucose + 2 S-Adenosyl-L-methionine &lt;=&gt; dTDP-D-forosamine + 2 S-Adenosyl-L-homocysteine</def>
+  <equation>C18033 + 2 C00019 &lt;=&gt; C18034 + 2 C00021</equation>
+  <enzymes>
+    <string>2.1.1.324</string>
+  </enzymes>
+  <comment>two-step reaction (see R11452+R11453)</comment>
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00802">dTDP-D-forosamine biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13330" value="2.1.1.324">dTDP-4-amino-2,3,4,6-tetradeoxy-D-glucose N,N-dimethyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01515">C18033_C18034</data>
+  </class>
+</reaction>

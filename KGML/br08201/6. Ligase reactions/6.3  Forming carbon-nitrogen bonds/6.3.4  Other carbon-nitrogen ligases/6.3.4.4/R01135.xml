@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01135</ID>
+  <commonNames>IMP:L-aspartate ligase (GDP-forming)</commonNames>
+  <def>GTP + IMP + L-Aspartate &lt;=&gt; GDP + Orthophosphate + N6-(1,2-Dicarboxyethyl)-AMP</def>
+  <equation>C00044 + C00130 + C00049 &lt;=&gt; C00035 + C00009 + C03794</equation>
+  <enzymes>
+    <string>6.3.4.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00230">Purine metabolism</data>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00049">Adenine ribonucleotide biosynthesis, IMP =&gt; ADP,ATP</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01939" value="6.3.4.4">adenylosuccinate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00035_C00044</data>
+    <data name="RC00458">C00049_C03794</data>
+    <data name="RC00459">C00130_C03794</data>
+  </class>
+</reaction>

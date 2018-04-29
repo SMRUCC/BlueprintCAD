@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09733</ID>
+  <commonNames>GDP-mannose:D-Glc-beta-(1-&gt;4)-Glc-alpha-1-diphospho-ditrans,octacis-undecaprenol 3-alpha-mannosyltransferase</commonNames>
+  <def>GDP-mannose + D-Glc-beta-(1-&gt;4)-Glc-alpha-1-diphospho-ditrans,octacis-undecaprenol &lt;=&gt; GDP + D-Man-alpha-(1-&gt;3)-D-Glc-beta-(1-&gt;4)-D-Glc-alpha-1-diphospho-ditrans,octacis-undecaprenol</def>
+  <equation>C00096 + C19856 &lt;=&gt; C00035 + C19855</equation>
+  <enzymes>
+    <string>2.4.1.252</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K13657" value="2.4.1.252">alpha-1,3-mannosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00035_C00096</data>
+    <data name="RC00049">C19855_C19856</data>
+  </class>
+</reaction>

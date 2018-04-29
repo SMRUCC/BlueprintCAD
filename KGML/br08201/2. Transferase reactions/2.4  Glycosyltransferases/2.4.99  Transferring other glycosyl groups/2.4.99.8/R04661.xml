@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04661</ID>
+  <def>CMP-N-acetylneuraminate + N-Acetylneuraminyl-D-galactosyl-N-acetyl-D-galactosaminyl-(N-acetylneuraminyl)-D-galactosyl-D-glucosylceramide &lt;=&gt; CMP + GT1b</def>
+  <equation>C00128 + C04927 &lt;=&gt; C00055 + C06140</equation>
+  <enzymes>
+    <string>2.4.99.8</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00009">C00055_C00128</data>
+    <data name="RC00265">C04927_C06140</data>
+  </class>
+</reaction>

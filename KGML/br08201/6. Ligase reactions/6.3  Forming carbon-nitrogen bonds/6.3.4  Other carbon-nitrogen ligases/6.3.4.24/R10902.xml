@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10902</ID>
+  <commonNames>tyramine:L-glutamate gamma-ligase (ADP-forming)</commonNames>
+  <def>ATP + Tyramine + L-Glutamate &lt;=&gt; ADP + Orthophosphate + gamma-Glutamyltyramine</def>
+  <equation>C00002 + C00483 + C00025 &lt;=&gt; C00008 + C00009 + C20926</equation>
+  <enzymes>
+    <string>6.3.4.24</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K06914" value="6.3.4.24">tyramine---L-glutamate ligase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00090">C00025_C20926</data>
+    <data name="RC00096">C00483_C20926</data>
+  </class>
+</reaction>

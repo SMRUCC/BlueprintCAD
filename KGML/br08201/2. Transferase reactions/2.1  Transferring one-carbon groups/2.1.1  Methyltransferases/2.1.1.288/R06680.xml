@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06680</ID>
+  <commonNames>S-adenosyl-L-methionine:aklanonate O-methyltransferase</commonNames>
+  <def>Aklanonate + S-Adenosyl-L-methionine &lt;=&gt; Methyl aklanonate + S-Adenosyl-L-homocysteine</def>
+  <equation>C12421 + C00019 &lt;=&gt; C12422 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.288</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00781">Nogalavinone/aklavinone biosynthesis, deoxynogalonate/deoxyaklanonate =&gt; nogalavinone/aklavinone</data>
+  </module>
+  <orthology>
+    <KO:terms name="K15942" value="2.1.1">O-methyltransferase / aklanonic acid methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00460">C12421_C12422</data>
+  </class>
+</reaction>

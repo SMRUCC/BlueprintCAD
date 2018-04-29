@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11178</ID>
+  <def>Pseudooxynicotine + H2O &lt;=&gt; 3-Succinoylpyridine + Methylamine</def>
+  <equation>C20361 + C00001 &lt;=&gt; C19569 + C00218</equation>
+  <enzymes />
+  <comment>multi-step reaction incomplete reaction</comment>
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00811">Nicotine degradation, pyrrolidine pathway, nicotine =&gt; succinate semialdehyde</data>
+  </module>
+  <orthology>
+    <KO:terms name="K20170" value="1.5.3">nicotine oxidoreductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03023">C19569_C20361</data>
+  </class>
+</reaction>

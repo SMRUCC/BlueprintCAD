@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10221</ID>
+  <commonNames>6-phospho-D-gluconate:NAD+ 2-oxidoreductase (decarboxylating)</commonNames>
+  <def>6-Phospho-D-gluconate + NAD+ &lt;=&gt; D-Ribulose 5-phosphate + CO2 + NADH + H+</def>
+  <equation>C00345 + C00003 &lt;=&gt; C00199 + C00011 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.343</string>
+    <string>1.1.1.351</string>
+  </enzymes>
+  <comment>NADP+ (see R01528)</comment>
+  <pathway>
+    <data name="rn00030">Pentose phosphate pathway</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00004">Pentose phosphate pathway (Pentose phosphate cycle)</data>
+    <data name="M00006">Pentose phosphate pathway, oxidative phase, glucose 6P =&gt; ribulose 5P</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00033" value="1.1.1.44">6-phosphogluconate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00539">C00199_C00345</data>
+  </class>
+</reaction>

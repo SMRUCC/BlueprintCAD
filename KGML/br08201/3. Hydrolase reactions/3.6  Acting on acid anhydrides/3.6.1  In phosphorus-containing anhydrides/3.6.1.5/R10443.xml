@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10443</ID>
+  <commonNames>nucleoside triphosphate phosphohydrolase (nucleoside monophosphoate-forming)</commonNames>
+  <def>Nucleoside triphosphate + 2 H2O &lt;=&gt; Nucleoside 5'-phosphate + 2 Orthophosphate</def>
+  <equation>C00201 + 2 C00001 &lt;=&gt; C01117 + 2 C00009</equation>
+  <enzymes>
+    <string>3.6.1.5</string>
+  </enzymes>
+  <comment>two-step reaction (see R02319+R10442)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00201_C01117</data>
+  </class>
+</reaction>

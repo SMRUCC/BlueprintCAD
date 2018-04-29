@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00685</ID>
+  <commonNames>L-tryptophan decarboxy-lyase</commonNames>
+  <def>L-Tryptophan &lt;=&gt; Tryptamine + CO2</def>
+  <equation>C00078 &lt;=&gt; C00398 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.28</string>
+    <string>4.1.1.105</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00380">Tryptophan metabolism</data>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01593" value="4.1.1.28">aromatic-L-amino-acid/L-tryptophan decarboxylase</KO:terms>
+    <KO:terms name="K22433" value="4.1.1.105">L-tryptophan decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00299">C00078_C00398</data>
+  </class>
+</reaction>

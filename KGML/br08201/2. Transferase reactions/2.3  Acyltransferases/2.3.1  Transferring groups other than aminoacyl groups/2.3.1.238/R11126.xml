@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11126</ID>
+  <commonNames>monacolin-J-acid:(S)-2-methylbutanoyl-[acp] (S)-2-methylbutanoyltransferase</commonNames>
+  <def>Monacolin J acid + (S)-2-Methylbutanoyl-[acp] &lt;=&gt; Lovastatin acid + Acyl-carrier protein</def>
+  <equation>C20854 + C21129 &lt;=&gt; C21130 + C00229</equation>
+  <enzymes>
+    <string>2.3.1.238</string>
+  </enzymes>
+  <comment>Acy-carrier protein is acp domain of LOVF [KO:K20984].</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K20983" value="2.3.1.238">monacolin J acid methylbutanoate transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00055">C20854_C21130</data>
+  </class>
+</reaction>

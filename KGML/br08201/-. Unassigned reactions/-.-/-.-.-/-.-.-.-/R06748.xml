@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06748</ID>
+  <commonNames>pyrrole-2-carbonyl-[peptidyl-carrier protein]:[peptidyl-carrier protein] (pyrrole-2-carbonyl)transferase</commonNames>
+  <def>Pyrrole-2-carbonyl-[pcp] + Peptidyl-carrier protein &lt;=&gt; Pyrrole-2-carbonyl-[pcp] + Peptidyl-carrier protein</def>
+  <equation>C12483 + C21097 &lt;=&gt; C12483 + C21097</equation>
+  <enzymes />
+  <comment>acyltransferase, CloN2 CouN2 transferring pyrrole-2-carbonyl group from CloN5 [KO:K12720] to CloN1 [KO:K17626]</comment>
+  <pathway>
+    <data name="rn00401">Novobiocin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00039">C12483_C21097</data>
+    <data name="RC03358">C12483_C12483</data>
+  </class>
+</reaction>

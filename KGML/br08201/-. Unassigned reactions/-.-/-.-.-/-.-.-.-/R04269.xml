@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04269</ID>
+  <def>L-threo-3-Methylaspartate + 2-Oxoglutarate &lt;=&gt; Methyloxaloacetate + L-Glutamate</def>
+  <equation>C03618 + C00026 &lt;=&gt; C06030 + C00025</equation>
+  <enzymes />
+  <comment />
+  <pathway>
+    <data name="rn00660">C5-Branched dibasic acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC00036">C03618_C06030</data>
+  </class>
+</reaction>

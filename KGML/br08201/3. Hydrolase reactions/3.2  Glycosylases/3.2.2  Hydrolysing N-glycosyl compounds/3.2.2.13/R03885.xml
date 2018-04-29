@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03885</ID>
+  <commonNames>1-Methyladenosine ribohydrolase</commonNames>
+  <def>1-Methyladenosine + H2O &lt;=&gt; 1-Methyladenine + D-Ribose</def>
+  <equation>C02494 + C00001 &lt;=&gt; C02216 + C00121</equation>
+  <enzymes>
+    <string>3.2.2.13</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00063">C02216_C02494</data>
+    <data name="RC00318">C00121_C02494</data>
+  </class>
+</reaction>

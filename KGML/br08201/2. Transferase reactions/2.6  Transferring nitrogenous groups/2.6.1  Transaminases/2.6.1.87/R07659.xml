@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07659</ID>
+  <def>UDP-L-Ara4O + L-Glutamate &lt;=&gt; UDP-L-Ara4N + 2-Oxoglutarate</def>
+  <equation>C16155 + C00025 &lt;=&gt; C16153 + C00026</equation>
+  <enzymes>
+    <string>2.6.1.87</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00761">Undecaprenylphosphate alpha-L-Ara4N biosynthesis, UDP-GlcA =&gt; undecaprenyl phosphate alpha-L-Ara4N</data>
+  </module>
+  <orthology>
+    <KO:terms name="K07806" value="2.6.1.87">UDP-4-amino-4-deoxy-L-arabinose-oxoglutarate aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC01514">C16153_C16155</data>
+  </class>
+</reaction>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05706</ID>
+  <commonNames>FMNH2:NADP+ oxidoreductase</commonNames>
+  <def>Reduced FMN + NADP+ &lt;=&gt; FMN + NADPH + H+</def>
+  <equation>C01847 + C00006 &lt;=&gt; C00061 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.5.1.38</string>
+    <string>1.5.1.39</string>
+    <string>1.5.1</string>
+  </enzymes>
+  <comment>see R05705 (NADH)</comment>
+  <pathway>
+    <data name="rn00740">Riboflavin metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00299" value="1.5.1.38">FMN reductase</KO:terms>
+    <KO:terms name="K13562" value="1.5.1">NAD(P)H:FMN oxidoreductase</KO:terms>
+    <KO:terms name="K19285" value="1.5.1.38">FMN reductase (NADPH)</KO:terms>
+    <KO:terms name="K19286" value="1.5.1.39">FMN reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00126">C00061_C01847</data>
+  </class>
+</reaction>

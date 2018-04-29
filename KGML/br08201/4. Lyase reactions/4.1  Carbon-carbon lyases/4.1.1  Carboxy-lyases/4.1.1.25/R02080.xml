@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02080</ID>
+  <commonNames>3,4-Dihydroxy-L-phenylalanine carboxy-lyase</commonNames>
+  <def>3,4-Dihydroxy-L-phenylalanine &lt;=&gt; Dopamine + CO2</def>
+  <equation>C00355 &lt;=&gt; C03758 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.25</string>
+    <string>4.1.1.28</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+    <data name="rn00950">Isoquinoline alkaloid biosynthesis</data>
+    <data name="rn00965">Betalain biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00042">Catecholamine biosynthesis, tyrosine =&gt; dopamine =&gt; noradrenaline =&gt; adrenaline</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01592" value="4.1.1.25">tyrosine decarboxylase</KO:terms>
+    <KO:terms name="K01593" value="4.1.1.28">aromatic-L-amino-acid/L-tryptophan decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00299">C00355_C03758</data>
+  </class>
+</reaction>

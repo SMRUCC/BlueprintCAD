@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05222</ID>
+  <commonNames>GTP:adenosylcobinamide-phosphate guanylyltransferase</commonNames>
+  <def>Adenosyl cobinamide phosphate + GTP &lt;=&gt; Adenosine-GDP-cobinamide + Diphosphate</def>
+  <equation>C06509 + C00044 &lt;=&gt; C06510 + C00013</equation>
+  <enzymes>
+    <string>2.7.7.62</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00122">Cobalamin biosynthesis, cobinamide =&gt; cobalamin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K02231" value="2.7.1.156">adenosylcobinamide kinase / adenosylcobinamide-phosphate guanylyltransferase</KO:terms>
+    <KO:terms name="K19712" value="2.7.7.62">adenosylcobinamide-phosphate guanylyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C06509_C06510</data>
+  </class>
+</reaction>

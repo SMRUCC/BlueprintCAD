@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03813</ID>
+  <commonNames>L-leucyl-tRNA(Leu):protein leucyltransferase</commonNames>
+  <def>L-Leucyl-tRNA + Protein &lt;=&gt; tRNA(Leu) + L-Leucyl-protein</def>
+  <equation>C02047 + C00017 &lt;=&gt; C01645 + C02429</equation>
+  <enzymes>
+    <string>2.3.2.6</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K00684" value="2.3.2.6">leucyl/phenylalanyl-tRNA---protein transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00055">C01645_C02047</data>
+    <data name="RC00064">C00017_C02429</data>
+  </class>
+</reaction>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01896</ID>
+  <commonNames>xylitol:NAD+ 2-oxidoreductase (D-xylulose-forming)</commonNames>
+  <def>Xylitol + NAD+ &lt;=&gt; D-Xylulose + NADH + H+</def>
+  <equation>C00379 + C00003 &lt;=&gt; C00310 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.9</string>
+    <string>1.1.1.14</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00040">Pentose and glucuronate interconversions</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00014">Glucuronate pathway (uronate pathway)</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00008" value="1.1.1.14">L-iditol 2-dehydrogenase</KO:terms>
+    <KO:terms name="K05351" value="1.1.1.9">D-xylulose reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00102">C00310_C00379</data>
+  </class>
+</reaction>

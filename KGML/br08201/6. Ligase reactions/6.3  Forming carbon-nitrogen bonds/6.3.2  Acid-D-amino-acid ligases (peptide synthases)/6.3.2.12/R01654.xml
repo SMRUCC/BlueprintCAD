@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01654</ID>
+  <commonNames>10-Formyltetrahydrofolate:L-glutamate ligase (ADP-forming)</commonNames>
+  <def>ATP + 10-Formyltetrahydrofolate + L-Glutamate &lt;=&gt; ADP + Orthophosphate + (6R)-10-Formyltetrahydropteroyldiglutamate</def>
+  <equation>C00002 + C00234 + C00025 &lt;=&gt; C00008 + C00009 + C05928</equation>
+  <enzymes>
+    <string>6.3.2.12</string>
+    <string>6.3.2.17</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C00025_C05928</data>
+    <data name="RC00090">C00234_C05928</data>
+  </class>
+</reaction>

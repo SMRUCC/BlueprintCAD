@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02745</ID>
+  <commonNames>1-(1-alkenyl)-sn-glycero-3-phosphocholine aldehydohydrolase</commonNames>
+  <def>1-(1-Alkenyl)-sn-glycero-3-phosphocholine + H2O &lt;=&gt; Aldehyde + sn-Glycero-3-phosphocholine</def>
+  <equation>C04517 + C00001 &lt;=&gt; C00071 + C00670</equation>
+  <enzymes>
+    <string>3.3.2.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00565">Ether lipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18575" value="3.3.2.2">alkenylglycerophosphocholine hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00199">C00670_C04517</data>
+  </class>
+</reaction>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02689</ID>
+  <commonNames>UDP-alpha-D-glucose:1,2-diacyl-sn-glycerol 3-beta-D-glucosyltransferase</commonNames>
+  <def>UDP-glucose + 1,2-Diacyl-sn-glycerol &lt;=&gt; UDP + 3-D-Glucosyl-1,2-diacylglycerol</def>
+  <equation>C00029 + C00641 &lt;=&gt; C00015 + C04046</equation>
+  <enzymes>
+    <string>2.4.1.315</string>
+    <string>2.4.1.336</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00561">Glycerolipid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03429" value="2.4.1.315">processive 1,2-diacylglycerol beta-glucosyltransferase</KO:terms>
+    <KO:terms name="K19003" value="2.4.1.336">1,2-diacylglycerol 3-beta-glucosyltransferase</KO:terms>
+    <KO:terms name="K19004" value="2.4.1.315">processive 1,2-diacylglycerol beta-glycosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00059">C00641_C04046</data>
+  </class>
+</reaction>

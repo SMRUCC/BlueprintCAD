@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08991</ID>
+  <commonNames>cyclic bis(3-&gt;5')diguanylate 3-guanylylhydrolase</commonNames>
+  <def>3',5'-Cyclic diGMP + H2O &lt;=&gt; 5'-Phosphoguanylyl(3'-&gt;5')guanosine</def>
+  <equation>C16463 + C00001 &lt;=&gt; C18076</equation>
+  <enzymes>
+    <string>3.1.4.52</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K13243" value="3.1.4.52">c-di-GMP-specific phosphodiesterase</KO:terms>
+    <KO:terms name="K13244" value="3.1.4.52">c-di-GMP-specific phosphodiesterase</KO:terms>
+    <KO:terms name="K13245" value="3.1.4.52">c-di-GMP-specific phosphodiesterase</KO:terms>
+    <KO:terms name="K13246" value="3.1.4.52">c-di-GMP phosphodiesterase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00296">C16463_C18076</data>
+  </class>
+</reaction>

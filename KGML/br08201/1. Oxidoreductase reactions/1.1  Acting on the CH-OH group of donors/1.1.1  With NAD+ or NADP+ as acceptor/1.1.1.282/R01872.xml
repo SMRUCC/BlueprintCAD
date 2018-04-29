@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01872</ID>
+  <commonNames>L-quinate:NAD+ 3-oxidoreductase;</commonNames>
+  <commonNames>Quinate:NAD+ 5-oxidoreductase</commonNames>
+  <def>Quinate + NAD+ &lt;=&gt; 3-Dehydroquinate + NADH + H+</def>
+  <equation>C00296 + C00003 &lt;=&gt; C00944 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.24</string>
+    <string>1.1.1.282</string>
+  </enzymes>
+  <comment>3-Dehydroquinate was formerly called "5-Dehydroquinate" on old nomenclature system of numbering</comment>
+  <pathway>
+    <data name="rn00400">Phenylalanine, tyrosine and tryptophan biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K05887" value="1.1.1.282">quinate/shikimate dehydrogenase</KO:terms>
+    <KO:terms name="K09484" value="1.1.1.24">quinate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00154">C00296_C00944</data>
+  </class>
+</reaction>

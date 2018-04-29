@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10139</ID>
+  <def>G00165 + UDP-N-acetyl-D-glucosamine &lt;=&gt; G13062 + UDP</def>
+  <equation>G00165 + G10610 &lt;=&gt; G13062 + G10619</equation>
+  <enzymes>
+    <string>2.4.1.224</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00534">Glycosaminoglycan biosynthesis - heparan sulfate / heparin</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K02366" value="2.4.1.224">glucuronyl/N-acetylglucosaminyl transferase EXT1</KO:terms>
+    <KO:terms name="K02367" value="2.4.1.224">glucuronyl/N-acetylglucosaminyl transferase EXT2</KO:terms>
+  </orthology>
+  <class />
+</reaction>

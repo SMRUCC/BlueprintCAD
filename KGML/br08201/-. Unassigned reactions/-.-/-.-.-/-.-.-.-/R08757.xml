@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08757</ID>
+  <commonNames>hydroxylamine:ubiquinone oxidoreductase;</commonNames>
+  <commonNames>hydroxylamine oxidase</commonNames>
+  <def>Hydroxylamine + 2 Ubiquinone + H2O &lt;=&gt; Nitrite + 2 Ubiquinol</def>
+  <equation>C00192 + 2 C00399 + C00001 &lt;=&gt; C00088 + 2 C00390</equation>
+  <enzymes />
+  <comment>a part of multi-step reaction (see R00793, R08757+R02161+R00081) ubiquinol is also oxidezed by ammonia monooxygenase (see R00148) or NADH dehydrogenase (see R02163) in nitrification</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00061">C00390_C00399</data>
+    <data name="RC00383">C00088_C00192</data>
+  </class>
+</reaction>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06826</ID>
+  <commonNames>UDP-L-rhamnose:apigenin 7-O-beta-D-glucoside 2''-O-beta-L-rhamnosyltransferase</commonNames>
+  <def>Apigenin 7-O-beta-D-glucoside + UDP-L-rhamnose &lt;=&gt; Apigenin 7-O-neohesperidoside + UDP</def>
+  <equation>C04608 + C02199 &lt;=&gt; C12627 + C00015</equation>
+  <enzymes>
+    <string>2.4.1.236</string>
+  </enzymes>
+  <comment>flavanone 7-O-glucoside 2''-O-beta-L-rhamnosyltransferase</comment>
+  <pathway>
+    <data name="rn00944">Flavone and flavonol biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13080" value="2.4.1.236">flavanone 7-O-glucoside 2''-O-beta-L-rhamnosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C02199</data>
+    <data name="RC00049">C04608_C12627</data>
+  </class>
+</reaction>

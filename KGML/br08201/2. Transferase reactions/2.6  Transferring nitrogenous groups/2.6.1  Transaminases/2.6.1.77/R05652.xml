@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05652</ID>
+  <commonNames>taurine:pyruvate aminotransferase</commonNames>
+  <def>Taurine + Pyruvate &lt;=&gt; Sulfoacetaldehyde + L-Alanine</def>
+  <equation>C00245 + C00022 &lt;=&gt; C00593 + C00041</equation>
+  <enzymes>
+    <string>2.6.1.77</string>
+  </enzymes>
+  <comment>Tpa, gb:AF269146</comment>
+  <pathway>
+    <data name="rn00430">Taurine and hypotaurine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03851" value="2.6.1.77">taurine-pyruvate aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00008">C00022_C00041</data>
+    <data name="RC00062">C00245_C00593</data>
+  </class>
+</reaction>

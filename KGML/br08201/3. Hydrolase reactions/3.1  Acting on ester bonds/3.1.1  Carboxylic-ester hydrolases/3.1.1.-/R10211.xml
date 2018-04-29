@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10211</ID>
+  <def>S-(5-Hydroxy-2-furoyl)-CoA + H2O &lt;=&gt; 2-Oxoglutaryl-CoA</def>
+  <equation>C03724 + C00001 &lt;=&gt; C20447</equation>
+  <enzymes>
+    <string>3.1.1</string>
+  </enzymes>
+  <comment>S-(5-Hydroxy-2-furoyl)-CoA hydrolase</comment>
+  <pathway>
+    <data name="rn00365">Furfural degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC03089">C03724_C20447</data>
+  </class>
+</reaction>

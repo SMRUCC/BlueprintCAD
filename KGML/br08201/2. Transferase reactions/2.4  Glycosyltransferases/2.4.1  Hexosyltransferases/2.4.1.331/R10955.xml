@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10955</ID>
+  <commonNames>dTDP-beta-L-rhamnose:8-demethyltetracenomycin-C alpha-L-rhamnosyltransferase</commonNames>
+  <def>dTDP-L-rhamnose + 8-Demethyltetracenomycin C &lt;=&gt; dTDP + 8-Demethyl-8-alpha-L-rhamnosyltetracenomycin C</def>
+  <equation>C03319 + C12379 &lt;=&gt; C00363 + C20974</equation>
+  <enzymes>
+    <string>2.4.1.331</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00784">Elloramycin biosynthesis, 8-demethyltetracenomycin C =&gt; elloramycin A</data>
+  </module>
+  <orthology>
+    <KO:terms name="K19566" value="2.4.1.331">8-demethyltetracenomycin C L-rhamnosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00363_C03319</data>
+    <data name="RC00171">C12379_C20974</data>
+  </class>
+</reaction>

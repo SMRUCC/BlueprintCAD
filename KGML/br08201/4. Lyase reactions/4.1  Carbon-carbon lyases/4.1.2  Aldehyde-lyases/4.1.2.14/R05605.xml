@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05605</ID>
+  <commonNames>2-dehydro-3-deoxy-6-phospho-D-gluconate D-glyceraldehyde-3-phosphate-lyase (pyruvate-forming)</commonNames>
+  <def>2-Dehydro-3-deoxy-6-phospho-D-gluconate &lt;=&gt; D-Glyceraldehyde 3-phosphate + Pyruvate</def>
+  <equation>C04442 &lt;=&gt; C00118 + C00022</equation>
+  <enzymes>
+    <string>4.1.2.14</string>
+    <string>4.1.2.55</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00030">Pentose phosphate pathway</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00008">Entner-Doudoroff pathway, glucose-6P =&gt; glyceraldehyde-3P + pyruvate</data>
+    <data name="M00061">D-Glucuronate degradation, D-glucuronate =&gt; pyruvate + D-glyceraldehyde 3P</data>
+    <data name="M00308">Semi-phosphorylative Entner-Doudoroff pathway, gluconate =&gt; glycerate-3P</data>
+    <data name="M00631">D-Galacturonate degradation (bacteria), D-galacturonate =&gt; pyruvate + D-glyceraldehyde 3P</data>
+    <data name="M00633">Semi-phosphorylative Entner-Doudoroff pathway, gluconate/galactonate =&gt; glycerate-3P</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01625" value="4.1.2.14">2-dehydro-3-deoxyphosphogluconate aldolase / (4S)-4-hydroxy-2-oxoglutarate aldolase</KO:terms>
+    <KO:terms name="K11395" value="4.1.2.55">2-dehydro-3-deoxy-phosphogluconate/2-dehydro-3-deoxy-6-phosphogalactonate aldolase</KO:terms>
+    <KO:terms name="K17463" value="4.1.2.14">2-dehydro-3-deoxy-phosphogluconate aldolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00307">C00022_C04442</data>
+    <data name="RC00435">C00118_C04442</data>
+  </class>
+</reaction>

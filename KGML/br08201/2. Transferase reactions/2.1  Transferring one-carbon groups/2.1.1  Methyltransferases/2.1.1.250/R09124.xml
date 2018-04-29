@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09124</ID>
+  <commonNames>trimethylamine:coenzyme M methyltransferase</commonNames>
+  <def>Trimethylamine + Coenzyme M &lt;=&gt; 2-(Methylthio)ethanesulfonate + Dimethylamine</def>
+  <equation>C00565 + C03576 &lt;=&gt; C03920 + C00543</equation>
+  <enzymes>
+    <string>2.1.1.247</string>
+    <string>2.1.1.250</string>
+  </enzymes>
+  <comment>methylcobamide:CoM methyltransferase: mtbA trimethylamine methyltransferase: mttB trimethylamine corrinoid protein: mttC two-step reaction (see R10016+R10000)</comment>
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00563">Methanogenesis, methylamine/dimethylamine/trimethylamine =&gt; methane</data>
+  </module>
+  <orthology>
+    <KO:terms name="K14082" value="2.1.1.247" />
+    <KO:terms name="K14083" value="2.1.1.250">trimethylamine---corrinoid protein Co-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00035">C03576_C03920</data>
+    <data name="RC00732">C00543_C00565</data>
+    <data name="RC02984">C00565_C03920</data>
+  </class>
+</reaction>

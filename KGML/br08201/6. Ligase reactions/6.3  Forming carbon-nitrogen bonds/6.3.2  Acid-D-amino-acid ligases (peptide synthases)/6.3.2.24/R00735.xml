@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00735</ID>
+  <commonNames>L-Tyrosine:L-arginine ligase (AMP-forming)</commonNames>
+  <def>ATP + L-Tyrosine + L-Arginine &lt;=&gt; AMP + Diphosphate + Kyotorphin</def>
+  <equation>C00002 + C00082 + C00062 &lt;=&gt; C00020 + C00013 + C02993</equation>
+  <enzymes>
+    <string>6.3.2.24</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00064">C00062_C02993</data>
+    <data name="RC00141">C00082_C02993</data>
+  </class>
+</reaction>

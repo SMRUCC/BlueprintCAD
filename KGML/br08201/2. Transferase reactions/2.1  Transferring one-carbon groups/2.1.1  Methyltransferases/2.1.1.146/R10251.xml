@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10251</ID>
+  <commonNames>S-adenosyl-L-methionine:chavicol O-methyltransferase</commonNames>
+  <def>Chavicol + S-Adenosyl-L-methionine &lt;=&gt; Estragole + S-Adenosyl-L-homocysteine</def>
+  <equation>C16930 + C00019 &lt;=&gt; C10452 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.146</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00940">Phenylpropanoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K17058" value="2.1.1.146">eugenol/chavicol O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C10452_C16930</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08711</ID>
+  <commonNames>CDP-abequose:NADP+ 4-oxidoreductase</commonNames>
+  <def>CDP-4-dehydro-3,6-dideoxy-D-glucose + NADPH + H+ &lt;=&gt; CDP-abequose + NADP+</def>
+  <equation>C04297 + C00005 + C00080 &lt;=&gt; C01788 + C00006</equation>
+  <enzymes>
+    <string>1.1.1.341</string>
+    <string>4.2.1</string>
+  </enzymes>
+  <comment>abequose synthase</comment>
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12455" value="1.1.1.341">CDP-abequose synthase</KO:terms>
+    <KO:terms name="K19632" value="1.1.1.341">CDP-abequose synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00154">C01788_C04297</data>
+  </class>
+</reaction>

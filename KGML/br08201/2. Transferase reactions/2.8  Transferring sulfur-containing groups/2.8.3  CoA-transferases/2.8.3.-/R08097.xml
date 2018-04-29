@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08097</ID>
+  <def>Geranic acid + CoA &lt;=&gt; trans-Geranyl-CoA + H2O</def>
+  <equation>C16461 + C00010 &lt;=&gt; C16465 + C00001</equation>
+  <enzymes>
+    <string>2.8.3</string>
+  </enzymes>
+  <comment>geranic acid CoA-transferase</comment>
+  <pathway>
+    <data name="rn00281">Geraniol degradation</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C16465</data>
+    <data name="RC00131">C16461_C16465</data>
+  </class>
+</reaction>

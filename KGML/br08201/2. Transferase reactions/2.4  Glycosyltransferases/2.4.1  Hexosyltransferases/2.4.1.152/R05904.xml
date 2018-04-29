@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05904</ID>
+  <def>GDP-L-fucose + G00103 &lt;=&gt; GDP + G00104</def>
+  <equation>G10615 + G00103 &lt;=&gt; G10620 + G00104</equation>
+  <enzymes>
+    <string>2.4.1.152</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00603">Glycosphingolipid biosynthesis - globo and isoglobo series</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03663" value="2.4.1.152">4-galactosyl-N-acetylglucosaminide 3-alpha-L-fucosyltransferase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

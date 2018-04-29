@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05671</ID>
+  <def>3'-Amino-3'-deoxy-AMP + L-Tyrosine &lt;=&gt; N6,N6,O-Tridemethylpuromycin-5'-phosphate</def>
+  <equation>C07026 + C00082 &lt;=&gt; C07027</equation>
+  <enzymes />
+  <comment>incomplete reaction Pur6</comment>
+  <pathway>
+    <data name="rn00231">Puromycin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00141">C00082_C07027</data>
+    <data name="RC00166">C07026_C07027</data>
+  </class>
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03692</ID>
+  <commonNames>Dihydrocoumarin lactonohydrolase</commonNames>
+  <def>Dihydrocoumarin + H2O &lt;=&gt; 3-(2-Hydroxyphenyl)propanoate</def>
+  <equation>C02274 + C00001 &lt;=&gt; C01198</equation>
+  <enzymes>
+    <string>3.1.1.35</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00624">Polycyclic aromatic hydrocarbon degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00975">C01198_C02274</data>
+  </class>
+</reaction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01780</ID>
+  <commonNames>Succinyl-CoA:3-oxo-acid CoA-transferase</commonNames>
+  <def>Succinyl-CoA + 3-Oxo acid &lt;=&gt; Succinate + 3-Oxoacyl-CoA</def>
+  <equation>C00091 + C01656 &lt;=&gt; C00042 + C00264</equation>
+  <enzymes>
+    <string>2.8.3.5</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00014">C00042_C00091  C00264_C01656</data>
+  </class>
+</reaction>

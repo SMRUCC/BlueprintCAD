@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08781</ID>
+  <commonNames>S-adenosyl-L-methionine:3-hydroxy-2-methoxy-5-methyl-6-(all-trans-polyprenyl)-1,4-benzoquinone 3-O-methyltransferase</commonNames>
+  <def>2-Polyprenyl-3-methyl-5-hydroxy-6-methoxy-1,4-benzoquinone + S-Adenosyl-L-methionine &lt;=&gt; Ubiquinone + S-Adenosyl-L-homocysteine</def>
+  <equation>C17562 + C00019 &lt;=&gt; C00399 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.64</string>
+  </enzymes>
+  <comment>general reaction (see R02175, R07235 and R05614, n=5-9)</comment>
+  <pathway>
+    <data name="rn00130">Ubiquinone and other terpenoid-quinone biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00117">Ubiquinone biosynthesis, prokaryotes, chorismate =&gt; ubiquinone</data>
+    <data name="M00128">Ubiquinone biosynthesis, eukaryotes, 4-hydroxybenzoate =&gt; ubiquinone</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00568" value="2.1.1.222">2-polyprenyl-6-hydroxyphenyl methylase / 3-demethylubiquinone-9 3-methyltransferase</KO:terms>
+    <KO:terms name="K00591" value="2.1.1.114">polyprenyldihydroxybenzoate methyltransferase / 3-demethylubiquinol 3-O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01895">C00399_C17562</data>
+  </class>
+</reaction>

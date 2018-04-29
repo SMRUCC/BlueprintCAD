@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11133</ID>
+  <def>Deoxyviolaceinic acid + Oxygen &lt;=&gt; Deoxyviolacein + CO2 + H2O</def>
+  <equation>C21132 + C00007 &lt;=&gt; C21133 + C00011 + C00001</equation>
+  <enzymes />
+  <comment>non-enzymatic</comment>
+  <pathway>
+    <data name="rn00404">Staurosporine biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC03366">C21132_C21133</data>
+  </class>
+</reaction>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01271</ID>
+  <commonNames>nicotinamide-D-ribonucleotide:diphosphate phospho-alpha-D-ribosyltransferase</commonNames>
+  <def>Nicotinamide D-ribonucleotide + Diphosphate &lt;=&gt; Nicotinamide + 5-Phospho-alpha-D-ribose 1-diphosphate</def>
+  <equation>C00455 + C00013 &lt;=&gt; C00153 + C00119</equation>
+  <enzymes>
+    <string>2.4.2.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03462" value="2.4.2.12">nicotinamide phosphoribosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00033">C00153_C00455</data>
+  </class>
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06803</ID>
+  <commonNames>UDP-glucose:pelargonidin 3-O-rutinoside 5-O-beta-D-glucosyltransferase</commonNames>
+  <def>Pelargonidin 3-O-rutinoside + UDP-glucose &lt;=&gt; Pelargonidin 3-O-rutinoside 5-O-beta-D-glucoside + UDP</def>
+  <equation>C12644 + C00029 &lt;=&gt; C12645 + C00015</equation>
+  <enzymes>
+    <string>2.4.1.116</string>
+  </enzymes>
+  <comment>cyanidin 3-O-rutinoside 5-O-glucosyltransferase</comment>
+  <pathway>
+    <data name="rn00942">Anthocyanin biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00171">C12644_C12645</data>
+  </class>
+</reaction>

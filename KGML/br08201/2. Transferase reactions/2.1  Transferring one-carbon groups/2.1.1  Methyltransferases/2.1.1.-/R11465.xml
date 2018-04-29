@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11465</ID>
+  <def>dTDP-4-amino-4,6-dideoxy-5-C-methyl-D-allose &lt;=&gt; dTDP-4-dimethylamino-4,6-dideoxy-5-C-methyl-D-allose</def>
+  <equation>C11461 &lt;=&gt; C11447</equation>
+  <enzymes>
+    <string>2.1.1</string>
+  </enzymes>
+  <comment>unclear reaction incomplete reaction</comment>
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K21327" value="2.1.1">N-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01515">C11447_C11461</data>
+  </class>
+</reaction>

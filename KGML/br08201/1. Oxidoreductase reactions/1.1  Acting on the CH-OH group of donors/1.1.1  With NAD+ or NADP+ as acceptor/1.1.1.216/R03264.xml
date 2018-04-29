@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03264</ID>
+  <commonNames>2-trans,6-trans-farnesol:NADP+ 1-oxidoreductase</commonNames>
+  <def>(2E,6E)-Farnesol + NADP+ &lt;=&gt; 2-trans,6-trans-Farnesal + NADPH + H+</def>
+  <equation>C01126 + C00006 &lt;=&gt; C03461 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.216</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00900">Terpenoid backbone biosynthesis</data>
+    <data name="rn00909">Sesquiterpenoid and triterpenoid biosynthesis</data>
+    <data name="rn00981">Insect hormone biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15890" value="1.1.1.216">NADP+-dependent farnesol dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00649">C01126_C03461</data>
+  </class>
+</reaction>

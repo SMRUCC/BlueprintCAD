@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08669</ID>
+  <commonNames>3'-phosphoadenylyl-sulfate:3-methylthiopropyl-desulfoglucosinolate sulfotransferase</commonNames>
+  <def>3-Methylthiopropyl-desulfoglucosinolate + 3'-Phosphoadenylyl sulfate &lt;=&gt; Glucoiberverin + Adenosine 3',5'-bisphosphate</def>
+  <equation>C17244 + C00053 &lt;=&gt; C08412 + C00054</equation>
+  <enzymes>
+    <string>2.8.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00966">Glucosinolate biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K11821" value="2.8.2.24">aromatic desulfoglucosinolate sulfotransferase</KO:terms>
+    <KO:terms name="K22321" value="2.8.2.38">aliphatic desulfoglucosinolate sulfotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00007">C00053_C00054</data>
+    <data name="RC00883">C08412_C17244</data>
+  </class>
+</reaction>

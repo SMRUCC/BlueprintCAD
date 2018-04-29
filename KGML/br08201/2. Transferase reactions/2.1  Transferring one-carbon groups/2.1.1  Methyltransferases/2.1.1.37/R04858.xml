@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04858</ID>
+  <commonNames>S-adenosyl-L-methionine:DNA (cytosine-5-)-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + DNA cytosine &lt;=&gt; S-Adenosyl-L-homocysteine + DNA 5-methylcytosine</def>
+  <equation>C00019 + C00856 &lt;=&gt; C00021 + C02967</equation>
+  <enzymes>
+    <string>2.1.1.37</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00270">Cysteine and methionine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00035">Methionine degradation</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00558" value="2.1.1.37">DNA (cytosine-5)-methyltransferase 1</KO:terms>
+    <KO:terms name="K17398" value="2.1.1.37">DNA (cytosine-5)-methyltransferase 3A</KO:terms>
+    <KO:terms name="K17399" value="2.1.1.37">DNA (cytosine-5)-methyltransferase 3B</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00332">C00856_C02967</data>
+  </class>
+</reaction>

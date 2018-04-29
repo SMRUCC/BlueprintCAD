@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04401</ID>
+  <commonNames>ATP:[isocitrate dehydrogenase (NADP+)] phosphotransferase</commonNames>
+  <def>ATP + [Isocitrate dehydrogenase (NADP+)] &lt;=&gt; ADP + [Isocitrate dehydrogenase (NADP+)] phosphate</def>
+  <equation>C00002 + C04125 &lt;=&gt; C00008 + C04564</equation>
+  <enzymes>
+    <string>2.7.11.5</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00017">C04125_C04564</data>
+  </class>
+</reaction>

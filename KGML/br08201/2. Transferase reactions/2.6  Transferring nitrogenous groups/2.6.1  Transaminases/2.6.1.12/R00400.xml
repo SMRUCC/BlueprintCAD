@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00400</ID>
+  <commonNames>L-alanine:oxaloacetate aminotransferase</commonNames>
+  <def>L-Alanine + Oxaloacetate &lt;=&gt; Pyruvate + L-Aspartate</def>
+  <equation>C00041 + C00036 &lt;=&gt; C00022 + C00049</equation>
+  <enzymes>
+    <string>2.6.1.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00006">C00036_C00049</data>
+    <data name="RC00008">C00022_C00041</data>
+  </class>
+</reaction>

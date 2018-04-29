@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07870</ID>
+  <def>13(S)-HPOT &lt;=&gt; 12-Oxo-9(Z)-dodecenoic acid + 3-Hexenal</def>
+  <equation>C04785 &lt;=&gt; C16311 + C16310</equation>
+  <enzymes />
+  <comment />
+  <pathway>
+    <data name="rn00592">alpha-Linolenic acid metabolism</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K10528" value="4.1.2">hydroperoxide lyase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01950">C04785_C16311</data>
+    <data name="RC02104">C04785_C16310</data>
+  </class>
+</reaction>

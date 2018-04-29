@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11064</ID>
+  <commonNames>L-alanine:L-anticapsin ligase (ADP-forming)</commonNames>
+  <def>L-Anticapsin + L-Alanine + ATP &lt;=&gt; Bacilysin + Orthophosphate + ADP</def>
+  <equation>C20941 + C00041 + C00002 &lt;=&gt; C20942 + C00009 + C00008</equation>
+  <enzymes>
+    <string>6.3.2.49</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00787">Bacilysin biosynthesis, prephenate =&gt; bacilysin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13037" value="6.3.2.49">L-alanine-L-anticapsin ligase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C20941_C20942</data>
+    <data name="RC00141">C00041_C20942</data>
+  </class>
+</reaction>

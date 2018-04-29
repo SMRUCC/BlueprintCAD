@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04617</ID>
+  <commonNames>UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-meso-2,6-diaminoheptanedioate:D-alanyl-D-alanine ligase(ADP-forming)</commonNames>
+  <def>ATP + UDP-N-acetylmuramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + D-Alanyl-D-alanine &lt;=&gt; ADP + Orthophosphate + UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-6-carboxy-L-lysyl-D-alanyl-D-alanine</def>
+  <equation>C00002 + C04877 + C00993 &lt;=&gt; C00008 + C00009 + C04882</equation>
+  <enzymes>
+    <string>6.3.2.10</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00300">Lysine biosynthesis</data>
+    <data name="rn00550">Peptidoglycan biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01929" value="6.3.2.10">UDP-N-acetylmuramoyl-tripeptide--D-alanyl-D-alanine ligase</KO:terms>
+    <KO:terms name="K15792" value="6.3.2.13">murE/murF fusion protein</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C00993_C04882</data>
+    <data name="RC00141">C04877_C04882</data>
+  </class>
+</reaction>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08013</ID>
+  <def>Naringenin chalcone + UDP-glucose &lt;=&gt; Phlorizin chalcone + UDP</def>
+  <equation>C06561 + C00029 &lt;=&gt; C16406 + C00015</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment>chalcone 2'-O-glucosyltransferase</comment>
+  <pathway>
+    <data name="rn00941">Flavonoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13078" value="2.4.1">chalcononaringenin 2'-O-glucosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00171">C06561_C16406</data>
+  </class>
+</reaction>

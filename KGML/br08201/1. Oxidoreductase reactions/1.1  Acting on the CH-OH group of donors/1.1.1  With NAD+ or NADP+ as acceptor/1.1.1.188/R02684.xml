@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02684</ID>
+  <commonNames>(5Z,13E)-(15S)-9alpha,11alpha,15-trihydroxyprosta-5,13-dienoate:NADP+ 11-oxidoreductase</commonNames>
+  <def>Prostaglandin F2alpha + NADP+ &lt;=&gt; Prostaglandin D2 + NADPH + H+</def>
+  <equation>C00639 + C00006 &lt;=&gt; C00696 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.188</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00154">C00639_C00696</data>
+  </class>
+</reaction>

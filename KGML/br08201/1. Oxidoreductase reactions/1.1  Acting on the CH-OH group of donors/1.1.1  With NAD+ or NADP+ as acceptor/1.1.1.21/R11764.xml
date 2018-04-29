@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11764</ID>
+  <commonNames>tetrahydrobiopterin:NADP+ oxidoreductase [6-(1'-Hydroxy-2'-oxopropyl)-tetrahydropterin-forming]</commonNames>
+  <def>Tetrahydrobiopterin + NADP+ &lt;=&gt; 6-(1'-Hydroxy-2'-oxopropyl)-tetrahydropterin + NADPH + H+</def>
+  <equation>C00272 + C00006 &lt;=&gt; C21640 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.21</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00790">Folate biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00011" value="1.1.1.21">aldehyde reductase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

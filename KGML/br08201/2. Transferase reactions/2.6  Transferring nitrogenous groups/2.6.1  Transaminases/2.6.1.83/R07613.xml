@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07613</ID>
+  <commonNames>LL-2,6-diaminoheptanedioate:2-oxoglutarate aminotransferase</commonNames>
+  <def>LL-2,6-Diaminoheptanedioate + 2-Oxoglutarate &lt;=&gt; 2,3,4,5-Tetrahydrodipicolinate + L-Glutamate + H2O</def>
+  <equation>C00666 + C00026 &lt;=&gt; C03972 + C00025 + C00001</equation>
+  <enzymes>
+    <string>2.6.1.83</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00300">Lysine biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00527">Lysine biosynthesis, DAP aminotransferase pathway, aspartate =&gt; lysine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K10206" value="2.6.1.83">LL-diaminopimelate aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC01847">C00666_C03972</data>
+  </class>
+</reaction>

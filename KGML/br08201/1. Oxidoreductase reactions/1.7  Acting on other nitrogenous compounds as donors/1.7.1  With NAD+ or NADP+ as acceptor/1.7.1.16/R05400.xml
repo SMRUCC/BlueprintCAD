@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05400</ID>
+  <commonNames>hydroxylaminobenzene:NADP+ oxidoreductase</commonNames>
+  <def>Nitrosobenzene + NADPH + H+ &lt;=&gt; Hydroxylaminobenzene + NADP+</def>
+  <equation>C06876 + C00005 + C00080 &lt;=&gt; C02720 + C00006</equation>
+  <enzymes>
+    <string>1.7.1.16</string>
+  </enzymes>
+  <comment>nitrobenzene nitroreductase, nbzA first step of two-step reaction (see R11744, R05400+R05401)</comment>
+  <pathway>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15057" value="1.7.1.16">nitrobenzene nitroreductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC01361">C02720_C06876</data>
+  </class>
+</reaction>

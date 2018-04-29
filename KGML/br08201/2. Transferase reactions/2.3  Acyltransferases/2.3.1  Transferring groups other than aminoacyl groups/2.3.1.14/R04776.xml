@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04776</ID>
+  <commonNames>Phenylacetyl-CoA:L-glutamine alpha-N-phenylacetyltransferase</commonNames>
+  <def>L-Glutamate + 4-Hydroxyphenylacetyl-CoA &lt;=&gt; CoA + 4-Hydroxyphenylacetylglutamic acid</def>
+  <equation>C00025 + C05338 &lt;=&gt; C00010 + C05595</equation>
+  <enzymes>
+    <string>2.3.1.14</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C05338</data>
+    <data name="RC00064">C00025_C05595</data>
+    <data name="RC02867">C05338_C05595</data>
+  </class>
+</reaction>

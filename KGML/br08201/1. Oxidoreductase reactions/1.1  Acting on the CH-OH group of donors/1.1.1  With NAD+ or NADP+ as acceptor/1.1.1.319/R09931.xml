@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09931</ID>
+  <commonNames>eugenol:NADP+ oxidoreductase (coniferyl acetate reducing)</commonNames>
+  <def>Isoeugenol + Acetate + NADP+ &lt;=&gt; Coniferyl acetate + NADPH + H+</def>
+  <equation>C10469 + C00033 + C00006 &lt;=&gt; C20225 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.319</string>
+  </enzymes>
+  <comment>multi-step reaction intermediate (quinone methide [CPD:C20269])</comment>
+  <pathway>
+    <data name="rn00940">Phenylpropanoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K17056" value="1.1.1.319">isoeugenol synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00020">C00033_C20225</data>
+    <data name="RC02845">C10469_C20225</data>
+  </class>
+</reaction>

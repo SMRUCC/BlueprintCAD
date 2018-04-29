@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07405</ID>
+  <commonNames>5-carboxyamino-1-(5-phospho-D-ribosyl)imidazole carboxymutase</commonNames>
+  <def>5-Carboxyamino-1-(5-phospho-D-ribosyl)imidazole &lt;=&gt; 1-(5-Phospho-D-ribosyl)-5-amino-4-imidazolecarboxylate</def>
+  <equation>C15667 &lt;=&gt; C04751</equation>
+  <enzymes>
+    <string>5.4.99.18</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00230">Purine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00048">Inosine monophosphate biosynthesis, PRPP + glutamine =&gt; IMP</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01588" value="5.4.99.18">5-(carboxyamino)imidazole ribonucleotide mutase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01947">C04751_C15667</data>
+  </class>
+</reaction>

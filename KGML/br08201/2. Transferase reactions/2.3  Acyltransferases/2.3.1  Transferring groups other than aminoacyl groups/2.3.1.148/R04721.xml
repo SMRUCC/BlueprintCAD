@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04721</ID>
+  <commonNames>1-Organyl-2-acyl-sn-glycero-3-phosphocholine:1-organyl-2-lyso-sn-glycero-3-phosphoethanolamine acyltransferase (CoA-dependent)</commonNames>
+  <def>1-Radyl-2-acyl-sn-glycero-3-phosphocholine + 1-Alkyl-2-lyso-sn-glycero-3-phosphoethanolamine &lt;=&gt; 1-Alkyl-2-acylglycerophosphoethanolamine + 1-Organyl-2-lyso-sn-glycero-3-phosphocholine</def>
+  <equation>C05212 + C05209 &lt;=&gt; C04475 + C04317</equation>
+  <enzymes>
+    <string>2.3.1.148</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00037">C04317_C05212  C04475_C05209</data>
+  </class>
+</reaction>

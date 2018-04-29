@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02165</ID>
+  <commonNames>Nitrite:(acceptor) oxidoreductase</commonNames>
+  <def>Ubiquinol + Nitrate &lt;=&gt; Ubiquinone + Nitrite + H2O</def>
+  <equation>C00390 + C00244 &lt;=&gt; C00399 + C00088 + C00001</equation>
+  <enzymes>
+    <string>1.7.99</string>
+  </enzymes>
+  <comment>respiratory nitrate reductase</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00061">C00390_C00399</data>
+    <data name="RC02812">C00088_C00244</data>
+  </class>
+</reaction>

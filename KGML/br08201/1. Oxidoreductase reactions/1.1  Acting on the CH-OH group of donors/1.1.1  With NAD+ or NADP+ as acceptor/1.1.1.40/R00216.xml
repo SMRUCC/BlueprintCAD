@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00216</ID>
+  <commonNames>(S)-Malate:NADP+ oxidoreductase(oxaloacetate-decarboxylating)</commonNames>
+  <def>(S)-Malate + NADP+ &lt;=&gt; Pyruvate + CO2 + NADPH + H+</def>
+  <equation>C00149 + C00006 &lt;=&gt; C00022 + C00011 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.40</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00620">Pyruvate metabolism</data>
+    <data name="rn00710">Carbon fixation in photosynthetic organisms</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00169">CAM (Crassulacean acid metabolism), light</data>
+    <data name="M00172">C4-dicarboxylic acid cycle, NADP - malic enzyme type</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00029" value="1.1.1.40">malate dehydrogenase (oxaloacetate-decarboxylating)(NADP+)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00105">C00022_C00149</data>
+  </class>
+</reaction>

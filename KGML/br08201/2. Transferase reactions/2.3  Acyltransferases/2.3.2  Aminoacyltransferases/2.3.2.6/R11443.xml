@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11443</ID>
+  <commonNames>L-leucyl-tRNA(Leu):[protein] N-terminal L-lysine leucyltransferase</commonNames>
+  <def>L-Leucyl-tRNA + L-Lysyl-protein &lt;=&gt; tRNA(Leu) + L-Leucyl-L-lysyl-protein</def>
+  <equation>C02047 + C21388 &lt;=&gt; C01645 + C21387</equation>
+  <enzymes>
+    <string>2.3.2.6</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K00684" value="2.3.2.6">leucyl/phenylalanyl-tRNA---protein transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00064">C21387_C21388</data>
+  </class>
+</reaction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10494</ID>
+  <commonNames>6-tuliposide-A D-glucose-lyase (tulipalin-A-forming)</commonNames>
+  <def>6-Tuliposide A &lt;=&gt; Tulipalin A + D-Glucose</def>
+  <equation>C20577 &lt;=&gt; C20578 + C00031</equation>
+  <enzymes>
+    <string>4.2.99.22</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00041">C00031_C20577</data>
+    <data name="RC03164">C20577_C20578</data>
+  </class>
+</reaction>

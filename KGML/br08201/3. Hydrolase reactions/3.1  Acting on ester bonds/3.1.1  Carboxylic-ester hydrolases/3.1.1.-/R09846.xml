@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09846</ID>
+  <commonNames>prenylcycteine methylesterase</commonNames>
+  <def>Protein C-terminal S-farnesyl-L-cysteine + Methanol &lt;=&gt; Protein C-terminal S-farnesyl-L-cysteine methyl ester + H2O</def>
+  <equation>C04506 + C00132 &lt;=&gt; C04748 + C00001</equation>
+  <enzymes>
+    <string>3.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00900">Terpenoid backbone biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15889" value="3.1.1">prenylcysteine alpha-carboxyl methylesterase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00460">C04506_C04748</data>
+    <data name="RC00461">C00132_C04748</data>
+  </class>
+</reaction>

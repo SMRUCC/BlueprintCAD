@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10336</ID>
+  <commonNames>L-leucyl-tRNALeu:L-leucyl-tRNALeu leucyltransferase (cyclizing)</commonNames>
+  <def>2 L-Leucyl-tRNA &lt;=&gt; 2 tRNA(Leu) + Cyclo(L-leucyl-L-leucyl)</def>
+  <equation>2 C02047 &lt;=&gt; 2 C01645 + C20514</equation>
+  <enzymes>
+    <string>2.3.2.22</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00055">C01645_C02047</data>
+  </class>
+</reaction>

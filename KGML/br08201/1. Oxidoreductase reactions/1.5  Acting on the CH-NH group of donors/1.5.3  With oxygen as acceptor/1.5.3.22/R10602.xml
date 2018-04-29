@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10602</ID>
+  <commonNames>reduced coenzyme F420:oxygen oxidoreductase</commonNames>
+  <def>2 Reduced coenzyme F420 + Oxygen &lt;=&gt; 2 Coenzyme F420 + 2 H2O</def>
+  <equation>2 C01080 + C00007 &lt;=&gt; 2 C00876 + 2 C00001</equation>
+  <enzymes>
+    <string>1.5.3.22</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02628">C00876_C01080</data>
+  </class>
+</reaction>

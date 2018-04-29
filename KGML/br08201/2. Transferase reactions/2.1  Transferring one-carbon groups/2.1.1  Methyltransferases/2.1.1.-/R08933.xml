@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08933</ID>
+  <commonNames>S-adenosyl-L-methionine:dTDP-4-oxo-2,6-dideoxy-D-allose 3-C-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + dTDP-4-oxo-2,6-dideoxy-D-allose &lt;=&gt; S-Adenosyl-L-homocysteine + dTDP-3-methyl-4-oxo-2,6-dideoxy-D-glucose</def>
+  <equation>C00019 + C11928 &lt;=&gt; C00021 + C18035</equation>
+  <enzymes>
+    <string>2.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00798">dTDP-L-mycarose biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13317" value="2.1.1">NDP-4-keto-2,6-dideoxyhexose 3-C-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01404">C11928_C18035</data>
+  </class>
+</reaction>

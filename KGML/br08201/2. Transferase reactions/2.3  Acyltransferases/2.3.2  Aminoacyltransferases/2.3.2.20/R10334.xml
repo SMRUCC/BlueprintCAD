@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10334</ID>
+  <commonNames>L-leucyl-tRNALeu:L-phenylalanyl-tRNAPhe leucyltransferase (cyclizing)</commonNames>
+  <def>L-Leucyl-tRNA + L-Phenylalanyl-tRNA(Phe) &lt;=&gt; tRNA(Leu) + tRNA(Phe) + Cyclo(L-leucyl-L-phenylalanyl)</def>
+  <equation>C02047 + C03511 &lt;=&gt; C01645 + C01648 + C20519</equation>
+  <enzymes>
+    <string>2.3.2.20</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00055">C01645_C02047  C01648_C03511</data>
+  </class>
+</reaction>

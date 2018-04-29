@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11033</ID>
+  <def>L-Arginine &lt;=&gt; N(omega)-Hydroxyarginine</def>
+  <equation>C00062 &lt;=&gt; C05933</equation>
+  <enzymes />
+  <comment>unclear reaction</comment>
+  <pathway>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00785">Cycloserine biosynthesis, arginine/serine =&gt; cycloserine</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC00330">C00062_C05933</data>
+  </class>
+</reaction>

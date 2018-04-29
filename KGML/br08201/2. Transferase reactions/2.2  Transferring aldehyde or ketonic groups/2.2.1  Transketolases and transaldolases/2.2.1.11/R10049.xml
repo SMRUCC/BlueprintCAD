@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10049</ID>
+  <commonNames>2-oxopropanal:D-fructose 1,6-bisphosphate glycerone-phosphotransferase</commonNames>
+  <def>Methylglyoxal + D-Fructose 1,6-bisphosphate &lt;=&gt; D-Glyceraldehyde 3-phosphate + 6-Deoxy-5-ketofructose 1-phosphate</def>
+  <equation>C00546 + C00354 &lt;=&gt; C00118 + C16848</equation>
+  <enzymes>
+    <string>2.2.1.11</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00400">Phenylalanine, tyrosine and tryptophan biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16305" value="4.1.2.13">fructose-bisphosphate aldolase / 6-deoxy-5-ketofructose 1-phosphate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00439">C00118_C00354</data>
+    <data name="RC02301">C00546_C16848</data>
+    <data name="RC03034">C00354_C16848</data>
+  </class>
+</reaction>

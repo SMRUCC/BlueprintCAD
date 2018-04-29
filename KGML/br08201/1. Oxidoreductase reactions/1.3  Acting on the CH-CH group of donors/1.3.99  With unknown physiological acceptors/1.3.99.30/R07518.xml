@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07518</ID>
+  <commonNames>15-cis-phytoene:acceptor oxidoreductase (3,4-didehydrolycopene-forming)</commonNames>
+  <def>Lycopene + Reduced acceptor + Oxygen &lt;=&gt; 3,4-Dehydrolycopene + Acceptor + H2O</def>
+  <equation>C05432 + C00030 + C00007 &lt;=&gt; C15867 + C00028 + C00001</equation>
+  <enzymes>
+    <string>1.3.99.30</string>
+  </enzymes>
+  <comment>Phytoene dehydrogenase(al-1)</comment>
+  <pathway>
+    <data name="rn00906">Carotenoid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15745" value="1.3.99.30">phytoene desaturase (3,4-didehydrolycopene-forming)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01214">C05432_C15867</data>
+  </class>
+</reaction>

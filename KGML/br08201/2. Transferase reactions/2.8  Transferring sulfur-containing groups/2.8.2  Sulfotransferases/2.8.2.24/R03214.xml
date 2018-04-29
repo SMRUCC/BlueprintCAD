@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03214</ID>
+  <commonNames>3'-Phosphoadenylylsulfate:desulfoglucosinolate sulfotransferase</commonNames>
+  <def>3'-Phosphoadenylyl sulfate + Desulfoglucotropeolin &lt;=&gt; Adenosine 3',5'-bisphosphate + Glucotropaeolin</def>
+  <equation>C00053 + C01069 &lt;=&gt; C00054 + C02153</equation>
+  <enzymes>
+    <string>2.8.2.24</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00966">Glucosinolate biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K11821" value="2.8.2.24">aromatic desulfoglucosinolate sulfotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00007">C00053_C00054</data>
+    <data name="RC00883">C01069_C02153</data>
+  </class>
+</reaction>

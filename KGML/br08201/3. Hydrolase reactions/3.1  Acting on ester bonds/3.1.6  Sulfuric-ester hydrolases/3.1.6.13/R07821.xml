@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07821</ID>
+  <commonNames>L-iduronate-2-sulfate 2-sulfohydrolase</commonNames>
+  <def>G13041 + H2O &lt;=&gt; G13042 + Sulfate</def>
+  <equation>G13041 + C00001 &lt;=&gt; G13042 + C00059</equation>
+  <enzymes>
+    <string>3.1.6.13</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00531">Glycosaminoglycan degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00076">Dermatan sulfate degradation</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01136" value="3.1.6.13">iduronate 2-sulfatase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

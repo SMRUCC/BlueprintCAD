@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07643</ID>
+  <commonNames>L-glutamate:histamine ligase</commonNames>
+  <def>ATP + L-Glutamate + Histamine &lt;=&gt; Products of ATP breakdown + N(alpha)-gamma-L-Glutamylhistamine</def>
+  <equation>C00002 + C00025 + C00388 &lt;=&gt; C07305 + C04138</equation>
+  <enzymes>
+    <string>6.3.2.18</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00090">C00025_C04138</data>
+    <data name="RC00096">C00388_C04138</data>
+  </class>
+</reaction>

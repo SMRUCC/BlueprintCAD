@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00836</ID>
+  <commonNames>UDP-glucose:D-glucose-6-phosphate 1-alpha-D-glucosyltransferase</commonNames>
+  <def>UDP-glucose + D-Glucose 6-phosphate &lt;=&gt; UDP + alpha,alpha'-Trehalose 6-phosphate</def>
+  <equation>C00029 + C00092 &lt;=&gt; C00015 + C00689</equation>
+  <enzymes>
+    <string>2.4.1.15</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00049">C00092_C00689</data>
+    <data name="RC02748">C00029_C00689</data>
+  </class>
+</reaction>

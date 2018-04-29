@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01807</ID>
+  <commonNames>Acetyl-CoA:N-acetylneuraminate 7-O-acetyltransferase</commonNames>
+  <def>Acetyl-CoA + N-Acetylneuraminate &lt;=&gt; CoA + N-Acetyl-7-O-acetylneuraminate</def>
+  <equation>C00024 + C00270 &lt;=&gt; C00010 + C04016</equation>
+  <enzymes>
+    <string>2.3.1.45</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00037">C00270_C04016</data>
+  </class>
+</reaction>

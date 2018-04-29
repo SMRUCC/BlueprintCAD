@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07249</ID>
+  <commonNames>acetyl-CoA:polysialic-acid O-acetyltransferase</commonNames>
+  <def>Acetyl-CoA + alpha-2,8-Linked polymer of sialic acid &lt;=&gt; CoA + Polysialic acid acetylated at O-9</def>
+  <equation>C00024 + C04466 &lt;=&gt; C00010 + C08721</equation>
+  <enzymes>
+    <string>2.3.1.136</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00041">C04466_C08721</data>
+  </class>
+</reaction>

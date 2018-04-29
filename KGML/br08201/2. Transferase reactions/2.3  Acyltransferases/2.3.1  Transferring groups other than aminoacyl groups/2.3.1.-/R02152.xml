@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02152</ID>
+  <def>Histamine + Acetyl-CoA &lt;=&gt; 4-(beta-Acetylaminoethyl)imidazole + CoA</def>
+  <equation>C00388 + C00024 &lt;=&gt; C05135 + C00010</equation>
+  <enzymes>
+    <string>2.3.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00340">Histidine metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00096">C00388_C05135</data>
+  </class>
+</reaction>

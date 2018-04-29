@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08641</ID>
+  <commonNames>2-(3'-methylthio)hexylmalate hydroxymutase</commonNames>
+  <def>2-(6'-Methylthio)hexylmalic acid &lt;=&gt; 3-(6'-Methylthio)hexylmalic acid</def>
+  <equation>C17226 &lt;=&gt; C17227</equation>
+  <enzymes>
+    <string>4.2.1.170</string>
+  </enzymes>
+  <comment>two-step reaction (similar to R10170, R03968+R04001)</comment>
+  <pathway>
+    <data name="rn00966">Glucosinolate biosynthesis</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01703" value="4.2.1.33">3-isopropylmalate/(R)-2-methylmalate dehydratase large subunit</KO:terms>
+    <KO:terms name="K21359" value="4.2.1.33">3-isopropylmalate/methylthioalkylmalate dehydratase small subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00497">C17226_C17227</data>
+  </class>
+</reaction>

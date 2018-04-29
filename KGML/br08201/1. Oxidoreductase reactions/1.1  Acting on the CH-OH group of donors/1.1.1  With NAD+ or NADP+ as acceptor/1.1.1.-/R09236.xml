@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09236</ID>
+  <def>2-Hydroxy-5-methylquinone + NADH + H+ &lt;=&gt; 2,4,5-Trihydroxytoluene + NAD+</def>
+  <equation>C18316 + C00004 + C00080 &lt;=&gt; C18317 + C00003</equation>
+  <enzymes>
+    <string>1.1.1</string>
+  </enzymes>
+  <comment>2-hydroxy-5-methylquinone reductase</comment>
+  <pathway>
+    <data name="rn00633">Nitrotoluene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC03021">C18316_C18317</data>
+  </class>
+</reaction>

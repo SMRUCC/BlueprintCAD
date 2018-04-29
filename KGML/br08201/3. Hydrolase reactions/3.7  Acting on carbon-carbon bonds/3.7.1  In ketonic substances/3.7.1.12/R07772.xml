@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07772</ID>
+  <commonNames>cobalt-precorrin 5A acylhydrolase</commonNames>
+  <def>Cobalt-precorrin 5A + H2O &lt;=&gt; Cobalt-precorrin 5B + Acetaldehyde</def>
+  <equation>C16242 + C00001 &lt;=&gt; C16243 + C00084</equation>
+  <enzymes>
+    <string>3.7.1.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K02189" value="3.7.1.12">cobalt-precorrin 5A hydrolase</KO:terms>
+    <KO:terms name="K13541" value="3.7.1.12">cobalt-precorrin 5A hydrolase / precorrin-3B C17-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01545">C00084_C16242</data>
+    <data name="RC02097">C16242_C16243</data>
+  </class>
+</reaction>

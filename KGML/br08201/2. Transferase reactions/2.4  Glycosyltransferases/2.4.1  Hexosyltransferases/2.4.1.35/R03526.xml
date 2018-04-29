@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03526</ID>
+  <commonNames>UDP-glucose:beta-D-glucosyltransferase (acceptor-unspecific)</commonNames>
+  <def>UDP-glucose + ROH &lt;=&gt; UDP + beta-D-Glucoside</def>
+  <equation>C00029 + C01335 &lt;=&gt; C00015 + C00963</equation>
+  <enzymes>
+    <string>2.4.1.35</string>
+  </enzymes>
+  <comment>general reaction</comment>
+  <pathway>
+    <data name="rn00500">Starch and sucrose metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class />
+</reaction>

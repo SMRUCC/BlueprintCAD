@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04452</ID>
+  <commonNames>1-Alkyl-2-acetyl-sn-glycero-3-phosphocholine acetohydrolase</commonNames>
+  <def>2-Acetyl-1-alkyl-sn-glycero-3-phosphocholine + H2O &lt;=&gt; 1-Organyl-2-lyso-sn-glycero-3-phosphocholine + Acetate</def>
+  <equation>C04598 + C00001 &lt;=&gt; C04317 + C00033</equation>
+  <enzymes>
+    <string>3.1.1.47</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00565">Ether lipid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01062" value="3.1.1.47">platelet-activating factor acetylhydrolase</KO:terms>
+    <KO:terms name="K16794" value="3.1.1.47">platelet-activating factor acetylhydrolase IB subunit alphaK16795</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00037">C04317_C04598</data>
+    <data name="RC00094">C00033_C04598</data>
+  </class>
+</reaction>

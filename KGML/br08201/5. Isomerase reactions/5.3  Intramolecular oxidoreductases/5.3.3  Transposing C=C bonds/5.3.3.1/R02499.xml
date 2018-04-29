@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02499</ID>
+  <commonNames>Testosterone delta5-delat4-isomerase;</commonNames>
+  <commonNames>Androst-5-ene-3beta,17beta-diol:NAD+ 3-oxidoreductase</commonNames>
+  <def>Testosterone + H+ + NADH &lt;=&gt; Androstenediol + NAD+</def>
+  <equation>C00535 + C00080 + C00004 &lt;=&gt; C04295 + C00003</equation>
+  <enzymes>
+    <string>1.1.1.145</string>
+    <string>5.3.3.1</string>
+  </enzymes>
+  <comment>NADPH (see R02500)</comment>
+  <pathway>
+    <data name="rn00140">Steroid hormone biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00070" value="1.1.1.145">3beta-hydroxy-Delta5-steroid dehydrogenase / steroid Delta-isomerase</KO:terms>
+    <KO:terms name="K01822" value="5.3.3.1">steroid Delta-isomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00146">C00535_C04295</data>
+  </class>
+</reaction>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06426</ID>
+  <commonNames>dTDP-3-amino-3,4,6-trideoxy-D-glucose:2-oxoglutarate aminotransferase</commonNames>
+  <def>dTDP-3-oxo-4,6-dideoxy-D-glucose + L-Glutamate &lt;=&gt; dTDP-3-amino-3,4,6-trideoxy-D-glucose + 2-Oxoglutarate</def>
+  <equation>C11909 + C00025 &lt;=&gt; C11910 + C00026</equation>
+  <enzymes>
+    <string>2.6.1.106</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00797">dTDP-D-desosamine biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13310" value="2.6.1.106">dTDP-3-amino-3,4,6-trideoxy-alpha-D-glucose transaminase</KO:terms>
+    <KO:terms name="K16436" value="2.6.1">dTDP-3-amino-2,3,6-trideoxy-4-keto-D-glucose/dTDP-3-amino-3,4,6-trideoxy-alpha-D-glucose/dTDP-2,6-dideoxy-D-kanosamine transaminase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC01514">C11909_C11910</data>
+  </class>
+</reaction>

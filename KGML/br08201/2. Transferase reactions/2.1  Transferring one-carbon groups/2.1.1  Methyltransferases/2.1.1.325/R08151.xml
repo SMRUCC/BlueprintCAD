@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08151</ID>
+  <commonNames>S-adenosyl-L-methionine:juvenile hormone III acid O-methyltransferase</commonNames>
+  <def>Juvenile hormone III acid + S-Adenosyl-L-methionine &lt;=&gt; Juvenile hormone III + S-Adenosyl-L-homocysteine</def>
+  <equation>C16504 + C00019 &lt;=&gt; C09694 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.325</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00981">Insect hormone biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K10718" value="2.1.1.325">juvenile hormone-III synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00460">C09694_C16504</data>
+  </class>
+</reaction>

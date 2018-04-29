@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06625</ID>
+  <commonNames>malonyl-CoA:malonyl-CoA malonyltransferase (3,5-dihydroxyphenylacetyl-CoA-forming)</commonNames>
+  <def>4 Malonyl-CoA &lt;=&gt; 3,5-Dihydroxyphenylacetyl-CoA + 3 CoA + 4 CO2 + H2O</def>
+  <equation>4 C00083 &lt;=&gt; C12324 + 3 C00010 + 4 C00011 + C00001</equation>
+  <enzymes>
+    <string>2.3.1.246</string>
+  </enzymes>
+  <comment>typeIII polyketide synthase, DpgA dehydratase/isomerase, DpgB+DpgD multi-step reaction</comment>
+  <pathway>
+    <data name="rn01055">Biosynthesis of vancomycin group antibiotics</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16424" value="2.3.1.246">3,5-dihydroxyphenylacetyl-CoA synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00083</data>
+    <data name="RC02933">C00083_C12324</data>
+  </class>
+</reaction>

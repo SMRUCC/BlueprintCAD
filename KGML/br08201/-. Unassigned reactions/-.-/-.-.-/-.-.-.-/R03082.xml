@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03082</ID>
+  <commonNames>(R)-Lactaldehyde:NAD+ oxidoreductase (glutathione-formylating)</commonNames>
+  <def>(R)-Lactaldehyde + Glutathione + NAD+ &lt;=&gt; (R)-S-Lactoylglutathione + NADH + H+</def>
+  <equation>C00937 + C00051 + C00003 &lt;=&gt; C03451 + C00004 + C00080</equation>
+  <enzymes />
+  <comment>two-step reaction, similar to R06982+R06983</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00004">C00051_C03451</data>
+    <data name="RC00846">C00937_C03451</data>
+  </class>
+</reaction>

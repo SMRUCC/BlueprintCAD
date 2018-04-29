@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01365</ID>
+  <commonNames>Butanoyl-CoA:acetoacetate CoA-transferase</commonNames>
+  <def>Butanoyl-CoA + Acetoacetate &lt;=&gt; Butanoic acid + Acetoacetyl-CoA</def>
+  <equation>C00136 + C00164 &lt;=&gt; C00246 + C00332</equation>
+  <enzymes>
+    <string>2.8.3.9</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00310">Lysine degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01034" value="2.8.3.8">acetate CoA/acetoacetate CoA-transferase alpha subunit</KO:terms>
+    <KO:terms name="K01035" value="2.8.3.8">acetate CoA/acetoacetate CoA-transferase beta subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00014">C00136_C00246  C00164_C00332</data>
+  </class>
+</reaction>

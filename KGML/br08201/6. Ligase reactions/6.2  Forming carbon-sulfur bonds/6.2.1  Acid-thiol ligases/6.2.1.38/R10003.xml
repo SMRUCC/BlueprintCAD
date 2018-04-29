@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10003</ID>
+  <commonNames>[(1R)-2,2,3-trimethyl-5-oxocyclopent-3-enyl]acetate:CoA ligase (AMP-forming)</commonNames>
+  <def>[(1R)-2,2,3-Trimethyl-5-oxocyclopent-3-enyl]acetate + ATP + CoA &lt;=&gt; AMP + Diphosphate + [(1R)-2,2,3-Trimethyl-5-oxocyclopent-3-enyl]acetyl-CoA</def>
+  <equation>C20271 + C00002 + C00010 &lt;=&gt; C00020 + C00013 + C07160</equation>
+  <enzymes>
+    <string>6.2.1.38</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C07160</data>
+    <data name="RC00014">C07160_C20271</data>
+  </class>
+</reaction>

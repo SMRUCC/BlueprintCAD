@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02302</ID>
+  <commonNames>5-Formiminotetrahydrofolate ammonia-lyase (cyclizing)</commonNames>
+  <def>5-Formiminotetrahydrofolate + H+ &lt;=&gt; 5,10-Methenyltetrahydrofolate + Ammonia</def>
+  <equation>C00664 + C00080 &lt;=&gt; C00445 + C00014</equation>
+  <enzymes>
+    <string>4.3.1.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00670">One carbon pool by folate</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01746" value="4.3.1.4">formiminotetrahydrofolate cyclodeaminase</KO:terms>
+    <KO:terms name="K13990" value="2.1.2.5">glutamate formiminotransferase / formiminotetrahydrofolate cyclodeaminase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00688">C00445_C00664</data>
+  </class>
+</reaction>

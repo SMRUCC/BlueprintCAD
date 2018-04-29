@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03095</ID>
+  <commonNames>Indoleacetate:L-lysine ligase (ADP-forming)</commonNames>
+  <def>ATP + Indole-3-acetate + L-Lysine &lt;=&gt; ADP + Orthophosphate + N(6)-[(Indol-3-yl)acetyl]-L-lysine</def>
+  <equation>C00002 + C00954 + C00047 &lt;=&gt; C00008 + C00009 + C04211</equation>
+  <enzymes>
+    <string>6.3.2.20</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00090">C00954_C04211</data>
+    <data name="RC00096">C00047_C04211</data>
+  </class>
+</reaction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05545</ID>
+  <def>1-Formyl-2-indanone + H2O &lt;=&gt; 2-Indanone + CO2 + 2 H+ + 2 e-</def>
+  <equation>C07726 + C00001 &lt;=&gt; C07727 + C00011 + 2 C00080 + 2 C05359</equation>
+  <enzymes />
+  <comment />
+  <pathway>
+    <data name="rn00624">Polycyclic aromatic hydrocarbon degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01416">C07726_C07727</data>
+  </class>
+</reaction>

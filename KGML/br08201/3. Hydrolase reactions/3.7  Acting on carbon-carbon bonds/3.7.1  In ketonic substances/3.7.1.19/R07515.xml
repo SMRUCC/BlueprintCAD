@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07515</ID>
+  <commonNames>2,6-dihydroxypseudooxynicotine hydrolase</commonNames>
+  <def>2,6-Dihydroxypseudooxynicotine + H2O &lt;=&gt; 2,6-Dihydroxypyridine + 4-Methylaminobutyrate</def>
+  <equation>C15986 + C00001 &lt;=&gt; C03056 + C15987</equation>
+  <enzymes>
+    <string>3.7.1.19</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00810">Nicotine degradation, pyridine pathway, nicotine =&gt; 2,6-dihydroxypyridine/succinate semialdehyde</data>
+  </module>
+  <orthology>
+    <KO:terms name="K19188" value="3.7.1.19">2,6-dihydroxypseudooxynicotine hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00800">C15986_C15987</data>
+    <data name="RC01921">C03056_C15986</data>
+  </class>
+</reaction>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06634</ID>
+  <commonNames>(S)-3,5-dihydroxyphenylglycine:2-oxoglutarate aminotransferase</commonNames>
+  <def>3,5-Dihydroxy-phenylglycine + 2-Oxoglutarate &lt;=&gt; 3,5-Dihydroxyphenylglyoxylate + L-Glutamate</def>
+  <equation>C12026 + C00026 &lt;=&gt; C12325 + C00025</equation>
+  <enzymes>
+    <string>2.6.1.103</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01055">Biosynthesis of vancomycin group antibiotics</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16423" value="2.6.1.103">(S)-3,5-dihydroxyphenylglycine transaminase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC01104">C12026_C12325</data>
+  </class>
+</reaction>

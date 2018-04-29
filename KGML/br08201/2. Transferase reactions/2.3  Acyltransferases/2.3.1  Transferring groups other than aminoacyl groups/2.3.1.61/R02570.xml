@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02570</ID>
+  <commonNames>succinyl-CoA:enzyme N6-(dihydrolipoyl)lysine S-succinyltransferase</commonNames>
+  <def>Succinyl-CoA + Enzyme N6-(dihydrolipoyl)lysine &lt;=&gt; CoA + [Dihydrolipoyllysine-residue succinyltransferase] S-succinyldihydrolipoyllysine</def>
+  <equation>C00091 + C15973 &lt;=&gt; C00010 + C16254</equation>
+  <enzymes>
+    <string>2.3.1.61</string>
+  </enzymes>
+  <comment>2-oxoglutarate dehydrogenase complex:dihydrolipoyllysine-residue succinyltransferase a part of multi-step reaction (see R08549, R01700+R02570+R07618) following after R01700</comment>
+  <pathway>
+    <data name="rn00020">Citrate cycle (TCA cycle)</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00009">Citrate cycle (TCA cycle, Krebs cycle)</data>
+    <data name="M00011">Citrate cycle, second carbon oxidation, 2-oxoglutarate =&gt; oxaloacetate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00658" value="2.3.1.61">2-oxoglutarate dehydrogenase E2 component (dihydrolipoamide succinyltransferase)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00091  C15973_C16254</data>
+    <data name="RC02727">C00091_C16254</data>
+  </class>
+</reaction>

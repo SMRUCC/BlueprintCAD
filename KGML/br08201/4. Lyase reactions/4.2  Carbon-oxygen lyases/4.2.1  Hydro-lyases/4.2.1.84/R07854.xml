@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07854</ID>
+  <commonNames>2-phenylacetamide hydro-lyase (nitrile-forming)</commonNames>
+  <def>Phenylacetonitrile + H2O &lt;=&gt; 2-Phenylacetamide</def>
+  <equation>C16074 + C00001 &lt;=&gt; C02505</equation>
+  <enzymes>
+    <string>4.2.1.84</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00643">Styrene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01721" value="4.2.1.84">nitrile hydratase subunit alpha</KO:terms>
+    <KO:terms name="K20807" value="4.2.1.84">nitrile hydratase subunit beta</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00483">C02505_C16074</data>
+  </class>
+</reaction>

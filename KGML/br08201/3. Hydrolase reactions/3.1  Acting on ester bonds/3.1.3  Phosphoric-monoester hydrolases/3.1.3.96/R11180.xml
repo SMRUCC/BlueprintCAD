@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11180</ID>
+  <commonNames>pseudouridine-5'-phosphate phosphohydrolase</commonNames>
+  <def>Pseudouridine 5'-phosphate + H2O &lt;=&gt; Pseudouridine + Orthophosphate</def>
+  <equation>C01168 + C00001 &lt;=&gt; C02067 + C00009</equation>
+  <enzymes>
+    <string>3.1.3.96</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K17623" value="3.1.3.96">pseudouridine 5'-phosphatase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00017">C01168_C02067</data>
+  </class>
+</reaction>

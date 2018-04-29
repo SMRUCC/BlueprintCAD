@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08235</ID>
+  <commonNames>6-mercaptopurin:oxygen oxidoreductase</commonNames>
+  <def>6-Mercaptopurine + 2 H2O + 2 Oxygen &lt;=&gt; 6-Thiourate + 2 Hydrogen peroxide</def>
+  <equation>C02380 + 2 C00001 + 2 C00007 &lt;=&gt; C16613 + 2 C00027</equation>
+  <enzymes>
+    <string>1.17.3.2</string>
+  </enzymes>
+  <comment>two-step reaction</comment>
+  <pathway>
+    <data name="rn00983">Drug metabolism - other enzymes</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00106" value="1.17.1.4">xanthine dehydrogenase/oxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02199">C02380_C16613</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

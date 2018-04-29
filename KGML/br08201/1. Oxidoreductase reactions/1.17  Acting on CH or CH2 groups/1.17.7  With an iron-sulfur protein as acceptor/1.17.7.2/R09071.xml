@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09071</ID>
+  <commonNames>7(1)-hydroxychlorophyll a:ferredoxin oxidoreductase</commonNames>
+  <def>7(1)-Hydroxychlorophyll a + 2 Reduced ferredoxin + 2 H+ &lt;=&gt; Chlorophyll a + 2 Oxidized ferredoxin + H2O</def>
+  <equation>C18151 + 2 C00138 + 2 C00080 &lt;=&gt; C05306 + 2 C00139 + C00001</equation>
+  <enzymes>
+    <string>1.17.7.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18010" value="1.17.7.2">7-hydroxymethyl chlorophyll a reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00269">C05306_C18151</data>
+  </class>
+</reaction>

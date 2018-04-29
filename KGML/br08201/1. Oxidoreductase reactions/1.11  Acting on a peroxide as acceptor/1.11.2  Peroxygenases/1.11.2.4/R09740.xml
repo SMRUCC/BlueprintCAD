@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09740</ID>
+  <commonNames>fatty acid:hydroperoxide oxidoreductase (2-hydroxylating)</commonNames>
+  <def>Fatty acid + Hydrogen peroxide &lt;=&gt; alpha-Hydroxy fatty acid + H2O</def>
+  <equation>C00162 + C00027 &lt;=&gt; C05102 + C00001</equation>
+  <enzymes>
+    <string>1.11.2.4</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K15629" value="1.11.2.4">fatty-acid peroxygenase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

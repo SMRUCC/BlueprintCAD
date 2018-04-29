@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01586</ID>
+  <commonNames>L-glutamate:methylamine 1,3-dicarboxypropyltransferase (N-methyl-L-glutamate-forming)</commonNames>
+  <def>Methylamine + L-Glutamate &lt;=&gt; Ammonia + N-Methyl-L-glutamate</def>
+  <equation>C00218 + C00025 &lt;=&gt; C00014 + C01046</equation>
+  <enzymes>
+    <string>2.1.1.21</string>
+  </enzymes>
+  <comment>methylamine-glutamate N-methyltransferase</comment>
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K22081" value="2.1.1.21">methylamine---glutamate N-methyltransferase subunit A</KO:terms>
+    <KO:terms name="K22082" value="2.1.1.21">methylamine---glutamate N-methyltransferase subunit B</KO:terms>
+    <KO:terms name="K22083" value="2.1.1.21">methylamine---glutamate N-methyltransferase subunit C</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00554">C00218_C01046</data>
+    <data name="RC02799">C00014_C00025</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01677</ID>
+  <commonNames>Guanosine ribohydrolase</commonNames>
+  <def>Guanosine + H2O &lt;=&gt; Guanine + D-Ribose</def>
+  <equation>C00387 + C00001 &lt;=&gt; C00242 + C00121</equation>
+  <enzymes>
+    <string>3.2.2.1</string>
+    <string>3.2.2.8</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00230">Purine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01239" value="3.2.2.1">purine nucleosidase</KO:terms>
+    <KO:terms name="K10213" value="3.2.2.8">ribosylpyrimidine nucleosidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00063">C00242_C00387</data>
+    <data name="RC00318">C00121_C00387</data>
+  </class>
+</reaction>

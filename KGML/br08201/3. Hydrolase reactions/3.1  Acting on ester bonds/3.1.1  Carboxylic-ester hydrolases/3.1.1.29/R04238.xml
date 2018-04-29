@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04238</ID>
+  <commonNames>Aminoacyl-tRNA aminoacylhydrolase</commonNames>
+  <def>N-Substituted aminoacyl-tRNA + H2O &lt;=&gt; N-Substituted amino acid + tRNA</def>
+  <equation>C03880 + C00001 &lt;=&gt; C03523 + C00066</equation>
+  <enzymes>
+    <string>3.1.1.29</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00055">C00066_C03880</data>
+    <data name="RC00523">C03523_C03880</data>
+  </class>
+</reaction>

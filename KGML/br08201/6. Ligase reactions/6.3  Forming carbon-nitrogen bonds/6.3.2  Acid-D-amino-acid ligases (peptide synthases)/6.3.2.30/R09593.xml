@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09593</ID>
+  <commonNames>cyanophycin:L-arginine ligase (ADP-forming)</commonNames>
+  <def>ATP + [L-Asp(4-L-Arg)]n-L-Asp + L-Arginine &lt;=&gt; ADP + Orthophosphate + [L-Asp(4-L-Arg)]n+1</def>
+  <equation>C00002 + C19710 + C00062 &lt;=&gt; C00008 + C00009 + C19713</equation>
+  <enzymes>
+    <string>6.3.2.30</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C00062_C19713</data>
+    <data name="RC00090">C19710_C19713</data>
+  </class>
+</reaction>

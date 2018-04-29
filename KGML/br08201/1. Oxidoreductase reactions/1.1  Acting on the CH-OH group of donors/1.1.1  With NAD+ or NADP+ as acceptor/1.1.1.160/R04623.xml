@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04623</ID>
+  <commonNames>(+/-)-5-[(tert-Butylamino)-2'-hydroxypropoxyl]-1,2,3,4-tetrahydro-1-naphthol:NADP+ oxidoreductase</commonNames>
+  <def>(+/-)-5-[(tert-Butylamino)-2'-hydroxypropoxy]-1,2,3,4-tetrahydro-1-naphthol + NADP+ &lt;=&gt; (+/-)-5-[(tert-Butylamino)-2'-hydroxypropoxy]-3,4-dihydro-1(2H)-naphthalenone + NADPH + H+</def>
+  <equation>C04875 + C00006 &lt;=&gt; C04883 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.160</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00234">C04875_C04883</data>
+  </class>
+</reaction>

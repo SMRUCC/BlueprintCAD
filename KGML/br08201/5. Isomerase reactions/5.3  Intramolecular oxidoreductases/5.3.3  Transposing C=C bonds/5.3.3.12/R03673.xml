@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03673</ID>
+  <commonNames>L-Dopachrome delta7-delta2-isomerase</commonNames>
+  <def>L-Dopachrome &lt;=&gt; 5,6-Dihydroxyindole-2-carboxylate</def>
+  <equation>C01693 &lt;=&gt; C04185</equation>
+  <enzymes>
+    <string>5.3.3.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01827" value="5.3.3.12">dopachrome tautomerase</KO:terms>
+    <KO:terms name="K22203" value="5.3.3.12">dopachrome tautomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00971">C01693_C04185</data>
+  </class>
+</reaction>

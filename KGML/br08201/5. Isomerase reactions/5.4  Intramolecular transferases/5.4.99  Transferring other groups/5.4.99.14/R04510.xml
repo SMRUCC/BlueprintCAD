@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04510</ID>
+  <commonNames>4-Carboxymethyl-4-methylbut-2-en-1,4-olide methylmutase</commonNames>
+  <def>4-Methylmuconolactone &lt;=&gt; 3-Methylmuconolactone</def>
+  <equation>C04559 &lt;=&gt; C04558</equation>
+  <enzymes>
+    <string>5.4.99.14</string>
+  </enzymes>
+  <comment>multi-step reaction (lactone-lyase x2) possibly intermediate (bislactone)</comment>
+  <pathway>
+    <data name="rn00623">Toluene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01169">C04558_C04559</data>
+  </class>
+</reaction>

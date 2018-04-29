@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06659</ID>
+  <def>Urdamycinone B + dTDP-beta-L-rhodinose &lt;=&gt; 100-1 + dTDP</def>
+  <equation>C12404 + C12447 &lt;=&gt; C12405 + C00363</equation>
+  <enzymes />
+  <comment>glycosyltransferase, UrdGT1c</comment>
+  <pathway>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00363_C12447</data>
+    <data name="RC00049">C12404_C12405</data>
+  </class>
+</reaction>

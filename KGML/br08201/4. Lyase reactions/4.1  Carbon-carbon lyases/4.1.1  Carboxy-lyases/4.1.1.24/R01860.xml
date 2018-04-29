@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01860</ID>
+  <commonNames>4-Aminobenzoate carboxy-lyase</commonNames>
+  <def>4-Aminobenzoate &lt;=&gt; Aniline + CO2</def>
+  <equation>C00568 &lt;=&gt; C00292 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.24</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00391">C00292_C00568</data>
+  </class>
+</reaction>

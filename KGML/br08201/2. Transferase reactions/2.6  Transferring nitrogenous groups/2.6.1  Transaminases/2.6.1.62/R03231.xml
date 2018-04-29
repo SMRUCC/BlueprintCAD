@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03231</ID>
+  <commonNames>S-Adenosyl-L-methionine:8-amino-7-oxononanoate aminotransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + 8-Amino-7-oxononanoate &lt;=&gt; S-Adenosyl-4-methylthio-2-oxobutanoate + 7,8-Diaminononanoate</def>
+  <equation>C00019 + C01092 &lt;=&gt; C04425 + C01037</equation>
+  <enzymes>
+    <string>2.6.1.62</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00780">Biotin metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00123">Biotin biosynthesis, pimeloyl-ACP/CoA =&gt; biotin</data>
+    <data name="M00573">Biotin biosynthesis, BioI pathway, long-chain-acyl-ACP =&gt; pimeloyl-ACP =&gt; biotin</data>
+    <data name="M00577">Biotin biosynthesis, BioW pathway, pimelate =&gt; pimeloyl-CoA =&gt; biotin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00833" value="2.6.1.62">adenosylmethionine---8-amino-7-oxononanoate aminotransferase</KO:terms>
+    <KO:terms name="K19562" value="6.3.3.3">bifunctional dethiobiotin synthetase / adenosylmethionine---8-amino-7-oxononanoate aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00019_C04425</data>
+    <data name="RC00887">C01037_C01092</data>
+  </class>
+</reaction>

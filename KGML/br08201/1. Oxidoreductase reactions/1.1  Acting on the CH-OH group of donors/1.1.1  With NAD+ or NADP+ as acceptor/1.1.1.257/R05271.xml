@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05271</ID>
+  <commonNames>4-(hydroxymethyl)benzenesulfonate:NAD+ oxidoreductase</commonNames>
+  <def>4-Sulfobenzyl alcohol + NAD+ &lt;=&gt; 4-Sulfobenzaldehyde + NADH + H+</def>
+  <equation>C06678 + C00003 &lt;=&gt; C06679 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.257</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00623">Toluene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K19629" value="1.1.1.257">4-(hydroxymethyl)benzenesulfonate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00116">C06678_C06679</data>
+  </class>
+</reaction>

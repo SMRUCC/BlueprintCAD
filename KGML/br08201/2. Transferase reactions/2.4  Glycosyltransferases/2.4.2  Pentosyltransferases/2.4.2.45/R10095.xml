@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10095</ID>
+  <commonNames>trans,octacis-decaprenylphospho-beta-D-ribofuranose 5-phosphate:diphosphate phospho-alpha-D-ribosyltransferase</commonNames>
+  <def>Decaprenol phosphate + 5-Phospho-alpha-D-ribose 1-diphosphate &lt;=&gt; trans,octacis-Decaprenylphospho-beta-D-ribofuranose 5-phosphate + Diphosphate</def>
+  <equation>C02970 + C00119 &lt;=&gt; C20352 + C00013</equation>
+  <enzymes>
+    <string>2.4.2.45</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K14136" value="2.4.2.45">decaprenyl-phosphate phosphoribosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C02970_C20352</data>
+  </class>
+</reaction>

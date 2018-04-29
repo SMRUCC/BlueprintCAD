@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08229</ID>
+  <commonNames>5-fluorouridine:phosphate alpha-D-ribosyltransferase</commonNames>
+  <def>5-FU + alpha-D-Ribose 1-phosphate &lt;=&gt; 5-Fluorouridine + Orthophosphate</def>
+  <equation>C07649 + C00620 &lt;=&gt; C16633 + C00009</equation>
+  <enzymes>
+    <string>2.4.2.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00983">Drug metabolism - other enzymes</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00757" value="2.4.2.3">uridine phosphorylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00063">C07649_C16633</data>
+  </class>
+</reaction>

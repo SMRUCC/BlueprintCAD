@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02762</ID>
+  <commonNames>2-hydroxymuconate semialdehyde:NAD+ 6-oxidoreductase</commonNames>
+  <def>2-Hydroxymuconate semialdehyde + NAD+ + H2O &lt;=&gt; 2-Hydroxymuconate + NADH + H+</def>
+  <equation>C00682 + C00003 + C00001 &lt;=&gt; C02501 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.85</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00362">Benzoate degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00569">Catechol meta-cleavage, catechol =&gt; acetyl-CoA / 4-methylcatechol =&gt; propanoyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K10217" value="1.2.1.32">aminomuconate-semialdehyde/2-hydroxymuconate-6-semialdehyde dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00218">C00682_C02501</data>
+  </class>
+</reaction>

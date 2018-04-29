@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00054</ID>
+  <commonNames>orsellinate-depside hydrolase</commonNames>
+  <def>Lecanoric acid + H2O &lt;=&gt; 2 Orsellinate</def>
+  <equation>C02868 + C00001 &lt;=&gt; 2 C01839</equation>
+  <enzymes>
+    <string>3.1.1.40</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00475">C01839_C02868</data>
+    <data name="RC00476">C01839_C02868</data>
+  </class>
+</reaction>

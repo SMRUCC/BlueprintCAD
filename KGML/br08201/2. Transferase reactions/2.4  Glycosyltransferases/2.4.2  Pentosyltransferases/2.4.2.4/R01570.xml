@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01570</ID>
+  <commonNames>thymidine:phosphate deoxy-alpha-D-ribosyltransferase</commonNames>
+  <def>Thymidine + Orthophosphate &lt;=&gt; Thymine + 2-Deoxy-D-ribose 1-phosphate</def>
+  <equation>C00214 + C00009 &lt;=&gt; C00178 + C00672</equation>
+  <enzymes>
+    <string>2.4.2.2</string>
+    <string>2.4.2.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00240">Pyrimidine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00756" value="2.4.2.2">pyrimidine-nucleoside phosphorylase</KO:terms>
+    <KO:terms name="K00758" value="2.4.2.4">thymidine phosphorylase</KO:terms>
+    <KO:terms name="K09913" value="2.4.2.1">purine/pyrimidine-nucleoside phosphorylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00063">C00178_C00214</data>
+  </class>
+</reaction>

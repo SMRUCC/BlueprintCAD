@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01602</ID>
+  <commonNames>D-glucose 1-epimerase</commonNames>
+  <def>alpha-D-Glucose &lt;=&gt; beta-D-Glucose</def>
+  <equation>C00267 &lt;=&gt; C00221</equation>
+  <enzymes>
+    <string>5.1.3.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00010">Glycolysis / Gluconeogenesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01785" value="5.1.3.3">aldose 1-epimerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00563">C00221_C00267</data>
+  </class>
+</reaction>

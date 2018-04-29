@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10782</ID>
+  <commonNames>4-hydroxybutanoyl-CoA hydro-lyase</commonNames>
+  <def>4-Hydroxybutyryl-CoA &lt;=&gt; Crotonoyl-CoA + H2O</def>
+  <equation>C11062 &lt;=&gt; C00877 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.120</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00650">Butanoate metabolism</data>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00374">Dicarboxylate-hydroxybutyrate cycle</data>
+    <data name="M00375">Hydroxypropionate-hydroxybutylate cycle</data>
+  </module>
+  <orthology>
+    <KO:terms name="K14534" value="4.2.1.120">4-hydroxybutyryl-CoA dehydratase / vinylacetyl-CoA-Delta-isomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03277">C00877_C11062</data>
+  </class>
+</reaction>

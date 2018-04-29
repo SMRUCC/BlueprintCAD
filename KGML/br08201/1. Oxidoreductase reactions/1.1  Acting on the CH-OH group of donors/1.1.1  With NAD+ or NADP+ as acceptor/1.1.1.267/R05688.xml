@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05688</ID>
+  <commonNames>1-Deoxy-D-xylulose-5-phosphate isomeroreductase</commonNames>
+  <def>2-C-Methyl-D-erythritol 4-phosphate + NADP+ &lt;=&gt; 1-Deoxy-D-xylulose 5-phosphate + NADPH + H+</def>
+  <equation>C11434 + C00006 &lt;=&gt; C11437 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.267</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00900">Terpenoid backbone biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00096">C5 isoprenoid biosynthesis, non-mevalonate pathway</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00099" value="1.1.1.267">1-deoxy-D-xylulose-5-phosphate reductoisomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC01452">C11434_C11437</data>
+  </class>
+</reaction>

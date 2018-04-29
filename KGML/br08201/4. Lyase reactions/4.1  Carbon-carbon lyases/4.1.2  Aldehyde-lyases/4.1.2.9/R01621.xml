@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01621</ID>
+  <commonNames>D-xylulose 5-phosphate D-glyceraldehyde-3-phosphate-lyase (adding phosphate; acetyl-phosphate-forming)</commonNames>
+  <def>D-Xylulose 5-phosphate + Orthophosphate &lt;=&gt; Acetyl phosphate + D-Glyceraldehyde 3-phosphate + H2O</def>
+  <equation>C00231 + C00009 &lt;=&gt; C00227 + C00118 + C00001</equation>
+  <enzymes>
+    <string>4.1.2.9</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00030">Pentose phosphate pathway</data>
+    <data name="rn00710">Carbon fixation in photosynthetic organisms</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01621" value="4.1.2.9">xylulose-5-phosphate/fructose-6-phosphate phosphoketolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00032">C00118_C00231</data>
+  </class>
+</reaction>

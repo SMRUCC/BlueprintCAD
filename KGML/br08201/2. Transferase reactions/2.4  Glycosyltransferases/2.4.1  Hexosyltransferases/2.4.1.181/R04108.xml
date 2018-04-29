@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04108</ID>
+  <commonNames>UDPglucose:hydroxyanthraquinone O-glucosyltransferase</commonNames>
+  <def>UDP-glucose + Hydroxyanthraquinone &lt;=&gt; UDP + Glucosyloxyanthraquinone</def>
+  <equation>C00029 + C02980 &lt;=&gt; C00015 + C03503</equation>
+  <enzymes>
+    <string>2.4.1.181</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00171">C02980_C03503</data>
+  </class>
+</reaction>

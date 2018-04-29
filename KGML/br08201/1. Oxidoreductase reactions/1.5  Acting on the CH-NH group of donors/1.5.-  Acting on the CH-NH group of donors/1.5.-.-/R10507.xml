@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10507</ID>
+  <commonNames>L-proline:(acceptor) oxidoreductase</commonNames>
+  <def>L-Proline + FAD &lt;=&gt; (S)-1-Pyrroline-5-carboxylate + FADH2</def>
+  <equation>C00148 + C00016 &lt;=&gt; C03912 + C01352</equation>
+  <enzymes>
+    <string>1.5</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+    <data name="rn00332">Carbapenem biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00318" value="1.5">proline dehydrogenase</KO:terms>
+    <KO:terms name="K18318" value="1.5">carbapenem biosynthesis protein, putative proline dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00083">C00148_C03912</data>
+    <data name="RC00126">C00016_C01352</data>
+  </class>
+</reaction>

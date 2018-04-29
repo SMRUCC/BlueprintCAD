@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06830</ID>
+  <def>2-Aminomalonate semialdehyde &lt;=&gt; Aminoacetaldehyde + CO2</def>
+  <equation>C11822 &lt;=&gt; C06735 + C00011</equation>
+  <enzymes>
+    <string>1.1.1.276</string>
+    <string>1.1.1.387</string>
+  </enzymes>
+  <comment>spontaneous second step of two-step reaction (see R10984, R06126+R06830) second step of two-step reaction (see R10986, R10985+R06830)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01634">C06735_C11822</data>
+  </class>
+</reaction>

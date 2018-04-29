@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09997</ID>
+  <commonNames>methanethiol:coenzyme M methyltransferase</commonNames>
+  <def>Methanethiol + Coenzyme M &lt;=&gt; 2-(Methylthio)ethanesulfonate + Hydrogen sulfide</def>
+  <equation>C00409 + C03576 &lt;=&gt; C03920 + C00283</equation>
+  <enzymes>
+    <string>2.1.1.251</string>
+  </enzymes>
+  <comment>two-step reaction (see R10001+R10000)</comment>
+  <pathway>
+    <data name="rn00920">Sulfur metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16954" value="2.1.1.251">methylthiol:coenzyme M methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00035">C03576_C03920</data>
+  </class>
+</reaction>

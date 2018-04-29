@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09282</ID>
+  <commonNames>3-methylfumaryl-CoA hydratase;</commonNames>
+  <commonNames>(3S)-citramalyl-CoA hydro-lyase (3-methylfumaryl-CoA-forming)</commonNames>
+  <def>3-Methylfumaryl-CoA + H2O &lt;=&gt; (3S)-Citramalyl-CoA</def>
+  <equation>C18323 + C00001 &lt;=&gt; C01011</equation>
+  <enzymes>
+    <string>4.2.1.153</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00376">3-Hydroxypropionate bi-cycle</data>
+  </module>
+  <orthology>
+    <KO:terms name="K09709" value="4.2.1.153">3-methylfumaryl-CoA hydratase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02479">C01011_C18323</data>
+  </class>
+</reaction>

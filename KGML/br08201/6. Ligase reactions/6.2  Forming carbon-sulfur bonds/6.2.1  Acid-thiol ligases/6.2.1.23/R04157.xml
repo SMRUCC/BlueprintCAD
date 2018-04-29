@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04157</ID>
+  <commonNames>alpha(omega)-Dicarboxylic acid:CoA ligase (AMP-forming)</commonNames>
+  <def>ATP + alpha,omega-Dicarboxylic acid + CoA &lt;=&gt; AMP + Diphosphate + omega-Carboxyacyl-CoA</def>
+  <equation>C00002 + C04025 + C00010 &lt;=&gt; C00020 + C00013 + C03188</equation>
+  <enzymes>
+    <string>6.2.1.23</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C03188</data>
+    <data name="RC00014">C03188_C04025</data>
+  </class>
+</reaction>

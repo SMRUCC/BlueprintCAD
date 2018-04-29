@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00644</ID>
+  <commonNames>L-ascorbate:hydrogen-peroxide oxidoreductase</commonNames>
+  <def>Ascorbate + Hydrogen peroxide &lt;=&gt; Dehydroascorbate + 2 H2O</def>
+  <equation>C00072 + C00027 &lt;=&gt; C05422 + 2 C00001</equation>
+  <enzymes>
+    <string>1.11.1.11</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00480">Glutathione metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00434" value="1.11.1.11">L-ascorbate peroxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00092">C00072_C05422</data>
+  </class>
+</reaction>

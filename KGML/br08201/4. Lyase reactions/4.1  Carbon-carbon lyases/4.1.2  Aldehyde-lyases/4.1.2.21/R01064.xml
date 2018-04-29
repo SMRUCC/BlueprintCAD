@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01064</ID>
+  <commonNames>2-dehydro-3-deoxy-6-phospho-D-galactonate D-glyceraldehyde-3-phospho-lyase (pyruvate-forming)</commonNames>
+  <def>2-Dehydro-3-deoxy-6-phospho-D-galactonate &lt;=&gt; Pyruvate + D-Glyceraldehyde 3-phosphate</def>
+  <equation>C01286 &lt;=&gt; C00022 + C00118</equation>
+  <enzymes>
+    <string>4.1.2.21</string>
+    <string>4.1.2.55</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00052">Galactose metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00552">D-galactonate degradation, De Ley-Doudoroff pathway, D-galactonate =&gt; glycerate-3P</data>
+    <data name="M00633">Semi-phosphorylative Entner-Doudoroff pathway, gluconate/galactonate =&gt; glycerate-3P</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01631" value="4.1.2.21">2-dehydro-3-deoxyphosphogalactonate aldolase</KO:terms>
+    <KO:terms name="K11395" value="4.1.2.55">2-dehydro-3-deoxy-phosphogluconate/2-dehydro-3-deoxy-6-phosphogalactonate aldolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00307">C00022_C01286</data>
+    <data name="RC00435">C00118_C01286</data>
+  </class>
+</reaction>

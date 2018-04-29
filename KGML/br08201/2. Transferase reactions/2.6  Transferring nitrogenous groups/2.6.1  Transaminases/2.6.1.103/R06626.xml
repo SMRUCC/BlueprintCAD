@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06626</ID>
+  <def>4-Hydroxyphenylglyoxylate + L-Tyrosine &lt;=&gt; L-4-Hydroxyphenylglycine + 3-(4-Hydroxyphenyl)pyruvate</def>
+  <equation>C03590 + C00082 &lt;=&gt; C12323 + C01179</equation>
+  <enzymes>
+    <string>2.6.1.103</string>
+  </enzymes>
+  <comment>L-hydroxyphenylglycine transaminase,HpgT</comment>
+  <pathway>
+    <data name="rn00261">Monobactam biosynthesis</data>
+    <data name="rn01055">Biosynthesis of vancomycin group antibiotics</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16423" value="2.6.1.103">(S)-3,5-dihydroxyphenylglycine transaminase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00082_C01179</data>
+    <data name="RC01104">C03590_C12323</data>
+  </class>
+</reaction>

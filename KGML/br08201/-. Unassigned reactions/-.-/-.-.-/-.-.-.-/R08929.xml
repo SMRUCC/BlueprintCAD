@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08929</ID>
+  <def>dTDP-2,6-dideoxy-D-kanosamine &lt;=&gt; dTDP-D-angolosamine</def>
+  <equation>C18030 &lt;=&gt; C18031</equation>
+  <enzymes />
+  <comment>N-methyltransferase incomplete reaction (unidentified methyl-donors, possibly SAM[CPD:C00019]) possibly two-step reaction</comment>
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00803">dTDP-D-angolosamine biosynthesis</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC01515">C18030_C18031</data>
+  </class>
+</reaction>

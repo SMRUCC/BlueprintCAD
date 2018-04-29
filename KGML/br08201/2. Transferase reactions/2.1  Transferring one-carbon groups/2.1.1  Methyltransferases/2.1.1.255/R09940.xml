@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09940</ID>
+  <commonNames>S-adenosyl-L-methionine:geranyl-diphosphate 2-C-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Geranyl diphosphate &lt;=&gt; S-Adenosyl-L-homocysteine + (E)-2-Methylgeranyl diphosphate</def>
+  <equation>C00019 + C00341 &lt;=&gt; C00021 + C20235</equation>
+  <enzymes>
+    <string>2.1.1.255</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC02736">C00341_C20235</data>
+  </class>
+</reaction>

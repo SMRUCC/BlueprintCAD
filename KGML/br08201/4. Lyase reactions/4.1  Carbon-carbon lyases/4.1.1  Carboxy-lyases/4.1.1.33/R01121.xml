@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01121</ID>
+  <commonNames>ATP:(R)-5-diphosphomevalonate carboxy-lyase (adding ATP; isopentenyl-diphosphate-forming);</commonNames>
+  <commonNames>ATP:(R)-5-diphosphomevalonate carboxy-lyase (dehydrating)</commonNames>
+  <def>ATP + (R)-5-Diphosphomevalonate &lt;=&gt; ADP + Orthophosphate + Isopentenyl diphosphate + CO2</def>
+  <equation>C00002 + C01143 &lt;=&gt; C00008 + C00009 + C00129 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.33</string>
+  </enzymes>
+  <comment>possibly intermediate ((R)-5-diphospho-3-phosphomevalonate)</comment>
+  <pathway>
+    <data name="rn00900">Terpenoid backbone biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00095">C5 isoprenoid biosynthesis, mevalonate pathway</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01597" value="4.1.1.33">diphosphomevalonate decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00453">C00129_C01143</data>
+  </class>
+</reaction>

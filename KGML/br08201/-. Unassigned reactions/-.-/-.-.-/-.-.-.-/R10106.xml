@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10106</ID>
+  <commonNames>L-arginine,NADH:oxygen oxidoreductase (nitric-oxide-forming)</commonNames>
+  <def>2 L-Arginine + 3 NADH + 3 H+ + 4 Oxygen &lt;=&gt; 2 L-Citrulline + 2 Nitric oxide + 3 NAD+ + 4 H2O</def>
+  <equation>2 C00062 + 3 C00004 + 3 C00080 + 4 C00007 &lt;=&gt; 2 C00327 + 2 C00533 + 3 C00003 + 4 C00001</equation>
+  <enzymes />
+  <comment>multi-step reaction (see R10107+R10108) NADPH (see R00557)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00177">C00062_C00327</data>
+  </class>
+</reaction>

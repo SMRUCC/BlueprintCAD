@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07415</ID>
+  <def>gamma-L-Glutamylputrescine + H2O + Oxygen &lt;=&gt; gamma-Glutamyl-gamma-aminobutyraldehyde + Ammonia + Hydrogen peroxide</def>
+  <equation>C15699 + C00001 + C00007 &lt;=&gt; C15700 + C00014 + C00027</equation>
+  <enzymes>
+    <string>1.4.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00136">GABA biosynthesis, prokaryotes, putrescine =&gt; GABA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K09471" value="1.4.3">gamma-glutamylputrescine oxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00062">C15699_C15700</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

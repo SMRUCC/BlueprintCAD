@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09908</ID>
+  <commonNames>(3S)-2,3-epoxy-2,3-dihydrosqualene mutase (cyclizing, achilleol-B-forming)</commonNames>
+  <def>(S)-2,3-Epoxysqualene &lt;=&gt; Achilleol B</def>
+  <equation>C01054 &lt;=&gt; C20187</equation>
+  <enzymes>
+    <string>5.4.99.48</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00909">Sesquiterpenoid and triterpenoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K19011" value="5.4.99.48">achilleol B synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02710">C01054_C20187</data>
+  </class>
+</reaction>

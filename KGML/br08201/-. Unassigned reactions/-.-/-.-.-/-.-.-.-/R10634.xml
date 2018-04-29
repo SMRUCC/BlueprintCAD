@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10634</ID>
+  <def>NAD+ + Protein N6-acetyl-L-lysine + H2O &lt;=&gt; Nicotinamide + Protein lysine + O-Acetyl-ADP-ribose + H+</def>
+  <equation>C00003 + C20743 + C00001 &lt;=&gt; C00153 + C02188 + C20658 + C00080</equation>
+  <enzymes />
+  <comment>Sirtuin</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00033">C00003_C00153</data>
+    <data name="RC00096">C02188_C20743</data>
+  </class>
+</reaction>

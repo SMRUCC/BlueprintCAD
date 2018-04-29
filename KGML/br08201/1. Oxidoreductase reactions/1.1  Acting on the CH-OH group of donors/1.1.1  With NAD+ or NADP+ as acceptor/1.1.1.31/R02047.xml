@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02047</ID>
+  <commonNames>3-Hydroxy-2-methylpropanoate:NAD+ oxidoreductase</commonNames>
+  <def>3-Hydroxy-2-methylpropanoate + NAD+ &lt;=&gt; 2-Methyl-3-oxopropanoate + NADH + H+</def>
+  <equation>C01188 + C00003 &lt;=&gt; C00349 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.31</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00099">C00349_C01188</data>
+  </class>
+</reaction>

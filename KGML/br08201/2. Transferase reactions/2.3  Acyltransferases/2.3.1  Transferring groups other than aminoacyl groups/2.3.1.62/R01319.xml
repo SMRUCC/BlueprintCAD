@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01319</ID>
+  <commonNames>Acyl-CoA:2-acyl-sn-glycero-3-phosphocholine O-acyltransferase</commonNames>
+  <def>Acyl-CoA + 2-Acyl-sn-glycero-3-phosphocholine &lt;=&gt; CoA + Phosphatidylcholine</def>
+  <equation>C00040 + C04233 &lt;=&gt; C00010 + C00157</equation>
+  <enzymes>
+    <string>2.3.1.62</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00564">Glycerophospholipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C00040</data>
+    <data name="RC00041">C00157_C04233</data>
+  </class>
+</reaction>

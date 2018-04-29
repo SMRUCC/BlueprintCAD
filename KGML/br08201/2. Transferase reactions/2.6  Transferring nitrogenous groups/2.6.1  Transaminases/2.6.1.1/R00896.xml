@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00896</ID>
+  <commonNames>L-cysteine:2-oxoglutarate aminotransferase</commonNames>
+  <def>L-Cysteine + 2-Oxoglutarate &lt;=&gt; Mercaptopyruvate + Glutamate</def>
+  <equation>C00097 + C00026 &lt;=&gt; C00957 + C00302</equation>
+  <enzymes>
+    <string>2.6.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00270">Cysteine and methionine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00811" value="2.6.1.1">aspartate aminotransferase, chloroplastic</KO:terms>
+    <KO:terms name="K00812" value="2.6.1.1">aspartate aminotransferase</KO:terms>
+    <KO:terms name="K00813" value="2.6.1.1">aspartate aminotransferase</KO:terms>
+    <KO:terms name="K11358" value="2.6.1.1">aspartate aminotransferase</KO:terms>
+    <KO:terms name="K14454" value="2.6.1.1">aspartate aminotransferase, cytoplasmic</KO:terms>
+    <KO:terms name="K14455" value="2.6.1.1">aspartate aminotransferase, mitochondrial</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00026_C00302  C00097_C00957</data>
+  </class>
+</reaction>

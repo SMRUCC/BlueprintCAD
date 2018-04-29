@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09091</ID>
+  <def>Vanillylamine + 8-Methyl-6-nonenoic acid &lt;=&gt; Capsaicin</def>
+  <equation>C16666 + C18202 &lt;=&gt; C06866</equation>
+  <enzymes />
+  <comment>incomplete reaction</comment>
+  <pathway>
+    <data name="rn00360">Phenylalanine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00350">Capsaicin biosynthesis, L-Phenylalanine =&gt; Capsaicin</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC00090">C06866_C18202</data>
+    <data name="RC00096">C06866_C16666</data>
+  </class>
+</reaction>

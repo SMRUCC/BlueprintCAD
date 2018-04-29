@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11219</ID>
+  <commonNames>S-adenosyl-L-methionine:[protein]-L-arginine N-methyltransferase ([protein]-N(omega),N(omega)-dimethyl-L-arginine-forming)</commonNames>
+  <def>2 S-Adenosyl-L-methionine + Protein-L-arginine &lt;=&gt; 2 S-Adenosyl-L-homocysteine + Protein N(omega),N(omega)-dimethyl-L-arginine</def>
+  <equation>2 C00019 + C00613 &lt;=&gt; 2 C00021 + C21188</equation>
+  <enzymes>
+    <string>2.1.1.319</string>
+  </enzymes>
+  <comment>two-step reaction (see R11216+R11217)</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K05931" value="2.1.1.319">type I protein arginine methyltransferase</KO:terms>
+    <KO:terms name="K11434" value="2.1.1.319">type I protein arginine methyltransferase</KO:terms>
+    <KO:terms name="K11435" value="2.1.1.319">type I protein arginine methyltransferase</KO:terms>
+    <KO:terms name="K11436" value="2.1.1.319">type I protein arginine methyltransferase</KO:terms>
+    <KO:terms name="K11437" value="2.1.1.319">type I protein arginine methyltransferase</KO:terms>
+    <KO:terms name="K11439" value="2.1.1.319">type I protein arginine methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC03390">C00613_C21188</data>
+  </class>
+</reaction>

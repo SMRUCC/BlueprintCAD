@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05587</ID>
+  <def>Benzoylsuccinyl-CoA + CoA &lt;=&gt; Benzoyl-CoA + Succinyl-CoA</def>
+  <equation>C09820 + C00010 &lt;=&gt; C00512 + C00091</equation>
+  <enzymes>
+    <string>2.3.1</string>
+  </enzymes>
+  <comment>BbsB</comment>
+  <pathway>
+    <data name="rn00623">Toluene degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00418">Toluene degradation, anaerobic, toluene =&gt; benzoyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K07549" value="2.3.1">benzoylsuccinyl-CoA thiolase BbsA subunit</KO:terms>
+    <KO:terms name="K07550" value="2.3.1">benzoylsuccinyl-CoA thiolase BbsB subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00512</data>
+    <data name="RC01428">C00091_C09820</data>
+    <data name="RC02904">C00512_C09820</data>
+  </class>
+</reaction>

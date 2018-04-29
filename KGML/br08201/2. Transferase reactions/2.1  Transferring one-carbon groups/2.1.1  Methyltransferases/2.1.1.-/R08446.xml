@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08446</ID>
+  <commonNames>S-Adenosyl-L-methionine:Anhalonidine O-methyltransferase</commonNames>
+  <def>Anhalonidine + S-Adenosyl-L-methionine &lt;=&gt; Anhalonine + S-Adenosyl-L-homocysteine</def>
+  <equation>C16704 + C00019 &lt;=&gt; C16705 + C00021</equation>
+  <enzymes>
+    <string>2.1.1</string>
+  </enzymes>
+  <comment>Tetrahydroisoquinoline alkaloids</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C16704_C16705</data>
+  </class>
+</reaction>

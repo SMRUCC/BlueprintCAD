@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06734</ID>
+  <commonNames>pseudotropine:NADP+ 3-oxidoreductase</commonNames>
+  <def>Tropinone + NADPH + H+ &lt;=&gt; Pseudotropine + NADP+</def>
+  <equation>C00783 + C00005 + C00080 &lt;=&gt; C02066 + C00006</equation>
+  <enzymes>
+    <string>1.1.1.236</string>
+  </enzymes>
+  <comment>pseudotropine forming tropinone reductase</comment>
+  <pathway>
+    <data name="rn00960">Tropane, piperidine and pyridine alkaloid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K05354" value="1.1.1.236">tropinone reductase II</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00144">C00783_C02066</data>
+  </class>
+</reaction>

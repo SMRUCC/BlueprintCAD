@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10001</ID>
+  <commonNames>methanethiol:[Co(I) corrinoid protein] Co-methyltransferase</commonNames>
+  <def>Methanethiol + Co(I) corrinoid protein &lt;=&gt; Hydrogen sulfide + Methyl-Co(III) corrinoid protein</def>
+  <equation>C00409 + C06021 &lt;=&gt; C00283 + C06020</equation>
+  <enzymes>
+    <string>2.1.1.251</string>
+  </enzymes>
+  <comment>subsequently R10000 specific for methylated-thiol corrinoid protein</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01144">C06020_C06021</data>
+  </class>
+</reaction>

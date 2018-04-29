@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11370</ID>
+  <commonNames>6-methylsalicylate:CoA ligase (AMP-forming)</commonNames>
+  <def>ATP + 6-Methylsalicylate + CoA &lt;=&gt; AMP + Diphosphate + 6-Methylsalicylyl-CoA</def>
+  <equation>C00002 + C02657 + C00010 &lt;=&gt; C00020 + C00013 + C21312</equation>
+  <enzymes>
+    <string>6.2.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01059">Biosynthesis of enediyne antibiotics</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00829">3,6-Dimethylsalicylyl-CoA biosynthesis, malonyl-CoA =&gt; 6-methylsalicylate =&gt; 3,6-dimethylsalicylyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K21191" value="6.2.1">CoA ligase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C21312</data>
+    <data name="RC00174">C02657_C21312</data>
+  </class>
+</reaction>

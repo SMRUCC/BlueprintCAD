@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07334</ID>
+  <commonNames>UDP-N-acetyl-D-glucosamine:beta-D-glucuronosyl-(1-&gt;4)-N-acetyl-alpha-D-glucosaminyl-proteoglycan 4-alpha-N-acetylglucosaminyltransferase</commonNames>
+  <def>beta-D-Glucuronosyl-(1-&gt;4)-N-acetyl-alpha-D-glucosaminylproteoglycan + UDP-N-acetyl-alpha-D-glucosamine &lt;=&gt; UDP + N-Acetyl-alpha-D-glucosaminyl-(1-&gt;4)-beta-D-glucuronosyl-(1-&gt;4)-N-acetyl-alpha-D-glucosaminylproteoglycan</def>
+  <equation>C15573 + C00043 &lt;=&gt; C00015 + C15574</equation>
+  <enzymes>
+    <string>2.4.1.224</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C00043</data>
+    <data name="RC00049">C15573_C15574</data>
+  </class>
+</reaction>

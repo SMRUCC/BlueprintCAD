@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05812</ID>
+  <commonNames>cobalt-precorrin-6B:NAD+ oxidoreductase</commonNames>
+  <def>Cobalt-precorrin 6 + NADH + H+ &lt;=&gt; Cobalt-dihydro-precorrin 6 + NAD+</def>
+  <equation>C11542 + C00004 + C00080 &lt;=&gt; C11543 + C00003</equation>
+  <enzymes>
+    <string>1.3.1.106</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K05895" value="1.3.1.54">precorrin-6A/cobalt-precorrin-6A reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC01280">C11542_C11543</data>
+  </class>
+</reaction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09088</ID>
+  <def>Benzoate + Pyruvate &lt;=&gt; Pyruvophenone + CO2</def>
+  <equation>C00180 + C00022 &lt;=&gt; C17268 + C00011</equation>
+  <enzymes />
+  <comment>benzoate may be thioesterified (benzoyl-CoA [CPD:C00512])</comment>
+  <pathway>
+    <data name="rn00360">Phenylalanine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02493">C00180_C17268</data>
+  </class>
+</reaction>

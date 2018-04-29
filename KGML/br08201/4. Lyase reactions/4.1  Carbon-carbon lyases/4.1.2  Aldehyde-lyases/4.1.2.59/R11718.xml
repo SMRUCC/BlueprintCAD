@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11718</ID>
+  <commonNames>7,8-dihydroneopterin-3'-phosphate glycolaldehyde-phosphate-lyase [6-(hydroxymethyl)-7,8-dihydropterin-forming]</commonNames>
+  <def>Dihydroneopterin phosphate &lt;=&gt; 6-(Hydroxymethyl)-7,8-dihydropterin + Glycolaldehyde phosphate</def>
+  <equation>C05925 &lt;=&gt; C01300 + C21614</equation>
+  <enzymes>
+    <string>4.1.2.59</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00790">Folate biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K22102" value="4.1.2.59">dihydroneopterin phosphate aldolase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02261</ID>
+  <commonNames>2-dehydro-3-deoxy-L-rhamnonate (S)-lactaldehyde lyase (pyruvate-forming)</commonNames>
+  <def>2-Dehydro-3-deoxy-L-rhamnonate &lt;=&gt; (S)-Lactaldehyde + Pyruvate</def>
+  <equation>C03979 &lt;=&gt; C00424 + C00022</equation>
+  <enzymes>
+    <string>4.1.2.53</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00051">Fructose and mannose metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12660" value="4.1.2.53">2-dehydro-3-deoxy-L-rhamnonate aldolase</KO:terms>
+    <KO:terms name="K18339" value="4.1.2.53">2-keto-3-deoxy-L-rhamnonate aldolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00307">C00022_C03979</data>
+    <data name="RC00435">C00424_C03979</data>
+  </class>
+</reaction>

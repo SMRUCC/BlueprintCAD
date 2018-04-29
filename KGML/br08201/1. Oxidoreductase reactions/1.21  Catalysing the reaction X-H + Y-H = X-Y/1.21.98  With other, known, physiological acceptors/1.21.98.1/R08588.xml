@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08588</ID>
+  <commonNames>dehypoxanthine futalosine:S-adenosyl-L-methionine oxidoreductase (cyclizing)</commonNames>
+  <def>Dehypoxanthine futalosine + S-Adenosyl-L-methionine &lt;=&gt; Cyclic dehypoxanthine futalosine + 5'-Deoxyadenosine + L-Methionine</def>
+  <equation>C17010 + C00019 &lt;=&gt; C17017 + C05198 + C00073</equation>
+  <enzymes>
+    <string>1.21.98.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00130">Ubiquinone and other terpenoid-quinone biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K11784" value="1.21.98.1">cyclic dehypoxanthinyl futalosine synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02329">C17010_C17017</data>
+  </class>
+</reaction>

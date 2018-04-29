@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02289</ID>
+  <commonNames>5-methyltetrahydrofolate:corrinoid/iron-sulfur protein methyltransferase</commonNames>
+  <def>5-Methyltetrahydrofolate + Co(I) corrinoid protein + H+ &lt;=&gt; Methyl-Co(III) corrinoid protein + Tetrahydrofolate</def>
+  <equation>C00440 + C06021 + C00080 &lt;=&gt; C06020 + C00101</equation>
+  <enzymes>
+    <string>2.1.1.258</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00377">Reductive acetyl-CoA pathway (Wood-Ljungdahl pathway)</data>
+  </module>
+  <orthology>
+    <KO:terms name="K15023" value="2.1.1.258">5-methyltetrahydrofolate corrinoid/iron sulfur protein methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00113">C00101_C00440</data>
+    <data name="RC01144">C06020_C06021</data>
+    <data name="RC02871">C00440_C06020</data>
+  </class>
+</reaction>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07734</ID>
+  <def>o-Hydroxylaminobenzoate + 2 H+ &lt;=&gt; Anthranilate + H2O</def>
+  <equation>C16235 + 2 C00080 &lt;=&gt; C00108 + C00001</equation>
+  <enzymes>
+    <string>1.4</string>
+  </enzymes>
+  <comment>o-hydroxylaminobenzoate reductase</comment>
+  <pathway>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01760">C00108_C16235</data>
+  </class>
+</reaction>

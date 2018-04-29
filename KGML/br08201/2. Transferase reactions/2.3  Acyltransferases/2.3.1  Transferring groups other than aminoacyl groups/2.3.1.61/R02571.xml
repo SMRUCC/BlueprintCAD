@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02571</ID>
+  <commonNames>Glutaryl-CoA:dihydrolipoamide S-succinyltransferase</commonNames>
+  <def>Glutaryl-CoA + Enzyme N6-(dihydrolipoyl)lysine &lt;=&gt; CoA + [Dihydrolipoyllysine-residue succinyltransferase] S-glutaryldihydrolipoyllysine</def>
+  <equation>C00527 + C15973 &lt;=&gt; C00010 + C06157</equation>
+  <enzymes>
+    <string>2.3.1.61</string>
+  </enzymes>
+  <comment>2-oxoglutarate dehydrogenase complex:dihydrolipoyllysine-residue succinyltransferase a part of multi-step reaction (see R01933, R01940+R02571+R07618) following after R01940</comment>
+  <pathway>
+    <data name="rn00310">Lysine degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00032">Lysine degradation, lysine =&gt; saccharopine =&gt; acetoacetyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00658" value="2.3.1.61">2-oxoglutarate dehydrogenase E2 component (dihydrolipoamide succinyltransferase)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00527  C06157_C15973</data>
+    <data name="RC02727">C00527_C06157</data>
+  </class>
+</reaction>

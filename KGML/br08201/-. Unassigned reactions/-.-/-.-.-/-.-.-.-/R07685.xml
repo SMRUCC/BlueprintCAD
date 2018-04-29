@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07685</ID>
+  <def>(Z)-4-(2-Hydroxy-5-sulfonatophenyl)-2-oxo-3-butenoate + 2 H2O &lt;=&gt; 5-Sulfosalicylate + Pyruvate</def>
+  <equation>C16198 + 2 C00001 &lt;=&gt; C16199 + C00022</equation>
+  <enzymes />
+  <comment>multi-step reaction (possibly similar to R05136+R02941) incomplete reaction (unidentified acceptor)</comment>
+  <pathway>
+    <data name="rn00626">Naphthalene degradation</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00494">C16198_C16199</data>
+    <data name="RC00936">C00022_C16198</data>
+  </class>
+</reaction>

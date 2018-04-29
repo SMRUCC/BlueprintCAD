@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09509</ID>
+  <commonNames>carboxybiotinyl-[protein] carboxy-lyase</commonNames>
+  <def>Carboxybiotinyl-[protein] + H+ &lt;=&gt; Biotinyl-[protein] + CO2</def>
+  <equation>C18047 + C00080 &lt;=&gt; C18046 + C00011</equation>
+  <enzymes>
+    <string>4.3.99.2</string>
+  </enzymes>
+  <comment>requires Na+ and acts as a sodium pump</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00253">C18046_C18047</data>
+  </class>
+</reaction>

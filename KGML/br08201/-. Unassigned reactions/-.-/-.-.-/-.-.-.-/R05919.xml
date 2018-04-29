@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05919</ID>
+  <def>Dolichyl phosphate D-mannose + G00145 &lt;=&gt; Dolichyl phosphate + G00146</def>
+  <equation>G10617 + G00145 &lt;=&gt; G10622 + G00146</equation>
+  <enzymes />
+  <comment />
+  <pathway>
+    <data name="rn00563">Glycosylphosphatidylinositol (GPI)-anchor biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00065">GPI-anchor biosynthesis, core oligosaccharide</data>
+  </module>
+  <orthology>
+    <KO:terms name="K05284" value="2.4.1">phosphatidylinositol glycan, class M</KO:terms>
+  </orthology>
+  <class />
+</reaction>

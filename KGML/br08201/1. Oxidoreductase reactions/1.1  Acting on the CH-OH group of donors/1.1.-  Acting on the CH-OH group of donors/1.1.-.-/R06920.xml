@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06920</ID>
+  <def>cis-1,2-Dihydroxy-1,2-dihydro-8-carboxynaphthalene &lt;=&gt; 1,2-Dihydroxy-8-carboxynaphthalene</def>
+  <equation>C14092 &lt;=&gt; C14093</equation>
+  <enzymes>
+    <string>1.1</string>
+  </enzymes>
+  <comment>cis-1,2-dihydroxy-1,2-dihydro-8-carboxynaphthalene dehydrogenase</comment>
+  <pathway>
+    <data name="rn00626">Naphthalene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00891">C14092_C14093</data>
+  </class>
+</reaction>

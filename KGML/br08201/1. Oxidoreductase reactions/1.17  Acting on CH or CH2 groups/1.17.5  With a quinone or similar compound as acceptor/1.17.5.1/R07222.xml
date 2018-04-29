@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07222</ID>
+  <commonNames>phenylacetyl-CoA:quinone oxidoreductase</commonNames>
+  <def>Phenylacetyl-CoA + H2O + 2 Quinone &lt;=&gt; Phenylglyoxylyl-CoA + 2 Hydroquinone</def>
+  <equation>C00582 + C00001 + 2 C15602 &lt;=&gt; C15524 + 2 C15603</equation>
+  <enzymes>
+    <string>1.17.5.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00360">Phenylalanine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18360" value="1.17.5.1">phenylacetyl-CoA:acceptor oxidoreductase accessory proteinK18361</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01844">C00582_C15524</data>
+  </class>
+</reaction>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10402</ID>
+  <commonNames>versiconal hydro-lyase (versicolorin-B forming)</commonNames>
+  <def>Versiconal &lt;=&gt; Versicolorin B + H2O</def>
+  <equation>C20507 &lt;=&gt; C20575 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.143</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00254">Aflatoxin biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K17646" value="4.2.1.142">5'-oxoaverantin cyclase / versicolorin B synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03146">C20507_C20575</data>
+  </class>
+</reaction>

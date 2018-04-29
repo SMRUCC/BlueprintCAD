@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00923</ID>
+  <commonNames>(S)-methylmalonyl-CoA carboxy-lyase (propanoyl-CoA-forming)</commonNames>
+  <def>(S)-Methylmalonyl-CoA &lt;=&gt; Propanoyl-CoA + CO2</def>
+  <equation>C00683 &lt;=&gt; C00100 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.41</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00640">Propanoate metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K11264" value="4.1.1.41">methylmalonyl-CoA decarboxylase</KO:terms>
+    <KO:terms name="K18426" value="4.1.1.94">ethylmalonyl-CoA/methylmalonyl-CoA decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00097">C00100_C00683</data>
+  </class>
+</reaction>

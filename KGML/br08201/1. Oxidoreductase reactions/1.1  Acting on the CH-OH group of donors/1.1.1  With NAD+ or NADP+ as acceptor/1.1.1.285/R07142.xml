@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07142</ID>
+  <commonNames>2'-deoxymugineic acid:NADP+ 3''-oxidoreductase</commonNames>
+  <def>2'-Deoxymugineic acid + NADP+ &lt;=&gt; 3''-Deamino-3''-oxonicotianamine + NADPH + H+</def>
+  <equation>C15485 + C00006 &lt;=&gt; C15486 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.285</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00031">C15485_C15486</data>
+  </class>
+</reaction>

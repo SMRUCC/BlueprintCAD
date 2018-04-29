@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06480</ID>
+  <def>2-Methylbutanoyl-CoA + 5 Methylmalonyl-CoA + 7 Malonyl-CoA + 9 NADPH + 9 H+ &lt;=&gt; 6,8a-Seco-6,8a-deoxy-5-oxoavermectin ''2a'' aglycone + 12 CO2 + 13 CoA + 5 H2O + 9 NADP+</def>
+  <equation>C01033 + 5 C02557 + 7 C00083 + 9 C00005 + 9 C00080 &lt;=&gt; C11969 + 12 C00011 + 13 C00010 + 5 C00001 + 9 C00006</equation>
+  <enzymes />
+  <comment>type I polyketide synthase, AveA1-4</comment>
+  <pathway>
+    <data name="rn00522">Biosynthesis of 12-, 14- and 16-membered macrolides</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00004">C00010_C00083  C00010_C01033  C00010_C02557</data>
+    <data name="RC02913">C01033_C11969</data>
+    <data name="RC02914">C02557_C11969</data>
+    <data name="RC02915">C02557_C11969</data>
+    <data name="RC02920">C02557_C11969</data>
+    <data name="RC02921">C02557_C11969</data>
+    <data name="RC02922">C02557_C11969</data>
+    <data name="RC02923">C00083_C11969</data>
+    <data name="RC02924">C00083_C11969</data>
+    <data name="RC02925">C00083_C11969</data>
+    <data name="RC02926">C00083_C11969</data>
+    <data name="RC02927">C00083_C11969</data>
+    <data name="RC02928">C00083_C11969</data>
+    <data name="RC02929">C00083_C11969</data>
+  </class>
+</reaction>

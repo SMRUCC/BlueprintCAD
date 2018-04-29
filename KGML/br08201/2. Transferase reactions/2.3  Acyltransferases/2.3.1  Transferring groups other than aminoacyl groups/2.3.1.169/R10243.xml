@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10243</ID>
+  <def>Tetrahydrofolate + Acetyl-CoA &lt;=&gt; 5-Methyltetrahydrofolate + CoA + CO</def>
+  <equation>C00101 + C00024 &lt;=&gt; C00440 + C00010 + C00237</equation>
+  <enzymes>
+    <string>2.1.1.258</string>
+    <string>2.3.1.169</string>
+  </enzymes>
+  <comment>two-step reaction (see R08433+R02289)</comment>
+  <pathway>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00377">Reductive acetyl-CoA pathway (Wood-Ljungdahl pathway)</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00194" value="2.1.1.245">acetyl-CoA decarbonylase/synthase complex subunit delta</KO:terms>
+    <KO:terms name="K00197" value="2.1.1.245">acetyl-CoA decarbonylase/synthase complex subunit gamma</KO:terms>
+    <KO:terms name="K14138" value="2.3.1.169">acetyl-CoA synthase</KO:terms>
+    <KO:terms name="K15023" value="2.1.1.258">5-methyltetrahydrofolate corrinoid/iron sulfur protein methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00113">C00101_C00440</data>
+    <data name="RC02963">C00024_C00237</data>
+    <data name="RC02977">C00024_C00440</data>
+  </class>
+</reaction>

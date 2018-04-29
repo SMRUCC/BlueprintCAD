@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01358</ID>
+  <commonNames>acetoacetyl-CoA hydrolase</commonNames>
+  <def>Acetoacetyl-CoA + H2O &lt;=&gt; Acetoacetate + CoA</def>
+  <equation>C00332 + C00001 &lt;=&gt; C00164 + C00010</equation>
+  <enzymes>
+    <string>3.1.2.11</string>
+  </enzymes>
+  <comment>catalysed by two enzymes (see R01978+R01360)</comment>
+  <pathway>
+    <data name="rn00650">Butanoate metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C00332</data>
+    <data name="RC00014">C00164_C00332</data>
+  </class>
+</reaction>

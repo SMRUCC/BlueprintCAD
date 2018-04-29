@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07646</ID>
+  <commonNames>L-lysine:tRNAPyl ligase (AMP-forming)</commonNames>
+  <def>ATP + L-Lysine + tRNA(Pyl) &lt;=&gt; AMP + Diphosphate + L-Lysyl-tRNA(Pyl)</def>
+  <equation>C00002 + C00047 + C16139 &lt;=&gt; C00020 + C00013 + C16140</equation>
+  <enzymes />
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00055">C16139_C16140</data>
+    <data name="RC00523">C00047_C16140</data>
+  </class>
+</reaction>

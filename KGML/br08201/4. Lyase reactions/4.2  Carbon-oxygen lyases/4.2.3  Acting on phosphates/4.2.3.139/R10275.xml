@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10275</ID>
+  <commonNames>(2E,6E)-farnesyl-diphosphate diphosphate-lyase (cyclizing, valerena-4,7(11)-diene-forming)</commonNames>
+  <def>trans,trans-Farnesyl diphosphate &lt;=&gt; Valerena-4,7(11)-diene + Diphosphate</def>
+  <equation>C00448 &lt;=&gt; C20480 + C00013</equation>
+  <enzymes>
+    <string>4.2.3.139</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC03103">C00448_C20480</data>
+  </class>
+</reaction>

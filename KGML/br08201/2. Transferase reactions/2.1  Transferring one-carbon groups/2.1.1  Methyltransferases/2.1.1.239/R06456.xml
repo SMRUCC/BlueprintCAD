@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06456</ID>
+  <commonNames>S-adenosyl-L-methionine:L-olivosyl-oleandolide B 3-O-methyltransferase</commonNames>
+  <def>L-Olivosyl-oleandolide + S-Adenosyl-L-methionine &lt;=&gt; L-Oleandrosyl-oleandolide + S-Adenosyl-L-homocysteine</def>
+  <equation>C11991 + C00019 &lt;=&gt; C11992 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.239</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00522">Biosynthesis of 12-, 14- and 16-membered macrolides</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00775">Oleandomycin biosynthesis, malonyl-CoA + methylmalonyl-CoA =&gt; 8,8a-deoxyoleandolide =&gt; oleandomycin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13320" value="2.1.1.239">L-olivosyl-oleandolide 3-O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00466">C11991_C11992</data>
+  </class>
+</reaction>

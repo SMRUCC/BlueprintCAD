@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02693</ID>
+  <commonNames>1,2-Diacyl-sn-glycerol:sterol O-acyltransferase</commonNames>
+  <def>1,2-Diacyl-sn-glycerol + Sterol &lt;=&gt; 1-Acylglycerol + Steryl ester</def>
+  <equation>C00641 + C00370 &lt;=&gt; C01885 + C01958</equation>
+  <enzymes>
+    <string>2.3.1.73</string>
+  </enzymes>
+  <comment>general reaction (see R02692)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00037">C00641_C01885</data>
+    <data name="RC00055">C00370_C01958</data>
+  </class>
+</reaction>

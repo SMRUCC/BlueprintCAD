@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08150</ID>
+  <def>(10S)-Juvenile hormone III diol + H2O &lt;=&gt; (10S)-Juvenile hormone III acid diol + Methanol</def>
+  <equation>C16505 + C00001 &lt;=&gt; C16506 + C00132</equation>
+  <enzymes>
+    <string>3.1.1.59</string>
+  </enzymes>
+  <comment>juvenile hormone III diol acylhydrolase</comment>
+  <pathway>
+    <data name="rn00981">Insect hormone biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01063" value="3.1.1.59">juvenile-hormone esterase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00460">C16505_C16506</data>
+    <data name="RC00461">C00132_C16505</data>
+  </class>
+</reaction>

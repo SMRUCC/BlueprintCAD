@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10246</ID>
+  <commonNames>L-tyrosine 4-methylphenol-lyase (2-iminoacetate-forming)</commonNames>
+  <def>L-Tyrosine + S-Adenosyl-L-methionine + Reduced acceptor &lt;=&gt; Iminoglycine + 4-Cresol + 5'-Deoxyadenosine + L-Methionine + Acceptor</def>
+  <equation>C00082 + C00019 + C00030 &lt;=&gt; C15809 + C01468 + C05198 + C00073 + C00028</equation>
+  <enzymes>
+    <string>4.1.99.19</string>
+  </enzymes>
+  <comment>radical SAM</comment>
+  <pathway>
+    <data name="rn00730">Thiamine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03150" value="4.1.99.19">2-iminoacetate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00021">C00019_C00073</data>
+    <data name="RC01434">C00082_C01468</data>
+    <data name="RC03095">C00082_C15809</data>
+  </class>
+</reaction>

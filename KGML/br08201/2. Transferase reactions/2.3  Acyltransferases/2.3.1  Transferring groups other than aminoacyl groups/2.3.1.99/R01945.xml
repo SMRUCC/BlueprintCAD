@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01945</ID>
+  <commonNames>Caffeoyl-CoA:quinate O-(3,4-dihydroxycinnamoyl)transferase</commonNames>
+  <def>Caffeoyl-CoA + Quinate &lt;=&gt; CoA + Chlorogenate</def>
+  <equation>C00323 + C00296 &lt;=&gt; C00010 + C00852</equation>
+  <enzymes>
+    <string>2.3.1.99</string>
+    <string>2.3.1.133</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00940">Phenylpropanoid biosynthesis</data>
+    <data name="rn00941">Flavonoid biosynthesis</data>
+    <data name="rn00945">Stilbenoid, diarylheptanoid and gingerol biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13065" value="2.3.1.133">shikimate O-hydroxycinnamoyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00323</data>
+    <data name="RC00055">C00296_C00852</data>
+    <data name="RC02864">C00323_C00852</data>
+  </class>
+</reaction>

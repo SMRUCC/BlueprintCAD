@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03877</ID>
+  <commonNames>Magnesium-protoporphyrin IX chelatase</commonNames>
+  <def>ATP + Protoporphyrin + Magnesium cation + H2O &lt;=&gt; ADP + Orthophosphate + Magnesium protoporphyrin + 2 H+</def>
+  <equation>C00002 + C02191 + C00305 + C00001 &lt;=&gt; C00008 + C00009 + C03516 + 2 C00080</equation>
+  <enzymes>
+    <string>6.6.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03403" value="6.6.1.1">magnesium chelatase subunit H</KO:terms>
+    <KO:terms name="K03404" value="6.6.1.1">magnesium chelatase subunit D</KO:terms>
+    <KO:terms name="K03405" value="6.6.1.1">magnesium chelatase subunit I</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC01012">C02191_C03516</data>
+  </class>
+</reaction>

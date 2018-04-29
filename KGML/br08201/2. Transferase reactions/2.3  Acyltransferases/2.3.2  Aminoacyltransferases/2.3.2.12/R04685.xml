@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04685</ID>
+  <commonNames>Peptidyl-tRNA:aminoacyl-tRNA N-peptidyltransferase</commonNames>
+  <def>Aminoacyl-tRNA + Peptidyl-tRNA &lt;=&gt; tRNA + Peptidyl-aminoacyl-tRNA</def>
+  <equation>C05156 + C02056 &lt;=&gt; C00066 + C05157</equation>
+  <enzymes>
+    <string>2.3.2.12</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00055">C00066_C02056</data>
+    <data name="RC00064">C05156_C05157</data>
+  </class>
+</reaction>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05817</ID>
+  <commonNames>(3Z)-phycocyanobilin:ferredoxin oxidoreductase</commonNames>
+  <def>Biliverdin + 4 Reduced ferredoxin &lt;=&gt; (3Z)-Phycocyanobilin + 4 Oxidized ferredoxin</def>
+  <equation>C00500 + 4 C00138 &lt;=&gt; C05786 + 4 C00139</equation>
+  <enzymes>
+    <string>1.3.7.5</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K05371" value="1.3.7.5">phycocyanobilin:ferredoxin oxidoreductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01573">C00500_C05786</data>
+  </class>
+</reaction>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02637</ID>
+  <commonNames>3-Dehydro-L-gulonate:NAD+ 2-oxidoreductase</commonNames>
+  <def>3-Dehydro-L-gulonate + NAD+ &lt;=&gt; (4R,5S)-4,5,6-Trihydroxy-2,3-dioxohexanoate + NADH + H+</def>
+  <equation>C00618 + C00003 &lt;=&gt; C04575 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.130</string>
+  </enzymes>
+  <comment>NADP+ (see R02639)</comment>
+  <pathway>
+    <data name="rn00040">Pentose and glucuronate interconversions</data>
+    <data name="rn00053">Ascorbate and aldarate metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K08092" value="1.1.1.130">3-dehydro-L-gulonate 2-dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00238">C00618_C04575</data>
+  </class>
+</reaction>

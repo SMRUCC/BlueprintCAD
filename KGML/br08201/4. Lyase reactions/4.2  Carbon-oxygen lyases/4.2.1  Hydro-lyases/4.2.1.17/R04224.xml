@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04224</ID>
+  <commonNames>(S)-3-Hydroxyisobutyryl-CoA hydro-lyase</commonNames>
+  <def>2-Methylprop-2-enoyl-CoA + H2O &lt;=&gt; (S)-3-Hydroxyisobutyryl-CoA</def>
+  <equation>C03460 + C00001 &lt;=&gt; C06000</equation>
+  <enzymes>
+    <string>4.2.1.17</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00280">Valine, leucine and isoleucine degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01692" value="4.2.1.17">enoyl-CoA hydratase</KO:terms>
+    <KO:terms name="K01782" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase / enoyl-CoA hydratase / 3-hydroxybutyryl-CoA epimerase</KO:terms>
+    <KO:terms name="K01825" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase / enoyl-CoA hydratase / 3-hydroxybutyryl-CoA epimerase / enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K07511" value="4.2.1.17">enoyl-CoA hydratase</KO:terms>
+    <KO:terms name="K07514" value="4.2.1.17">enoyl-CoA hydratase / 3-hydroxyacyl-CoA dehydrogenase / 3,2-trans-enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K07515" value="4.2.1.17">enoyl-CoA hydratase / long-chain 3-hydroxyacyl-CoA dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01103">C03460_C06000</data>
+  </class>
+</reaction>

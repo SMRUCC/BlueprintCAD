@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05911</ID>
+  <def>CMP-N-acetylneuraminate + Tn antigen &lt;=&gt; CMP + Sialyl-Tn antigen</def>
+  <equation>G10616 + G00023 &lt;=&gt; G10621 + G00035</equation>
+  <enzymes>
+    <string>2.4.99.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00512">Mucin type O-glycan biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03479" value="2.4.99.3">alpha-N-acetylgalactosaminide alpha-2,6-sialyltransferase (sialyltransferase 7A)</KO:terms>
+  </orthology>
+  <class />
+</reaction>

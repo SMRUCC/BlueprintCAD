@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09805</ID>
+  <commonNames>L-Aspartate-4-semialdehyde:NAD+ oxidoreductase</commonNames>
+  <def>L-Aspartate 4-semialdehyde + NAD+ + H2O &lt;=&gt; L-Aspartate + NADH + H+</def>
+  <equation>C00441 + C00003 + C00001 &lt;=&gt; C00049 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.2.1</string>
+  </enzymes>
+  <comment>aspartate-semialdehyde dehydrogenase</comment>
+  <pathway>
+    <data name="rn00260">Glycine, serine and threonine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15786" value="1.2.1">aspartate-semialdehyde dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00080">C00049_C00441</data>
+  </class>
+</reaction>

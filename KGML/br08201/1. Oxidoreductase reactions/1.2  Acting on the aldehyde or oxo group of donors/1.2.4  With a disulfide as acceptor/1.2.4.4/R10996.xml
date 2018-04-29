@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10996</ID>
+  <def>2-Oxobutanoate + Thiamin diphosphate &lt;=&gt; 2-(alpha-Hydroxypropyl)thiamine diphosphate + CO2</def>
+  <equation>C00109 + C00068 &lt;=&gt; C21017 + C00011</equation>
+  <enzymes>
+    <string>1.2.4.4</string>
+  </enzymes>
+  <comment>Oxo-acid dehydrogenase complexes, subsequently R10997</comment>
+  <pathway>
+    <data name="rn00640">Propanoate metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00166" value="1.2.4.4">2-oxoisovalerate dehydrogenase E1 component alpha subunit</KO:terms>
+    <KO:terms name="K00167" value="1.2.4.4">2-oxoisovalerate dehydrogenase E1 component beta subunit</KO:terms>
+    <KO:terms name="K11381" value="1.2.4.4">2-oxoisovalerate dehydrogenase E1 component</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00027">C00068_C21017</data>
+    <data name="RC02743">C00109_C21017</data>
+  </class>
+</reaction>

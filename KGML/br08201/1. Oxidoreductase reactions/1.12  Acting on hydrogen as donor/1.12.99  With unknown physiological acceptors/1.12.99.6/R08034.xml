@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08034</ID>
+  <def>2,4-Diamino-6-nitrotoluene &lt;=&gt; 2,4-Diamino-6-hydroxylaminotoluene</def>
+  <equation>C16396 &lt;=&gt; C16399</equation>
+  <enzymes>
+    <string>1.2.7.1</string>
+    <string>1.2.7.4</string>
+    <string>1.12.99.6</string>
+  </enzymes>
+  <comment>hydrogenase, carbon-monoxide dehydrogenase, pyruvate:ferredoxin oxidoreductase</comment>
+  <pathway>
+    <data name="rn00633">Nitrotoluene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00169" value="1.2.7.1">pyruvate ferredoxin oxidoreductase alpha subunit</KO:terms>
+    <KO:terms name="K00170" value="1.2.7.1">pyruvate ferredoxin oxidoreductase beta subunit</KO:terms>
+    <KO:terms name="K00171" value="1.2.7.1">pyruvate ferredoxin oxidoreductase delta subunit</KO:terms>
+    <KO:terms name="K00172" value="1.2.7.1">pyruvate ferredoxin oxidoreductase gamma subunit</KO:terms>
+    <KO:terms name="K00196" value="1.2.7.4">anaerobic carbon-monoxide dehydrogenase iron sulfur subunitK00198</KO:terms>
+    <KO:terms name="K06281" value="1.12.99.6">hydrogenase large subunit</KO:terms>
+    <KO:terms name="K06282" value="1.12.99.6">hydrogenase small subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00250">C16396_C16399</data>
+  </class>
+</reaction>

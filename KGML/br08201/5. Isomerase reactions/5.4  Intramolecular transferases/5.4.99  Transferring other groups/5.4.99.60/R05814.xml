@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05814</ID>
+  <commonNames>precorrin-8 11,12-methylmutase</commonNames>
+  <def>Cobalt-precorrin 8 &lt;=&gt; Cobyrinate</def>
+  <equation>C11545 &lt;=&gt; C05773</equation>
+  <enzymes>
+    <string>5.4.99.60</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K06042" value="5.4.99.61">precorrin-8X/cobalt-precorrin-8 methylmutase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01980">C05773_C11545</data>
+  </class>
+</reaction>

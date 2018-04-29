@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08893</ID>
+  <commonNames>2-deoxy-scyllo-inosamine:S-adenosyl-L-methionine 1-oxidoreductase</commonNames>
+  <def>2-Deoxy-scyllo-inosamine + S-Adenosyl-L-methionine &lt;=&gt; 3-Amino-2,3-dideoxy-scyllo-inosose + L-Methionine + 5'-Deoxyadenosine</def>
+  <equation>C17580 + C00019 &lt;=&gt; C17581 + C00073 + C05198</equation>
+  <enzymes>
+    <string>1.1.99.38</string>
+  </enzymes>
+  <comment>radical SAM 2-deoxy-scyllo-inosamine dehydrogenase</comment>
+  <pathway>
+    <data name="rn00524">Neomycin, kanamycin and gentamicin biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13549" value="1.1.99.38">2-deoxy-scyllo-inosamine dehydrogenase (SAM-dependent)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00021">C00019_C00073</data>
+    <data name="RC00154">C17580_C17581</data>
+  </class>
+</reaction>

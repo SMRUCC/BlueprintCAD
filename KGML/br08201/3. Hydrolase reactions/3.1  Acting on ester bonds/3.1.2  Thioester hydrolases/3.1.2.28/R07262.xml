@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07262</ID>
+  <commonNames>1,4-dihydroxy-2-naphthoyl-CoA hydrolase</commonNames>
+  <def>1,4-Dihydroxy-2-naphthoyl-CoA + H2O &lt;=&gt; 1,4-Dihydroxy-2-naphthoate + CoA</def>
+  <equation>C15547 + C00001 &lt;=&gt; C03657 + C00010</equation>
+  <enzymes>
+    <string>3.1.2.28</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00130">Ubiquinone and other terpenoid-quinone biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00116">Menaquinone biosynthesis, chorismate =&gt; menaquinone</data>
+  </module>
+  <orthology>
+    <KO:terms name="K12073" value="3.1.2.28">1,4-dihydroxy-2-naphthoyl-CoA hydrolase</KO:terms>
+    <KO:terms name="K19222" value="3.1.2.28">1,4-dihydroxy-2-naphthoyl-CoA hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C15547</data>
+    <data name="RC00174">C03657_C15547</data>
+  </class>
+</reaction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08834</ID>
+  <def>2-Descarboxy-cyclo-dopa + Betalamic acid &lt;=&gt; 2-Descarboxy-betanidin + H2O</def>
+  <equation>C17756 + C08538 &lt;=&gt; C17757 + C00001</equation>
+  <enzymes />
+  <comment>spontaneous</comment>
+  <pathway>
+    <data name="rn00965">Betalain biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02351">C08538_C17757</data>
+    <data name="RC02356">C17756_C17757</data>
+  </class>
+</reaction>

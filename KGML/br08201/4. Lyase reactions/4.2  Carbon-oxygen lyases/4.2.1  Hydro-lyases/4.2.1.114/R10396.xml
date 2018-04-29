@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10396</ID>
+  <commonNames>(-)-threo-iso(homo)3-citrate hydro-lyase</commonNames>
+  <def>cis-(Homo)3-aconitate + H2O &lt;=&gt; (-)-threo-Iso(homo)3-citrate</def>
+  <equation>C20582 + C00001 &lt;=&gt; C16600</equation>
+  <enzymes>
+    <string>4.2.1.114</string>
+  </enzymes>
+  <comment>second step of two-step reaction (see R10394, R10395+R10396)</comment>
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00608">2-Oxocarboxylic acid chain extension, 2-oxoglutarate =&gt; 2-oxoadipate =&gt; 2-oxopimelate =&gt; 2-oxosuberate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K16792" value="4.2.1.114">methanogen homoaconitase large subunit</KO:terms>
+    <KO:terms name="K16793" value="4.2.1.114">methanogen homoaconitase small subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00618">C16600_C20582</data>
+  </class>
+</reaction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10228</ID>
+  <commonNames>(+)-secoisolariciresinol:NADPH+ oxidoreductase</commonNames>
+  <def>(+)-Secoisolariciresinol + NADP+ &lt;=&gt; (-)-Lariciresinol + NADPH + H+</def>
+  <equation>C20456 + C00006 &lt;=&gt; C20454 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.23.1.4</string>
+  </enzymes>
+  <comment>possibly intermediate (quinone methide)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC03088">C20454_C20456</data>
+  </class>
+</reaction>

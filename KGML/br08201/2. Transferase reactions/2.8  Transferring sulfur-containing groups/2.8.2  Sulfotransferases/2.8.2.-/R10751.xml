@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10751</ID>
+  <commonNames>3'-phosphoadenylyl-sulfate:OA-6129-B1 sulfotransferase</commonNames>
+  <def>3'-Phosphoadenylyl sulfate + OA-6129 B1 &lt;=&gt; Adenosine 3',5'-bisphosphate + OA-6129 C</def>
+  <equation>C00053 + C17373 &lt;=&gt; C00054 + C20814</equation>
+  <enzymes>
+    <string>2.8.2</string>
+  </enzymes>
+  <comment>putative PAPS-dependent sulfotransferase not yet characterized sufficiently</comment>
+  <pathway>
+    <data name="rn00332">Carbapenem biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18571" value="2.8.2">putative sulfotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00007">C00053_C00054</data>
+    <data name="RC00518">C17373_C20814</data>
+  </class>
+</reaction>

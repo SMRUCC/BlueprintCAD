@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10151</ID>
+  <def>Thiosulfate + 5 H2O + 8 Ferricytochrome c &lt;=&gt; 2 Sulfate + 8 Ferrocytochrome c + 10 H+</def>
+  <equation>C00320 + 5 C00001 + 8 C00125 &lt;=&gt; 2 C00059 + 8 C00126 + 10 C00080</equation>
+  <enzymes />
+  <comment>Sox enzyme system</comment>
+  <pathway>
+    <data name="rn00920">Sulfur metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00595">Thiosulfate oxidation by SOX complex, thiosulfate =&gt; sulfate</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC00016">C00125_C00126</data>
+    <data name="RC03151">C00059_C00320</data>
+    <data name="RC03152">C00059_C00320</data>
+  </class>
+</reaction>

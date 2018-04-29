@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06893</ID>
+  <commonNames>aryl-ester hydrolase</commonNames>
+  <def>4-Hydroxyphenyl acetate + H2O &lt;=&gt; Hydroquinone + Acetate</def>
+  <equation>C13636 + C00001 &lt;=&gt; C00530 + C00033</equation>
+  <enzymes>
+    <string>3.1.1.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00363">Bisphenol degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00475">C00033_C13636</data>
+    <data name="RC00476">C00530_C13636</data>
+  </class>
+</reaction>

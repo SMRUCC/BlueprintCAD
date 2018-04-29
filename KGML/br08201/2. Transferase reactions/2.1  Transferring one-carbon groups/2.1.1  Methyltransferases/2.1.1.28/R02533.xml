@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02533</ID>
+  <commonNames>S-Adenosyl-L-methionine:phenylethanolamine N-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + L-Noradrenaline &lt;=&gt; S-Adenosyl-L-homocysteine + L-Adrenaline</def>
+  <equation>C00019 + C00547 &lt;=&gt; C00021 + C00788</equation>
+  <enzymes>
+    <string>2.1.1.28</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00042">Catecholamine biosynthesis, tyrosine =&gt; dopamine =&gt; noradrenaline =&gt; adrenaline</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00553" value="2.1.1.28">phenylethanolamine N-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00060">C00547_C00788</data>
+  </class>
+</reaction>

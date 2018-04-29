@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07604</ID>
+  <def>2-Methyl-1-hydroxybutyl-ThPP + Enzyme N6-(lipoyl)lysine &lt;=&gt; [Dihydrolipoyllysine-residue (2-methylpropanoyl)transferase] S-(2-methylbutanoyl)dihydrolipoyllysine + Thiamin diphosphate</def>
+  <equation>C15978 + C15972 &lt;=&gt; C15979 + C00068</equation>
+  <enzymes>
+    <string>1.2.4.4</string>
+  </enzymes>
+  <comment>Oxo-acid dehydrogenase complexes (see R04225), following after R07603</comment>
+  <pathway>
+    <data name="rn00280">Valine, leucine and isoleucine degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00166" value="1.2.4.4">2-oxoisovalerate dehydrogenase E1 component alpha subunit</KO:terms>
+    <KO:terms name="K00167" value="1.2.4.4">2-oxoisovalerate dehydrogenase E1 component beta subunit</KO:terms>
+    <KO:terms name="K11381" value="1.2.4.4">2-oxoisovalerate dehydrogenase E1 component</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00027">C00068_C15978</data>
+    <data name="RC00627">C15972_C15979</data>
+    <data name="RC02953">C15978_C15979</data>
+  </class>
+</reaction>

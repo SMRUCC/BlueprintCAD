@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05792</ID>
+  <commonNames>acyloxyacyl hydrolase</commonNames>
+  <def>3-(Acyloxy)acyl group of bacterial toxin + 2 H2O &lt;=&gt; 3-Hydroxyacyl group of bacterial toxin + 2 Fatty acid</def>
+  <equation>C11547 + 2 C00001 &lt;=&gt; C11548 + 2 C00162</equation>
+  <enzymes>
+    <string>3.1.1.77</string>
+  </enzymes>
+  <comment>hydrolysis of the acyloxyacyl bonds that link the secondary acyl chains Ref:1. J Biol Chem 1990;265(27):16444-9</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00094">C00162_C11547</data>
+    <data name="RC02055">C11547_C11548</data>
+  </class>
+</reaction>

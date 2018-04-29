@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11421</ID>
+  <commonNames>dTDP-4-ethylamino-3-O-methyl-2,4-dideoxy-L-threo-pentopyranose:calicheamicin-alpha3(I) 4-ethylamino-3-O-methyl-2,4-dideoxy-L-threo-pentosyltransferase</commonNames>
+  <def>dTDP-4-ethylamino-3-O-methyl-2,4-dideoxy-L-threo-pentopyranose + Calicheamicin alpha3(I) &lt;=&gt; dTDP + Calicheamicin gamma(1)I</def>
+  <equation>C21356 + C21342 &lt;=&gt; C00363 + C11469</equation>
+  <enzymes>
+    <string>2.4.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01059">Biosynthesis of enediyne antibiotics</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00833">Calicheamicin biosynthesis, calicheamicinone =&gt; calicheamicin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K21262" value="2.4.2">calicheamicin aminopentosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00363_C21356</data>
+    <data name="RC00049">C11469_C21342</data>
+  </class>
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06415</ID>
+  <commonNames>3-Isopropylbut-3-enoyl-CoA thioesterase</commonNames>
+  <def>3-Isopropylbut-3-enoyl-CoA + H2O &lt;=&gt; 3-Isopropyl-3-butenoic acid + CoA</def>
+  <equation>C11949 + C00001 &lt;=&gt; C11950 + C00010</equation>
+  <enzymes>
+    <string>3.1.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00903">Limonene and pinene degradation</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C11949</data>
+    <data name="RC00014">C11949_C11950</data>
+  </class>
+</reaction>

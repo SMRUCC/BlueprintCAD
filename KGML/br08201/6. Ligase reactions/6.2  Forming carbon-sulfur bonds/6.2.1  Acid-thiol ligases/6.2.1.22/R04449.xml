@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04449</ID>
+  <commonNames>acetate:holo-[citrate-(pro-3S)-lyase] ligase (AMP-forming)</commonNames>
+  <def>ATP + Acetate + Holo-[citrate (pro-3S)-lyase] &lt;=&gt; AMP + Diphosphate + Acetyl-[citrate (pro-3S)-lyase]</def>
+  <equation>C00002 + C00033 + C04298 &lt;=&gt; C00020 + C00013 + C04334</equation>
+  <enzymes>
+    <string>6.2.1.22</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K01910" value="6.2.1.22" />
+  </orthology>
+  <class>
+    <data name="RC00012">C00033_C04334</data>
+    <data name="RC00039">C04298_C04334</data>
+  </class>
+</reaction>

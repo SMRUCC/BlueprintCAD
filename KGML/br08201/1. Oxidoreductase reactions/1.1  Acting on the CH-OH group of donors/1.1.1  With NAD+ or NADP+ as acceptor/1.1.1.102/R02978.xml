@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02978</ID>
+  <commonNames>Sphinganine:NADP+ 3-oxidoreductase</commonNames>
+  <def>Sphinganine + NADP+ &lt;=&gt; 3-Dehydrosphinganine + NADPH + H+</def>
+  <equation>C00836 + C00006 &lt;=&gt; C02934 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.102</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00600">Sphingolipid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00094">Ceramide biosynthesis</data>
+    <data name="M00099">Sphingosine biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K04708" value="1.1.1.102">3-dehydrosphinganine reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00089">C00836_C02934</data>
+  </class>
+</reaction>

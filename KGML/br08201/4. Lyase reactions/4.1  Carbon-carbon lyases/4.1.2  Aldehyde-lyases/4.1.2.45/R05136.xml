@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05136</ID>
+  <commonNames>(3E)-4-(2-hydroxyphenyl)-2-oxobut-3-enoate hydro-lyase</commonNames>
+  <def>Salicylaldehyde + Pyruvate &lt;=&gt; trans-o-Hydroxybenzylidenepyruvate + H2O</def>
+  <equation>C06202 + C00022 &lt;=&gt; C06203 + C00001</equation>
+  <enzymes>
+    <string>4.1.2.45</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00626">Naphthalene degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00534">Naphthalene degradation, naphthalene =&gt; salicylate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K14585" value="4.1.2.45">trans-o-hydroxybenzylidenepyruvate hydratase-aldolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00924">C06202_C06203</data>
+    <data name="RC00936">C00022_C06203</data>
+  </class>
+</reaction>

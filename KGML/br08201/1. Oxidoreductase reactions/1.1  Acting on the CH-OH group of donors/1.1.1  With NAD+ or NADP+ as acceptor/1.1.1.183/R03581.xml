@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03581</ID>
+  <commonNames>geraniol:NADP+ oxidoreductase</commonNames>
+  <def>Geraniol + NADP+ &lt;=&gt; Geranial + NADPH + H+</def>
+  <equation>C01500 + C00006 &lt;=&gt; C01499 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.183</string>
+  </enzymes>
+  <comment>NADP+ (ec 1.1.1.347, see R10308)</comment>
+  <pathway>
+    <data name="rn00281">Geraniol degradation</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00649">C01499_C01500</data>
+  </class>
+</reaction>

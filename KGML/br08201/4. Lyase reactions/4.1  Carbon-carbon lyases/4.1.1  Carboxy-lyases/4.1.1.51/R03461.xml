@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03461</ID>
+  <commonNames>3-hydroxy-2-methylpyridine-4,5-dicarboxylate 4-carboxy-lyase</commonNames>
+  <def>3-Hydroxy-2-methylpyridine-4,5-dicarboxylate &lt;=&gt; 3-Hydroxy-2-methylpyridine-5-carboxylate + CO2</def>
+  <equation>C04604 &lt;=&gt; C01270 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.51</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00750">Vitamin B6 metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18613" value="4.1.1.51">3-hydroxy-2-methylpyridine-4,5-dicarboxylate 4-decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00569">C01270_C04604</data>
+  </class>
+</reaction>

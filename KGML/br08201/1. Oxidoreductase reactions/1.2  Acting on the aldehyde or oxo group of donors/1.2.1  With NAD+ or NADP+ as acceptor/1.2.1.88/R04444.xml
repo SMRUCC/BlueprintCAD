@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04444</ID>
+  <commonNames>L-1-pyrroline-3-hydroxy-5-carboxylate:NAD+ oxidoreductase</commonNames>
+  <def>L-1-Pyrroline-3-hydroxy-5-carboxylate + NAD+ + 2 H2O &lt;=&gt; L-erythro-4-Hydroxyglutamate + NADH + H+</def>
+  <equation>C04281 + C00003 + 2 C00001 &lt;=&gt; C05947 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.88</string>
+  </enzymes>
+  <comment>possibly two-step reaction (R04443+R05051) NADPH (see R04445)</comment>
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00294" value="1.2.1.88">1-pyrroline-5-carboxylate dehydrogenase</KO:terms>
+    <KO:terms name="K13821" value="1.5.5.2">RHH-type transcriptional regulator, proline utilization regulon repressor / proline dehydrogenase / delta 1-pyrroline-5-carboxylate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00255">C04281_C05947</data>
+  </class>
+</reaction>

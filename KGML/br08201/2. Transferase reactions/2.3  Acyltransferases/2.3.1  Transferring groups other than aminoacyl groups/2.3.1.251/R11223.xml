@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11223</ID>
+  <commonNames>1-palmitoyl-2-acyl-sn-glycero-3-phosphocholine:lipid A in lipopolysaccharide palmitoyltransferase</commonNames>
+  <def>Palmitoylphosphatidylcholine + Hexa-acyl lipid A in lipopolysaccharide &lt;=&gt; 2-Acyl-sn-glycero-3-phosphocholine + Hepta-acyl lipid A in lipopolysaccharide</def>
+  <equation>C03889 + C21193 &lt;=&gt; C04233 + C21194</equation>
+  <enzymes>
+    <string>2.3.1.251</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K12973" value="2.3.1.251">lipid IVA palmitoyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00037">C21193_C21194</data>
+    <data name="RC00041">C03889_C04233</data>
+  </class>
+</reaction>

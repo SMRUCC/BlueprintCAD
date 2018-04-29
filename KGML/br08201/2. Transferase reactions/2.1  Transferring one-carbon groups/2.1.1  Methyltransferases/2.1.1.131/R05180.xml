@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05180</ID>
+  <commonNames>S-adenosyl-L-methionine:precorrin-3B C17-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Precorrin 3B &lt;=&gt; S-Adenosyl-L-homocysteine + Precorrin 4</def>
+  <equation>C00019 + C06406 &lt;=&gt; C00021 + C06407</equation>
+  <enzymes>
+    <string>2.1.1.131</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K05934" value="2.1.1.131">precorrin-3B C17-methyltransferase</KO:terms>
+    <KO:terms name="K13540" value="2.1.1.130">precorrin-2 C20-methyltransferase / precorrin-3B C17-methyltransferase</KO:terms>
+    <KO:terms name="K13541" value="3.7.1.12">cobalt-precorrin 5A hydrolase / precorrin-3B C17-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01293">C06406_C06407</data>
+  </class>
+</reaction>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06171</ID>
+  <commonNames>L-allo-threonine acetaldehyde-lyase (glycine-forming)</commonNames>
+  <def>L-Allothreonine &lt;=&gt; Glycine + Acetaldehyde</def>
+  <equation>C05519 &lt;=&gt; C00037 + C00084</equation>
+  <enzymes>
+    <string>4.1.2.48</string>
+    <string>4.1.2.49</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00260">Glycine, serine and threonine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01620" value="4.1.2.48">threonine aldolase</KO:terms>
+    <KO:terms name="K20801" value="4.1.2.49">L-allo-threonine aldolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00312">C00037_C05519</data>
+    <data name="RC00372">C00084_C05519</data>
+  </class>
+</reaction>

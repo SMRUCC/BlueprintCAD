@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03903</ID>
+  <commonNames>acetyl-CoA:D-amino-acid N-acetyltransferase</commonNames>
+  <def>Acetyl-CoA + D-Phenylalanine &lt;=&gt; CoA + N-Acetyl-D-phenylalanine</def>
+  <equation>C00024 + C02265 &lt;=&gt; C00010 + C05620</equation>
+  <enzymes>
+    <string>2.3.1.36</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00360">Phenylalanine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18852" value="2.3.1.36">D-amino-acid N-acetyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00064">C02265_C05620</data>
+  </class>
+</reaction>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00894</ID>
+  <commonNames>L-glutamate:L-cysteine gamma-ligase (ADP-forming)</commonNames>
+  <def>ATP + L-Glutamate + L-Cysteine &lt;=&gt; ADP + Orthophosphate + gamma-L-Glutamyl-L-cysteine</def>
+  <equation>C00002 + C00025 + C00097 &lt;=&gt; C00008 + C00009 + C00669</equation>
+  <enzymes>
+    <string>6.3.2.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00480">Glutathione metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00118">Glutathione biosynthesis, glutamate =&gt; glutathione</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01919" value="6.3.2.2">glutamate--cysteine ligase</KO:terms>
+    <KO:terms name="K06048" value="6.3.2.2">glutamate---cysteine ligase / carboxylate-amine ligase</KO:terms>
+    <KO:terms name="K11204" value="6.3.2.2">glutamate--cysteine ligase catalytic subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C00097_C00669</data>
+    <data name="RC00090">C00025_C00669</data>
+  </class>
+</reaction>

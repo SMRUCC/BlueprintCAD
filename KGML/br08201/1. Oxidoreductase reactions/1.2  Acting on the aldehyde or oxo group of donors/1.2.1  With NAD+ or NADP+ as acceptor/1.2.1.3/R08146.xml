@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08146</ID>
+  <commonNames>farnesal:NAD+ oxidoreductase</commonNames>
+  <def>2-trans,6-trans-Farnesal + NAD+ + H2O &lt;=&gt; Farnesoic acid + NADH + H+</def>
+  <equation>C03461 + C00003 + C00001 &lt;=&gt; C16502 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.3</string>
+  </enzymes>
+  <comment>farnesal dehydrogenase</comment>
+  <pathway>
+    <data name="rn00981">Insect hormone biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00128" value="1.2.1.3">aldehyde dehydrogenase (NAD+)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00218">C03461_C16502</data>
+  </class>
+</reaction>

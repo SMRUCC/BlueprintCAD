@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10787</ID>
+  <commonNames>L-arabinose:NADP+ 1-oxidoreductase</commonNames>
+  <def>L-Arabinose + NADP+ &lt;=&gt; L-Arabinono-1,4-lactone + NADPH + H+</def>
+  <equation>C00259 + C00006 &lt;=&gt; C01114 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.376</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00053">Ascorbate and aldarate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13873" value="1.1.1.376">L-arabinose 1-dehydrogenase</KO:terms>
+    <KO:terms name="K19660" value="1.1.1.376">L-arabinose 1-dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00187">C00259_C01114</data>
+  </class>
+</reaction>

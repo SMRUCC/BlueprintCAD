@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04534</ID>
+  <commonNames>(3R)-3-Hydroxydecanoyl-[acyl-carrier-protein]:NADP+ oxidoreductase</commonNames>
+  <def>(3R)-3-Hydroxydecanoyl-[acyl-carrier protein] + NADP+ &lt;=&gt; 3-Oxodecanoyl-[acp] + NADPH</def>
+  <equation>C04619 + C00006 &lt;=&gt; C05753 + C00005</equation>
+  <enzymes>
+    <string>1.1.1.100</string>
+    <string>2.3.1.85</string>
+    <string>2.3.1.86</string>
+    <string>2.3.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00061">Fatty acid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01212">Fatty acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00059" value="1.1.1.100">3-oxoacyl-</KO:terms>
+    <KO:terms name="K00665" value="2.3.1.85">fatty acid synthase, animal type</KO:terms>
+    <KO:terms name="K00667" value="2.3.1.86">fatty acid synthase subunit alpha, fungi type</KO:terms>
+    <KO:terms name="K11533" value="2.3.1">fatty acid synthase, bacteria type</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00029">C04619_C05753</data>
+  </class>
+</reaction>

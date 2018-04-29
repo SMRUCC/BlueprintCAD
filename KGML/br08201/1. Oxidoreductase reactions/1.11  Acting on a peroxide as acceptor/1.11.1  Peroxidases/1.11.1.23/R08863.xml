@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08863</ID>
+  <commonNames>(S)-2-hydroxypropylphosphonate,NADH:oxygen epoxidase</commonNames>
+  <def>(S)-2-Hydroxypropylphosphonate + Hydrogen peroxide &lt;=&gt; Fosfomycin + 2 H2O</def>
+  <equation>C06452 + C00027 &lt;=&gt; C06454 + 2 C00001</equation>
+  <enzymes>
+    <string>1.11.1.23</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00440">Phosphonate and phosphinate metabolism</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12903" value="1.11.1.23">(S)-2-hydroxypropylphosphonic acid epoxidase</KO:terms>
+    <KO:terms name="K22392" value="1.11.1.23">(S)-2-hydroxypropylphosphonic acid epoxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01298">C06452_C06454</data>
+  </class>
+</reaction>

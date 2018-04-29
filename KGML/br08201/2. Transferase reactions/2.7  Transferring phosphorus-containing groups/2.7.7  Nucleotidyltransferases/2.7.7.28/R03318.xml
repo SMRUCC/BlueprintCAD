@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03318</ID>
+  <commonNames>GTP:alpha-D-hexose-1-phosphate gluanylyltransferase</commonNames>
+  <def>GTP + alpha-D-Hexose 1-phosphate &lt;=&gt; Diphosphate + GDPhexose</def>
+  <equation>C00044 + C01171 &lt;=&gt; C00013 + C01581</equation>
+  <enzymes>
+    <string>2.7.7.28</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C01171_C01581</data>
+  </class>
+</reaction>

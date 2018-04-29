@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00396</ID>
+  <commonNames>L-alanine:NAD+ oxidoreductase (deaminating)</commonNames>
+  <def>L-Alanine + NAD+ + H2O &lt;=&gt; Pyruvate + Ammonia + NADH + H+</def>
+  <equation>C00041 + C00003 + C00001 &lt;=&gt; C00022 + C00014 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.4.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn00430">Taurine and hypotaurine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00259" value="1.4.1.1">alanine dehydrogenase</KO:terms>
+    <KO:terms name="K19244" value="1.4.1.1">alanine dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00008">C00022_C00041</data>
+  </class>
+</reaction>

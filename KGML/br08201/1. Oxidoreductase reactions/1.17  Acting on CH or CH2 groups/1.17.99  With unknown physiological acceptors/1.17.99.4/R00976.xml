@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00976</ID>
+  <commonNames>uracil:acceptor oxidoreductase</commonNames>
+  <def>Uracil + Acceptor + H2O &lt;=&gt; Barbiturate + Reduced acceptor</def>
+  <equation>C00106 + C00028 + C00001 &lt;=&gt; C00813 + C00030</equation>
+  <enzymes>
+    <string>1.17.99.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00240">Pyrimidine metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00410">C00106_C00813</data>
+  </class>
+</reaction>

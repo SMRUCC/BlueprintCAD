@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05276</ID>
+  <commonNames>4-chlorobenzoyl-CoA:NADP+ oxidoreductase (halogenating)</commonNames>
+  <def>4-Chlorobenzoyl-CoA + Hydrochloric acid + NADP+ &lt;=&gt; 2,4-Dichlorobenzoyl-CoA + NADPH + H+</def>
+  <equation>C06387 + C01327 + C00006 &lt;=&gt; C06671 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.21.1.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00364">Fluorobenzoate degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00949">C06387_C06671</data>
+  </class>
+</reaction>

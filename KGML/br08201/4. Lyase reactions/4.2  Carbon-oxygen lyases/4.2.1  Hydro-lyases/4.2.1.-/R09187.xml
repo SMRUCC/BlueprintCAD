@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09187</ID>
+  <def>C-9 Reduced nonaketamide &lt;=&gt; Nonaketamide monocyclic intermediate + 2 H2O</def>
+  <equation>C12442 &lt;=&gt; C18293 + 2 C00001</equation>
+  <enzymes>
+    <string>4.2.1</string>
+  </enzymes>
+  <comment>bifunctional cyclase/aromatase, OxyK (otcD1)</comment>
+  <pathway>
+    <data name="rn00253">Tetracycline biosynthesis</data>
+    <data name="rn01056">Biosynthesis of type II polyketide backbone</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00778">Type II polyketide backbone biosynthesis, acyl-CoA + malonyl-CoA =&gt; polyketide</data>
+  </module>
+  <orthology>
+    <KO:terms name="K14249" value="4.2.1">bifunctional cyclase/aromatase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02458">C12442_C18293</data>
+  </class>
+</reaction>

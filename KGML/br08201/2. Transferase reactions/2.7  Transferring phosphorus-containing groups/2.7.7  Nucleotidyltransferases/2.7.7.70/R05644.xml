@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05644</ID>
+  <commonNames>ATP:D-glycero-beta-D-manno-heptose 1-phosphate adenylyltransferase</commonNames>
+  <def>ATP + D-glycero-beta-D-manno-Heptose 1-phosphate &lt;=&gt; Diphosphate + ADP-D-glycero-beta-D-manno-heptose</def>
+  <equation>C00002 + C07838 &lt;=&gt; C00013 + C06397</equation>
+  <enzymes>
+    <string>2.7.7.70</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00540">Lipopolysaccharide biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00064">ADP-L-glycero-D-manno-heptose biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K03272" value="2.7.1.167">D-beta-D-heptose 7-phosphate kinase / D-beta-D-heptose 1-phosphate adenosyltransferase</KO:terms>
+    <KO:terms name="K21345" value="2.7.7.70">D-glycero-beta-D-manno-heptose 1-phosphate adenylyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C06397_C07838</data>
+  </class>
+</reaction>

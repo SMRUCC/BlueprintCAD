@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01442</ID>
+  <commonNames>Cellobiose:oxygen 1-oxidoreductase</commonNames>
+  <def>Cellobiose + Oxygen &lt;=&gt; Cellobiono-1,5-lactone + Hydrogen peroxide</def>
+  <equation>C00185 + C00007 &lt;=&gt; C01093 + C00027</equation>
+  <enzymes>
+    <string>1.1.99.18</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00066">C00185_C01093</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

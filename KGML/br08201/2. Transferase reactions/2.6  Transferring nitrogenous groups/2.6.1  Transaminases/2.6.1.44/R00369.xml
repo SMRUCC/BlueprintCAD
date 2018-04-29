@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00369</ID>
+  <commonNames>L-Alanine:glyoxylate aminotransferase</commonNames>
+  <def>L-Alanine + Glyoxylate &lt;=&gt; Pyruvate + Glycine</def>
+  <equation>C00041 + C00048 &lt;=&gt; C00022 + C00037</equation>
+  <enzymes>
+    <string>2.6.1.44</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00827" value="2.6.1.44">alanine-glyoxylate transaminase / (R)-3-amino-2-methylpropionate-pyruvate transaminase</KO:terms>
+    <KO:terms name="K00830" value="2.6.1.44">alanine-glyoxylate transaminase / serine-glyoxylate transaminase / serine-pyruvate transaminase</KO:terms>
+    <KO:terms name="K14272" value="2.6.1.4">glutamate--glyoxylate aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00008">C00022_C00041</data>
+    <data name="RC00018">C00037_C00048</data>
+  </class>
+</reaction>

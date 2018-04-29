@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11915</ID>
+  <commonNames>fatty acid carboxy-lyase (light-dependent, alkane-forming)</commonNames>
+  <def>Long-chain fatty acid + hn &lt;=&gt; Long-chain alkane + CO2</def>
+  <equation>C00638 + C00205 &lt;=&gt; C21763 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.106</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K22464" value="4.1.1.106">fatty acid photodecarboxylase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04541</ID>
+  <commonNames>2-(methylthio)ethanesulfonate:N-(7-thioheptanoyl)-3-O-phosphothreonine S-(2-sulfoethyl)thiotransferase</commonNames>
+  <def>Coenzyme B + 2-(Methylthio)ethanesulfonate &lt;=&gt; Coenzyme M 7-mercaptoheptanoylthreonine-phosphate heterodisulfide + Methane</def>
+  <equation>C04628 + C03920 &lt;=&gt; C04832 + C01438</equation>
+  <enzymes>
+    <string>2.8.4.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00356">Methanogenesis, methanol =&gt; methane</data>
+    <data name="M00357">Methanogenesis, acetate =&gt; methane</data>
+    <data name="M00563">Methanogenesis, methylamine/dimethylamine/trimethylamine =&gt; methane</data>
+    <data name="M00567">Methanogenesis, CO2 =&gt; methane</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00399" value="2.8.4.1">methyl-coenzyme M reductase alpha subunit</KO:terms>
+    <KO:terms name="K00401" value="2.8.4.1">methyl-coenzyme M reductase beta subunit</KO:terms>
+    <KO:terms name="K00402" value="2.8.4.1">methyl-coenzyme M reductase gamma subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00011">C04628_C04832</data>
+    <data name="RC01542">C01438_C03920</data>
+  </class>
+</reaction>

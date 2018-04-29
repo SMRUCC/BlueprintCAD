@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03435</ID>
+  <commonNames>1-Phosphatidyl-1D-myo-inositol-4,5-bisphosphate inositoltrisphosphohydrolase</commonNames>
+  <def>1-Phosphatidyl-D-myo-inositol 4,5-bisphosphate + H2O &lt;=&gt; D-myo-Inositol 1,4,5-trisphosphate + 1,2-Diacyl-sn-glycerol</def>
+  <equation>C04637 + C00001 &lt;=&gt; C01245 + C00641</equation>
+  <enzymes>
+    <string>3.1.4.11</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00562">Inositol phosphate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00130">Inositol phosphate metabolism, PI=&gt; PIP2 =&gt; Ins(1,4,5)P3 =&gt; Ins(1,3,4,5)P4</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01116" value="3.1.4.11">phosphatidylinositol phospholipase C, gamma-1</KO:terms>
+    <KO:terms name="K05857" value="3.1.4.11">phosphatidylinositol phospholipase C, delta</KO:terms>
+    <KO:terms name="K05858" value="3.1.4.11">phosphatidylinositol phospholipase C, beta</KO:terms>
+    <KO:terms name="K05859" value="3.1.4.11">phosphatidylinositol phospholipase C, gamma-2</KO:terms>
+    <KO:terms name="K05860" value="3.1.4.11">phosphatidylinositol phospholipase C, epsilon</KO:terms>
+    <KO:terms name="K05861" value="3.1.4.11">phosphatidylinositol phospholipase C, zeta</KO:terms>
+    <KO:terms name="K19006" value="3.1.4.11">phosphatidylinositol phospholipase C, eta</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00017">C00641_C04637</data>
+    <data name="RC00425">C01245_C04637</data>
+  </class>
+</reaction>

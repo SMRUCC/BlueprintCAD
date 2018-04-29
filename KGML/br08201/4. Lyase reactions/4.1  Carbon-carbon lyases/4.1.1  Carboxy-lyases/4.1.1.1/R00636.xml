@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00636</ID>
+  <commonNames>2-oxo-acid carboxy-lyase (aldehyde-forming)</commonNames>
+  <def>2-Oxo acid &lt;=&gt; Aldehyde + CO2</def>
+  <equation>C00161 &lt;=&gt; C00071 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.1</string>
+  </enzymes>
+  <comment>general reaction (see R00224)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00343">C00071_C00161</data>
+  </class>
+</reaction>

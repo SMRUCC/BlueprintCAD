@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00002</ID>
+  <commonNames>Reduced ferredoxin:dinitrogen oxidoreductase (ATP-hydrolysing)</commonNames>
+  <def>16 ATP + 16 H2O + 8 Reduced ferredoxin &lt;=&gt; 8 e- + 16 Orthophosphate + 16 ADP + 8 Oxidized ferredoxin</def>
+  <equation>16 C00002 + 16 C00001 + 8 C00138 &lt;=&gt; 8 C05359 + 16 C00009 + 16 C00008 + 8 C00139</equation>
+  <enzymes>
+    <string>1.18.6.1</string>
+  </enzymes>
+  <comment>a part of multi-step reaction (see R05185, R00002+R00067+R00153+R02802+R04782)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+  </class>
+</reaction>

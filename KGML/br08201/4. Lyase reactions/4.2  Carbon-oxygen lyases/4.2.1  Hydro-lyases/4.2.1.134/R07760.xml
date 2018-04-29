@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07760</ID>
+  <def>3-Hydroxyoctadecanoyl-CoA &lt;=&gt; (2E)-Octadecenoyl-CoA + H2O</def>
+  <equation>C16217 &lt;=&gt; C16218 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.134</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01040">Biosynthesis of unsaturated fatty acids</data>
+    <data name="rn01212">Fatty acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K10703" value="4.2.1.134">very-long-chain (3R)-3-hydroxyacyl-CoA dehydratase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01095">C16217_C16218</data>
+  </class>
+</reaction>

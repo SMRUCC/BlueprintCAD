@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01923</ID>
+  <commonNames>palmitoyl-CoA:L-carnitine O-palmitoyltransferase</commonNames>
+  <def>Palmitoyl-CoA + L-Carnitine &lt;=&gt; CoA + L-Palmitoylcarnitine</def>
+  <equation>C00154 + C00318 &lt;=&gt; C00010 + C02990</equation>
+  <enzymes>
+    <string>2.3.1.21</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00071">Fatty acid degradation</data>
+    <data name="rn01212">Fatty acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K08765" value="2.3.1.21">carnitine O-palmitoyltransferase 1, liver isoform</KO:terms>
+    <KO:terms name="K08766" value="2.3.1.21">carnitine O-palmitoyltransferase 2</KO:terms>
+    <KO:terms name="K19523" value="2.3.1.21">carnitine O-palmitoyltransferase 1, muscle isoform</KO:terms>
+    <KO:terms name="K19524" value="2.3.1.21">carnitine O-palmitoyltransferase 1, brain isoform</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00154</data>
+    <data name="RC00037">C00318_C02990</data>
+    <data name="RC02816">C00154_C02990</data>
+  </class>
+</reaction>

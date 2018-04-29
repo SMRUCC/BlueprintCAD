@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05669</ID>
+  <def>3'-Keto-3'-deoxy-ATP &lt;=&gt; 3'-Keto-3'-deoxy-AMP + Diphosphate</def>
+  <equation>C07024 &lt;=&gt; C07025 + C00013</equation>
+  <enzymes />
+  <comment>Pur7 Ref. 1. The Journal of Biological chemistry; vol.271, No.3, Jan 19, pp.1579-1590, 1996</comment>
+  <pathway>
+    <data name="rn00231">Puromycin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12629" value="">puromycin biosynthesis protein Pur7</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C07024_C07025</data>
+  </class>
+</reaction>

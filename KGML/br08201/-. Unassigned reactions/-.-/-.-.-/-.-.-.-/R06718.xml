@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06718</ID>
+  <def>Premithramycin A2' + dTDP-D-mycarose &lt;=&gt; Premithramycin A3' + dTDP</def>
+  <equation>C12385 + C12444 &lt;=&gt; C12386 + C00363</equation>
+  <enzymes />
+  <comment>glycosyltransferase, mtmGIV and D-mycarose 3-C-methyltransferase</comment>
+  <pathway>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00782">Mithramycin biosynthesis, 4-demethylpremithramycinone =&gt; mithramycin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K15960" value="2.4.1">glycosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00363_C12444</data>
+    <data name="RC00049">C12385_C12386</data>
+  </class>
+</reaction>

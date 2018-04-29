@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09781</ID>
+  <commonNames>4-amino-4-deoxy-alpha-L-arabinopyranosyl ditrans,octacis-undecaprenyl phosphate:KDO2-lipid A 4-amino-4-deoxy-alpha-L-arabinopyranosyltransferase</commonNames>
+  <def>Di[3-deoxy-D-manno-octulosonyl]-lipid A + Undecaprenyl phosphate alpha-L-Ara4N &lt;=&gt; alpha-Kdo-(2-&gt;4)-alpha-Kdo-(2-&gt;6)-[4-P-L-Ara4N]-lipid A + di-trans,poly-cis-Undecaprenyl phosphate</def>
+  <equation>C06026 + C16157 &lt;=&gt; C19890 + C17556</equation>
+  <enzymes>
+    <string>2.4.2.43</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K07264" value="2.4.2.43">4-amino-4-deoxy-L-arabinose transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C06026_C19890  C16157_C17556</data>
+  </class>
+</reaction>

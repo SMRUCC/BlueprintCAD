@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02942</ID>
+  <commonNames>Acetylsalicylate O-acetylhydrolase</commonNames>
+  <def>Aspirin + H2O &lt;=&gt; Salicylate + Acetate</def>
+  <equation>C01405 + C00001 &lt;=&gt; C00805 + C00033</equation>
+  <enzymes>
+    <string>3.1.1.55</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00475">C00033_C01405</data>
+    <data name="RC00476">C00805_C01405</data>
+  </class>
+</reaction>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07648</ID>
+  <commonNames>2-trans,6-trans-farnesyl-diphosphate diphosphate-lyase [(-)-Germacrene D-forming]</commonNames>
+  <def>trans,trans-Farnesyl diphosphate &lt;=&gt; (-)-Germacrene D + Diphosphate</def>
+  <equation>C00448 &lt;=&gt; C16142 + C00013</equation>
+  <enzymes>
+    <string>4.2.3.75</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00909">Sesquiterpenoid and triterpenoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K10187" value="4.2.3.22">germacradienol/geosmin synthase</KO:terms>
+    <KO:terms name="K15803" value="4.2.3.75">(-)-germacrene D synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02425">C00448_C16142</data>
+  </class>
+</reaction>

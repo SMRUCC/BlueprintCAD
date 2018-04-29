@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04411</ID>
+  <commonNames>1-O-trans-Cinnamoyl-beta-D-glucopyranose:alcohol O-cinnamoyltransferase</commonNames>
+  <def>trans-Cinnamoyl beta-D-glucoside + Alcohol &lt;=&gt; Alkyl cinnamate + D-Glucose</def>
+  <equation>C04164 + C00069 &lt;=&gt; C06357 + C00031</equation>
+  <enzymes>
+    <string>2.3.1.152</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00055">C00031_C04164</data>
+    <data name="RC00339">C00069_C06357</data>
+  </class>
+</reaction>

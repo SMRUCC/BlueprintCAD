@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02625</ID>
+  <commonNames>ATP:protein-L-histidine N(pi)-phosphotransferase</commonNames>
+  <def>ATP + Protein histidine &lt;=&gt; ADP + Protein N(pi)-phospho-L-histidine</def>
+  <equation>C00002 + C00615 &lt;=&gt; C00008 + C04261</equation>
+  <enzymes>
+    <string>2.7.13.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC03206">C00615_C04261</data>
+  </class>
+</reaction>

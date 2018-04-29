@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08368</ID>
+  <commonNames>purine-nucleoside:phosphate ribosyltransferase</commonNames>
+  <def>N-D-Ribosylpurine + Orthophosphate &lt;=&gt; Purine + alpha-D-Ribose 1-phosphate</def>
+  <equation>C15586 + C00009 &lt;=&gt; C15587 + C00620</equation>
+  <enzymes>
+    <string>2.4.2.1</string>
+  </enzymes>
+  <comment>general reaction (see R01561, R01863, R02147 and R02297)</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K03783" value="2.4.2.1">purine-nucleoside phosphorylase</KO:terms>
+    <KO:terms name="K03784" value="2.4.2.1">purine-nucleoside phosphorylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00122">C15586_C15587</data>
+  </class>
+</reaction>

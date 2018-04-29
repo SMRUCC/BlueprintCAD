@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06335</ID>
+  <def>Gibberellin A24 + 2-Oxoglutarate + Oxygen &lt;=&gt; Gibberellin A36 + Succinate + CO2</def>
+  <equation>C11861 + C00026 + C00007 &lt;=&gt; C11862 + C00042 + C00011</equation>
+  <enzymes />
+  <comment>GA 3-oxidase(2-oxoglutarate dependent dioxygenase),GA3ox</comment>
+  <pathway>
+    <data name="rn00904">Diterpenoid biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01218">C11861_C11862</data>
+  </class>
+</reaction>

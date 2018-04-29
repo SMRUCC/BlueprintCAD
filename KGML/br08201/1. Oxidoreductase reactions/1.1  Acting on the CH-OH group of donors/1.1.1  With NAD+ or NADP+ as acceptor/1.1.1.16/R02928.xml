@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02928</ID>
+  <commonNames>galactitol:NAD+ 2-oxidoreductase</commonNames>
+  <def>Galactitol + NAD+ &lt;=&gt; D-Tagatose + NADH + H+</def>
+  <equation>C01697 + C00003 &lt;=&gt; C00795 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.16</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00052">Galactose metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K21620" value="1.1.1.16">galactitol 2-dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00102">C00795_C01697</data>
+  </class>
+</reaction>

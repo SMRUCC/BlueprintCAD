@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00890</ID>
+  <commonNames>GDPmannose:mannan 1,4-beta-D-mannosyltransferase</commonNames>
+  <def>GDP-mannose + 1,4-beta-D-Mannan &lt;=&gt; GDP + 1,4-beta-D-Mannan</def>
+  <equation>C00096 + C02492 &lt;=&gt; C00035 + C02492</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00051">Fructose and mannose metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00035_C00096</data>
+  </class>
+</reaction>

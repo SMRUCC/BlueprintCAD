@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00914</ID>
+  <commonNames>beta-alanine CoA-transferase</commonNames>
+  <def>beta-Alanine &lt;=&gt; beta-Alanyl-CoA</def>
+  <equation>C00099 &lt;=&gt; C02335</equation>
+  <enzymes>
+    <string>2.8.3</string>
+  </enzymes>
+  <comment>unclear reaction incomplete reaction (CoA donor not yet characterized)</comment>
+  <pathway>
+    <data name="rn00640">Propanoate metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00014">C00099_C02335</data>
+  </class>
+</reaction>

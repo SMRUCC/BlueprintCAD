@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11934</ID>
+  <commonNames>S-adenosyl-L-methionine:norbaeocystin N,N-dimethyltransferase;</commonNames>
+  <commonNames>S-adenosyl-L-methionine:4-hydroxytryptamine-4-phosphate N,N-dimethyltransferase</commonNames>
+  <def>2 S-Adenosyl-L-methionine + Norbaeocystin &lt;=&gt; 2 S-Adenosyl-L-homocysteine + Psilocybin</def>
+  <equation>2 C00019 + C21778 &lt;=&gt; 2 C00021 + C07576</equation>
+  <enzymes>
+    <string>2.1.1.345</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K22436" value="2.1.1.345">psilocybin synthase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

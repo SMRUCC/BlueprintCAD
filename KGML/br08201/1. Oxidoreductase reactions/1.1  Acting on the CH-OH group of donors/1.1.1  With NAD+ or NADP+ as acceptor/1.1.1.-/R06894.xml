@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06894</ID>
+  <def>UDP-N-acetyl-D-galactosamine + 2 NAD+ + H2O &lt;=&gt; UDP-N-acetyl-D-galactosaminuronic acid + 2 NADH + 2 H+</def>
+  <equation>C00203 + 2 C00003 + C00001 &lt;=&gt; C13952 + 2 C00004 + 2 C00080</equation>
+  <enzymes>
+    <string>1.1.1</string>
+  </enzymes>
+  <comment>UDP-N-acetyl-D-galactosamine dehydrogenase,WbpO</comment>
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K02474" value="1.1.1">UDP-N-acetyl-D-galactosamine dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00291">C00203_C13952</data>
+  </class>
+</reaction>

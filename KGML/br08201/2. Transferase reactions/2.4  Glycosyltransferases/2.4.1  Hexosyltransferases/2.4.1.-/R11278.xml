@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11278</ID>
+  <commonNames>UDP-alpha-D-kanosamine:nebramine alpha-D-kanosaminyltransferase</commonNames>
+  <def>UDP-kanosamine + Nebramine &lt;=&gt; UDP + Tobramycin</def>
+  <equation>C12211 + C21259 &lt;=&gt; C00015 + C00397</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00524">Neomycin, kanamycin and gentamicin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20578" value="2.4.1">glycosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C12211</data>
+    <data name="RC00049">C00397_C21259</data>
+  </class>
+</reaction>

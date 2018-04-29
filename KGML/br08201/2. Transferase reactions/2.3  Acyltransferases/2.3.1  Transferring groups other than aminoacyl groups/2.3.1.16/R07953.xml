@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07953</ID>
+  <def>(4Z,7Z,10Z,13Z,16Z)-Docosapentaenoyl-CoA + Acetyl-CoA &lt;=&gt; CoA + (6Z,9Z,12Z,15Z,18Z)-3-Oxotetracosapenta-6,9,12,15,18-enoyl-CoA</def>
+  <equation>C16173 + C00024 &lt;=&gt; C00010 + C16389</equation>
+  <enzymes>
+    <string>2.3.1.16</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01040">Biosynthesis of unsaturated fatty acids</data>
+    <data name="rn01212">Fatty acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K07513" value="2.3.1.16">acetyl-CoA acyltransferase 1</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C16173</data>
+    <data name="RC00326">C00024_C16389</data>
+    <data name="RC02728">C16173_C16389</data>
+  </class>
+</reaction>

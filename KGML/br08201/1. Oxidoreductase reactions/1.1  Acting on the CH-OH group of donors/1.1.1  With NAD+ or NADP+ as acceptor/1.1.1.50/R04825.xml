@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04825</ID>
+  <commonNames>3alpha,7alpha,12alpha-Trihydroxy-5beta-cholestane:NADP+ oxidoreductase (B-specific)</commonNames>
+  <def>3alpha,7alpha,12alpha-Trihydroxy-5beta-cholestane + NADP+ &lt;=&gt; 7alpha,12alpha-Dihydroxy-5beta-cholestan-3-one + NADPH + H+</def>
+  <equation>C05454 + C00006 &lt;=&gt; C05453 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.50</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00120">Primary bile acid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00104">Bile acid biosynthesis, cholesterol =&gt; cholate/chenodeoxycholate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00037" value="1.1.1.50">3alpha-hydroxysteroid 3-dehydrogenase / chlordecone reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00144">C05453_C05454</data>
+  </class>
+</reaction>

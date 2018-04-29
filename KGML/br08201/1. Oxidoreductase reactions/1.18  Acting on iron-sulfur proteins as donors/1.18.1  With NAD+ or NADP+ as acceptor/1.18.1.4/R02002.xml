@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02002</ID>
+  <commonNames>rubredoxin:NADP+ oxidoreductase</commonNames>
+  <def>2 Reduced rubredoxin + NADP+ + H+ &lt;=&gt; 2 Oxidized rubredoxin + NADPH</def>
+  <equation>2 C00340 + C00006 + C00080 &lt;=&gt; 2 C00435 + C00005</equation>
+  <enzymes>
+    <string>1.18.1.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00071">Fatty acid degradation</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+  </class>
+</reaction>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06155</ID>
+  <def>GDP-L-fucose + Lc4Cer &lt;=&gt; GDP + Fuc-Lc4Cer</def>
+  <equation>G10615 + G00037 &lt;=&gt; G10620 + G00046</equation>
+  <enzymes>
+    <string>2.4.1.65</string>
+  </enzymes>
+  <comment>FUT3</comment>
+  <pathway>
+    <data name="rn00601">Glycosphingolipid biosynthesis - lacto and neolacto series</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00716" value="2.4.1.65">galactoside 3(4)-fucosyltransferase 3</KO:terms>
+  </orthology>
+  <class />
+</reaction>

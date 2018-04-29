@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11141</ID>
+  <commonNames>pyruvate:(E)-oct-2-enal acetaldehydetransferase (decarboxylating)</commonNames>
+  <def>Pyruvate + trans-2-Octenal &lt;=&gt; (S)-3-Acetyloctanal + CO2</def>
+  <equation>C00022 + C21138 &lt;=&gt; C21139 + C00011</equation>
+  <enzymes>
+    <string>2.2.1.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00333">Prodigiosin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00837">Prodigiosin biosynthesis, L-proline =&gt; prodigiosin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K21428" value="2.2.1.12">3-acetyloctanal synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03367">C21138_C21139</data>
+  </class>
+</reaction>

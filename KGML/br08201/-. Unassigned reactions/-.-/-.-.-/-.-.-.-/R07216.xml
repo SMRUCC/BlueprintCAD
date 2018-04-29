@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07216</ID>
+  <commonNames>n-tetradecanoyl-CoA,NADPH:O2 oxidoreductase [11-(E) desaturating]</commonNames>
+  <def>Tetradecanoyl-CoA + NADPH + H+ + Oxygen &lt;=&gt; (E)-11-Tetradecenoyl-CoA + NADP+ + 2 H2O</def>
+  <equation>C02593 + C00005 + C00080 + C00007 &lt;=&gt; C06736 + C00006 + 2 C00001</equation>
+  <enzymes />
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00917">C02593_C06736</data>
+  </class>
+</reaction>

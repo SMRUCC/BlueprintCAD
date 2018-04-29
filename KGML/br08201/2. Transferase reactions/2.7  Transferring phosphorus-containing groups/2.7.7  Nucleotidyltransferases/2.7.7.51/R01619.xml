@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01619</ID>
+  <commonNames>Adenylyl-sulfate:ammonia adenylyltransferase</commonNames>
+  <def>Adenylyl sulfate + Ammonia &lt;=&gt; Adenosine 5'-phosphoramidate + Sulfate</def>
+  <equation>C00224 + C00014 &lt;=&gt; C03851 + C00059</equation>
+  <enzymes>
+    <string>2.7.7.51</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02809">C00059_C00224</data>
+  </class>
+</reaction>

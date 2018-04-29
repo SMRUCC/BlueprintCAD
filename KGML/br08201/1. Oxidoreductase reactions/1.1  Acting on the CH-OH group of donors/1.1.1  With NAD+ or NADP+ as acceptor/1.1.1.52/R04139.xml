@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04139</ID>
+  <commonNames>3alpha-Hydroxy-5beta-cholanate:NAD+ oxidoreductase</commonNames>
+  <def>Lithocholic acid + NAD+ &lt;=&gt; 3-Oxo-5beta-cholanate + NADH + H+</def>
+  <equation>C03990 + C00003 &lt;=&gt; C03070 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.52</string>
+  </enzymes>
+  <comment>NADP+ (see R11145)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00144">C03070_C03990</data>
+  </class>
+</reaction>

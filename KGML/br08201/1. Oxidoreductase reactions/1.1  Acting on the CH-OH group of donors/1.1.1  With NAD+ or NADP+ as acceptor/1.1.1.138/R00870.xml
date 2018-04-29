@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00870</ID>
+  <commonNames>D-Mannitol:NADP+ 2-oxidoreductase</commonNames>
+  <def>Mannitol + NADP+ &lt;=&gt; D-Fructose + NADPH + H+</def>
+  <equation>C00392 + C00006 &lt;=&gt; C00095 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.138</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00051">Fructose and mannose metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00085">C00095_C00392</data>
+  </class>
+</reaction>

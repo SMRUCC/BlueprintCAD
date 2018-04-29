@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03286</ID>
+  <commonNames>N(pi)-methyl-L-histidine:beta-alanine ligase (ADP-forming)</commonNames>
+  <def>ATP + N(pi)-Methyl-L-histidine + beta-Alanine &lt;=&gt; ADP + Orthophosphate + beta-Alanyl-N(pi)-methyl-L-histidine</def>
+  <equation>C00002 + C01152 + C00099 &lt;=&gt; C00008 + C00009 + C01262</equation>
+  <enzymes>
+    <string>6.3.2.11</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00340">Histidine metabolism</data>
+    <data name="rn00410">beta-Alanine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14755" value="6.3.2.11">carnosine synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C01152_C01262</data>
+    <data name="RC00090">C00099_C01262</data>
+  </class>
+</reaction>

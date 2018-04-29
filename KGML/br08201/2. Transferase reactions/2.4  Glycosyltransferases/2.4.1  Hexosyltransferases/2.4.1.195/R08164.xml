@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08164</ID>
+  <commonNames>UDP-glucose:N-hydroxy-2-phenylethanethioamide S-beta-D-glucosyltransferase</commonNames>
+  <def>Indolylmethylthiohydroximate + UDP-glucose &lt;=&gt; Indolylmethyl-desulfoglucosinolate + UDP</def>
+  <equation>C16516 + C00029 &lt;=&gt; C16517 + C00015</equation>
+  <enzymes>
+    <string>2.4.1.195</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00380">Tryptophan metabolism</data>
+    <data name="rn00966">Glucosinolate biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00370">Glucosinolate biosynthesis, tryptophan =&gt; glucobrassicin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K11820" value="2.4.1.195">N-hydroxythioamide S-beta-glucosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00882">C16516_C16517</data>
+  </class>
+</reaction>

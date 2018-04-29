@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09149</ID>
+  <def>Trichloroethanol &lt;=&gt; Chloral</def>
+  <equation>C07490 &lt;=&gt; C14866</equation>
+  <enzymes>
+    <string>1.1</string>
+  </enzymes>
+  <comment>dehydrogenase The conversion from chloral to chloral hydrate occurs spontaneously. (see R07101)</comment>
+  <pathway>
+    <data name="rn00625">Chloroalkane and chloroalkene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00725">C07490_C14866</data>
+  </class>
+</reaction>

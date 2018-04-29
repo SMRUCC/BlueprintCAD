@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00629</ID>
+  <commonNames>3'-phosphoadenylyl-sulfate:alcohol sulfotransferase</commonNames>
+  <def>Alcohol + 3'-Phosphoadenylyl sulfate &lt;=&gt; Alkyl sulfate + Adenosine 3',5'-bisphosphate</def>
+  <equation>C00069 + C00053 &lt;=&gt; C02000 + C00054</equation>
+  <enzymes>
+    <string>2.8.2.2</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K01015" value="2.8.2.2">alcohol sulfotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00007">C00053_C00054</data>
+    <data name="RC00341">C00069_C02000</data>
+  </class>
+</reaction>

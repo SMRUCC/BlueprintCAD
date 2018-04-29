@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05759</ID>
+  <commonNames>S-adenosyl-L-methionine:jasmonate O-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + (-)-Jasmonic acid &lt;=&gt; S-Adenosyl-L-homocysteine + Methyl jasmonate</def>
+  <equation>C00019 + C08491 &lt;=&gt; C00021 + C11512</equation>
+  <enzymes>
+    <string>2.1.1.141</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00592">alpha-Linolenic acid metabolism</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K08241" value="2.1.1.141">jasmonate O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00460">C08491_C11512</data>
+  </class>
+</reaction>

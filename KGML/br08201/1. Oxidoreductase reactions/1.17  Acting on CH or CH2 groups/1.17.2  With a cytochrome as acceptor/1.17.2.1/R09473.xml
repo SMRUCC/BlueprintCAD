@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09473</ID>
+  <commonNames>nicotinate:cytochrome 6-oxidoreductase (hydroxylating)</commonNames>
+  <def>Nicotinate + H2O + 2 Ferricytochrome &lt;=&gt; 6-Hydroxynicotinate + 2 Ferrocytochrome + 2 H+</def>
+  <equation>C00253 + C00001 + 2 C00923 &lt;=&gt; C01020 + 2 C00924 + 2 C00080</equation>
+  <enzymes>
+    <string>1.17.2.1</string>
+  </enzymes>
+  <comment>probably ferrocytochrome is re-oxidized by cytochrome oxidase (ec 1.9.3.1)</comment>
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00622">Nicotinate degradation, nicotinate =&gt; fumarate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K18029" value="1.17.2.1">nicotinate dehydrogenase subunit A</KO:terms>
+    <KO:terms name="K18030" value="1.17.2.1">nicotinate dehydrogenase subunit B</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00589">C00253_C01020</data>
+  </class>
+</reaction>

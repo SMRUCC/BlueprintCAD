@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01991</ID>
+  <commonNames>L-histidine:4-aminobutanoate ligase (ADP-forming)</commonNames>
+  <def>ATP + L-Histidine + 4-Aminobutanoate &lt;=&gt; ADP + Orthophosphate + Homocarnosine</def>
+  <equation>C00002 + C00135 + C00334 &lt;=&gt; C00008 + C00009 + C00884</equation>
+  <enzymes>
+    <string>6.3.2.11</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14755" value="6.3.2.11">carnosine synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C00135_C00884</data>
+    <data name="RC00090">C00334_C00884</data>
+  </class>
+</reaction>

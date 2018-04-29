@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09883</ID>
+  <commonNames>4,5:9,10-diseco-3-hydroxy-5,9,17-trioxoandrosta-1(10),2-diene-4-oate hydrolase ( (2Z,4Z)-2-hydroxyhexa-2,4-dienoate-forming)</commonNames>
+  <def>3-Hydroxy-5,9,17-trioxo-4,5:9,10-disecoandrosta-1(10),2-dien-4-oate + H2O &lt;=&gt; 3-[(3aS,4S,7aS)-7a-Methyl-1,5-dioxo-octahydro-1H-inden-4-yl]propanoate + (2Z,4Z)-2-Hydroxyhexa-2,4-dienoate</def>
+  <equation>C04844 + C00001 &lt;=&gt; C20199 + C20240</equation>
+  <enzymes>
+    <string>3.7.1.17</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00984">Steroid degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16050" value="3.7.1.17">4,5:9,10-diseco-3-hydroxy-5,9,17-trioxoandrosta-1(10),2-diene-4-oate hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02018">C04844_C20199</data>
+    <data name="RC02740">C04844_C20240</data>
+  </class>
+</reaction>

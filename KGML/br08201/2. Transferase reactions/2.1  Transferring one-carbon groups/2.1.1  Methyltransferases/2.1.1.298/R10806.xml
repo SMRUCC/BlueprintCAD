@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10806</ID>
+  <commonNames>S-adenosyl-L-methionine:[protein]-L-glutamine (N5-glutamine)-methyltransferase</commonNames>
+  <def>Protein glutamine + S-Adenosyl-L-methionine &lt;=&gt; Protein N5-methyl-L-glutamine + S-Adenosyl-L-homocysteine</def>
+  <equation>C02583 + C00019 &lt;=&gt; C20858 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.297</string>
+    <string>2.1.1.298</string>
+  </enzymes>
+  <comment>The enzyme ec 2.1.1.297 methylates peptide chain release factor 1 or 2 [KO:K02835 K02836]. The enzyme ec 2.1.1.298 methylates ribosomal protein L3 [KO:K02906].</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K02493" value="2.1.1.297">release factor glutamine methyltransferase</KO:terms>
+    <KO:terms name="K07320" value="2.1.1.298">ribosomal protein L3 glutamine methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC03279">C02583_C20858</data>
+  </class>
+</reaction>

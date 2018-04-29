@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01253</ID>
+  <commonNames>L-proline:quinone oxidoreductase</commonNames>
+  <def>L-Proline + Quinone &lt;=&gt; (S)-1-Pyrroline-5-carboxylate + Hydroquinone</def>
+  <equation>C00148 + C15602 &lt;=&gt; C03912 + C15603</equation>
+  <enzymes>
+    <string>1.5.5.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13821" value="1.5.5.2">RHH-type transcriptional regulator, proline utilization regulon repressor / proline dehydrogenase / delta 1-pyrroline-5-carboxylate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00083">C00148_C03912</data>
+  </class>
+</reaction>

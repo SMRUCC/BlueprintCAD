@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11772</ID>
+  <def>5-Dehydro-L-gluconate &lt;=&gt; D-Tagaturonate</def>
+  <equation>C21644 &lt;=&gt; C00558</equation>
+  <enzymes>
+    <string>5.1</string>
+  </enzymes>
+  <comment>5-keto-L-gluconate epimerase</comment>
+  <pathway>
+    <data name="rn00562">Inositol phosphate metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K22233" value="5.1">5-keto-L-gluconate epimerase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

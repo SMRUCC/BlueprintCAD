@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00256</ID>
+  <commonNames>L-glutamine amidohydrolase</commonNames>
+  <def>L-Glutamine + H2O &lt;=&gt; L-Glutamate + Ammonia</def>
+  <equation>C00064 + C00001 &lt;=&gt; C00025 + C00014</equation>
+  <enzymes>
+    <string>1.4.1.13</string>
+    <string>1.4.7.1</string>
+    <string>3.5.1.2</string>
+    <string>3.5.1.38</string>
+    <string>4.3.3.6</string>
+    <string>6.3.4.2</string>
+    <string>6.3.5.2</string>
+    <string>6.3.5.4</string>
+    <string>6.3.5.5</string>
+  </enzymes>
+  <comment>the first step of several ligases (ec 6.3.5.x) using glutamine as amide-N-donor ec 6.3.5.4 (see R00578, R00256+R00483) ec 6.3.5.5 (see R00575, R00256+R10948+R10949+R01395)</comment>
+  <pathway>
+    <data name="rn00220">Arginine biosynthesis</data>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn00471">D-Glutamine and D-glutamate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01425" value="3.5.1.2">glutaminase</KO:terms>
+    <KO:terms name="K01954" value="6.3.5.5">carbamoyl-phosphate synthase</KO:terms>
+    <KO:terms name="K01955" value="6.3.5.5">carbamoyl-phosphate synthase large subunit</KO:terms>
+    <KO:terms name="K01956" value="6.3.5.5">carbamoyl-phosphate synthase small subunit</KO:terms>
+    <KO:terms name="K05597" value="3.5.1.38">glutamin-(asparagin-)ase</KO:terms>
+    <KO:terms name="K11540" value="6.3.5.5">carbamoyl-phosphate synthase / aspartate carbamoyltransferase / dihydroorotase</KO:terms>
+    <KO:terms name="K11541" value="6.3.5.5">carbamoyl-phosphate synthase / aspartate carbamoyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00010">C00025_C00064</data>
+    <data name="RC02798">C00014_C00064</data>
+  </class>
+</reaction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11607</ID>
+  <commonNames>3-aminobutanoyl-CoA:2-oxoglutarate aminotransferase</commonNames>
+  <def>3-Aminobutanoyl-CoA + 2-Oxoglutarate &lt;=&gt; Acetoacetyl-CoA + L-Glutamate</def>
+  <equation>C05117 + C00026 &lt;=&gt; C00332 + C00025</equation>
+  <enzymes>
+    <string>2.6.1.111</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K21585" value="2.6.1.111">3-aminobutanoyl-CoA transaminase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

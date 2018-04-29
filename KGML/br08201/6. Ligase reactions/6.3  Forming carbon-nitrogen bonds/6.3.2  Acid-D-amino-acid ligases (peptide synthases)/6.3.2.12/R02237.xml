@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02237</ID>
+  <commonNames>7,8-dihydropteroate:L-glutamate ligase (ADP-forming)</commonNames>
+  <def>ATP + Dihydropteroate + L-Glutamate &lt;=&gt; ADP + Orthophosphate + Dihydrofolate</def>
+  <equation>C00002 + C00921 + C00025 &lt;=&gt; C00008 + C00009 + C00415</equation>
+  <enzymes>
+    <string>6.3.2.12</string>
+    <string>6.3.2.17</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00790">Folate biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00126">Tetrahydrofolate biosynthesis, GTP =&gt; THF</data>
+    <data name="M00840">Tetrahydrofolate biosynthesis, mediated by ribA and trpF, GTP =&gt; THF</data>
+    <data name="M00841">Tetrahydrofolate biosynthesis, mediated by PTPS, GTP =&gt; THF</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01930" value="6.3.2.17">folylpolyglutamate synthase</KO:terms>
+    <KO:terms name="K11754" value="6.3.2.12">dihydrofolate synthase / folylpolyglutamate synthase</KO:terms>
+    <KO:terms name="K20457" value="6.3.2.12">dihydrofolate synthase</KO:terms>
+    <KO:terms name="K22099" value="6.3.2.12">dihydrofolate synthase / folylpolyglutamate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C00025_C00415</data>
+    <data name="RC00162">C00415_C00921</data>
+  </class>
+</reaction>

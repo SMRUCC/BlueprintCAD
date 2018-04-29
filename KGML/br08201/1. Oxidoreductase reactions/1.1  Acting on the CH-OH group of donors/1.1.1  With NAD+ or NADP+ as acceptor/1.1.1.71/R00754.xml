@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00754</ID>
+  <commonNames>ethanol:NAD+ oxidoreductase</commonNames>
+  <def>Ethanol + NAD+ &lt;=&gt; Acetaldehyde + NADH + H+</def>
+  <equation>C00469 + C00003 &lt;=&gt; C00084 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.1</string>
+    <string>1.1.1.71</string>
+  </enzymes>
+  <comment>NADP+ (ec 1.1.1.71, see R00746)</comment>
+  <pathway>
+    <data name="rn00010">Glycolysis / Gluconeogenesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00001" value="1.1.1.1">alcohol dehydrogenase</KO:terms>
+    <KO:terms name="K00121" value="1.1.1.284">S-(hydroxymethyl)glutathione dehydrogenase / alcohol dehydrogenase</KO:terms>
+    <KO:terms name="K04022" value="1.2.1.10">alcohol dehydrogenaseK04072</KO:terms>
+    <KO:terms name="K13951" value="1.1.1.1">alcohol dehydrogenase 1/7</KO:terms>
+    <KO:terms name="K13952" value="1.1.1.1">alcohol dehydrogenase 6</KO:terms>
+    <KO:terms name="K13953" value="1.1.1.1">alcohol dehydrogenase, propanol-preferring</KO:terms>
+    <KO:terms name="K13954" value="1.1.1.1">alcohol dehydrogenase</KO:terms>
+    <KO:terms name="K13980" value="1.1.1.1">alcohol dehydrogenase 4</KO:terms>
+    <KO:terms name="K18857" value="1.1.1.1">alcohol dehydrogenase class-P</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00088">C00084_C00469</data>
+  </class>
+</reaction>

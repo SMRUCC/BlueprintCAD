@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10533</ID>
+  <commonNames>geranylgeranyl-diphosphate diphosphate-lyase [(E,E)-geranyllinalool-forming]</commonNames>
+  <def>Geranylgeranyl diphosphate + H2O &lt;=&gt; (E,E)-Geranyllinalool + Diphosphate</def>
+  <equation>C00353 + C00001 &lt;=&gt; C20681 + C00013</equation>
+  <enzymes>
+    <string>4.2.3.144</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00904">Diterpenoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K17982" value="4.2.3.144">geranyllinalool synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01821">C00353_C20681</data>
+  </class>
+</reaction>

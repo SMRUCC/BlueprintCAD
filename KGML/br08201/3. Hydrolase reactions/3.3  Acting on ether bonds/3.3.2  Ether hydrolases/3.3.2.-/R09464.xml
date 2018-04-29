@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09464</ID>
+  <commonNames>9,10-epoxy-18-hydroxystearate hydrolase</commonNames>
+  <def>9,10-Epoxy-18-hydroxystearate + H2O &lt;=&gt; 9,10,18-Trihydroxystearate</def>
+  <equation>C19620 + C00001 &lt;=&gt; C19621</equation>
+  <enzymes>
+    <string>3.3.2</string>
+  </enzymes>
+  <comment>fatty acid epoxide hydrolase</comment>
+  <pathway>
+    <data name="rn00073">Cutin, suberine and wax biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01757">C19620_C19621</data>
+  </class>
+</reaction>

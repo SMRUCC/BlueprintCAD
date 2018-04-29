@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05606</ID>
+  <commonNames>D-mannonate hydro-lyase</commonNames>
+  <def>D-Mannonate &lt;=&gt; 2-Dehydro-3-deoxy-D-gluconate + H2O</def>
+  <equation>C00514 &lt;=&gt; C00204 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.8</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00040">Pentose and glucuronate interconversions</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00061">D-Glucuronate degradation, D-glucuronate =&gt; pyruvate + D-glyceraldehyde 3P</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01686" value="4.2.1.8">mannonate dehydratase</KO:terms>
+    <KO:terms name="K08323" value="4.2.1.8">mannonate dehydratase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00543">C00204_C00514</data>
+  </class>
+</reaction>

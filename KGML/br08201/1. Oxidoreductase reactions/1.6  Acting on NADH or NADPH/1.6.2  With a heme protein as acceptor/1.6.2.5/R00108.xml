@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00108</ID>
+  <commonNames>NADPH:ferricytochrome-c2 oxidoreductase</commonNames>
+  <def>NADPH + 2 Ferricytochrome c2 &lt;=&gt; NADP+ + 2 Ferrocytochrome c2 + H+</def>
+  <equation>C00005 + 2 C00997 &lt;=&gt; C00006 + 2 C01000 + C00080</equation>
+  <enzymes>
+    <string>1.6.2.5</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+  </class>
+</reaction>

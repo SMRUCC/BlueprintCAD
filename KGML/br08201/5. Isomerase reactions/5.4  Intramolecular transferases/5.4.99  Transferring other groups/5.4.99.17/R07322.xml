@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07322</ID>
+  <commonNames>squalene mutase (cyclizing)</commonNames>
+  <def>Squalene &lt;=&gt; Diploptene</def>
+  <equation>C00751 &lt;=&gt; C06310</equation>
+  <enzymes>
+    <string>5.4.99.17</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00909">Sesquiterpenoid and triterpenoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K06045" value="5.4.99.17">squalene-hopene/tetraprenyl-beta-curcumene cyclase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01851">C00751_C06310</data>
+  </class>
+</reaction>

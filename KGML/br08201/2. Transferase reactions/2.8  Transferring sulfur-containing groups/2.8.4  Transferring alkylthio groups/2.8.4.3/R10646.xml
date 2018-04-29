@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10646</ID>
+  <def>tRNA containing 6-isopentenyladenosine + Sulfur donor + S-Adenosyl-L-methionine &lt;=&gt; 2-Thio-N6-dimethylallyladenine in tRNA + L-Methionine + 5'-Deoxyadenosine</def>
+  <equation>C04432 + C17023 + C00019 &lt;=&gt; C20755 + C00073 + C05198</equation>
+  <enzymes>
+    <string>2.8.4.3</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K06168" value="2.8.4.3">tRNA-2-methylthio-N6-dimethylallyladenosine synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00021">C00019_C00073</data>
+    <data name="RC03222">C04432_C20755</data>
+  </class>
+</reaction>

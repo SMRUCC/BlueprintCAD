@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07611</ID>
+  <def>UDP-N-acetyl-D-galactosamine + G05309 &lt;=&gt; UDP + G00704</def>
+  <equation>G10611 + G05309 &lt;=&gt; G10619 + G00704</equation>
+  <enzymes>
+    <string>2.4.1.244</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K09656" value="2.4.1.244">beta-1,4-N-acetylgalactosaminyltransferase 3</KO:terms>
+    <KO:terms name="K09657" value="2.4.1.244">beta-1,4-N-acetylgalactosaminyltransferase 4</KO:terms>
+  </orthology>
+  <class />
+</reaction>

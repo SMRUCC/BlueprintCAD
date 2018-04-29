@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06685</ID>
+  <def>Rhodomycin D + H2O &lt;=&gt; 10-Carboxy-13-deoxycarminomycin + Methanol</def>
+  <equation>C12426 + C00001 &lt;=&gt; C12427 + C00132</equation>
+  <enzymes />
+  <comment>10-carbomethoxy-13-deoxycarminomycin esterase, dnrP</comment>
+  <pathway>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00460">C12426_C12427</data>
+    <data name="RC00461">C00132_C12426</data>
+  </class>
+</reaction>

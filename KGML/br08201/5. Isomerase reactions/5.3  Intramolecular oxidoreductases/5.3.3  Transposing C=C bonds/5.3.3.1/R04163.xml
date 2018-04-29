@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04163</ID>
+  <commonNames>21-Hydroxypregnenolone:NAD+ 3-oxidoreductase</commonNames>
+  <def>21-Hydroxypregnenolone + NAD+ &lt;=&gt; 11-Deoxycorticosterone + NADH + H+</def>
+  <equation>C05485 + C00003 &lt;=&gt; C03205 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.145</string>
+    <string>5.3.3.1</string>
+  </enzymes>
+  <comment>NADP+ (see R04164) multi-step reaction (see R03176+R02644)</comment>
+  <pathway>
+    <data name="rn00140">Steroid hormone biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00070" value="1.1.1.145">3beta-hydroxy-Delta5-steroid dehydrogenase / steroid Delta-isomerase</KO:terms>
+    <KO:terms name="K01822" value="5.3.3.1">steroid Delta-isomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00146">C03205_C05485</data>
+  </class>
+</reaction>

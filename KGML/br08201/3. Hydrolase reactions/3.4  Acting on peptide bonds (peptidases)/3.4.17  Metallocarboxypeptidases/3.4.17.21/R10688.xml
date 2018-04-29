@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10688</ID>
+  <def>N-Acetylaspartylglutamylglutamate + H2O &lt;=&gt; N-Acetylaspartylglutamate + L-Glutamate</def>
+  <equation>C20776 + C00001 &lt;=&gt; C12270 + C00025</equation>
+  <enzymes>
+    <string>3.4.17.21</string>
+  </enzymes>
+  <comment>Glutamate carboxypeptidase II</comment>
+  <pathway>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14592" value="3.4.17.21">glutamate carboxypeptidase II (folate hydrolase 1)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00064">C00025_C20776</data>
+    <data name="RC00141">C12270_C20776</data>
+  </class>
+</reaction>

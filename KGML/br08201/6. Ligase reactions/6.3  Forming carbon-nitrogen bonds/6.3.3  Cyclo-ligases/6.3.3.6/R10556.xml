@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10556</ID>
+  <commonNames>(2S,5S)-5-carboxymethylproline cyclo-ligase (AMP-forming)</commonNames>
+  <def>ATP + (2S,5S)-trans-Carboxymethylproline &lt;=&gt; AMP + Diphosphate + (3S,5S)-Carbapenam-3-carboxylic acid</def>
+  <equation>C00002 + C17366 &lt;=&gt; C00020 + C00013 + C17367</equation>
+  <enzymes>
+    <string>6.3.3.6</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00332">Carbapenem biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00675">Carbapenem-3-carboxylate biosynthesis, pyrroline-5-carboxylate + malonyl-CoA =&gt; carbapenem-3-carboxylate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K18316" value="6.3.3.6">carbapenam-3-carboxylate synthase</KO:terms>
+    <KO:terms name="K18582" value="6.3.3.6">carbapenam-3-carboxylate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03195">C17366_C17367</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02255</ID>
+  <commonNames>trans-Cinnamate:CoA ligase (AMP-forming)</commonNames>
+  <def>ATP + trans-Cinnamate + CoA &lt;=&gt; AMP + Diphosphate + Cinnamoyl-CoA</def>
+  <equation>C00002 + C00423 + C00010 &lt;=&gt; C00020 + C00013 + C00540</equation>
+  <enzymes>
+    <string>6.2.1.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00940">Phenylpropanoid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01904" value="6.2.1.12">4-coumarate--CoA ligase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00540</data>
+    <data name="RC00131">C00423_C00540</data>
+  </class>
+</reaction>

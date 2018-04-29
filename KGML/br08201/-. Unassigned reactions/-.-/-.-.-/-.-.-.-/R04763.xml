@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04763</ID>
+  <def>Desmosterol + S-Adenosyl-L-methionine &lt;=&gt; Ergosta-5,7,22,24(28)-tetraen-3beta-ol + S-Adenosyl-L-homocysteine</def>
+  <equation>C01802 + C00019 &lt;=&gt; C05440 + C00021</equation>
+  <enzymes />
+  <comment>incomplete reaction multi-step reaction</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01890">C01802_C05440</data>
+  </class>
+</reaction>

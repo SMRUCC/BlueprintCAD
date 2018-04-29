@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04120</ID>
+  <commonNames>peptide-L-methionine:thioredoxin-disulfide S-oxidoreductase [L-methionine (S)-S-oxide-forming]</commonNames>
+  <def>Peptide-L-methionine + Thioredoxin disulfide + H2O &lt;=&gt; Peptide-L-methionine (S)-S-oxide + Thioredoxin</def>
+  <equation>C03023 + C00343 + C00001 &lt;=&gt; C03895 + C00342</equation>
+  <enzymes>
+    <string>1.8.4.11</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00013">C00342_C00343</data>
+    <data name="RC00639">C03023_C03895</data>
+  </class>
+</reaction>

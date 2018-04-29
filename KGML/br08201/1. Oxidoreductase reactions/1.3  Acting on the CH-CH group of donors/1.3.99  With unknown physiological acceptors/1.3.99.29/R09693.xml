@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09693</ID>
+  <commonNames>15-cis-phytoene:acceptor oxidoreductase (zeta-carotene-forming)</commonNames>
+  <def>15-cis-Phytoene + 2 Acceptor &lt;=&gt; all-trans-zeta-Carotene + 2 Reduced acceptor</def>
+  <equation>C05421 + 2 C00028 &lt;=&gt; C05430 + 2 C00030</equation>
+  <enzymes>
+    <string>1.3.99.29</string>
+  </enzymes>
+  <comment>2-step phytoene desaturase see (R09692+R04787)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02606">C05421_C05430</data>
+  </class>
+</reaction>

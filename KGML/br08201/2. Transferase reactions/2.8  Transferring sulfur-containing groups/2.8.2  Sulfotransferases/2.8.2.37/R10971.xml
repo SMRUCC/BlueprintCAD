@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10971</ID>
+  <commonNames>3'-phosphoadenylyl-sulfate:alpha,alpha-trehalose 2-sulfotransferase</commonNames>
+  <def>3'-Phosphoadenylyl sulfate + alpha,alpha-Trehalose &lt;=&gt; Adenosine 3',5'-bisphosphate + 2-Sulfotrehalose</def>
+  <equation>C00053 + C01083 &lt;=&gt; C00054 + C20985</equation>
+  <enzymes>
+    <string>2.8.2.37</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00007">C00053_C00054</data>
+    <data name="RC00231">C01083_C20985</data>
+  </class>
+</reaction>

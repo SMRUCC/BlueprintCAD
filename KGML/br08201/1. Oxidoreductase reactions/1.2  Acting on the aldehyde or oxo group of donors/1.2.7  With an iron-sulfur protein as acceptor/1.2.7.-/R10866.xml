@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10866</ID>
+  <commonNames>pyruvate:flavodoxin 2-oxidoreductase (CoA-acetylating)</commonNames>
+  <def>Pyruvate + CoA + Oxidized flavodoxin &lt;=&gt; Acetyl-CoA + CO2 + Reduced flavodoxin</def>
+  <equation>C00022 + C00010 + C02869 &lt;=&gt; C00024 + C00011 + C02745</equation>
+  <enzymes>
+    <string>1.2.7</string>
+  </enzymes>
+  <comment>nifJ</comment>
+  <pathway>
+    <data name="rn00620">Pyruvate metabolism</data>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00173">Reductive citrate cycle (Arnon-Buchanan cycle)</data>
+  </module>
+  <orthology>
+    <KO:terms name="K03737" value="1.2.7.1">pyruvate-ferredoxin/flavodoxin oxidoreductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC02742">C00022_C00024</data>
+  </class>
+</reaction>

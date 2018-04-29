@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10693</ID>
+  <commonNames>N-acetyl-L-aspartyl-L-glutamate:L-glutamate ligase (ADP, N-acetyl-L-aspartyl-L-glutamyl-L-glutamate-forming)</commonNames>
+  <def>ATP + N-Acetylaspartylglutamate + L-Glutamate &lt;=&gt; ADP + Orthophosphate + N-Acetylaspartylglutamylglutamate</def>
+  <equation>C00002 + C12270 + C00025 &lt;=&gt; C00008 + C00009 + C20776</equation>
+  <enzymes>
+    <string>6.3.2.42</string>
+  </enzymes>
+  <comment>two-step reaction (see R10679, R10678+R10693)</comment>
+  <pathway>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18311" value="6.3.2.41">N-acetylaspartylglutamate/N-acetylaspartylglutamylglutamate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C00025_C20776</data>
+    <data name="RC00141">C12270_C20776</data>
+  </class>
+</reaction>

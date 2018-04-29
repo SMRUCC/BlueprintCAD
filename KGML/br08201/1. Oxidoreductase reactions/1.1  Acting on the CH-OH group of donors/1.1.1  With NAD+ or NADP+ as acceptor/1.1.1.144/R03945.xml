@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03945</ID>
+  <commonNames>Perillyl-alcohol:NAD+ oxidoreductase</commonNames>
+  <def>Perillyl alcohol + NAD+ &lt;=&gt; Perillyl aldehyde + NADH + H+</def>
+  <equation>C02452 + C00003 &lt;=&gt; C02576 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.144</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00903">Limonene and pinene degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14732" value="1.14.14.51">limonene hydroxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC01033">C02452_C02576</data>
+  </class>
+</reaction>

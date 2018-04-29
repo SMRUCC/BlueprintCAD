@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07399</ID>
+  <def>Acetyl-CoA + Pyruvate + H2O &lt;=&gt; (R)-2-Methylmalate + CoA</def>
+  <equation>C00024 + C00022 + C00001 &lt;=&gt; C02612 + C00010</equation>
+  <enzymes>
+    <string>2.3.1.182</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00290">Valine, leucine and isoleucine biosynthesis</data>
+    <data name="rn00660">C5-Branched dibasic acid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00535">Isoleucine biosynthesis, pyruvate =&gt; 2-oxobutanoate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K09011" value="2.3.1.182">(R)-citramalate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC01205">C00022_C02612</data>
+  </class>
+</reaction>

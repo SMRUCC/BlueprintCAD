@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04265</ID>
+  <commonNames>CDP-alpha-D-paratose:NADP+ 4-oxidoreductase</commonNames>
+  <def>CDP-3,6-dideoxy-D-glucose + NADP+ &lt;=&gt; CDP-4-dehydro-3,6-dideoxy-D-glucose + NADPH + H+</def>
+  <equation>C03598 + C00006 &lt;=&gt; C04297 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.342</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12453" value="1.1.1.342">CDP-paratose synthetase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00154">C03598_C04297</data>
+  </class>
+</reaction>

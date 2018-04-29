@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02634</ID>
+  <commonNames>UTP:1-Phospho-alpha-D-galacturonate uridylyltransferase;</commonNames>
+  <commonNames>UDP-D-galacturonate pyrophospholylase</commonNames>
+  <def>UDP-D-galacturonate + Diphosphate &lt;=&gt; 1-Phospho-alpha-D-galacturonate + UTP</def>
+  <equation>C00617 + C00013 &lt;=&gt; C04037 + C00075</equation>
+  <enzymes>
+    <string>2.7.7</string>
+  </enzymes>
+  <comment>enzyme not yet characterized</comment>
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00617_C04037</data>
+  </class>
+</reaction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09696</ID>
+  <commonNames>1,5-anhydro-D-fructose hydro-lyase (microthecin-forming)</commonNames>
+  <def>1,5-Anhydro-D-fructose &lt;=&gt; 2-Hydroxy-2-(hydroxymethyl)-2H-pyran-3(6H)-one + H2O</def>
+  <equation>C06485 &lt;=&gt; C19821 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.110</string>
+  </enzymes>
+  <comment>two-step reaction (see R09694+R09695)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02608">C06485_C19821</data>
+  </class>
+</reaction>

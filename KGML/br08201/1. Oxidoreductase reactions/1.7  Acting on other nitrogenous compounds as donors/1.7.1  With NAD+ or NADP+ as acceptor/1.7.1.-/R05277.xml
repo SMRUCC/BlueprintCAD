@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05277</ID>
+  <def>4-Aminobenzenesulfonate + 4-Aminobenzoate &lt;=&gt; 4-Carboxy-4'-sulfoazobenzene + 4 H+</def>
+  <equation>C06335 + C00568 &lt;=&gt; C06673 + 4 C00080</equation>
+  <enzymes>
+    <string>1.7.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00252">C00568_C06673  C06335_C06673</data>
+  </class>
+</reaction>

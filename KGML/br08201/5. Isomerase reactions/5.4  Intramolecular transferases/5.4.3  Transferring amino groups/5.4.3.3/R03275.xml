@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03275</ID>
+  <commonNames>(3S)-3,6-diaminohexanoate 5,6-aminomutase</commonNames>
+  <def>(3S)-3,6-Diaminohexanoate &lt;=&gt; (3S,5S)-3,5-Diaminohexanoate</def>
+  <equation>C01142 &lt;=&gt; C01186</equation>
+  <enzymes>
+    <string>5.4.3.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00310">Lysine degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01844" value="5.4.3.3">beta-lysine 5,6-aminomutase alpha subunit</KO:terms>
+    <KO:terms name="K18011" value="5.4.3.3">beta-lysine 5,6-aminomutase beta subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00719">C01142_C01186</data>
+  </class>
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01217</ID>
+  <commonNames>5-methyltetrahydrofolate:ferredoxin oxidoreductase</commonNames>
+  <def>5,10-Methylenetetrahydrofolate + 2 Reduced ferredoxin + 2 H+ &lt;=&gt; 5-Methyltetrahydrofolate + 2 Oxidized ferredoxin</def>
+  <equation>C00143 + 2 C00138 + 2 C00080 &lt;=&gt; C00440 + 2 C00139</equation>
+  <enzymes>
+    <string>1.5.7.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00670">One carbon pool by folate</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00081">C00143_C00440</data>
+  </class>
+</reaction>

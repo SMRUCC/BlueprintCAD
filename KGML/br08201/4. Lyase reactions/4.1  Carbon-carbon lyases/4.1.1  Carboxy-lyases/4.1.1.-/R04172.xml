@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04172</ID>
+  <def>3-Hydroxy-L-kynurenine &lt;=&gt; 3-Hydroxykynurenamine + CO2</def>
+  <equation>C03227 &lt;=&gt; C05636 + C00011</equation>
+  <enzymes>
+    <string>4.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00380">Tryptophan metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00299">C03227_C05636</data>
+  </class>
+</reaction>

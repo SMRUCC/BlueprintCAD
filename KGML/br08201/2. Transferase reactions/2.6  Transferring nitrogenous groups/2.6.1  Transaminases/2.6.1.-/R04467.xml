@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04467</ID>
+  <def>N6-Acetyl-LL-2,6-diaminoheptanedioate + 2-Oxoglutarate &lt;=&gt; N-Acetyl-L-2-amino-6-oxopimelate + L-Glutamate</def>
+  <equation>C04390 + C00026 &lt;=&gt; C05539 + C00025</equation>
+  <enzymes>
+    <string>2.6.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00300">Lysine biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00525">Lysine biosynthesis, acetyl-DAP pathway, aspartate =&gt; lysine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00841" value="2.6.1">aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026  C04390_C05539</data>
+  </class>
+</reaction>

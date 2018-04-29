@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11177</ID>
+  <commonNames>nicotine oxidoreductase</commonNames>
+  <def>(R,S)-Nicotine + H2O + Oxygen &lt;=&gt; Pseudooxynicotine + Hydrogen peroxide</def>
+  <equation>C16150 + C00001 + C00007 &lt;=&gt; C20361 + C00027</equation>
+  <enzymes>
+    <string>1.5.3</string>
+  </enzymes>
+  <comment>two-step reaction (see R11175+R11176)</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K20169" value="1.5.3">nicotine oxidoreductase</KO:terms>
+    <KO:terms name="K20170" value="1.5.3">nicotine oxidoreductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00875">C16150_C20361</data>
+  </class>
+</reaction>

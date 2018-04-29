@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05227</ID>
+  <commonNames>hydrogenobyrinic-acid-a,c-diamide:cobalt cobalt-ligase (ADP-forming)</commonNames>
+  <def>Hydrogenobyrinate a,c diamide + Cobalt ion + ATP + H2O &lt;=&gt; Cob(II)yrinate a,c diamide + Orthophosphate + ADP + H+</def>
+  <equation>C06503 + C00175 + C00002 + C00001 &lt;=&gt; C06504 + C00009 + C00008 + C00080</equation>
+  <enzymes>
+    <string>6.6.1.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K02230" value="6.6.1.2">cobaltochelatase CobN</KO:terms>
+    <KO:terms name="K09882" value="6.6.1.2">cobaltochelatase CobS</KO:terms>
+    <KO:terms name="K09883" value="6.6.1.2">cobaltochelatase CobT</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC02000">C06503_C06504</data>
+  </class>
+</reaction>

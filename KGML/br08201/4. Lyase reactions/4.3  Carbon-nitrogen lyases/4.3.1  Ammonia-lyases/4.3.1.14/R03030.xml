@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03030</ID>
+  <commonNames>L-3-aminobutyryl-CoA ammonia-lyase</commonNames>
+  <def>L-3-Aminobutyryl-CoA &lt;=&gt; Crotonoyl-CoA + Ammonia</def>
+  <equation>C05231 &lt;=&gt; C00877 + C00014</equation>
+  <enzymes>
+    <string>4.3.1.14</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00310">Lysine degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18014" value="4.3.1.14">3-aminobutyryl-CoA ammonia-lyase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00833">C00877_C05231</data>
+  </class>
+</reaction>

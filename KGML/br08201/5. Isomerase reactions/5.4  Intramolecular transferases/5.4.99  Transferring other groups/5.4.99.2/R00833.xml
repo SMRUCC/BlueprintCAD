@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00833</ID>
+  <commonNames>(R)-Methylmalonyl-CoA CoA-carbonylmutase</commonNames>
+  <def>(R)-Methylmalonyl-CoA &lt;=&gt; Succinyl-CoA</def>
+  <equation>C01213 &lt;=&gt; C00091</equation>
+  <enzymes>
+    <string>5.4.99.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00280">Valine, leucine and isoleucine degradation</data>
+    <data name="rn00630">Glyoxylate and dicarboxylate metabolism</data>
+    <data name="rn00640">Propanoate metabolism</data>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00373">Ethylmalonyl pathway</data>
+    <data name="M00375">Hydroxypropionate-hydroxybutylate cycle</data>
+    <data name="M00376">3-Hydroxypropionate bi-cycle</data>
+    <data name="M00741">Propanoyl-CoA metabolism, propanoyl-CoA =&gt; succinyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01847" value="5.4.99.2">methylmalonyl-CoA mutase</KO:terms>
+    <KO:terms name="K01848" value="5.4.99.2">methylmalonyl-CoA mutase, N-terminal domain</KO:terms>
+    <KO:terms name="K01849" value="5.4.99.2">methylmalonyl-CoA mutase, C-terminal domain</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00395">C00091_C01213</data>
+  </class>
+</reaction>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00258</ID>
+  <commonNames>L-Alanine:2-oxoglutarate aminotransferase</commonNames>
+  <def>L-Alanine + 2-Oxoglutarate &lt;=&gt; Pyruvate + L-Glutamate</def>
+  <equation>C00041 + C00026 &lt;=&gt; C00022 + C00025</equation>
+  <enzymes>
+    <string>2.6.1.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00220">Arginine biosynthesis</data>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn00710">Carbon fixation in photosynthetic organisms</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00171">C4-dicarboxylic acid cycle, NAD - malic enzyme type  C4-dicarboxylic acid cycle, NAD - malic enzyme type</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00814" value="2.6.1.2">alanine transaminase</KO:terms>
+    <KO:terms name="K14260" value="2.6.1.66">alanine-synthesizing transaminase</KO:terms>
+    <KO:terms name="K14272" value="2.6.1.4">glutamate--glyoxylate aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC00008">C00022_C00041</data>
+  </class>
+</reaction>

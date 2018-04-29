@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08845</ID>
+  <commonNames>UTP:monosaccharide-1-phosphate uridylyltransferase</commonNames>
+  <def>UTP + alpha-D-Aldose 1-phosphate &lt;=&gt; Diphosphate + UDP-sugar</def>
+  <equation>C00075 + C00991 &lt;=&gt; C00013 + C05227</equation>
+  <enzymes>
+    <string>2.7.7.64</string>
+  </enzymes>
+  <comment>UDP-sugar pyrophosphorylase</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K12447" value="2.7.7.64">UDP-sugar pyrophosphorylase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

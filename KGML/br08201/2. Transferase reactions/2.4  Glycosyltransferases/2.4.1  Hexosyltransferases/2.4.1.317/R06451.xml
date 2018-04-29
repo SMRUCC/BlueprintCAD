@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06451</ID>
+  <commonNames>dTDP-6-deoxy-alpha-D-allose:5-O-beta-D-mycaminosyltylonolide 23-O-6-deoxy-beta-D-allosyltransferase</commonNames>
+  <def>5-O-beta-D-Mycaminosyltylonolide + dTDP-6-deoxy-D-allose &lt;=&gt; Demethyllactenocin + dTDP</def>
+  <equation>C12002 + C11912 &lt;=&gt; C12003 + C00363</equation>
+  <enzymes>
+    <string>2.4.1.317</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00522">Biosynthesis of 12-, 14- and 16-membered macrolides</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00773">Tylosin biosynthesis, methylmalonyl-CoA + malonyl-CoA =&gt; tylactone =&gt; tylosin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K15993" value="2.4.1.317">O-mycaminosyltylonolide 6-deoxyallosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00363_C11912</data>
+    <data name="RC00059">C12002_C12003</data>
+  </class>
+</reaction>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01361</ID>
+  <commonNames>(R)-3-Hydroxybutanoate:NAD+ oxidoreductase</commonNames>
+  <def>(R)-3-Hydroxybutanoate + NAD+ &lt;=&gt; Acetoacetate + NADH + H+</def>
+  <equation>C01089 + C00003 &lt;=&gt; C00164 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.30</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00072">Synthesis and degradation of ketone bodies</data>
+    <data name="rn00650">Butanoate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00088">Ketone body biosynthesis, acetyl-CoA =&gt; acetoacetate/3-hydroxybutyrate/acetone</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00019" value="1.1.1.30">3-hydroxybutyrate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00117">C00164_C01089</data>
+  </class>
+</reaction>

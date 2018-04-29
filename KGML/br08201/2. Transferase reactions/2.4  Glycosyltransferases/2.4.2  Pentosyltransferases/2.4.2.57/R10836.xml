@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10836</ID>
+  <commonNames>AMP:phosphate (5-phospho-alpha-D-ribosyl)transferase</commonNames>
+  <def>AMP + Orthophosphate &lt;=&gt; Adenine + D-Ribose 1,5-bisphosphate</def>
+  <equation>C00020 + C00009 &lt;=&gt; C00147 + C01151</equation>
+  <enzymes>
+    <string>2.4.2.57</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K18931" value="2.4.2.57">AMP phosphorylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00063">C00020_C00147</data>
+  </class>
+</reaction>

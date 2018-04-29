@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08721</ID>
+  <commonNames>(24S)-cholest-5-ene-3beta,7alpha,24-triol:NAD+ 3-oxidoreductase</commonNames>
+  <def>(24S)-Cholest-5-ene-3beta,7alpha,24-triol + NAD+ &lt;=&gt; 7alpha,24-Dihydroxy-4-cholesten-3-one + NADH + H+</def>
+  <equation>C15518 + C00003 &lt;=&gt; C17331 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.181</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00120">Primary bile acid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12408" value="1.1.1.181">cholest-5-ene-3beta,7alpha-diol 3beta-dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC01111">C15518_C17331</data>
+  </class>
+</reaction>

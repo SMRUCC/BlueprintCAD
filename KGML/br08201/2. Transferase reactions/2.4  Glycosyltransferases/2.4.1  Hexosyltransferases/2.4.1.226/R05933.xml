@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05933</ID>
+  <def>UDP-D-glucuronate + G00160 &lt;=&gt; UDP + G00180</def>
+  <equation>G10612 + G00160 &lt;=&gt; G10619 + G00180</equation>
+  <enzymes>
+    <string>2.4.1.226</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K00747" value="2.4.1.175">chondroitin polymerizing factor</KO:terms>
+    <KO:terms name="K03419" value="2.4.1.226">chondroitin polymerizing factor 2</KO:terms>
+    <KO:terms name="K13499" value="2.4.1.175">chondroitin sulfate synthase</KO:terms>
+    <KO:terms name="K13500" value="2.4.1.175">chondroitin synthase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

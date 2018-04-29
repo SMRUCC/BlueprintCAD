@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09483</ID>
+  <commonNames>malonate carboxy-lyase (biotin-independent/biotin-dependent)</commonNames>
+  <def>Malonate &lt;=&gt; Acetate + CO2</def>
+  <equation>C00383 &lt;=&gt; C00033 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.88</string>
+    <string>4.1.1.89</string>
+  </enzymes>
+  <comment>multi-step reaction see R08944+R09482 (ec 4.1.1.88) or R08944+R08936+R09509 (ec 4.1.1.89)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02550">C00033_C00383</data>
+  </class>
+</reaction>

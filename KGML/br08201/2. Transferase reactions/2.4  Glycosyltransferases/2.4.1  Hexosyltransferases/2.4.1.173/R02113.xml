@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02113</ID>
+  <commonNames>UDPglucose:sterol 3-O-beta-D-glucosyltransferase</commonNames>
+  <def>UDP-glucose + Sterol &lt;=&gt; UDP + Sterol 3-beta-D-glucoside</def>
+  <equation>C00029 + C00370 &lt;=&gt; C00015 + C03641</equation>
+  <enzymes>
+    <string>2.4.1.173</string>
+  </enzymes>
+  <comment>general reaction</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00049">C00370_C03641</data>
+  </class>
+</reaction>

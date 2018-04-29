@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02991</ID>
+  <commonNames>4-carboxymethylbut-3-en-4-olide enol-lactonohydrolase</commonNames>
+  <def>2-Oxo-2,3-dihydrofuran-5-acetate + H2O &lt;=&gt; 3-Oxoadipate</def>
+  <equation>C03586 + C00001 &lt;=&gt; C00846</equation>
+  <enzymes>
+    <string>3.1.1.24</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00362">Benzoate degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00568">Catechol ortho-cleavage, catechol =&gt; 3-oxoadipate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01055" value="3.1.1.24">3-oxoadipate enol-lactonase</KO:terms>
+    <KO:terms name="K14727" value="3.1.1.24">3-oxoadipate enol-lactonase / 4-carboxymuconolactone decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00825">C00846_C03586</data>
+  </class>
+</reaction>

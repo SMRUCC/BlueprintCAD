@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09188</ID>
+  <def>Nonaketamide monocyclic intermediate &lt;=&gt; Nonaketamide tricyclic intermediate</def>
+  <equation>C18293 &lt;=&gt; C18294</equation>
+  <enzymes />
+  <comment>cyclase, OxyN</comment>
+  <pathway>
+    <data name="rn00253">Tetracycline biosynthesis</data>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00778">Type II polyketide backbone biosynthesis, acyl-CoA + malonyl-CoA =&gt; polyketide</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC02459">C18293_C18294</data>
+  </class>
+</reaction>

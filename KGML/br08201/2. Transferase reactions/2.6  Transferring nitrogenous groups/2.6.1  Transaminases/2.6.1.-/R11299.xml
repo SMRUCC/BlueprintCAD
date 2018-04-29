@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11299</ID>
+  <commonNames>antibiotic-JI-20B:2-oxoglutarate aminotransferase</commonNames>
+  <def>6'-Oxo-G418 + L-Glutamate &lt;=&gt; Antibiotic JI-20B + 2-Oxoglutarate</def>
+  <equation>C21268 + C00025 &lt;=&gt; C17705 + C00026</equation>
+  <enzymes>
+    <string>2.6.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00524">Neomycin, kanamycin and gentamicin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20597" value="2.6.1">JI-20B transaminase / epimerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC03409">C17705_C21268</data>
+  </class>
+</reaction>

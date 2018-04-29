@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06811</ID>
+  <commonNames>UDP-D-xylose:flavonol-3-O-glycoside 2''-O-beta-D-xylosyltransferase</commonNames>
+  <def>Rutin + UDP-D-xylose &lt;=&gt; Quercetin 3-(2G-xylosylrutinoside) + UDP</def>
+  <equation>C05625 + C00190 &lt;=&gt; C10175 + C00015</equation>
+  <enzymes>
+    <string>2.4.2.35</string>
+  </enzymes>
+  <comment>flavonol-3-O-glycoside xylosyltransferase</comment>
+  <pathway>
+    <data name="rn00944">Flavone and flavonol biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C00190</data>
+    <data name="RC00049">C05625_C10175</data>
+  </class>
+</reaction>

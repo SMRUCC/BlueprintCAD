@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10385</ID>
+  <commonNames>5-methyltetrahydrosarcinapterin:corrinoid/iron-sulfur protein methyltransferase</commonNames>
+  <def>Methyl-Co(III) corrinoid protein + Tetrahydrosarcinapterin &lt;=&gt; Co(I) corrinoid protein + 5-Methyl-H4SPT</def>
+  <equation>C06020 + C18802 &lt;=&gt; C06021 + C18799</equation>
+  <enzymes>
+    <string>2.1.1.245</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00113">C18799_C18802</data>
+    <data name="RC01144">C06020_C06021</data>
+  </class>
+</reaction>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08499</ID>
+  <commonNames>(6E)-8-hydroxygeraniol:NADP+ oxidoreductase</commonNames>
+  <def>(6E)-8-Hydroxygeraniol + 2 NADP+ &lt;=&gt; (6E)-8-Oxogeranial + 2 NADPH + 2 H+</def>
+  <equation>C17621 + 2 C00006 &lt;=&gt; C17622 + 2 C00005 + 2 C00080</equation>
+  <enzymes>
+    <string>1.1.1.324</string>
+  </enzymes>
+  <comment>two-step reaction (see R09926+R09927 or R09928+R09929)</comment>
+  <pathway>
+    <data name="rn00902">Monoterpenoid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC02346">C17621_C17622</data>
+  </class>
+</reaction>

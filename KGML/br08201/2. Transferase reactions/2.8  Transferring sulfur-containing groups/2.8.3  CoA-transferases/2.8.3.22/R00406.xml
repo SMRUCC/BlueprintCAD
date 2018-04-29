@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00406</ID>
+  <commonNames>succinyl-CoA:(S)-malate CoA-transferase</commonNames>
+  <def>Succinyl-CoA + (S)-Malate &lt;=&gt; Succinate + L-Malyl-CoA</def>
+  <equation>C00091 + C00149 &lt;=&gt; C00042 + C04348</equation>
+  <enzymes>
+    <string>2.8.3.22</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00376">3-Hydroxypropionate bi-cycle  3-Hydroxypropionate bi-cycle</data>
+  </module>
+  <orthology>
+    <KO:terms name="K14471" value="2.8.3.22">succinyl-CoA:(S)-malate CoA-transferase subunit A</KO:terms>
+    <KO:terms name="K14472" value="2.8.3.22">succinyl-CoA:(S)-malate CoA-transferase subunit B</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00014">C00042_C00091  C00149_C04348</data>
+  </class>
+</reaction>

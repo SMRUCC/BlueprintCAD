@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01825</ID>
+  <commonNames>D-erythrose 4-phosphate:NAD+ oxidoreductase</commonNames>
+  <def>D-Erythrose 4-phosphate + NAD+ + H2O &lt;=&gt; 4-Phospho-D-erythronate + NADH + H+</def>
+  <equation>C00279 + C00003 + C00001 &lt;=&gt; C03393 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.72</string>
+  </enzymes>
+  <comment>epd</comment>
+  <pathway>
+    <data name="rn00750">Vitamin B6 metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00124">Pyridoxal biosynthesis, erythrose-4P =&gt; pyridoxal-5P</data>
+  </module>
+  <orthology>
+    <KO:terms name="K03472" value="1.2.1.72">D-erythrose 4-phosphate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00242">C00279_C03393</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01354</ID>
+  <commonNames>ATP:propanoate adenylyltransferase</commonNames>
+  <def>ATP + Propanoate &lt;=&gt; Diphosphate + Propionyladenylate</def>
+  <equation>C00002 + C00163 &lt;=&gt; C00013 + C05983</equation>
+  <enzymes>
+    <string>6.2.1.1</string>
+    <string>6.2.1.17</string>
+  </enzymes>
+  <comment>the first step of two-step reaction (see R00925, R01354+R00926) subsequently R00926</comment>
+  <pathway>
+    <data name="rn00640">Propanoate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01895" value="6.2.1.1">acetyl-CoA synthetase</KO:terms>
+    <KO:terms name="K01908" value="6.2.1.17">propionyl-CoA synthetase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00043">C00163_C05983</data>
+  </class>
+</reaction>

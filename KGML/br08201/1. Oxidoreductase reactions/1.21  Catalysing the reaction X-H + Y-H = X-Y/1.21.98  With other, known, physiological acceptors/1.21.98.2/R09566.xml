@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09566</ID>
+  <commonNames>2-imino-3-(7-chloroindol-3-yl)propanoate ammonia-lyase (dichlorochromopyrrolate-forming);</commonNames>
+  <commonNames>2-imino-3-(7-chloroindol-3-yl)propanoate:oxygen oxidoreductase (dichlorochromopyrrolate-forming)</commonNames>
+  <def>4 2-Imino-3-(7-chloroindol-3-yl)propanoate + Oxygen &lt;=&gt; 2 3,4-Bis(7-chloroindol-3-yl)pyrrole-2,5-dicarboxylate + 2 Ammonia + 2 H2O</def>
+  <equation>4 C19688 + C00007 &lt;=&gt; 2 C19698 + 2 C00014 + 2 C00001</equation>
+  <enzymes>
+    <string>1.21.98.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00404">Staurosporine biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00789">Rebeccamycin biosynthesis, tryptophan =&gt; rebeccamycin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K19885" value="1.21.98.2">dichlorochromopyrrolate synthase / catalase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02568">C19688_C19698</data>
+  </class>
+</reaction>

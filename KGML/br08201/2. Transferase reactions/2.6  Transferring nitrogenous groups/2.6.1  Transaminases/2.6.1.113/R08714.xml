@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08714</ID>
+  <commonNames>putrescine:pyruvate aminotransferase</commonNames>
+  <def>Putrescine + Pyruvate &lt;=&gt; 4-Aminobutyraldehyde + L-Alanine</def>
+  <equation>C00134 + C00022 &lt;=&gt; C00555 + C00041</equation>
+  <enzymes>
+    <string>2.6.1.113</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12256" value="2.6.1.113">putrescine---pyruvate transaminase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00008">C00022_C00041</data>
+    <data name="RC00062">C00134_C00555</data>
+  </class>
+</reaction>

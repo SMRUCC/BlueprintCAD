@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03956</ID>
+  <commonNames>Glutathione:poly(4-glutamyl-cysteinyl)glycine 4-glutamylcysteinyltransferase</commonNames>
+  <def>Glutathione + [Glu(-Cys)]n-Gly &lt;=&gt; Glycine + [Glu(-Cys)]n+1-Gly</def>
+  <equation>C00051 + C02471 &lt;=&gt; C00037 + C02755</equation>
+  <enzymes>
+    <string>2.3.2.15</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00064">C02471_C02755</data>
+    <data name="RC00096">C00037_C00051</data>
+  </class>
+</reaction>

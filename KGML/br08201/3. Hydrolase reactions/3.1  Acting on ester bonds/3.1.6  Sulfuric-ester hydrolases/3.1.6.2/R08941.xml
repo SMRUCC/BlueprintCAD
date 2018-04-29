@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08941</ID>
+  <commonNames>Cholesterol-sulfate sulfohydrolase;</commonNames>
+  <commonNames>Steryl-sulfate sulfohydrolase</commonNames>
+  <def>Cholesterol + Sulfate &lt;=&gt; Cholesterol sulfate + H2O</def>
+  <equation>C00187 + C00059 &lt;=&gt; C18043 + C00001</equation>
+  <enzymes>
+    <string>3.1.6.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00140">Steroid hormone biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01131" value="3.1.6.2">steryl-sulfatase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00231">C00187_C18043</data>
+  </class>
+</reaction>

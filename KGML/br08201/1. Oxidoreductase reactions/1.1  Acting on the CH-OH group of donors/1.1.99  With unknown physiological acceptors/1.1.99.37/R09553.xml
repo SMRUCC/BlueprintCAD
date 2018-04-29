@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09553</ID>
+  <commonNames>methanol:N,N-dimethyl-4-nitrosoaniline oxidoreductase</commonNames>
+  <def>Methanol + N,N-Dimethyl-4-nitrosoaniline &lt;=&gt; Formaldehyde + 4-(Hydroxylamino)-N,N-dimethylaniline</def>
+  <equation>C00132 + C19680 &lt;=&gt; C00067 + C19681</equation>
+  <enzymes>
+    <string>1.1.99.37</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00034">C00067_C00132</data>
+  </class>
+</reaction>

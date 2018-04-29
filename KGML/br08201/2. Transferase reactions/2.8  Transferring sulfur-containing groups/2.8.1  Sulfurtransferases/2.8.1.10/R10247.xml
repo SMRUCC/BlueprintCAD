@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10247</ID>
+  <commonNames>1-deoxy-D-xylulose 5-phosphate:thiol sulfurtransferase</commonNames>
+  <def>1-Deoxy-D-xylulose 5-phosphate + Iminoglycine + Thiocarboxy-[sulfur-carrier protein] &lt;=&gt; 2-[(2R,5Z)-2-Carboxy-4-methylthiazol-5(2H)-ylidene]ethyl phosphate + Sulfur-carrier protein + 2 H2O</def>
+  <equation>C11437 + C15809 + C15814 &lt;=&gt; C20246 + C15810 + 2 C00001</equation>
+  <enzymes>
+    <string>2.8.1.10</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00730">Thiamine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03149" value="2.8.1.10">thiazole synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03096">C11437_C20246</data>
+    <data name="RC03097">C15809_C20246</data>
+    <data name="RC03461">C15810_C15814</data>
+  </class>
+</reaction>

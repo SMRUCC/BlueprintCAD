@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01975</ID>
+  <commonNames>(S)-3-Hydroxybutanoyl-CoA:NAD+ oxidoreductase</commonNames>
+  <def>(S)-3-Hydroxybutanoyl-CoA + NAD+ &lt;=&gt; Acetoacetyl-CoA + NADH + H+</def>
+  <equation>C01144 + C00003 &lt;=&gt; C00332 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.35</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00071">Fatty acid degradation</data>
+    <data name="rn00310">Lysine degradation</data>
+    <data name="rn00380">Tryptophan metabolism</data>
+    <data name="rn00650">Butanoate metabolism</data>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01200">Carbon metabolism</data>
+    <data name="rn01212">Fatty acid metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00032">Lysine degradation, lysine =&gt; saccharopine =&gt; acetoacetyl-CoA</data>
+    <data name="M00374">Dicarboxylate-hydroxybutyrate cycle</data>
+    <data name="M00375">Hydroxypropionate-hydroxybutylate cycle</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00022" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase</KO:terms>
+    <KO:terms name="K01782" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase / enoyl-CoA hydratase / 3-hydroxybutyryl-CoA epimerase</KO:terms>
+    <KO:terms name="K01825" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase / enoyl-CoA hydratase / 3-hydroxybutyryl-CoA epimerase / enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K07514" value="4.2.1.17">enoyl-CoA hydratase / 3-hydroxyacyl-CoA dehydrogenase / 3,2-trans-enoyl-CoA isomerase</KO:terms>
+    <KO:terms name="K07516" value="1.1.1.35">3-hydroxyacyl-CoA dehydrogenase</KO:terms>
+    <KO:terms name="K10527" value="4.2.1.17">enoyl-CoA hydratase/3-hydroxyacyl-CoA dehydrogenase</KO:terms>
+    <KO:terms name="K15016" value="4.2.1.17">enoyl-CoA hydratase / 3-hydroxyacyl-CoA dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00117">C00332_C01144</data>
+  </class>
+</reaction>

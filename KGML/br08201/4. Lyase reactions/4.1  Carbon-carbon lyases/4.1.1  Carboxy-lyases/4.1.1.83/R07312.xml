@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07312</ID>
+  <commonNames>4-hydroxyphenylacetate carboxy-lyase</commonNames>
+  <def>4-Hydroxyphenylacetate + H+ &lt;=&gt; 4-Cresol + CO2</def>
+  <equation>C00642 + C00080 &lt;=&gt; C01468 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.83</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01846">C00642_C01468</data>
+  </class>
+</reaction>

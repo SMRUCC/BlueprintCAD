@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03199</ID>
+  <commonNames>(S)-2,3-Epoxysqualene mutase (cyclizing, lanosterol-forming)</commonNames>
+  <def>(S)-2,3-Epoxysqualene &lt;=&gt; Lanosterol</def>
+  <equation>C01054 &lt;=&gt; C01724</equation>
+  <enzymes>
+    <string>5.4.99.7</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00100">Steroid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00101">Cholesterol biosynthesis, squalene 2,3-epoxide =&gt; cholesterol</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01852" value="5.4.99.7">lanosterol synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00874">C01054_C01724</data>
+  </class>
+</reaction>

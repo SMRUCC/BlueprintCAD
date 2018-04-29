@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06544</ID>
+  <commonNames>4-hydroxycinnamoyl-CoA:cyanidin-3-O-glucoside 6''-O-acyltransferase</commonNames>
+  <def>Chrysanthemin + p-Coumaroyl-CoA &lt;=&gt; Cyanidin 3-O-(6-O-p-coumaroyl)glucoside + CoA</def>
+  <equation>C08604 + C00223 &lt;=&gt; C12095 + C00010</equation>
+  <enzymes>
+    <string>2.3.1.215</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00942">Anthocyanin biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K21383" value="2.3.1.215">anthocyanidin 3-O-glucoside 6''-O-acyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00223</data>
+    <data name="RC00041">C08604_C12095</data>
+  </class>
+</reaction>

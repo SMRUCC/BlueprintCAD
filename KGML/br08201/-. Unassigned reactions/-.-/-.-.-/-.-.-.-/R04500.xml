@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04500</ID>
+  <def>2-Chloro-2,5-dihydro-5-oxofuran-2-acetate &lt;=&gt; cis-4-Carboxymethylenebut-2-en-4-olide + Hydrochloric acid</def>
+  <equation>C04522 &lt;=&gt; C04431 + C01327</equation>
+  <enzymes />
+  <comment>spontaneous</comment>
+  <pathway>
+    <data name="rn00361">Chlorocyclohexane and chlorobenzene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01167">C04431_C04522</data>
+  </class>
+</reaction>

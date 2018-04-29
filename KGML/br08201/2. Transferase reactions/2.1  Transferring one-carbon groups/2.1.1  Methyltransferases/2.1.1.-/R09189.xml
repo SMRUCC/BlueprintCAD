@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09189</ID>
+  <commonNames>S-adenosyl-L-methionine:pretetramid C-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Pretetramid &lt;=&gt; S-Adenosyl-L-homocysteine + 6-Methylpretetramide</def>
+  <equation>C00019 + C18295 &lt;=&gt; C00021 + C06629</equation>
+  <enzymes>
+    <string>2.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00253">Tetracycline biosynthesis</data>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00780">Tetracycline/oxytetracycline biosynthesis, pretetramide =&gt; tetracycline/oxytetracycline</data>
+    <data name="M00823">Chlortetracycline biosynthesis, pretetramide =&gt; chlortetracycline</data>
+  </module>
+  <orthology>
+    <KO:terms name="K14251" value="2.1.1">C-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01662">C06629_C18295</data>
+  </class>
+</reaction>

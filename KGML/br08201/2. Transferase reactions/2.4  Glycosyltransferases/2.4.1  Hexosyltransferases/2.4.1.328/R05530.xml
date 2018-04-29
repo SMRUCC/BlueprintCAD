@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05530</ID>
+  <commonNames>dTDP-L-mycarose:erythronolide-B 3-O-alpha-mycarosyltransferase</commonNames>
+  <def>Erythronolide B + dTDP-L-mycarose &lt;=&gt; 3-O-alpha-Mycarosylerythronolide B + dTDP</def>
+  <equation>C06635 + C11916 &lt;=&gt; C06630 + C00363</equation>
+  <enzymes>
+    <string>2.4.1.328</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00522">Biosynthesis of 12-, 14- and 16-membered macrolides</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00774">Erythromycin biosynthesis, propanoyl-CoA + methylmalonyl-CoA =&gt; deoxyerythronolide B =&gt; erythromycin A/B</data>
+  </module>
+  <orthology>
+    <KO:terms name="K14367" value="2.4.1.328">erythronolide mycarosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00363_C11916</data>
+    <data name="RC00049">C06630_C06635</data>
+    <data name="RC03284">C06630_C11916</data>
+  </class>
+</reaction>

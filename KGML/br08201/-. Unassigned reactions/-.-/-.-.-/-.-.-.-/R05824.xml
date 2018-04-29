@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05824</ID>
+  <def>4,21-Dehydrocorynantheine aldehyde &lt;=&gt; 4,21-Dehydrogeissoschizine</def>
+  <equation>C11679 &lt;=&gt; C03677</equation>
+  <enzymes />
+  <comment>spontaneous(following EC3.2.1.105 or R03820+R05844+R05845 reaction) Ref:1. Biochemistry 1983; 22: 3448-3452</comment>
+  <pathway>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01605">C03677_C11679</data>
+  </class>
+</reaction>

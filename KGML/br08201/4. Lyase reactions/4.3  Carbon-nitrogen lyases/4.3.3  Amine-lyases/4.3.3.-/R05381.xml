@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05381</ID>
+  <commonNames>diethanolamine ethanolamine-lyase (acetaldehyde-forming)</commonNames>
+  <def>Ethanolamine + Acetaldehyde &lt;=&gt; Diethanolamine</def>
+  <equation>C00189 + C00084 &lt;=&gt; C06772</equation>
+  <enzymes>
+    <string>4.3.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00564">Glycerophospholipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00053">C00189_C06772</data>
+    <data name="RC01347">C00084_C06772</data>
+  </class>
+</reaction>

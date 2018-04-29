@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06454</ID>
+  <def>8,8a-Deoxyoleandolide + 2 NADPH + 2 H+ + 2 Oxygen &lt;=&gt; Oleandolide + 2 NADP+ + 3 H2O</def>
+  <equation>C11989 + 2 C00005 + 2 C00080 + 2 C00007 &lt;=&gt; C11990 + 2 C00006 + 3 C00001</equation>
+  <enzymes />
+  <comment>cytochrome P450 monooxygenase,OleP</comment>
+  <pathway>
+    <data name="rn00522">Biosynthesis of 12-, 14- and 16-membered macrolides</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00775">Oleandomycin biosynthesis, malonyl-CoA + methylmalonyl-CoA =&gt; 8,8a-deoxyoleandolide =&gt; oleandomycin</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC01524">C11989_C11990</data>
+  </class>
+</reaction>

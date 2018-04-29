@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07912</ID>
+  <commonNames>UDP-glucose:anthocyanin 3'-O-beta-D-glucosyltransferase</commonNames>
+  <def>Delphin + UDP-glucose &lt;=&gt; Delphinidin 3,5,3'-triglucoside + UDP</def>
+  <equation>C16312 + C00029 &lt;=&gt; C16314 + C00015</equation>
+  <enzymes>
+    <string>2.4.1.238</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00942">Anthocyanin biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12939" value="2.4.1.238">anthocyanin 3'-O-beta-glucosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00171">C16312_C16314</data>
+  </class>
+</reaction>

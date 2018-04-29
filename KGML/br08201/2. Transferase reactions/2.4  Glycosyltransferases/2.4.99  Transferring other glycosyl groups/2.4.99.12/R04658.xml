@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04658</ID>
+  <commonNames>CMP-3-deoxy-D-manno-oct-2-ulosonate:lipid IVA 3-deoxy-D-manno-oct-2-ulosonate transferase</commonNames>
+  <def>2,3,2'3'-Tetrakis(3-hydroxytetradecanoyl)-D-glucosaminyl-1,6-beta-D-glucosamine 1,4'-bisphosphate + CMP-3-deoxy-D-manno-octulosonate &lt;=&gt; 3-Deoxy-D-manno-octulosonyl-lipid IV(A) + CMP</def>
+  <equation>C04919 + C04121 &lt;=&gt; C06024 + C00055</equation>
+  <enzymes>
+    <string>2.4.99.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00540">Lipopolysaccharide biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00060">Lipopolysaccharide biosynthesis, KDO2-lipid A</data>
+  </module>
+  <orthology>
+    <KO:terms name="K02527" value="2.4.99.12">3-deoxy-D-manno-octulosonic-acid transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00009">C00055_C04121</data>
+    <data name="RC00247">C04919_C06024</data>
+  </class>
+</reaction>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05636</ID>
+  <commonNames>1-Deoxy-D-xylulose-5-phosphate pyruvate-lyase (carboxylating)</commonNames>
+  <def>Pyruvate + D-Glyceraldehyde 3-phosphate &lt;=&gt; 1-Deoxy-D-xylulose 5-phosphate + CO2</def>
+  <equation>C00022 + C00118 &lt;=&gt; C11437 + C00011</equation>
+  <enzymes>
+    <string>2.2.1.7</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00730">Thiamine metabolism</data>
+    <data name="rn00900">Terpenoid backbone biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00096">C5 isoprenoid biosynthesis, non-mevalonate pathway</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01662" value="2.2.1.7">1-deoxy-D-xylulose-5-phosphate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00032">C00118_C11437</data>
+  </class>
+</reaction>

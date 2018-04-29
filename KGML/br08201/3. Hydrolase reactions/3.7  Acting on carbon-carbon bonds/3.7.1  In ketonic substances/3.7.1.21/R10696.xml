@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10696</ID>
+  <commonNames>6-oxocyclohex-1-ene-1-carbonyl-CoA hydro-lyase (2-hydroxy-6-oxocyclohexane-1-carbonyl-CoA-forming)</commonNames>
+  <def>6-Oxocyclohex-1-ene-1-carbonyl-CoA + H2O &lt;=&gt; 2-Hydroxy-6-oxocyclohexane-1-carbonyl-CoA</def>
+  <equation>C09821 + C00001 &lt;=&gt; C09825</equation>
+  <enzymes>
+    <string>3.7.1.21</string>
+  </enzymes>
+  <comment>first step of two-step reaction (see R05594, R10696+R05593) subsequently R05593</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K07539" value="3.7.1.21">6-oxocyclohex-1-ene-carbonyl-CoA hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03237">C09821_C09825</data>
+  </class>
+</reaction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01323</ID>
+  <commonNames>Acetyl-CoA:citrate CoA-transferase</commonNames>
+  <def>Acetyl-CoA + Citrate &lt;=&gt; Acetate + (3S)-Citryl-CoA</def>
+  <equation>C00024 + C00158 &lt;=&gt; C00033 + C00566</equation>
+  <enzymes>
+    <string>2.8.3.10</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00012">C00024_C00033</data>
+    <data name="RC00014">C00158_C00566</data>
+  </class>
+</reaction>

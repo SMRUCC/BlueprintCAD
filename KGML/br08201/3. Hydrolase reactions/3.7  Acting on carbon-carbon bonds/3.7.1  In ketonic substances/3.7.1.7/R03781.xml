@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03781</ID>
+  <commonNames>Nonane-4,6-dione acylhydrolase</commonNames>
+  <def>Nonane-4,6-dione + H2O &lt;=&gt; Pentan-2-one + Butanoic acid</def>
+  <equation>C02445 + C00001 &lt;=&gt; C01949 + C00246</equation>
+  <enzymes>
+    <string>3.7.1.7</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00326">C01949_C02445</data>
+    <data name="RC00995">C00246_C02445</data>
+  </class>
+</reaction>

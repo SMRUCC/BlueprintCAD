@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06771</ID>
+  <commonNames>S-adenosyl-L-methionine:demethyldecarbamoylnovobiocin 4''-O-methyltransferase</commonNames>
+  <def>Demethyldecarbamoylnovobiocin + S-Adenosyl-L-methionine &lt;=&gt; Decarbamoylnovobiocin + S-Adenosyl-L-homocysteine</def>
+  <equation>C12475 + C00019 &lt;=&gt; C12476 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.285</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00401">Novobiocin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12712" value="2.1.1.285">demethyldecarbamoylnovobiocin O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00466">C12475_C12476</data>
+  </class>
+</reaction>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09096</ID>
+  <commonNames>acetyl-CoA decarbonylase / synthase (ACDS)</commonNames>
+  <def>Acetyl-CoA + H+ + 5,6,7,8-Tetrahydromethanopterin &lt;=&gt; 5-Methyl-5,6,7,8-tetrahydromethanopterin + CO + CoA</def>
+  <equation>C00024 + C00080 + C01217 &lt;=&gt; C04488 + C00237 + C00010</equation>
+  <enzymes>
+    <string>2.3.1</string>
+  </enzymes>
+  <comment>Carbon monoxide dehydrogenase/acetyl-CoA synthase (CODH/ACS) from Methanosarcina thermophila is a multifunctional enzyme, part of a five-subunit complex. This enzyme complex catalyzes the reversible oxidation of Carbon monoxide to Carbon dioxide. It also catalyzes the cleavage (or synthesis) of acetyl-CoA to (or from) methyltetrahydromethanopterin, carbon monoxide, and Coenzyme A.</comment>
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00357">Methanogenesis, acetate =&gt; methane</data>
+    <data name="M00422">Acetyl-CoA pathway, CO2 =&gt; acetyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00193" value="2.3.1">acetyl-CoA decarbonylase/synthase complex subunit beta</KO:terms>
+    <KO:terms name="K00194" value="2.1.1.245">acetyl-CoA decarbonylase/synthase complex subunit delta</KO:terms>
+    <KO:terms name="K00197" value="2.1.1.245">acetyl-CoA decarbonylase/synthase complex subunit gamma</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00113">C01217_C04488</data>
+    <data name="RC02963">C00024_C00237</data>
+    <data name="RC02977">C00024_C04488</data>
+  </class>
+</reaction>

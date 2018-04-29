@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00743</ID>
+  <commonNames>Acetyl-CoA:malonate CoA-transferase</commonNames>
+  <def>Acetyl-CoA + Malonate &lt;=&gt; Acetate + Malonyl-CoA</def>
+  <equation>C00024 + C00383 &lt;=&gt; C00033 + C00083</equation>
+  <enzymes>
+    <string>2.8.3.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00410">beta-Alanine metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00012">C00024_C00033</data>
+    <data name="RC00014">C00083_C00383</data>
+    <data name="RC02751">C00024_C00083</data>
+  </class>
+</reaction>

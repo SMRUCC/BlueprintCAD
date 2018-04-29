@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10422</ID>
+  <commonNames>3alpha-hydroxysteroid:NAD+ 3-oxidoreductase</commonNames>
+  <def>3alpha-Hydroxysteroid + NAD+ &lt;=&gt; 3-Oxosteroid + NADH + H+</def>
+  <equation>C03072 + C00003 &lt;=&gt; C01876 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.50</string>
+    <string>1.1.1.213</string>
+    <string>1.1.1.357</string>
+  </enzymes>
+  <comment>general reaction Si-specific with respect to NAD+ (ec 1.1.1.50) Re-specific with respect to NAD+ (ec 1.1.1.213) stereo-specificity is not known (ec 1.1.1.357) NADP+ (see R10423)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00144">C01876_C03072</data>
+  </class>
+</reaction>

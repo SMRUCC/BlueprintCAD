@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08743</ID>
+  <commonNames>chenodeoxycholate:CoA ligase (AMP-forming)</commonNames>
+  <def>Chenodeoxycholoyl-CoA + AMP + Diphosphate &lt;=&gt; Chenodeoxycholate + CoA + ATP</def>
+  <equation>C05337 + C00020 + C00013 &lt;=&gt; C02528 + C00010 + C00002</equation>
+  <enzymes>
+    <string>6.2.1.7</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00120">Primary bile acid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K08748" value="6.2.1.7">solute carrier family 27 (fatty acid transporter), member 5</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C05337</data>
+    <data name="RC00014">C02528_C05337</data>
+  </class>
+</reaction>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11120</ID>
+  <def>2 IPA imine &lt;=&gt; Chromopyrrolate</def>
+  <equation>2 C21124 &lt;=&gt; C21125</equation>
+  <enzymes />
+  <comment>unclear reaction</comment>
+  <pathway>
+    <data name="rn00404">Staurosporine biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00805">Staurosporine biosynthesis, tryptophan =&gt; staurosporine</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC02568">C21124_C21125</data>
+  </class>
+</reaction>

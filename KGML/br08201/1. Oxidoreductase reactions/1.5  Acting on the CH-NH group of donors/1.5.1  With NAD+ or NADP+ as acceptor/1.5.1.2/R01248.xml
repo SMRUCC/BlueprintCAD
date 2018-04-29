@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01248</ID>
+  <commonNames>L-Proline:NAD+ 5-oxidoreductase</commonNames>
+  <def>L-Proline + NAD+ &lt;=&gt; (S)-1-Pyrroline-5-carboxylate + NADH + H+</def>
+  <equation>C00148 + C00003 &lt;=&gt; C03912 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.5.1.2</string>
+  </enzymes>
+  <comment>NADPH (see R01251)</comment>
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00286" value="1.5.1.2">pyrroline-5-carboxylate reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00083">C00148_C03912</data>
+  </class>
+</reaction>

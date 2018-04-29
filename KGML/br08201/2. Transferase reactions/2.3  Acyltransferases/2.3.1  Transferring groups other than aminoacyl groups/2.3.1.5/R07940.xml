@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07940</ID>
+  <def>1,7-Dimethylxanthine &lt;=&gt; 5-Acetylamino-6-formylamino-3-methyluracil</def>
+  <equation>C13747 &lt;=&gt; C16365</equation>
+  <enzymes>
+    <string>2.3.1.5</string>
+  </enzymes>
+  <comment>N-acetyltransferase 2</comment>
+  <pathway>
+    <data name="rn00232">Caffeine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00622" value="2.3.1.5">arylamine N-acetyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02961">C13747_C16365</data>
+  </class>
+</reaction>

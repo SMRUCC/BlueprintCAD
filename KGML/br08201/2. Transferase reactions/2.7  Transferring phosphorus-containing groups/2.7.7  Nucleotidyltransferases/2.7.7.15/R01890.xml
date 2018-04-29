@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01890</ID>
+  <commonNames>CTP:choline-phosphate cytidylyltransferase</commonNames>
+  <def>CTP + Choline phosphate &lt;=&gt; Diphosphate + CDP-choline</def>
+  <equation>C00063 + C00588 &lt;=&gt; C00013 + C00307</equation>
+  <enzymes>
+    <string>2.7.7.15</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00564">Glycerophospholipid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00090">Phosphatidylcholine (PC) biosynthesis, choline =&gt; PC</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00968" value="2.7.7.15">choline-phosphate cytidylyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00307_C00588</data>
+  </class>
+</reaction>

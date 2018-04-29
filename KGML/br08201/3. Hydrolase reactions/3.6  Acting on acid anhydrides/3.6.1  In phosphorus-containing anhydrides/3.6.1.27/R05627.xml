@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05627</ID>
+  <commonNames>undecaprenyl-diphosphate phosphohydrolase</commonNames>
+  <def>di-trans,poly-cis-Undecaprenyl diphosphate + H2O &lt;=&gt; di-trans,poly-cis-Undecaprenyl phosphate + Orthophosphate</def>
+  <equation>C04574 + C00001 &lt;=&gt; C17556 + C00009</equation>
+  <enzymes>
+    <string>3.6.1.27</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00550">Peptidoglycan biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K06153" value="3.6.1.27">undecaprenyl-diphosphatase</KO:terms>
+    <KO:terms name="K19302" value="3.6.1.27">undecaprenyl-diphosphatase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C04574_C17556</data>
+  </class>
+</reaction>

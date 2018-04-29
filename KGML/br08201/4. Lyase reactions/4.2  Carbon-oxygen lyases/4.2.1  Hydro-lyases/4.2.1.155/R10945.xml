@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10945</ID>
+  <commonNames>3-(methylthio)acryloyl-CoA hydratase;</commonNames>
+  <commonNames>3-hydroxy-3-(methylthio)propanoyl-CoA hydro-lyase</commonNames>
+  <def>3-(Methylthio)acryloyl-CoA + H2O &lt;=&gt; 3-Hydroxy-3-(methylthio)propanoyl-CoA</def>
+  <equation>C20955 + C00001 &lt;=&gt; C20968</equation>
+  <enzymes>
+    <string>4.2.1.155</string>
+  </enzymes>
+  <comment>the first step of four-step reaction (see R10936, R10945+R10946+R10947+R06973)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC03311">C20955_C20968</data>
+  </class>
+</reaction>

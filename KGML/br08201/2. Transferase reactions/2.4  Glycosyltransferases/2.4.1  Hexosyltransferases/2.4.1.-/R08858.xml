@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08858</ID>
+  <commonNames>GDP-D-mannose:alpha-L-rhamnosyl-(1-&gt;3)-alpha-D-galactosyl-diphosphoundecaprenol D-mannosyltransferase</commonNames>
+  <def>alpha-L-Rhamnosyl-(1-&gt;3)-alpha-D-galactosyl-diphosphoundecaprenol + GDP-mannose &lt;=&gt; D-Mannosyl-L-rhamnosyl-D-galactose-1-diphospholipid + GDP</def>
+  <equation>C17959 + C00096 &lt;=&gt; C04724 + C00035</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00035_C00096</data>
+    <data name="RC00049">C04724_C17959</data>
+  </class>
+</reaction>

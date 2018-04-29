@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02768</ID>
+  <commonNames>Acyl-[acyl-carrier-protein]:malonyl-[acyl-carrier-protein] C-acyltransferase (decarboxylating)</commonNames>
+  <def>Acyl-[acyl-carrier protein] + Malonyl-[acyl-carrier protein] &lt;=&gt; 3-Oxoacyl-[acyl-carrier protein] + CO2 + Acyl-carrier protein</def>
+  <equation>C00173 + C01209 &lt;=&gt; C00685 + C00011 + C00229</equation>
+  <enzymes>
+    <string>2.3.1.41</string>
+  </enzymes>
+  <comment>general reaction (see R04355, R04726, R04952, R04957, R04960, R04963, R04968 and R07762)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00039">C00173_C00229</data>
+  </class>
+</reaction>

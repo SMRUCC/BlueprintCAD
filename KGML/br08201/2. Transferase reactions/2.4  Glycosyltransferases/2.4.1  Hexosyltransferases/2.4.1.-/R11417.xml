@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11417</ID>
+  <commonNames>dTDP-4-hydroxyamino-4,6-dideoxy-alpha-D-glucose:calicheamicinone 4-hydroxyamino-4,6-dideoxy-alpha-D-glucosyltransferase</commonNames>
+  <def>dTDP-4-hydroxyamino-4,6-dideoxy-alpha-D-glucose + Calicheamicinone &lt;=&gt; dTDP + Calicheamicin T0</def>
+  <equation>C21348 + C21337 &lt;=&gt; C00363 + C21338</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01059">Biosynthesis of enediyne antibiotics</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00833">Calicheamicin biosynthesis, calicheamicinone =&gt; calicheamicin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K21259" value="2.4.1">calicheamicinone 4-hydroxyamino-4,6-dideoxy-alpha-D-glucosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00363_C21348</data>
+    <data name="RC00049">C21337_C21338</data>
+  </class>
+</reaction>

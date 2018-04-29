@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08857</ID>
+  <commonNames>dTDP-L-rhamnose:alpha-D-galactosyl-diphosphoundecaprenol L-rhamnosyltransferase</commonNames>
+  <def>alpha-D-Galactosyl-diphosphoundecaprenol + dTDP-L-rhamnose &lt;=&gt; alpha-L-Rhamnosyl-(1-&gt;3)-alpha-D-galactosyl-diphosphoundecaprenol + dTDP</def>
+  <equation>C04507 + C03319 &lt;=&gt; C17959 + C00363</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00363_C03319</data>
+    <data name="RC00049">C04507_C17959</data>
+  </class>
+</reaction>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09991</ID>
+  <commonNames>peptidyl-glutamate 4-carboxylase (menaquinone-epoxidizing)</commonNames>
+  <def>2,3-Epoxymenaquinone + Gla protein + H2O &lt;=&gt; Menaquinol + Gla protein precursor + CO2 + Oxygen</def>
+  <equation>C20265 + C06246 + C00001 &lt;=&gt; C05819 + C06247 + C00011 + C00007</equation>
+  <enzymes>
+    <string>4.1.1.90</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00130">Ubiquinone and other terpenoid-quinone biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K10106" value="4.1.1.90">vitamin K-dependent gamma-carboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01278">C05819_C20265</data>
+    <data name="RC02133">C06246_C06247</data>
+  </class>
+</reaction>

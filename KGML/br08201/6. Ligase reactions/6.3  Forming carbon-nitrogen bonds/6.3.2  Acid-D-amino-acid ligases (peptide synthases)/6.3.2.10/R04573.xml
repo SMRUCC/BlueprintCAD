@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04573</ID>
+  <commonNames>UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-L-lysine:alanyl-D-alanine ligase (ADP-forming)</commonNames>
+  <def>ATP + UDP-N-acetylmuramoyl-L-alanyl-gamma-D-glutamyl-L-lysine + D-Alanyl-D-alanine &lt;=&gt; ADP + Orthophosphate + UDPMurNAc(oyl-L-Ala-D-gamma-Glu-L-Lys-D-Ala-D-Ala)</def>
+  <equation>C00002 + C05892 + C00993 &lt;=&gt; C00008 + C00009 + C04702</equation>
+  <enzymes>
+    <string>6.3.2.10</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00550">Peptidoglycan biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01929" value="6.3.2.10">UDP-N-acetylmuramoyl-tripeptide--D-alanyl-D-alanine ligase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00064">C00993_C04702</data>
+    <data name="RC00141">C04702_C05892</data>
+  </class>
+</reaction>

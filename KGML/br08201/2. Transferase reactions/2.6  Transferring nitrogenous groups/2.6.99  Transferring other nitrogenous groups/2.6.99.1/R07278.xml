@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07278</ID>
+  <commonNames>dGTP:depurinated-DNA purine transferase</commonNames>
+  <def>dGTP + Depurinated DNA &lt;=&gt; Deoxyribose triphosphate + DNA containing guanine</def>
+  <equation>C00286 + C02270 &lt;=&gt; C12347 + C11475</equation>
+  <enzymes>
+    <string>2.6.99.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01021">C00286_C12347  C02270_C11475</data>
+  </class>
+</reaction>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07727</ID>
+  <def>o-Nitrobenzoate + 2 NADPH + 2 H+ &lt;=&gt; o-Hydroxylaminobenzoate + 2 NADP+ + H2O</def>
+  <equation>C16234 + 2 C00005 + 2 C00080 &lt;=&gt; C16235 + 2 C00006 + C00001</equation>
+  <enzymes>
+    <string>1.7.1</string>
+  </enzymes>
+  <comment>nitrobenzoate nitroreductase: NbaA</comment>
+  <pathway>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15055" value="1.7.1">2-nitrobenzoate nitroreductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00250">C16234_C16235</data>
+  </class>
+</reaction>

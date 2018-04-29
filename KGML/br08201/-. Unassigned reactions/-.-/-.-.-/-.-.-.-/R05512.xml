@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05512</ID>
+  <def>D-Glucose 1-phosphate + Nucleoside triphosphate + Amino group donor + Activated methyl group &lt;=&gt; NDP-N-methyl-L-glucosamine + Orthophosphate</def>
+  <equation>C00103 + C00201 + C11349 + C10905 &lt;=&gt; C06592 + C00009</equation>
+  <enzymes />
+  <comment>unclear reaction, multi-step reaction The products of the strF and/or strG genes may be involved in the formation of N-methyl-L-glucosamine moiety of Streptomycin.</comment>
+  <pathway>
+    <data name="rn00521">Streptomycin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02897">C00103_C06592</data>
+  </class>
+</reaction>

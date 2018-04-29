@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09546</ID>
+  <def>Germacra-1(10),4,11(13)-trien-12-ol + NADP+ &lt;=&gt; Germacra-1(10),4,11(13)-trien-12-al + NADPH + H+</def>
+  <equation>C19676 + C00006 &lt;=&gt; C19677 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.314</string>
+  </enzymes>
+  <comment>first step of two-step reaction (see R09548, R09546+R09547)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC02561">C19676_C19677</data>
+  </class>
+</reaction>

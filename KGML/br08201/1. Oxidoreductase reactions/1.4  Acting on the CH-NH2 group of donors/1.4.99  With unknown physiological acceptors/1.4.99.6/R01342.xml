@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01342</ID>
+  <commonNames>D-Amino-acid:(acceptor) oxidoreductase (deaminating)</commonNames>
+  <def>alpha-Amino acid + H2O + Acceptor &lt;=&gt; 2-Oxo acid + Ammonia + Reduced acceptor</def>
+  <equation>C05167 + C00001 + C00028 &lt;=&gt; C00161 + C00014 + C00030</equation>
+  <enzymes>
+    <string>1.4.99.6</string>
+  </enzymes>
+  <comment>D-amino acid specific (see R07166)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00025">C00161_C05167</data>
+  </class>
+</reaction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08887</ID>
+  <def>Phosphonoformyl-CMP + 3-Phospho-D-glycerate &lt;=&gt; 1-Carboxyvinyl carboxyphosphonate + CMP + Orthophosphate</def>
+  <equation>C17945 + C00197 &lt;=&gt; C06367 + C00055 + C00009</equation>
+  <enzymes />
+  <comment>multi-step reaction</comment>
+  <pathway>
+    <data name="rn00440">Phosphonate and phosphinate metabolism</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00055_C17945</data>
+    <data name="RC02974">C06367_C17945</data>
+  </class>
+</reaction>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07460</ID>
+  <commonNames>L-cysteine:[enzyme]-cysteine sulfurtransferase</commonNames>
+  <def>[Enzyme]-cysteine + L-Cysteine &lt;=&gt; [Enzyme]-S-sulfanylcysteine + L-Alanine</def>
+  <equation>C15811 + C00097 &lt;=&gt; C15812 + C00041</equation>
+  <enzymes>
+    <string>2.8.1.7</string>
+  </enzymes>
+  <comment>[Enzyme] is the enzyme itself [KO:K04487].</comment>
+  <pathway>
+    <data name="rn00730">Thiamine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K04487" value="2.8.1.7">cysteine desulfurase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01789">C00041_C00097</data>
+    <data name="RC02313">C15811_C15812</data>
+  </class>
+</reaction>

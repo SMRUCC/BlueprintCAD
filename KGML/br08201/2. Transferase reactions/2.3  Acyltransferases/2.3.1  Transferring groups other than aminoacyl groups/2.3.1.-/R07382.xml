@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07382</ID>
+  <def>1-(1-Alkenyl)-sn-glycero-3-phosphate + Acyl-CoA &lt;=&gt; 2-Acyl-1-(1-alkenyl)-sn-glycero-3-phosphate + CoA</def>
+  <equation>C15646 + C00040 &lt;=&gt; C15647 + C00010</equation>
+  <enzymes>
+    <string>2.3.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00565">Ether lipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C00040</data>
+    <data name="RC00037">C15646_C15647</data>
+  </class>
+</reaction>

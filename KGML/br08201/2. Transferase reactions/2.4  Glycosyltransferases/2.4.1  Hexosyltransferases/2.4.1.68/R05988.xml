@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05988</ID>
+  <def>GDP-L-fucose + G00015 &lt;=&gt; GDP + G00016</def>
+  <equation>G10615 + G00015 &lt;=&gt; G10620 + G00016</equation>
+  <enzymes>
+    <string>2.4.1.68</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00510">N-Glycan biosynthesis</data>
+    <data name="rn00513">Various types of N-glycan biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00075">N-glycan biosynthesis, complex type</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00717" value="2.4.1.68">glycoprotein 6-alpha-L-fucosyltransferase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

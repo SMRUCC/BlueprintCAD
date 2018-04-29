@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03696</ID>
+  <commonNames>L-threo-3-Methylaspartate ammonia-lyase</commonNames>
+  <def>L-threo-3-Methylaspartate &lt;=&gt; Mesaconate + Ammonia</def>
+  <equation>C03618 &lt;=&gt; C01732 + C00014</equation>
+  <enzymes>
+    <string>4.3.1.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00630">Glyoxylate and dicarboxylate metabolism</data>
+    <data name="rn00660">C5-Branched dibasic acid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00740">Methylaspartate cycle</data>
+  </module>
+  <orthology>
+    <KO:terms name="K04835" value="4.3.1.2">methylaspartate ammonia-lyase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00979">C01732_C03618</data>
+  </class>
+</reaction>

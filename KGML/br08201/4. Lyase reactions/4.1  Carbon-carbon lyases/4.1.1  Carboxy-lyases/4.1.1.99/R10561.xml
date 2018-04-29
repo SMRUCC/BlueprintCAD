@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10561</ID>
+  <commonNames>ATP:phosphomevalonate carboxy-lyase (adding ATP; isopentenyl-phosphate-forming)</commonNames>
+  <def>(R)-5-Phosphomevalonate + ATP &lt;=&gt; Isopentenyl phosphate + ADP + Orthophosphate + CO2</def>
+  <equation>C01107 + C00002 &lt;=&gt; C20345 + C00008 + C00009 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.99</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00900">Terpenoid backbone biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K17942" value="4.1.1.99">phosphomevalonate decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00453">C01107_C20345</data>
+  </class>
+</reaction>

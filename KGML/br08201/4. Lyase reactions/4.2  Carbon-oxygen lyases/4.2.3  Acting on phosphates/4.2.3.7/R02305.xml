@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02305</ID>
+  <commonNames>2-trans,6-trans-farnesyldiphosphate diphosphate-lyase (cyclizing, pentalenene-forming)</commonNames>
+  <def>trans,trans-Farnesyl diphosphate &lt;=&gt; Pentalenene + Diphosphate</def>
+  <equation>C00448 &lt;=&gt; C01841 + C00013</equation>
+  <enzymes>
+    <string>4.2.3.7</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00909">Sesquiterpenoid and triterpenoid biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00819">Pentalenolactone biosynthesis, farnesyl-PP =&gt; pentalenolactone</data>
+  </module>
+  <orthology>
+    <KO:terms name="K12250" value="4.2.3.7">pentalenene synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00689">C00448_C01841</data>
+  </class>
+</reaction>

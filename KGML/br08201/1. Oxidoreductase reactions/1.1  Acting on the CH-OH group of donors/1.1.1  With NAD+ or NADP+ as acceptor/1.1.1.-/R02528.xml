@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02528</ID>
+  <def>Methylglyoxal + NADPH + H+ &lt;=&gt; Hydroxyacetone + NADP+</def>
+  <equation>C00546 + C00005 + C00080 &lt;=&gt; C05235 + C00006</equation>
+  <enzymes>
+    <string>1.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00640">Propanoate metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K08325" value="1.1">NADP-dependent alcohol dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00739">C00546_C05235</data>
+  </class>
+</reaction>

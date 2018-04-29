@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00646</ID>
+  <def>Ascorbate + Oxygen + H2O &lt;=&gt; Threonate + Oxalate</def>
+  <equation>C00072 + C00007 + C00001 &lt;=&gt; C01620 + C00209</equation>
+  <enzymes />
+  <comment>enzyme not yet characterized</comment>
+  <pathway>
+    <data name="rn00053">Ascorbate and aldarate metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00344">C00072_C00209</data>
+    <data name="RC00345">C00072_C01620</data>
+  </class>
+</reaction>

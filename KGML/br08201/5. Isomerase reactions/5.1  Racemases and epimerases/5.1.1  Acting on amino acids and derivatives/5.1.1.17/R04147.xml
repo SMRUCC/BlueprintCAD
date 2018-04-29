@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04147</ID>
+  <def>Isopenicillin N &lt;=&gt; Penicillin N</def>
+  <equation>C05557 &lt;=&gt; C06564</equation>
+  <enzymes>
+    <string>5.1.1.17</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00311">Penicillin and cephalosporin biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00673">Cephamycin C biosynthesis, aminoadipate + cycteine + valine =&gt; cephamycin C</data>
+  </module>
+  <orthology>
+    <KO:terms name="K04127" value="5.1.1.17">isopenicillin-N epimerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00302">C05557_C06564</data>
+  </class>
+</reaction>

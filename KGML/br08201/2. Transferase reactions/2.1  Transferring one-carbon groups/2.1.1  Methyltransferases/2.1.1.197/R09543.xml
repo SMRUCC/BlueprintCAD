@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09543</ID>
+  <commonNames>S-adenosyl-L-methionine:malonyl-[acyl-carrier protein] O-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Malonyl-[acyl-carrier protein] &lt;=&gt; S-Adenosyl-L-homocysteine + Malonyl-[acp] methyl ester</def>
+  <equation>C00019 + C01209 &lt;=&gt; C00021 + C19673</equation>
+  <enzymes>
+    <string>2.1.1.197</string>
+  </enzymes>
+  <comment>Malonyl-[acp] is a far better acceptor of methyl groups from S-adenosyl-L-methionine than was malonyl-CoA.</comment>
+  <pathway>
+    <data name="rn00780">Biotin metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00572">Pimeloyl-ACP biosynthesis, BioC-BioH pathway, malonyl-ACP =&gt; pimeloyl-ACP</data>
+  </module>
+  <orthology>
+    <KO:terms name="K02169" value="2.1.1.197">malonyl-CoA O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00460">C01209_C19673</data>
+  </class>
+</reaction>

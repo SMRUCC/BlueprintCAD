@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00438</ID>
+  <commonNames>polyribonucleotide:phosphate uridylyltransferase</commonNames>
+  <def>RNA + Orthophosphate &lt;=&gt; RNA + UDP</def>
+  <equation>C00046 + C00009 &lt;=&gt; C00046 + C00015</equation>
+  <enzymes>
+    <string>2.7.7.8</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00240">Pyrimidine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00962" value="2.7.7.8">polyribonucleotide nucleotidyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02795">C00015_C00046</data>
+  </class>
+</reaction>

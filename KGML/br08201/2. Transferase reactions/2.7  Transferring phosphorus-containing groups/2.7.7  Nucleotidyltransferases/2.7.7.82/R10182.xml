@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10182</ID>
+  <commonNames>CTP:N,N'-diacetyllegionaminate cytidylyltransferase</commonNames>
+  <def>CTP + N,N'-Diacetyllegionaminate &lt;=&gt; CMP-N,N'-diacetyllegionaminate + Diphosphate</def>
+  <equation>C00063 + C20418 &lt;=&gt; C20419 + C00013</equation>
+  <enzymes>
+    <string>2.7.7.82</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18431" value="2.7.7.82">CMP-N,N'-diacetyllegionaminic acid synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00152">C20418_C20419</data>
+  </class>
+</reaction>

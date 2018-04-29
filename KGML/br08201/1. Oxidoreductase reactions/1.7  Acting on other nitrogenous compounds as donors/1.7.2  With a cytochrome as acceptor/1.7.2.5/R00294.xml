@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00294</ID>
+  <commonNames>nitrous-oxide:ferricytochrome-c oxidoreductase</commonNames>
+  <def>2 Nitric oxide + 2 Ferrocytochrome c + 2 H+ &lt;=&gt; Nitrous oxide + 2 Ferricytochrome c + H2O</def>
+  <equation>2 C00533 + 2 C00126 + 2 C00080 &lt;=&gt; C00887 + 2 C00125 + C00001</equation>
+  <enzymes>
+    <string>1.7.2.5</string>
+  </enzymes>
+  <comment>The acceptor is cytochrome c551.</comment>
+  <pathway>
+    <data name="rn00910">Nitrogen metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00529">Denitrification, nitrate =&gt; nitrogen</data>
+  </module>
+  <orthology>
+    <KO:terms name="K02164" value="1.7.2.5">nitric oxide reductase NorE proteinK02305</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00016">C00125_C00126</data>
+    <data name="RC02794">C00533_C00887</data>
+  </class>
+</reaction>

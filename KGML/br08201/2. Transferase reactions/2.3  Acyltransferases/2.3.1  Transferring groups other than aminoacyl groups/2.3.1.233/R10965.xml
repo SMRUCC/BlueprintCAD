@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10965</ID>
+  <commonNames>malonyl-CoA C-acyl transferase (1,3,6,8-tetrahydroxynaphthalene forming)</commonNames>
+  <def>5 Malonyl-CoA &lt;=&gt; 1,3,6,8-Naphthalenetetrol + 5 CoA + 5 CO2 + H2O</def>
+  <equation>5 C00083 &lt;=&gt; C04033 + 5 C00010 + 5 C00011 + C00001</equation>
+  <enzymes>
+    <string>2.3.1.233</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K19580" value="2.3.1.233">1,3,6,8-tetrahydroxynaphthalene synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00083</data>
+  </class>
+</reaction>

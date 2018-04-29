@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05352</ID>
+  <commonNames>(S)-1-phenylethanol:NAD+ oxidoreductase</commonNames>
+  <def>(S)-1-Phenylethanol + NAD+ &lt;=&gt; Acetophenone + NADH + H+</def>
+  <equation>C11348 + C00003 &lt;=&gt; C07113 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.311</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00642">Ethylbenzene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14746" value="1.1.1.311">(S)-1-phenylethanol dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC01377">C07113_C11348</data>
+  </class>
+</reaction>

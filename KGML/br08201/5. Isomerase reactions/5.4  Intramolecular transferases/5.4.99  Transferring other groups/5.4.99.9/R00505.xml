@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00505</ID>
+  <commonNames>UDP-alpha-D-galactopyranose furanomutase</commonNames>
+  <def>UDP-alpha-D-galactose &lt;=&gt; UDP-alpha-D-galactofuranose</def>
+  <equation>C00052 &lt;=&gt; C03733</equation>
+  <enzymes>
+    <string>5.4.99.9</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00052">Galactose metabolism</data>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01854" value="5.4.99.9">UDP-galactopyranose mutase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00317">C00052_C03733</data>
+  </class>
+</reaction>

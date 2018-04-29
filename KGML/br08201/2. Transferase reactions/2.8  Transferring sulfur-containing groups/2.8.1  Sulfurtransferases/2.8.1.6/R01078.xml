@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01078</ID>
+  <commonNames>dethiobiotin:sulfur sulfurtransferase</commonNames>
+  <def>Dethiobiotin + Sulfur donor + 2 S-Adenosyl-L-methionine + 2 e- + 2 H+ &lt;=&gt; Biotin + 2 L-Methionine + 2 5'-Deoxyadenosine</def>
+  <equation>C01909 + C17023 + 2 C00019 + 2 C05359 + 2 C00080 &lt;=&gt; C00120 + 2 C00073 + 2 C05198</equation>
+  <enzymes>
+    <string>2.8.1.6</string>
+  </enzymes>
+  <comment>the reactant sulfur is not elemental sulfur, but it may be from the enzyme itself ([2Fe-2S] iron-sulfur centre) multi-step reaction</comment>
+  <pathway>
+    <data name="rn00780">Biotin metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00123">Biotin biosynthesis, pimeloyl-ACP/CoA =&gt; biotin</data>
+    <data name="M00573">Biotin biosynthesis, BioI pathway, long-chain-acyl-ACP =&gt; pimeloyl-ACP =&gt; biotin</data>
+    <data name="M00577">Biotin biosynthesis, BioW pathway, pimelate =&gt; pimeloyl-CoA =&gt; biotin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01012" value="2.8.1.6">biotin synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00021">C00019_C00073</data>
+    <data name="RC00441">C00120_C01909</data>
+  </class>
+</reaction>

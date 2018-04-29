@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07664</ID>
+  <commonNames>(S)-2-hydroxy-2-phenylacetate:acceptor 2-oxidoreductase</commonNames>
+  <def>(S)-Mandelate + FMN &lt;=&gt; alpha-Oxo-benzeneacetic acid + Reduced FMN</def>
+  <equation>C01984 + C00061 &lt;=&gt; C02137 + C01847</equation>
+  <enzymes>
+    <string>1.1.99.31</string>
+  </enzymes>
+  <comment>MdlB</comment>
+  <pathway>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15054" value="1.1.99.31">(S)-mandelate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00126">C00061_C01847</data>
+    <data name="RC00240">C01984_C02137</data>
+  </class>
+</reaction>

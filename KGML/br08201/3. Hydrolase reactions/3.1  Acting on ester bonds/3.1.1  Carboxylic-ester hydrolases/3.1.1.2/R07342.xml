@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07342</ID>
+  <commonNames>aryl-ester hydrolase</commonNames>
+  <def>Phenyl acetate + H2O &lt;=&gt; Phenol + Acetate</def>
+  <equation>C15583 + C00001 &lt;=&gt; C15584 + C00033</equation>
+  <enzymes>
+    <string>3.1.1.2</string>
+  </enzymes>
+  <comment>general reaction (see R01241 and R06893)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00475">C00033_C15583</data>
+    <data name="RC00476">C15583_C15584</data>
+  </class>
+</reaction>

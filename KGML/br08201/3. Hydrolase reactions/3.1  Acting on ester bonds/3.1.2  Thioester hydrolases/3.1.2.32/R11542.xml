@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11542</ID>
+  <commonNames>2-aminobenzoylacetyl-CoA hydrolase</commonNames>
+  <def>2-Aminobenzoylacetyl-CoA + H2O &lt;=&gt; 2-Aminobenzoylacetate + CoA</def>
+  <equation>C21452 + C00001 &lt;=&gt; C21453 + C00010</equation>
+  <enzymes>
+    <string>3.1.2.32</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00405">Phenazine biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20257" value="3.1.2.32">2-aminobenzoylacetyl-CoA thioesterase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00014">C21452_C21453</data>
+  </class>
+</reaction>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02860</ID>
+  <commonNames>nicotine:(acceptor) 6-oxidoreductase (hydroxylating)</commonNames>
+  <def>(R,S)-Nicotine + Acceptor + H2O &lt;=&gt; (S)-6-Hydroxynicotine + Reduced acceptor</def>
+  <equation>C16150 + C00028 + C00001 &lt;=&gt; C01056 + C00030</equation>
+  <enzymes>
+    <string>1.5.99.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00810">Nicotine degradation, pyridine pathway, nicotine =&gt; 2,6-dihydroxypyridine/succinate semialdehyde</data>
+  </module>
+  <orthology>
+    <KO:terms name="K19818" value="1.5.99.4">nicotine dehydrogenase subunit A</KO:terms>
+    <KO:terms name="K19819" value="1.5.99.4">nicotine dehydrogenase subunit B</KO:terms>
+    <KO:terms name="K19820" value="1.5.99.4">nicotine dehydrogenase subunit C</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00589">C01056_C16150</data>
+  </class>
+</reaction>

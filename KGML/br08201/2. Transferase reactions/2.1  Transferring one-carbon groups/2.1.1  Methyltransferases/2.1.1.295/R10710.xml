@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10710</ID>
+  <commonNames>S-adenosyl-L-methionine:6-geranylgeranyl-2-methylbenzene-1,4-diol C3-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + 6-Geranylgeranyl-2-methylbenzene-1,4-diol &lt;=&gt; S-Adenosyl-L-homocysteine + 6-Geranylgeranyl-2,3-dimethylbenzene-1,4-diol</def>
+  <equation>C00019 + C20737 &lt;=&gt; C00021 + C20738</equation>
+  <enzymes>
+    <string>2.1.1.295</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00130">Ubiquinone and other terpenoid-quinone biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00112">Tocopherol/tocotorienol biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K12502" value="2.1.1.295">MPBQ/MSBQ methyltransferase</KO:terms>
+    <KO:terms name="K18534" value="2.1.1.295">MPBQ/MSBQ methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01662">C20737_C20738</data>
+  </class>
+</reaction>

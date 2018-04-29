@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02749</ID>
+  <commonNames>2-deoxy-D-ribose 1-phosphate 1,5-phosphomutase</commonNames>
+  <def>2-Deoxy-D-ribose 1-phosphate &lt;=&gt; 2-Deoxy-D-ribose 5-phosphate</def>
+  <equation>C00672 &lt;=&gt; C00673</equation>
+  <enzymes>
+    <string>5.4.2.7</string>
+  </enzymes>
+  <comment>intermediate (see [CPD:C04175])</comment>
+  <pathway>
+    <data name="rn00030">Pentose phosphate pathway</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01839" value="5.4.2.7">phosphopentomutase</KO:terms>
+    <KO:terms name="K15779" value="5.4.2.2">phosphoglucomutase / phosphopentomutase</KO:terms>
+    <KO:terms name="K22199" value="5.4.2.7">phosphopentomutase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00408">C00672_C00673</data>
+  </class>
+</reaction>

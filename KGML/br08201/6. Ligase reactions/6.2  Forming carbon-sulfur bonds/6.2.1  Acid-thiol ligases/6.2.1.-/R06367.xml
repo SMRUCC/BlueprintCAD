@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06367</ID>
+  <commonNames>perillic acid:CoA ligase (ADP-forming)</commonNames>
+  <def>Perillic acid + CoA + ATP &lt;=&gt; Perillyl-CoA + H2O + ADP + Orthophosphate</def>
+  <equation>C11924 + C00010 + C00002 &lt;=&gt; C11929 + C00001 + C00008 + C00009</equation>
+  <enzymes>
+    <string>6.2.1</string>
+  </enzymes>
+  <comment>perillyl-CoA synthetase see R06368</comment>
+  <pathway>
+    <data name="rn00903">Limonene and pinene degradation</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00004">C00010_C11929</data>
+    <data name="RC00280">C11924_C11929</data>
+  </class>
+</reaction>

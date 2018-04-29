@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10324</ID>
+  <commonNames>D-glyceraldehyde:acceptor oxidoreductase (FAD-containing)</commonNames>
+  <def>D-Glyceraldehyde + H2O + Acceptor &lt;=&gt; D-Glycerate + Reduced acceptor</def>
+  <equation>C00577 + C00001 + C00028 &lt;=&gt; C00258 + C00030</equation>
+  <enzymes>
+    <string>1.2.99.8</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00030">Pentose phosphate pathway</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00309">Non-phosphorylative Entner-Doudoroff pathway, gluconate/galactonate =&gt; glycerate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K18020" value="1.2.99.8">glyceraldehyde dehydrogenase large subunit</KO:terms>
+    <KO:terms name="K18021" value="1.2.99.8">glyceraldehyde dehydrogenase medium subunit</KO:terms>
+    <KO:terms name="K18022" value="1.2.99.8">glyceraldehyde dehydrogenase small subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00242">C00258_C00577</data>
+  </class>
+</reaction>

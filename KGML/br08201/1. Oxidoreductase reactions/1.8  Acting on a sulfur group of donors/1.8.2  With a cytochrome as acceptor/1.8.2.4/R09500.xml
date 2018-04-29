@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09500</ID>
+  <commonNames>dimethyl sulfide:ferricytochrome-c2 oxidoreductase</commonNames>
+  <def>Dimethyl sulfide + 2 Ferricytochrome c2 + H2O &lt;=&gt; Dimethyl sulfoxide + 2 Ferrocytochrome c2 + 2 H+</def>
+  <equation>C00580 + 2 C00997 + C00001 &lt;=&gt; C11143 + 2 C01000 + 2 C00080</equation>
+  <enzymes>
+    <string>1.8.2.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00920">Sulfur metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16964" value="1.8.2.4">dimethylsulfide dehydrogenase subunit alpha</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02555">C00580_C11143</data>
+  </class>
+</reaction>

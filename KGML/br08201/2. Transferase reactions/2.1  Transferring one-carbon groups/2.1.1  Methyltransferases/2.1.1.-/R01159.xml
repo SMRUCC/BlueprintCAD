@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01159</ID>
+  <commonNames>S-adenosyl-L-methionine:L-histidine N-methyltransferase</commonNames>
+  <def>L-Histidine + S-Adenosyl-L-methionine &lt;=&gt; N(pi)-Methyl-L-histidine + S-Adenosyl-L-homocysteine</def>
+  <equation>C00135 + C00019 &lt;=&gt; C01152 + C00021</equation>
+  <enzymes>
+    <string>2.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00340">Histidine metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00333">C00135_C01152</data>
+  </class>
+</reaction>

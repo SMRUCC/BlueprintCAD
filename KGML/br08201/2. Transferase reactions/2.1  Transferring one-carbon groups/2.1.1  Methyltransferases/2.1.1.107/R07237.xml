@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07237</ID>
+  <commonNames>S-adenosyl-L-methionine:uroporphyrinogen-III C-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Uroporphyrinogen III &lt;=&gt; S-Adenosyl-L-homocysteine + Precorrin 1</def>
+  <equation>C00019 + C01051 &lt;=&gt; C00021 + C15527</equation>
+  <enzymes>
+    <string>2.1.1.107</string>
+  </enzymes>
+  <comment>first step of two-step reaction (R03194, R07237+R07238), subsequently R07238</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01777">C01051_C15527</data>
+  </class>
+</reaction>

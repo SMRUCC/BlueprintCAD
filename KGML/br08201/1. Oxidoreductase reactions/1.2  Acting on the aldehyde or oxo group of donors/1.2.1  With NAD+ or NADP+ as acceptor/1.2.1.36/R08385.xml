@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08385</ID>
+  <commonNames>retinal:NAD+ oxidoreductase</commonNames>
+  <def>9-cis-Retinal + NAD+ + H2O &lt;=&gt; 9-cis-Retinoic acid + NADH + H+</def>
+  <equation>C16681 + C00003 + C00001 &lt;=&gt; C15493 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.36</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00830">Retinol metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K07249" value="1.2.1.36">retinal dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00218">C15493_C16681</data>
+  </class>
+</reaction>

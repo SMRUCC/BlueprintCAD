@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03168</ID>
+  <commonNames>Acetyl-CoA:N6-hydroxy-L-lysine 6-acetyltransferase</commonNames>
+  <def>Acetyl-CoA + N6-Hydroxy-L-lysine &lt;=&gt; CoA + N6-Acetyl-N6-hydroxy-L-lysine</def>
+  <equation>C00024 + C01028 &lt;=&gt; C00010 + C03955</equation>
+  <enzymes>
+    <string>2.3.1.102</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00310">Lysine degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03896" value="2.3.1.102">acetyl CoA:N6-hydroxylysine acetyl transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00865">C01028_C03955</data>
+  </class>
+</reaction>

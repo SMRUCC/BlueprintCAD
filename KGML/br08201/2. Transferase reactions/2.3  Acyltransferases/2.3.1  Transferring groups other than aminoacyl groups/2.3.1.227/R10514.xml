@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10514</ID>
+  <commonNames>acetyl-CoA:GDP-4-amino-4,6-dideoxy-alpha-D-mannose N-acetyltransferase</commonNames>
+  <def>Acetyl-CoA + GDP-4-amino-4,6-dideoxy-alpha-D-mannose &lt;=&gt; CoA + GDP-4-acetamido-4,6-dideoxy-alpha-D-mannose</def>
+  <equation>C00024 + C20638 &lt;=&gt; C00010 + C20672</equation>
+  <enzymes>
+    <string>2.3.1.227</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K17939" value="2.3.1.227">GDP-perosamine N-acetyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00166">C20638_C20672</data>
+  </class>
+</reaction>

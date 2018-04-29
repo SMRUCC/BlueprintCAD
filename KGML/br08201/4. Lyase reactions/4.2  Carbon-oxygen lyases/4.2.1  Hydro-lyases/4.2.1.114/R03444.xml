@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03444</ID>
+  <commonNames>(R)-2-hydroxybutane-1,2,4-tricarboxylate hydro-lyase</commonNames>
+  <def>(R)-2-Hydroxybutane-1,2,4-tricarboxylate &lt;=&gt; (Z)-But-1-ene-1,2,4-tricarboxylate + H2O</def>
+  <equation>C01251 &lt;=&gt; C04002 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.114</string>
+    <string>4.2.1</string>
+  </enzymes>
+  <comment>first step of two-step reaction (see R09720, R03444+R04371)</comment>
+  <pathway>
+    <data name="rn00300">Lysine biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00030">Lysine biosynthesis, AAA pathway, 2-oxoglutarate =&gt; 2-aminoadipate =&gt; lysine</data>
+    <data name="M00433">Lysine biosynthesis, 2-oxoglutarate =&gt; 2-oxoadipate</data>
+    <data name="M00608">2-Oxocarboxylic acid chain extension, 2-oxoglutarate =&gt; 2-oxoadipate =&gt; 2-oxopimelate =&gt; 2-oxosuberate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K16792" value="4.2.1.114">methanogen homoaconitase large subunit</KO:terms>
+    <KO:terms name="K16793" value="4.2.1.114">methanogen homoaconitase small subunit</KO:terms>
+    <KO:terms name="K17450" value="4.2.1">homoaconitase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00498">C01251_C04002</data>
+  </class>
+</reaction>

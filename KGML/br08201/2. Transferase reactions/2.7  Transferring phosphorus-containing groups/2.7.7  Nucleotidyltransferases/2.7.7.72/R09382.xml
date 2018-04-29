@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09382</ID>
+  <commonNames>CTP,CTP,ATP:tRNA cytidylyl,cytidylyl,adenylyltransferase</commonNames>
+  <def>tRNA precursor + 2 CTP + ATP &lt;=&gt; tRNA with a 3' CCA end + 3 Diphosphate</def>
+  <equation>C02211 + 2 C00063 + C00002 &lt;=&gt; C19085 + 3 C00013</equation>
+  <enzymes>
+    <string>2.7.7.72</string>
+  </enzymes>
+  <comment>three-step reaction (see R09383+R09384+R09386)</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K00974" value="2.7.7.72">tRNA nucleotidyltransferase (CCA-adding enzyme)</KO:terms>
+    <KO:terms name="K07558" value="2.7.7.72">tRNA nucleotidyltransferase (CCA-adding enzyme)</KO:terms>
+  </orthology>
+  <class />
+</reaction>

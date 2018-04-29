@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10829</ID>
+  <commonNames>4-O-beta-D-mannopyranosyl-N-acetyl-D-glucosamine:phosphate alpha-D-mannosyltransferase</commonNames>
+  <def>beta-D-Mannosyl-1,4-N-acetyl-D-glucosamine + Orthophosphate &lt;=&gt; N-Acetyl-D-glucosamine + D-Mannose 1-phosphate</def>
+  <equation>C20887 + C00009 &lt;=&gt; C00140 + C00636</equation>
+  <enzymes>
+    <string>2.4.1.320</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K18785" value="2.4.1.319">beta-1,4-mannooligosaccharide/beta-1,4-mannosyl-N-acetylglucosamine phosphorylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00049">C00140_C20887</data>
+  </class>
+</reaction>

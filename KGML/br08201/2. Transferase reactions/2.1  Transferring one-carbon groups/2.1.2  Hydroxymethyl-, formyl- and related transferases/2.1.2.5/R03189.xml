@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03189</ID>
+  <commonNames>5-Formyltetrahydrofolate:L-glutamate N-formiminotransferase</commonNames>
+  <def>Folinic acid + L-Glutamate &lt;=&gt; Tetrahydrofolate + N-Formyl-L-glutamate</def>
+  <equation>C03479 + C00025 &lt;=&gt; C00101 + C01045</equation>
+  <enzymes>
+    <string>2.1.2.5</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00670">One carbon pool by folate</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00603" value="2.1.2.5">glutamate formiminotransferase</KO:terms>
+    <KO:terms name="K13990" value="2.1.2.5">glutamate formiminotransferase / formiminotetrahydrofolate cyclodeaminase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00165">C00025_C01045</data>
+    <data name="RC00870">C00101_C03479</data>
+  </class>
+</reaction>

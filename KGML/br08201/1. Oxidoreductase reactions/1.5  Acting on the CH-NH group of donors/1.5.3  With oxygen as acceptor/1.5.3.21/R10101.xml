@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10101</ID>
+  <commonNames>4-methylaminobutanoate methylamidohydrolase;</commonNames>
+  <commonNames>4-methylaminobutanoate:oxygen oxidoreductase (methylamine-forming)</commonNames>
+  <def>4-Methylaminobutyrate + Oxygen + H2O &lt;=&gt; Succinate semialdehyde + Methylamine + Hydrogen peroxide</def>
+  <equation>C15987 + C00007 + C00001 &lt;=&gt; C00232 + C00218 + C00027</equation>
+  <enzymes>
+    <string>1.5.3.21</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00810">Nicotine degradation, pyridine pathway, nicotine =&gt; 2,6-dihydroxypyridine/succinate semialdehyde</data>
+  </module>
+  <orthology>
+    <KO:terms name="K20155" value="1.5.3.21">4-methylaminobutanoate oxidase (methylamine-forming)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00225">C00232_C15987</data>
+    <data name="RC00807">C00218_C15987</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10000</ID>
+  <commonNames>[methyl-Co(III) corrinoid protein]:coenzyme M methyltransferase</commonNames>
+  <def>Coenzyme M + Methyl-Co(III) corrinoid protein &lt;=&gt; 2-(Methylthio)ethanesulfonate + Co(I) corrinoid protein</def>
+  <equation>C03576 + C06020 &lt;=&gt; C03920 + C06021</equation>
+  <enzymes>
+    <string>2.1.1.246</string>
+    <string>2.1.1.247</string>
+    <string>2.1.1.251</string>
+    <string>2.1.1.253</string>
+  </enzymes>
+  <comment>specific for methanol corrinoid protein [KO:K14081] (ec 2.1.1.246, following after R04384) specific for (mono/di/tri)methylamine corrinoid protein [KO:K16177 K16179 K14084] (ec 2.1.1.247, following after R10014, R10015 or R10016) specific for tetramethylammonium corrinoid protein (ec 2.1.1.253, following after R10017) specific for methylated-thiol corrinoid protein (ec 2.1.1.251, following after R10001)</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K14080" value="2.1.1.246" />
+    <KO:terms name="K14082" value="2.1.1.247" />
+  </orthology>
+  <class>
+    <data name="RC00035">C03576_C03920</data>
+    <data name="RC01144">C06020_C06021</data>
+  </class>
+</reaction>

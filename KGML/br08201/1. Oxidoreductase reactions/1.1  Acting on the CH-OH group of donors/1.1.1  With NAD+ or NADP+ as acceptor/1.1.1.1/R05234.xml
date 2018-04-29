@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05234</ID>
+  <commonNames>cis-3-chloro-2-propene-1-ol:NAD+ oxidoreductase</commonNames>
+  <def>cis-3-Chloro-2-propene-1-ol + NAD+ &lt;=&gt; cis-3-Chloroallyl aldehyde + NADH + H+</def>
+  <equation>C06612 + C00003 &lt;=&gt; C16348 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00625">Chloroalkane and chloroalkene degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00001" value="1.1.1.1">alcohol dehydrogenase</KO:terms>
+    <KO:terms name="K00121" value="1.1.1.284">S-(hydroxymethyl)glutathione dehydrogenase / alcohol dehydrogenase</KO:terms>
+    <KO:terms name="K04072" value="1.2.1.10">acetaldehyde dehydrogenase / alcohol dehydrogenase</KO:terms>
+    <KO:terms name="K13953" value="1.1.1.1">alcohol dehydrogenase, propanol-preferring</KO:terms>
+    <KO:terms name="K13954" value="1.1.1.1">alcohol dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00649">C06612_C16348</data>
+  </class>
+</reaction>

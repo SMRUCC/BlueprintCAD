@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01716</ID>
+  <commonNames>chorismate:L-glutamine aminotransferase</commonNames>
+  <def>Chorismate + L-Glutamine &lt;=&gt; 4-Amino-4-deoxychorismate + L-Glutamate</def>
+  <equation>C00251 + C00064 &lt;=&gt; C11355 + C00025</equation>
+  <enzymes>
+    <string>2.6.1.85</string>
+  </enzymes>
+  <comment>two-step reaction (see R00256 + R05552)</comment>
+  <pathway>
+    <data name="rn00790">Folate biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01664" value="2.6.1.85">para-aminobenzoate synthetase component II</KO:terms>
+    <KO:terms name="K01665" value="2.6.1.85">para-aminobenzoate synthetase component I</KO:terms>
+    <KO:terms name="K03342" value="2.6.1.85">para-aminobenzoate synthetase / 4-amino-4-deoxychorismate lyase</KO:terms>
+    <KO:terms name="K13950" value="2.6.1.85">para-aminobenzoate synthetase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00010">C00025_C00064</data>
+    <data name="RC01418">C00251_C11355</data>
+  </class>
+</reaction>

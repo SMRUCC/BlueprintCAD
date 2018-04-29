@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03476</ID>
+  <commonNames>1-acyl-2-oleoyl-sn-glycero-3-phosphocholine:NADH:oxygen oxidoreductase (12-hydroxylating)</commonNames>
+  <def>1-Acyl-2-oleoyl-sn-glycero-3-phosphocholine + Oxygen + NADH + H+ &lt;=&gt; 1-Acyl-2-[(S)-12-hydroxyoleoyl]-sn-glycero-3-phosphocholine + NAD+ + H2O</def>
+  <equation>C01282 + C00007 + C00004 + C00080 &lt;=&gt; C04792 + C00003 + C00001</equation>
+  <enzymes />
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00709">C01282_C04792</data>
+  </class>
+</reaction>

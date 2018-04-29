@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03230</ID>
+  <commonNames>Acetyl-CoA:17-O-deacetylvindoline 17-O-acetyltransferase</commonNames>
+  <def>Acetyl-CoA + Deacetylvindoline &lt;=&gt; CoA + Vindoline</def>
+  <equation>C00024 + C01091 &lt;=&gt; C00010 + C01626</equation>
+  <enzymes>
+    <string>2.3.1.107</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12698" value="2.3.1.107">deacetylvindoline O-acetyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00055">C01091_C01626</data>
+  </class>
+</reaction>

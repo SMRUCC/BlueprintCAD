@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01553</ID>
+  <commonNames>acetone-cyanohydrin acetone-lyase (cyanide-forming)</commonNames>
+  <def>Acetone cyanohydrin &lt;=&gt; Hydrogen cyanide + Acetone</def>
+  <equation>C02659 &lt;=&gt; C01326 + C00207</equation>
+  <enzymes>
+    <string>4.1.2.46</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00460">Cyanoamino acid metabolism</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13033" value="4.1.2.47">(S)-hydroxynitrile lyase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00546">C00207_C02659</data>
+    <data name="RC02852">C01326_C02659</data>
+  </class>
+</reaction>

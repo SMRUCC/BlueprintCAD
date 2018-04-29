@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03069</ID>
+  <commonNames>(2R,3S)-2,3-dimethylmalate hydro-lyase (dimethylmaleate-forming)</commonNames>
+  <def>2,3-Dimethylmaleate + H2O &lt;=&gt; (2R,3S)-2,3-Dimethylmalate</def>
+  <equation>C00922 + C00001 &lt;=&gt; C03652</equation>
+  <enzymes>
+    <string>4.2.1.85</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20452" value="4.2.1.85">dimethylmaleate hydratase large subunit</KO:terms>
+    <KO:terms name="K20453" value="4.2.1.85">dimethylmaleate hydratase small subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00843">C00922_C03652</data>
+  </class>
+</reaction>

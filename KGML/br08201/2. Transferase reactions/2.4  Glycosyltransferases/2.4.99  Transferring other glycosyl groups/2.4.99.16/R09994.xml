@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09994</ID>
+  <commonNames>alpha-maltose 1-phosphate:(1-&gt;4)-alpha-D-glucan 4-alpha-D-maltosyltransferase</commonNames>
+  <def>alpha-Maltose 1-phosphate + Amylose(n) &lt;=&gt; Orthophosphate + Amylose(n+2)</def>
+  <equation>C20237 + C00718(n) &lt;=&gt; C00009 + C00718(n+2)</equation>
+  <enzymes>
+    <string>2.4.99.16</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00500">Starch and sucrose metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16147" value="2.4.99.16">starch synthase (maltosyl-transferring)</KO:terms>
+  </orthology>
+  <class />
+</reaction>

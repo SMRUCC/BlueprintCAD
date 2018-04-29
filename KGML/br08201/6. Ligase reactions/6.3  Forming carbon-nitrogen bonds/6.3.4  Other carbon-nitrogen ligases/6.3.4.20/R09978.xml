@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09978</ID>
+  <commonNames>7-carboxy-7-carbaguanine:ammonia ligase (ADP-forming)</commonNames>
+  <def>7-Carboxy-7-carbaguanine + Ammonia + ATP &lt;=&gt; 7-Cyano-7-carbaguanine + ADP + Orthophosphate + H2O</def>
+  <equation>C20248 + C00014 + C00002 &lt;=&gt; C15996 + C00008 + C00009 + C00001</equation>
+  <enzymes>
+    <string>6.3.4.20</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00790">Folate biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K06920" value="6.3.4.20">7-cyano-7-deazaguanine synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00959">C15996_C20248</data>
+  </class>
+</reaction>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08566</ID>
+  <commonNames>4-methyl-2-oxopentanoate:ferredoxin oxidoreductase (decarboxylating; CoA-3-methylbutanoylating)</commonNames>
+  <def>4-Methyl-2-oxopentanoate + CoA + 2 Oxidized ferredoxin &lt;=&gt; 3-Methylbutanoyl-CoA + CO2 + 2 Reduced ferredoxin + H+</def>
+  <equation>C00233 + C00010 + 2 C00139 &lt;=&gt; C02939 + C00011 + 2 C00138 + C00080</equation>
+  <enzymes>
+    <string>1.2.7.7</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00280">Valine, leucine and isoleucine degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00186" value="1.2.7.7">2-oxoisovalerate ferredoxin oxidoreductase, alpha subunit</KO:terms>
+    <KO:terms name="K00187" value="1.2.7.7">2-oxoisovalerate ferredoxin oxidoreductase, beta subunit</KO:terms>
+    <KO:terms name="K00188" value="1.2.7.7">2-oxoisovalerate ferredoxin oxidoreductase, delta subunit</KO:terms>
+    <KO:terms name="K00189" value="1.2.7.7">2-oxoisovalerate ferredoxin oxidoreductase, gamma subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C02939</data>
+    <data name="RC02833">C00233_C02939</data>
+  </class>
+</reaction>

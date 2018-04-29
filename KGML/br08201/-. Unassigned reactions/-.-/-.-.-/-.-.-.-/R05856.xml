@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05856</ID>
+  <def>16-Methoxytabersonine + H2O &lt;=&gt; 16-Methoxy-2,3-dihydro-3-hydroxytabersonine</def>
+  <equation>C11675 + C00001 &lt;=&gt; C04578</equation>
+  <enzymes />
+  <comment>enzyme not yet characterized, hydration</comment>
+  <pathway>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01609">C04578_C11675</data>
+  </class>
+</reaction>

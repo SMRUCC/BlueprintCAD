@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11168</ID>
+  <commonNames>carbon-monoxide:quinone oxidoreductase</commonNames>
+  <def>CO + Quinone + H2O &lt;=&gt; CO2 + Hydroquinone</def>
+  <equation>C00237 + C15602 + C00001 &lt;=&gt; C00011 + C15603</equation>
+  <enzymes>
+    <string>1.2.5.3</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K03518" value="1.2.5.3">aerobic carbon-monoxide dehydrogenase small subunit</KO:terms>
+    <KO:terms name="K03519" value="1.2.5.3">aerobic carbon-monoxide dehydrogenase medium subunit</KO:terms>
+    <KO:terms name="K03520" value="1.2.5.3">aerobic carbon-monoxide dehydrogenase large subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02800">C00011_C00237</data>
+  </class>
+</reaction>

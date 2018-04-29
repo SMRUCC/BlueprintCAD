@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06506</ID>
+  <def>Erythromycin C + dTDP-L-megosamine &lt;=&gt; Megalomicin A + dTDP</def>
+  <equation>C06616 + C11919 &lt;=&gt; C11985 + C00363</equation>
+  <enzymes />
+  <comment>TDP-megosamine glycosyltransferase,MegD1</comment>
+  <pathway>
+    <data name="rn00522">Biosynthesis of 12-, 14- and 16-membered macrolides</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00363_C11919</data>
+    <data name="RC00028">C06616_C11985</data>
+  </class>
+</reaction>

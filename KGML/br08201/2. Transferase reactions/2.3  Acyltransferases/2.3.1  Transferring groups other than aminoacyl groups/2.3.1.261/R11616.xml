@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11616</ID>
+  <commonNames>malonyl-CoA:4-hydroxybenzoyl-[4-hydroxyphenylalkanoate synthase] malonyltransferase (4-hydroxyphenylalkanoate-forming)</commonNames>
+  <def>4-Hydroxybenzoyl-[acp] + 9 Malonyl-CoA + 18 NADPH + 18 H+ &lt;=&gt; 19-(4-Hydroxyphenyl)nonadecanoyl-[acp] + 9 CO2 + 9 CoA + 18 NADP+ + 9 H2O</def>
+  <equation>C21505 + 9 C00083 + 18 C00005 + 18 C00080 &lt;=&gt; C21507 + 9 C00011 + 9 C00010 + 18 C00006 + 9 C00001</equation>
+  <enzymes>
+    <string>2.3.1.261</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K12430" value="2.3.1.261">4-hydroxyphenylalkanoate synthase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

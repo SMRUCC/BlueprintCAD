@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00606</ID>
+  <commonNames>methylamine:amicyanin oxidoreductase (deaminating)</commonNames>
+  <def>Methylamine + H2O + 2 Amicyanin &lt;=&gt; Formaldehyde + Ammonia + 2 Reduced amicyanin + 2 H+</def>
+  <equation>C00218 + C00001 + 2 C19671 &lt;=&gt; C00067 + C00014 + 2 C19672 + 2 C00080</equation>
+  <enzymes>
+    <string>1.4.9.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K08685" value="1.4.9.1">quinohemoprotein amine dehydrogenase</KO:terms>
+    <KO:terms name="K15228" value="1.4.9.1">methylamine dehydrogenase light chain</KO:terms>
+    <KO:terms name="K15229" value="1.4.9.1">methylamine dehydrogenase heavy chain</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00189">C00067_C00218</data>
+  </class>
+</reaction>

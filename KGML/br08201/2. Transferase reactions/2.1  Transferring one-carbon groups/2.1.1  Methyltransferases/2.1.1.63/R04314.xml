@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04314</ID>
+  <commonNames>DNA-6-O-methylguanine:protein-L-cysteine S-methyltransferase</commonNames>
+  <def>DNA containing 6-O-methylguanine + [Protein]-L-cysteine &lt;=&gt; Protein S-methyl-L-cysteine + DNA containing guanine</def>
+  <equation>C04250 + C02743 &lt;=&gt; C03800 + C11475</equation>
+  <enzymes>
+    <string>2.1.1.63</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00035">C02743_C03800</data>
+    <data name="RC03122">C04250_C11475</data>
+  </class>
+</reaction>

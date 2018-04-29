@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01564</ID>
+  <commonNames>N,N-Dimethylglycine:oxygen oxidoreductase (demethylating)</commonNames>
+  <def>N,N-Dimethylglycine + H2O + Oxygen &lt;=&gt; Sarcosine + Formaldehyde + Hydrogen peroxide</def>
+  <equation>C01026 + C00001 + C00007 &lt;=&gt; C00213 + C00067 + C00027</equation>
+  <enzymes>
+    <string>1.5.3.10</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00181">C00213_C01026</data>
+    <data name="RC00185">C00067_C01026</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

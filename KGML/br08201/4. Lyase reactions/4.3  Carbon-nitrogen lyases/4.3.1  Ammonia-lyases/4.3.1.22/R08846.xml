@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08846</ID>
+  <commonNames>3,4-dihydroxy-L-phenylalanine ammonia-lyase (3,4-dihydroxyphenylpropanoate-forming)</commonNames>
+  <def>3,4-Dihydroxy-L-phenylalanine + NADH + H+ &lt;=&gt; 3,4-Dihydroxyphenylpropanoate + NAD+ + Ammonia</def>
+  <equation>C00355 + C00004 + C00080 &lt;=&gt; C10447 + C00003 + C00014</equation>
+  <enzymes>
+    <string>4.3.1.22</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC02368">C00355_C10447</data>
+  </class>
+</reaction>

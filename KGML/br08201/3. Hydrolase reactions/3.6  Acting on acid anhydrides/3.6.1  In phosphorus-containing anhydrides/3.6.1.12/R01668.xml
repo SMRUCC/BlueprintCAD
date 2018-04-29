@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01668</ID>
+  <commonNames>dCTP nucleotidohydrolase;</commonNames>
+  <commonNames>deoxycytidine 5'-triphosphate diphosphohydrolase</commonNames>
+  <def>dCTP + H2O &lt;=&gt; dCMP + Diphosphate</def>
+  <equation>C00458 + C00001 &lt;=&gt; C00239 + C00013</equation>
+  <enzymes>
+    <string>3.6.1.12</string>
+    <string>3.6.1.65</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00240">Pyrimidine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16904" value="3.6.1.12">dCTP diphosphatase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00239_C00458</data>
+  </class>
+</reaction>

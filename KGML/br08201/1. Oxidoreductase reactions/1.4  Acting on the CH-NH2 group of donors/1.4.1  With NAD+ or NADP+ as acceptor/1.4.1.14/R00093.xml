@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00093</ID>
+  <commonNames>L-glutamate:NAD+ oxidoreductase (transaminating)</commonNames>
+  <def>2 L-Glutamate + NAD+ &lt;=&gt; L-Glutamine + 2-Oxoglutarate + NADH + H+</def>
+  <equation>2 C00025 + C00003 &lt;=&gt; C00064 + C00026 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.4.1.14</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn00910">Nitrogen metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00264" value="1.4.1.13">glutamate synthase (NADPH/NADH)</KO:terms>
+    <KO:terms name="K00265" value="1.4.1.13">glutamate synthase (NADPH/NADH) large chain</KO:terms>
+    <KO:terms name="K00266" value="1.4.1.13">glutamate synthase (NADPH/NADH) small chain</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC00010">C00025_C00064</data>
+  </class>
+</reaction>

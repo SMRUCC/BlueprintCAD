@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01312</ID>
+  <commonNames>Phosphatidylcholine cholinephosphohydrolase</commonNames>
+  <def>Phosphatidylcholine + H2O &lt;=&gt; 1,2-Diacyl-sn-glycerol + Choline phosphate</def>
+  <equation>C00157 + C00001 &lt;=&gt; C00641 + C00588</equation>
+  <enzymes>
+    <string>3.1.4.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00564">Glycerophospholipid metabolism</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01114" value="3.1.4.3">phospholipase C</KO:terms>
+    <KO:terms name="K16619" value="3.1.4.3">phospholipase C / alpha-toxin</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00017">C00157_C00641</data>
+    <data name="RC00425">C00157_C00588</data>
+  </class>
+</reaction>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04768</ID>
+  <commonNames>dihydromacarpine:oxygen oxidoreductase</commonNames>
+  <def>Dihydromacarpine + Oxygen + H+ &lt;=&gt; Macarpine + Hydrogen peroxide</def>
+  <equation>C05316 + C00007 + C00080 &lt;=&gt; C06165 + C00027</equation>
+  <enzymes>
+    <string>1.5.3.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00950">Isoquinoline alkaloid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01204">C05316_C06165</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

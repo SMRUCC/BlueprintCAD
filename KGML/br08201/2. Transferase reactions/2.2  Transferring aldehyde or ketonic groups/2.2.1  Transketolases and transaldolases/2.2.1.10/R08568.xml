@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08568</ID>
+  <commonNames>L-aspartate 4-semialdehyde:1-deoxy-D-threo-hexo-2,5-diulose 6-phosphate methylglyoxaltransferase</commonNames>
+  <def>L-Aspartate 4-semialdehyde + 6-Deoxy-5-ketofructose 1-phosphate &lt;=&gt; 2-Amino-3,7-dideoxy-D-threo-hept-6-ulosonic acid + Hydroxypyruvaldehyde phosphate</def>
+  <equation>C00441 + C16848 &lt;=&gt; C16850 + C16849</equation>
+  <enzymes>
+    <string>2.2.1.10</string>
+  </enzymes>
+  <comment>possibly two-step reaction (aldehyde-lyase x2)</comment>
+  <pathway>
+    <data name="rn00400">Phenylalanine, tyrosine and tryptophan biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16306" value="4.1.2.13">fructose-bisphosphate aldolase / 2-amino-3,7-dideoxy-D-threo-hept-6-ulosonate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00721">C00441_C16850</data>
+    <data name="RC02301">C16848_C16849</data>
+  </class>
+</reaction>

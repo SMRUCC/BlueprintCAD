@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02998</ID>
+  <commonNames>chlorogenate:D-glucarate 2-O-caffeoyltransferase</commonNames>
+  <def>Chlorogenate + D-Glucarate &lt;=&gt; Quinate + 2-O-Caffeoylglucarate</def>
+  <equation>C00852 + C00818 &lt;=&gt; C00296 + C03062</equation>
+  <enzymes>
+    <string>2.3.1.98</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00037">C00818_C03062</data>
+    <data name="RC00055">C00296_C00852</data>
+  </class>
+</reaction>

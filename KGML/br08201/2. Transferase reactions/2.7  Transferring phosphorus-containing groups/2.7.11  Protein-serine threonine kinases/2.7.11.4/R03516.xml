@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03516</ID>
+  <commonNames>ATP:[3-methyl-2-oxobutanoate dehydrogenase (lipoamide)] phosphotransferase</commonNames>
+  <def>ATP + [3-Methyl-2-oxobutanoate dehydrogenase (2-methylpropanoyl-transferring)] &lt;=&gt; ADP + [3-Methyl-2-oxobutanoate dehydrogenase (2-methylpropanoyl-transferring)] phosphate</def>
+  <equation>C00002 + C04726 &lt;=&gt; C00008 + C01308</equation>
+  <enzymes>
+    <string>2.7.11.4</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00017">C01308_C04726</data>
+  </class>
+</reaction>

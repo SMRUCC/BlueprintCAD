@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08914</ID>
+  <commonNames>7(1)-hydroxychlorophyllide-a:NAD+ oxidoreductase</commonNames>
+  <def>7(1)-Hydroxychlorophyllide a + NAD+ &lt;=&gt; Chlorophyllide b + NADH + H+</def>
+  <equation>C16540 + C00003 &lt;=&gt; C16541 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.294</string>
+  </enzymes>
+  <comment>NADP+ (more effective, see R08915)</comment>
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13606" value="1.1.1.294">chlorophyll(ide) b reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00116">C16540_C16541</data>
+  </class>
+</reaction>

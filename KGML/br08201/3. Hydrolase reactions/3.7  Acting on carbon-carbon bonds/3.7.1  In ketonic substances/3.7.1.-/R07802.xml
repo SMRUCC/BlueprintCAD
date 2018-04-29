@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07802</ID>
+  <def>2-Hydroxy-6-oxo-6-(2-carboxyphenyl)-hexa-2,4-dienoate + H2O &lt;=&gt; Phthalate + 2-Hydroxy-2,4-pentadienoate</def>
+  <equation>C16264 + C00001 &lt;=&gt; C01606 + C00596</equation>
+  <enzymes>
+    <string>3.7.1</string>
+  </enzymes>
+  <comment>2-hydroxy-6-oxo-6-(2-carboxyphenyl)-hexa-2,4-dienoate hydrolase: FlnE</comment>
+  <pathway>
+    <data name="rn00624">Polycyclic aromatic hydrocarbon degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14604" value="3.7.1">2-hydroxy-6-oxo-6-(2'-carboxyphenyl)-hexa-2,4-dienoate hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00753">C00596_C16264</data>
+    <data name="RC00757">C01606_C16264</data>
+  </class>
+</reaction>

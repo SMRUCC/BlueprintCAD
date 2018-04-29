@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09521</ID>
+  <commonNames>L-tyrosine,iodide:NADP+ oxidoreductase (iodinating)</commonNames>
+  <def>L-Tyrosine + NADP+ + Iodide &lt;=&gt; 3-Iodo-L-tyrosine + NADPH</def>
+  <equation>C00082 + C00006 + C00708 &lt;=&gt; C02515 + C00005</equation>
+  <enzymes>
+    <string>1.21.1.1</string>
+  </enzymes>
+  <comment>first step of two-step reaction (see R10059, R09521+R09522)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00949">C00082_C02515</data>
+  </class>
+</reaction>

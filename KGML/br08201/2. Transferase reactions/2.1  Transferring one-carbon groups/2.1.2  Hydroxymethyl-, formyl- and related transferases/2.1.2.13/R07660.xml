@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07660</ID>
+  <def>10-Formyltetrahydrofolate + UDP-L-Ara4N &lt;=&gt; Tetrahydrofolate + UDP-L-Ara4FN</def>
+  <equation>C00234 + C16153 &lt;=&gt; C00101 + C16154</equation>
+  <enzymes>
+    <string>2.1.2.13</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00761">Undecaprenylphosphate alpha-L-Ara4N biosynthesis, UDP-GlcA =&gt; undecaprenyl phosphate alpha-L-Ara4N</data>
+  </module>
+  <orthology>
+    <KO:terms name="K10011" value="2.1.2.13">UDP-4-amino-4-deoxy-L-arabinose formyltransferase / UDP-glucuronic acid dehydrogenase (UDP-4-keto-hexauronic acid decarboxylating)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00026">C00101_C00234</data>
+    <data name="RC01575">C16153_C16154</data>
+  </class>
+</reaction>

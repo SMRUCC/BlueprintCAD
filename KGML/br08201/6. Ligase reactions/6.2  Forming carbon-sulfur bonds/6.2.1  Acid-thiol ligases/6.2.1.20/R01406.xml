@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01406</ID>
+  <commonNames>long-chain-fatty-acid:[acyl-carrier-protein] ligase (AMP-forming)</commonNames>
+  <def>ATP + Long-chain fatty acid + Acyl-carrier protein &lt;=&gt; AMP + Diphosphate + Long-chain acyl-[acyl-carrier protein]</def>
+  <equation>C00002 + C00638 + C00229 &lt;=&gt; C00020 + C00013 + C20683</equation>
+  <enzymes>
+    <string>6.2.1.20</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00071">Fatty acid degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01909" value="6.2.1.20">long-chain-fatty-acid--</KO:terms>
+    <KO:terms name="K05939" value="2.3.1.40">acyl-</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00014">C00638_C20683</data>
+    <data name="RC00039">C00229_C20683</data>
+  </class>
+</reaction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04604</ID>
+  <commonNames>Biotin:apo-[3-methylcrotonoyl-CoA:carbon-dioxide ligase (ADP-forming)] ligase (AMP-forming)</commonNames>
+  <def>ATP + Biotin + Apo-[3-methylcrotonoyl-CoA:carbon-dioxide ligase (ADP-forming)] &lt;=&gt; AMP + Diphosphate + [3-Methylcrotonoyl-CoA:carbon-dioxide ligase (ADP-forming)]</def>
+  <equation>C00002 + C00120 + C04827 &lt;=&gt; C00020 + C00013 + C04801</equation>
+  <enzymes>
+    <string>6.3.4.11</string>
+  </enzymes>
+  <comment>two-step reaction (see R01074 + R05145) R05145 and R01074 are general reactions</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00090">C00120_C04801</data>
+    <data name="RC00096">C04801_C04827</data>
+  </class>
+</reaction>

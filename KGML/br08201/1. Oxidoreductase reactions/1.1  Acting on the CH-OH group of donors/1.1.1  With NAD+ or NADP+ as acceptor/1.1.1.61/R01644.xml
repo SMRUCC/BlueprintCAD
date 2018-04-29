@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01644</ID>
+  <commonNames>4-hydroxybutanoate:NAD+ oxidoreductase</commonNames>
+  <def>4-Hydroxybutanoic acid + NAD+ &lt;=&gt; Succinate semialdehyde + NADH + H+</def>
+  <equation>C00989 + C00003 &lt;=&gt; C00232 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.61</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00650">Butanoate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00043" value="1.1.1.61">4-hydroxybutyrate dehydrogenase</KO:terms>
+    <KO:terms name="K08318" value="1.1.1.61">4-hydroxybutyrate dehydrogenase / sulfolactaldehyde 3-reductase</KO:terms>
+    <KO:terms name="K18120" value="1.1.1.61">4-hydroxybutyrate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00087">C00232_C00989</data>
+  </class>
+</reaction>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11585</ID>
+  <commonNames>2,3,5,6-tetrachlorohydroquinone:NAD+ oxidoreductase</commonNames>
+  <def>Tetrachlorohydroquinone + NAD+ &lt;=&gt; Chloranil + NADH + H+</def>
+  <equation>C03434 + C00003 &lt;=&gt; C18933 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.404</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00361">Chlorocyclohexane and chlorobenzene degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K21607" value="1.1.1.404">tetrachlorobenzoquinone reductase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04012</ID>
+  <commonNames>D-Glutamine:D-glutamyl-peptide 5-glutamyltransferase</commonNames>
+  <def>D-Glutamine + D-Glutamyl-peptide &lt;=&gt; Ammonia + 5-D-Glutamyl-D-glutamyl-peptide</def>
+  <equation>C00819 + C02671 &lt;=&gt; C00014 + C03933</equation>
+  <enzymes>
+    <string>2.3.2.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00471">D-Glutamine and D-glutamate metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00064">C02671_C03933</data>
+  </class>
+</reaction>

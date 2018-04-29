@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11916</ID>
+  <commonNames>L-dopa carboxy-lyase (oxidative-deaminating)</commonNames>
+  <def>3,4-Dihydroxy-L-phenylalanine + Oxygen + H2O &lt;=&gt; 3,4-Dihydroxyphenylacetaldehyde + CO2 + Ammonia + Hydrogen peroxide</def>
+  <equation>C00355 + C00007 + C00001 &lt;=&gt; C04043 + C00011 + C00014 + C00027</equation>
+  <enzymes>
+    <string>4.1.1.107</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01618" value="4.1.1.107">3,4-dihydroxyphenylacetaldehyde synthase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

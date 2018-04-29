@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10934</ID>
+  <commonNames>prephenate carboxy-lyase (3-[(4R)-4-hydroxycyclohexa-1,5-dien-1-yl]-2-oxopropanoate-forming)</commonNames>
+  <def>Prephenate &lt;=&gt; 3-[(4R)-4-Hydroxycyclohexa-1,5-dien-1-yl]-2-oxopropanoate + CO2</def>
+  <equation>C00254 &lt;=&gt; C20953 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.100</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00787">Bacilysin biosynthesis, prephenate =&gt; bacilysin</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC03316">C00254_C20953</data>
+  </class>
+</reaction>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11554</ID>
+  <commonNames>ATP:3-hydroxy-4-methylanthranilate adenylyltransferase</commonNames>
+  <def>ATP + 3-Hydroxy-4-methylanthranilate &lt;=&gt; Diphosphate + (3-Hydroxy-4-methylanthranilyl)adenylate</def>
+  <equation>C00002 + C03986 &lt;=&gt; C00013 + C21460</equation>
+  <enzymes>
+    <string>2.7.7.97</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K21284" value="2.7.7.97">3-hydroxy-4-methylanthranilate adenylyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00043">C03986_C21460</data>
+  </class>
+</reaction>

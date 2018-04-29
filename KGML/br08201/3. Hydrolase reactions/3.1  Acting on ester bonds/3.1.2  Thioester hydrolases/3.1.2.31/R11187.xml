@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11187</ID>
+  <commonNames>dihydromonacolin L-[acyl-carrier protein] hydrolase</commonNames>
+  <def>Dihydromonacolin L-[acyl-carrier protein] + H2O &lt;=&gt; Acyl-carrier protein + Dihydromonacolin L acid</def>
+  <equation>C21108 + C00001 &lt;=&gt; C00229 + C20851</equation>
+  <enzymes>
+    <string>3.1.2.31</string>
+  </enzymes>
+  <comment>Acy-carrier protein is acp domain of LOVB [KO:K20981].</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K20985" value="3.1.2.31">dihydromonacolin L-</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00014">C20851_C21108</data>
+    <data name="RC00039">C00229_C21108</data>
+  </class>
+</reaction>

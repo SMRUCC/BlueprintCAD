@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05863</ID>
+  <commonNames>N-ethylglycine:oxygen oxidoreductase (deaminating)</commonNames>
+  <def>N-Ethylglycine + H2O + Oxygen &lt;=&gt; Glyoxylate + Ethylamine + Hydrogen peroxide</def>
+  <equation>C11735 + C00001 + C00007 &lt;=&gt; C00048 + C00797 + C00027</equation>
+  <enzymes>
+    <string>1.4.3.19</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00053">C00797_C11735</data>
+    <data name="RC01483">C00048_C11735</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

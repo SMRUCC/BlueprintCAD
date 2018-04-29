@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06904</ID>
+  <def>2-Naphtylmethylsuccinic acid + Succinyl-CoA &lt;=&gt; Naphthyl-2-methyl-succinyl-CoA + Succinate</def>
+  <equation>C14115 + C00091 &lt;=&gt; C14116 + C00042</equation>
+  <enzymes>
+    <string>2.8.3</string>
+  </enzymes>
+  <comment>succinyl-CoA:naphthyl-2-methyl-succinyl-CoA transferase</comment>
+  <pathway>
+    <data name="rn00626">Naphthalene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15569" value="2.8.3">naphthyl-2-methylsuccinate CoA transferase subunit</KO:terms>
+    <KO:terms name="K15570" value="2.8.3">naphthyl-2-methylsuccinate CoA transferase subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00014">C00042_C00091</data>
+    <data name="RC00137">C14115_C14116</data>
+  </class>
+</reaction>

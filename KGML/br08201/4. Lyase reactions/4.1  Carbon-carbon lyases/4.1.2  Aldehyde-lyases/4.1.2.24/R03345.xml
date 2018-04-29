@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03345</ID>
+  <commonNames>N,N-Dimethylaniline-N-oxide formaldehyde-lyase</commonNames>
+  <def>N,N-Dimethylaniline N-oxide &lt;=&gt; N-Methylaniline + Formaldehyde</def>
+  <equation>C01183 &lt;=&gt; C02299 + C00067</equation>
+  <enzymes>
+    <string>4.1.2.24</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00733">C00067_C01183</data>
+    <data name="RC00908">C01183_C02299</data>
+  </class>
+</reaction>

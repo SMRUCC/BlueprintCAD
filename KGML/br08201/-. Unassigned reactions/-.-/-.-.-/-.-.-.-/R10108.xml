@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10108</ID>
+  <def>2 N(omega)-Hydroxyarginine + NADH + H+ + 2 Oxygen &lt;=&gt; 2 L-Citrulline + 2 Nitric oxide + NAD+ + 2 H2O</def>
+  <equation>2 C05933 + C00004 + C00080 + 2 C00007 &lt;=&gt; 2 C00327 + 2 C00533 + C00003 + 2 C00001</equation>
+  <enzymes />
+  <comment>the latter part of multi-step reaction (see R10106, R10107+R10108) NADPH (see R00111)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC01044">C00327_C05933</data>
+    <data name="RC02757">C00533_C05933</data>
+  </class>
+</reaction>

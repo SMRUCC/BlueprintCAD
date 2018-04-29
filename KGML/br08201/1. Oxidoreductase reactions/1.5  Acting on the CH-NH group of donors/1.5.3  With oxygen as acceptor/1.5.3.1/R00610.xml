@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00610</ID>
+  <commonNames>sarcosine:oxygen oxidoreductase (demethylating)</commonNames>
+  <def>Sarcosine + H2O + Oxygen &lt;=&gt; Glycine + Formaldehyde + Hydrogen peroxide</def>
+  <equation>C00213 + C00001 + C00007 &lt;=&gt; C00037 + C00067 + C00027</equation>
+  <enzymes>
+    <string>1.5.3.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00260">Glycine, serine and threonine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00301" value="1.5.3.1">sarcosine oxidase</KO:terms>
+    <KO:terms name="K00302" value="1.5.3.1">sarcosine oxidase, subunit alpha</KO:terms>
+    <KO:terms name="K00303" value="1.5.3.1">sarcosine oxidase, subunit beta</KO:terms>
+    <KO:terms name="K00304" value="1.5.3.1">sarcosine oxidase, subunit delta</KO:terms>
+    <KO:terms name="K00305" value="1.5.3.1">sarcosine oxidase, subunit gamma</KO:terms>
+    <KO:terms name="K00306" value="1.5.3.1">sarcosine oxidase / L-pipecolate oxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00060">C00037_C00213</data>
+    <data name="RC00557">C00067_C00213</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01429</ID>
+  <commonNames>D-xylose:NAD+ 1-oxidoreductase</commonNames>
+  <def>D-Xylose + NAD+ &lt;=&gt; D-Xylonolactone + NADH + H+</def>
+  <equation>C00181 + C00003 &lt;=&gt; C02266 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.121</string>
+    <string>1.1.1.175</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00040">Pentose and glucuronate interconversions</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14273" value="1.1.1.179">D-xylose 1-dehydrogenase (NADP+)</KO:terms>
+    <KO:terms name="K22185" value="1.1.1.175">D-xylose 1-dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00066">C00181_C02266</data>
+  </class>
+</reaction>

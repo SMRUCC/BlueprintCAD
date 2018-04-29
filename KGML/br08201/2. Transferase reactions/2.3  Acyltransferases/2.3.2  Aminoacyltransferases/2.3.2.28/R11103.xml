@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11103</ID>
+  <commonNames>L-allo-isoleucyl-[peptidyl-carrier protein]:[peptidyl-carrier protein] L-allo-isoleucyltransferase</commonNames>
+  <def>L-allo-Isoleucyl-[peptidyl-carrier protein] + Peptidyl-carrier protein &lt;=&gt; Peptidyl-carrier protein + L-allo-Isoleucyl-[peptidyl-carrier protein]</def>
+  <equation>C21098 + C21097 &lt;=&gt; C21097 + C21098</equation>
+  <enzymes>
+    <string>2.3.2.28</string>
+  </enzymes>
+  <comment>transferring L-allo-isoleucyl group from CmaA [KO:K15646] to CmaD [KO:K15648]</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K15647" value="2.3.2.28">coronamic acid synthetase CmaE, aminoacyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00039">C21097_C21098</data>
+  </class>
+</reaction>

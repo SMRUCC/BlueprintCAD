@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05182</ID>
+  <commonNames>[methionine synthase]-methylcob(I)alamin,S-adenosylhomocysteine:NADP+ oxidoreductase</commonNames>
+  <def>2 S-Adenosyl-L-methionine + 2 [Methionine synthase]-cob(II)alamin + NADPH + H+ &lt;=&gt; 2 [Methionine synthase]-methylcob(I)alamin + 2 S-Adenosyl-L-homocysteine + NADP+</def>
+  <equation>2 C00019 + 2 C06409 + C00005 + C00080 &lt;=&gt; 2 C06410 + 2 C00021 + C00006</equation>
+  <enzymes>
+    <string>1.16.1.8</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01144">C06409_C06410</data>
+  </class>
+</reaction>

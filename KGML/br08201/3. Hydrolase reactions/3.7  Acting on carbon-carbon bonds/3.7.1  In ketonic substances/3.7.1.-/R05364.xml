@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05364</ID>
+  <commonNames>2-Hydroxy-6-oxo-7-methylocta-2,4-dienoate acylhydrolase</commonNames>
+  <def>2-Hydroxy-6-oxo-7-methylocta-2,4-dienoate + H2O &lt;=&gt; 2-Methylpropanoate + 2-Hydroxy-2,4-pentadienoate</def>
+  <equation>C06582 + C00001 &lt;=&gt; C02632 + C00596</equation>
+  <enzymes>
+    <string>3.7.1</string>
+  </enzymes>
+  <comment>CmtE</comment>
+  <pathway>
+    <data name="rn00622">Xylene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00539">Cumate degradation, p-cumate =&gt; 2-oxopent-4-enoate + 2-methylpropanoate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K10623" value="3.7.1">HOMODA hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00753">C00596_C06582</data>
+    <data name="RC01339">C02632_C06582</data>
+  </class>
+</reaction>

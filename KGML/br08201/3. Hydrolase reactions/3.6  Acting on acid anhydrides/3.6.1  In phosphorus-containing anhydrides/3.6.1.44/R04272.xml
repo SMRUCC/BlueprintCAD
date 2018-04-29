@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04272</ID>
+  <commonNames>Oligosaccharide-diphosphodolichol phosphodolichohydrolase</commonNames>
+  <def>Dolichyl diphosphooligosaccharide + H2O &lt;=&gt; Oligosaccharide phosphate + Dolichyl phosphate</def>
+  <equation>C04213 + C00001 &lt;=&gt; C03632 + C00110</equation>
+  <enzymes>
+    <string>3.6.1.44</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00110_C04213  C03632_C04213</data>
+  </class>
+</reaction>

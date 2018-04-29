@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10935</ID>
+  <def>(5-Formylfuran-3-yl)methyl phosphate + Orthophosphate + 2 H2O &lt;=&gt; 2 D-Glyceraldehyde 3-phosphate</def>
+  <equation>C20954 + C00009 + 2 C00001 &lt;=&gt; 2 C00118</equation>
+  <enzymes>
+    <string>4.2.3.153</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K09733" value="4.2.3.153">(5-formylfuran-3-yl)methyl phosphate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03315">C00118_C20954</data>
+  </class>
+</reaction>

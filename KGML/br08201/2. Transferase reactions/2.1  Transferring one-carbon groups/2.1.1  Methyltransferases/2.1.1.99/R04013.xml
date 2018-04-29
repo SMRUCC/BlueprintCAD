@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04013</ID>
+  <commonNames>S-adenosyl-L-methionine:16-methoxy-2,3-dihydro-3-hydroxytabersonine N-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + 16-Methoxy-2,3-dihydro-3-hydroxytabersonine &lt;=&gt; S-Adenosyl-L-homocysteine + Desacetoxyvindoline</def>
+  <equation>C00019 + C04578 &lt;=&gt; C00021 + C02673</equation>
+  <enzymes>
+    <string>2.1.1.99</string>
+  </enzymes>
+  <comment>irreversible Ref:1. DEVLIN Biochemistry 5th, p.805</comment>
+  <pathway>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K21896" value="2.1.1.99">3-hydroxy-16-methoxy-2,3-dihydrotabersonine N-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00113">C02673_C04578</data>
+  </class>
+</reaction>

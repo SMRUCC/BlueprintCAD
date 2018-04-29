@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09365</ID>
+  <commonNames>5-methyltetrahydropteroyltri-L-glutamate:L-selenohomocysteine Se-methyltransferase</commonNames>
+  <def>Selenohomocysteine + 5-Methyltetrahydropteroyltri-L-glutamate &lt;=&gt; L-Selenomethionine + Tetrahydropteroyltri-L-glutamate</def>
+  <equation>C05698 + C04489 &lt;=&gt; C05335 + C04144</equation>
+  <enzymes>
+    <string>2.1.1.13</string>
+    <string>2.1.1.14</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00450">Selenocompound metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00548" value="2.1.1.13">5-methyltetrahydrofolate--homocysteine methyltransferase</KO:terms>
+    <KO:terms name="K00549" value="2.1.1.14">5-methyltetrahydropteroyltriglutamate--homocysteine methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00113">C04144_C04489</data>
+    <data name="RC01241">C05335_C05698</data>
+  </class>
+</reaction>

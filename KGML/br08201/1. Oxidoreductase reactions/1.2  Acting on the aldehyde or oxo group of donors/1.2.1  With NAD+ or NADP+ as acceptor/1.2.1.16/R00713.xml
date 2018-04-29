@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00713</ID>
+  <commonNames>succinate-semialdehyde:NAD+ oxidoreductase</commonNames>
+  <def>Succinate semialdehyde + NAD+ + H2O &lt;=&gt; Succinate + NADH + H+</def>
+  <equation>C00232 + C00003 + C00001 &lt;=&gt; C00042 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.16</string>
+    <string>1.2.1.24</string>
+  </enzymes>
+  <comment>NADP+ (ec 1.2.1.16, see R00714)</comment>
+  <pathway>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn00350">Tyrosine metabolism</data>
+    <data name="rn00650">Butanoate metabolism</data>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00027">GABA (gamma-Aminobutyrate) shunt</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00135" value="1.2.1.16">succinate-semialdehyde dehydrogenase / glutarate-semialdehyde dehydrogenase</KO:terms>
+    <KO:terms name="K00139" value="1.2.1.24">succinate-semialdehyde dehydrogenase</KO:terms>
+    <KO:terms name="K08324" value="1.2.1.16">succinate-semialdehyde dehydrogenase</KO:terms>
+    <KO:terms name="K17761" value="1.2.1.24">succinate-semialdehyde dehydrogenase, mitochondrial</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00080">C00042_C00232</data>
+  </class>
+</reaction>

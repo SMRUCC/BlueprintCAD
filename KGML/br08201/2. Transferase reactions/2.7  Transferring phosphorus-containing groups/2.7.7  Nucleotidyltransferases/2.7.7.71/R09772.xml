@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09772</ID>
+  <commonNames>GTP:D-glycero-alpha-D-manno-heptose 1-phosphate guanylyltransferase</commonNames>
+  <def>D-glycero-alpha-D-manno-Heptose 1-phosphate + GTP &lt;=&gt; GDP-D-glycero-alpha-D-manno-heptose + Diphosphate</def>
+  <equation>C19880 + C00044 &lt;=&gt; C19881 + C00013</equation>
+  <enzymes>
+    <string>2.7.7.71</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00540">Lipopolysaccharide biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15669" value="2.7.7.71">D-glycero-alpha-D-manno-heptose 1-phosphate guanylyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C19880_C19881</data>
+  </class>
+</reaction>

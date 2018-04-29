@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09090</ID>
+  <def>2-Methylpropanoyl-CoA + 3 Malonyl-CoA &lt;=&gt; 8-Methyl-6-nonenoic acid</def>
+  <equation>C00630 + 3 C00083 &lt;=&gt; C18202</equation>
+  <enzymes />
+  <comment>multi-step reaction fatty acid synthesis</comment>
+  <pathway>
+    <data name="rn00360">Phenylalanine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00350">Capsaicin biosynthesis, L-Phenylalanine =&gt; Capsaicin</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC02976">C00630_C18202</data>
+    <data name="RC02980">C00083_C18202</data>
+    <data name="RC02981">C00083_C18202</data>
+    <data name="RC02982">C00083_C18202</data>
+  </class>
+</reaction>

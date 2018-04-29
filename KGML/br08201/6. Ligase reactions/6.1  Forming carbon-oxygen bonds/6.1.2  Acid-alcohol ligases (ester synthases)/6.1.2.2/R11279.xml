@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11279</ID>
+  <commonNames>kanamycin-B:carbamoyl-phosphate ligase (AMP,phosphate-forming)</commonNames>
+  <def>Kanamycin B + Carbamoyl phosphate + ATP + H2O &lt;=&gt; Nebramycin factor 4 + AMP + Diphosphate + Orthophosphate</def>
+  <equation>C00825 + C00169 + C00002 + C00001 &lt;=&gt; C18000 + C00020 + C00013 + C00009</equation>
+  <enzymes>
+    <string>6.1.2.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00524">Neomycin, kanamycin and gentamicin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20579" value="6.1.2.2">nebramycin 5' synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00041">C00825_C18000</data>
+  </class>
+</reaction>

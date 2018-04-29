@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04188</ID>
+  <commonNames>L-3-amino-isobutanoate:2-oxoglutarate aminotransferase</commonNames>
+  <def>L-3-Aminoisobutanoate + 2-Oxoglutarate &lt;=&gt; (S)-Methylmalonate semialdehyde + L-Glutamate</def>
+  <equation>C03284 + C00026 &lt;=&gt; C06002 + C00025</equation>
+  <enzymes>
+    <string>2.6.1.22</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00280">Valine, leucine and isoleucine degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K07250" value="2.6.1.19">4-aminobutyrate aminotransferase / (S)-3-amino-2-methylpropionate transaminase</KO:terms>
+    <KO:terms name="K13524" value="2.6.1.19">4-aminobutyrate aminotransferase / (S)-3-amino-2-methylpropionate transaminase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC00160">C03284_C06002</data>
+  </class>
+</reaction>

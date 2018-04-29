@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04135</ID>
+  <commonNames>3-Hydroxy-L-glutamate 1-carboxy-lyase</commonNames>
+  <def>3-Hydroxy-L-glutamate &lt;=&gt; 4-Amino-3-hydroxybutanoate + CO2</def>
+  <equation>C03066 &lt;=&gt; C03678 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.16</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00517">C03066_C03678</data>
+  </class>
+</reaction>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09103</ID>
+  <def>Bis(4-hydroxyphenyl)methanol &lt;=&gt; 4,4'-Dihydroxybenzophenone</def>
+  <equation>C18215 &lt;=&gt; C14220</equation>
+  <enzymes>
+    <string>1.1</string>
+  </enzymes>
+  <comment>bis(4-hydroxyphenyl)methanol dehydrogenase</comment>
+  <pathway>
+    <data name="rn00363">Bisphenol degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02647">C14220_C18215</data>
+  </class>
+</reaction>

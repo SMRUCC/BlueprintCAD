@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02447</ID>
+  <commonNames>malonyl-CoA:benzoyl-CoA malonyltransferase (2,4,6-trihydroxybenzophenone-forming)</commonNames>
+  <def>3 Malonyl-CoA + Benzoyl-CoA &lt;=&gt; 4 CoA + 2,4,6-Trihydroxybenzophenone + 3 CO2</def>
+  <equation>3 C00083 + C00512 &lt;=&gt; 4 C00010 + C06356 + 3 C00011</equation>
+  <enzymes>
+    <string>2.3.1.220</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C00083  C00010_C00512</data>
+  </class>
+</reaction>

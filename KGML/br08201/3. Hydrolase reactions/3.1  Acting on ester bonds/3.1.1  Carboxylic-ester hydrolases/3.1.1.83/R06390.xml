@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06390</ID>
+  <commonNames>monoterpene epsilon-lactone hydrolase</commonNames>
+  <def>(4R,7R)-4-Isopropenyl-7-methyl-2-oxo-oxepanone + H2O &lt;=&gt; (3R)-6-Hydroxy-3-isopropenyl-heptanoate</def>
+  <equation>C11402 + C00001 &lt;=&gt; C11404</equation>
+  <enzymes>
+    <string>3.1.1.83</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00903">Limonene and pinene degradation</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14731" value="3.1.1.83">epsilon-lactone hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01505">C11402_C11404</data>
+  </class>
+</reaction>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10115</ID>
+  <commonNames>malonyl-[acyl-carrier protein]-methyl-ester:malonyl-[acyl-carrier protein]  C-acyltransferase</commonNames>
+  <def>Malonyl-[acp] methyl ester + Malonyl-[acyl-carrier protein] &lt;=&gt; 3-Ketoglutaryl-[acp] methyl ester + CO2 + Acyl-carrier protein</def>
+  <equation>C19673 + C01209 &lt;=&gt; C20372 + C00011 + C00229</equation>
+  <enzymes>
+    <string>2.3.1.41</string>
+    <string>2.3.1.179</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00780">Biotin metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00572">Pimeloyl-ACP biosynthesis, BioC-BioH pathway, malonyl-ACP =&gt; pimeloyl-ACP</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00647" value="2.3.1.41">3-oxoacyl-</KO:terms>
+    <KO:terms name="K09458" value="2.3.1.179">3-oxoacyl-</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00039">C00229_C19673</data>
+    <data name="RC02728">C19673_C20372</data>
+    <data name="RC02888">C01209_C20372</data>
+  </class>
+</reaction>

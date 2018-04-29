@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09734</ID>
+  <commonNames>GDP-mannose:GlcA-beta-(1-&gt;2)-D-Man-alpha-(1-&gt;3)-D-Glc-beta-(1-&gt;4)-D-Glc-alpha-1-diphospho-ditrans,octacis-undecaprenol 4-beta-mannosyltransferase</commonNames>
+  <def>GDP-mannose + D-GlcA-beta-(1-&gt;2)-D-Man-alpha-(1-&gt;3)-D-Glc-beta-(1-&gt;4)-D-Glc-alpha-1-diphospho-ditrans,octacis-undecaprenol &lt;=&gt; GDP + D-Man-beta-(1-&gt;4)-GlcA-beta-(1-&gt;2)-D-Man-alpha-(1-&gt;3)-D-Glc-beta-(1-&gt;4)-D-Glc-alpha-1-diphospho-ditrans,octacis-undecaprenol</def>
+  <equation>C00096 + C19854 &lt;=&gt; C00035 + C19857</equation>
+  <enzymes>
+    <string>2.4.1.251</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K13658" value="2.4.1.251">beta-1,4-mannosyltransferase&amp;#160;</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00035_C00096</data>
+    <data name="RC00049">C19854_C19857</data>
+  </class>
+</reaction>

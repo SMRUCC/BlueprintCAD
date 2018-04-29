@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08688</ID>
+  <commonNames>3'-phosphoadenylyl-sulfate:desulfoglucosinolate sulfotransferase</commonNames>
+  <def>desulfo-Glucosinolate + 3'-Phosphoadenylyl sulfate &lt;=&gt; Glucosinolate + Adenosine 3',5'-bisphosphate</def>
+  <equation>C17259 + C00053 &lt;=&gt; C17260 + C00054</equation>
+  <enzymes>
+    <string>2.8.2.38</string>
+  </enzymes>
+  <comment>general reaction (see R03214, R08167, R08662, R08669 and R08671)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00007">C00053_C00054</data>
+    <data name="RC00883">C17259_C17260</data>
+  </class>
+</reaction>

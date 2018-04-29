@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10343</ID>
+  <commonNames>succinyl-CoA:acetate CoA-transferase</commonNames>
+  <def>Succinyl-CoA + Acetate &lt;=&gt; Acetyl-CoA + Succinate</def>
+  <equation>C00091 + C00033 &lt;=&gt; C00024 + C00042</equation>
+  <enzymes>
+    <string>2.8.3.18</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00020">Citrate cycle (TCA cycle)</data>
+    <data name="rn00620">Pyruvate metabolism</data>
+    <data name="rn00650">Butanoate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00009">Citrate cycle (TCA cycle, Krebs cycle)</data>
+    <data name="M00011">Citrate cycle, second carbon oxidation, 2-oxoglutarate =&gt; oxaloacetate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K18118" value="2.8.3.18">succinyl-CoA:acetate CoA-transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00012">C00024_C00033</data>
+    <data name="RC00014">C00042_C00091</data>
+  </class>
+</reaction>

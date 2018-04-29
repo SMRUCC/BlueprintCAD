@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09072</ID>
+  <commonNames>S-adenosyl-L-methionine:1,2-diacyl-sn-glycerol 3-amino-3-carboxypropyltransferase</commonNames>
+  <def>1,2-Diacyl-sn-glycerol + S-Adenosyl-L-methionine &lt;=&gt; Diacylglycerylhomoserine + 5'-Methylthioadenosine</def>
+  <equation>C00641 + C00019 &lt;=&gt; C18168 + C00170</equation>
+  <enzymes />
+  <comment>S-adenosylmethionine-diacylglycerol 3-amino-3-carboxypropyl transferase</comment>
+  <pathway>
+    <data name="rn00564">Glycerophospholipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00021">C00019_C00170</data>
+    <data name="RC01091">C00641_C18168</data>
+  </class>
+</reaction>

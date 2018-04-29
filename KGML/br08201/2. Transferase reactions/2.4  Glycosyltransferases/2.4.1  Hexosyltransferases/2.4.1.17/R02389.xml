@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02389</ID>
+  <commonNames>UDPglucuronate beta-D-glucuronosyltransferase(acceptor-unspecific)</commonNames>
+  <def>2 UDP-glucuronate + Bilirubin &lt;=&gt; 2 UDP + Bilirubin beta-diglucuronide</def>
+  <equation>2 C00167 + C00486 &lt;=&gt; 2 C00015 + C05787</equation>
+  <enzymes>
+    <string>2.4.1.17</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00699" value="2.4.1.17">glucuronosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00167</data>
+    <data name="RC00708">C00486_C05787</data>
+  </class>
+</reaction>

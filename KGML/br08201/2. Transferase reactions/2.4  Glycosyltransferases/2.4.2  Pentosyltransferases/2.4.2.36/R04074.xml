@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04074</ID>
+  <commonNames>NAD+:peptide-diphthamide N-(ADP-D-ribosyl)transferase</commonNames>
+  <def>NAD+ + Peptide diphthamide &lt;=&gt; Nicotinamide + Peptide N-(ADP-D-ribosyl)diphthamide</def>
+  <equation>C00003 + C02872 &lt;=&gt; C00153 + C04339</equation>
+  <enzymes>
+    <string>2.4.2.36</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00033">C00003_C00153</data>
+    <data name="RC00063">C02872_C04339</data>
+  </class>
+</reaction>

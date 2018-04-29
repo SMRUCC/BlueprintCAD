@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06855</ID>
+  <def>2-Chloro-3-oxoadipate &lt;=&gt; Chloroacetic acid + Succinate</def>
+  <equation>C12836 &lt;=&gt; C06755 + C00042</equation>
+  <enzymes />
+  <comment>unclear reaction</comment>
+  <pathway>
+    <data name="rn00361">Chlorocyclohexane and chlorobenzene degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00859">C00042_C12836</data>
+    <data name="RC01635">C06755_C12836</data>
+  </class>
+</reaction>

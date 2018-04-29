@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05672</ID>
+  <def>N6,N6,O-Tridemethylpuromycin-5'-phosphate + Acetyl-CoA &lt;=&gt; N-Acetyl-N6,N6,O-tridemethylpuromycin-5'-phosphate + CoA</def>
+  <equation>C07027 + C00024 &lt;=&gt; C07028 + C00010</equation>
+  <enzymes>
+    <string>2.3</string>
+  </enzymes>
+  <comment>Pac, puromycin N-acetyltransferase Ref.1. The Journal of Biological chemistry; vol.271, No.3, Jan 19, pp.1579-1590, 1996</comment>
+  <pathway>
+    <data name="rn00231">Puromycin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12632" value="2.3">puromycin N-acetyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00064">C07027_C07028</data>
+  </class>
+</reaction>

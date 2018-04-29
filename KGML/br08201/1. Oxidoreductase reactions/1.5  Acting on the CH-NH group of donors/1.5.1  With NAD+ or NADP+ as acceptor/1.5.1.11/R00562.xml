@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00562</ID>
+  <commonNames>N2-(D-1-carboxyethyl)-L-arginine:NAD+ oxidoreductase (L-arginine-forming)</commonNames>
+  <def>D-Octopine + NAD+ + H2O &lt;=&gt; L-Arginine + Pyruvate + NADH + H+</def>
+  <equation>C04137 + C00003 + C00001 &lt;=&gt; C00062 + C00022 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.5.1.11</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00283">C00062_C04137</data>
+    <data name="RC00581">C00022_C04137</data>
+  </class>
+</reaction>

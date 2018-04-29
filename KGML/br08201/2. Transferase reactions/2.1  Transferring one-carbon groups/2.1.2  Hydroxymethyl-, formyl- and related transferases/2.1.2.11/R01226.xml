@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01226</ID>
+  <commonNames>5,10-Methylenetetrahydrofolate:3-methyl-2-oxobutanoate hydroxymethyltransferase</commonNames>
+  <def>5,10-Methylenetetrahydrofolate + 3-Methyl-2-oxobutanoic acid + H2O &lt;=&gt; Tetrahydrofolate + 2-Dehydropantoate</def>
+  <equation>C00143 + C00141 + C00001 &lt;=&gt; C00101 + C00966</equation>
+  <enzymes>
+    <string>2.1.2.11</string>
+  </enzymes>
+  <comment>multi-step reaction</comment>
+  <pathway>
+    <data name="rn00770">Pantothenate and CoA biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00119">Pantothenate biosynthesis, valine/L-aspartate =&gt; pantothenate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00606" value="2.1.2.11">3-methyl-2-oxobutanoate hydroxymethyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00022">C00101_C00143</data>
+    <data name="RC00200">C00141_C00966</data>
+  </class>
+</reaction>

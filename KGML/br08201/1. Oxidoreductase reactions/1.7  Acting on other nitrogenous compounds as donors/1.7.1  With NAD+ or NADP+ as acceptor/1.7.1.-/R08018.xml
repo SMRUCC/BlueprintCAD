@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08018</ID>
+  <def>4-Hydroxylamino-2,6-dinitrotoluene + NADH + H+ &lt;=&gt; 4-Amino-2,6-dinitrotoluene + NAD+ + H2O</def>
+  <equation>C16392 + C00004 + C00080 &lt;=&gt; C16394 + C00003 + C00001</equation>
+  <enzymes>
+    <string>1.7.1</string>
+  </enzymes>
+  <comment>nitroreductase</comment>
+  <pathway>
+    <data name="rn00633">Nitrotoluene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC01760">C16392_C16394</data>
+  </class>
+</reaction>

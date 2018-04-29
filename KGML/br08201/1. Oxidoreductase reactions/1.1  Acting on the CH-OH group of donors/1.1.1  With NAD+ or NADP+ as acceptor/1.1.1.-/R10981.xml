@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10981</ID>
+  <commonNames>5-hydroxypentanoate:NAD+ oxidoreductase</commonNames>
+  <def>5-Hydroxypentanoate + NAD+ &lt;=&gt; 5-Oxopentanoate + NADH + H+</def>
+  <equation>C02804 + C00003 &lt;=&gt; C03273 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00087">C02804_C03273</data>
+  </class>
+</reaction>

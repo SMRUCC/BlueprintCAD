@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10586</ID>
+  <commonNames>S-adenosyl-L-methionine:tRNA(Phe) {7-[(3S)-3-amino-3-carboxypropyl]wyosine37-O}-methyltransferase</commonNames>
+  <def>7-[(3S)-(3-Amino-3-carboxypropyl)]wyosine in tRNA(Phe) + S-Adenosyl-L-methionine &lt;=&gt; 7-[(3S)-3-Amino-3-(methoxycarbonyl)propyl]wyosine in tRNA(Phe) + S-Adenosyl-L-homocysteine</def>
+  <equation>C20649 + C00019 &lt;=&gt; C20659 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.290</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K15451" value="2.1.1.290">tRNA wybutosine-synthesizing protein 4</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00460">C20649_C20659</data>
+  </class>
+</reaction>

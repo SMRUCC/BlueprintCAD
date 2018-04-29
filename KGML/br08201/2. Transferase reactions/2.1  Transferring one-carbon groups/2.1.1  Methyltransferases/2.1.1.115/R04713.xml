@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04713</ID>
+  <commonNames>S-Adenosyl-L-methionine:(RS)-1-benzyl-1,2,3,4-tetrahydroisoquinolie N- methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + (R,S)-Tetrahydrobenzylisoquinoline &lt;=&gt; S-Adenosyl-L-homocysteine + N-Methyl-(R,S)-tetrahydrobenzylisoquinoline + H+</def>
+  <equation>C00019 + C05201 &lt;=&gt; C00021 + C05314 + C00080</equation>
+  <enzymes>
+    <string>2.1.1.115</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01198">C05201_C05314</data>
+  </class>
+</reaction>

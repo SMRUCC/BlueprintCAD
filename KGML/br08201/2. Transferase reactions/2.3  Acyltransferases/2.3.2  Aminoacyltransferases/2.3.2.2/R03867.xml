@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03867</ID>
+  <commonNames>(5-Glutamyl)-peptide:amino-acid 5-glutamyltransferase</commonNames>
+  <def>Leukotriene C4 + Amino acid &lt;=&gt; Leukotriene D4 + 5-L-Glutamyl amino acid</def>
+  <equation>C02166 + C00045 &lt;=&gt; C05951 + C03363</equation>
+  <enzymes>
+    <string>2.3.2.2</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K00681" value="2.3.2.2">gamma-glutamyltranspeptidase / glutathione hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00064">C00045_C03363  C02166_C05951</data>
+  </class>
+</reaction>

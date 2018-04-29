@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02272</ID>
+  <commonNames>(S)-4-Amino-5-oxopentanoate 4,5-aminomutase</commonNames>
+  <def>5-Aminolevulinate &lt;=&gt; (S)-4-Amino-5-oxopentanoate</def>
+  <equation>C00430 &lt;=&gt; C03741</equation>
+  <enzymes>
+    <string>5.4.3.8</string>
+  </enzymes>
+  <comment>multi-step reaction intermediate [(S)-4,5-diaminopentanoate]</comment>
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00121">Heme biosynthesis, glutamate =&gt; protoheme/siroheme</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01845" value="5.4.3.8">glutamate-1-semialdehyde 2,1-aminomutase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00677">C00430_C03741</data>
+  </class>
+</reaction>

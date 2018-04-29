@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01267</ID>
+  <commonNames>L-asparagine hydro-lyase (3-cyanoalanine-forming)</commonNames>
+  <def>L-Asparagine &lt;=&gt; 3-Cyano-L-alanine + H2O</def>
+  <equation>C00152 &lt;=&gt; C02512 + C00001</equation>
+  <enzymes>
+    <string>3.5.5.4</string>
+    <string>4.2.1.65</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00460">Cyanoamino acid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13035" value="3.5.5.4">beta-cyano-L-alanine hydratase/nitrilase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00483">C00152_C02512</data>
+  </class>
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09275</ID>
+  <commonNames>5,5'-dehydrodivanillate,NADPH:oxygen oxidoreductase (demethylating)</commonNames>
+  <def>5,5'-Dehydrodivanillate + Oxygen + NADPH + H+ &lt;=&gt; 2,2',3-Trihydroxy-3'-methoxy-5,5'-dicarboxybiphenyl + NADP+ + H2O + Formaldehyde</def>
+  <equation>C18347 + C00007 + C00005 + C00080 &lt;=&gt; C18348 + C00006 + C00001 + C00067</equation>
+  <enzymes />
+  <comment>5,5'-dehydrodivanillate O-demethylase, ligX</comment>
+  <pathway>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00392">C18347_C18348</data>
+    <data name="RC01533">C00067_C18347</data>
+  </class>
+</reaction>

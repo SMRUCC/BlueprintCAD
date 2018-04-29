@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08389</ID>
+  <commonNames>phosphatidylcholine:retinol O-acyltransferase</commonNames>
+  <def>Palmitoylphosphatidylcholine + 11-cis-Retinol &lt;=&gt; 11-cis-Retinyl palmitate + 2-Acyl-sn-glycero-3-phosphocholine</def>
+  <equation>C03889 + C00899 &lt;=&gt; C03455 + C04233</equation>
+  <enzymes>
+    <string>2.3.1.135</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00830">Retinol metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00678" value="2.3.1.135">phosphatidylcholine-retinol O-acyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00041">C00899_C03455  C03889_C04233</data>
+  </class>
+</reaction>

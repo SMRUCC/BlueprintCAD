@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01751</ID>
+  <commonNames>(R,R)-tartrate carboxy-lyase (D-glycerate-forming)</commonNames>
+  <def>(R,R)-Tartaric acid &lt;=&gt; D-Glycerate + CO2</def>
+  <equation>C00898 &lt;=&gt; C00258 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.73</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K07246" value="1.1.1.93">tartrate dehydrogenase/decarboxylase / D-malate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00594">C00258_C00898</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07456</ID>
+  <commonNames>D-ribulose 5-phosphate,D-glyceraldehyde 3-phosphate pyridoxal 5'-phosphate-lyase</commonNames>
+  <def>D-Glyceraldehyde 3-phosphate + D-Ribulose 5-phosphate + L-Glutamine &lt;=&gt; Pyridoxal phosphate + L-Glutamate + Orthophosphate + 3 H2O</def>
+  <equation>C00118 + C00199 + C00064 &lt;=&gt; C00018 + C00025 + C00009 + 3 C00001</equation>
+  <enzymes>
+    <string>4.3.3.6</string>
+  </enzymes>
+  <comment>pridoxal 5-phosphate synthase</comment>
+  <pathway>
+    <data name="rn00750">Vitamin B6 metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K06215" value="4.3.3.6">pyridoxal 5'-phosphate synthase pdxS subunit</KO:terms>
+    <KO:terms name="K08681" value="4.3.3.6">5'-phosphate synthase pdxT subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00010">C00025_C00064</data>
+    <data name="RC01783">C00018_C00118</data>
+    <data name="RC03043">C00018_C00199</data>
+  </class>
+</reaction>

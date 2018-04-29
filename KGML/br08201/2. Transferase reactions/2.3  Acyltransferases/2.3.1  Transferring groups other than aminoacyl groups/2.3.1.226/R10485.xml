@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10485</ID>
+  <commonNames>malonyl-CoA:(S)-1-pyrroline-5-carboxylate malonyltransferase (cyclizing)</commonNames>
+  <def>Malonyl-CoA + (S)-1-Pyrroline-5-carboxylate + H2O &lt;=&gt; CoA + (2S,5S)-trans-Carboxymethylproline + CO2</def>
+  <equation>C00083 + C03912 + C00001 &lt;=&gt; C00010 + C17366 + C00011</equation>
+  <enzymes>
+    <string>2.3.1.226</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00332">Carbapenem biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00675">Carbapenem-3-carboxylate biosynthesis, pyrroline-5-carboxylate + malonyl-CoA =&gt; carbapenem-3-carboxylate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K18317" value="2.3.1.226">carboxymethylproline synthase</KO:terms>
+    <KO:terms name="K18583" value="2.3.1.226">carboxymethylproline synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00083</data>
+    <data name="RC03182">C03912_C17366</data>
+  </class>
+</reaction>

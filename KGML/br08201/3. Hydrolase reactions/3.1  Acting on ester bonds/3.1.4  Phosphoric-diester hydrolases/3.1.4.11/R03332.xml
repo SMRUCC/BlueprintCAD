@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03332</ID>
+  <commonNames>1-Phosphatidyl-D-myo-inositol inositolphosphohydrolase</commonNames>
+  <def>1-Phosphatidyl-D-myo-inositol + H2O &lt;=&gt; Inositol 1-phosphate + 1,2-Diacyl-sn-glycerol</def>
+  <equation>C01194 + C00001 &lt;=&gt; C01177 + C00641</equation>
+  <enzymes>
+    <string>3.1.4.3</string>
+    <string>3.1.4.11</string>
+    <string>4.6.1.13</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00562">Inositol phosphate metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01114" value="3.1.4.3">phospholipase C</KO:terms>
+    <KO:terms name="K01116" value="3.1.4.11">phosphatidylinositol phospholipase C, gamma-1</KO:terms>
+    <KO:terms name="K01771" value="4.6.1.13">1-phosphatidylinositol phosphodiesterase</KO:terms>
+    <KO:terms name="K05857" value="3.1.4.11">phosphatidylinositol phospholipase C, delta</KO:terms>
+    <KO:terms name="K05858" value="3.1.4.11">phosphatidylinositol phospholipase C, beta</KO:terms>
+    <KO:terms name="K05859" value="3.1.4.11">phosphatidylinositol phospholipase C, gamma-2</KO:terms>
+    <KO:terms name="K05860" value="3.1.4.11">phosphatidylinositol phospholipase C, epsilon</KO:terms>
+    <KO:terms name="K05861" value="3.1.4.11">phosphatidylinositol phospholipase C, zeta</KO:terms>
+    <KO:terms name="K16619" value="3.1.4.3">phospholipase C / alpha-toxin</KO:terms>
+    <KO:terms name="K19006" value="3.1.4.11">phosphatidylinositol phospholipase C, eta</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00017">C00641_C01194</data>
+    <data name="RC00425">C01177_C01194</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01936</ID>
+  <commonNames>(1R,2S)-1-hydroxybutane-1,2,4-tricarboxylate:NAD+ oxidoreductase (decarboxylating)</commonNames>
+  <def>Oxaloglutarate &lt;=&gt; 2-Oxoadipate + CO2</def>
+  <equation>C05533 &lt;=&gt; C00322 + C00011</equation>
+  <enzymes>
+    <string>1.1.1.87</string>
+    <string>1.1.1.286</string>
+  </enzymes>
+  <comment>second step of R01934 (R04862 + R01936) following after R04862</comment>
+  <pathway>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K05824" value="1.1.1.87">homoisocitrate dehydrogenase</KO:terms>
+    <KO:terms name="K10978" value="1.1.1.87">methanogen homoisocitrate dehydrogenase</KO:terms>
+    <KO:terms name="K17753" value="1.1.1.286">isocitrate--homoisocitrate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00626">C00322_C05533</data>
+  </class>
+</reaction>

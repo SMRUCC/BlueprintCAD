@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06703</ID>
+  <commonNames>S-adenosyl-L-methionine:tetracenomycin-E O-methyltransferase</commonNames>
+  <def>Tetracenomycin E + S-Adenosyl-L-methionine &lt;=&gt; Tetracenomycin A2 + S-Adenosyl-L-homocysteine</def>
+  <equation>C12370 + C00019 &lt;=&gt; C12371 + C00021</equation>
+  <enzymes>
+    <string>2.1.1</string>
+  </enzymes>
+  <comment>O-methyltransferase, tcmP</comment>
+  <pathway>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00783">Tetracenomycin C/8-demethyltetracenomycin C biosynthesis, tetracenomycin F2 =&gt; tetracenomycin C/8-demethyltetracenomycin C</data>
+  </module>
+  <orthology>
+    <KO:terms name="K15971" value="2.1.1">O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00460">C12370_C12371</data>
+  </class>
+</reaction>

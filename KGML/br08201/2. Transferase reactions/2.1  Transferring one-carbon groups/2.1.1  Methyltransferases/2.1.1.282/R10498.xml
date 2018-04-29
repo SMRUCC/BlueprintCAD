@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10498</ID>
+  <commonNames>S-adenosyl-L-methionine:tRNAPhe [7-[(3S)-(3-amino-3-carboxypropyl)-4-demethyl]wyosine-N4]-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + 7-[(3S)-3-Amino-3-carboxypropyl]-4-demethylwyosine in tRNA(Phe) &lt;=&gt; S-Adenosyl-L-homocysteine + 7-[(3S)-(3-Amino-3-carboxypropyl)]wyosine in tRNA(Phe)</def>
+  <equation>C00019 + C20652 &lt;=&gt; C00021 + C20649</equation>
+  <enzymes>
+    <string>2.1.1.282</string>
+  </enzymes>
+  <comment>The enzyme ec 2.1.1.182 wyosine 37 in tRNA(Phe).</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00334">C20649_C20652</data>
+  </class>
+</reaction>

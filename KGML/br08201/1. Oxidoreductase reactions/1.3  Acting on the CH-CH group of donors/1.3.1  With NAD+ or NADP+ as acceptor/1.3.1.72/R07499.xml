@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07499</ID>
+  <def>14-Demethyllanosterol + NADPH + H+ &lt;=&gt; 4,4-Dimethyl-5alpha-cholesta-8-en-3beta-ol + NADP+</def>
+  <equation>C05108 + C00005 + C00080 &lt;=&gt; C15915 + C00006</equation>
+  <enzymes>
+    <string>1.3.1.72</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00100">Steroid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K09828" value="1.3.1.72">Delta24-sterol reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00522">C05108_C15915</data>
+  </class>
+</reaction>

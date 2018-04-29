@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09678</ID>
+  <commonNames>S-adenosyl-L-methionine:tricin 4'-O-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Tricin &lt;=&gt; S-Adenosyl-L-homocysteine + 3',4',5'-O-Trimethyltricetin</def>
+  <equation>C00019 + C10193 &lt;=&gt; C00021 + C19807</equation>
+  <enzymes>
+    <string>2.1.1.169</string>
+  </enzymes>
+  <comment>third step of three-step reaction (see R09679, R09612+R09613+R09678)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C10193_C19807</data>
+  </class>
+</reaction>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04171</ID>
+  <commonNames>3-Hydroxy-L-kynurenine:2-oxoglutarate aminotransferase</commonNames>
+  <def>3-Hydroxy-L-kynurenine + 2-Oxoglutarate &lt;=&gt; 4-(2-Amino-3-hydroxyphenyl)-2,4-dioxobutanoate + L-Glutamate</def>
+  <equation>C03227 + C00026 &lt;=&gt; C05645 + C00025</equation>
+  <enzymes>
+    <string>2.6.1.7</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00380">Tryptophan metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00816" value="2.6.1.7">kynurenine---oxoglutarate transaminase / cysteine-S-conjugate beta-lyase / glutamine---phenylpyruvate transaminase</KO:terms>
+    <KO:terms name="K00825" value="2.6.1.7">kynurenine/2-aminoadipate aminotransferase</KO:terms>
+    <KO:terms name="K14264" value="2.6.1.7">kynurenine aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026  C03227_C05645</data>
+  </class>
+</reaction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00049</ID>
+  <commonNames>1-O-galloyl-beta-D-glucose:1-O-galloyl-beta-D-glucose O-galloyltransferase</commonNames>
+  <def>2 1-O-Galloyl-beta-D-glucose &lt;=&gt; D-Glucose + 1-O,6-O-Digalloyl-beta-D-glucose</def>
+  <equation>2 C01158 &lt;=&gt; C00031 + C04101</equation>
+  <enzymes>
+    <string>2.3.1.90</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00041">C01158_C04101</data>
+    <data name="RC00055">C00031_C01158</data>
+  </class>
+</reaction>

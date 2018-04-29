@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03213</ID>
+  <commonNames>UDPglucose:thiohydroximate S-beta-D-glucosyltransferase</commonNames>
+  <def>UDP-glucose + Phenylacetothiohydroximate &lt;=&gt; UDP + Desulfoglucotropeolin</def>
+  <equation>C00029 + C03719 &lt;=&gt; C00015 + C01069</equation>
+  <enzymes>
+    <string>2.4.1.195</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00966">Glucosinolate biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K11820" value="2.4.1.195">N-hydroxythioamide S-beta-glucosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00882">C01069_C03719</data>
+  </class>
+</reaction>

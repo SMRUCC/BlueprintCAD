@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03468</ID>
+  <commonNames>CMP-N-acetylneuraminate:1,2-diacyl-3-beta-D-galactosyl-sn-glycerol N-acetylneuraminyltransferase</commonNames>
+  <def>CMP-N-acetylneuraminate + 1,2-Diacyl-3-beta-D-galactosyl-sn-glycerol &lt;=&gt; CMP + 1,2-Diacyl-3-[3-(alpha-D-N-acetylneuraminyl)-beta-D-galactosyl]-sn-glycerol</def>
+  <equation>C00128 + C03692 &lt;=&gt; C00055 + C04872</equation>
+  <enzymes>
+    <string>2.4.99.5</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00561">Glycerolipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00009">C00055_C00128</data>
+    <data name="RC00077">C03692_C04872</data>
+  </class>
+</reaction>

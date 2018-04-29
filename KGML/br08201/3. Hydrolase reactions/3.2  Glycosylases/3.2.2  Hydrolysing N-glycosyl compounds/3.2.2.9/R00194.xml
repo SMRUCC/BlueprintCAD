@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00194</ID>
+  <commonNames>S-Adenosyl-L-homocysteine homocysteinylribohydrolase</commonNames>
+  <def>S-Adenosyl-L-homocysteine + H2O &lt;=&gt; S-Ribosyl-L-homocysteine + Adenine</def>
+  <equation>C00021 + C00001 &lt;=&gt; C03539 + C00147</equation>
+  <enzymes>
+    <string>3.2.2.9</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00270">Cysteine and methionine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00609">Cysteine biosynthesis, methionine =&gt; cysteine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01243" value="3.2.2.9">adenosylhomocysteine nucleosidase</KO:terms>
+    <KO:terms name="K18284" value="3.2.2.9">adenosylhomocysteine/aminodeoxyfutalosine nucleosidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00063">C00021_C00147</data>
+    <data name="RC00318">C00021_C03539</data>
+  </class>
+</reaction>

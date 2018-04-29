@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05508</ID>
+  <def>Lactoyl-CoA + Acetate &lt;=&gt; (S)-Lactate + Acetyl-CoA</def>
+  <equation>C00827 + C00033 &lt;=&gt; C00186 + C00024</equation>
+  <enzymes>
+    <string>2.8.3.1</string>
+  </enzymes>
+  <comment>propionate CoA-transferase</comment>
+  <pathway>
+    <data name="rn00643">Styrene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01026" value="2.8.3.1">propionate CoA-transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00012">C00024_C00033</data>
+    <data name="RC00137">C00186_C00827</data>
+  </class>
+</reaction>

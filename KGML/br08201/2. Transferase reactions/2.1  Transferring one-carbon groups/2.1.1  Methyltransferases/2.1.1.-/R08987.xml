@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08987</ID>
+  <def>N1,N5,N10-Tri(hydroxyferuloyl) spermidine + S-Adenosyl-L-methionine &lt;=&gt; N1,N5-Di(hydroxyferuloyl)-N10-sinapoyl spermidine + S-Adenosyl-L-homocysteine</def>
+  <equation>C18072 + C00019 &lt;=&gt; C18073 + C00021</equation>
+  <enzymes>
+    <string>2.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00940">Phenylpropanoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13067" value="2.1.1">putative caffeoyl-CoA 3-O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C18072_C18073</data>
+  </class>
+</reaction>

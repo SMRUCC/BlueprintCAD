@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08583</ID>
+  <commonNames>dTDP-4-amino-4,6-dideoxy-D-glucose ammonia-lyase (dTDP-3-oxo-4,6-dideoxy-D-glucose-forming)</commonNames>
+  <def>dTDP-4-amino-4,6-dideoxy-D-glucose + S-Adenosyl-L-methionine + Reduced acceptor &lt;=&gt; dTDP-3-oxo-4,6-dideoxy-D-glucose + Ammonia + L-Methionine + 5'-Deoxyadenosine + Acceptor</def>
+  <equation>C04268 + C00019 + C00030 &lt;=&gt; C11909 + C00014 + C00073 + C05198 + C00028</equation>
+  <enzymes>
+    <string>4.3.1.30</string>
+  </enzymes>
+  <comment>radical SAM</comment>
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00797">dTDP-D-desosamine biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13309" value="4.3.1.30">dTDP-4-amino-4,6-dideoxy-D-glucose ammonia-lyase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00021">C00019_C00073</data>
+    <data name="RC02360">C04268_C11909</data>
+  </class>
+</reaction>

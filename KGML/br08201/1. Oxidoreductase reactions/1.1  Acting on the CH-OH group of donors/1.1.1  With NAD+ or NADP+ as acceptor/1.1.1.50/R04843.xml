@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04843</ID>
+  <commonNames>3alpha,21-Dihydroxy-5beta-pregnane-11,20-dione:NADP+ oxidoreductase (B-specific)</commonNames>
+  <def>3alpha,21-Dihydroxy-5beta-pregnane-11,20-dione + NADP+ &lt;=&gt; 21-Hydroxy-5beta-pregnane-3,11,20-trione + NADPH + H+</def>
+  <equation>C05478 + C00006 &lt;=&gt; C05477 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.50</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00140">Steroid hormone biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00037" value="1.1.1.50">3alpha-hydroxysteroid 3-dehydrogenase / chlordecone reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00144">C05477_C05478</data>
+  </class>
+</reaction>

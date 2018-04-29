@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07617</ID>
+  <def>UDP-D-galactose + G00025 &lt;=&gt; UDP + G11136</def>
+  <equation>G10609 + G00025 &lt;=&gt; G10619 + G11136</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K07966" value="2.4.1.22">beta-1,4-galactosyltransferase 1</KO:terms>
+    <KO:terms name="K07969" value="2.4.1.90">beta-1,4-galactosyltransferase 4</KO:terms>
+    <KO:terms name="K09905" value="2.4.1">beta-1,4-galactosyltransferase 5</KO:terms>
+  </orthology>
+  <class />
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00579</ID>
+  <commonNames>glutamine racemase</commonNames>
+  <def>L-Glutamine &lt;=&gt; D-Glutamine</def>
+  <equation>C00064 &lt;=&gt; C00819</equation>
+  <enzymes>
+    <string>5.1.1.10</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00471">D-Glutamine and D-glutamate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00302">C00064_C00819</data>
+  </class>
+</reaction>

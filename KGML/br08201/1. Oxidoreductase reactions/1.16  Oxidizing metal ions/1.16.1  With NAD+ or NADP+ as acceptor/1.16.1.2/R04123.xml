@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04123</ID>
+  <commonNames>Transferrin[Fe(II)]2:NAD+ oxidoreductase</commonNames>
+  <def>Transferrin[Fe(II)]2 + NAD+ + H+ &lt;=&gt; Transferrin[Fe(III)]2 + NADH</def>
+  <equation>C03029 + C00003 + C00080 &lt;=&gt; C03179 + C00004</equation>
+  <enzymes>
+    <string>1.16.1.2</string>
+  </enzymes>
+  <comment>subsequentry R04124 (releasing iron(2+)[CPD:C14818])</comment>
+  <pathway>
+    <data name="rn00860">Porphyrin and chlorophyll metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+  </class>
+</reaction>

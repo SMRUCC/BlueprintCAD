@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03136</ID>
+  <commonNames>Polyvinyl-alcohol:(acceptor) oxidoreductase</commonNames>
+  <def>Polyvinyl alcohol + Ferricytochrome c &lt;=&gt; Oxidized polyvinyl alcohol + Ferrocytochrome c + H+</def>
+  <equation>C00980 + C00125 &lt;=&gt; C01166 + C00126 + C00080</equation>
+  <enzymes>
+    <string>1.1.2.6</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K05889" value="1.1.2.6">polyvinyl alcohol dehydrogenase (cytochrome)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00016">C00125_C00126</data>
+  </class>
+</reaction>

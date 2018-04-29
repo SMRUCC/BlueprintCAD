@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00490</ID>
+  <commonNames>L-aspartate ammonia-lyase (fumarate-forming)</commonNames>
+  <def>L-Aspartate &lt;=&gt; Fumarate + Ammonia</def>
+  <equation>C00049 &lt;=&gt; C00122 + C00014</equation>
+  <enzymes>
+    <string>4.3.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00250">Alanine, aspartate and glutamate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01744" value="4.3.1.1">aspartate ammonia-lyase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00316">C00049_C00122</data>
+    <data name="RC02799">C00014_C00049</data>
+  </class>
+</reaction>

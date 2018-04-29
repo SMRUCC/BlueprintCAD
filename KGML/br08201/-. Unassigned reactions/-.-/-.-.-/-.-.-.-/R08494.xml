@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08494</ID>
+  <commonNames>Quinidinone:NADPH oxidoreductase</commonNames>
+  <def>Quinidinone + NADPH + H+ &lt;=&gt; Quinidine + NADP+</def>
+  <equation>C16728 + C00005 + C00080 &lt;=&gt; C06527 + C00006</equation>
+  <enzymes />
+  <comment>Cinchoninone:NADPH oxidoreductase II also catalyses R08492, R08561 and R08562 (favoring R08562)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC02145">C06527_C16728</data>
+  </class>
+</reaction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03186</ID>
+  <def>2 Monodehydroascorbate &lt;=&gt; Dehydroascorbate + Ascorbate</def>
+  <equation>2 C01041 &lt;=&gt; C05422 + C00072</equation>
+  <enzymes>
+    <string>1.11.1.11</string>
+  </enzymes>
+  <comment>spontaneous second step of two-step reaction (R00644, R09540+R03186)</comment>
+  <pathway>
+    <data name="rn00053">Ascorbate and aldarate metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class />
+</reaction>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08702</ID>
+  <commonNames>tRNA containing 5-carboxymethylaminomethyl-2-thiouridine:oxygen oxidoreductase</commonNames>
+  <def>tRNA containing 5-carboxymethylaminomethyl-2-thiouridine + Oxygen + H2O &lt;=&gt; tRNA containing 5-aminomethyl-2-thiouridine + Glyoxylate + Hydrogen peroxide</def>
+  <equation>C17323 + C00007 + C00001 &lt;=&gt; C11478 + C00048 + C00027</equation>
+  <enzymes>
+    <string>1.5.3</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K15461" value="2.1.1.61">tRNA 5-methylaminomethyl-2-thiouridine biosynthesis bifunctional protein</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00053">C11478_C17323</data>
+    <data name="RC01483">C00048_C17323</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

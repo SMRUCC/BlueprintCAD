@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11779</ID>
+  <commonNames>S-adenosyl-L-methionine:8-amino-8-demethylriboflavin N-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + 8-Amino-8-demethylriboflavin &lt;=&gt; S-Adenosyl-L-homocysteine + 8-Demethyl-8-(methylamino)riboflavin</def>
+  <equation>C00019 + C21646 &lt;=&gt; C00021 + C21648</equation>
+  <enzymes>
+    <string>2.1.1.343</string>
+  </enzymes>
+  <comment>first step of two-step reaction (see R11778, R11779+R11780) subsequently R11780</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+  </class>
+</reaction>

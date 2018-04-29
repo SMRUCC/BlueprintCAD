@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07388</ID>
+  <commonNames>1-(1-Alkenyl)-sn-glycero-3-phosphoethanolamine ethanolaminehydrolase</commonNames>
+  <def>1-(1-Alkenyl)-sn-glycero-3-phosphoethanolamine + H2O &lt;=&gt; 1-(1-Alkenyl)-sn-glycero-3-phosphate + Ethanolamine</def>
+  <equation>C04635 + C00001 &lt;=&gt; C15646 + C00189</equation>
+  <enzymes>
+    <string>3.1.4.39</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00565">Ether lipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01122" value="3.1.4.39">ectonucleotide pyrophosphatase/phosphodiesterase family member 2</KO:terms>
+    <KO:terms name="K22387" value="3.1.4.39">lysophospholipase D</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00017">C00189_C04635</data>
+    <data name="RC00425">C04635_C15646</data>
+  </class>
+</reaction>

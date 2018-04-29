@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00444</ID>
+  <commonNames>nucleoside-triphosphate:RNA nucleotidyltransferase (DNA-directed);</commonNames>
+  <commonNames>nucleoside-triphosphate:RNA nucleotidyltransferase (RNA-directed)</commonNames>
+  <def>Nucleoside triphosphate + RNA &lt;=&gt; Diphosphate + RNA</def>
+  <equation>C00201 + C00046 &lt;=&gt; C00013 + C00046</equation>
+  <enzymes>
+    <string>2.7.7.6</string>
+    <string>2.7.7.48</string>
+  </enzymes>
+  <comment>DNA-directed (ec 2.7.7.6) RNA-directed (ec 2.7.7.48)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class />
+</reaction>

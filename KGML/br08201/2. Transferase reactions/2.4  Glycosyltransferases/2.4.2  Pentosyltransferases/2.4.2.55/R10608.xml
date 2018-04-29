@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10608</ID>
+  <commonNames>nicotinate D-ribonucleotide:phenol phospho-D-ribosyltransferase</commonNames>
+  <def>Nicotinate D-ribonucleotide + Phenol &lt;=&gt; Nicotinate + Phenyl 5-phospho-alpha-D-ribofuranoside + H+</def>
+  <equation>C01185 + C00146 &lt;=&gt; C00253 + C20726 + C00080</equation>
+  <enzymes>
+    <string>2.4.2.55</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00033">C00253_C01185</data>
+    <data name="RC00171">C00146_C20726</data>
+  </class>
+</reaction>

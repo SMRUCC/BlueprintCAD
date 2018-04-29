@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02118</ID>
+  <commonNames>UDPglucose:zeatin O-beta-D-glucosyltransferase</commonNames>
+  <def>UDP-glucose + Zeatin &lt;=&gt; UDP + O-beta-D-Glucosylzeatin</def>
+  <equation>C00029 + C00371 &lt;=&gt; C00015 + C03423</equation>
+  <enzymes>
+    <string>2.4.1.203</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00908">Zeatin biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13492" value="2.4.1.203">zeatin O-glucosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00029</data>
+    <data name="RC00059">C00371_C03423</data>
+  </class>
+</reaction>

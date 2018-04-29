@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08622</ID>
+  <commonNames>homomethionine:2-oxo-acid aminotransferase</commonNames>
+  <def>2-Oxo-5-methylthiopentanoic acid + L-Amino acid &lt;=&gt; Homomethionine + 2-Oxo acid</def>
+  <equation>C17211 + C00151 &lt;=&gt; C17213 + C00161</equation>
+  <enzymes>
+    <string>2.6.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00966">Glucosinolate biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00006">C17211_C17213</data>
+    <data name="RC00025">C00151_C00161</data>
+  </class>
+</reaction>

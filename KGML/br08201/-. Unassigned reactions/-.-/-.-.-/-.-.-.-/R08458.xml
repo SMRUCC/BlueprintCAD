@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08458</ID>
+  <def>(S)-N-Methylcoclaurine + (R)-N-Methylcoclaurine &lt;=&gt; Tubocurarine</def>
+  <equation>C05176 + C05243 &lt;=&gt; C07547</equation>
+  <enzymes />
+  <comment>radical coupling reaction incomplete reaction</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00993">C05176_C07547</data>
+    <data name="RC02208">C05243_C07547</data>
+  </class>
+</reaction>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11583</ID>
+  <commonNames>L-cysteine:molybdenum cofactor sulfurtransferase</commonNames>
+  <def>Molybdoenzyme molybdenum cofactor + L-Cysteine + Reduced acceptor + H+ &lt;=&gt; Thio-molybdenum cofactor + L-Alanine + H2O + Acceptor</def>
+  <equation>C18237 + C00097 + C00030 + C00080 &lt;=&gt; C21486 + C00041 + C00001 + C00028</equation>
+  <enzymes>
+    <string>2.8.1.9</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00790">Folate biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15631" value="2.8.1.9">molybdenum cofactor sulfurtransferase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

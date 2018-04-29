@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03577</ID>
+  <commonNames>D-Apiitol:NAD+ 1-oxidoreductase</commonNames>
+  <def>D-Apiitol + NAD+ &lt;=&gt; D-Apiose + NADH + H+</def>
+  <equation>C01569 + C00003 &lt;=&gt; C01488 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.114</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00099">C01488_C01569</data>
+  </class>
+</reaction>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10463</ID>
+  <commonNames>ATP:L-threonyl,bicarbonate adenylyltransferase</commonNames>
+  <def>L-Threonine + ATP + HCO3- + H+ &lt;=&gt; L-Threonylcarbamoyladenylate + Diphosphate + H2O</def>
+  <equation>C00188 + C00002 + C00288 + C00080 &lt;=&gt; C20641 + C00013 + C00001</equation>
+  <enzymes>
+    <string>2.7.7.87</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K07566" value="2.7.7.87">L-threonylcarbamoyladenylate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00745">C00188_C20641</data>
+  </class>
+</reaction>

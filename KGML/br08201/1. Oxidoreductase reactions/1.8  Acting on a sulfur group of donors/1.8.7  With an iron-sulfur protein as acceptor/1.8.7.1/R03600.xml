@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03600</ID>
+  <commonNames>Hydrogen-sulfide:ferredoxin oxidoreductase</commonNames>
+  <def>Hydrogen selenide + 6 Oxidized ferredoxin + 3 H2O &lt;=&gt; Selenite + 6 Reduced ferredoxin + 8 H+</def>
+  <equation>C01528 + 6 C00139 + 3 C00001 &lt;=&gt; C05684 + 6 C00138 + 8 C00080</equation>
+  <enzymes>
+    <string>1.8.7.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K00392" value="1.8.7.1">sulfite reductase (ferredoxin)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02873">C01528_C05684</data>
+  </class>
+</reaction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08690</ID>
+  <commonNames>side chain-elongation</commonNames>
+  <def>L-Phenylalanine &lt;=&gt; L-Homophenylalanine</def>
+  <equation>C00079 &lt;=&gt; C17235</equation>
+  <enzymes />
+  <comment>incomplete reaction multi-step reaction (see R10499+R10500+R10501+R10502+R10503) side chain-elongationed</comment>
+  <pathway>
+    <data name="rn00966">Glucosinolate biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02967">C00079_C17235</data>
+  </class>
+</reaction>

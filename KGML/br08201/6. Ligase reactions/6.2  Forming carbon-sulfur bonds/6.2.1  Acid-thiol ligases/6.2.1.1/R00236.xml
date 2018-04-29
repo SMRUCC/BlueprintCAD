@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00236</ID>
+  <commonNames>acetyl adenylate:CoA acetyltransferase</commonNames>
+  <def>Acetyl adenylate + CoA &lt;=&gt; AMP + Acetyl-CoA</def>
+  <equation>C05993 + C00010 &lt;=&gt; C00020 + C00024</equation>
+  <enzymes>
+    <string>6.2.1.1</string>
+  </enzymes>
+  <comment>the second step of two-step reaction (see R00235, R00316+R00236) following after R00316</comment>
+  <pathway>
+    <data name="rn00620">Pyruvate metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01895" value="6.2.1.1">acetyl-CoA synthetase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00070">C00020_C05993</data>
+    <data name="RC02746">C00024_C05993</data>
+  </class>
+</reaction>

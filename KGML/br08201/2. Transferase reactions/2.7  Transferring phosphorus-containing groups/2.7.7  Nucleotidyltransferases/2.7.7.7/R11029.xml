@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11029</ID>
+  <def>2'-Deoxy-5-hydroxymethylcytidine-5'-triphosphate &lt;=&gt; DNA 5-hydroxymethylcytosine</def>
+  <equation>C11039 &lt;=&gt; C21031</equation>
+  <enzymes>
+    <string>2.7.7.7</string>
+  </enzymes>
+  <comment>incomplete reaction</comment>
+  <pathway>
+    <data name="rn00240">Pyrimidine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18942" value="2.7.7.7">T4virus DNA polymerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03332">C11039_C21031</data>
+  </class>
+</reaction>

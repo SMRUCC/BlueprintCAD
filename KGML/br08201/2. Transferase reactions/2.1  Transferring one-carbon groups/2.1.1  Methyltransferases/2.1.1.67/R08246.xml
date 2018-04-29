@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08246</ID>
+  <commonNames>S-adenosyl-L-methionine:6-thioguanosine monophosphate S-methyltransferase</commonNames>
+  <def>6-Thioguanosine monophosphate + S-Adenosyl-L-methionine &lt;=&gt; 6-Methylthioguanosine monophosphate + S-Adenosyl-L-homocysteine</def>
+  <equation>C16619 + C00019 &lt;=&gt; C16620 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.67</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00983">Drug metabolism - other enzymes</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00569" value="2.1.1.67">thiopurine S-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC02277">C16619_C16620</data>
+  </class>
+</reaction>

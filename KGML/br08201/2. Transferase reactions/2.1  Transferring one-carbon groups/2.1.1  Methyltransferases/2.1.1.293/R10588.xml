@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10588</ID>
+  <commonNames>S-adenosyl-L-methionine:6-hydroxytryprostatin B O-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + 6-Hydroxytryprostatin B &lt;=&gt; S-Adenosyl-L-homocysteine + Tryprostatin A</def>
+  <equation>C00019 + C20513 &lt;=&gt; C00021 + C20607</equation>
+  <enzymes>
+    <string>2.1.1.293</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00404">Staurosporine biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00786">Fumitremorgin alkaloid biosynthesis, tryptophan + proline =&gt; fumitremorgin C/A</data>
+  </module>
+  <orthology>
+    <KO:terms name="K18280" value="2.1.1.293">6-hydroxytryprostatin B O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C20513_C20607</data>
+  </class>
+</reaction>

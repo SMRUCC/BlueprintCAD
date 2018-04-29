@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04134</ID>
+  <def>2-Oxohept-3-enedioate &lt;=&gt; 2-Hydroxyhepta-2,4-dienedioate</def>
+  <equation>C03063 &lt;=&gt; C05600</equation>
+  <enzymes>
+    <string>5.3.3</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00533">Homoprotocatechuate degradation, homoprotocatechuate =&gt; 2-oxohept-3-enedioate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K05921" value="4.1.1.68">5-oxopent-3-ene-1,2,5-tricarboxylate decarboxylase / 2-hydroxyhepta-2,4-diene-1,7-dioate isomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01085">C03063_C05600</data>
+  </class>
+</reaction>

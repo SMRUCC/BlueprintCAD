@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01694</ID>
+  <commonNames>L-Sorbose:NADP+ 5-oxidoreductase</commonNames>
+  <def>L-Sorbose + NADP+ &lt;=&gt; 5-Dehydro-D-fructose + NADPH + H+</def>
+  <equation>C00247 + C00006 &lt;=&gt; C00273 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.123</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00101">C00247_C00273</data>
+  </class>
+</reaction>

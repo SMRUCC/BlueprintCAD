@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10256</ID>
+  <commonNames>UDP-alpha-D-xylose:anthocyanidin-3-O-beta-D-glucoside 2'''-O-xylosyltransferase</commonNames>
+  <def>UDP-D-xylose + Anthocyanidin 3-O-beta-D-glucoside &lt;=&gt; UDP + Anthocyanidin 3-O-beta-D-sambubioside</def>
+  <equation>C00190 + C15539 &lt;=&gt; C00015 + C20467</equation>
+  <enzymes>
+    <string>2.4.2.51</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C00190</data>
+    <data name="RC00049">C15539_C20467</data>
+  </class>
+</reaction>

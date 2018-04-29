@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11401</ID>
+  <commonNames>squalene:FAD oxidoreductase (hydroxylating)</commonNames>
+  <def>Squalene + FAD + H2O &lt;=&gt; Hydroxysqualene + FADH2</def>
+  <equation>C00751 + C00016 + C00001 &lt;=&gt; C21116 + C01352</equation>
+  <enzymes>
+    <string>1.17.8.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01712">C00751_C21116</data>
+  </class>
+</reaction>

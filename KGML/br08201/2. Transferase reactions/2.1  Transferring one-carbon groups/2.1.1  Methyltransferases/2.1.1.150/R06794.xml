@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06794</ID>
+  <commonNames>S-adenosyl-L-methionine:hydroxyisoflavone 7-O-methyltransferase</commonNames>
+  <def>Genistein + S-Adenosyl-L-methionine &lt;=&gt; Prunetin + S-Adenosyl-L-homocysteine</def>
+  <equation>C06563 + C00019 &lt;=&gt; C10521 + C00021</equation>
+  <enzymes>
+    <string>2.1.1.150</string>
+  </enzymes>
+  <comment>isoflavone 7-O-methyltransferase</comment>
+  <pathway>
+    <data name="rn00943">Isoflavonoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13262" value="2.1.1.150">isoflavone-7-O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C06563_C10521</data>
+  </class>
+</reaction>

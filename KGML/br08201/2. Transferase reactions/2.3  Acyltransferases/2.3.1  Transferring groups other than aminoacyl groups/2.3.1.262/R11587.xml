@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11587</ID>
+  <commonNames>anthraniloyl-CoA:malonyl-CoA anthraniloyltransferase</commonNames>
+  <def>S-Anthraniloyl-L-cysteinyl-protein + Malonyl-CoA &lt;=&gt; 2-Aminobenzoylacetyl-CoA + CO2 + S-Anthraniloyl-L-cysteinyl-protein</def>
+  <equation>C21488 + C00083 &lt;=&gt; C21452 + C00011 + C21488</equation>
+  <enzymes>
+    <string>2.3.1.262</string>
+  </enzymes>
+  <comment>second step of two-step reaction (see R11588, R11586+R11587)</comment>
+  <pathway>
+    <data name="rn00405">Phenazine biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18003" value="2.3.1.262">anthraniloyl-CoA anthraniloyltransferase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00460</ID>
+  <commonNames>lysine racemase</commonNames>
+  <def>L-Lysine &lt;=&gt; D-Lysine</def>
+  <equation>C00047 &lt;=&gt; C00739</equation>
+  <enzymes>
+    <string>5.1.1.5</string>
+    <string>5.1.1.9</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00310">Lysine degradation</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00302">C00047_C00739</data>
+  </class>
+</reaction>

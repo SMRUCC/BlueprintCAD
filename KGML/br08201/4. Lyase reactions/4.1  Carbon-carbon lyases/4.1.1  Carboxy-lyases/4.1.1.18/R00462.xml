@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00462</ID>
+  <commonNames>L-lysine carboxy-lyase (cadaverine-forming)</commonNames>
+  <def>L-Lysine &lt;=&gt; Cadaverine + CO2</def>
+  <equation>C00047 &lt;=&gt; C01672 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.18</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00310">Lysine degradation</data>
+    <data name="rn00960">Tropane, piperidine and pyridine alkaloid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01582" value="4.1.1.18">lysine decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00299">C00047_C01672</data>
+  </class>
+</reaction>

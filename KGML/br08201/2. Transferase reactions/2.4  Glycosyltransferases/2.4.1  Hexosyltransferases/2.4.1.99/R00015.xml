@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00015</ID>
+  <commonNames>sucrose:sucrose 1'-beta-D-fructosyltransferase;</commonNames>
+  <commonNames>sucrose:sucrose 1F-beta-D-fructosyltransferase</commonNames>
+  <def>2 Sucrose &lt;=&gt; D-Glucose + 1F-beta-D-Fructosylsucrose</def>
+  <equation>2 C00089 &lt;=&gt; C00031 + C03661</equation>
+  <enzymes>
+    <string>2.4.1.99</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00077">C00031_C00089</data>
+    <data name="RC00247">C00089_C03661</data>
+  </class>
+</reaction>

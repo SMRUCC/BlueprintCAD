@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06978</ID>
+  <commonNames>acetyl-CoA:L-2,4-diaminobutanoate N4-acetyltransferase</commonNames>
+  <def>L-2,4-Diaminobutanoate + Acetyl-CoA &lt;=&gt; N(gamma)-Acetyldiaminobutyrate + CoA</def>
+  <equation>C03283 + C00024 &lt;=&gt; C06442 + C00010</equation>
+  <enzymes>
+    <string>2.3.1.178</string>
+  </enzymes>
+  <comment>Ectoine biosynthesis reaction step2, EctA</comment>
+  <pathway>
+    <data name="rn00260">Glycine, serine and threonine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00033">Ectoine biosynthesis, aspartate =&gt; ectoine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K06718" value="2.3.1.178">L-2,4-diaminobutyric acid acetyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00096">C03283_C06442</data>
+  </class>
+</reaction>

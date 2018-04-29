@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04277</ID>
+  <commonNames>2-pyrone-4,6-dicarboxylate lactonohydrolase</commonNames>
+  <def>2-Pyrone-4,6-dicarboxylate + H2O &lt;=&gt; (1E)-4-Oxobut-1-ene-1,2,4-tricarboxylate</def>
+  <equation>C03671 + C00001 &lt;=&gt; C04434</equation>
+  <enzymes>
+    <string>3.1.1.57</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00362">Benzoate degradation</data>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K10221" value="3.1.1.57">2-pyrone-4,6-dicarboxylate lactonase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03110">C03671_C04434</data>
+  </class>
+</reaction>

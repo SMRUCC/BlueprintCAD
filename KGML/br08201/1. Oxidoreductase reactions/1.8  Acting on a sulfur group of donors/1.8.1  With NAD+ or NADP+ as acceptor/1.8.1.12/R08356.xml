@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08356</ID>
+  <commonNames>bis(glutathionyl)spermine:NADP+ oxidoreductase</commonNames>
+  <def>Bis(glutathionyl)spermine + NADP+ &lt;=&gt; Bis(glutathionyl)spermine disulfide + NADPH + H+</def>
+  <equation>C16563 + C00006 &lt;=&gt; C16564 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.8.1.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00480">Glutathione metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K04283" value="1.8.1.12">trypanothione-disulfide reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC01003">C16563_C16564</data>
+  </class>
+</reaction>

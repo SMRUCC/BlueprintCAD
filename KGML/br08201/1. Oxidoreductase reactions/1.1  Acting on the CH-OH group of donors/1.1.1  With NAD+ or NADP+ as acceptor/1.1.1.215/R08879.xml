@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08879</ID>
+  <commonNames>5-dehydro-D-gluconate:NADP+ 2-oxidoreductase</commonNames>
+  <def>5-Dehydro-D-gluconate + NADP+ &lt;=&gt; 2,5-Didehydro-D-gluconate + NADPH + H+</def>
+  <equation>C01062 + C00006 &lt;=&gt; C02780 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.215</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00084">C01062_C02780</data>
+  </class>
+</reaction>

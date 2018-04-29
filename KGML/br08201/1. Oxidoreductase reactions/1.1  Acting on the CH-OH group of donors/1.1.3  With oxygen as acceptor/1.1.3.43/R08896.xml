@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08896</ID>
+  <commonNames>paromamine:oxygen 6'-oxidoreductase</commonNames>
+  <def>Paromamine + Oxygen &lt;=&gt; 6'-Dehydro-6'-oxoparomamine + Hydrogen peroxide</def>
+  <equation>C01743 + C00007 &lt;=&gt; C17583 + C00027</equation>
+  <enzymes>
+    <string>1.1.3.43</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00524">Neomycin, kanamycin and gentamicin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13552" value="1.1.3.43">paromamine 6'-oxidase</KO:terms>
+    <KO:terms name="K20565" value="1.1.3.43">paromamine 6'-oxidase / 6'''-hydroxyneomycin C oxidase</KO:terms>
+    <KO:terms name="K20566" value="1.1.3.43">paromamine 6'-oxidase / 2'-deamino-2'-hydroxyparomamine 6'-oxidase</KO:terms>
+    <KO:terms name="K20577" value="1.1.3.43">paromamine/lividamine 6'-oxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00450">C01743_C17583</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

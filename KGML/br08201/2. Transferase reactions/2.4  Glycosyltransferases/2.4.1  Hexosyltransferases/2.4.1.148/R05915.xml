@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05915</ID>
+  <def>UDP-N-acetyl-D-glucosamine + G00028 &lt;=&gt; UDP + G00029</def>
+  <equation>G10610 + G00028 &lt;=&gt; G10619 + G00029</equation>
+  <enzymes>
+    <string>2.4.1.148</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00512">Mucin type O-glycan biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00056">O-glycan biosynthesis, mucin type core</data>
+  </module>
+  <orthology>
+    <KO:terms name="K09662" value="2.4.1">N-acetylglucosaminyltransferase 3, mucin type</KO:terms>
+  </orthology>
+  <class />
+</reaction>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03277</ID>
+  <def>2-Hydroxy-3-oxopropanoate + Pyruvate &lt;=&gt; 2-Dehydro-3-deoxy-D-glucarate</def>
+  <equation>C01146 + C00022 &lt;=&gt; C03921</equation>
+  <enzymes>
+    <string>4.1.2.20</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00053">Ascorbate and aldarate metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01630" value="4.1.2.20">2-dehydro-3-deoxyglucarate aldolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00307">C00022_C03921</data>
+    <data name="RC00435">C01146_C03921</data>
+  </class>
+</reaction>

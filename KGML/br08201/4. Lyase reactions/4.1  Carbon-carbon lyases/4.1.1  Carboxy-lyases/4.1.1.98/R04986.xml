@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04986</ID>
+  <commonNames>3-octaprenyl-4-hydroxybenzoate carboxy-lyase</commonNames>
+  <def>3-Octaprenyl-4-hydroxybenzoate &lt;=&gt; 2-Octaprenylphenol + CO2</def>
+  <equation>C05809 &lt;=&gt; C05810 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.98</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00130">Ubiquinone and other terpenoid-quinone biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03182" value="4.1.1.98">4-hydroxy-3-polyprenylbenzoate decarboxylase</KO:terms>
+    <KO:terms name="K03186" value="2.5.1.129">flavin prenyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00391">C05809_C05810</data>
+  </class>
+</reaction>

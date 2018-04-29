@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04294</ID>
+  <commonNames>2'-Deoxyribonucleoside diphosphate:oxidized-thioredoxin 2'-oxidoreductase</commonNames>
+  <def>2'-Deoxyribonucleoside diphosphate + Thioredoxin disulfide + H2O &lt;=&gt; Ribonucleoside diphosphate + Thioredoxin</def>
+  <equation>C04232 + C00343 + C00001 &lt;=&gt; C03723 + C00342</equation>
+  <enzymes>
+    <string>1.17.4.1</string>
+  </enzymes>
+  <comment>general reaction (see R02017, R02018, R02019 and R02024)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00013">C00342_C00343</data>
+    <data name="RC00613">C03723_C04232</data>
+  </class>
+</reaction>

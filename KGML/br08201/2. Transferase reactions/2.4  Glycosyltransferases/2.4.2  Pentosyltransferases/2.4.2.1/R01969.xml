@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01969</ID>
+  <commonNames>Deoxyguanosine:orthophosphate ribosyltransferase</commonNames>
+  <def>Deoxyguanosine + Orthophosphate &lt;=&gt; Guanine + 2-Deoxy-D-ribose 1-phosphate</def>
+  <equation>C00330 + C00009 &lt;=&gt; C00242 + C00672</equation>
+  <enzymes>
+    <string>2.4.2.1</string>
+    <string>2.4.2.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00230">Purine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03783" value="2.4.2.1">purine-nucleoside phosphorylase</KO:terms>
+    <KO:terms name="K03784" value="2.4.2.1">purine-nucleoside phosphorylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00063">C00242_C00330</data>
+  </class>
+</reaction>

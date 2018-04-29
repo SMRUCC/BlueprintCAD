@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00119</ID>
+  <commonNames>NADP+:nicotinate ADP-ribosyltransferase</commonNames>
+  <def>NADP+ + Nicotinate &lt;=&gt; Nicotinamide + Nicotinic acid adenine dinucleotide phosphate</def>
+  <equation>C00006 + C00253 &lt;=&gt; C00153 + C13051</equation>
+  <enzymes>
+    <string>2.4.99.20</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01242" value="3.2.2.6">ADP-ribosyl cyclase 1</KO:terms>
+    <KO:terms name="K18152" value="3.2.2.6">ADP-ribosyl cyclase 2</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00033">C00006_C00153  C00253_C13051</data>
+  </class>
+</reaction>

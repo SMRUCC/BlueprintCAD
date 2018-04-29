@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04936</ID>
+  <commonNames>Se-Adenosylselenohomocysteine hydrolase</commonNames>
+  <def>Se-Adenosyl-L-selenohomocysteine + H2O &lt;=&gt; Adenosine + Selenohomocysteine</def>
+  <equation>C05692 + C00001 &lt;=&gt; C00212 + C05698</equation>
+  <enzymes>
+    <string>3.3.1.1</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K01251" value="3.3.1.1">adenosylhomocysteinase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00056">C05692_C05698</data>
+    <data name="RC01243">C00212_C05692</data>
+  </class>
+</reaction>

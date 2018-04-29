@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04950</ID>
+  <commonNames>Acetyl-CoA:S-substituted L-cysteine N-acetyltransferase</commonNames>
+  <def>Acetyl-CoA + S-Substituted L-cysteine &lt;=&gt; CoA + S-Substituted N-acetyl-L-cysteine</def>
+  <equation>C00024 + C05726 &lt;=&gt; C00010 + C05727</equation>
+  <enzymes>
+    <string>2.3.1.80</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00480">Glutathione metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20838" value="2.3.1.80">N-acetyltransferase 8</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00064">C05726_C05727</data>
+  </class>
+</reaction>

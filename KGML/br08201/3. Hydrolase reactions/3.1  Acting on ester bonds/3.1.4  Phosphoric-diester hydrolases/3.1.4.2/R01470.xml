@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01470</ID>
+  <commonNames>sn-Glycero-3-phosphoethanolamine glycerophosphohydrolase</commonNames>
+  <def>sn-Glycero-3-phosphoethanolamine + H2O &lt;=&gt; Ethanolamine + sn-Glycerol 3-phosphate</def>
+  <equation>C01233 + C00001 &lt;=&gt; C00189 + C00093</equation>
+  <enzymes>
+    <string>3.1.4.2</string>
+    <string>3.1.4.46</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00564">Glycerophospholipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01126" value="3.1.4.46">glycerophosphoryl diester phosphodiesterase</KO:terms>
+    <KO:terms name="K18695" value="3.1.4.2">glycerophosphocholine phosphodiesterase GPCPD1</KO:terms>
+    <KO:terms name="K18696" value="3.1.4.46">glycerophosphodiester phosphodiesterase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00017">C00189_C01233</data>
+    <data name="RC00425">C00093_C01233</data>
+  </class>
+</reaction>

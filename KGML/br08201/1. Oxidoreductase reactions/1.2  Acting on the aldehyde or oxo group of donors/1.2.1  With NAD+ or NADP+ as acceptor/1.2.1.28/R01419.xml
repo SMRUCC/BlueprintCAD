@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01419</ID>
+  <commonNames>Benzaldehyde:NAD+ oxidoreductase</commonNames>
+  <def>Benzaldehyde + NAD+ + H2O &lt;=&gt; Benzoate + NADH + H+</def>
+  <equation>C00261 + C00003 + C00001 &lt;=&gt; C00180 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.28</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00623">Toluene degradation</data>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00538">Toluene degradation, toluene =&gt; benzoate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00141" value="1.2.1.28">benzaldehyde dehydrogenase (NAD)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00075">C00180_C00261</data>
+  </class>
+</reaction>

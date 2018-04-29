@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10589</ID>
+  <commonNames>anthraniloyl-CoA:3-oxodecanoate C-anthraniloyltransferase (decarboxylating)</commonNames>
+  <def>3-Oxodecanoate + Anthraniloyl-CoA &lt;=&gt; CoA + 2-Heptyl-4(1H)-quinolone + CO2 + H2O</def>
+  <equation>C20714 + C02247 &lt;=&gt; C00010 + C20643 + C00011 + C00001</equation>
+  <enzymes>
+    <string>2.3.1.230</string>
+  </enzymes>
+  <comment>multi-step reaction</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K18001" value="2.3.1.230">2-heptyl-4(1H)-quinolone synthase subunit PqsB</KO:terms>
+    <KO:terms name="K18002" value="2.3.1.230">2-heptyl-4(1H)-quinolone synthase subunit PqsC</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C02247</data>
+  </class>
+</reaction>

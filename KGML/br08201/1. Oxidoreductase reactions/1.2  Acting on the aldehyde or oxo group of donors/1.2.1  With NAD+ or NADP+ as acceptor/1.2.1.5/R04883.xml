@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04883</ID>
+  <commonNames>3,4-Dihydroxymandelaldehyde:NADP+ oxidoreductase</commonNames>
+  <def>3,4-Dihydroxymandelaldehyde + NADP+ + H2O &lt;=&gt; 3,4-Dihydroxymandelate + NADPH + H+</def>
+  <equation>C05577 + C00006 + C00001 &lt;=&gt; C05580 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.5</string>
+  </enzymes>
+  <comment>see R04882 (NADH)</comment>
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00129" value="1.2.1.5">aldehyde dehydrogenase (NAD(P)+)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00242">C05577_C05580</data>
+  </class>
+</reaction>

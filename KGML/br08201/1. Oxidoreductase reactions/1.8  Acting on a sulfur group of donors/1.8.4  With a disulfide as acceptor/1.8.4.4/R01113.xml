@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01113</ID>
+  <commonNames>Glutathione:L-cystine oxidoreductase</commonNames>
+  <def>L-Cystine + 2 Glutathione &lt;=&gt; Glutathione disulfide + 2 L-Cysteine</def>
+  <equation>C00491 + 2 C00051 &lt;=&gt; C00127 + 2 C00097</equation>
+  <enzymes>
+    <string>1.8.4.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00270">Cysteine and methionine metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00011">C00051_C00127  C00097_C00491</data>
+  </class>
+</reaction>

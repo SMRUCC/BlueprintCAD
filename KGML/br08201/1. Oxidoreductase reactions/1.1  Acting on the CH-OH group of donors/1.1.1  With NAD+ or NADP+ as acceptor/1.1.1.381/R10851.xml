@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10851</ID>
+  <commonNames>L-allo-threonine:NADP+ 3-oxidoreductase</commonNames>
+  <def>L-Allothreonine + NADP+ &lt;=&gt; L-2-Amino-3-oxobutanoic acid + NADPH + H+</def>
+  <equation>C05519 + C00006 &lt;=&gt; C03508 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.381</string>
+  </enzymes>
+  <comment>first step of two-step reaction (see R10852, R10851+R03758)</comment>
+  <pathway>
+    <data name="rn00260">Glycine, serine and threonine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K16066" value="1.1.1.381">3-hydroxy acid dehydrogenase / malonic semialdehyde reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00525">C03508_C05519</data>
+  </class>
+</reaction>

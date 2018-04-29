@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04398</ID>
+  <commonNames>S-Adenosyl-L-methionine:3,3',4',5,7,8-hexahydroxyflavone 8-O-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Gossypetin &lt;=&gt; S-Adenosyl-L-homocysteine + Corniculatusin</def>
+  <equation>C00019 + C04109 &lt;=&gt; C00021 + C04527</equation>
+  <enzymes>
+    <string>2.1.1.88</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C04109_C04527</data>
+  </class>
+</reaction>

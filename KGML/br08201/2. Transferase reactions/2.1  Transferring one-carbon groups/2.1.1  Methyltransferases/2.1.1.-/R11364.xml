@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11364</ID>
+  <def>3,4-Dihydro-7-hydroxy-2-methylene-3-oxo-2H-1,4-benzoxazine-5-carboxylate &lt;=&gt; 3,4-Dihydro-7-methoxy-2-methylene-3-oxo-2H-1,4-benzoxazine-5-carboxylic acid</def>
+  <equation>C21307 &lt;=&gt; C11468</equation>
+  <enzymes>
+    <string>2.1.1</string>
+  </enzymes>
+  <comment>methyltransferase incomplete reaction</comment>
+  <pathway>
+    <data name="rn01059">Biosynthesis of enediyne antibiotics</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00826">C-1027 benzoxazolinate moiety biosynthesis, chorismate =&gt; benzoxazolinyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K21178" value="2.1.1">O-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00392">C11468_C21307</data>
+  </class>
+</reaction>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07396</ID>
+  <def>4-Methylthio-2-oxobutanoic acid + L-Glutamate &lt;=&gt; L-Methionine + 2-Oxoglutarate</def>
+  <equation>C01180 + C00025 &lt;=&gt; C00073 + C00026</equation>
+  <enzymes>
+    <string>2.6.1.5</string>
+    <string>2.6.1.57</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00270">Cysteine and methionine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00034">Methionine salvage pathway</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00815" value="2.6.1.5">tyrosine aminotransferase</KO:terms>
+    <KO:terms name="K00832" value="2.6.1.57">aromatic-amino-acid transaminase</KO:terms>
+    <KO:terms name="K08969" value="2.6.1">aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026  C00073_C01180</data>
+  </class>
+</reaction>

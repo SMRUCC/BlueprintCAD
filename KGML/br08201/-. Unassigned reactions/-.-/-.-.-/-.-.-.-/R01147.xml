@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01147</ID>
+  <commonNames>Pyridoxamine-5'-phosphate:2-oxoglutarate aminotransferase</commonNames>
+  <def>Pyridoxamine phosphate + Pyruvate &lt;=&gt; Pyridoxal phosphate + D-Alanine</def>
+  <equation>C00647 + C00022 &lt;=&gt; C00018 + C00133</equation>
+  <enzymes />
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00008">C00022_C00133</data>
+    <data name="RC00048">C00018_C00647</data>
+  </class>
+</reaction>

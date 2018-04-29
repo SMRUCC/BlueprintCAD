@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10136</ID>
+  <commonNames>vanillate:tetrahydrofolate O-methyltransferase</commonNames>
+  <def>Vanillate + Tetrahydrofolate &lt;=&gt; 3,4-Dihydroxybenzoate + 5-Methyltetrahydrofolate</def>
+  <equation>C06672 + C00101 &lt;=&gt; C00230 + C00440</equation>
+  <enzymes>
+    <string>2.1.1.341</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15066" value="2.1.1.341">vanillate/3-O-methylgallate O-demethylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00113">C00101_C00440</data>
+    <data name="RC00392">C00230_C06672</data>
+  </class>
+</reaction>

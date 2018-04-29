@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10208</ID>
+  <commonNames>(3R)-3-hydroxyacyl-[acyl-carrier protein] hydro-lyase (trans-2-enoyl-[acyl-carrier protein]-forming)</commonNames>
+  <def>(3R)-3-Hydroxyacyl-[acyl-carrier protein] &lt;=&gt; trans-2,3-Dehydroacyl-[acyl-carrier protein] + H2O</def>
+  <equation>C01271 &lt;=&gt; C00693 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.59</string>
+  </enzymes>
+  <comment>general reaction</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00770">C00693_C01271</data>
+  </class>
+</reaction>

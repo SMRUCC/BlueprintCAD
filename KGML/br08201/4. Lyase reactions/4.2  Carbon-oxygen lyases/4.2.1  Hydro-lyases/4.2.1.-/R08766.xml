@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08766</ID>
+  <commonNames>3-(4-hydroxyphenyl)lactate hydro-lyase (4-coumarate-forming)</commonNames>
+  <def>3-(4-Hydroxyphenyl)lactate &lt;=&gt; 4-Coumarate + H2O</def>
+  <equation>C03672 &lt;=&gt; C00811 + C00001</equation>
+  <enzymes>
+    <string>4.2.1</string>
+  </enzymes>
+  <comment>enzyme not yet characterized</comment>
+  <pathway>
+    <data name="rn00130">Ubiquinone and other terpenoid-quinone biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02347">C00811_C03672</data>
+  </class>
+</reaction>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00489</ID>
+  <commonNames>L-aspartate 1-carboxy-lyase (beta-alanine-forming)</commonNames>
+  <def>L-Aspartate &lt;=&gt; beta-Alanine + CO2</def>
+  <equation>C00049 &lt;=&gt; C00099 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.11</string>
+    <string>4.1.1.15</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00410">beta-Alanine metabolism</data>
+    <data name="rn00770">Pantothenate and CoA biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00119">Pantothenate biosynthesis, valine/L-aspartate =&gt; pantothenate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01579" value="4.1.1.11">aspartate 1-decarboxylase</KO:terms>
+    <KO:terms name="K01580" value="4.1.1.15">glutamate decarboxylase</KO:terms>
+    <KO:terms name="K18933" value="4.1.1.25">tyrosine decarboxylase / aspartate 1-decarboxylase</KO:terms>
+    <KO:terms name="K18966" value="4.1.1.29">sulfinoalanine decarboxylase / aspartate 1-decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00299">C00049_C00099</data>
+  </class>
+</reaction>

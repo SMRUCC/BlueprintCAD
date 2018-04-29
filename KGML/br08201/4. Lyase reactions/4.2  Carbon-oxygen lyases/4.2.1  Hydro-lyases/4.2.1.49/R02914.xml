@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02914</ID>
+  <commonNames>4,5-Dihydro-4-oxo-5-imidazolepropanoate hydro-lyase</commonNames>
+  <def>4-Imidazolone-5-propanoate &lt;=&gt; Urocanate + H2O</def>
+  <equation>C03680 &lt;=&gt; C00785 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.49</string>
+  </enzymes>
+  <comment>multi-step reaction covalent intermediate with NAD+</comment>
+  <pathway>
+    <data name="rn00340">Histidine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00045">Histidine degradation, histidine =&gt; N-formiminoglutamate =&gt; glutamate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01712" value="4.2.1.49">urocanate hydratase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00804">C00785_C03680</data>
+  </class>
+</reaction>

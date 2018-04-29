@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00595</ID>
+  <commonNames>S-adenosyl-L-methionine:tRNA (cytosine-C5)-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + tRNA cytosine &lt;=&gt; S-Adenosyl-L-homocysteine + tRNA containing 5-methylcytosine</def>
+  <equation>C00019 + C17325 &lt;=&gt; C00021 + C04155</equation>
+  <enzymes>
+    <string>2.1.1.202</string>
+    <string>2.1.1.203</string>
+    <string>2.1.1.204</string>
+  </enzymes>
+  <comment>general reaction</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00332">C04155_C17325</data>
+  </class>
+</reaction>

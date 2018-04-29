@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06610</ID>
+  <commonNames>(2S)-flavan-4-ol:NADP+ 4-oxidoreductase;</commonNames>
+  <commonNames>cis-3,4-leucopelargonidin:NADP+ 4-oxidoreductase</commonNames>
+  <def>Naringenin + NADPH + H+ &lt;=&gt; Apiforol + NADP+</def>
+  <equation>C00509 + C00005 + C00080 &lt;=&gt; C12124 + C00006</equation>
+  <enzymes>
+    <string>1.1.1.234</string>
+  </enzymes>
+  <comment>flavanone 4-reductase dihydroflavonol 4-reductase</comment>
+  <pathway>
+    <data name="rn00941">Flavonoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13082" value="1.1.1.219">bifunctional dihydroflavonol 4-reductase/flavanone 4-reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00234">C00509_C12124</data>
+  </class>
+</reaction>

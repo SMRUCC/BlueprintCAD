@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00451</ID>
+  <commonNames>meso-2,6-diaminoheptanedioate carboxy-lyase (L-lysine-forming)</commonNames>
+  <def>meso-2,6-Diaminoheptanedioate &lt;=&gt; L-Lysine + CO2</def>
+  <equation>C00680 &lt;=&gt; C00047 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.20</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00300">Lysine biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00016">Lysine biosynthesis, succinyl-DAP pathway, aspartate =&gt; lysine</data>
+    <data name="M00525">Lysine biosynthesis, acetyl-DAP pathway, aspartate =&gt; lysine</data>
+    <data name="M00526">Lysine biosynthesis, DAP dehydrogenase pathway, aspartate =&gt; lysine</data>
+    <data name="M00527">Lysine biosynthesis, DAP aminotransferase pathway, aspartate =&gt; lysine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01586" value="4.1.1.20">diaminopimelate decarboxylase</KO:terms>
+    <KO:terms name="K12526" value="4.1.1.20">bifunctional diaminopimelate decarboxylase / aspartate kinase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00299">C00047_C00680</data>
+  </class>
+</reaction>

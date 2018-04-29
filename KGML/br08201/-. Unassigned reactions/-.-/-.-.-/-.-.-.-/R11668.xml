@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11668</ID>
+  <commonNames>4-hydroxy-2,2'-bipyrrole-5-methanal:NADP+ oxidoreductase</commonNames>
+  <def>4-Hydroxy-2,2'-bipyrrole-5-methanol + NADP+ &lt;=&gt; 4-Hydroxy-2,2'-bipyrrole-5-carbaldehyde + NADPH + H+</def>
+  <equation>C21568 + C00006 &lt;=&gt; C21569 + C00005 + C00080</equation>
+  <enzymes />
+  <comment>NAD+ (see R11669)</comment>
+  <pathway>
+    <data name="rn00333">Prodigiosin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00837">Prodigiosin biosynthesis, L-proline =&gt; prodigiosin</data>
+    <data name="M00838">Undecylprodigiosin biosynthesis, L-proline =&gt; undecylprodigiosin</data>
+  </module>
+  <orthology />
+  <class />
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10079</ID>
+  <commonNames>carbamate hydro-lyase;</commonNames>
+  <commonNames>cyanate hydratase</commonNames>
+  <def>Cyanate + HCO3- + H+ &lt;=&gt; Ammonia + 2 CO2</def>
+  <equation>C01417 + C00288 + C00080 &lt;=&gt; C00014 + 2 C00011</equation>
+  <enzymes>
+    <string>4.2.1.104</string>
+  </enzymes>
+  <comment>two-step reaction (see R03546+R07316) bicarbonate is recycled (see R10092)</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K01725" value="4.2.1.104">cyanate lyase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02807">C00011_C00288</data>
+  </class>
+</reaction>

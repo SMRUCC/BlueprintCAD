@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01066</ID>
+  <commonNames>2-deoxy-D-ribose-5-phosphate acetaldehyde-lyase (D-glyceraldehyde-3-phosphate-forming)</commonNames>
+  <def>2-Deoxy-D-ribose 5-phosphate &lt;=&gt; D-Glyceraldehyde 3-phosphate + Acetaldehyde</def>
+  <equation>C00673 &lt;=&gt; C00118 + C00084</equation>
+  <enzymes>
+    <string>4.1.2.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00030">Pentose phosphate pathway</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01619" value="4.1.2.4">deoxyribose-phosphate aldolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00436">C00084_C00673</data>
+    <data name="RC00437">C00118_C00673</data>
+  </class>
+</reaction>

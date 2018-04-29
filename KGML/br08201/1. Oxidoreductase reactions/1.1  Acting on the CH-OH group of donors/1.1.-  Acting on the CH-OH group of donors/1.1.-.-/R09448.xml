@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09448</ID>
+  <def>16-Hydroxypalmitate &lt;=&gt; 16-Oxopalmitate</def>
+  <equation>C18218 &lt;=&gt; C19614</equation>
+  <enzymes>
+    <string>1.1</string>
+  </enzymes>
+  <comment>omega-hydroxy fatty acid dehydrogenase</comment>
+  <pathway>
+    <data name="rn00073">Cutin, suberine and wax biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00087">C18218_C19614</data>
+  </class>
+</reaction>

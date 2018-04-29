@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01776</ID>
+  <commonNames>Acetyl-CoA:L-homoserine O-acetyltransferase</commonNames>
+  <def>Acetyl-CoA + L-Homoserine &lt;=&gt; CoA + O-Acetyl-L-homoserine</def>
+  <equation>C00024 + C00263 &lt;=&gt; C00010 + C01077</equation>
+  <enzymes>
+    <string>2.3.1.31</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00270">Cysteine and methionine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00641" value="2.3.1.31">homoserine O-acetyltransferase</KO:terms>
+    <KO:terms name="K19726" value="2.3.1.30">serine/homoserine O-acetyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00041">C00263_C01077</data>
+  </class>
+</reaction>

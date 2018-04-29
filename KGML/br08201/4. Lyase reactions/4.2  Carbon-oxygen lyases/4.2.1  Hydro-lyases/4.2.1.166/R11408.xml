@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11408</ID>
+  <commonNames>2-phosphinomethylmalate hydro-lyase [3-phosphinomethylmalate-forming];</commonNames>
+  <commonNames>phosphinomethylmalate isomerase</commonNames>
+  <def>2-Phosphinomethylmalate &lt;=&gt; 3-Phosphinomethylmalate</def>
+  <equation>C17947 &lt;=&gt; C21372</equation>
+  <enzymes>
+    <string>4.2.1.166</string>
+  </enzymes>
+  <comment>two-step reaction (similar to R01324, R01325+R01900)</comment>
+  <pathway>
+    <data name="rn00440">Phosphonate and phosphinate metabolism</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20930" value="4.2.1.166">phosphinomethylmalate isomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00497">C17947_C21372</data>
+  </class>
+</reaction>

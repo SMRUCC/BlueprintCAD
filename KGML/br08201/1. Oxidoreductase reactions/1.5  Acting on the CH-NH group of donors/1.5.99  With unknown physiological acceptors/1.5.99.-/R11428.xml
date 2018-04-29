@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11428</ID>
+  <commonNames>cis-4-hydroxy-D-proline:acceptor oxidoreductase</commonNames>
+  <def>cis-4-Hydroxy-D-proline + Acceptor &lt;=&gt; 1-Pyrroline-4-hydroxy-2-carboxylate + Reduced acceptor</def>
+  <equation>C03440 + C00028 &lt;=&gt; C04282 + C00030</equation>
+  <enzymes>
+    <string>1.5.99</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00330">Arginine and proline metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K21060" value="1.5.99">D-hydroxyproline dehydrogenase</KO:terms>
+    <KO:terms name="K21061" value="1.5.99">D-hydroxyproline dehydrogenase subunit beta</KO:terms>
+    <KO:terms name="K22549" value="1.5.99">D-hydroxyproline dehydrogenase subunit alpha</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00135">C03440_C04282</data>
+  </class>
+</reaction>

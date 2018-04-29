@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04193</ID>
+  <commonNames>1,2-beta-D-Fructan:1,2-beta-D-fructan 1F-beta-D-fructosyltransferase</commonNames>
+  <def>(2,1-beta-D-Fructosyl)n(m) + (2,1-beta-D-Fructosyl)n(n) &lt;=&gt; (2,1-beta-D-Fructosyl)n(m-1) + (2,1-beta-D-Fructosyl)n(n+1)</def>
+  <equation>C03323(m) + C03323(n) &lt;=&gt; C03323(m-1) + C03323(n+1)</equation>
+  <enzymes>
+    <string>2.4.1.100</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00247">C03323_C03323</data>
+  </class>
+</reaction>

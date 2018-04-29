@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01211</ID>
+  <commonNames>(R)-3,3-Dimethylmalate:NAD+ oxidoreductase (decarboxylating)</commonNames>
+  <def>(R)-3,3-Dimethylmalate + NAD+ &lt;=&gt; 3-Methyl-2-oxobutanoic acid + CO2 + NADH + H+</def>
+  <equation>C01088 + C00003 &lt;=&gt; C00141 + C00011 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.84</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00770">Pantothenate and CoA biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00469">C00141_C01088</data>
+  </class>
+</reaction>

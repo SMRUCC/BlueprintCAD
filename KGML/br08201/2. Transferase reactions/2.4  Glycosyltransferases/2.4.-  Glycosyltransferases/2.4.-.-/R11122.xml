@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11122</ID>
+  <def>K-252c + dTDP-L-ristosamine &lt;=&gt; Holyrine A + dTDP</def>
+  <equation>C21126 + C18092 &lt;=&gt; C21127 + C00363</equation>
+  <enzymes>
+    <string>2.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00404">Staurosporine biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00805">Staurosporine biosynthesis, tryptophan =&gt; staurosporine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K20079" value="2.4">N-glycosyltransferase StaG</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00611">C21126_C21127</data>
+  </class>
+</reaction>

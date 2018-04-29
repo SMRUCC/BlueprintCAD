@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10257</ID>
+  <commonNames>UDP-alpha-D-xylose:cyanidin-3-O-beta-D-galactoside 2''-O-xylosyltransferase</commonNames>
+  <def>UDP-D-xylose + Cyanidin 3-O-galactoside &lt;=&gt; UDP + Cyanidin 3-O-(beta-D-xylosyl-(1-&gt;2)-beta-D-galactoside)</def>
+  <equation>C00190 + C08647 &lt;=&gt; C00015 + C20468</equation>
+  <enzymes>
+    <string>2.4.2.50</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C00190</data>
+    <data name="RC00049">C08647_C20468</data>
+  </class>
+</reaction>

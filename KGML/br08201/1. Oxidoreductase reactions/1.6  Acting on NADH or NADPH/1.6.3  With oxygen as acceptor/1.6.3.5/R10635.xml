@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10635</ID>
+  <commonNames>NADH:oxygen oxidoreductase (H2O2-forming, epimerising)</commonNames>
+  <def>alpha-NADH + H+ + Oxygen &lt;=&gt; NAD+ + Hydrogen peroxide</def>
+  <equation>C20744 + C00080 + C00007 &lt;=&gt; C00003 + C00027</equation>
+  <enzymes>
+    <string>1.6.3.5</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02755">C00007_C00027</data>
+    <data name="RC03214">C00003_C20744</data>
+  </class>
+</reaction>

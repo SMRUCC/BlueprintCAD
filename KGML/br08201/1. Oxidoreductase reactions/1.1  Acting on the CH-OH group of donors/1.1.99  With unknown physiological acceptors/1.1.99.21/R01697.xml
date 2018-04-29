@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01697</ID>
+  <commonNames>D-Sorbitol:(acceptor) 1-oxidoreductase</commonNames>
+  <def>D-Sorbitol + Acceptor &lt;=&gt; L-Sorbose + Reduced acceptor</def>
+  <equation>C00794 + C00028 &lt;=&gt; C00247 + C00030</equation>
+  <enzymes>
+    <string>1.1.99.21</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00102">C00247_C00794</data>
+  </class>
+</reaction>

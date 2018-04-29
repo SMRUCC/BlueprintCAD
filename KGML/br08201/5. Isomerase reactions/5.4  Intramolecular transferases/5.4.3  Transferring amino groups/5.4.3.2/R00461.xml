@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00461</ID>
+  <commonNames>L-Lysine 2,3-aminomutase</commonNames>
+  <def>L-Lysine &lt;=&gt; (3S)-3,6-Diaminohexanoate</def>
+  <equation>C00047 &lt;=&gt; C01142</equation>
+  <enzymes>
+    <string>5.4.3.2</string>
+  </enzymes>
+  <comment>radical intermediate</comment>
+  <pathway>
+    <data name="rn00310">Lysine degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01843" value="5.4.3.2">lysine 2,3-aminomutase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00303">C00047_C01142</data>
+  </class>
+</reaction>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01082</ID>
+  <commonNames>(S)-malate hydro-lyase (fumarate-forming)</commonNames>
+  <def>(S)-Malate &lt;=&gt; Fumarate + H2O</def>
+  <equation>C00149 &lt;=&gt; C00122 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00020">Citrate cycle (TCA cycle)</data>
+    <data name="rn00620">Pyruvate metabolism</data>
+    <data name="rn00720">Carbon fixation pathways in prokaryotes</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00009">Citrate cycle (TCA cycle, Krebs cycle)</data>
+    <data name="M00011">Citrate cycle, second carbon oxidation, 2-oxoglutarate =&gt; oxaloacetate</data>
+    <data name="M00173">Reductive citrate cycle (Arnon-Buchanan cycle)</data>
+    <data name="M00374">Dicarboxylate-hydroxybutyrate cycle</data>
+    <data name="M00376">3-Hydroxypropionate bi-cycle</data>
+    <data name="M00620">Incomplete reductive citrate cycle, acetyl-CoA =&gt; oxoglutarate</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01676" value="4.2.1.2">fumarate hydratase, class I</KO:terms>
+    <KO:terms name="K01677" value="4.2.1.2">fumarate hydratase subunit alpha</KO:terms>
+    <KO:terms name="K01678" value="4.2.1.2">fumarate hydratase subunit beta</KO:terms>
+    <KO:terms name="K01679" value="4.2.1.2">fumarate hydratase, class II</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00443">C00122_C00149</data>
+  </class>
+</reaction>

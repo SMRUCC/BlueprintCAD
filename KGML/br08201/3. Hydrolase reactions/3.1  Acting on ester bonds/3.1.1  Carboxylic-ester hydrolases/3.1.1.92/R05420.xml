@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05420</ID>
+  <commonNames>4-sulfomuconolactone sulfohydrolase</commonNames>
+  <def>4-Sulfolactone + H2O &lt;=&gt; HSO3- + 2-Maleylacetate + H+</def>
+  <equation>C06676 + C00001 &lt;=&gt; C11481 + C02222 + C00080</equation>
+  <enzymes>
+    <string>3.1.1.92</string>
+  </enzymes>
+  <comment>sulfolactone hydrolase</comment>
+  <pathway>
+    <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20990" value="3.1.1.92">4-sulfomuconolactone hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01373">C02222_C06676</data>
+  </class>
+</reaction>

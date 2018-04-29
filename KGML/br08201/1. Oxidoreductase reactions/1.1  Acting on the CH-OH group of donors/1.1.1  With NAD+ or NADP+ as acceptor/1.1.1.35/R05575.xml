@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05575</ID>
+  <commonNames>(3S)-3-Hydroxyacyl-CoA:NAD+ oxidoreductase</commonNames>
+  <def>(Hydroxymethylphenyl)succinyl-CoA + NAD+ &lt;=&gt; Benzoylsuccinyl-CoA + NADH + H+</def>
+  <equation>C09819 + C00003 &lt;=&gt; C09820 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.35</string>
+  </enzymes>
+  <comment>BbsC,BbsD</comment>
+  <pathway>
+    <data name="rn00623">Toluene degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00418">Toluene degradation, anaerobic, toluene =&gt; benzoyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K07547" value="1.1.1.35">2-</KO:terms>
+    <KO:terms name="K07548" value="1.1.1.35">2-</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC01681">C09819_C09820</data>
+  </class>
+</reaction>

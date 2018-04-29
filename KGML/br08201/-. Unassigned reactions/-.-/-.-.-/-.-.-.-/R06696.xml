@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06696</ID>
+  <def>6-Deoxydihydrokalafungin + Oxygen &lt;=&gt; Dihydrokalafungin + H2O</def>
+  <equation>C12435 + C00007 &lt;=&gt; C12436 + C00001</equation>
+  <enzymes />
+  <comment>cofactor-independent monooxygenase, actVA-orf6</comment>
+  <pathway>
+    <data name="rn01057">Biosynthesis of type II polyketide products</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00779">Dihydrokalafungin biosynthesis, octaketide =&gt; dihydrokalafungin</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC01675">C12435_C12436</data>
+  </class>
+</reaction>

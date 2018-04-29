@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01218</ID>
+  <commonNames>5,10-methylenetetrahydrofolate:NAD+ oxidoreductase</commonNames>
+  <def>5,10-Methylenetetrahydrofolate + NAD+ &lt;=&gt; 5,10-Methenyltetrahydrofolate + NADH</def>
+  <equation>C00143 + C00003 &lt;=&gt; C00445 + C00004</equation>
+  <enzymes>
+    <string>1.5.1.15</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00670">One carbon pool by folate</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00141">C1-unit interconversion, eukaryotes</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00295" value="1.5.1.15">methylenetetrahydrofolate dehydrogenase (NAD+)</KO:terms>
+    <KO:terms name="K13403" value="1.5.1.15">methylenetetrahydrofolate dehydrogenase(NAD+) / 5,10-methenyltetrahydrofolate cyclohydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00202">C00143_C00445</data>
+  </class>
+</reaction>

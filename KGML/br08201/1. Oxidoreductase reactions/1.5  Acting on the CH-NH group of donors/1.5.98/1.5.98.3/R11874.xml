@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11874</ID>
+  <commonNames>reduced coenzyme F420:methanophenazine oxidoreductase</commonNames>
+  <def>Reduced coenzyme F420 + Methanophenazine &lt;=&gt; Coenzyme F420 + Dihydromethanophenazine</def>
+  <equation>C01080 + C11903 &lt;=&gt; C00876 + C11904</equation>
+  <enzymes>
+    <string>1.5.98.3</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02628">C00876_C01080</data>
+  </class>
+</reaction>

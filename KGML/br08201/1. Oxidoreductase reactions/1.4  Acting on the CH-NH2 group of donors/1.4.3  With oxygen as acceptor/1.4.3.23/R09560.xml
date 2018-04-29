@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09560</ID>
+  <commonNames>7-chloro-L-tryptophan:oxygen oxidoreductase</commonNames>
+  <def>7-Chloro-L-tryptophan + Oxygen &lt;=&gt; 2-Imino-3-(7-chloroindol-3-yl)propanoate + Hydrogen peroxide</def>
+  <equation>C19687 + C00007 &lt;=&gt; C19688 + C00027</equation>
+  <enzymes>
+    <string>1.4.3.23</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00404">Staurosporine biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00789">Rebeccamycin biosynthesis, tryptophan =&gt; rebeccamycin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K19884" value="1.4.3.23">7-chloro-L-tryptophan oxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02566">C19687_C19688</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

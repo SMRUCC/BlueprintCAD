@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03209</ID>
+  <commonNames>6-Carboxyhyxanoate:CoA ligase (AMP-forming)</commonNames>
+  <def>ATP + Pimelate + CoA &lt;=&gt; AMP + Diphosphate + 6-Carboxyhexanoyl-CoA</def>
+  <equation>C00002 + C02656 + C00010 &lt;=&gt; C00020 + C00013 + C01063</equation>
+  <enzymes>
+    <string>6.2.1.14</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00780">Biotin metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00577">Biotin biosynthesis, BioW pathway, pimelate =&gt; pimeloyl-CoA =&gt; biotin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01906" value="6.2.1.14">6-carboxyhexanoate--CoA ligase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C01063</data>
+    <data name="RC00014">C01063_C02656</data>
+  </class>
+</reaction>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.39206, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11962</ID>
+  <commonNames>8-demethyl-8-formylriboflavin 5'-phosphate:acceptor oxidoreductase</commonNames>
+  <def>8-Demethyl-8-formylriboflavin 5'-phosphate + H2O + Acceptor &lt;=&gt; 8-Carboxy-8-demethylriboflavin 5'-phosphate + Reduced acceptor</def>
+  <equation>C21803 + C00001 + C00028 &lt;=&gt; C21804 + C00030</equation>
+  <enzymes>
+    <string>2.6.1.114</string>
+  </enzymes>
+  <comment>a part of three-step reaction (see R11960, R11961+R11962+R11963)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class />
+</reaction>

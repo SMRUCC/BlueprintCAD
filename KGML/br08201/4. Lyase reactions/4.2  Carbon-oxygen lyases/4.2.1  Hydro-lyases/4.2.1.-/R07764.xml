@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07764</ID>
+  <def>(R)-3-Hydroxyoctadecanoyl-[acp] &lt;=&gt; (2E)-Octadecenoyl-[acp] + H2O</def>
+  <equation>C16220 &lt;=&gt; C16221 + C00001</equation>
+  <enzymes>
+    <string>2.3.1</string>
+    <string>4.2.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00061">Fatty acid biosynthesis</data>
+    <data name="rn01040">Biosynthesis of unsaturated fatty acids</data>
+    <data name="rn01212">Fatty acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K02372" value="4.2.1.59">3-hydroxyacyl-</KO:terms>
+    <KO:terms name="K11533" value="2.3.1">fatty acid synthase, bacteria type</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01095">C16220_C16221</data>
+  </class>
+</reaction>

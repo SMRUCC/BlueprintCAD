@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02233</ID>
+  <commonNames>Cyclohexylamine:oxygen oxidoreductase (deaminating)</commonNames>
+  <def>Cyclohexylamine + Oxygen + H2O &lt;=&gt; Cyclohexanone + Hydrogen peroxide + Ammonia</def>
+  <equation>C00571 + C00007 + C00001 &lt;=&gt; C00414 + C00027 + C00014</equation>
+  <enzymes>
+    <string>1.4.3.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00930">Caprolactam degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00665">C00414_C00571</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00502</ID>
+  <commonNames>UTP:alpha-D-galactose-1-phosphate uridylyltransferase</commonNames>
+  <def>UTP + alpha-D-Galactose 1-phosphate &lt;=&gt; Diphosphate + UDP-alpha-D-galactose</def>
+  <equation>C00075 + C00446 &lt;=&gt; C00013 + C00052</equation>
+  <enzymes>
+    <string>2.7.7.10</string>
+    <string>2.7.7.64</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00052">Galactose metabolism</data>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12447" value="2.7.7.64">UDP-sugar pyrophosphorylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C00052_C00446</data>
+  </class>
+</reaction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05870</ID>
+  <def>Minovincinine + Acetyl-CoA &lt;=&gt; Echitovenine + CoA</def>
+  <equation>C11783 + C00024 &lt;=&gt; C11784 + C00010</equation>
+  <enzymes />
+  <comment>Minovincinine-19-hydroxy-O-acetyltransferase(MAT), Acetyl CoA- dependent</comment>
+  <pathway>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C00024</data>
+    <data name="RC00037">C11783_C11784</data>
+  </class>
+</reaction>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07111</ID>
+  <commonNames>5,6-EET hydrolase</commonNames>
+  <def>5,6-EET + H2O &lt;=&gt; 5,6-DHET</def>
+  <equation>C14768 + C00001 &lt;=&gt; C14772</equation>
+  <enzymes>
+    <string>3.3.2.10</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00590">Arachidonic acid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K08726" value="3.3.2.10">soluble epoxide hydrolase / lipid-phosphate phosphatase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01757">C14768_C14772</data>
+  </class>
+</reaction>

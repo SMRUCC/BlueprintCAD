@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07247</ID>
+  <commonNames>fluoroacetaldehyde:L-threonine aldehydetransferase</commonNames>
+  <def>L-Threonine + Fluoroacetaldehyde &lt;=&gt; Acetaldehyde + 4-Fluoro-L-threonine</def>
+  <equation>C00188 + C15488 &lt;=&gt; C00084 + C15533</equation>
+  <enzymes>
+    <string>2.2.1.8</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00372">C00084_C00188</data>
+    <data name="RC00721">C15488_C15533</data>
+  </class>
+</reaction>

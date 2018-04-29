@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07666</ID>
+  <commonNames>3-hydroxybenzaldehyde:NADP+ oxidoreductase</commonNames>
+  <def>3-Hydroxybenzaldehyde + NADP+ + H2O &lt;=&gt; 3-Hydroxybenzoate + NADPH + H+</def>
+  <equation>C03067 + C00006 + C00001 &lt;=&gt; C00587 + C00005 + C00080</equation>
+  <enzymes>
+    <string>1.2.1.7</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00623">Toluene degradation</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00075">C00587_C03067</data>
+  </class>
+</reaction>

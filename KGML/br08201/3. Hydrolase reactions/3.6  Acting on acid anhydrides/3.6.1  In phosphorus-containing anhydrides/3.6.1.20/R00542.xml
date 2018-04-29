@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00542</ID>
+  <commonNames>5'-Acylphosphoadenosine acylhydrolase</commonNames>
+  <def>5'-Acylphosphoadenosine + H2O &lt;=&gt; AMP + Carboxylate</def>
+  <equation>C03361 + C00001 &lt;=&gt; C00020 + C00060</equation>
+  <enzymes>
+    <string>3.6.1.20</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00043">C00060_C03361</data>
+    <data name="RC00070">C00020_C03361</data>
+  </class>
+</reaction>

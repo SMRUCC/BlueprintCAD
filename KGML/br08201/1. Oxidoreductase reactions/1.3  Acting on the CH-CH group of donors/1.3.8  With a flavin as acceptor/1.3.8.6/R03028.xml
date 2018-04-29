@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03028</ID>
+  <commonNames>glutaconyl-1-CoA carboxy-lyase;</commonNames>
+  <commonNames>4-carboxybut-2-enoyl-CoA carboxy-lyase (but-2-enoyl-CoA-forming)</commonNames>
+  <def>Glutaconyl-1-CoA &lt;=&gt; Crotonoyl-CoA + CO2</def>
+  <equation>C02411 &lt;=&gt; C00877 + C00011</equation>
+  <enzymes>
+    <string>1.3.8.6</string>
+    <string>4.1.1.70</string>
+  </enzymes>
+  <comment>following after R10074 (ec 1.3.8.6) requires Na+ and acts as a sodium pump (ec 4.1.1.70)</comment>
+  <pathway>
+    <data name="rn00362">Benzoate degradation</data>
+    <data name="rn00650">Butanoate metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01615" value="4.1.1.70">glutaconyl-CoA decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00832">C00877_C02411</data>
+  </class>
+</reaction>

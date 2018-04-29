@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05338</ID>
+  <commonNames>D-arabino-hex-3-ulose-6-phosphate formaldehyde-lyase (D-ribulose-5-phosphate-forming)</commonNames>
+  <def>D-Ribulose 5-phosphate + Formaldehyde &lt;=&gt; D-arabino-Hex-3-ulose 6-phosphate</def>
+  <equation>C00199 + C00067 &lt;=&gt; C06019</equation>
+  <enzymes>
+    <string>4.1.2.43</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00030">Pentose phosphate pathway</data>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00345">Formaldehyde assimilation, ribulose monophosphate pathway</data>
+    <data name="M00580">Pentose phosphate pathway, archaea, fructose 6P =&gt; ribose 5P</data>
+  </module>
+  <orthology>
+    <KO:terms name="K08093" value="4.1.2.43">3-hexulose-6-phosphate synthase</KO:terms>
+    <KO:terms name="K13812" value="4.2.1.147">bifunctional enzyme Fae/Hps</KO:terms>
+    <KO:terms name="K13831" value="4.1.2.43">3-hexulose-6-phosphate synthase / 6-phospho-3-hexuloisomerase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00421">C00067_C06019</data>
+    <data name="RC00422">C00199_C06019</data>
+  </class>
+</reaction>

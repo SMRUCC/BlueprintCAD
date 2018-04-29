@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03695</ID>
+  <def>Mesaconate + CoA &lt;=&gt; 2-Methylfumaryl-CoA + H2O</def>
+  <equation>C01732 + C00010 &lt;=&gt; C06028 + C00001</equation>
+  <enzymes />
+  <comment />
+  <pathway>
+    <data name="rn00660">C5-Branched dibasic acid metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C06028</data>
+    <data name="RC00978">C01732_C06028</data>
+  </class>
+</reaction>

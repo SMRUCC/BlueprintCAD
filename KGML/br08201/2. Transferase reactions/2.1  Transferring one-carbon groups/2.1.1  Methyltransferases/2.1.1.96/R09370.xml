@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09370</ID>
+  <commonNames>S-adenosyl-L-methionine:dimethyl-selenide Se-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Dimethyl selenide &lt;=&gt; S-Adenosyl-L-homocysteine + Trimethylselenonium</def>
+  <equation>C00019 + C02535 &lt;=&gt; C00021 + C18872</equation>
+  <enzymes>
+    <string>2.1.1.96</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00450">Selenocompound metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00562" value="2.1.1.49">methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC02501">C02535_C18872</data>
+  </class>
+</reaction>

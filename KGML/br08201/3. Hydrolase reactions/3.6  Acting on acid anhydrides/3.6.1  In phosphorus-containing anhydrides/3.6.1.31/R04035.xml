@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04035</ID>
+  <commonNames>Phosphoribosyl-ATP pyrophosphohydrolase</commonNames>
+  <def>1-(5-Phospho-D-ribosyl)-ATP + H2O &lt;=&gt; Phosphoribosyl-AMP + Diphosphate</def>
+  <equation>C02739 + C00001 &lt;=&gt; C02741 + C00013</equation>
+  <enzymes>
+    <string>3.6.1.31</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00340">Histidine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00026">Histidine biosynthesis, PRPP =&gt; histidine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01523" value="3.6.1.31">phosphoribosyl-ATP pyrophosphohydrolase</KO:terms>
+    <KO:terms name="K11755" value="3.6.1.31">phosphoribosyl-ATP pyrophosphohydrolase / phosphoribosyl-AMP cyclohydrolase</KO:terms>
+    <KO:terms name="K14152" value="3.6.1.31">phosphoribosyl-ATP pyrophosphohydrolase / phosphoribosyl-AMP cyclohydrolase / histidinol dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00002">C02739_C02741</data>
+  </class>
+</reaction>

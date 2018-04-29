@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06439</ID>
+  <commonNames>S-adenosyl-L-methionine:dTDP-3-amino-3,6-dideoxy-alpha-D-glucopyranose 3-N,N-dimethyltransferase</commonNames>
+  <def>dTDP-3-amino-3,6-dideoxy-D-glucose + 2 S-Adenosyl-L-methionine &lt;=&gt; dTDP-D-mycaminose + 2 S-Adenosyl-L-homocysteine + 2 H+</def>
+  <equation>C11925 + 2 C00019 &lt;=&gt; C11933 + 2 C00021 + 2 C00080</equation>
+  <enzymes>
+    <string>2.1.1.235</string>
+  </enzymes>
+  <comment>N,N-dimethyltransferase,TylM1</comment>
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00796">dTDP-D-mycaminose biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13307" value="2.1.1.235">dTDP-3-amino-3,6-dideoxy-alpha-D-glucopyranose N,N-dimethyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC01515">C11925_C11933</data>
+  </class>
+</reaction>

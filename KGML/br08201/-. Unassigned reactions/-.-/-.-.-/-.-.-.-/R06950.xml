@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06950</ID>
+  <def>Violaxanthin &lt;=&gt; 9-cis-Violaxanthin</def>
+  <equation>C08614 &lt;=&gt; C13433</equation>
+  <enzymes />
+  <comment />
+  <pathway>
+    <data name="rn00906">Carotenoid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00372">Abscisic acid biosynthesis, beta-carotene =&gt; abscisic acid</data>
+  </module>
+  <orthology />
+  <class>
+    <data name="RC01640">C08614_C13433</data>
+  </class>
+</reaction>

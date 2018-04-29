@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03348</ID>
+  <commonNames>Nicotinate-nucleotide:pyrophosphate phosphoribosyltransferase (carboxylating)</commonNames>
+  <def>Nicotinate D-ribonucleotide + Diphosphate + CO2 &lt;=&gt; Quinolinate + 5-Phospho-alpha-D-ribose 1-diphosphate</def>
+  <equation>C01185 + C00013 + C00011 &lt;=&gt; C03722 + C00119</equation>
+  <enzymes>
+    <string>2.4.2.19</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00115">NAD biosynthesis, aspartate =&gt; NAD</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00767" value="2.4.2.19">nicotinate-nucleotide pyrophosphorylase (carboxylating)</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02877">C01185_C03722</data>
+  </class>
+</reaction>

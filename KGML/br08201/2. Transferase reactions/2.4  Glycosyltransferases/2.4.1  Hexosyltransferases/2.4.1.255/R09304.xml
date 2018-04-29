@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09304</ID>
+  <def>UDP-N-acetyl-D-glucosamine + [Protein]-L-serine &lt;=&gt; UDP + G12573</def>
+  <equation>G10610 + C02189 &lt;=&gt; G10619 + G12573</equation>
+  <enzymes>
+    <string>2.4.1.255</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00514">Other types of O-glycan biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K09667" value="2.4.1.255">protein O-GlcNAc transferase</KO:terms>
+    <KO:terms name="K18134" value="2.4.1.255">protein O-GlcNAc transferase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

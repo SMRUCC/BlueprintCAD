@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11920</ID>
+  <commonNames>geranygeranyl-diphosphate diphosphate-lyase (rhizathalene-A-forming)</commonNames>
+  <def>Geranylgeranyl diphosphate &lt;=&gt; Rhizathalene A + Diphosphate</def>
+  <equation>C00353 &lt;=&gt; C21765 + C00013</equation>
+  <enzymes>
+    <string>4.2.3.195</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K22467" value="4.2.3.195">rhizathalene A synthase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

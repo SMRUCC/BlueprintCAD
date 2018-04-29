@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03317</ID>
+  <commonNames>UDP-N-acetyl-alpha-D-mannosamine:NAD+ 6-oxidoreductase</commonNames>
+  <def>UDP-N-acetyl-D-mannosamine + 2 NAD+ + H2O &lt;=&gt; UDP-N-acetyl-D-mannosaminouronate + 2 NADH + 2 H+</def>
+  <equation>C01170 + 2 C00003 + C00001 &lt;=&gt; C06240 + 2 C00004 + 2 C00080</equation>
+  <enzymes>
+    <string>1.1.1.336</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00520">Amino sugar and nucleotide sugar metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K02472" value="1.1.1.336">UDP-N-acetyl-D-mannosaminuronic acid dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00291">C01170_C06240</data>
+  </class>
+</reaction>

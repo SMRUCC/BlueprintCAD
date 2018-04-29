@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08916</ID>
+  <commonNames>3beta-hydroxy-9beta-pimara-7,15-diene-19,6beta-olide:NAD+ oxidoreductase</commonNames>
+  <def>3beta-Hydroxy-9beta-pimara-7,15-diene-19,6beta-olide + NAD+ &lt;=&gt; Momilactone A + NADH + H+</def>
+  <equation>C18016 + C00003 &lt;=&gt; C18015 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.1.1.295</string>
+  </enzymes>
+  <comment>NADP+ (less effective, see R08917)</comment>
+  <pathway>
+    <data name="rn00904">Diterpenoid biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13070" value="1.1.1.295">momilactone-A synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00127">C18015_C18016</data>
+  </class>
+</reaction>

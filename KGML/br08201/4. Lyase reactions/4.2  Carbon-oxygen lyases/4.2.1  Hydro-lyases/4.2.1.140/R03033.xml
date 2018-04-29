@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03033</ID>
+  <commonNames>D-galactonate hydro-lyase</commonNames>
+  <def>D-Galactonate &lt;=&gt; 2-Dehydro-3-deoxy-D-galactonate + H2O</def>
+  <equation>C00880 &lt;=&gt; C01216 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.6</string>
+    <string>4.2.1.140</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00052">Galactose metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00309">Non-phosphorylative Entner-Doudoroff pathway, gluconate/galactonate =&gt; glycerate</data>
+    <data name="M00552">D-galactonate degradation, De Ley-Doudoroff pathway, D-galactonate =&gt; glycerate-3P</data>
+    <data name="M00633">Semi-phosphorylative Entner-Doudoroff pathway, gluconate/galactonate =&gt; glycerate-3P</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01684" value="4.2.1.6">galactonate dehydratase</KO:terms>
+    <KO:terms name="K05308" value="4.2.1.140">gluconate/galactonate dehydratase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00543">C00880_C01216</data>
+  </class>
+</reaction>

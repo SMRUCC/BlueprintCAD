@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01701</ID>
+  <commonNames>3-methyl-2-oxobutanoate:[dihydrolipoyllysine-residue (2-methylpropanoyl)transferase] lipoyllysine 2-oxidoreductase (decarboxylating, acceptor-2-methylpropanoylating)</commonNames>
+  <def>3-Methyl-2-oxobutanoic acid + Enzyme N6-(lipoyl)lysine &lt;=&gt; [Dihydrolipoyllysine-residue (2-methylpropanoyl)transferase] S-(2-methylpropanoyl)dihydrolipoyllysine + CO2</def>
+  <equation>C00141 + C15972 &lt;=&gt; C15977 + C00011</equation>
+  <enzymes>
+    <string>1.2.4.4</string>
+  </enzymes>
+  <comment>3-methyl-2-oxobutanoate dehydrogenase complexes:3-methyl-2-oxobutanoate dehydrogenase a part of multi-step reaction (see R01701+R02662+R07618, possibly identical to R01210) subsequently R02662 TPP-dependent enzyme (see R07599+R07600)</comment>
+  <pathway>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00627">C15972_C15977</data>
+    <data name="RC02856">C00141_C15977</data>
+  </class>
+</reaction>

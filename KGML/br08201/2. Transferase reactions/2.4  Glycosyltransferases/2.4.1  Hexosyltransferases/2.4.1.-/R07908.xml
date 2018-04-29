@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07908</ID>
+  <def>Cyanidin &lt;=&gt; Cyanidin 5-O-glucoside</def>
+  <equation>C05905 &lt;=&gt; C16298</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment>5-glucosyltransferase</comment>
+  <pathway>
+    <data name="rn00942">Anthocyanin biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12938" value="2.4.1">anthocyanidin 5,3-O-glucosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00171">C05905_C16298</data>
+  </class>
+</reaction>

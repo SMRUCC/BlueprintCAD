@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06818</ID>
+  <def>Chrysanthemin + UDP-L-rhamnose &lt;=&gt; Cyanidin 3-O-rutinoside + UDP</def>
+  <equation>C08604 + C02199 &lt;=&gt; C08620 + C00015</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment>UDP-rhamnose:anthocyanidin-3-glucoside rhamnosyltransferase</comment>
+  <pathway>
+    <data name="rn00942">Anthocyanin biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00005">C00015_C02199</data>
+    <data name="RC00059">C08604_C08620</data>
+  </class>
+</reaction>

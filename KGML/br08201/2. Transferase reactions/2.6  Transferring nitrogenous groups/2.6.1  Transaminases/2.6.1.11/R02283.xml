@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02283</ID>
+  <commonNames>N2-Acetyl-L-ornithine:2-oxoglutarate aminotransferase</commonNames>
+  <def>N-Acetylornithine + 2-Oxoglutarate &lt;=&gt; N-Acetyl-L-glutamate 5-semialdehyde + L-Glutamate</def>
+  <equation>C00437 + C00026 &lt;=&gt; C01250 + C00025</equation>
+  <enzymes>
+    <string>2.6.1.11</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00220">Arginine biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01210">2-Oxocarboxylic acid metabolism</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00028">Ornithine biosynthesis, glutamate =&gt; ornithine</data>
+    <data name="M00845">Arginine biosynthesis, glutamate =&gt; acetylcitrulline =&gt; arginine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00818" value="2.6.1.11">acetylornithine aminotransferase</KO:terms>
+    <KO:terms name="K00821" value="2.6.1.11">acetylornithine/N-succinyldiaminopimelate aminotransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00006">C00025_C00026</data>
+    <data name="RC00062">C00437_C01250</data>
+  </class>
+</reaction>

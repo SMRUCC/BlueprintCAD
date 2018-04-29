@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00635</ID>
+  <commonNames>Aldehyde:oxygen oxidoreductase</commonNames>
+  <def>Aldehyde + Oxygen + H2O &lt;=&gt; Carboxylate + Hydrogen peroxide</def>
+  <equation>C00071 + C00007 + C00001 &lt;=&gt; C00060 + C00027</equation>
+  <enzymes>
+    <string>1.2.3.1</string>
+  </enzymes>
+  <comment>general reaction</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00071">C00060_C00071</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

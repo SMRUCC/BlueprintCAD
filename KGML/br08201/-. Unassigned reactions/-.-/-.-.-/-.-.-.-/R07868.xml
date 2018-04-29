@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07868</ID>
+  <def>9(S)-HPOT &lt;=&gt; 9-Oxononanoic acid + 3,6-Nonadienal</def>
+  <equation>C16321 &lt;=&gt; C16322 + C16323</equation>
+  <enzymes />
+  <comment />
+  <pathway>
+    <data name="rn00592">alpha-Linolenic acid metabolism</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K10528" value="4.1.2">hydroperoxide lyase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01950">C16321_C16323</data>
+    <data name="RC02104">C16321_C16322</data>
+  </class>
+</reaction>

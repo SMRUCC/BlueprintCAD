@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00069</ID>
+  <commonNames>4-imidazolone-5-propanoate:oxygen oxidoreductase</commonNames>
+  <def>Hydantoin-5-propionate + Hydrogen peroxide &lt;=&gt; 4-Imidazolone-5-propanoate + Oxygen + H2O</def>
+  <equation>C05565 + C00027 &lt;=&gt; C03680 + C00007 + C00001</equation>
+  <enzymes>
+    <string>1.14.13</string>
+    <string>1.17.3.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00340">Histidine metabolism</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00969">C03680_C05565</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01073</ID>
+  <commonNames>N-(5-Phospho-D-ribosyl)anthranilate:pyrophosphate phosphoribosyl-transferase</commonNames>
+  <def>N-(5-Phospho-D-ribosyl)anthranilate + Diphosphate &lt;=&gt; Anthranilate + 5-Phospho-alpha-D-ribose 1-diphosphate</def>
+  <equation>C04302 + C00013 &lt;=&gt; C00108 + C00119</equation>
+  <enzymes>
+    <string>2.4.2.18</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00400">Phenylalanine, tyrosine and tryptophan biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00023">Tryptophan biosynthesis, chorismate =&gt; tryptophan</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00766" value="2.4.2.18">anthranilate phosphoribosyltransferase</KO:terms>
+    <KO:terms name="K13497" value="4.1.3.27">anthranilate synthase/phosphoribosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00440">C00108_C04302</data>
+  </class>
+</reaction>

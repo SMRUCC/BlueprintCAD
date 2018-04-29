@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09034</ID>
+  <commonNames>acyl-CoA:1-acyl-sn-glycero-3-phosphoinositol O-acyltransferase</commonNames>
+  <def>Acyl-CoA + 1-Acylglycerophosphoinositol &lt;=&gt; CoA + 1-Phosphatidyl-D-myo-inositol</def>
+  <equation>C00040 + C03819 &lt;=&gt; C00010 + C01194</equation>
+  <enzymes>
+    <string>2.3.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00564">Glycerophospholipid metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13513" value="2.3.1">lysocardiolipin and lysophospholipid acyltransferase</KO:terms>
+    <KO:terms name="K13516" value="2.3.1">lysophospholipid acyltransferase 7</KO:terms>
+    <KO:terms name="K13519" value="2.3.1.51">lysophospholipid acyltransferase</KO:terms>
+    <KO:terms name="K13523" value="2.3.1.51">lysophosphatidic acid acyltransferase / lysophosphatidylinositol acyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00040</data>
+    <data name="RC00037">C01194_C03819</data>
+  </class>
+</reaction>

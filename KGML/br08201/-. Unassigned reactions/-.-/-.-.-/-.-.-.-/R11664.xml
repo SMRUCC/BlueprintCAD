@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11664</ID>
+  <def>Dodecanoic acid + Malonyl-CoA + Glycine &lt;=&gt; 4-Keto-2-undecylpyrroline + 2 H2O + 2 CO2 + CoA</def>
+  <equation>C02679 + C00083 + C00037 &lt;=&gt; C21573 + 2 C00001 + 2 C00011 + C00010</equation>
+  <enzymes />
+  <comment>multi-step reaction</comment>
+  <pathway>
+    <data name="rn00333">Prodigiosin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00838">Undecylprodigiosin biosynthesis, L-proline =&gt; undecylprodigiosin</data>
+  </module>
+  <orthology />
+  <class />
+</reaction>

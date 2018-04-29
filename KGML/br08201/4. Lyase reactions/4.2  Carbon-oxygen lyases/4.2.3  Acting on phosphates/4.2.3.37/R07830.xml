@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07830</ID>
+  <commonNames>(2E,6E)-farnesyl-diphosphate diphosphate-lyase [(+)-epi-isozizaene-forming]</commonNames>
+  <def>trans,trans-Farnesyl diphosphate &lt;=&gt; (+)-epi-Isozizaene + Diphosphate</def>
+  <equation>C00448 &lt;=&gt; C16269 + C00013</equation>
+  <enzymes>
+    <string>4.2.3.37</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00909">Sesquiterpenoid and triterpenoid biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K10156" value="4.2.3.37">epi-isozizaene synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01833">C00448_C16269</data>
+  </class>
+</reaction>

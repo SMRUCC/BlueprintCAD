@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09293</ID>
+  <commonNames>(2S)-methylsuccinyl-CoA:electron-transfer flavoprotein oxidoreductase</commonNames>
+  <def>(2S)-Methylsuccinyl-CoA + Electron-transferring flavoprotein &lt;=&gt; 2-Methylfumaryl-CoA + Reduced electron-transferring flavoprotein</def>
+  <equation>C18324 + C04253 &lt;=&gt; C06028 + C04570</equation>
+  <enzymes>
+    <string>1.3.8.12</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00630">Glyoxylate and dicarboxylate metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00373">Ethylmalonyl pathway</data>
+  </module>
+  <orthology>
+    <KO:terms name="K14448" value="1.3.8.12">(2S)-methylsuccinyl-CoA dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02483">C06028_C18324</data>
+  </class>
+</reaction>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08911</ID>
+  <def>Butirosin B &lt;=&gt; Butirosin A</def>
+  <equation>C17586 &lt;=&gt; C17585</equation>
+  <enzymes />
+  <comment>two-step epimerization&#x8; by BtrE+BtrF</comment>
+  <pathway>
+    <data name="rn00524">Neomycin, kanamycin and gentamicin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K20569" value="1.1.1">NAD+-dependent dehydrogenase</KO:terms>
+    <KO:terms name="K20570" value="1.1.1">NADPH-dependent reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00289">C17585_C17586</data>
+  </class>
+</reaction>

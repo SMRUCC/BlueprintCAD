@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10150</ID>
+  <def>Tetrathionate + 2 e- &lt;=&gt; 2 Thiosulfate</def>
+  <equation>C02084 + 2 C05359 &lt;=&gt; 2 C00320</equation>
+  <enzymes />
+  <comment>tetrathionate reductase</comment>
+  <pathway>
+    <data name="rn00920">Sulfur metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC03109">C00320_C02084</data>
+  </class>
+</reaction>

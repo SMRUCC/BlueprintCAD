@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07896</ID>
+  <def>OPC4-CoA + FAD &lt;=&gt; trans-2-Enoyl-OPC4-CoA + FADH2</def>
+  <equation>C16335 + C00016 &lt;=&gt; C16336 + C01352</equation>
+  <enzymes>
+    <string>1.3.3.6</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00592">alpha-Linolenic acid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module>
+    <data name="M00113">Jasmonic acid biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00232" value="1.3.3.6">acyl-CoA oxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00052">C16335_C16336</data>
+    <data name="RC00126">C00016_C01352</data>
+  </class>
+</reaction>

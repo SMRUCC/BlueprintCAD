@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06770</ID>
+  <commonNames>dTDP-4-O-demethyl-beta-L-noviose:novobiocic-acid 7-O-[4-O-demethyl-L-noviosyl]transferase</commonNames>
+  <def>Novobiocic acid + dTDP-5-dimethyl-L-lyxose &lt;=&gt; Demethyldecarbamoylnovobiocin + dTDP</def>
+  <equation>C12474 + C12481 &lt;=&gt; C12475 + C00363</equation>
+  <enzymes>
+    <string>2.4.1.302</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00401">Novobiocin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12711" value="2.4.1.302">L-demethylnoviosyl transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00363_C12481</data>
+    <data name="RC00171">C12474_C12475</data>
+  </class>
+</reaction>

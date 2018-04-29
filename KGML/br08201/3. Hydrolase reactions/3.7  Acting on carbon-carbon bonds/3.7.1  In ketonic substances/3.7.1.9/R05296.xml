@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05296</ID>
+  <commonNames>2-Hydroxy-5-methyl-cis,cis-muconic semialdehyde formylhydrolase</commonNames>
+  <def>2-Hydroxy-5-methyl-cis,cis-muconic semialdehyde + H2O &lt;=&gt; Formate + (4E)-2-Oxohexenoic acid</def>
+  <equation>C06760 + C00001 &lt;=&gt; C00058 + C06761</equation>
+  <enzymes>
+    <string>3.7.1.9</string>
+  </enzymes>
+  <comment>Jounal of bacteriology Vol.177 No5 1196-1201 XylF</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00272">C00058_C06760</data>
+    <data name="RC01319">C06760_C06761</data>
+  </class>
+</reaction>

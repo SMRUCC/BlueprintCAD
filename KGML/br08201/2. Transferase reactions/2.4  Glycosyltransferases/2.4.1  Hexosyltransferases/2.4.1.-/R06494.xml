@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06494</ID>
+  <def>Avermectin A2b aglycone + dTDP-L-oleandrose &lt;=&gt; Avermectin A2b monosaccharide + dTDP</def>
+  <equation>C11956 + C11921 &lt;=&gt; C11958 + C00363</equation>
+  <enzymes>
+    <string>2.4.1</string>
+  </enzymes>
+  <comment>glycosyl transferase,AveB1</comment>
+  <pathway>
+    <data name="rn00522">Biosynthesis of 12-, 14- and 16-membered macrolides</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K14375" value="2.4.1">dTDP-L-oleandrosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00363_C11921</data>
+    <data name="RC00049">C11956_C11958</data>
+  </class>
+</reaction>

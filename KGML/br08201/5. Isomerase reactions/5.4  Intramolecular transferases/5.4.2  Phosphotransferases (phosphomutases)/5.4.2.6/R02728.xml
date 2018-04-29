@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02728</ID>
+  <commonNames>beta-D-Glucose 1-phosphate 1,6-phosphomutase</commonNames>
+  <def>beta-D-Glucose 1-phosphate &lt;=&gt; beta-D-Glucose 6-phosphate</def>
+  <equation>C00663 &lt;=&gt; C01172</equation>
+  <enzymes>
+    <string>5.4.2.6</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K01838" value="5.4.2.6">beta-phosphoglucomutase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00408">C00663_C01172</data>
+  </class>
+</reaction>

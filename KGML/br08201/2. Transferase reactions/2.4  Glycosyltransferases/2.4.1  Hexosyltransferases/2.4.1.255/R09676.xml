@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09676</ID>
+  <commonNames>UDP-N-acetyl-D-glucosamine:protein-O-beta-N-acetyl-D-glucosaminyl transferase</commonNames>
+  <def>UDP-N-acetyl-alpha-D-glucosamine + [Protein]-L-serine &lt;=&gt; UDP + [Protein]-3-O-(N-acetyl-D-glucosaminyl)-L-serine</def>
+  <equation>C00043 + C02189 &lt;=&gt; C00015 + C19802</equation>
+  <enzymes>
+    <string>2.4.1.255</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K09667" value="2.4.1.255">protein O-GlcNAc transferase</KO:terms>
+    <KO:terms name="K18134" value="2.4.1.255">protein O-GlcNAc transferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00005">C00015_C00043</data>
+    <data name="RC00059">C02189_C19802</data>
+  </class>
+</reaction>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04200</ID>
+  <commonNames>D-threo-2,4-diaminopentanoate:NAD+ oxidoreductase (deaminating)</commonNames>
+  <def>(2R,4S)-2,4-Diaminopentanoate + H2O + NAD+ &lt;=&gt; 2-Amino-4-oxopentanoic acid + Ammonia + NADH + H+</def>
+  <equation>C03943 + C00001 + C00003 &lt;=&gt; C03341 + C00014 + C00004 + C00080</equation>
+  <enzymes>
+    <string>1.4.1.12</string>
+    <string>1.4.1.26</string>
+  </enzymes>
+  <comment>R04201 (NADP)</comment>
+  <pathway>
+    <data name="rn00472">D-Arginine and D-ornithine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K21672" value="1.4.1.12">2,4-diaminopentanoate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00249">C03341_C03943</data>
+  </class>
+</reaction>

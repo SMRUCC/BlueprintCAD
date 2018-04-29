@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06436</ID>
+  <commonNames>dTDP-L-mycarose:NADP+ 4-oxidoreductase</commonNames>
+  <def>dTDP-3-methyl-4-oxo-2,6-dideoxy-L-allose + NADPH + H+ &lt;=&gt; dTDP-L-mycarose + NADP+</def>
+  <equation>C11915 + C00005 + C00080 &lt;=&gt; C11916 + C00006</equation>
+  <enzymes>
+    <string>1.1.1</string>
+  </enzymes>
+  <comment>4-oxoreductase,EryB4 TylC4</comment>
+  <pathway>
+    <data name="rn00523">Polyketide sugar unit biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00798">dTDP-L-mycarose biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K13318" value="1.1.1">dTDP-4-keto-6-deoxy-L-hexose 4-reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+    <data name="RC00261">C11915_C11916</data>
+  </class>
+</reaction>

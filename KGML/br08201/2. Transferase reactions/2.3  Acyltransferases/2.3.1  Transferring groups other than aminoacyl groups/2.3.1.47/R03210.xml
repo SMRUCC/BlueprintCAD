@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03210</ID>
+  <commonNames>6-Carboxyhexanoyl-CoA:L-alanine C-carboxyhexanoyltransferase (decarboxylating)</commonNames>
+  <def>6-Carboxyhexanoyl-CoA + L-Alanine &lt;=&gt; 8-Amino-7-oxononanoate + CoA + CO2</def>
+  <equation>C01063 + C00041 &lt;=&gt; C01092 + C00010 + C00011</equation>
+  <enzymes>
+    <string>2.3.1.47</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00780">Biotin metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00123">Biotin biosynthesis, pimeloyl-ACP/CoA =&gt; biotin</data>
+    <data name="M00577">Biotin biosynthesis, BioW pathway, pimelate =&gt; pimeloyl-CoA =&gt; biotin</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00652" value="2.3.1.47">8-amino-7-oxononanoate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C01063</data>
+    <data name="RC02725">C01063_C01092</data>
+  </class>
+</reaction>

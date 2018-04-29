@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R09713</ID>
+  <commonNames>(3S)-2,3-epoxy-2,3-dihydrosqualene mutase (cyclizing, camelliol-C-forming)</commonNames>
+  <def>(S)-2,3-Epoxysqualene &lt;=&gt; Camelliol C</def>
+  <equation>C01054 &lt;=&gt; C19835</equation>
+  <enzymes>
+    <string>5.4.99.38</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00909">Sesquiterpenoid and triterpenoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K15822" value="5.4.99.38">camelliol C synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02622">C01054_C19835</data>
+  </class>
+</reaction>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08003</ID>
+  <def>Naringenin chalcone + Dimethylallyl diphosphate &lt;=&gt; Desmethylxanthohumol + Diphosphate</def>
+  <equation>C06561 + C00235 &lt;=&gt; C16416 + C00013</equation>
+  <enzymes />
+  <comment>aromatic prenyltransferase</comment>
+  <pathway>
+    <data name="rn00941">Flavonoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01869">C06561_C16416</data>
+  </class>
+</reaction>

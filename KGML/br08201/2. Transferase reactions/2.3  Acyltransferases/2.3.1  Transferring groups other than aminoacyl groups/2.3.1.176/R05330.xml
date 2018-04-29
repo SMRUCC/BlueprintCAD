@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05330</ID>
+  <commonNames>4,8,12-trimethyltridecanoyl-CoA:propanoyl-CoA C2-4,8,12-trimethyltridecanoyltransferase</commonNames>
+  <def>4,8,12-Trimethyltridecanoyl-CoA + Propanoyl-CoA &lt;=&gt; 3-Oxopristanoyl-CoA + CoA</def>
+  <equation>C07296 + C00100 &lt;=&gt; C07297 + C00010</equation>
+  <enzymes>
+    <string>2.3.1.176</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00004">C00010_C07296</data>
+    <data name="RC00405">C00100_C07297</data>
+  </class>
+</reaction>

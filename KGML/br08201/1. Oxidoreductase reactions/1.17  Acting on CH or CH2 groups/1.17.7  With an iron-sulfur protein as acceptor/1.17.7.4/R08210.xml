@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08210</ID>
+  <commonNames>dimethylallyl diphosphate:ferredoxin oxidoreductase</commonNames>
+  <def>Dimethylallyl diphosphate + 2 Oxidized ferredoxin + H2O &lt;=&gt; 1-Hydroxy-2-methyl-2-butenyl 4-diphosphate + 2 Reduced ferredoxin + 2 H+</def>
+  <equation>C00235 + 2 C00139 + C00001 &lt;=&gt; C11811 + 2 C00138 + 2 C00080</equation>
+  <enzymes>
+    <string>1.17.7.4</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00900">Terpenoid backbone biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K03527" value="1.17.7.4">4-hydroxy-3-methylbut-2-en-1-yl diphosphate reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01137">C00235_C11811</data>
+  </class>
+</reaction>

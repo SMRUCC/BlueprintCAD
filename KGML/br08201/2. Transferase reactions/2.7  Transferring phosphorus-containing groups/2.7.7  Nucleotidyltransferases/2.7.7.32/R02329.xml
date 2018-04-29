@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02329</ID>
+  <commonNames>dTTP:alpha-D-galactose-1-phosphate thymidylyltransferase</commonNames>
+  <def>dTTP + alpha-D-Galactose 1-phosphate &lt;=&gt; Diphosphate + dTDP-galactose</def>
+  <equation>C00459 + C00446 &lt;=&gt; C00013 + C02097</equation>
+  <enzymes>
+    <string>2.7.7.32</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00002">C00446_C02097</data>
+  </class>
+</reaction>

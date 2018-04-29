@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07917</ID>
+  <commonNames>S-adenosyl-L-methionine:xanthosine N7-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Xanthosine &lt;=&gt; S-Adenosyl-L-homocysteine + 7-Methylxanthosine</def>
+  <equation>C00019 + C01762 &lt;=&gt; C00021 + C16352</equation>
+  <enzymes>
+    <string>2.1.1.158</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00232">Caffeine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K12729" value="2.1.1.158">7-methylxanthosine synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00336">C01762_C16352</data>
+  </class>
+</reaction>

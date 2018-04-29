@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02364</ID>
+  <commonNames>NADPH2:quinone oxidoreductase</commonNames>
+  <def>2 Quinone + NADPH + H+ &lt;=&gt; 2 Semiquinone + NADP+</def>
+  <equation>2 C15602 + C00005 + C00080 &lt;=&gt; 2 C05309 + C00006</equation>
+  <enzymes>
+    <string>1.6.5.5</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00001">C00005_C00006</data>
+  </class>
+</reaction>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02602</ID>
+  <commonNames>4-Oxalocrotonate carboxy-lyase</commonNames>
+  <def>gamma-Oxalocrotonate &lt;=&gt; 2-Hydroxy-2,4-pentadienoate + CO2</def>
+  <equation>C03453 &lt;=&gt; C00596 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.77</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00362">Benzoate degradation</data>
+    <data name="rn00621">Dioxin degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module>
+    <data name="M00569">Catechol meta-cleavage, catechol =&gt; acetyl-CoA / 4-methylcatechol =&gt; propanoyl-CoA</data>
+  </module>
+  <orthology>
+    <KO:terms name="K01617" value="4.1.1.77">2-oxo-3-hexenedioate decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00751">C00596_C03453</data>
+  </class>
+</reaction>

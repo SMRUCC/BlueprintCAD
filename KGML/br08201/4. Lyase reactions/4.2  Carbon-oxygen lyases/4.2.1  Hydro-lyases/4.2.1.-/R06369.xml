@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R06369</ID>
+  <commonNames>2-hydroxy-4-isopropenylcyclohexane-1-carboxyl-CoA hydro-lyase</commonNames>
+  <def>Perillyl-CoA + H2O &lt;=&gt; 2-Hydroxy-4-isopropenylcyclohexane-1-carboxyl-CoA</def>
+  <equation>C11929 + C00001 &lt;=&gt; C11934</equation>
+  <enzymes>
+    <string>4.2.1</string>
+  </enzymes>
+  <comment>perillyl-CoA hydratase</comment>
+  <pathway>
+    <data name="rn00903">Limonene and pinene degradation</data>
+    <data name="rn01220">Degradation of aromatic compounds</data>
+  </pathway>
+  <module />
+  <orthology />
+  <class>
+    <data name="RC02034">C11929_C11934</data>
+  </class>
+</reaction>

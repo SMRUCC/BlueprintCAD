@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R04187</ID>
+  <commonNames>L-Alanine:3-oxopropanoate aminotransferase</commonNames>
+  <def>L-Alanine + (S)-Methylmalonate semialdehyde &lt;=&gt; Pyruvate + L-3-Aminoisobutanoate</def>
+  <equation>C00041 + C06002 &lt;=&gt; C00022 + C03284</equation>
+  <enzymes>
+    <string>2.6.1.18</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00280">Valine, leucine and isoleucine degradation</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00822" value="2.6.1.18">beta-alanine--pyruvate transaminase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00008">C00022_C00041</data>
+    <data name="RC00160">C03284_C06002</data>
+  </class>
+</reaction>

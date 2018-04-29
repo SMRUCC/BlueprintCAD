@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03438</ID>
+  <commonNames>Acyl-CoA:1-alkyl-sn-glycero-3-phosphocholine O-acyltransferase</commonNames>
+  <def>Acyl-CoA + 1-Organyl-2-lyso-sn-glycero-3-phosphocholine &lt;=&gt; CoA + 1-Radyl-2-acyl-sn-glycero-3-phosphocholine</def>
+  <equation>C00040 + C04317 &lt;=&gt; C00010 + C05212</equation>
+  <enzymes>
+    <string>2.3.1.23</string>
+    <string>2.3.1.63</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00565">Ether lipid metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13510" value="2.3.1.23">lysophosphatidylcholine acyltransferase / lyso-PAF acetyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00004">C00010_C00040</data>
+    <data name="RC00037">C04317_C05212</data>
+  </class>
+</reaction>

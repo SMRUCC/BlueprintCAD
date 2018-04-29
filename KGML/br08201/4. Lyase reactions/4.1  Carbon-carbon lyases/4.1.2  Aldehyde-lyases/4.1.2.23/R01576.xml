@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R01576</ID>
+  <commonNames>3-deoxy-D-manno-octulosonate D-arabinose-lyase (pyruvate-forming)</commonNames>
+  <def>3-Deoxy-D-manno-octulosonate &lt;=&gt; Pyruvate + D-Arabinose</def>
+  <equation>C01187 &lt;=&gt; C00022 + C00216</equation>
+  <enzymes>
+    <string>4.1.2.23</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00307">C00022_C01187</data>
+    <data name="RC00551">C00216_C01187</data>
+  </class>
+</reaction>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08060</ID>
+  <def>Formylmethanofuran + H2O &lt;=&gt; Formate + Methanofuran</def>
+  <equation>C01001 + C00001 &lt;=&gt; C00058 + C00862</equation>
+  <enzymes>
+    <string>1.2.7.12</string>
+  </enzymes>
+  <comment>fhc</comment>
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01200">Carbon metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K00200" value="1.2.7.12">formylmethanofuran dehydrogenase subunit A</KO:terms>
+    <KO:terms name="K00201" value="1.2.7.12">formylmethanofuran dehydrogenase subunit B</KO:terms>
+    <KO:terms name="K00202" value="1.2.7.12">formylmethanofuran dehydrogenase subunit C</KO:terms>
+    <KO:terms name="K00203" value="1.2.7.12">formylmethanofuran dehydrogenase subunit D</KO:terms>
+    <KO:terms name="K00204" value="1.2.7.12">4Fe-4S ferredoxinK00205</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00197">C00862_C01001</data>
+    <data name="RC00323">C00058_C01001</data>
+  </class>
+</reaction>

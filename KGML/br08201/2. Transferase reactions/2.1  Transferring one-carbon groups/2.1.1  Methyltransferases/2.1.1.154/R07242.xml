@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07242</ID>
+  <commonNames>S-adenosyl-L-methionine:isoliquiritigenin 2'-O-methyltransferase</commonNames>
+  <def>S-Adenosyl-L-methionine + Isoliquiritigenin &lt;=&gt; S-Adenosyl-L-homocysteine + 2'-O-Methylisoliquiritigenin</def>
+  <equation>C00019 + C08650 &lt;=&gt; C00021 + C15531</equation>
+  <enzymes>
+    <string>2.1.1.154</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C08650_C15531</data>
+  </class>
+</reaction>

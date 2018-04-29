@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00945</ID>
+  <commonNames>5,10-Methylenetetrahydrofolate:glycine hydroxymethyltransferase</commonNames>
+  <def>5,10-Methylenetetrahydrofolate + Glycine + H2O &lt;=&gt; Tetrahydrofolate + L-Serine</def>
+  <equation>C00143 + C00037 + C00001 &lt;=&gt; C00101 + C00065</equation>
+  <enzymes>
+    <string>2.1.2.1</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00260">Glycine, serine and threonine metabolism</data>
+    <data name="rn00460">Cyanoamino acid metabolism</data>
+    <data name="rn00630">Glyoxylate and dicarboxylate metabolism</data>
+    <data name="rn00670">One carbon pool by folate</data>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+    <data name="rn01200">Carbon metabolism</data>
+    <data name="rn01230">Biosynthesis of amino acids</data>
+  </pathway>
+  <module>
+    <data name="M00140">C1-unit interconversion, prokaryotes</data>
+    <data name="M00141">C1-unit interconversion, eukaryotes</data>
+    <data name="M00346">Formaldehyde assimilation, serine pathway</data>
+    <data name="M00532">Photorespiration</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00600" value="2.1.2.1">glycine hydroxymethyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00022">C00101_C00143</data>
+    <data name="RC00112">C00037_C00065</data>
+  </class>
+</reaction>

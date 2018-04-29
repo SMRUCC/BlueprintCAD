@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00481</ID>
+  <commonNames>L-aspartate:oxygen oxidoreductase</commonNames>
+  <def>L-Aspartate + Oxygen &lt;=&gt; Iminoaspartate + Hydrogen peroxide</def>
+  <equation>C00049 + C00007 &lt;=&gt; C05840 + C00027</equation>
+  <enzymes>
+    <string>1.4.3.16</string>
+  </enzymes>
+  <comment>iminoaspartate can either be hydrolysed (see R00357) or can be used by ec 2.5.1.72 (see R04292)</comment>
+  <pathway>
+    <data name="rn00760">Nicotinate and nicotinamide metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00115">NAD biosynthesis, aspartate =&gt; NAD</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00278" value="1.4.3.16">L-aspartate oxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02566">C00049_C05840</data>
+    <data name="RC02755">C00007_C00027</data>
+  </class>
+</reaction>

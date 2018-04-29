@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03953</ID>
+  <def>3-Iodo-L-tyrosine + 3,5-Diiodo-L-tyrosine + Hydrogen peroxide &lt;=&gt; Triiodothyronine + Dehydroalanine + 2 H2O</def>
+  <equation>C02515 + C01060 + C00027 &lt;=&gt; C02465 + C02218 + 2 C00001</equation>
+  <enzymes>
+    <string>1.11.1.8</string>
+  </enzymes>
+  <comment>thyroid peroxidase, TPO reaction on thyroglobulin [KO:K10809] (see R08522)</comment>
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00043">Thyroid hormone biosynthesis, tyrosine =&gt; triiodothyronine/thyroxine</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00431" value="1.11.1.8">thyroid peroxidase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00878">C01060_C02465</data>
+    <data name="RC01037">C02218_C02515</data>
+  </class>
+</reaction>

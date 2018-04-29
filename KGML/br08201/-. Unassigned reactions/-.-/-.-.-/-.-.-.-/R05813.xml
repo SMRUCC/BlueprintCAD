@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R05813</ID>
+  <def>Cobalt-dihydro-precorrin 6 + 2 S-Adenosyl-L-methionine &lt;=&gt; Cobalt-precorrin 8 + 2 S-Adenosyl-L-homocysteine + CO2</def>
+  <equation>C11543 + 2 C00019 &lt;=&gt; C11545 + 2 C00021 + C00011</equation>
+  <enzymes />
+  <comment>multi-step reaction (see R07774+R07775)</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K02191" value="2.1.1.196">cobalt-precorrin-6B (C15)-methyltransferase</KO:terms>
+    <KO:terms name="K03399" value="2.1.1.289">cobalt-precorrin-7 (C5)-methyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC02052">C11543_C11545</data>
+  </class>
+</reaction>

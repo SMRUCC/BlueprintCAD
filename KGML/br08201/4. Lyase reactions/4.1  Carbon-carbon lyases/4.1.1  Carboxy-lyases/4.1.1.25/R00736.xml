@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00736</ID>
+  <commonNames>L-tyrosine carboxy-lyase (tyramine-forming)</commonNames>
+  <def>L-Tyrosine &lt;=&gt; Tyramine + CO2</def>
+  <equation>C00082 &lt;=&gt; C00483 + C00011</equation>
+  <enzymes>
+    <string>4.1.1.25</string>
+    <string>4.1.1.28</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00350">Tyrosine metabolism</data>
+    <data name="rn00680">Methane metabolism</data>
+    <data name="rn00950">Isoquinoline alkaloid biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01592" value="4.1.1.25">tyrosine decarboxylase</KO:terms>
+    <KO:terms name="K01593" value="4.1.1.28">aromatic-L-amino-acid/L-tryptophan decarboxylase</KO:terms>
+    <KO:terms name="K18933" value="4.1.1.25">tyrosine decarboxylase / aspartate 1-decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00299">C00082_C00483</data>
+  </class>
+</reaction>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R08906</ID>
+  <commonNames>L-glutamate:4-aminobutyryl-[acp] ligase (ADP-forming)</commonNames>
+  <def>ATP + L-Glutamate + 4-Aminobutyryl-[acp] &lt;=&gt; ADP + Orthophosphate + 4-(gamma-L-Glutamylamino)butanoyl-[acp]</def>
+  <equation>C00002 + C00025 + C18007 &lt;=&gt; C00008 + C00009 + C18008</equation>
+  <enzymes>
+    <string>6.2.1.39</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00524">Neomycin, kanamycin and gentamicin biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K13559" value="6.2.1.39" />
+  </orthology>
+  <class>
+    <data name="RC00002">C00002_C00008</data>
+    <data name="RC00090">C00025_C18008</data>
+    <data name="RC00096">C18007_C18008</data>
+  </class>
+</reaction>

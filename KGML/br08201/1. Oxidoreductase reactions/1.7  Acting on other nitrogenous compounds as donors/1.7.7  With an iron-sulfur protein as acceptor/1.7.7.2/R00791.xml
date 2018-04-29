@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00791</ID>
+  <commonNames>nitrite:ferredoxin oxidoreductase</commonNames>
+  <def>Nitrite + H2O + 2 Oxidized ferredoxin &lt;=&gt; Nitrate + 2 Reduced ferredoxin</def>
+  <equation>C00088 + C00001 + 2 C00139 &lt;=&gt; C00244 + 2 C00138</equation>
+  <enzymes>
+    <string>1.7.7.2</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00910">Nitrogen metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module>
+    <data name="M00531">Assimilatory nitrate reduction, nitrate =&gt; ammonia</data>
+  </module>
+  <orthology>
+    <KO:terms name="K00367" value="1.7.7.2">ferredoxin-nitrate reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC02812">C00088_C00244</data>
+  </class>
+</reaction>

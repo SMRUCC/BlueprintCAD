@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02806</ID>
+  <commonNames>Nucleoside:purine(pyrimidine) deoxy-D-ribosyltransferase</commonNames>
+  <def>Thymidine + Base &lt;=&gt; Deoxynucleoside + Thymine</def>
+  <equation>C00214 + C00701 &lt;=&gt; C02269 + C00178</equation>
+  <enzymes>
+    <string>2.4.2.6</string>
+  </enzymes>
+  <comment>general reaction</comment>
+  <pathway>
+    <data name="rn00240">Pyrimidine metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K08728" value="2.4.2.6">nucleoside deoxyribosyltransferase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00063">C00178_C00214</data>
+  </class>
+</reaction>

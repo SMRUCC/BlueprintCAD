@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R11075</ID>
+  <commonNames>L-altarate hydro-lyase (5-dehydro-4-deoxy-D-glucarate-forming)</commonNames>
+  <def>L-Altarate &lt;=&gt; 5-Dehydro-4-deoxy-D-glucarate + H2O</def>
+  <equation>C21088 &lt;=&gt; C00679 + C00001</equation>
+  <enzymes>
+    <string>4.2.1.156</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00543">C00679_C21088</data>
+  </class>
+</reaction>

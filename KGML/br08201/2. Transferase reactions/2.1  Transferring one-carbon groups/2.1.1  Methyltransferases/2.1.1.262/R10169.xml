@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10169</ID>
+  <commonNames>S-adenosyl-L-methionine:squalene C-methyltransferase</commonNames>
+  <def>2 S-Adenosyl-L-methionine + Squalene &lt;=&gt; 2 S-Adenosyl-L-homocysteine + 3,22-Dimethyl-1,2,23,24-tetradehydro-2,3,22,23-tetrahydrosqualene</def>
+  <equation>2 C00019 + C00751 &lt;=&gt; 2 C00021 + C20412</equation>
+  <enzymes>
+    <string>2.1.1.262</string>
+  </enzymes>
+  <comment>two-step reaction (see R10167+R10168)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC03070">C00751_C20412</data>
+  </class>
+</reaction>

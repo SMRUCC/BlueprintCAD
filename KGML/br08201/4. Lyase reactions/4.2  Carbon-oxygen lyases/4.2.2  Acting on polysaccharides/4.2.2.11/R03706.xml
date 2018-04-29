@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R03706</ID>
+  <commonNames>Poly(beta-D-1,4-mannuronide) lyase</commonNames>
+  <def>(Alginate)n &lt;=&gt; Oligouronide with 4-deoxy-alpha-L-erythro-hex-4-enopyranuronosyl group</def>
+  <equation>C01768 &lt;=&gt; C05392</equation>
+  <enzymes>
+    <string>4.2.2.3</string>
+    <string>4.2.2.11</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00051">Fructose and mannose metabolism</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K01729" value="4.2.2.3">poly(beta-D-mannuronate) lyase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10653</ID>
+  <def>[Ribosomal protein S12]-L-aspartate + Sulfur donor + S-Adenosyl-L-methionine &lt;=&gt; [Ribosomal protein S12]-3-thioaspartate + L-Methionine + 5'-Deoxyadenosine</def>
+  <equation>C20756 + C17023 + C00019 &lt;=&gt; C20757 + C00073 + C05198</equation>
+  <enzymes>
+    <string>2.8.4.4</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00021">C00019_C00073</data>
+    <data name="RC03218">C20756_C20757</data>
+  </class>
+</reaction>

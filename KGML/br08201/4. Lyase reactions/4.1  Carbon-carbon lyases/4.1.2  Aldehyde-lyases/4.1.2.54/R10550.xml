@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10550</ID>
+  <commonNames>2-dehydro-3-deoxy-L-galactonate L-glyceraldehyde-lyase (pyruvate-forming)</commonNames>
+  <def>2-Dehydro-3-deoxy-L-galactonate &lt;=&gt; Pyruvate + L-Glyceraldehyde</def>
+  <equation>C20680 &lt;=&gt; C00022 + C02426</equation>
+  <enzymes>
+    <string>4.1.2.54</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00040">Pentose and glucuronate interconversions</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module>
+    <data name="M00630">D-Galacturonate degradation (fungi), D-galacturonate =&gt; glycerol</data>
+  </module>
+  <orthology>
+    <KO:terms name="K18103" value="4.1.2.54">L-threo-3-deoxy-hexylosonate aldolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00307">C00022_C20680</data>
+    <data name="RC00435">C02426_C20680</data>
+  </class>
+</reaction>

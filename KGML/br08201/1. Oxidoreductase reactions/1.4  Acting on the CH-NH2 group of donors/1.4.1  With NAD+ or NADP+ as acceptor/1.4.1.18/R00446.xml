@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R00446</ID>
+  <commonNames>L-lysine:NAD+ 6-oxidoreductase (deaminating)</commonNames>
+  <def>L-Lysine + NAD+ + H2O &lt;=&gt; L-2-Aminoadipate 6-semialdehyde + NADH + Ammonia + H+</def>
+  <equation>C00047 + C00003 + C00001 &lt;=&gt; C04076 + C00004 + C00014 + C00080</equation>
+  <enzymes>
+    <string>1.4.1.18</string>
+  </enzymes>
+  <comment>first step of two-step reaction (see R10054, R00446+R02317)</comment>
+  <pathway>
+    <data name="rn00960">Tropane, piperidine and pyridine alkaloid biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K19064" value="1.4.1.18">lysine 6-dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00001">C00003_C00004</data>
+    <data name="RC00062">C00047_C04076</data>
+  </class>
+</reaction>
