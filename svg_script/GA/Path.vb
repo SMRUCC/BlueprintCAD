@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports System.Runtime.CompilerServices
+Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
@@ -56,6 +57,7 @@ Public Class Path
         Y = New Vector(NULL, maxStack)
     End Sub
 
+#Region "Mutations"
     Sub Mutate(random As Random)
         Dim index% = random.Next(Tail + 1)
 
@@ -120,5 +122,50 @@ Public Class Path
 
         Call Append(NULL, NULL)
     End Sub
+#End Region
+
+#Region "Fitness"
+
+    ''' <summary>
+    ''' 将一些线段进行合并简化计算的模型
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks>
+    ''' 主要是合并相同方向的相邻线段
+    ''' </remarks>
+    Public Iterator Function Shrink() As IEnumerable(Of PointF)
+        Dim A As PointF = Me.A
+        Dim B As PointF = New PointF(X(Scan0), Y(Scan0))
+        Dim C As PointF
+        Dim lastIndex% = Tail
+
+        Yield A
+
+        For i As Integer = 1 To lastIndex + 1
+            If i = lastIndex + 1 Then
+                ' lastIndex + 1 实际上已经超过了范围了
+                ' 在这里将锚点B也放出去
+                C = Me.B
+            Else
+                C = New PointF(X(i), Y(i))
+            End If
+
+            If Math.Abs(GeomTransform.CalculateAngle(A, B) - GeomTransform.CalculateAngle(B, C)) <= 0.00001 Then
+                ' 认为两条线段的角度是一样的，可以进行合并
+                ' 在本次循环之中不将中点B抛出，就可以产生合并的效果
+                ' Do Nothing
+            Else
+                ' 两条线段不在同一个角度，则不可以进行合并
+                ' 将中点B抛出即可不进行合并
+                Yield B
+            End If
+
+            B = C
+        Next
+
+        ' 最后一个点是锚点B，必须要和锚点A一样被抛出
+        Yield C
+    End Function
+#End Region
 
 End Class
