@@ -56,6 +56,14 @@ Public Class Path
         Y = New Vector(NULL, maxStack)
     End Sub
 
+    Sub Mutate(random As Random)
+        Dim index% = random.Next(Tail + 1)
+
+        ' X Y 必须要同时突变？
+        X.Array.Mutate(random, index)
+        Y.Array.Mutate(random, index)
+    End Sub
+
     ''' <summary>
     ''' 向最末尾添加一个路径点，如果还有剩余路径点可以被使用的话
     ''' </summary>
