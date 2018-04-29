@@ -6,7 +6,28 @@ Imports SMRUCC.genomics.Assembly.KEGG.WebServices
 
 Module test
 
+    Sub randomTest()
+
+        With New Random
+
+            For i As Integer = 0 To 100
+                Call .NextDouble.__DEBUG_ECHO
+            Next
+
+            Call "==============================================".__INFO_ECHO
+
+            ' 尽量不要创建新的random对象
+            For i As Integer = 0 To 100
+                Call New Random().NextDouble.__DEBUG_ECHO
+            Next
+
+            Pause()
+        End With
+    End Sub
+
     Sub Main()
+
+        Call randomTest()
 
         '  Call helperTest()
 
