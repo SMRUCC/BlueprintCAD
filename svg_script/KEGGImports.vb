@@ -47,7 +47,7 @@ Module KEGGImports
                                                         .center = a.Rectangle.Centre.ToPoint,
                                                         .radius = a.Rectangle.Width / 2,
                                                         .ID = id
-                                                    }.As(Of Block)
+                                                    }.AsBaseType(Of Block)
                                                 End Function)
                             Case Else
                                 ' Throw New NotImplementedException(a.GetJson)
