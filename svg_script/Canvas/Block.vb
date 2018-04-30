@@ -1,17 +1,23 @@
 ﻿Imports System.Drawing
+Imports Microsoft.VisualBasic.ComponentModel.Collection.Generic
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
 Imports Microsoft.VisualBasic.Imaging.Math2D
 
 ''' <summary>
 ''' The routes blocker
 ''' </summary>
-Public MustInherit Class Block
+Public MustInherit Class Block : Implements INamedValue
 
     ''' <summary>
     ''' The center location of this block object.
     ''' </summary>
     ''' <returns></returns>
     Public MustOverride ReadOnly Property Location As Point
-
+    ''' <summary>
+    ''' 基因编号或者代谢物的编号
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property ID As String Implements IKeyedEntity(Of String).Key
     Public MustOverride Function Intersect(a As PointF, b As PointF) As Boolean
 
 End Class

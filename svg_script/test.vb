@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
 Imports SMRUCC.genomics.Assembly.KEGG.WebServices
+Imports SMRUCC.genomics.Data.KEGG.Metabolism
 
 Module test
 
@@ -44,7 +45,8 @@ Module test
         Dim size = New Size(2600, 2500)
         Dim anchors = {a, b, c, d, e, f, g, h, i}
 
-        Dim blocks = KEGGImports.ImportsMap("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\Metabolism\Carbohydrate metabolism\map00020.XML".LoadXml(Of Map))
+        Dim links As ReactionLink = ReactionLink.FromRepository("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\br08201")
+        Dim blocks = KEGGImports.ImportsMap("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\Metabolism\Carbohydrate metabolism\map00020.XML".LoadXml(Of Map), links, 10)
 
         Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(10000)
         Dim fitness As Fitness(Of Routes) = New Fitness With {
