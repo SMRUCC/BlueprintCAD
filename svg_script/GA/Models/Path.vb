@@ -57,10 +57,23 @@ Namespace GA.Models
             End Get
         End Property
 
+        ''' <summary>
+        ''' 在当前的这个路径之中的节点的数量
+        ''' </summary>
+        ''' <returns></returns>
         Public ReadOnly Property Length As Integer
             <MethodImpl(MethodImplOptions.AggressiveInlining)>
             Get
                 Return TailIndex + 1
+            End Get
+        End Property
+
+        Default Public ReadOnly Property Point(i As Integer) As PointF
+            Get
+                Return New PointF With {
+                    .X = X(i),
+                    .Y = Y(i)
+                }
             End Get
         End Property
 

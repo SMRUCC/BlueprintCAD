@@ -57,6 +57,58 @@ Namespace GA.Models
             Return New Path(anchor.A, anchor.B, points.X, points.Y)
         End Function
 
+        ''' <summary>
+        ''' 移动路径之中的某一个节点，然后会连带的也移动相邻的节点
+        ''' </summary>
+        ''' <param name="path"></param>
+        ''' <param name="rand"></param>
+        ''' <returns></returns>
+        <Extension>
+        Public Function MovePoint(path As Path, rand As Random) As Path
+            Dim i% = rand.Next(path.Length)
+            Dim routeX As Vector = path.X.ToArray
+            Dim routeY As Vector = path.Y.ToArray
+            Dim point As PointF = route(i)
+
+            ' 需要一起被移动的节点
+            Dim j%
+
+            If rand.NextDouble < 0.5 Then
+                ' 移动X的时候，与其垂直的节点也需要移动X
+                ' 相邻的节点应该是X相同Y不同
+
+                If path(i - 1).X = point.X Then
+                    j = i - 1
+                Else
+                    j = i + 1
+                End If
+
+                ' i移动X之后需要调整j的x一致
+                Dim dx% = rand.NextDouble * (path.B.X - path.A.X) * If(rand.NextDouble > 0.5, 1, -1)
+                path.X(i) += dx
+                path.X(j) = path.X(i)
+
+            Else
+                ' 移动Y的时候，与其水平的节点也需要移动Y
+                ' 相邻的节点应该是X不同Y相同
+
+                If path(i - 1).Y = point.Y Then
+                    j = i - 1
+                Else
+                    j = i + 1
+                End If
+
+                ' i移动Y之后需要调整j的y一致
+                Dim dy% = rand.NextDouble * (path.B.Y - path.A.Y) * If(rand.NextDouble > 0.5, 1, -1)
+                path.Y(i) += dy
+                path.Y(j) = path.Y(i)
+
+            End If
+
+            ' 返回新的突变之后的路径
+
+        End Function
+
     End Module
 End Namespace
 
