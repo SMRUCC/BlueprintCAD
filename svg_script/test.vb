@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
+Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Assembly.KEGG.WebServices
 Imports SMRUCC.genomics.Data.KEGG.Metabolism
 
@@ -40,8 +41,11 @@ Module test
     Sub intersactionTest()
         Dim line1 As Line = {(100, 100), (500, 100)}
         Dim line2 As Line = {(300, 0), (200, 200)}
+        Dim intersaction As PointF = Nothing
 
-        Call line1.IntersectionOf(line2).ToString().__DEBUG_ECHO
+        Call line1.IntersectionOf(line2, intersaction).ToString().__DEBUG_ECHO
+
+        Call intersaction.GetJson.__DEBUG_ECHO
 
         ' 平行线测试
         Dim line3 As Line = {(0, 200), (1000, 200)}
