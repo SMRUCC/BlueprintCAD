@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports Microsoft.VisualBasic.ComponentModel.Algorithm.base
+Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.Language.Default
@@ -26,12 +27,17 @@ Public Structure GA_AutoLayout
 
     Public Function DoAutoLayout(Optional populationSize% = 1000, Optional runs% = 5000) As Routes
         Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(populationSize)
-        Dim fitness As Fitness(Of Routes) = New Fitness With {
+        Dim fitness As New Fitness With {
             .blocks = blocks
         }
         Dim ga As New GeneticAlgorithm(Of Routes)(population, fitness)
 
-        ga.AddDefaultListener
+        ga.AddDefaultListener(Sub(best)
+                                  Call Console.WriteLine(best.ToString)
+                                  Call ga.Best.Draw(fitness.blocks) _
+                                              .AsGDIImage _
+                                              .SaveAs($"./Debug/{best.iter}.png")
+                              End Sub)
         ga.Evolve(runs)
 
         Dim solution As Routes = ga.Best
