@@ -4,6 +4,7 @@ Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.Models
+Imports Microsoft.VisualBasic.Math
 Imports Microsoft.VisualBasic.Math.LinearAlgebra
 Imports Microsoft.VisualBasic.Serialization.JSON
 
@@ -164,11 +165,12 @@ Public Class Routes : Implements Chromosome(Of Routes)
         Return New Routes(out, Size, minSize)
     End Function
 
-    <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Overrides Function ToString() As String
-        Return Path.Select(Function(p) New PathProperty(p)) _
-                   .ToArray _
-                   .GetJson
+        Dim shrinks = Path.Select(Function(p) p.Shrink).IteratesALL.ToArray
+        Dim X = shrinks.X.Select(Function(n) CInt(n)).AsList
+        Dim Y = shrinks.Y.Select(Function(n) CInt(n)).ToArray
+
+        Return (X + Y).GetJson
     End Function
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>
