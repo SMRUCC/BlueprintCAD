@@ -32,7 +32,7 @@ Public Structure GA_AutoLayout
         Dim ga As New GeneticAlgorithm(Of Routes)(population, fitness)
 
         ga.AddDefaultListener
-        ga.Evolve(100)
+        ga.Evolve(runs)
 
         Dim solution As Routes = ga.Best
         Return solution

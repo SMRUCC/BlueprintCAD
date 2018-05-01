@@ -30,7 +30,7 @@ Module test
     Sub runTest()
         Dim links As ReactionLink = ReactionLink.FromRepository("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\br08201")
         Dim engine = KEGGImports.ImportsMap("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\maps\Metabolism\Carbohydrate metabolism\map00020.XML".LoadXml(Of Map), links, 10)
-        Dim best As Routes = engine.DoAutoLayout
+        Dim best As Routes = engine.DoAutoLayout(500, 1000)
 
         Call best.Draw(engine.blocks,).AsGDIImage.SaveAs("./test_run.png")
 
