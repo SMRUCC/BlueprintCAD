@@ -64,14 +64,39 @@ Module KEGGImports
         ' 将当前的这个map之中所有的代谢物拿出来
         Dim anchors As New Dictionary(Of String, (Point, Point))
         Dim compounds$() = map.Areas.Select(Function(a) a.IDVector).IteratesALL.ToArray
-        Dim posTable = blocks.ToDictionary
+        Dim posTable = blocks.GroupBy(Function(c) c.ID) _
+                             .ToDictionary(Function(g) g.Key,
+                                           Function(g)
+                                               ' 例如 http://www.genome.jp/kegg-bin/show_pathway?map00020 之中的
+                                               ' C00068，会在一张图之中出现两次
+                                               ' 则在构建锚点的时候，取partner最近的为锚点
+                                               Return g.ToArray
+                                           End Function)
 
         For Each id1 As String In compounds
             For Each id2 As String In compounds.Where(Function(id) id <> id1)
                 Dim uid = {id1, id2}.OrderBy(Function(s) s).JoinBy("-")
 
                 If Not anchors.ContainsKey(uid) AndAlso Not links.PopulateConversionLinks(id1, id2).IsNullOrEmpty Then
-                    anchors(uid) = (posTable(id1).Location, posTable(id2).Location)
+                    Dim pa = posTable(id1)
+                    Dim pb = posTable(id2)
+
+                    ' 在构建锚点的时候，取partner最近的为锚点
+                    Dim minDist# = Integer.MaxValue
+                    Dim minTuple As (A As Point, B As Point)
+
+                    For Each a In pa
+                        For Each b In pb
+                            Dim d = a.Location.Distance(b.Location)
+
+                            If d < minDist Then
+                                minDist = d
+                                minTuple = (a.Location, b.Location)
+                            End If
+                        Next
+                    Next
+
+                    anchors(uid) = minTuple
                 End If
             Next
         Next
