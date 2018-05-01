@@ -5,6 +5,7 @@ Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.Models
 Imports Microsoft.VisualBasic.Math.LinearAlgebra
+Imports Microsoft.VisualBasic.Serialization.JSON
 
 ''' <summary>
 ''' 网格之中的A到B点的连接路径集合，这个相当于一个染色体，即一个可能的最优解决方案
@@ -15,47 +16,29 @@ Public Class Routes : Implements Chromosome(Of Routes)
     ''' 节点之间的连接使用-1来进行分割，在这里规定坐标点必须要大于等于零
     ''' 例如第一个被-1分割的块为第一对连接点之间的连接路线
     ''' </summary>
-    Public X, Y As Vector
-    ''' <summary>
-    ''' 节点对之间的坐标
-    ''' 一个populate之中的所有的route的锚点都应该是一样的
-    ''' 即，这个域的值在一个种群内都是一致的
-    ''' </summary>
-    Public ReadOnly Anchors As (a As Point, b As Point)()
+    Public ReadOnly Path As Path()
     Public ReadOnly Size As Size
 
     ReadOnly random As New Random(Now.Millisecond)
+    ReadOnly minSize%
 
-    Sub New(anchors As (a As Point, b As Point)(),
-            size As Size,
-            Optional x As Vector = Nothing,
-            Optional y As Vector = Nothing)
-
-        Me.Anchors = anchors
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="anchors"></param>
+    ''' <param name="size"></param>
+    ''' <param name="maxStackSize%"></param>
+    ''' <param name="minSize%">一条路径最短需要有多少个节点构成</param>
+    Sub New(anchors As (a As Point, b As Point)(), size As Size, Optional maxStackSize% = 10, Optional minSize% = 3)
+        Me.Path = anchors.Select(Function(a) New Path(a, maxStackSize)).ToArray
         Me.Size = size
-
-        If x Is Nothing OrElse y Is Nothing Then
-            Call allocate()
-        Else
-            Me.X = x
-            Me.Y = y
-        End If
+        Me.minSize = minSize
     End Sub
 
-    Private Sub allocate()
-        Dim i As int = 0, j As int = 0
-
-        X = New Vector(Anchors.Length * 3)
-        Y = New Vector(X.Length)
-
-        For Each line In Anchors
-            X(++i) = line.a.X
-            Y(++j) = line.a.Y
-            X(++i) = line.b.X
-            Y(++j) = line.b.Y
-            X(++i) = -1
-            Y(++j) = -1
-        Next
+    Sub New(path As IEnumerable(Of Path), size As Size, minSize%)
+        Me.Path = path.ToArray
+        Me.Size = size
+        Me.minSize = minSize
     End Sub
 
     ''' <summary>
@@ -67,16 +50,30 @@ Public Class Routes : Implements Chromosome(Of Routes)
     ''' 在交叉的时候要特别注意不可以将首尾元素的锚点给修改了
     ''' </remarks>
     Public Function Crossover(another As Routes) As IEnumerable(Of Routes) Implements Chromosome(Of Routes).Crossover
-        Dim thisX = X.Split(Function(v) v = -1.0R).ToArray
-        Dim thisY = Y.Split(Function(v) v = -1.0R).ToArray
-        Dim otherX = another.X.Split(Function(v) v = -1.0R).ToArray
-        Dim otherY = another.Y.Split(Function(v) v = -1.0R).ToArray
+        Dim d%
+        Dim thisX#(), thisY#()
+        Dim otherX#(), otherY#()
+        Dim out1 As New List(Of Path)
+        Dim out2 As New List(Of Path)
+        Dim A, B As PointF
 
         With random
-            Dim d%
 
-            For i As Integer = 0 To Anchors.Length - 1
-                d = thisX(i).Length - otherY(i).Length
+            For i As Integer = 0 To Path.Length - 1
+                With Path(i)
+                    thisX = .X.ToArray
+                    thisY = .Y.ToArray
+
+                    ' 因为都是同一个对象，所以this和other都是用同一组锚点
+                    A = .A
+                    B = .B
+                End With
+                With another.Path(i)
+                    otherX = .X.ToArray
+                    otherY = .Y.ToArray
+                End With
+
+                d = thisX.Length - otherY.Length
 
                 ' 因为在突变过程之中可能会增减网格节点，所以可能会出现长度不一致的情况
                 ' 如果长度不一致的话，需要对最短的向量进行补齐
@@ -85,29 +82,31 @@ Public Class Routes : Implements Chromosome(Of Routes)
                 ' 因为必须要保持首尾元素不变，所以在这里补齐的时候fill最后一个元素
                 If d > 0 Then
                     ' 补齐other
-                    otherX(i) = otherX(i).Fill(otherX(i).Last, d)
-                    otherY(i) = otherY(i).Fill(otherY(i).Last, d)
+                    otherX = otherX.Fill(otherX.Last, d)
+                    otherY = otherY.Fill(otherY.Last, d)
                 ElseIf d < 0 Then
                     ' 补齐this
                     d = -d
 
-                    thisX(i) = thisX(i).Fill(thisX(i).Last, d)
-                    thisY(i) = thisY(i).Fill(thisY(i).Last, d)
+                    thisX = thisX.Fill(thisX.Last, d)
+                    thisY = thisY.Fill(thisY.Last, d)
+                Else
+                    ' d = 0 
+                    ' 二者是等长的，不需要做额外的处理
+                    ' Do Nothing
                 End If
 
-                Call .Crossover(thisX(i), otherX(i))
-                Call .Crossover(thisY(i), otherY(i))
+                Call .Crossover(thisX, otherX)
+                Call .Crossover(thisY, otherY)
 
-                Call thisX(i).Add(-1)
-                Call thisY(i).Add(-1)
-                Call otherX(i).Add(-1)
-                Call otherY(i).Add(-1)
+                out1 += New Path(A, B, thisX.AsVector, thisY.AsVector)
+                out2 += New Path(A, B, otherX.AsVector, otherY.AsVector)
             Next
         End With
 
         Return {
-            New Routes(Anchors, Size, thisX.IteratesALL.AsVector, thisY.IteratesALL.AsVector),
-            New Routes(Anchors, Size, otherX.IteratesALL.AsVector, otherY.IteratesALL.AsVector)
+            New Routes(out1, Size, minSize),
+            New Routes(out2, Size, minSize)
         }
     End Function
 
@@ -123,58 +122,53 @@ Public Class Routes : Implements Chromosome(Of Routes)
     ''' 在突变的时候要特别注意不可以将首尾的锚点给修改了
     ''' </remarks>
     Public Function Mutate() As Routes Implements Chromosome(Of Routes).Mutate
-        Dim X = Me.X.Split(Function(v) v = -1.0R)
-        Dim Y = Me.Y.Split(Function(v) v = -1.0R)
-        Dim dx, dy As New List(Of Double)
+        Dim out As New List(Of Path)
 
         With random
-            Dim px, py As Double()
 
-            For i As Integer = 0 To Anchors.Length - 1
-                px = X(i)
-                py = Y(i)
+            For Each path As Path In Me.Path _
+                .Select(Function(p)
+                            ' 在这里应该都是使用的copy方法，
+                            ' 否则会将原来的数据对象也给修改掉了
+                            Return New Path(p.A, p.B, p.X.AsVector, p.Y.AsVector)
+                        End Function)
 
-                If px.Length <= 3 Then
+                Dim randX = .Next(Size.Width)
+                Dim randY = .Next(Size.Height)
 
-                    ' 只有首尾两个元素，必须要向中间插入一个元素
-                    For it As Integer = 0 To 3
-                        px.InsertAt(.Next(Size.Width), 1)
-                        py.InsertAt(.Next(Size.Height), 1)
-                    Next
-
+                If path.Length < minSize Then
+                    Select Case .NextDouble
+                        Case >= 0.5
+                            Call path.Append(randX, randY)
+                        Case Else
+                            Call path.Insert(New PointF(randX, randY), .Next(path.Length))
+                    End Select
                 Else
                     Select Case .NextDouble
-                        Case <= 0.3
-                            px.Mutate(.ByRef)
-                            py.Mutate(.ByRef)
-                        Case <= 0.6
-                            Dim index = .Next(px.Length)
-
-                            px.InsertAt(.Next(Size.Width), index)
-                            py.InsertAt(.Next(Size.Height), index)
+                        Case <= 0.2
+                            Call path.Append(randX, randY)
+                        Case <= 0.35
+                            Call path.Delete(.Next(path.Length))
+                        Case <= 0.5
+                            Call path.Insert(New PointF(randX, randY), .Next(path.Length))
                         Case Else
-                            Dim index = .Next(px.Length)
-
-                            Call px.Delete(index)
-                            Call py.Delete(index)
+                            Call path.Mutate(.ByRef)
                     End Select
                 End If
 
-                dx.AddRange(px)
-                dy.AddRange(py)
-                dx.Add(-1)
-                dy.Add(-1)
+                out += path
             Next
+
         End With
 
-        Return New Routes(Anchors, Size, dx.AsVector, dy.AsVector)
+        Return New Routes(out, Size, minSize)
     End Function
 
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Overrides Function ToString() As String
-        Dim X = Me.X.ToString
-        Dim Y = Me.Y.ToString
-
-        Return $"[{X} | {Y}]"
+        Return Path.Select(Function(p) New PathProperty(p)) _
+                   .ToArray _
+                   .GetJson
     End Function
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>

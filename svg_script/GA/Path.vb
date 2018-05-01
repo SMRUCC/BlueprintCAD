@@ -4,7 +4,6 @@ Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
-Imports Microsoft.VisualBasic.MachineLearning.Darwinism.Models
 Imports Microsoft.VisualBasic.Math.LinearAlgebra
 
 ''' <summary>
@@ -20,13 +19,21 @@ Public Class Path
     ''' <summary>
     ''' 路径的固定的首尾两个锚点
     ''' </summary>
-    Public A, B As PointF
+    Public ReadOnly A, B As PointF
 
     Public Const NULL# = -1
 
     Public ReadOnly Property IsFullStack As Boolean
+        <MethodImpl(MethodImplOptions.AggressiveInlining)>
         Get
-            Return Tail = X.Length - 1
+            Return TailIndex = X.Length - 1
+        End Get
+    End Property
+
+    Public ReadOnly Property MaxStackSize As Integer
+        <MethodImpl(MethodImplOptions.AggressiveInlining)>
+        Get
+            Return X.Dim
         End Get
     End Property
 
@@ -34,7 +41,7 @@ Public Class Path
     ''' 返回路径点最后一个元素的顶点编号
     ''' </summary>
     ''' <returns></returns>
-    Public ReadOnly Property Tail As Integer
+    Public ReadOnly Property TailIndex As Integer
         Get
             For i As Integer = 0 To X.Length - 1
                 If X(i) = NULL AndAlso Y(i) = NULL Then
@@ -48,18 +55,34 @@ Public Class Path
         End Get
     End Property
 
+    Public ReadOnly Property Length As Integer
+        <MethodImpl(MethodImplOptions.AggressiveInlining)>
+        Get
+            Return TailIndex + 1
+        End Get
+    End Property
+
     ''' <summary>
     ''' 
     ''' </summary>
     ''' <param name="maxStack%">最大的拐点数量</param>
-    Sub New(Optional maxStack% = 10)
+    Sub New(anchor As (A As Point, B As Point), Optional maxStack% = 10)
         X = New Vector(NULL, maxStack)
         Y = New Vector(NULL, maxStack)
+        A = anchor.A
+        B = anchor.B
+    End Sub
+
+    Sub New(anchorA As PointF, anchorB As PointF, X As Vector, Y As Vector)
+        Me.A = anchorA
+        Me.B = anchorB
+        Me.X = X
+        Me.Y = Y
     End Sub
 
 #Region "Mutations"
     Sub Mutate(random As Random)
-        Dim index% = random.Next(Tail + 1)
+        Dim index% = random.Next(TailIndex + 1)
 
         ' X Y 必须要同时突变？
         X.Array.Mutate(random, index)
@@ -78,7 +101,7 @@ Public Class Path
 
     Sub Append(x#, y#)
         If Not IsFullStack Then
-            With Tail
+            With TailIndex
                 Me.X(.ByRef) = x
                 Me.Y(.ByRef) = y
             End With
@@ -137,7 +160,7 @@ Public Class Path
         Dim A As PointF = Me.A
         Dim B As PointF = New PointF(X(Scan0), Y(Scan0))
         Dim C As PointF
-        Dim lastIndex% = Tail
+        Dim lastIndex% = TailIndex
 
         Yield A
 
