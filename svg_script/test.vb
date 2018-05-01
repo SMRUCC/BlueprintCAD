@@ -37,7 +37,34 @@ Module test
         Pause()
     End Sub
 
+    Sub intersactionTest()
+        Dim line1 As Line = {(100, 100), (500, 100)}
+        Dim line2 As Line = {(300, 0), (200, 200)}
+
+        Call line1.IntersectionOf(line2).ToString().__DEBUG_ECHO
+
+        ' 平行线测试
+        Dim line3 As Line = {(0, 200), (1000, 200)}
+
+        Call line1.IntersectionOf(line3).ToString().__DEBUG_ECHO
+
+        ' 差点相交
+        Dim line4 As Line = {(99, 100), (500, 500)}
+
+        Call line1.IntersectionOf(line4).ToString().__DEBUG_ECHO
+
+        Dim line5 As Line = {(0, 100), (1000, 100)}
+
+
+        Call line1.IntersectionOf(line5).ToString().__DEBUG_ECHO
+
+        Pause()
+
+    End Sub
+
     Sub Main()
+
+        Call intersactionTest()
 
         Call runTest()
         Call randomTest()
