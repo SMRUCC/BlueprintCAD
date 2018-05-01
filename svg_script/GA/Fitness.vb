@@ -47,10 +47,13 @@ Public Class Fitness : Implements Fitness(Of Routes)
                     hypotenuse += -b.Y
                 End If
 
-                If angle Mod 45 = 0R Then
+                Dim mod90 = angle Mod 90
+
+                If mod90 = 0R Then
                     hypotenuse += 0
                 Else
-                    hypotenuse += Math.Abs(angle)
+                    ' 线条应该尽量是垂直或者水平的
+                    hypotenuse += Math.Max(90 - mod90, mod90)
                 End If
 
                 pathLength += a.Distance(b)

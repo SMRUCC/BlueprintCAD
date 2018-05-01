@@ -68,7 +68,7 @@ Module test
 
     Sub Main()
 
-        Call intersactionTest()
+        ' Call intersactionTest()
 
         Call runTest()
         Call randomTest()
