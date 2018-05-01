@@ -4,13 +4,15 @@ Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.Language.Default
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
+Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
 Imports Microsoft.VisualBasic.Scripting.Runtime
 
 Public Structure GA_AutoLayout
 
     Dim anchors As (a As Point, b As Point)()
     Dim blocks As Block()
-    Dim size As SizeF
+    Dim size As Size
     Dim stackSize As (minSize%, maxStackSize%)
 
     Shared ReadOnly defaultStackSize As New DefaultValue(Of (Integer, Integer)) With {
@@ -22,12 +24,22 @@ Public Structure GA_AutoLayout
                   End Function
     }
 
-    Public Function DoAutoLayout(Optional runs% = 5000) As Routes
+    Public Function DoAutoLayout(Optional populationSize% = 1000, Optional runs% = 5000) As Routes
+        Dim population As Population(Of Routes) = New Routes(anchors, size).InitialPopulation(populationSize)
+        Dim fitness As Fitness(Of Routes) = New Fitness With {
+            .blocks = blocks
+        }
+        Dim ga As New GeneticAlgorithm(Of Routes)(population, fitness)
 
+        ga.AddDefaultListener
+        ga.Evolve(100)
+
+        Dim solution As Routes = ga.Best
+        Return solution
     End Function
 
     Public Shared Operator *(layout As GA_AutoLayout, scaleFactor#) As GA_AutoLayout
-        Dim size As SizeF = layout.size.Scale(scaleFactor)
+        Dim size As Size = layout.size.Scale(scaleFactor)
         Dim shapes = layout.blocks _
                            .Select(Function(b) b.Location) _
                            .Enlarge(scaleFactor)
