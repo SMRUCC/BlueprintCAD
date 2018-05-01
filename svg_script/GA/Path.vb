@@ -80,6 +80,14 @@ Public Class Path
         Me.Y = Y
     End Sub
 
+    Public Function GetX() As Double()
+        Return X.Take(TailIndex + 1).ToArray
+    End Function
+
+    Public Function GetY() As Double()
+        Return Y.Take(TailIndex + 1).ToArray
+    End Function
+
 #Region "Mutations"
     Sub Mutate(random As Random)
         Dim index% = random.Next(TailIndex + 1)
@@ -101,7 +109,7 @@ Public Class Path
 
     Sub Append(x#, y#)
         If Not IsFullStack Then
-            With TailIndex
+            With TailIndex + 1
                 Me.X(.ByRef) = x
                 Me.Y(.ByRef) = y
             End With
@@ -115,16 +123,16 @@ Public Class Path
     ''' <param name="index%"></param>
     Sub Insert(point As PointF, index%)
         If Not IsFullStack Then
-            Dim afterX = X.Skip(index).ToArray
-            Dim afterY = Y.Skip(index).ToArray
+            Dim X = GetX()
+            Dim Y = GetY()
 
-            For i As Integer = 0 To afterX.Length - 1
-                X(i + index + 1) = afterX(i)
-                Y(i + index + 1) = afterY(i)
+            Call X.InsertAt(point.X, index)
+            Call Y.InsertAt(point.Y, index)
+
+            For i As Integer = 0 To X.Length
+                Me.X(i) = X(i)
+                Me.Y(i) = Y(i)
             Next
-
-            X(index) = point.X
-            Y(index) = point.Y
         End If
     End Sub
 
@@ -135,15 +143,21 @@ Public Class Path
     ''' 删除掉这个点之后，后面的元素都会往前移
     ''' </param>
     Sub Delete(index As Integer)
-        Dim afterX = X.Skip(index).ToArray
-        Dim afterY = Y.Skip(index).ToArray
+        Dim X = GetX()
+        Dim Y = GetY()
 
-        For i As Integer = 0 To afterX.Length - 1
-            X(i + index) = afterX(i)
-            Y(i + index) = afterY(i)
+        Call X.Delete(index)
+        Call Y.Delete(index)
+
+        For i As Integer = 0 To X.Length - 1
+            Me.X(i) = X(i)
+            Me.Y(i) = Y(i)
         Next
 
-        Call Append(NULL, NULL)
+        For i As Integer = X.Length To Me.X.Length - 1
+            Me.X(i) = NULL
+            Me.Y(i) = NULL
+        Next
     End Sub
 #End Region
 

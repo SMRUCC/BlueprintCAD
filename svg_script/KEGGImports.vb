@@ -58,7 +58,7 @@ Module KEGGImports
                         End Select
                     End Function) _
             .IteratesALL _
-            .Where(Function(b) b.ID.IsPattern("C\d+")) _
+            .Where(Function(b) Not b Is Nothing AndAlso b.ID.IsPattern("C\d+")) _
             .ToArray
 
         ' 将当前的这个map之中所有的代谢物拿出来
