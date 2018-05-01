@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing
+Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper
@@ -26,8 +27,19 @@ Module test
         End With
     End Sub
 
+    Sub runTest()
+        Dim links As ReactionLink = ReactionLink.FromRepository("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\br08201")
+        Dim engine = KEGGImports.ImportsMap("C:\Users\Evia\source\repos\GCModeller-CAD-blueprint\KGML\Metabolism\Carbohydrate metabolism\map00020.XML".LoadXml(Of Map), links, 10)
+        Dim best As Routes = engine.DoAutoLayout
+
+        Call best.Draw(engine.blocks,).AsGDIImage.SaveAs("./test_run.png")
+
+        Pause()
+    End Sub
+
     Sub Main()
 
+        Call runTest()
         Call randomTest()
 
         '  Call helperTest()

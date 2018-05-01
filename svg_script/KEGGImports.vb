@@ -13,7 +13,7 @@ Imports SMRUCC.genomics.Data.KEGG.Metabolism
 Module KEGGImports
 
     ''' <summary>
-    ''' 
+    ''' Create auto layout generator from KEGG KGML map imports
     ''' </summary>
     ''' <param name="map">
     ''' + rectangle: KO(gene)
