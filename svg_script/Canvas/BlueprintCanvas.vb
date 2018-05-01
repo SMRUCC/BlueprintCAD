@@ -9,61 +9,66 @@ Imports Microsoft.VisualBasic.Imaging.Driver
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MIME.Markup.HTML.CSS
 
-Public Module BlueprintCanvas
+Namespace Canvas
 
-    <Extension>
-    Public Function Draw(solution As Routes, blocks As IEnumerable(Of Block), Optional bg$ = "white", Optional connectorStyle$ = Stroke.StrongHighlightStroke) As GraphicsData
-        Dim linePen As Pen = Stroke.TryParse(connectorStyle).GDIObject
-        Dim r! = 5
-        Dim plotInternal =
-            Sub(ByRef g As IGraphics, region As GraphicsRegion)
+    Public Module BlueprintCanvas
 
-                For Each anchor In solution.Anchors
-                    Call g.FillCircles(Brushes.Blue, {anchor.A}, r)
-                    Call g.FillCircles(Brushes.Blue, {anchor.B}, r)
-                Next
+        <Extension>
+        Public Function Draw(solution As Routes, blocks As IEnumerable(Of Block), Optional bg$ = "white", Optional connectorStyle$ = Stroke.StrongHighlightStroke) As GraphicsData
+            Dim linePen As Pen = Stroke.TryParse(connectorStyle).GDIObject
+            Dim r! = 5
+            Dim plotInternal =
+                Sub(ByRef g As IGraphics, region As GraphicsRegion)
 
-                For Each connection In solution.PopulateRoutes
-                    For Each line In connection.SlideWindows(2)
-                        Dim a = line(0), b = line(1)
-                        Call g.DrawLine(linePen, a, b)
+                    For Each anchor In solution.Anchors
+                        Call g.FillCircles(Brushes.Blue, {anchor.A}, r)
+                        Call g.FillCircles(Brushes.Blue, {anchor.B}, r)
                     Next
-                Next
 
-                For Each block As Block In blocks.SafeQuery
-                    Select Case block.GetType
-                        Case GetType(rect)
+                    For Each connection In solution.PopulateRoutes
+                        For Each line In connection.SlideWindows(2)
+                            Dim a = line(0), b = line(1)
+                            Call g.DrawLine(linePen, a, b)
+                        Next
+                    Next
 
-                            Call g.FillRectangle(Brushes.Black, DirectCast(block, rect).rectangle)
+                    For Each block As Block In blocks.SafeQuery
+                        Select Case block.GetType
+                            Case GetType(rect)
 
-                        Case GetType(Circle)
+                                Call g.FillRectangle(Brushes.Black, DirectCast(block, rect).rectangle)
 
-                            With DirectCast(block, Circle)
-                                Call g.DrawCircle(.center, .radius, Brushes.Black)
-                            End With
+                            Case GetType(Circle)
 
-                        Case Else
+                                With DirectCast(block, Circle)
+                                    Call g.DrawCircle(.center, .radius, Brushes.Black)
+                                End With
 
-                            Throw New NotImplementedException(block.GetType.FullName)
+                            Case Else
 
-                    End Select
-                Next
-            End Sub
+                                Throw New NotImplementedException(block.GetType.FullName)
 
-        Return g.GraphicsPlots(solution.Size, New Padding(0), bg, plotInternal)
-    End Function
+                        End Select
+                    Next
+                End Sub
 
-    <Extension>
-    Public Iterator Function PopulateRoutes(solution As Routes) As IEnumerable(Of PointF())
-        For Each path As Path In solution.Path
-            Yield path.Shrink.ToArray
-        Next
-    End Function
+            Return g.GraphicsPlots(solution.Size, New Padding(0), bg, plotInternal)
+        End Function
 
-    <Extension>
-    Public Iterator Function Anchors(solution As Routes) As IEnumerable(Of (A As PointF, B As PointF))
-        For Each path As Path In solution.Path
-            Yield (path.A, path.B)
-        Next
-    End Function
-End Module
+        <Extension>
+        Public Iterator Function PopulateRoutes(solution As Routes) As IEnumerable(Of PointF())
+            For Each path As Path In solution.Path
+                Yield path.Shrink.ToArray
+            Next
+        End Function
+
+        <Extension>
+        Public Iterator Function Anchors(solution As Routes) As IEnumerable(Of (A As PointF, B As PointF))
+            For Each path As Path In solution.Path
+                Yield (path.A, path.B)
+            Next
+        End Function
+    End Module
+End Namespace
+
+

@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing
+Imports GCModeller.CAD.Canvas
 Imports Microsoft.VisualBasic.ComponentModel.Algorithm.base
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D

@@ -3,77 +3,80 @@ Imports Microsoft.VisualBasic.ComponentModel.Collection.Generic
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
 Imports Microsoft.VisualBasic.Imaging.Math2D
 
-''' <summary>
-''' The routes blocker
-''' </summary>
-Public MustInherit Class Block : Implements INamedValue
+Namespace Canvas
 
     ''' <summary>
-    ''' The center location of this block object.
+    ''' The routes blocker
     ''' </summary>
-    ''' <returns></returns>
-    Public MustOverride ReadOnly Property Location As Point
-    ''' <summary>
-    ''' 基因编号或者代谢物的编号
-    ''' </summary>
-    ''' <returns></returns>
-    Public Property ID As String Implements IKeyedEntity(Of String).Key
-    Public MustOverride Function Intersect(a As PointF, b As PointF) As Boolean
+    Public MustInherit Class Block : Implements INamedValue
 
-End Class
+        ''' <summary>
+        ''' The center location of this block object.
+        ''' </summary>
+        ''' <returns></returns>
+        Public MustOverride ReadOnly Property Location As Point
+        ''' <summary>
+        ''' 基因编号或者代谢物的编号
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property ID As String Implements IKeyedEntity(Of String).Key
+        Public MustOverride Function Intersect(a As PointF, b As PointF) As Boolean
 
-Public Class rect : Inherits Block
+    End Class
 
-    Public Property rectangle As Rectangle
-        Get
-            Return rect
-        End Get
-        Set(value As Rectangle)
-            rect = value
-            polygon = New Polygon(rect)
-        End Set
-    End Property
+    Public Class rect : Inherits Block
 
-    Dim rect As Rectangle
-    Dim polygon As Polygon
+        Public Property rectangle As Rectangle
+            Get
+                Return rect
+            End Get
+            Set(value As Rectangle)
+                rect = value
+                polygon = New Polygon(rect)
+            End Set
+        End Property
 
-    Public Overrides ReadOnly Property Location As Point
-        Get
-            Return rectangle.Centre
-        End Get
-    End Property
+        Dim rect As Rectangle
+        Dim polygon As Polygon
 
-    Public Overrides Function Intersect(a As PointF, b As PointF) As Boolean
-        If a.InRegion(rectangle) OrElse b.InRegion(rectangle) Then
-            Return True
-        Else
-            Return New Line(a, b).IntersectionOf(polygon) <> Intersection.None
-        End If
-    End Function
-End Class
+        Public Overrides ReadOnly Property Location As Point
+            Get
+                Return rectangle.Centre
+            End Get
+        End Property
 
-Public Class Circle : Inherits Block
+        Public Overrides Function Intersect(a As PointF, b As PointF) As Boolean
+            If a.InRegion(rectangle) OrElse b.InRegion(rectangle) Then
+                Return True
+            Else
+                Return New Line(a, b).IntersectionOf(polygon) <> Intersection.None
+            End If
+        End Function
+    End Class
 
-    Public Property center As Point
-    Public Property radius As Single
+    Public Class Circle : Inherits Block
 
-    Dim polygon As Polygon
+        Public Property center As Point
+        Public Property radius As Single
 
-    Public Overrides ReadOnly Property Location As Point
-        Get
-            Return center
-        End Get
-    End Property
+        Dim polygon As Polygon
 
-    Public Overrides Function Intersect(a As PointF, b As PointF) As Boolean
-        If polygon.Points Is Nothing Then
-            polygon = New Polygon(New Rectangle(center, New Size(radius, radius)))
-        End If
+        Public Overrides ReadOnly Property Location As Point
+            Get
+                Return center
+            End Get
+        End Property
 
-        If Distance(a, center) <= radius OrElse Distance(b, center) <= radius Then
-            Return True
-        Else
-            Return New Line(a, b).IntersectionOf(polygon) <> Intersection.None
-        End If
-    End Function
-End Class
+        Public Overrides Function Intersect(a As PointF, b As PointF) As Boolean
+            If polygon.Points Is Nothing Then
+                polygon = New Polygon(New Rectangle(center, New Size(radius, radius)))
+            End If
+
+            If Distance(a, center) <= radius OrElse Distance(b, center) <= radius Then
+                Return True
+            Else
+                Return New Line(a, b).IntersectionOf(polygon) <> Intersection.None
+            End If
+        End Function
+    End Class
+End Namespace
