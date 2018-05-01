@@ -9,43 +9,25 @@ Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF
 Public Class Fitness : Implements Fitness(Of Routes)
 
     Public blocks As Block()
-    Public minNodes% = 5
 
     Public Function Calculate(chromosome As Routes) As Double Implements Fitness(Of Routes).Calculate
         ' 路径应该尽量短
         ' 路径间的交叉应该尽量少
         ' 斜线应该尽量少
-        Dim X = chromosome.X.Split(Function(v) v = -1.0R)
-        Dim Y = chromosome.Y.Split(Function(v) v = -1.0R)
 
-        Dim length = Aggregate line In X Into Sum(line.Length)
         Dim hypotenuse%
-        Dim anchors = chromosome.Anchors
+        Dim length%
         Dim pathLength As New List(Of Double)
 
         ' 使用滑窗，计算前后两个节点之间是否存在斜线，存在斜线则加1
-        For index As Integer = 0 To anchors.Length - 1
-            Dim linesX = X(index).SlideWindows(2).ToArray
-            Dim linesY = Y(index).SlideWindows(2).ToArray
-            Dim anchor = anchors(index)
+        For Each routeState As PathProperty In chromosome.Path.Select(Function(p) New PathProperty(p))
+            Dim path As PointF() = routeState.Path
+            Dim i% = 0
 
-            ' 如果首尾锚点已经发生了变动
-            ' 则这个解决方案肯定不可以被采用了
-            If assertDoubleEquals(X(index)(0), anchor.a.X) OrElse
-               assertDoubleEquals(Y(index)(0), anchor.a.Y) OrElse
-               assertDoubleEquals(X(index)(X(index).Length - 1), anchor.b.X) OrElse
-               assertDoubleEquals(Y(index)(Y(index).Length - 1), anchor.b.Y) Then
+            length += routeState.Length
 
-                hypotenuse += 10000
-                pathLength += 10000
-                Continue For
-            ElseIf linesX.Length <= minNodes Then
-                '  pathLength += 200000
-            End If
-
-            For i As Integer = 0 To linesX.Length - 1
-                Dim a As New PointF(linesX(i)(0), linesY(i)(0))
-                Dim b As New PointF(linesX(i)(1), linesY(i)(1))
+            For Each window As SlideWindow(Of PointF) In path.SlideWindows(2)
+                Dim a = window(0), b = window(1)
                 Dim angle = Math.Abs(a.CalculateAngle(b))
 
                 If a.X < 0 Then
@@ -69,7 +51,7 @@ Public Class Fitness : Implements Fitness(Of Routes)
 
                 pathLength += a.Distance(b)
 
-                If i > 1 AndAlso i < linesX.Length - 2 Then
+                If i > 1 AndAlso i <= path.Length - 2 Then
                     For Each block In blocks.SafeQuery
                         If block.Intersect(a, b) Then
                             pathLength += 2000

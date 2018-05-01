@@ -7,11 +7,20 @@ Imports Microsoft.VisualBasic.Imaging.Math2D
 ''' </summary>
 Public Class PathProperty
 
+    ''' <summary>
+    ''' 路径之中的节点数量
+    ''' </summary>
+    ''' <returns></returns>
     Public Property Length As Integer
     Public Property TotalLength As Double
     Public Property AverageLength As Double
     Public Property MaxDelta As Double
     Public Property MinDelta As Double
+
+    ''' <summary>
+    ''' 经过压缩合并之后的路径对象
+    ''' </summary>
+    ''' <returns></returns>
     Public Property Path As PointF()
 
     Sub New(path As Path)

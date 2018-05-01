@@ -53,16 +53,15 @@ Public Module BlueprintCanvas
 
     <Extension>
     Public Iterator Function PopulateRoutes(solution As Routes) As IEnumerable(Of PointF())
-        Dim routesX = solution.X.Split(Function(v) v = -1.0R)
-        Dim routesY = solution.Y.Split(Function(v) v = -1.0R)
+        For Each path As Path In solution.Path
+            Yield path.Shrink.ToArray
+        Next
+    End Function
 
-        For i As Integer = 0 To solution.Anchors.Length - 1
-            Dim X = routesX(i)
-            Dim Y = routesY(i)
-
-            Yield X _
-                .Select(Function(px, pi) New PointF(px, Y(pi))) _
-                .ToArray
+    <Extension>
+    Public Iterator Function Anchors(solution As Routes) As IEnumerable(Of (A As PointF, B As PointF))
+        For Each path As Path In solution.Path
+            Yield (path.A, path.B)
         Next
     End Function
 End Module
