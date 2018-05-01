@@ -23,6 +23,9 @@ Public Class PathProperty
     ''' <returns></returns>
     Public Property Path As PointF()
 
+    Sub New()
+    End Sub
+
     Sub New(path As Path)
         Me.Path = path.Shrink.ToArray
 

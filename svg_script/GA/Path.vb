@@ -129,7 +129,7 @@ Public Class Path
             Call X.InsertAt(point.X, index)
             Call Y.InsertAt(point.Y, index)
 
-            For i As Integer = 0 To X.Length
+            For i As Integer = 0 To X.Length - 1
                 Me.X(i) = X(i)
                 Me.Y(i) = Y(i)
             Next
