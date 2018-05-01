@@ -1,5 +1,7 @@
 ﻿Imports System.Drawing
 Imports System.Runtime.CompilerServices
+Imports GCModeller.CAD.GA
+Imports GCModeller.CAD.GA.Models
 Imports Microsoft.VisualBasic.ComponentModel.Algorithm.base
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
@@ -17,8 +19,8 @@ Public Module BlueprintCanvas
             Sub(ByRef g As IGraphics, region As GraphicsRegion)
 
                 For Each anchor In solution.Anchors
-                    Call g.FillCircles(Brushes.Blue, {anchor.a}, r)
-                    Call g.FillCircles(Brushes.Blue, {anchor.b}, r)
+                    Call g.FillCircles(Brushes.Blue, {anchor.A}, r)
+                    Call g.FillCircles(Brushes.Blue, {anchor.B}, r)
                 Next
 
                 For Each connection In solution.PopulateRoutes

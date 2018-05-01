@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports System.Runtime.CompilerServices
+Imports GCModeller.CAD.GA.Models
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MachineLearning.Darwinism.GAF.Helper

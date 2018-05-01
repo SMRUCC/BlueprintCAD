@@ -11,7 +11,10 @@ Imports Microsoft.VisualBasic.Scripting.Runtime
 
 Namespace GA
 
-    Public Structure GA_AutoLayout
+    ''' <summary>
+    ''' Path map auto layout engine
+    ''' </summary>
+    Public Structure AutoLayout
 
         Dim anchors As (a As Point, b As Point)()
         Dim blocks As Block()
@@ -46,7 +49,7 @@ Namespace GA
             Return solution
         End Function
 
-        Public Shared Operator *(layout As GA_AutoLayout, scaleFactor#) As GA_AutoLayout
+        Public Shared Operator *(layout As AutoLayout, scaleFactor#) As AutoLayout
             Dim size As Size = layout.size.Scale(scaleFactor)
             Dim shapes = layout.blocks _
                                .Select(Function(b) b.Location) _
@@ -83,7 +86,7 @@ Namespace GA
                 .Select(Function(p) p.OffSet2D(offset)) _
                 .Enlarge(scaleFactor)
 
-            Return New GA_AutoLayout With {
+            Return New AutoLayout With {
                 .blocks = blocks,
                 .size = size,
                 .anchors = shapes.SlideWindows(2) _

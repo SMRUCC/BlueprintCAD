@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports System.Runtime.CompilerServices
+Imports GCModeller.CAD.GA.Models
 Imports Microsoft.VisualBasic.ComponentModel.Algorithm.base
 Imports Microsoft.VisualBasic.Imaging.Math2D
 Imports Microsoft.VisualBasic.Language

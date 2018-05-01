@@ -23,7 +23,7 @@ Module KEGGImports
     <Extension>
     Public Function ImportsMap(map As Map, links As ReactionLink,
                                Optional scale# = 1.25,
-                               Optional stackSize As (minSize%, maxStackSize%) = Nothing) As GA_AutoLayout
+                               Optional stackSize As (minSize%, maxStackSize%) = Nothing) As GA.AutoLayout
 
         Dim size As Size = map.GetImage.Size
         ' blocks
@@ -101,11 +101,11 @@ Module KEGGImports
             Next
         Next
 
-        Return New GA_AutoLayout With {
+        Return New GA.AutoLayout With {
             .blocks = blocks,
             .size = size,
             .anchors = anchors.Values.ToArray,
-            .stackSize = stackSize Or GA_AutoLayout.defaultStackSize
+            .stackSize = stackSize Or GA.AutoLayout.defaultStackSize
         } * scale
     End Function
 End Module

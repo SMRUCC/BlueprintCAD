@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2BE7F997-54DF-48C9-8491-7BEAE67C947F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>svg_script.test</StartupObject>
-    <RootNamespace>svg_script</RootNamespace>
+    <StartupObject>GCModeller.CAD.test</StartupObject>
+    <RootNamespace>GCModeller.CAD</RootNamespace>
     <AssemblyName>svg_script</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
@@ -120,7 +120,7 @@
     <Compile Include="GA\Models\PathProperty.vb" />
     <Compile Include="GA\Models\Path.vb" />
     <Compile Include="GA\Fitness.vb" />
-    <Compile Include="GA\GA_AutoLayout.vb" />
+    <Compile Include="GA\AutoLayout.vb" />
     <Compile Include="GA\Route.vb" />
     <Compile Include="KEGGImports.vb" />
     <Compile Include="test.vb" />
