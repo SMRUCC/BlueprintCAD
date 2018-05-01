@@ -21,7 +21,10 @@ Module KEGGImports
     ''' </param>
     ''' <returns></returns>
     <Extension>
-    Public Function ImportsMap(map As Map, links As ReactionLink, Optional scale# = 1.25) As GA_AutoLayout
+    Public Function ImportsMap(map As Map, links As ReactionLink,
+                               Optional scale# = 1.25,
+                               Optional stackSize As (minSize%, maxStackSize%) = Nothing) As GA_AutoLayout
+
         Dim size As Size = map.GetImage.Size
         ' blocks
         ' 主要解决的关系是代谢物之间的关系连接的布局信息
@@ -76,7 +79,8 @@ Module KEGGImports
         Return New GA_AutoLayout With {
             .blocks = blocks,
             .size = size,
-            .anchors = anchors.Values.ToArray
+            .anchors = anchors.Values.ToArray,
+            .stackSize = stackSize Or GA_AutoLayout.defaultStackSize
         } * scale
     End Function
 End Module

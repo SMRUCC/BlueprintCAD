@@ -2,6 +2,7 @@
 Imports Microsoft.VisualBasic.ComponentModel.Algorithm.base
 Imports Microsoft.VisualBasic.Imaging.Drawing2D
 Imports Microsoft.VisualBasic.Imaging.Math2D
+Imports Microsoft.VisualBasic.Language.Default
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Scripting.Runtime
 
@@ -10,6 +11,16 @@ Public Structure GA_AutoLayout
     Dim anchors As (a As Point, b As Point)()
     Dim blocks As Block()
     Dim size As SizeF
+    Dim stackSize As (minSize%, maxStackSize%)
+
+    Shared ReadOnly defaultStackSize As New DefaultValue(Of (Integer, Integer)) With {
+        .Value = (3, 20),
+        .assert = Function(size)
+                      With DirectCast(size, (Integer, Integer))
+                          Return .Item1 = 0 AndAlso .Item2 = 0
+                      End With
+                  End Function
+    }
 
     Public Function DoAutoLayout(Optional runs% = 5000) As Routes
 
@@ -47,7 +58,8 @@ Public Structure GA_AutoLayout
             .size = size,
             .anchors = shapes.SlideWindows(2) _
                              .Select(Of (Point, Point))(Function(a, b) (a, b)) _
-                             .ToArray
+                             .ToArray,
+            .stackSize = layout.stackSize
         }
     End Operator
 End Structure
