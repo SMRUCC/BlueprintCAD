@@ -42,7 +42,13 @@ Public Structure GA_AutoLayout
         Dim size As Size = layout.size.Scale(scaleFactor)
         Dim shapes = layout.blocks _
                            .Select(Function(b) b.Location) _
-                           .Enlarge(scaleFactor)
+                           .ToArray
+        Dim offset As PointF = shapes.CentralOffset(size)
+
+        shapes = shapes _
+            .Select(Function(p) p.OffSet2D(offset)) _
+            .Enlarge(scaleFactor)
+
         Dim blocks = layout.blocks _
                            .Select(Function(b, i)
                                        Dim location As Point = shapes(i)
@@ -63,7 +69,11 @@ Public Structure GA_AutoLayout
         shapes = layout.anchors _
                        .Select(Function(a) {a.a, a.b}) _
                        .IteratesALL _
-                       .Enlarge(scaleFactor)
+                       .ToArray
+        offset = shapes.CentralOffset(size)
+        shapes = shapes _
+            .Select(Function(p) p.OffSet2D(offset)) _
+            .Enlarge(scaleFactor)
 
         Return New GA_AutoLayout With {
             .blocks = blocks,
