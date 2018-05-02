@@ -36,7 +36,7 @@ Namespace GA
         Sub New(anchors As (a As Point, b As Point)(), size As Size, Optional maxStackSize% = 10, Optional minSize% = 3)
             Me.Path = anchors _
                 .Select(Function(a)
-                            Return a.Allocate(minSize, random)
+                            Return a.Allocate(maxStackSize, random)
                         End Function) _
                 .ToArray
             Me.Size = size
