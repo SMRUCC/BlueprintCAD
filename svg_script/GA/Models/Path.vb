@@ -103,6 +103,11 @@ Namespace GA.Models
             Return Y.Take(TailIndex + 1).ToArray
         End Function
 
+        <MethodImpl(MethodImplOptions.AggressiveInlining)>
+        Public Function Copy() As Path
+            Return New Path(A, B, X.ToArray, Y.ToArray)
+        End Function
+
 #Region "Mutations"
         Sub Mutate(random As Random)
             Dim index% = random.Next(TailIndex + 1)

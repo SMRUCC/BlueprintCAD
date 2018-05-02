@@ -3,6 +3,7 @@ Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Math
+Imports Microsoft.VisualBasic.Math.LinearAlgebra
 
 Namespace GA.Models
 
@@ -68,7 +69,10 @@ Namespace GA.Models
             Dim i% = rand.Next(path.Length)
             Dim routeX As Vector = path.X.ToArray
             Dim routeY As Vector = path.Y.ToArray
-            Dim point As PointF = route(i)
+            Dim point As New PointF With {
+                .X = routeX(i),
+                .Y = routeY(i)
+            }
 
             ' 需要一起被移动的节点
             Dim j%
@@ -106,8 +110,9 @@ Namespace GA.Models
             End If
 
             ' 返回新的突变之后的路径
-
+            Return New Path(path.A, path.B, routeX, routeY)
         End Function
+
 
     End Module
 End Namespace
