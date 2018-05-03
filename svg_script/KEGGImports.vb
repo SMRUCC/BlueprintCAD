@@ -23,7 +23,7 @@ Module KEGGImports
     ''' <returns></returns>
     <Extension>
     Public Function ImportsMap(map As Map, links As ReactionLink,
-                               Optional scale# = 1.25,
+                               Optional scale# = 10,
                                Optional stackSize As (minSize%, maxStackSize%) = Nothing) As GA.AutoLayout
 
         Dim size As Size = map.GetImage.Size

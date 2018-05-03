@@ -23,7 +23,7 @@ Namespace GA
         Dim stackSize As (minSize%, maxStackSize%)
 
         Shared ReadOnly defaultStackSize As New DefaultValue(Of (Integer, Integer)) With {
-            .Value = (3, 20),
+            .Value = (5, 10),
             .assert = Function(size)
                           With DirectCast(size, (Integer, Integer))
                               Return .Item1 = 0 AndAlso .Item2 = 0
@@ -57,6 +57,7 @@ Namespace GA
                                .ToArray
             Dim offset As PointF = shapes.CentralOffset(size)
 
+            scaleFactor *= 0.85
             shapes = shapes _
                 .Select(Function(p) p.OffSet2D(offset)) _
                 .Enlarge(scaleFactor)
