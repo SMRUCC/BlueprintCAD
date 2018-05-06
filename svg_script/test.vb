@@ -71,7 +71,7 @@ Module test
     Sub directDrawTest()
         Dim links As ReactionLink = ReactionLink.FromRepository("D:\GCModeller-CAD-blueprint\KGML\br08201")
         Dim map = "D:\GCModeller-CAD-blueprint\KGML\maps\Metabolism\Carbohydrate metabolism\map00520.XML".LoadXml(Of Map)
-        Dim engine = KEGGImports.ImportsMap(map, links, 3)
+        Dim engine = KEGGImports.ImportsMap(map, links, 2)
 
         Call engine.Visualize.AsGDIImage.SaveAs("./draw.png")
 
