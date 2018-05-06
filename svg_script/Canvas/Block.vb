@@ -20,6 +20,8 @@ Namespace Canvas
         ''' </summary>
         ''' <returns></returns>
         Public Property ID As String Implements IKeyedEntity(Of String).Key
+        Public Property Name As String
+
         Public MustOverride Function Intersect(a As PointF, b As PointF) As Boolean
 
     End Class

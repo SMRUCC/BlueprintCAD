@@ -71,7 +71,8 @@ Namespace GA
                                                    Return New Circle With {
                                                        .center = location,
                                                        .ID = b.ID,
-                                                       .radius = DirectCast(b, Circle).radius * scaleFactor
+                                                       .radius = DirectCast(b, Circle).radius * scaleFactor,
+                                                       .Name = b.Name
                                                    }.AsBaseType(Of Block)
                                                Case Else
                                                    Return b

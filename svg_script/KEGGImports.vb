@@ -45,12 +45,13 @@ Module KEGGImports
                             '        }
                             '    }
                             Case "circle"
-                                Return a.IDVector _
+                                Return a.Names _
                                         .Select(Function(id)
                                                     Return New Circle With {
                                                         .center = a.Rectangle.Centre.ToPoint,
                                                         .radius = a.Rectangle.Width / 2,
-                                                        .ID = id
+                                                        .ID = id.Name,
+                                                        .Name = id.Value
                                                     }.AsBaseType(Of Block)
                                                 End Function)
                             Case Else
