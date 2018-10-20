@@ -2,7 +2,7 @@
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map00592" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <name>alpha-Linolenic acid metabolism - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map00592</URL>
@@ -34,7 +34,7 @@
     <area shape="circle" coords="461,304,4" href="/dbget-bin/www_bget?C16322">C16322 (9-Oxononanoic acid)</area>
     <area shape="circle" coords="68,230,4" href="/dbget-bin/www_bget?C16345">C16345 (Volicitin)</area>
     <area shape="circle" coords="246,118,4" href="/dbget-bin/www_bget?C00157">C00157 (Phosphatidylcholine)</area>
-    <area shape="circle" coords="137,431,4" href="/dbget-bin/www_bget?C16344">C16344 (Heptadecatrienoic acid)</area>
+    <area shape="circle" coords="137,431,4" href="/dbget-bin/www_bget?C16344">C16344 (Norlinolenic acid)</area>
     <area shape="circle" coords="439,252,4" href="/dbget-bin/www_bget?C16323">C16323 (3,6-Nonadienal)</area>
     <area shape="circle" coords="353,376,4" href="/dbget-bin/www_bget?C16324">C16324 (9,10-EOT)</area>
     <area shape="circle" coords="353,304,4" href="/dbget-bin/www_bget?C16321">C16321 (9(S)-HPOT)</area>
@@ -91,7 +91,7 @@
     <area shape="rect" coords="40,45,292,70" href="/dbget-bin/www_bget?map00592">map00592: alpha-Linolenic acid metabolism</area>
   </shapes>
   <KEGGmap>
-    iVBORw0KGgoAAAANSUhEUgAAAtcAAAM3CAYAAAD2vXxrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAHJYSURBVHhe7feLsrQsz7Dt/vu/09808yH3m5ErCdCNC+zzqKKGkIA2Ijr+v8P/o1AoFAqFQqFQKEvK//f/AAAA
+    iVBORw0KGgoAAAANSUhEUgAAAtcAAAM3CAYAAAD2vXxrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAHJcSURBVHhe7feLsrQsz7Dt/vu/09808yH3m5ErCdCNC+zzqKKGkIA2Ijr+v8P/o1AoFAqFQqFQKEvK//f/AAAA
     AHyHj2sAAABgET6uAQAAgEX4uAYAAAAW4eMaAAAAWISPawAAAGARPq4BAACARfi4BgAAABbh4xoAAABYhI9rAAAAYBE+rgEAAIBF+LgGAAAAFuHjGgAAAFiEj2sAAABgET6uAQAAgEX4uAYAAAAW4eMaAAAAWISPawAAAGARPq4BAACARfi4BgAAABbh4xoAAABYhI9r
     AAAAYBE+rgEAAIBF+LgGAAAAFuHjGgAAAFiEj2sAAABgET6uAQAAgEX4uAYAAAAW4eMaAAAAWISPawAAAGARPq4BAACARfi4BgAAABbh4xoAAABYhI9rAAAAYBE+rgEAAIBF+LgGAAAAFuHjGgAAAFiEj2sAAABgET6uAQAAgEX4uAYAAAAW4eMaAAAAWISPawAAAGAR
     Pq4BAACARfi4BgAAABbZ4uO6XSSFQvmhAgDAjtp7jI9rCoXyrAIAwI7ae2yPj2sA78fzDgDYWXuP8XEN4Bl43gEAO2vvMT6uATwDzzsAYGftPcbHNYBn4HkHAOysvcf4uAbwDDzvAICdtfcYH9cAnoHnHQCws/Ye4+MawDPwvAMAdtbeY7/1ca3jVWP6nCrf5yrbXsUi
@@ -281,11 +281,11 @@
     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
-    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
+    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
 </KEGGmap>
 </Map>

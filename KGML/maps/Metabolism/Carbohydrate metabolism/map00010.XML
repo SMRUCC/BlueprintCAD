@@ -2,7 +2,7 @@
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map00010" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <name>Glycolysis / Gluconeogenesis - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map00010</URL>
@@ -88,7 +88,7 @@
     <area shape="rect" coords="261,780,307,797" href="/dbget-bin/www_bget?K00169+K00170+K00172+K00171+K03737+1.2.7.1+R01196">K00169 (porA), K00170 (porB), K00172 (porG), K00171 (porD), K03737 (por), 1.2.7.1, R01196</area>
     <area shape="rect" coords="508,584,554,601" href="/dbget-bin/www_bget?K01837+5.4.2.11+R01516">K01837 (BPGM), 5.4.2.11, R01516</area>
     <area shape="rect" coords="508,512,554,529" href="/dbget-bin/www_bget?K01837+5.4.2.4+R01662">K01837 (BPGM), 5.4.2.4, R01662</area>
-    <area shape="rect" coords="73,907,119,924" href="/dbget-bin/www_bget?K01895+6.2.1.1+R00235">K01895 (ACSS), 6.2.1.1, R00235</area>
+    <area shape="rect" coords="73,907,119,924" href="/dbget-bin/www_bget?K01895+K01913+6.2.1.1+R00235">K01895 (ACSS), K01913 (AAE7), 6.2.1.1, R00235</area>
     <area shape="rect" coords="485,327,531,344" href="/dbget-bin/www_bget?K00918+2.7.1.146+R09084">K00918 (pfkC), 2.7.1.146, R09084</area>
     <area shape="rect" coords="258,230,304,247" href="/dbget-bin/www_bget?K08074+K00918+2.7.1.147+R09085">K08074 (ADPGK), K00918 (pfkC), 2.7.1.147, R09085</area>
     <area shape="rect" coords="258,303,304,320" href="/dbget-bin/www_bget?K08074+K00918+2.7.1.147+R09086">K08074 (ADPGK), K00918 (pfkC), 2.7.1.147, R09086</area>
@@ -109,7 +109,7 @@
     <area shape="rect" coords="177,579,330,613" href="/kegg-bin/show_pathway?map00710">map00710: Carbon fixation in photosynthetic organisms</area>
   </shapes>
   <KEGGmap>
-    iVBORw0KGgoAAAANSUhEUgAAAswAAAQBCAYAAAA+d9xKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAKNuSURBVHhe7daLkq0sjEDhef+XnjFzyN/pdIDgHVlfVWorRAQE3f+z+V+CIAiCIAiCIKrxP/8LAAAA4C/+MAMA
+    iVBORw0KGgoAAAANSUhEUgAAAswAAAQBCAYAAAA+d9xKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAKN8SURBVHhe7daLkq0sjEDhef+XnjFzyN/pdIDgHVlfVWorRAQE3f+z+V+CIAiCIAiCIKrxP/8LAAAA4C/+MAMA
     AAAN/GEGAAAAGvjDDAAAADTwhxkAAABo4A8zAAAA0MAfZgAAAKCBP8wAAABAA3+YAQAAgAb+MAMAAAAN/GEGAAAAGvjDDAAAADTwhxkAAABo4A8zAAAA0MAfZgAAAKCBP8wAAABAA3+YAQAAgAb+MAMAAAAN/GEGAAAAGvjDDAAAADTwhxkAAABo4A8zAAAA0MAfZgAA
     AKCBP8wAAABAA3+YAQAAgAb+MAMAAAAN/GEGAAAAGvjDDAAAADTwhxkAAABo4A8zAAAA0MAfZgAAAKCBP8wAAABAA3+YAQAAgAb+MAMAAAAN/GEGAAAAGvjDDAAAADTwhxkAAABo4A8zAAAA0MAfZgAAAKCBP8wAAABAA3+YAQAAgAb+MAMAAAAN/GEGAAAAGvjDDAAA
     ADRM8Ye5dJIgiI8EAAAzKd8v/jATBHFfAAAwk/L9muMPM4C5sZcBADMq3y/+MAO4HnsZADCj8v3iDzOA67GXAQAzKt8v/jADuB57GQAwo/L94g8zgOuxlwEAMyrfL/4wA7geexkAMKPy/eIPM4DrsZcBADMq36/v/GHWXM231/k6L6qPyoQv9/XC5vj6WrmK6jNlrTrl
@@ -383,11 +383,11 @@
     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
-    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
+    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
 </KEGGmap>
 </Map>

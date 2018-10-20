@@ -2,15 +2,15 @@
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map01040" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <name>Biosynthesis of unsaturated fatty acids - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map01040</URL>
   <shapes>
-    <area shape="circle" coords="794,627,4" href="/dbget-bin/www_bget?C16533">C16533 (13,16-Docosadienoic acid)</area>
-    <area shape="circle" coords="704,627,4" href="/dbget-bin/www_bget?C16645">C16645 ((13Z,16Z)-Docosadi-13,16-enoyl-CoA)</area>
-    <area shape="circle" coords="237,809,4" href="/dbget-bin/www_bget?C16645">C16645 ((13Z,16Z)-Docosadi-13,16-enoyl-CoA)</area>
-    <area shape="circle" coords="794,771,4" href="/dbget-bin/www_bget?C03242">C03242 ((8Z,11Z,14Z)-Icosatrienoic acid)</area>
+    <area shape="circle" coords="794,627,4" href="/dbget-bin/www_bget?C16533">C16533 ((13Z,16Z)-Docosadienoic acid)</area>
+    <area shape="circle" coords="704,627,4" href="/dbget-bin/www_bget?C16645">C16645 ((13Z,16Z)-Docosadienoyl-CoA)</area>
+    <area shape="circle" coords="237,809,4" href="/dbget-bin/www_bget?C16645">C16645 ((13Z,16Z)-Docosadienoyl-CoA)</area>
+    <area shape="circle" coords="794,771,4" href="/dbget-bin/www_bget?C03242">C03242 (Dihomo-gamma-linolenate)</area>
     <area shape="circle" coords="1080,842,4" href="/dbget-bin/www_bget?C01595">C01595 (Linoleate)</area>
     <area shape="circle" coords="1080,266,4" href="/dbget-bin/www_bget?C01530">C01530 (Octadecanoic acid)</area>
     <area shape="circle" coords="1080,554,4" href="/dbget-bin/www_bget?C00712">C00712 ((9Z)-Octadecenoic acid)</area>
@@ -24,9 +24,9 @@
     <area shape="circle" coords="794,699,4" href="/dbget-bin/www_bget?C06426">C06426 ((6Z,9Z,12Z)-Octadecatrienoic acid)</area>
     <area shape="circle" coords="794,483,4" href="/dbget-bin/www_bget?C06429">C06429 ((4Z,7Z,10Z,13Z,16Z,19Z)-Docosahexaenoic acid)</area>
     <area shape="circle" coords="1080,626,4" href="/dbget-bin/www_bget?C16526">C16526 (Icosenoic acid)</area>
-    <area shape="circle" coords="794,915,4" href="/dbget-bin/www_bget?C16527">C16527 (7,10,13,16-Docosatetraenoic acid)</area>
+    <area shape="circle" coords="794,915,4" href="/dbget-bin/www_bget?C16527">C16527 (Adrenic acid)</area>
     <area shape="circle" coords="794,555,4" href="/dbget-bin/www_bget?C16525">C16525 (Icosadienoic acid)</area>
-    <area shape="circle" coords="794,411,4" href="/dbget-bin/www_bget?C16513">C16513 ((7Z,10Z,13Z,16Z,19Z)-Docosa-7,10,13,16,19-pentaenoic acid)</area>
+    <area shape="circle" coords="794,411,4" href="/dbget-bin/www_bget?C16513">C16513 ((7Z,10Z,13Z,16Z,19Z)-Docosapentaenoic acid)</area>
     <area shape="circle" coords="794,339,4" href="/dbget-bin/www_bget?C06428">C06428 ((5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid)</area>
     <area shape="circle" coords="794,267,4" href="/dbget-bin/www_bget?C16522">C16522 (Icosatrienoic acid)</area>
     <area shape="circle" coords="794,195,4" href="/dbget-bin/www_bget?C06427">C06427 ((9Z,12Z,15Z)-Octadecatrienoic acid)</area>
@@ -139,7 +139,7 @@
     <area shape="poly" coords="91,454,91,466,93,466,93,454" href="/dbget-bin/www_bget?K00059+K10251+1.1.1.100+1.1.1.330">K00059 (fabG), K10251 (HSD17B12), 1.1.1.100, 1.1.1.330</area>
     <area shape="poly" coords="91,467,91,479,93,479,93,467" href="/dbget-bin/www_bget?K10703+4.2.1.134">K10703 (PHS1), 4.2.1.134</area>
     <area shape="poly" coords="91,480,91,492,93,492,93,480" href="/dbget-bin/www_bget?K07753+K10258+1.3.1.38+1.3.1.93">K07753 (PECR), K10258 (TER), 1.3.1.38, 1.3.1.93</area>
-    <area shape="poly" coords="100,268,156,268,156,270,100,270" href="/dbget-bin/www_bget?K00507+K03921+K03922+1.14.19.1+1.14.19.2+R02222+R03370">K00507 (SCD), K03921 (FAB2), K03922 (desA2), 1.14.19.1, 1.14.19.2, R02222, R03370</area>
+    <area shape="poly" coords="100,268,156,268,156,270,100,270" href="/dbget-bin/www_bget?K00507+K03921+K03922+K22769+K22770+1.14.19.1+1.14.19.2+R02222+R03370+R12048">K00507 (SCD), K03921 (FAB2), K03922 (desA2), K22769 (desA3), K22770 (K22770), 1.14.19.1, 1.14.19.2, R02222, R03370, R12048</area>
     <area shape="poly" coords="172,268,228,268,228,270,172,270" href="/dbget-bin/www_bget?K10256+1.14.19.6+R11043">K10256 (FAD2), 1.14.19.6, R11043</area>
     <area shape="poly" coords="316,268,372,268,372,270,316,270" href="/dbget-bin/www_bget?K10226+1.14.19.3+R07933">K10226 (FADS2), 1.14.19.3, R07933</area>
     <area shape="poly" coords="460,502,516,502,516,504,460,504" href="/dbget-bin/www_bget?K10226+1.14.19.3+R11110">K10226 (FADS2), 1.14.19.3, R11110</area>
@@ -187,12 +187,12 @@
     <area shape="poly" coords="316,730,372,730,372,732,316,732" href="/dbget-bin/www_bget?K10224+1.14.19.44+R11059">K10224 (FADS1), 1.14.19.44, R11059</area>
     <area shape="poly" coords="244,652,300,652,300,654,244,654" href="/dbget-bin/www_bget?K10226+1.14.19.3+R03814">K10226 (FADS2), 1.14.19.3, R03814</area>
     <area shape="poly" coords="172,652,228,652,228,654,172,654" href="/dbget-bin/www_bget?K10256+1.14.19.6+R11043">K10256 (FAD2), 1.14.19.6, R11043</area>
-    <area shape="poly" coords="100,652,156,652,156,654,100,654" href="/dbget-bin/www_bget?K00507+K03921+K03922+1.14.19.1+1.14.19.2+R02222+R03370">K00507 (SCD), K03921 (FAB2), K03922 (desA2), 1.14.19.1, 1.14.19.2, R02222, R03370</area>
+    <area shape="poly" coords="100,652,156,652,156,654,100,654" href="/dbget-bin/www_bget?K00507+K03921+K03922+K22769+K22770+1.14.19.1+1.14.19.2+R02222+R03370+R12048">K00507 (SCD), K03921 (FAB2), K03922 (desA2), K22769 (desA3), K22770 (K22770), 1.14.19.1, 1.14.19.2, R02222, R03370, R12048</area>
     <area shape="poly" coords="387,346,443,346,443,348,387,348" href="/dbget-bin/www_bget?K10224+1.14.19.44+R11060">K10224 (FADS1), 1.14.19.44, R11060</area>
     <area shape="rect" coords="40,45,388,70" href="/dbget-bin/www_bget?map01040">map01040: Biosynthesis of unsaturated fatty acids</area>
   </shapes>
   <KEGGmap>
-    iVBORw0KGgoAAAANSUhEUgAABKUAAAPWCAYAAAAxrCuqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAJ+0SURBVHhe7NiNlqMs0yjQc/83/Z3wDvU0TfNnokaTvddijUCBWE0c9f89/J+iKIqiKIqiKIqiKIqinFz+3/8B
+    iVBORw0KGgoAAAANSUhEUgAABKUAAAPWCAYAAAAxrCuqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAJ+3SURBVHhe7NiNlqMs0yjQc/83/Z3wDvU0TfNnokaTvddijUCBWE0c9f89/J+iKIqiKIqiKIqiKIqinFz+3/8B
     AAAAwFl8lAIAAADgdD5KAQAAAHA6H6UAAAAAOJ2PUgAAAACczkcpAAAAAE7noxQAAAAAp/NRCgAAAIDT+SgFAAAAwOl8lAIAAADgdD5KAQAAAHA6H6UAAAAAOJ2PUgAAAACczkcpAAAAAE7noxQAAAAAp/NRCgAAAIDT+SgFAAAAwOl8lAIAAADgdD5KAQAAAHA6H6UA
     AAAAOJ2PUgAAAACczkcpAAAAAE7noxQAAAAAp/NRCgAAAIDT+SgFAAAAwOl8lAIAAADgdD5KAQAAAHA6H6UAAAAAOJ2PUgAAAACczkcpAAAAAE7noxQAAAAAp/NRCgAAAIDT+SgFAAAAwOl8lAIAAADgdD5KAQAAAHA6H6UAAAAAOJ2PUgAAAACczkcpAAAAAE7noxQA
     AAAAp/NRCgAAAIDT+SgFAAAAwOl8lAIAAADgdD5KAQAAAHA6H6UAAAAAON0tPkrlRSqKoignFQAAgKPl9w8fpRRFUZSfAgAAcLT8/nGPj1IAHMv9FgAAOEt+//BRCgD3WwAA4Dz5/cNHKQDcbwEAgPPk9w8fpQBwvwUAAM6T3z98lALA/RYAADhPfv/wUQoA91sAAOA8
@@ -458,13 +458,13 @@
     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
-    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
+    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
 </KEGGmap>
 </Map>

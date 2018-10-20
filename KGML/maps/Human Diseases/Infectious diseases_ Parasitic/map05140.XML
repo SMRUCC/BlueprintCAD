@@ -2,7 +2,7 @@
 <Map xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="map05140" xmlns="http://GCModeller.org/core/KEGG/KGML_map.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.WebServices.Map
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.5451, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.25550, Culture=neutral, PublicKeyToken=null
   -->
   <name>Leishmaniasis - Reference pathway</name>
   <URL>http://www.genome.jp/kegg-bin/show_pathway?map05140</URL>
@@ -42,7 +42,7 @@
     <area shape="rect" coords="353,709,399,726" href="/dbget-bin/www_bget?K05697">K05697 (PTPN6)</area>
     <area shape="rect" coords="353,673,399,690" href="/dbget-bin/www_bget?lma:LmjF17.0080+lif:LinJ17.0090+lbz:LbrM17_V2.0090">LmjF17.0080, LinJ17.0090, LbrM17_V2.0090</area>
     <area shape="rect" coords="917,762,963,779" href="/dbget-bin/www_bget?K05406+K05425">K05406 (IL12A), K05425 (IL12B)</area>
-    <area shape="rect" coords="574,668,620,685" href="/dbget-bin/www_bget?K04371">K04371 (MAPK1_3)</area>
+    <area shape="rect" coords="574,668,620,685" href="/dbget-bin/www_bget?K04371">K04371 (ERK)</area>
     <area shape="rect" coords="778,657,824,674" href="/dbget-bin/www_bget?K04375">K04375 (ELK1)</area>
     <area shape="rect" coords="917,659,963,676" href="/dbget-bin/www_bget?K04379">K04379 (FOS)</area>
     <area shape="rect" coords="399,644,445,661" href="/dbget-bin/www_bget?K13537">K13537 (CPB)</area>
@@ -65,7 +65,7 @@
     <area shape="rect" coords="150,358,229,392" href="/kegg-bin/show_pathway?map04610">map04610: Complement and coagulation cascades</area>
     <area shape="rect" coords="309,522,402,556" href="/kegg-bin/show_pathway?map04020">map04020: Calcium signaling pathway</area>
     <area shape="rect" coords="323,397,413,431" href="/kegg-bin/show_pathway?map04666">map04666: Fc gamma R-mediated phagocytosis</area>
-    <area shape="rect" coords="376,823,482,857" href="/kegg-bin/show_pathway?map04630">map04630: Jak-STAT signaling pathway</area>
+    <area shape="rect" coords="376,823,482,857" href="/kegg-bin/show_pathway?map04630">map04630: JAK-STAT signaling pathway</area>
     <area shape="rect" coords="552,696,647,730" href="/kegg-bin/show_pathway?map04010">map04010: MAPK signaling pathway</area>
     <area shape="rect" coords="649,88,752,122" href="/kegg-bin/show_pathway?map04120">map04120: Ubiquitin mediated proteolysis</area>
     <area shape="rect" coords="426,170,529,204" href="/kegg-bin/show_pathway?map04620">map04620: Toll-like receptor signaling pathway</area>
@@ -74,7 +74,7 @@
     <area shape="rect" coords="40,45,174,70" href="/dbget-bin/www_bget?map05140">map05140: Leishmaniasis</area>
   </shapes>
   <KEGGmap>
-    iVBORw0KGgoAAAANSUhEUgAABOIAAAPPCAYAAABpE2QgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAOH6SURBVHhe7N2L0q0orLDrfenrntYF/ntkNenOzAwKChH0fapSn3IQD4gMqmv2//fz/wiCIAiCIAiCIAiCIAiC
+    iVBORw0KGgoAAAANSUhEUgAABOIAAAPPCAYAAABpE2QgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAOHhSURBVHhe7N2L0q0orLDrfenrntYF/ntkNenOzAwKChH0fapSn3IQD4gMqmv2//fz/wiCIAiCIAiCIAiCIAiC
     mB7/3/8DAAAAAAAAMA8LcQAAAAAAAEACFuIAAAAAAACABCzEAQAAAAAAAAlYiAMAAAAAAAASsBAHAAAAAAAAJGAhDgAAAAAAAEjAQhwAAAAAAACQgIU4AAAAAAAAIAELcQAAAAAAAEACFuIAAAAAAACABCzEAQAAAAAAAAlYiAMAAAAAAAASsBAHAAAAAAAAJGAhDgAA
     AAAAAEjAQhwAAAAAAACQgIU4AAAAAAAAIAELcQAAAAAAAEACFuIAAAAAAACABCzEAQAAAAAAAAlYiAMAAAAAAAASsBAHAAAAAAAAJGAhDgAAAAAAAEjAQhwAAAAAAACQgIU4AAAAAAAAIAELcQAAAAAAAEACFuIAAAAAAACABCzEAQAAAAAAAAlYiAMAAAAAAAASsBAH
     AAAAAAAAJGAhDgAAAAAAAEjAQhwAAAAAAACQgIU4AAAAAAAAIAELcQAAAAAAAEACFuIAAAAAAACABCzEAQAAAAAAAAlYiAMAAAAAAAASsBAHAAAAAAAAJGAhDgAAAAAAAEjAQhwAAAAAAACQgIU4AAAAAAAAIAELcQAAAAAAAEACFuIAAAAAAACABCzEAQAAAAAAAAm2
@@ -454,12 +454,12 @@
     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
-    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
+    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
 </KEGGmap>
 </Map>
