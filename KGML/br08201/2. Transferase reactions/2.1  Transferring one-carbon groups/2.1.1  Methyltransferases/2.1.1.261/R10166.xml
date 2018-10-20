@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R10166</ID>
   <commonNames>S-adenosyl-L-methionine:4-(3-methylbut-2-enyl)-L-tryptophan N-methyltransferase</commonNames>
@@ -12,9 +12,14 @@
     <string>2.1.1.261</string>
   </enzymes>
   <comment />
-  <pathway />
+  <pathway>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K18884" value="2.1.1.261">4-dimethylallyltryptophan N-methyltransferase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00003">C00019_C00021</data>
     <data name="RC00190">C04290_C20410</data>

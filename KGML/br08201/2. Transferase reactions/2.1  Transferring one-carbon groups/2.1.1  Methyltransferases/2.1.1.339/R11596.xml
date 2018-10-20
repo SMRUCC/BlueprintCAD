@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11596</ID>
   <commonNames>S-adenosyl-L-methionine:xanthohumol 4'-O-methyltransferase</commonNames>
@@ -19,5 +19,8 @@
   <orthology>
     <KO:terms name="K21582" value="2.1.1.339">xanthohumol 4'-O-methyltransferase</KO:terms>
   </orthology>
-  <class />
+  <class>
+    <data name="RC00003">C00019_C00021</data>
+    <data name="RC00392">C16417_C21492</data>
+  </class>
 </reaction>

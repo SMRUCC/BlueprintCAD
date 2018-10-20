@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11763</ID>
   <commonNames>6-(1'-hydroxy-2'-oxopropyl)-tetrahydropterin:NADP+ oxidoreductase</commonNames>
@@ -15,11 +15,14 @@
   <comment>a part of three-step reaction (see R08208, R01813+R11762+R11763)</comment>
   <pathway>
     <data name="rn00790">Folate biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
   </pathway>
   <module />
   <orthology>
     <KO:terms name="K00072" value="1.1.1.153">sepiapterin reductase</KO:terms>
     <KO:terms name="K04119" value="1.1.1.51">aldo-keto reductase family 1 member C3</KO:terms>
   </orthology>
-  <class />
+  <class>
+    <data name="RC03491">C03684_C21640</data>
+  </class>
 </reaction>

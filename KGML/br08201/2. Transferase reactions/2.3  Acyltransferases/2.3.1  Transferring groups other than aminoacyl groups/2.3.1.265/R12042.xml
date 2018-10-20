@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R12042</ID>
+  <commonNames>acyl-CoA:phosphatidyl-myo-inositol-dimannoside acyltransferase</commonNames>
+  <def>Acyl-CoA + Phosphatidyl-myo-inositol dimannoside &lt;=&gt; CoA + Triacylated phosphatidyl-myo-inositol dimannoside</def>
+  <equation>C00040 + G13102 &lt;=&gt; C00010 + G13108</equation>
+  <enzymes>
+    <string>2.3.1.265</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00571">Lipoarabinomannan (LAM) biosynthesis</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K22311" value="2.3.1.265">phosphatidylinositol dimannoside acyltransferase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

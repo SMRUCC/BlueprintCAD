@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11581</ID>
   <commonNames>GTP:molybdenum cofactor guanylyltransferase</commonNames>
@@ -21,5 +21,7 @@
     <KO:terms name="K03752" value="2.7.7.77">molybdenum cofactor guanylyltransferase</KO:terms>
     <KO:terms name="K13818" value="2.7.7.77">molybdopterin-guanine dinucleotide biosynthesis protein</KO:terms>
   </orthology>
-  <class />
+  <class>
+    <data name="RC00002">C18237_C19871</data>
+  </class>
 </reaction>

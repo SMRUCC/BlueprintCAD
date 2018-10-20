@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R00982</ID>
   <commonNames>Anthranilate:CoA ligase (AMP-forming)</commonNames>
@@ -15,12 +15,16 @@
   <pathway>
     <data name="rn00405">Phenazine biosynthesis</data>
     <data name="rn00627">Aminobenzoate degradation</data>
+    <data name="rn00999">Biosynthesis of secondary metabolites - unclassified</data>
     <data name="rn01120">Microbial metabolism in diverse environments</data>
     <data name="rn01130">Biosynthesis of antibiotics</data>
   </pathway>
-  <module />
+  <module>
+    <data name="M00848">Aurachin biosynthesis, anthranilate =&gt; aurachin A</data>
+  </module>
   <orthology>
     <KO:terms name="K08295" value="6.2.1.32">2-aminobenzoate-CoA ligase</KO:terms>
+    <KO:terms name="K09460" value="6.2.1.32">anthranilate-CoA ligase</KO:terms>
     <KO:terms name="K18000" value="6.2.1.32">anthranilate-CoA ligase</KO:terms>
   </orthology>
   <class>

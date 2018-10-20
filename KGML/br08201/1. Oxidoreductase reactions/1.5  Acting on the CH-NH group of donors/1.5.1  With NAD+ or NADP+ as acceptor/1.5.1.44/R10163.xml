@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R10163</ID>
   <commonNames>festuclavine:NAD+ oxidoreductase</commonNames>
@@ -12,9 +12,14 @@
     <string>1.5.1.44</string>
   </enzymes>
   <comment />
-  <pathway />
+  <pathway>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K19183" value="1.5.1.44">festuclavine dehydrogenase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00001">C00003_C00004</data>
     <data name="RC03068">C20408_C20409</data>

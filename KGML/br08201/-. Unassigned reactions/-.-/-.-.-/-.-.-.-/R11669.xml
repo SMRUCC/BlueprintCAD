@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11669</ID>
   <commonNames>4-hydroxy-2,2'-bipyrrole-5-methanal:NAD+ oxidoreductase</commonNames>
@@ -19,5 +19,7 @@
     <data name="M00838">Undecylprodigiosin biosynthesis, L-proline =&gt; undecylprodigiosin</data>
   </module>
   <orthology />
-  <class />
+  <class>
+    <data name="RC00116">C21568_C21569</data>
+  </class>
 </reaction>

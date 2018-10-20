@@ -2,10 +2,10 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11798</ID>
-  <commonNames>S-adenosyl-L-methionine:ornithine lipid N-methyltransferase</commonNames>
+  <commonNames>S-adenosyl-L-methionine:ornithine-lipid N-methyltransferase</commonNames>
   <def>S-Adenosyl-L-methionine + Ornithine lipid &lt;=&gt; S-Adenosyl-L-homocysteine + N-Methylornithine lipid</def>
   <equation>C00019 + C21672 &lt;=&gt; C00021 + C21673</equation>
   <enzymes>
@@ -14,8 +14,11 @@
   <comment>first step of three-step reaction (see R11797, R11798+R11799+R11800)</comment>
   <pathway />
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K22309" value="2.1.1.344">ornithine lipid N-methyltransferase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00003">C00019_C00021</data>
+    <data name="RC00060">C21672_C21673</data>
   </class>
 </reaction>

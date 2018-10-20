@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R07541</ID>
+  <commonNames>gamma-carotene:acceptor oxidoreductase/methyltranferase (phi-ring forming)</commonNames>
+  <def>gamma-Carotene + 2 Acceptor &lt;=&gt; Chlorobactene + 2 Reduced acceptor</def>
+  <equation>C05435 + 2 C00028 &lt;=&gt; C15908 + 2 C00030</equation>
+  <enzymes>
+    <string>1.3.99.39</string>
+  </enzymes>
+  <comment>multi-step reaction</comment>
+  <pathway>
+    <data name="rn00906">Carotenoid biosynthesis</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K09879" value="1.3.99.39">carotenoid phi-ring synthase / carotenoid chi-ring synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC01965">C05435_C15908</data>
+  </class>
+</reaction>

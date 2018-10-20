@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11740</ID>
   <def>(S)-Norlaudanine + S-Adenosyl-L-methionine &lt;=&gt; (S)-Tetrahydropapaverine + S-Adenosyl-L-homocysteine</def>
@@ -15,5 +15,7 @@
   </pathway>
   <module />
   <orthology />
-  <class />
+  <class>
+    <data name="RC00392">C21630_C21631</data>
+  </class>
 </reaction>

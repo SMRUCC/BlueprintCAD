@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R12026</ID>
+  <commonNames>NAD+:glycine ADP-D-ribosyltransferase (sulfide-adding)</commonNames>
+  <def>NAD+ + Glycine + Hydrogen sulfide &lt;=&gt; Nicotinamide + ADP-5-ethyl-4-methylthiazole-2-carboxylate + 3 H2O</def>
+  <equation>C00003 + C00037 + C00283 &lt;=&gt; C00153 + C20784 + 3 C00001</equation>
+  <enzymes>
+    <string>2.4.2.59</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00730">Thiamine metabolism</data>
+    <data name="rn01100">Metabolic pathways</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K22699" value="2.4.2.59">sulfide-dependent adenosine diphosphate thiazole synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00033">C00003_C00153</data>
+    <data name="RC03253">C00003_C20784</data>
+    <data name="RC03254">C00037_C20784</data>
+  </class>
+</reaction>

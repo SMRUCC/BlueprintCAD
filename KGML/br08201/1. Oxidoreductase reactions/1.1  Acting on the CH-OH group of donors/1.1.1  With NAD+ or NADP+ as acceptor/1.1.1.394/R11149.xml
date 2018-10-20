@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11149</ID>
   <commonNames>aurachin B:NAD+ 3-oxidoreductase</commonNames>
@@ -12,9 +12,16 @@
     <string>1.1.1.394</string>
   </enzymes>
   <comment>two-step reaction (see R11148+R11147)</comment>
-  <pathway />
-  <module />
-  <orthology />
+  <pathway>
+    <data name="rn00999">Biosynthesis of secondary metabolites - unclassified</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00848">Aurachin biosynthesis, anthranilate =&gt; aurachin A</data>
+  </module>
+  <orthology>
+    <KO:terms name="K21271" value="1.1.1.394">aurachin B dehydrogenase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00001">C00003_C00004</data>
     <data name="RC03371">C21140_C21141</data>

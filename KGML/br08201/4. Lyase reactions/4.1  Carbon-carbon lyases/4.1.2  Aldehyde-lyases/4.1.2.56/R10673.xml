@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R10673</ID>
   <commonNames>2-amino-4,5-dihydroxy-6-oxo-7-(phosphooxy)heptanoate L-aspartate-4-semialdehyde-lyase (glycerone-phosphate-forming)</commonNames>
@@ -12,9 +12,13 @@
     <string>4.1.2.56</string>
   </enzymes>
   <comment />
-  <pathway />
+  <pathway>
+    <data name="rn00999">Biosynthesis of secondary metabolites - unclassified</data>
+  </pathway>
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K18287" value="4.1.2.56">2-amino-4,5-dihydroxy-6-oxo-7-(phosphooxy)heptanoate synthase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00603">C00111_C20644</data>
     <data name="RC00721">C00441_C20644</data>

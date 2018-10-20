@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11687</ID>
   <def>(S)-cis-N-Methylcanadine &lt;=&gt; (S)-1-Hydroxy-N-methylcanadine</def>
@@ -11,8 +11,11 @@
   <comment>N-methylcanadine 1-hydroxylase incomplete reaction</comment>
   <pathway>
     <data name="rn00950">Isoquinoline alkaloid biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
   </pathway>
   <module />
   <orthology />
-  <class />
+  <class>
+    <data name="RC00236">C02915_C21586</data>
+  </class>
 </reaction>

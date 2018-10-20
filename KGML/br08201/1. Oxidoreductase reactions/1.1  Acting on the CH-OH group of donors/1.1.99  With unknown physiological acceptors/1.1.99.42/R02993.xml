@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02993</ID>
+  <def>4-Pyridoxate + Acceptor &lt;=&gt; 2-Methyl-3-hydroxy-5-formylpyridine-4-carboxylate + Reduced acceptor</def>
+  <equation>C00847 + C00028 &lt;=&gt; C06050 + C00030</equation>
+  <enzymes>
+    <string>1.1.99.42</string>
+  </enzymes>
+  <comment>4-pyridoxate dehydrogenase</comment>
+  <pathway>
+    <data name="rn00750">Vitamin B6 metabolism</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K18611" value="1.1.99.42">4-pyridoxate dehydrogenase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00116">C00847_C06050</data>
+  </class>
+</reaction>

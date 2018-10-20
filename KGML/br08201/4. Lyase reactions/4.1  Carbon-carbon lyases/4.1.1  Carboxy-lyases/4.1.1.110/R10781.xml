@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R10781</ID>
+  <commonNames>(R)-3,5-bisphosphomevalonate carboxy-lyase (isopentenyl-phosphate-forming)</commonNames>
+  <def>(R)-Mevalonate 3,5-bisphosphate &lt;=&gt; Isopentenyl phosphate + CO2 + Orthophosphate</def>
+  <equation>C20848 &lt;=&gt; C20345 + C00011 + C00009</equation>
+  <enzymes>
+    <string>4.1.1.110</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00900">Terpenoid backbone biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+    <data name="rn01130">Biosynthesis of antibiotics</data>
+  </pathway>
+  <module>
+    <data name="M00849">C5 isoprenoid biosynthesis, mevalonate pathway, archaea</data>
+  </module>
+  <orthology>
+    <KO:terms name="K22813" value="4.1.1.110">bisphosphomevalonate decarboxylase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03276">C20345_C20848</data>
+  </class>
+</reaction>

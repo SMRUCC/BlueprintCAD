@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11690</ID>
   <def>(13S,14R)-1-Hydroxy-13-O-acetyl-N-methylcanadine &lt;=&gt; (13S,14R)-1,8-Dihydroxy-13-O-acetyl-N-methylcanadine</def>
@@ -11,8 +11,11 @@
   <comment>1-hydroxy-13-O-acetyl-N-methylcanadine 8-hydroxylase incomplete reaction</comment>
   <pathway>
     <data name="rn00950">Isoquinoline alkaloid biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
   </pathway>
   <module />
   <orthology />
-  <class />
+  <class>
+    <data name="RC03497">C21588_C21589</data>
+  </class>
 </reaction>

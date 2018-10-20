@@ -2,10 +2,10 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R03247</ID>
-  <commonNames>Gallate carboxy-lyase</commonNames>
+  <commonNames>gallate carboxy-lyase</commonNames>
   <def>Gallate &lt;=&gt; 1,2,3-Trihydroxybenzene + CO2</def>
   <equation>C01424 &lt;=&gt; C01108 + C00011</equation>
   <enzymes>
@@ -17,7 +17,9 @@
     <data name="rn01120">Microbial metabolism in diverse environments</data>
   </pathway>
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K22958" value="4.1.1.59">gallate decarboxylase subunit C</KO:terms>
+  </orthology>
   <class>
     <data name="RC00391">C01108_C01424</data>
   </class>

@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11067</ID>
   <def>(3E)-3-[(1R,5R,6S)-5-Hydroxy-7-oxabicyclo[4.1.0]heptan-2-ylidene]-2-oxopropanoate + NADH + H+ &lt;=&gt; 3-[(1R,2S,5R,6S)-5-Hydroxy-7-oxabicyclo[4.1.0]heptan-2-yl]-2-oxopropanoate + NAD+</def>
@@ -10,6 +10,7 @@
   <enzymes />
   <comment />
   <pathway>
+    <data name="rn00999">Biosynthesis of secondary metabolites - unclassified</data>
     <data name="rn01130">Biosynthesis of antibiotics</data>
   </pathway>
   <module>

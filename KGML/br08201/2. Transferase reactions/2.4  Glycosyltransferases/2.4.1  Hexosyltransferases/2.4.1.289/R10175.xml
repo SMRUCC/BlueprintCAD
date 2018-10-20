@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R10175</ID>
   <commonNames>dTDP-6-deoxy-beta-L-mannose:N-acetyl-alpha-D-glucosaminyl-diphospho-trans,octacis-decaprenol 3-alpha-L-rhamnosyltransferase</commonNames>
@@ -14,7 +14,9 @@
   <comment />
   <pathway />
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K16870" value="2.4.1.289">N-acetylglucosaminyl-diphospho-decaprenol L-rhamnosyltransferase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00005">C00363_C03319</data>
     <data name="RC00049">C20390_C20416</data>

@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R02111</ID>
   <commonNames>1,4-alpha-D-Glucan:orthophosphate alpha-D-glucosyltransferase</commonNames>
@@ -11,19 +11,23 @@
   <enzymes>
     <string>2.4.1.1</string>
   </enzymes>
-  <comment>Any one of debranching enzymes ([KO:K01196 K02438 K01200]) is required.</comment>
+  <comment>Any one of debranching enzymes ([KO:K01196 K02438 K01200 K00705 K22451]) is required.</comment>
   <pathway>
     <data name="rn00500">Starch and sucrose metabolism</data>
     <data name="rn01100">Metabolic pathways</data>
     <data name="rn01110">Biosynthesis of secondary metabolites</data>
   </pathway>
-  <module />
+  <module>
+    <data name="M00855">Glycogen degradation, glycogen =&gt; glucose-6P</data>
+  </module>
   <orthology>
     <KO:terms name="K00688" value="2.4.1.1">glycogen phosphorylase</KO:terms>
+    <KO:terms name="K00705" value="2.4.1.25">4-alpha-glucanotransferase</KO:terms>
     <KO:terms name="K01196" value="2.4.1.25">glycogen debranching enzyme</KO:terms>
     <KO:terms name="K01200" value="3.2.1.41">pullulanase</KO:terms>
     <KO:terms name="K02438" value="3.2.1.196">glycogen debranching enzyme</KO:terms>
     <KO:terms name="K16153" value="2.4.1.1">glycogen phosphorylase/synthase</KO:terms>
+    <KO:terms name="K22451" value="2.4.1.25">4-alpha-glucanotransferase</KO:terms>
   </orthology>
   <class />
 </reaction>

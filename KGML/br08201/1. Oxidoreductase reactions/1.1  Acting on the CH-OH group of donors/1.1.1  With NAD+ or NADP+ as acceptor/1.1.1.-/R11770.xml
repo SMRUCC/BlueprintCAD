@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11770</ID>
   <def>2,4,6/3,5-Pentahydroxycyclohexanone + NAD+ &lt;=&gt; 3-Dehydro-scyllo-inosose + NADH + H+</def>
@@ -18,5 +18,7 @@
   <orthology>
     <KO:terms name="K22231" value="1.1.1">scyllo-inosose 3-dehydrogenase</KO:terms>
   </orthology>
-  <class />
+  <class>
+    <data name="RC00182">C00691_C21643</data>
+  </class>
 </reaction>

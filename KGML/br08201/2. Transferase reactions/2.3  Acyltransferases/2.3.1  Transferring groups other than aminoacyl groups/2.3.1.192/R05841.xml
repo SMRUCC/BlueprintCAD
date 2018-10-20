@@ -2,14 +2,13 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R05841</ID>
   <commonNames>phenylacetyl-CoA:glycine N-phenylacetyltransferase</commonNames>
   <def>Phenylacetyl-CoA + Glycine &lt;=&gt; Phenylacetylglycine + CoA</def>
   <equation>C00582 + C00037 &lt;=&gt; C05598 + C00010</equation>
   <enzymes>
-    <string>2.3.1.13</string>
     <string>2.3.1.192</string>
   </enzymes>
   <comment />
@@ -18,7 +17,6 @@
   </pathway>
   <module />
   <orthology>
-    <KO:terms name="K00628" value="2.3.1.13">glycine N-acyltransferase / glycine N-benzoyltransferase</KO:terms>
     <KO:terms name="K15517" value="2.3.1.192">glycine N-phenylacetyltransferase</KO:terms>
   </orthology>
   <class>

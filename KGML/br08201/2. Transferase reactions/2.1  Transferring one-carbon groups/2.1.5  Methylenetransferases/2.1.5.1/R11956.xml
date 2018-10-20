@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.39206, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11956</ID>
   <commonNames>(+)-demethylpiperitol:tetrahydrofolate N-methylenetransferase</commonNames>
@@ -14,8 +14,11 @@
   <comment />
   <pathway />
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K22578" value="2.1.5.1">sesamin methylene transferase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00022">C00101_C00143</data>
+    <data name="RC03518">C21801_C21802</data>
   </class>
 </reaction>

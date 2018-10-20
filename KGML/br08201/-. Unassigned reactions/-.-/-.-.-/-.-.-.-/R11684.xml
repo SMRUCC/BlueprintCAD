@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11684</ID>
   <def>Protoemetine + Dopamine &lt;=&gt; 7'-O-Dmethylcephaeline + H2O</def>
@@ -15,5 +15,8 @@
   </pathway>
   <module />
   <orthology />
-  <class />
+  <class>
+    <data name="RC01071">C03758_C21584</data>
+    <data name="RC01072">C11816_C21584</data>
+  </class>
 </reaction>

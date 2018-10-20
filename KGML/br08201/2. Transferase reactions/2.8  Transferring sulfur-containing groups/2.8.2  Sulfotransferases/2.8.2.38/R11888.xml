@@ -2,10 +2,10 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11888</ID>
-  <commonNames>3'-phosphoadenylyl-sulfate:8-methylthiooctyl desulfoglucosinolate sulfotransferase</commonNames>
+  <commonNames>3'-phosphoadenylyl-sulfate:8-methylthiooctyl-desulfoglucosinolate sulfotransferase</commonNames>
   <def>3'-Phosphoadenylyl sulfate + 8-Methylthiooctyl-desulfoglucosinolate &lt;=&gt; Adenosine 3',5'-bisphosphate + 8-Methylthiooctyl glucosinolate</def>
   <equation>C00053 + C21746 &lt;=&gt; C00054 + C17254</equation>
   <enzymes>
@@ -21,5 +21,6 @@
   </orthology>
   <class>
     <data name="RC00007">C00053_C00054</data>
+    <data name="RC00883">C17254_C21746</data>
   </class>
 </reaction>

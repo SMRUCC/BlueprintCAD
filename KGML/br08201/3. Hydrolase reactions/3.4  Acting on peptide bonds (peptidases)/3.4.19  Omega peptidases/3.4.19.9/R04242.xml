@@ -2,12 +2,12 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R04242</ID>
   <commonNames>tetrahydropteroyl-poly-gamma-glutamate gamma-glutamylhydrolase</commonNames>
-  <def>THF-polyglutamate + n H2O &lt;=&gt; Tetrahydrofolate + n L-Glutamate</def>
-  <equation>C03541 + n C00001 &lt;=&gt; C00101 + n C00025</equation>
+  <def>THF-polyglutamate + (n-1) H2O &lt;=&gt; Tetrahydrofolate + (n-1) L-Glutamate</def>
+  <equation>C03541 + (n-1) C00001 &lt;=&gt; C00101 + (n-1) C00025</equation>
   <enzymes>
     <string>3.4.19.9</string>
   </enzymes>

@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11851</ID>
   <commonNames>ent-8alpha-hydroxylabd-13-en-15-yl-diphosphate diphosphate-lyase (cyclizing, ent-13-epi-manoyl-oxide-forming)</commonNames>
@@ -12,8 +12,12 @@
     <string>4.2.3.186</string>
   </enzymes>
   <comment />
-  <pathway />
+  <pathway>
+    <data name="rn00904">Diterpenoid biosynthesis</data>
+  </pathway>
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K22947" value="4.2.3.186">ent-13-epi-manoyl oxide synthase</KO:terms>
+  </orthology>
   <class />
 </reaction>

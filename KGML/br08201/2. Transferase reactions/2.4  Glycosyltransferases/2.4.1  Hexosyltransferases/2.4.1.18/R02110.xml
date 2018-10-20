@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R02110</ID>
   <commonNames>1,4-alpha-D-Glucan:1,4-alpha-D-glucan 6-alpha-D-(1,4-alpha-D-glucano)-transferase</commonNames>
@@ -19,6 +19,7 @@
   </pathway>
   <module>
     <data name="M00565">Trehalose biosynthesis, D-glucose 1P =&gt; trehalose</data>
+    <data name="M00854">Glycogen biosynthesis, glucose-1P =&gt; glycogen/starch</data>
   </module>
   <orthology>
     <KO:terms name="K00700" value="2.4.1.18">1,4-alpha-glucan branching enzyme</KO:terms>

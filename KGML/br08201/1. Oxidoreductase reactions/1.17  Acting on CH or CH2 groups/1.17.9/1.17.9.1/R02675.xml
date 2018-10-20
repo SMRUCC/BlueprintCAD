@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R02675</ID>
+  <commonNames>4-methylphenol:oxidized azurin oxidoreductase (methyl-hydroxylating)</commonNames>
+  <def>4-Cresol + 4 Oxidized azurin + H2O &lt;=&gt; 4-Hydroxybenzaldehyde + 4 Reduced azurin + 4 H+</def>
+  <equation>C01468 + 4 C05357 + C00001 &lt;=&gt; C00633 + 4 C05358 + 4 C00080</equation>
+  <enzymes>
+    <string>1.17.9.1</string>
+  </enzymes>
+  <comment>two-step reaction (see R12133+R12134) possibly intermediates (quinone methide and 4-hydroxybenzyl alcohol)</comment>
+  <pathway>
+    <data name="rn00623">Toluene degradation</data>
+    <data name="rn01100">Metabolic pathways</data>
+    <data name="rn01120">Microbial metabolism in diverse environments</data>
+  </pathway>
+  <module />
+  <orthology>
+    <KO:terms name="K05797" value="1.17.9.1">4-cresol dehydrogenase (hydroxylating) flavoprotein subunit</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00769">C00633_C01468</data>
+  </class>
+</reaction>

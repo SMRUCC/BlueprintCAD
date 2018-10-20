@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R12152</ID>
+  <def>N-(5'-Phospho-D-1'-ribulosylformimino)-5-amino-1-(5''-phospho-D-ribosyl)-4-imidazolecarboxamide + Ammonia &lt;=&gt; 1-(5'-Phosphoribosyl)-5-amino-4-imidazolecarboxamide + D-erythro-1-(Imidazol-4-yl)glycerol 3-phosphate + H2O</def>
+  <equation>C04916 + C00014 &lt;=&gt; C04677 + C04666 + C00001</equation>
+  <enzymes>
+    <string>4.3.2.10</string>
+  </enzymes>
+  <comment>the second step of two-step reaction (see R04558, R00256+R12152)</comment>
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC01190">C04677_C04916</data>
+    <data name="RC01943">C04666_C04916</data>
+  </class>
+</reaction>

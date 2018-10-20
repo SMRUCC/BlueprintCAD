@@ -2,18 +2,23 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.39206, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11961</ID>
-  <commonNames>FMN:oxygen oxidoreductase</commonNames>
   <def>FMN + Oxygen &lt;=&gt; 8-Demethyl-8-formylriboflavin 5'-phosphate + H2O</def>
   <equation>C00061 + C00007 &lt;=&gt; C21803 + C00001</equation>
   <enzymes>
     <string>2.6.1.114</string>
   </enzymes>
   <comment>a part of three-step reaction (see R11960, R11961+R11962+R11963)</comment>
-  <pathway />
+  <pathway>
+    <data name="rn00999">Biosynthesis of secondary metabolites - unclassified</data>
+  </pathway>
   <module />
-  <orthology />
-  <class />
+  <orthology>
+    <KO:terms name="K22598" value="2.6.1.114">8-demethyl-8-aminoriboflavin-5'-phosphate synthase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00769">C00061_C21803</data>
+  </class>
 </reaction>

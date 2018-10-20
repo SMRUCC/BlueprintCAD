@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R10834</ID>
   <commonNames>UDP-alpha-D-glucose:7-deoxyloganetate O-D-glucosyltransferase</commonNames>
@@ -14,7 +14,9 @@
   <comment />
   <pathway />
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K21373" value="2.4.1.323">7-deoxyloganetic acid glucosyltransferase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00005">C00015_C00029</data>
     <data name="RC00049">C11636_C20789</data>

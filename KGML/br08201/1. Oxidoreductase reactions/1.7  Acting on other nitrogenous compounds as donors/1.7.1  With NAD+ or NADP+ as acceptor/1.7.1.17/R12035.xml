@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R12035</ID>
+  <commonNames>N,N-dimethyl-1,4-phenylenediamine, anthranilate:NAD+ oxidoreductase</commonNames>
+  <def>Anthranilate + N,N-Dimethyl-1,4-phenylenediamine + 2 NAD+ &lt;=&gt; Methyl red + 2 NADH + 2 H+</def>
+  <equation>C00108 + C04203 + 2 C00003 &lt;=&gt; C19459 + 2 C00004 + 2 C00080</equation>
+  <enzymes>
+    <string>1.7.1.17</string>
+  </enzymes>
+  <comment />
+  <pathway />
+  <module />
+  <orthology />
+  <class>
+    <data name="RC00252">C00108_C19459  C04203_C19459</data>
+  </class>
+</reaction>

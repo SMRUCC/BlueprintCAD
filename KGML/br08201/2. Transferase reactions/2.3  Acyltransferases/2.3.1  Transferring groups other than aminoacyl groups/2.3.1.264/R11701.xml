@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11701</ID>
   <commonNames>acetyl-CoA:(3S)-3,6-diaminohexanoate N6-acetyltransferase</commonNames>
@@ -17,5 +17,7 @@
   <orthology>
     <KO:terms name="K21935" value="2.3.1.264">beta-lysine N6-acetyltransferase</KO:terms>
   </orthology>
-  <class />
+  <class>
+    <data name="RC00096">C01142_C21604</data>
+  </class>
 </reaction>

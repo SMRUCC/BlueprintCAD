@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R04109</ID>
   <commonNames>L-glutamate-semialdehyde: NADP+ oxidoreductase(L-glutamyl-tRNA(Glu)-forming)</commonNames>
@@ -19,7 +19,8 @@
     <data name="rn01120">Microbial metabolism in diverse environments</data>
   </pathway>
   <module>
-    <data name="M00121">Heme biosynthesis, glutamate =&gt; protoheme/siroheme</data>
+    <data name="M00121">Heme biosynthesis, glutamate =&gt; heme</data>
+    <data name="M00846">Siroheme biosynthesis, glutamate =&gt; siroheme</data>
   </module>
   <orthology>
     <KO:terms name="K02492" value="1.2.1.70">glutamyl-tRNA reductase</KO:terms>

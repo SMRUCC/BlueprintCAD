@@ -2,11 +2,11 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R06502</ID>
-  <commonNames>(5Z,8Z,11Z,14Z,17Z)-eicosapentaenoate delta8,11-delta7,9-isomerase</commonNames>
-  <def>(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid &lt;=&gt; (5Z,7E,9E,14Z,17Z)-Eicosapentaenoic acid</def>
+  <commonNames>(5Z,8Z,11Z,14Z,17Z)-icosapentaenoate Delta8,11-Delta7,9-isomerase (trans-double-bond-forming)</commonNames>
+  <def>(5Z,8Z,11Z,14Z,17Z)-Icosapentaenoic acid &lt;=&gt; (5Z,7E,9E,14Z,17Z)-Icosapentaenoate</def>
   <equation>C06428 &lt;=&gt; C12083</equation>
   <enzymes>
     <string>5.3.3.13</string>
@@ -14,7 +14,9 @@
   <comment />
   <pathway />
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K20706" value="5.3.3.13">polyenoic fatty acid isomerase</KO:terms>
+  </orthology>
   <class>
     <data name="RC01529">C06428_C12083</data>
   </class>

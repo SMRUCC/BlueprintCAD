@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11230</ID>
   <commonNames>S-adenosyl-L-methionine:(-)-pluviatolide 4-O-methyltransferase</commonNames>
@@ -12,9 +12,14 @@
     <string>2.1.1.323</string>
   </enzymes>
   <comment />
-  <pathway />
+  <pathway>
+    <data name="rn00999">Biosynthesis of secondary metabolites - unclassified</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
   <module />
-  <orthology />
+  <orthology>
+    <KO:terms name="K21203" value="2.1.1.323">(-)-pluviatolide 4-O-methyltransferase</KO:terms>
+  </orthology>
   <class>
     <data name="RC00392">C21183_C21191</data>
   </class>

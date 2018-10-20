@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R12162</ID>
+  <commonNames>5-amino-5-(4-hydroxybenzyl)-6-(D-ribitylimino)-5,6-dihydrouracil ammonia-lyase (7,8-didemethyl-8-hydroxy-5-deazariboflavin-forming)</commonNames>
+  <def>5-Amino-5-(4-hydroxybenzyl)-6-(D-ribitylimino)-5,6-dihydrouracil + S-Adenosyl-L-methionine &lt;=&gt; 7,8-Didemethyl-8-hydroxy-5-deazariboflavin + Ammonia + L-Methionine + 5'-Deoxyadenosine</def>
+  <equation>C21971 + C00019 &lt;=&gt; C19154 + C00014 + C00073 + C05198</equation>
+  <enzymes>
+    <string>4.3.1.32</string>
+  </enzymes>
+  <comment />
+  <pathway>
+    <data name="rn00680">Methane metabolism</data>
+  </pathway>
+  <module>
+    <data name="M00378">F420 biosynthesis</data>
+  </module>
+  <orthology>
+    <KO:terms name="K11779" value="2.5.1.147">FO synthase</KO:terms>
+    <KO:terms name="K11780" value="4.3.1.32">7,8-didemethyl-8-hydroxy-5-deazariboflavin synthase</KO:terms>
+  </orthology>
+  <class />
+</reaction>

@@ -2,10 +2,10 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11792</ID>
-  <commonNames>(E)-1-(glutathione-S-yl)-N-hydroxy-omega-(methylsulfanyl)alkane-1-imine gamma-glutamyl hydrolase</commonNames>
+  <commonNames>(E)-1-(glutathione-S-yl)-omega-(methylthio)alkylhydroximate gamma-glutamylhydrolase</commonNames>
   <def>(E)-1-(Glutathione-S-yl)-omega-(methylthio)alkylhydroximate + H2O &lt;=&gt; (E)-1-(L-Cysteinylglycine-S-yl)-N-hydroxy-omega-(methylsulfanyl)alkane-1-imine + L-Glutamate</def>
   <equation>C21539 + C00001 &lt;=&gt; C21662 + C00025</equation>
   <enzymes>
@@ -14,6 +14,11 @@
   <comment />
   <pathway />
   <module />
-  <orthology />
-  <class />
+  <orthology>
+    <KO:terms name="K22314" value="3.4.19.16">glucosinolate gamma-glutamyl hydrolase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC00064">C21539_C21662</data>
+    <data name="RC00090">C00025_C21539</data>
+  </class>
 </reaction>

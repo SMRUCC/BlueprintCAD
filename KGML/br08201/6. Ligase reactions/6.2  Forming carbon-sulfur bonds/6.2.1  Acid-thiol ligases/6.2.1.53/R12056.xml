@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
+  <!--
+     model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
+  -->
+  <ID>R12056</ID>
+  <def>ATP + L-Proline &lt;=&gt; Diphosphate + (L-Prolyl)adenylate</def>
+  <equation>C00002 + C00148 &lt;=&gt; C00013 + C20656</equation>
+  <enzymes>
+    <string>6.2.1.53</string>
+  </enzymes>
+  <comment>First step of the two-step reaction R06746 (R12056+R12057)</comment>
+  <pathway />
+  <module />
+  <orthology>
+    <KO:terms name="K12719" value="6.2.1.53">L-proline---</KO:terms>
+    <KO:terms name="K12720" value="6.2.1.53">peptidyl carrier proteinK21780</KO:terms>
+  </orthology>
+  <class />
+</reaction>

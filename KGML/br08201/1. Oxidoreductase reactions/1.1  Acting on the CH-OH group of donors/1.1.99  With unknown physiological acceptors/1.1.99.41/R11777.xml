@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R11777</ID>
   <commonNames>(3R)-3-hydroxy-16-methoxy-2,3-dihydrotabersonine:acceptor oxidoreductase</commonNames>
@@ -12,8 +12,15 @@
     <string>1.1.99.41</string>
   </enzymes>
   <comment />
-  <pathway />
+  <pathway>
+    <data name="rn00901">Indole alkaloid biosynthesis</data>
+    <data name="rn01110">Biosynthesis of secondary metabolites</data>
+  </pathway>
   <module />
-  <orthology />
-  <class />
+  <orthology>
+    <KO:terms name="K22323" value="1.1.99.41">3-hydroxy-1,2-didehydro-2,3-dihydrotabersonine reductase</KO:terms>
+  </orthology>
+  <class>
+    <data name="RC03499">C04578_C21678</data>
+  </class>
 </reaction>

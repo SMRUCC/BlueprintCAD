@@ -2,7 +2,7 @@
 <reaction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:KO="http://GCModeller.org/core/KEGG/Model/OrthologyTerm.xsd" xmlns="http://GCModeller.org/core/KEGG/DBGET/Reaction.xsd">
   <!--
      model:    SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject.Reaction
-     assembly: SMRUCC.genomics.Core, Version=2.0.33.19709, Culture=neutral, PublicKeyToken=null
+     assembly: SMRUCC.genomics.Core, Version=2.0.33.975, Culture=neutral, PublicKeyToken=null
   -->
   <ID>R01700</ID>
   <commonNames>2-oxoglutarate:[dihydrolipoyllysine-residue succinyltransferase]-lipoyllysine 2-oxidoreductase (decarboxylating, acceptor-succinylating)</commonNames>
@@ -12,11 +12,7 @@
     <string>1.2.4.2</string>
   </enzymes>
   <comment>2-oxoglutarate dehydrogenase complex: oxoglutarate dehydrogenase a part of multi-step reaction (see R08549, R01700+R02570+R07618) subsequently R02570 TPP-dependent enzyme (see R00621+R03316)</comment>
-  <pathway>
-    <data name="rn01100">Metabolic pathways</data>
-    <data name="rn01110">Biosynthesis of secondary metabolites</data>
-    <data name="rn01130">Biosynthesis of antibiotics</data>
-  </pathway>
+  <pathway />
   <module />
   <orthology />
   <class>
