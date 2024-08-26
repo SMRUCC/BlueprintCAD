@@ -4,6 +4,7 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
 Imports Microsoft.VisualBasic.Imaging
+Imports Node = Microsoft.VisualBasic.Data.visualize.Network.Graph.Node
 
 Public Class GraphPad
 
