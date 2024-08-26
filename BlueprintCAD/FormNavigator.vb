@@ -29,7 +29,9 @@ Public Class FormNavigator
             )
 
             Using g As Graphics2D = PictureBox1.Size.CreateGDIDevice(Pad.BackColor)
+                g.DrawRectangle(Pens.Black, New Rectangle(New Point, PictureBox1.Size))
                 g.DrawRectangle(Pens.Red, New Rectangle(viewPos, viewSize))
+
                 PictureBox1.BackgroundImage = g.ImageResource
             End Using
         End If

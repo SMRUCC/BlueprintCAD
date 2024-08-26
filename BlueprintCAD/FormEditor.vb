@@ -11,6 +11,7 @@ Public Class FormEditor
 
         Call nav.Show()
 
+        GraphPad1.BackColor = Color.LightBlue
         GraphPad1.Canvas = New Size(5000, 5000)
         GraphPad1.Hook(nav)
     End Sub
