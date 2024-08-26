@@ -81,17 +81,25 @@ Public Class GraphPad
         PictureBox1.BackgroundImage = RenderView()
     End Sub
 
+    Public Property DampingFactor As Double = 35
+
     Private Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
+        Dim movX = e.X - offsetX
+        Dim movY = e.Y - offsetY
+
         If dragNode IsNot Nothing Then
             ' just move the node 
+            RaiseEvent PrintMessage($"Move graph node by delta({movX},{movY})", MSG_TYPES.DEBUG)
+
+            dragNode.data.initialPostion.x += movX
+            dragNode.data.initialPostion.y += movY
+
+            Reload()
         ElseIf dragCanvas Then
             ' move the current canvas view
-            Dim movX = e.X - offsetX
-            Dim movY = e.Y - offsetY
+            RaiseEvent PrintMessage($"Move canvas viewbox by delta({movX},{movY})", MSG_TYPES.DEBUG)
 
-            RaiseEvent PrintMessage($"Move by delta({movX},{movY})", MSG_TYPES.DEBUG)
-
-            ViewPosition = New Point(ViewPosition.X + movX, ViewPosition.Y + movY)
+            ViewPosition = New Point(ViewPosition.X + movX / DampingFactor, ViewPosition.Y + movY / DampingFactor)
             Reload()
         End If
     End Sub
@@ -153,9 +161,5 @@ Public Class GraphPad
         Else
             ' do nothing for context menu
         End If
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
     End Sub
 End Class
