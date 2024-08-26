@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
+Imports Microsoft.VisualBasic.Imaging
 Imports TabularEdge = Microsoft.VisualBasic.Data.visualize.Network.FileStream.NetworkEdge
 Imports TabularNode = Microsoft.VisualBasic.Data.visualize.Network.FileStream.Node
 
@@ -23,6 +24,8 @@ Public Class DesignProject
         If ViewBox.TryCount >= 2 Then
             pad.ViewPosition = New Point(ViewBox(0), ViewBox(1))
         End If
+
+        pad.BackColor = BackColor.TranslateColor
 
         Call pad.SetGraphModel(GetGraphModel)
         Call pad.Rendering()
