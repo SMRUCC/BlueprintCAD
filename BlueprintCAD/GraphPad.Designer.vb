@@ -27,6 +27,7 @@ Partial Class GraphPad
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddNodeToolStripMenuItem = New ToolStripMenuItem()
         Timer1 = New Timer(components)
+        AddLinkToolStripMenuItem = New ToolStripMenuItem()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
@@ -44,9 +45,9 @@ Partial Class GraphPad
         ' 
         ' ContextMenuStrip1
         ' 
-        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {AddNodeToolStripMenuItem})
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {AddNodeToolStripMenuItem, AddLinkToolStripMenuItem})
         ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(129, 26)
+        ContextMenuStrip1.Size = New Size(181, 70)
         ' 
         ' AddNodeToolStripMenuItem
         ' 
@@ -58,6 +59,12 @@ Partial Class GraphPad
         ' 
         Timer1.Enabled = True
         Timer1.Interval = 10
+        ' 
+        ' AddLinkToolStripMenuItem
+        ' 
+        AddLinkToolStripMenuItem.Name = "AddLinkToolStripMenuItem"
+        AddLinkToolStripMenuItem.Size = New Size(180, 22)
+        AddLinkToolStripMenuItem.Text = "Add Link"
         ' 
         ' GraphPad
         ' 
@@ -76,5 +83,6 @@ Partial Class GraphPad
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents AddNodeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents AddLinkToolStripMenuItem As ToolStripMenuItem
 
 End Class

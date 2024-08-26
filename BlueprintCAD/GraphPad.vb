@@ -50,15 +50,25 @@ Public Class GraphPad
         Using view As Graphics2D = PictureBox1.Size.CreateGDIDevice(BackColor)
             ' find all nodes insdie current view
             Dim rect As New Rectangle(ViewPosition, PictureBox1.Size)
-            Dim q = g.vertex _
+            Dim nodeInBox = g.vertex _
                 .AsParallel _
                 .Where(Function(v)
                            Return v.data.CheckInside(rect)
                        End Function) _
                 .ToArray
             Dim pos As PointF
+            Dim nodeIndex = nodeInBox.Select(Function(vi) vi.ID.ToString).Indexing
 
-            For Each node As Node In q
+            For Each edge In g.graphEdges
+                If edge.V.ID.ToString Like nodeIndex OrElse edge.U.ID.ToString Like nodeIndex Then
+                    Dim a As New PointF(edge.U.data.initialPostion.x - ViewPosition.X, edge.U.data.initialPostion.y - ViewPosition.Y)
+                    Dim b As New PointF(edge.V.data.initialPostion.x - ViewPosition.X, edge.V.data.initialPostion.y - ViewPosition.Y)
+
+                    view.DrawLine(edge.data.style, a, b)
+                End If
+            Next
+
+            For Each node As Node In nodeInBox
                 pos = New PointF(node.data.initialPostion.x - ViewPosition.X, node.data.initialPostion.y - ViewPosition.Y)
                 view.DrawCircle(pos, node.data.size(0), node.data.color)
             Next
@@ -132,6 +142,21 @@ Public Class GraphPad
             End If
 
             Rendering()
+        ElseIf addLink AndAlso Not U Is Nothing Then
+
+        Else
+            ' show mouse location, for debug
+            Dim x, y As Integer
+
+            Call GetCanvasXY(x, y)
+
+            Dim q = SelectNode(x, y)
+
+            If q Is Nothing Then
+                RaiseEvent PrintMessage($"Mouse location on graph canvas: ({x},{y})", MSG_TYPES.DEBUG)
+            Else
+                RaiseEvent PrintMessage($"Mouse hover on node {q.ToString}, left click for drag the node", MSG_TYPES.DEBUG)
+            End If
         End If
     End Sub
 
@@ -143,6 +168,23 @@ Public Class GraphPad
     Private Sub PictureBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseClick
         clickPos = PictureBox1.PointToClient(Cursor.Position)
         dragNode = Nothing
+
+        If e.Button = MouseButtons.Left Then
+            If addLink AndAlso Not U Is Nothing Then
+                Dim x, y As Integer
+
+                Call GetCanvasXY(x, y)
+
+                Dim V = SelectNode(x, y)
+
+                If Not V Is Nothing Then
+                    RaiseEvent PrintMessage($"Create a new link from {U} to {V}", MSG_TYPES.INF)
+
+                    Call g.CreateEdge(U, V, 1, New EdgeData With {.style = Pens.Green})
+                    Call Rendering()
+                End If
+            End If
+        End If
     End Sub
 
     Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip1.Opening
@@ -158,6 +200,17 @@ Public Class GraphPad
         End If
     End Sub
 
+    Private Function SelectNode(x As Integer, y As Integer) As Node
+        Return g.vertex _
+            .Where(Function(v)
+                       Dim vpos = v.data.initialPostion
+                       Dim r = v.data.size(0)
+
+                       Return vpos.x - r < x AndAlso vpos.x + r > x AndAlso vpos.y - r < y AndAlso vpos.y + r > y
+                   End Function) _
+            .FirstOrDefault
+    End Function
+
     Private Sub PictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
         ' check of the node position
         ' inside node - select node
@@ -172,14 +225,7 @@ Public Class GraphPad
         If e.Button = MouseButtons.Left Then
             ' start drag a node
             ' find a node
-            Dim q = g.vertex _
-                .Where(Function(v)
-                           Dim vpos = v.data.initialPostion
-                           Dim r = v.data.size(0)
-
-                           Return vpos.x - r < x AndAlso vpos.x + r > x AndAlso vpos.y - r < y AndAlso vpos.y + r > y
-                       End Function) _
-                .FirstOrDefault
+            Dim q As Node = SelectNode(x, y)
 
             If Not q Is Nothing Then
                 dragNode = q
@@ -200,6 +246,23 @@ Public Class GraphPad
             End If
         Else
             ' do nothing for context menu
+        End If
+    End Sub
+
+    Dim addLink As Boolean = False
+    Dim U As Node
+
+    Private Sub AddLinkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddLinkToolStripMenuItem.Click
+        Dim x, y As Integer
+
+        Call GetCanvasXY(x, y)
+
+        U = SelectNode(x, y)
+
+        If U Is Nothing Then
+            RaiseEvent PrintMessage("No graph node could be selected!", MSG_TYPES.ERR)
+        Else
+            addLink = True
         End If
     End Sub
 End Class
