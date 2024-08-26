@@ -103,7 +103,7 @@ Public Class GraphPad
             If x < 0 OrElse y < 0 Then
                 Return
             End If
-            If x > Canvas.Width OrElse y > Canvas.Height Then
+            If x >= Canvas.Width OrElse y >= Canvas.Height Then
                 Return
             End If
 
@@ -122,7 +122,7 @@ Public Class GraphPad
             If x < 0 OrElse y < 0 Then
                 Return
             End If
-            If x > Canvas.Width OrElse y > Canvas.Height Then
+            If x + PictureBox1.Width >= Canvas.Width OrElse y + PictureBox1.Height >= Canvas.Height Then
                 Return
             End If
 
