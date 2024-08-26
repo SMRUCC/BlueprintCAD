@@ -6,13 +6,19 @@ Imports Microsoft.VisualBasic.Imaging
 
 Public Class GraphPad
 
-    Public Property Canvas As Size
+    Public Property Canvas As New Size(5000, 5000)
     Public Property ViewPosition As Point
 
     Dim g As New NetworkGraph
     Dim clickPos As Point
+    Dim nav As FormNavigator
 
     Public Event PrintMessage(msg As String, level As MSG_TYPES)
+
+    Public Sub Hook(nav As FormNavigator)
+        Me.nav = nav
+        Me.nav.Pad = Me
+    End Sub
 
     Private Sub AddNodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNodeToolStripMenuItem.Click
         Dim x, y As Integer
@@ -33,6 +39,12 @@ Public Class GraphPad
     End Sub
 
     Private Function RenderView() As Image
+        Dim sz = PictureBox1.Size
+
+        If sz.Width <= 0 OrElse sz.Height <= 0 Then
+            Return New Bitmap(1, 1)
+        End If
+
         Using view As Graphics2D = PictureBox1.Size.CreateGDIDevice(BackColor)
             ' find all nodes insdie current view
             Dim rect As New Rectangle(ViewPosition, PictureBox1.Size)
@@ -70,15 +82,36 @@ Public Class GraphPad
     End Sub
 
     Private Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
-
+        If dragNode IsNot Nothing Then
+            ' just move the node 
+        ElseIf dragCanvas Then
+            ' move the current canvas view
+            ViewPosition = New Point(ViewPosition.X + e.X - offsetX, ViewPosition.Y + e.Y - offsetY)
+            Reload()
+        End If
     End Sub
 
     Dim dragNode As Node
+    Dim dragCanvas As Boolean = False
+    Dim offsetX, offsetY As Integer
 
     Private Sub PictureBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseClick
         clickPos = PictureBox1.PointToClient(Cursor.Position)
         dragNode = Nothing
+    End Sub
 
+    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip1.Opening
+        clickPos = PictureBox1.PointToClient(Cursor.Position)
+    End Sub
+
+    Private Sub PictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
+        If e.Button = MouseButtons.Left Then
+            dragCanvas = False
+            RaiseEvent PrintMessage("Release the mouse drag handler", MSG_TYPES.DEBUG)
+        End If
+    End Sub
+
+    Private Sub PictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
         ' check of the node position
         ' inside node - select node
         ' outside node - do nothing
@@ -100,12 +133,24 @@ Public Class GraphPad
 
             If Not q Is Nothing Then
                 dragNode = q
+
+                If Not nav Is Nothing Then
+                    Call nav.SetNodeTarget(dragNode)
+                End If
+
                 RaiseEvent PrintMessage($"Select Node {dragNode.ToString} at ({x},{y})", MSG_TYPES.DEBUG)
             Else
+                dragCanvas = True
+                offsetX = e.X
+                offsetY = e.Y
                 RaiseEvent PrintMessage($"Click on canvas at ({x},{y})", MSG_TYPES.DEBUG)
             End If
         Else
             ' do nothing for context menu
         End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
     End Sub
 End Class

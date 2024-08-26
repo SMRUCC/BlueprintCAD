@@ -35,9 +35,10 @@ Partial Class GraphPad
         ' 
         PictureBox1.BackColor = Color.AliceBlue
         PictureBox1.ContextMenuStrip = ContextMenuStrip1
-        PictureBox1.Location = New Point(45, 51)
+        PictureBox1.Dock = DockStyle.Fill
+        PictureBox1.Location = New Point(0, 0)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(607, 451)
+        PictureBox1.Size = New Size(815, 577)
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
@@ -65,7 +66,7 @@ Partial Class GraphPad
         Controls.Add(PictureBox1)
         DoubleBuffered = True
         Name = "GraphPad"
-        Size = New Size(607, 451)
+        Size = New Size(815, 577)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
