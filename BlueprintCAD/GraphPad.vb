@@ -31,7 +31,7 @@ Public Class GraphPad
             .size = {10},
             .color = Brushes.Red
         })
-        Reload()
+        Rendering()
     End Sub
 
     Private Sub GetCanvasXY(<Out> ByRef x As Integer, <Out> ByRef y As Integer)
@@ -67,7 +67,7 @@ Public Class GraphPad
         End Using
     End Function
 
-    Private Sub Reload()
+    Public Sub Rendering()
         PictureBox1.BackgroundImage = RenderView()
     End Sub
 
@@ -87,7 +87,7 @@ Public Class GraphPad
         End If
     End Sub
 
-    Public Property DampingFactor As Double = 35
+    ' Public Property DampingFactor As Double = 35
 
     Private Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         Dim movX = e.X - offsetX
@@ -97,8 +97,8 @@ Public Class GraphPad
             ' just move the node 
             RaiseEvent PrintMessage($"Move graph node by delta({movX},{movY})", MSG_TYPES.DEBUG)
 
-            Dim x = dragNode.data.initialPostion.x + movX
-            Dim y = dragNode.data.initialPostion.y + movY
+            Dim x = x0 + movX '/ DampingFactor
+            Dim y = y0 + movY ' / DampingFactor
 
             If x < 0 OrElse y < 0 Then
                 Return
@@ -110,14 +110,13 @@ Public Class GraphPad
             dragNode.data.initialPostion.x = x
             dragNode.data.initialPostion.y = y
 
-
-            Reload()
+            Rendering()
         ElseIf dragCanvas Then
             ' move the current canvas view
             RaiseEvent PrintMessage($"Move canvas viewbox by delta({movX},{movY})", MSG_TYPES.DEBUG)
 
-            Dim x = ViewPosition.X + movX / DampingFactor
-            Dim y = ViewPosition.Y + movY / DampingFactor
+            Dim x = x0 + movX '/ DampingFactor
+            Dim y = y0 + movY '/ DampingFactor
 
             If x < 0 OrElse y < 0 Then
                 Return
@@ -132,13 +131,14 @@ Public Class GraphPad
                 nav.SetView(ViewPosition)
             End If
 
-            Reload()
+            Rendering()
         End If
     End Sub
 
     Dim dragNode As Node
     Dim dragCanvas As Boolean = False
     Dim offsetX, offsetY As Integer
+    Dim x0, y0 As Integer
 
     Private Sub PictureBox1_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseClick
         clickPos = PictureBox1.PointToClient(Cursor.Position)
@@ -152,6 +152,8 @@ Public Class GraphPad
     Private Sub PictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
         If e.Button = MouseButtons.Left Then
             dragCanvas = False
+            dragNode = Nothing
+
             RaiseEvent PrintMessage("Release the mouse drag handler", MSG_TYPES.DEBUG)
         End If
     End Sub
@@ -163,6 +165,9 @@ Public Class GraphPad
         Dim x, y As Integer
 
         Call GetCanvasXY(x, y)
+
+        offsetX = e.X
+        offsetY = e.Y
 
         If e.Button = MouseButtons.Left Then
             ' start drag a node
@@ -178,6 +183,8 @@ Public Class GraphPad
 
             If Not q Is Nothing Then
                 dragNode = q
+                x0 = q.data.initialPostion.x
+                y0 = q.data.initialPostion.y
 
                 If Not nav Is Nothing Then
                     Call nav.SetNodeTarget(dragNode)
@@ -186,8 +193,9 @@ Public Class GraphPad
                 RaiseEvent PrintMessage($"Select Node {dragNode.ToString} at ({x},{y})", MSG_TYPES.DEBUG)
             Else
                 dragCanvas = True
-                offsetX = e.X
-                offsetY = e.Y
+                x0 = ViewPosition.X
+                y0 = ViewPosition.Y
+
                 RaiseEvent PrintMessage($"Click on canvas at ({x},{y})", MSG_TYPES.DEBUG)
             End If
         Else
