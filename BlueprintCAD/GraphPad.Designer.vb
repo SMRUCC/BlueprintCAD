@@ -26,6 +26,7 @@ Partial Class GraphPad
         PictureBox1 = New PictureBox()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddNodeToolStripMenuItem = New ToolStripMenuItem()
+        Timer1 = New Timer(components)
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
@@ -34,8 +35,7 @@ Partial Class GraphPad
         ' 
         PictureBox1.BackColor = Color.AliceBlue
         PictureBox1.ContextMenuStrip = ContextMenuStrip1
-        PictureBox1.Dock = DockStyle.Fill
-        PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Location = New Point(45, 51)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(607, 451)
         PictureBox1.TabIndex = 0
@@ -53,6 +53,11 @@ Partial Class GraphPad
         AddNodeToolStripMenuItem.Size = New Size(128, 22)
         AddNodeToolStripMenuItem.Text = "Add Node"
         ' 
+        ' Timer1
+        ' 
+        Timer1.Enabled = True
+        Timer1.Interval = 10
+        ' 
         ' GraphPad
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -69,5 +74,6 @@ Partial Class GraphPad
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents AddNodeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Timer1 As Timer
 
 End Class

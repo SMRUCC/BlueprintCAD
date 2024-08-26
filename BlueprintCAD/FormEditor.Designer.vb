@@ -23,15 +23,35 @@ Partial Class FormEditor
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         GraphPad1 = New GraphPad()
+        StatusStrip1 = New StatusStrip()
+        ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' GraphPad1
         ' 
+        GraphPad1.Canvas = New Size(0, 0)
         GraphPad1.Dock = DockStyle.Fill
         GraphPad1.Location = New Point(0, 0)
         GraphPad1.Name = "GraphPad1"
-        GraphPad1.Size = New Size(800, 450)
+        GraphPad1.Size = New Size(800, 428)
         GraphPad1.TabIndex = 0
+        GraphPad1.ViewPosition = New Point(0, 0)
+        ' 
+        ' StatusStrip1
+        ' 
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
+        StatusStrip1.Location = New Point(0, 428)
+        StatusStrip1.Name = "StatusStrip1"
+        StatusStrip1.Size = New Size(800, 22)
+        StatusStrip1.TabIndex = 1
+        StatusStrip1.Text = "StatusStrip1"
+        ' 
+        ' ToolStripStatusLabel1
+        ' 
+        ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        ToolStripStatusLabel1.Size = New Size(42, 17)
+        ToolStripStatusLabel1.Text = "Ready!"
         ' 
         ' FormEditor
         ' 
@@ -39,11 +59,17 @@ Partial Class FormEditor
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
         Controls.Add(GraphPad1)
+        Controls.Add(StatusStrip1)
         Name = "FormEditor"
         Text = "Form1"
+        StatusStrip1.ResumeLayout(False)
+        StatusStrip1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents GraphPad1 As GraphPad
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
 
 End Class
