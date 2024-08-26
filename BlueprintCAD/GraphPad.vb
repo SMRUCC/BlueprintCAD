@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
+Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
 Imports Microsoft.VisualBasic.Imaging
@@ -14,6 +15,24 @@ Public Class GraphPad
     Dim nav As FormNavigator
 
     Public Event PrintMessage(msg As String, level As MSG_TYPES)
+
+    Public Sub SetGraphModel(g As NetworkGraph)
+        Me.g = g
+    End Sub
+
+    Public Function GetProject() As DesignProject
+        Dim tabular As NetworkTables = g.Tabular()
+
+        Return New DesignProject With {
+            .BackColor = PictureBox1.BackColor.ToHtmlColor,
+            .Canvas = {Canvas.Width, Canvas.Height},
+            .id = g.id,
+            .name = g.name,
+            .ViewBox = {ViewPosition.X, ViewPosition.Y},
+            .nodes = tabular.nodes,
+            .links = tabular.edges
+        }
+    End Function
 
     Public Sub Hook(nav As FormNavigator)
         Me.nav = nav
