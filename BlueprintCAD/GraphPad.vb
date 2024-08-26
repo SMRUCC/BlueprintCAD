@@ -86,7 +86,12 @@ Public Class GraphPad
             ' just move the node 
         ElseIf dragCanvas Then
             ' move the current canvas view
-            ViewPosition = New Point(ViewPosition.X + e.X - offsetX, ViewPosition.Y + e.Y - offsetY)
+            Dim movX = e.X - offsetX
+            Dim movY = e.Y - offsetY
+
+            RaiseEvent PrintMessage($"Move by delta({movX},{movY})", MSG_TYPES.DEBUG)
+
+            ViewPosition = New Point(ViewPosition.X + movX, ViewPosition.Y + movY)
             Reload()
         End If
     End Sub
