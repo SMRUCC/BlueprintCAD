@@ -22,10 +22,28 @@ Partial Class FormEditor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form1"
+        GraphPad1 = New GraphPad()
+        SuspendLayout()
+        ' 
+        ' GraphPad1
+        ' 
+        GraphPad1.Dock = DockStyle.Fill
+        GraphPad1.Location = New Point(0, 0)
+        GraphPad1.Name = "GraphPad1"
+        GraphPad1.Size = New Size(800, 450)
+        GraphPad1.TabIndex = 0
+        ' 
+        ' FormEditor
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(800, 450)
+        Controls.Add(GraphPad1)
+        Name = "FormEditor"
+        Text = "Form1"
+        ResumeLayout(False)
     End Sub
+
+    Friend WithEvents GraphPad1 As GraphPad
 
 End Class
