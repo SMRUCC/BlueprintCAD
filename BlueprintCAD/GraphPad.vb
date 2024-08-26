@@ -18,6 +18,8 @@ Public Class GraphPad
     Public Sub Hook(nav As FormNavigator)
         Me.nav = nav
         Me.nav.Pad = Me
+        Me.nav.SetView(ViewPosition)
+        Me.nav.SetView(PictureBox1.Size)
     End Sub
 
     Private Sub AddNodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNodeToolStripMenuItem.Click
@@ -79,6 +81,10 @@ Public Class GraphPad
 
     Private Sub GraphPad_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
         PictureBox1.BackgroundImage = RenderView()
+
+        If Not nav Is Nothing Then
+            nav.SetView(PictureBox1.Size)
+        End If
     End Sub
 
     Public Property DampingFactor As Double = 35
@@ -100,6 +106,11 @@ Public Class GraphPad
             RaiseEvent PrintMessage($"Move canvas viewbox by delta({movX},{movY})", MSG_TYPES.DEBUG)
 
             ViewPosition = New Point(ViewPosition.X + movX / DampingFactor, ViewPosition.Y + movY / DampingFactor)
+
+            If Not nav Is Nothing Then
+                nav.SetView(ViewPosition)
+            End If
+
             Reload()
         End If
     End Sub
