@@ -9,7 +9,9 @@ Public Class FormEditor
     Private Sub FormEditor_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim nav As New FormNavigator
 
-        nav.Show()
+        Call nav.Show()
+
+        GraphPad1.Canvas = New Size(5000, 5000)
         GraphPad1.Hook(nav)
     End Sub
 End Class

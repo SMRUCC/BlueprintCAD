@@ -97,15 +97,36 @@ Public Class GraphPad
             ' just move the node 
             RaiseEvent PrintMessage($"Move graph node by delta({movX},{movY})", MSG_TYPES.DEBUG)
 
-            dragNode.data.initialPostion.x += movX
-            dragNode.data.initialPostion.y += movY
+            Dim x = dragNode.data.initialPostion.x + movX
+            Dim y = dragNode.data.initialPostion.y + movY
+
+            If x < 0 OrElse y < 0 Then
+                Return
+            End If
+            If x > Canvas.Width OrElse y > Canvas.Height Then
+                Return
+            End If
+
+            dragNode.data.initialPostion.x = x
+            dragNode.data.initialPostion.y = y
+
 
             Reload()
         ElseIf dragCanvas Then
             ' move the current canvas view
             RaiseEvent PrintMessage($"Move canvas viewbox by delta({movX},{movY})", MSG_TYPES.DEBUG)
 
-            ViewPosition = New Point(ViewPosition.X + movX / DampingFactor, ViewPosition.Y + movY / DampingFactor)
+            Dim x = ViewPosition.X + movX / DampingFactor
+            Dim y = ViewPosition.Y + movY / DampingFactor
+
+            If x < 0 OrElse y < 0 Then
+                Return
+            End If
+            If x > Canvas.Width OrElse y > Canvas.Height Then
+                Return
+            End If
+
+            ViewPosition = New Point(x, y)
 
             If Not nav Is Nothing Then
                 nav.SetView(ViewPosition)

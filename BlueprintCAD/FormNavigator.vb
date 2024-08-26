@@ -18,7 +18,7 @@ Public Class FormNavigator
     End Sub
 
     Private Sub RefreshViewBox()
-        If viewbox.Width > 0 And viewbox.Height > 0 Then
+        If viewbox.Width > 0 AndAlso viewbox.Height > 0 AndAlso Pad.Canvas.Width > 0 AndAlso Pad.Canvas.Height > 0 Then
             Dim viewSize As New Size(
                 viewbox.Width / Pad.Canvas.Width * PictureBox1.Width,
                 viewbox.Height / Pad.Canvas.Height * PictureBox1.Height
