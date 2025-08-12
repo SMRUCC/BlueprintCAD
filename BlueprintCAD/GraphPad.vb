@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
+Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging
 Imports Node = Microsoft.VisualBasic.Data.visualize.Network.Graph.Node
 
@@ -60,11 +61,11 @@ Public Class GraphPad
         y = clickPos.Y + ViewPosition.Y
     End Sub
 
-    Private Function RenderView() As Image
+    Private Function RenderView() As System.Drawing.Image
         Dim sz = PictureBox1.Size
 
         If sz.Width <= 0 OrElse sz.Height <= 0 Then
-            Return New Bitmap(1, 1)
+            Return New System.Drawing.Bitmap(1, 1)
         End If
 
         Using view As Graphics2D = PictureBox1.Size.CreateGDIDevice(BackColor)
@@ -90,10 +91,10 @@ Public Class GraphPad
 
             For Each node As Node In nodeInBox
                 pos = New PointF(node.data.initialPostion.x - ViewPosition.X, node.data.initialPostion.y - ViewPosition.Y)
-                view.DrawCircle(pos, node.data.size(0), node.data.color)
+                view.DrawCircle(pos, CSng(node.data.size(0)), node.data.color)
             Next
 
-            Return view.ImageResource
+            Return view.GetImageResource
         End Using
     End Function
 

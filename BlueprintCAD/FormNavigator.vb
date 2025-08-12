@@ -1,5 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
+Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging
+Imports Microsoft.VisualBasic.Imaging.Driver
 
 Public Class FormNavigator
 
@@ -32,7 +34,7 @@ Public Class FormNavigator
                 g.DrawRectangle(Pens.Black, New Rectangle(New Point, PictureBox1.Size))
                 g.DrawRectangle(Pens.Red, New Rectangle(viewPos, viewSize))
 
-                PictureBox1.BackgroundImage = g.ImageResource
+                PictureBox1.BackgroundImage = g.GetImageResource
             End Using
         End If
     End Sub
