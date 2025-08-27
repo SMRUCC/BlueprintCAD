@@ -68,7 +68,7 @@ Partial Class CellBrowser
         PlotView1.Location = New Point(3, 19)
         PlotView1.Name = "PlotView1"
         PlotView1.ScaleFactor = 1.25F
-        PlotView1.Size = New Size(1177, 663)
+        PlotView1.Size = New Size(1177, 528)
         PlotView1.TabIndex = 1
         ' 
         ' GroupBox1
@@ -77,7 +77,7 @@ Partial Class CellBrowser
         GroupBox1.Dock = DockStyle.Fill
         GroupBox1.Location = New Point(0, 0)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(1183, 685)
+        GroupBox1.Size = New Size(1183, 550)
         GroupBox1.TabIndex = 2
         GroupBox1.TabStop = False
         GroupBox1.Text = "Dynamics Plot"
@@ -87,7 +87,7 @@ Partial Class CellBrowser
         GroupBox2.Dock = DockStyle.Fill
         GroupBox2.Location = New Point(0, 0)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(1183, 143)
+        GroupBox2.Size = New Size(1183, 278)
         GroupBox2.TabIndex = 3
         GroupBox2.TabStop = False
         GroupBox2.Text = "Browser"
@@ -107,7 +107,7 @@ Partial Class CellBrowser
         ' 
         SplitContainer1.Panel2.Controls.Add(GroupBox2)
         SplitContainer1.Size = New Size(1183, 832)
-        SplitContainer1.SplitterDistance = 685
+        SplitContainer1.SplitterDistance = 550
         SplitContainer1.TabIndex = 4
         ' 
         ' CellBrowser
