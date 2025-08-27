@@ -13,6 +13,7 @@ Public Class CellBrowser
                 End If
 
                 vcellPack = New Raw.Reader(file.FileName.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+                Text = $"VirtualCell Browser [{file.FileName}]"
             End If
         End Using
     End Sub
