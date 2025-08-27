@@ -58,7 +58,7 @@ Partial Class CellBrowser
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "CellBrowser"
-        Text = "Form1"
+        Text = "Cell Browser"
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         ResumeLayout(False)
