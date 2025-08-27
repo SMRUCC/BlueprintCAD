@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports ggplot
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.DataStorage.HDSPack
@@ -14,7 +15,7 @@ Public Class CellBrowser
     Dim network As Dictionary(Of String, FluxEdge)
     Dim timePoints As Double()
     Dim moleculeSet As Dictionary(Of String, String())
-    Dim moleculeLines As New Dictionary(Of String, FeatureVector)
+    Dim moleculeLines As New Dictionary(Of String, Double())
 
     Private Sub OpenVirtualCellDataFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenVirtualCellDataFileToolStripMenuItem.Click
         Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
@@ -59,17 +60,21 @@ Public Class CellBrowser
                 Dim vec = vcellPack.Read(ti, mod_id)
 
                 For Each item As KeyValuePair(Of String, Double) In vec
-                    Call data.Add(item.Key, item.Value)
+                    data(item.Key) = item.Value
                 Next
             Next
 
             Call times.Add((ti, data))
         Next
 
-        Dim mols As String() = times.Select(Function(a) a.Item2.Keys).IteratesALL.Distinct.ToArray
+        Dim mols As String() = times _
+            .Select(Function(a) a.Item2.Keys) _
+            .IteratesALL _
+            .Distinct _
+            .ToArray
 
         For Each id As String In mols
-            Call moleculeLines.Add(id, New FeatureVector(id, times.Select(Function(ti) ti.Item2(id))))
+            Call moleculeLines.Add(id, times.Select(Function(ti) ti.Item2(id)).ToArray)
         Next
     End Sub
 
@@ -117,8 +122,34 @@ Public Class CellBrowser
         Dim row = DataGridView1.SelectedRows(0)
         Dim link = CStr(row.Cells(0).Value)
         Dim edge As FluxEdge = row.Tag
+        Dim time As New List(Of Double)
+        Dim expression As New List(Of Double)
+        Dim names As New List(Of String)
+
+        For Each id As String In edge.FactorIds.Distinct
+            Call time.AddRange(timePoints)
+            Call expression.AddRange(moleculeLines(id))
+            Call names.AddRange(id.Repeats(timePoints.Length))
+        Next
 
         ' loadd all compound data
+        Dim lines As New DataFrame With {
+            .features = New Dictionary(Of String, FeatureVector) From {
+                {"time", New FeatureVector("time", time)},
+                {"expression", New FeatureVector("expression", expression)},
+                {"names", New FeatureVector("names", names)}
+            }
+        }
+        Dim plot As ggplot.ggplot = ggplotFunction.ggplot(
+            data:=lines,
+            mapping:=aes("time", "expression", color:="names"),
+            colorSet:="paper",
+            padding:="padding: 5% 10% 10% 10%;")
 
+        plot += geom_point(size:=6)
+
+        PlotView1.ScaleFactor = 1.25
+        PlotView1.PlotPadding = plot.ggplotTheme.padding
+        PlotView1.ggplot = plot
     End Sub
 End Class
