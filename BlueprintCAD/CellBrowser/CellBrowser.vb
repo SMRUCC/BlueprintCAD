@@ -1,7 +1,9 @@
 ﻿Imports System.IO
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
+Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.DataStorage.HDSPack
 Imports Microsoft.VisualBasic.DataStorage.HDSPack.FileSystem
+Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
@@ -12,6 +14,7 @@ Public Class CellBrowser
     Dim network As Dictionary(Of String, FluxEdge)
     Dim timePoints As Double()
     Dim moleculeSet As Dictionary(Of String, String())
+    Dim moleculeLines As New Dictionary(Of String, FeatureVector)
 
     Private Sub OpenVirtualCellDataFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenVirtualCellDataFileToolStripMenuItem.Click
         Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
@@ -30,6 +33,7 @@ Public Class CellBrowser
                     Sub(println)
                         Call println("loading molecule list ui...")
                         Call Me.Invoke(Sub() LoadTree())
+                        Call Me.Invoke(Sub() LoadMatrix())
                     End Sub)
             End If
         End Using
@@ -42,6 +46,30 @@ Public Class CellBrowser
             For Each id As String In molSet.Value
                 Call root.Nodes.Add(id)
             Next
+        Next
+    End Sub
+
+    Private Sub LoadMatrix()
+        Dim times As New List(Of (Double, Dictionary(Of String, Double)))
+
+        For Each ti As Double In timePoints
+            Dim data As New Dictionary(Of String, Double)
+
+            For Each mod_id As String In moleculeSet.Keys
+                Dim vec = vcellPack.Read(ti, mod_id)
+
+                For Each item As KeyValuePair(Of String, Double) In vec
+                    Call data.Add(item.Key, item.Value)
+                Next
+            Next
+
+            Call times.Add((ti, data))
+        Next
+
+        Dim mols As String() = times.Select(Function(a) a.Item2.Keys).IteratesALL.Distinct.ToArray
+
+        For Each id As String In mols
+            Call moleculeLines.Add(id, New FeatureVector(id, times.Select(Function(ti) ti.Item2(id))))
         Next
     End Sub
 
