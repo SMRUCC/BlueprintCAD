@@ -11,6 +11,7 @@ Public Class CellBrowser
     Dim vcellPack As Raw.Reader
     Dim network As Dictionary(Of String, FluxEdge)
     Dim timePoints As Double()
+    Dim moleculeSet As Dictionary(Of String, String())
 
     Private Sub OpenVirtualCellDataFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenVirtualCellDataFileToolStripMenuItem.Click
         Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
@@ -23,8 +24,25 @@ Public Class CellBrowser
                 Text = $"VirtualCell Browser [{file.FileName}]"
                 network = FormBuzyLoader.Loading(Function(println) LoadNetwork(println))
                 timePoints = vcellPack.AllTimePoints.ToArray
+                moleculeSet = vcellPack.GetMoleculeIdList
+
+                Call FormBuzyLoader.Loading(
+                    Sub(println)
+                        Call println("loading molecule list ui...")
+                        Call Me.Invoke(Sub() LoadTree())
+                    End Sub)
             End If
         End Using
+    End Sub
+
+    Private Sub LoadTree()
+        For Each molSet In moleculeSet.Where(Function(a) Not a.Key.EndsWith("-Flux"))
+            Dim root = TreeView1.Nodes.Add(molSet.Key)
+
+            For Each id As String In molSet.Value
+                Call root.Nodes.Add(id)
+            Next
+        Next
     End Sub
 
     Private Function LoadNetwork(println As Action(Of String)) As Dictionary(Of String, FluxEdge)
