@@ -28,24 +28,24 @@ Partial Class CellBrowser
         PlotView1 = New ggviewer.PlotView()
         GroupBox1 = New GroupBox()
         GroupBox2 = New GroupBox()
-        SplitContainer1 = New SplitContainer()
         SplitContainer2 = New SplitContainer()
         TreeView1 = New TreeView()
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewLinkColumn()
         Column2 = New DataGridViewLinkColumn()
+        SplitContainer1 = New SplitContainer()
         MenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
-        CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
-        SplitContainer1.Panel1.SuspendLayout()
-        SplitContainer1.Panel2.SuspendLayout()
-        SplitContainer1.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
         SplitContainer2.Panel2.SuspendLayout()
         SplitContainer2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer1.Panel1.SuspendLayout()
+        SplitContainer1.Panel2.SuspendLayout()
+        SplitContainer1.SuspendLayout()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -104,24 +104,6 @@ Partial Class CellBrowser
         GroupBox2.TabStop = False
         GroupBox2.Text = "Browser"
         ' 
-        ' SplitContainer1
-        ' 
-        SplitContainer1.Dock = DockStyle.Fill
-        SplitContainer1.Location = New Point(0, 24)
-        SplitContainer1.Name = "SplitContainer1"
-        SplitContainer1.Orientation = Orientation.Horizontal
-        ' 
-        ' SplitContainer1.Panel1
-        ' 
-        SplitContainer1.Panel1.Controls.Add(GroupBox1)
-        ' 
-        ' SplitContainer1.Panel2
-        ' 
-        SplitContainer1.Panel2.Controls.Add(GroupBox2)
-        SplitContainer1.Size = New Size(1183, 832)
-        SplitContainer1.SplitterDistance = 550
-        SplitContainer1.TabIndex = 4
-        ' 
         ' SplitContainer2
         ' 
         SplitContainer2.Dock = DockStyle.Fill
@@ -149,11 +131,16 @@ Partial Class CellBrowser
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.BackgroundColor = Color.WhiteSmoke
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2})
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(0, 0)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(829, 256)
         DataGridView1.TabIndex = 0
         ' 
@@ -173,6 +160,24 @@ Partial Class CellBrowser
         Column2.Name = "Column2"
         Column2.ReadOnly = True
         ' 
+        ' SplitContainer1
+        ' 
+        SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.Location = New Point(0, 24)
+        SplitContainer1.Name = "SplitContainer1"
+        SplitContainer1.Orientation = Orientation.Horizontal
+        ' 
+        ' SplitContainer1.Panel1
+        ' 
+        SplitContainer1.Panel1.Controls.Add(GroupBox1)
+        ' 
+        ' SplitContainer1.Panel2
+        ' 
+        SplitContainer1.Panel2.Controls.Add(GroupBox2)
+        SplitContainer1.Size = New Size(1183, 832)
+        SplitContainer1.SplitterDistance = 550
+        SplitContainer1.TabIndex = 4
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -187,15 +192,15 @@ Partial Class CellBrowser
         MenuStrip1.PerformLayout()
         GroupBox1.ResumeLayout(False)
         GroupBox2.ResumeLayout(False)
-        SplitContainer1.Panel1.ResumeLayout(False)
-        SplitContainer1.Panel2.ResumeLayout(False)
-        CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
-        SplitContainer1.ResumeLayout(False)
         SplitContainer2.Panel1.ResumeLayout(False)
         SplitContainer2.Panel2.ResumeLayout(False)
         CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer2.ResumeLayout(False)
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel2.ResumeLayout(False)
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub

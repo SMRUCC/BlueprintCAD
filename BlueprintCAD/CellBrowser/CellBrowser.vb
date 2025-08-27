@@ -50,6 +50,8 @@ Public Class CellBrowser
             offset = DataGridView1.Rows.Add(edge.Name, edge.Value.ToString)
             DataGridView1.Rows(offset).Tag = edge.Value
         Next
+
+        Call DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
     End Sub
 
     Private Sub CellBrowser_Closed(sender As Object, e As EventArgs) Handles Me.Closed
