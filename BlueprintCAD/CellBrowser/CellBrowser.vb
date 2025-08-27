@@ -4,6 +4,7 @@ Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.DataStorage.HDSPack
 Imports Microsoft.VisualBasic.DataStorage.HDSPack.FileSystem
+Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
@@ -16,6 +17,10 @@ Public Class CellBrowser
     Dim timePoints As Double()
     Dim moleculeSet As Dictionary(Of String, String())
     Dim moleculeLines As New Dictionary(Of String, Double())
+
+    Shared Sub New()
+        Call SkiaDriver.Register()
+    End Sub
 
     Private Sub OpenVirtualCellDataFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenVirtualCellDataFileToolStripMenuItem.Click
         Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
