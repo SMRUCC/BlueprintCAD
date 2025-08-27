@@ -59,4 +59,17 @@ Public Class CellBrowser
             Call vcellPack.Dispose()
         End If
     End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim link = CStr(row.Cells(0).Value)
+        Dim edge As FluxEdge = row.Tag
+
+        ' loadd all compound data
+
+    End Sub
 End Class
