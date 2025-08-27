@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
 Imports ggplot
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
@@ -127,11 +128,16 @@ Public Class CellBrowser
         Dim row = DataGridView1.SelectedRows(0)
         Dim link = CStr(row.Cells(0).Value)
         Dim edge As FluxEdge = row.Tag
+
+        Call RefreshPlot(edge.FactorIds.Distinct)
+    End Sub
+
+    Private Sub RefreshPlot(idset As IEnumerable(Of String))
         Dim time As New List(Of Double)
         Dim expression As New List(Of Double)
         Dim names As New List(Of String)
 
-        For Each id As String In edge.FactorIds.Distinct
+        For Each id As String In idset
             Call time.AddRange(timePoints)
             Call expression.AddRange(moleculeLines(id))
             Call names.AddRange(id.Repeats(timePoints.Length))
@@ -140,7 +146,7 @@ Public Class CellBrowser
         ' loadd all compound data
         Dim lines As New DataFrame With {
             .features = New Dictionary(Of String, FeatureVector) From {
-                {"time", New FeatureVector("time", time)},
+                {"time", New FeatureVector("time", Time)},
                 {"expression", New FeatureVector("expression", expression)},
                 {"names", New FeatureVector("names", names)}
             }
@@ -156,5 +162,19 @@ Public Class CellBrowser
         PlotView1.ScaleFactor = 1.25
         PlotView1.PlotPadding = plot.ggplotTheme.padding
         PlotView1.ggplot = plot
+    End Sub
+
+    Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
+        Dim node = e.Node
+
+        If node Is Nothing Then
+            Return
+        End If
+
+        Dim node_id = node.Text
+
+        If moleculeLines.ContainsKey(node_id) Then
+            Call RefreshPlot({node_id})
+        End If
     End Sub
 End Class
