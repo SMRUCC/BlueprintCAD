@@ -16,4 +16,10 @@ Public Class CellBrowser
             End If
         End Using
     End Sub
+
+    Private Sub CellBrowser_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        If vcellPack IsNot Nothing Then
+            Call vcellPack.Dispose()
+        End If
+    End Sub
 End Class
