@@ -107,6 +107,8 @@ Partial Class CellBrowser
         ' SplitContainer2
         ' 
         SplitContainer2.Dock = DockStyle.Fill
+        SplitContainer2.FixedPanel = FixedPanel.Panel1
+        SplitContainer2.IsSplitterFixed = True
         SplitContainer2.Location = New Point(3, 19)
         SplitContainer2.Name = "SplitContainer2"
         ' 
