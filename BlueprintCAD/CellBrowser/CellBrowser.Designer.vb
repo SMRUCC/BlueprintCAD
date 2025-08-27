@@ -29,12 +29,23 @@ Partial Class CellBrowser
         GroupBox1 = New GroupBox()
         GroupBox2 = New GroupBox()
         SplitContainer1 = New SplitContainer()
+        SplitContainer2 = New SplitContainer()
+        TreeView1 = New TreeView()
+        DataGridView1 = New DataGridView()
+        Column1 = New DataGridViewLinkColumn()
+        Column2 = New DataGridViewLinkColumn()
         MenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
+        GroupBox2.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer2.Panel1.SuspendLayout()
+        SplitContainer2.Panel2.SuspendLayout()
+        SplitContainer2.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -84,6 +95,7 @@ Partial Class CellBrowser
         ' 
         ' GroupBox2
         ' 
+        GroupBox2.Controls.Add(SplitContainer2)
         GroupBox2.Dock = DockStyle.Fill
         GroupBox2.Location = New Point(0, 0)
         GroupBox2.Name = "GroupBox2"
@@ -110,6 +122,57 @@ Partial Class CellBrowser
         SplitContainer1.SplitterDistance = 550
         SplitContainer1.TabIndex = 4
         ' 
+        ' SplitContainer2
+        ' 
+        SplitContainer2.Dock = DockStyle.Fill
+        SplitContainer2.Location = New Point(3, 19)
+        SplitContainer2.Name = "SplitContainer2"
+        ' 
+        ' SplitContainer2.Panel1
+        ' 
+        SplitContainer2.Panel1.Controls.Add(TreeView1)
+        ' 
+        ' SplitContainer2.Panel2
+        ' 
+        SplitContainer2.Panel2.Controls.Add(DataGridView1)
+        SplitContainer2.Size = New Size(1177, 256)
+        SplitContainer2.SplitterDistance = 344
+        SplitContainer2.TabIndex = 0
+        ' 
+        ' TreeView1
+        ' 
+        TreeView1.Dock = DockStyle.Fill
+        TreeView1.Location = New Point(0, 0)
+        TreeView1.Name = "TreeView1"
+        TreeView1.Size = New Size(344, 256)
+        TreeView1.TabIndex = 0
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2})
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.Location = New Point(0, 0)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.Size = New Size(829, 256)
+        DataGridView1.TabIndex = 0
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "Flux Edge ID"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        Column1.Resizable = DataGridViewTriState.True
+        Column1.SortMode = DataGridViewColumnSortMode.Automatic
+        Column1.Width = 200
+        ' 
+        ' Column2
+        ' 
+        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column2.HeaderText = "Network"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -123,10 +186,16 @@ Partial Class CellBrowser
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         GroupBox1.ResumeLayout(False)
+        GroupBox2.ResumeLayout(False)
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        SplitContainer2.Panel1.ResumeLayout(False)
+        SplitContainer2.Panel2.ResumeLayout(False)
+        CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer2.ResumeLayout(False)
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -138,4 +207,9 @@ Partial Class CellBrowser
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents SplitContainer2 As SplitContainer
+    Friend WithEvents TreeView1 As TreeView
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column1 As DataGridViewLinkColumn
+    Friend WithEvents Column2 As DataGridViewLinkColumn
 End Class

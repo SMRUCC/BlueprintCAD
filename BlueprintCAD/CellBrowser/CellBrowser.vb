@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.DataStorage.HDSPack
 Imports Microsoft.VisualBasic.DataStorage.HDSPack.FileSystem
 Imports Microsoft.VisualBasic.Serialization.JSON
@@ -35,8 +36,21 @@ Public Class CellBrowser
             index(block.fileName.BaseName) = dataRoot.ReadText(block).LoadJSON(Of FluxEdge)
         Next
 
+        Call Me.Invoke(Sub() LoadUI(index.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value))))
+
         Return index
     End Function
+
+    Private Sub LoadUI(network As IEnumerable(Of NamedValue(Of FluxEdge)))
+        Dim offset As Integer
+
+        Call DataGridView1.Rows.Clear()
+
+        For Each edge As NamedValue(Of FluxEdge) In network
+            offset = DataGridView1.Rows.Add(edge.Name, edge.Value.ToString)
+            DataGridView1.Rows(offset).Tag = edge.Value
+        Next
+    End Sub
 
     Private Sub CellBrowser_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         If vcellPack IsNot Nothing Then
