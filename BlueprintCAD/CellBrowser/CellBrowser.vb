@@ -135,9 +135,11 @@ Public Class CellBrowser
     Private Async Function RefreshPlot(idset As IEnumerable(Of String)) As Task
         Dim plot As ggplot.ggplot = Await CreateGgplot(idset)
 
-        PlotView1.ScaleFactor = 1.25
-        PlotView1.PlotPadding = plot.ggplotTheme.padding
-        PlotView1.ggplot = plot
+        If Not plot Is Nothing Then
+            PlotView1.ScaleFactor = 1.25
+            PlotView1.PlotPadding = plot.ggplotTheme.padding
+            PlotView1.ggplot = plot
+        End If
     End Function
 
     Private Async Function CreateGgplot(idset As IEnumerable(Of String)) As Task(Of ggplot.ggplot)
@@ -154,6 +156,10 @@ Public Class CellBrowser
                         Call names.AddRange(id.Repeats(timePoints.Length))
                     End If
                 Next
+
+                If Not time.Any Then
+                    Return Nothing
+                End If
 
                 ' loadd all compound data
                 Dim lines As New DataFrame With {
