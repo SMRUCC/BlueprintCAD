@@ -120,7 +120,7 @@ Public Class CellBrowser
         End If
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Async Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If DataGridView1.SelectedRows.Count = 0 Then
             Return
         End If
@@ -129,52 +129,64 @@ Public Class CellBrowser
         Dim link = CStr(row.Cells(0).Value)
         Dim edge As FluxEdge = row.Tag
 
-        Call RefreshPlot(edge.FactorIds.Distinct)
+        Await RefreshPlot(edge.FactorIds.Distinct)
     End Sub
 
-    Private Sub RefreshPlot(idset As IEnumerable(Of String))
-        Dim time As New List(Of Double)
-        Dim expression As New List(Of Double)
-        Dim names As New List(Of String)
-
-        For Each id As String In idset
-            Call time.AddRange(timePoints)
-            Call expression.AddRange(moleculeLines(id))
-            Call names.AddRange(id.Repeats(timePoints.Length))
-        Next
-
-        ' loadd all compound data
-        Dim lines As New DataFrame With {
-            .features = New Dictionary(Of String, FeatureVector) From {
-                {"time", New FeatureVector("time", Time)},
-                {"expression", New FeatureVector("expression", expression)},
-                {"names", New FeatureVector("names", names)}
-            }
-        }
-        Dim plot As ggplot.ggplot = ggplotFunction.ggplot(
-            data:=lines,
-            mapping:=aes("time", "expression", color:="names"),
-            colorSet:="paper",
-            padding:="padding: 5% 10% 10% 10%;")
-
-        plot += geom_point(size:=6)
+    Private Async Function RefreshPlot(idset As IEnumerable(Of String)) As Task
+        Dim plot As ggplot.ggplot = Await CreateGgplot(idset)
 
         PlotView1.ScaleFactor = 1.25
         PlotView1.PlotPadding = plot.ggplotTheme.padding
         PlotView1.ggplot = plot
-    End Sub
+    End Function
 
-    Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
+    Private Async Function CreateGgplot(idset As IEnumerable(Of String)) As Task(Of ggplot.ggplot)
+        Return Await Task.Run(
+            Function()
+                Dim time As New List(Of Double)
+                Dim expression As New List(Of Double)
+                Dim names As New List(Of String)
+
+                For Each id As String In idset
+                    If moleculeLines.ContainsKey(id) Then
+                        Call time.AddRange(timePoints)
+                        Call expression.AddRange(moleculeLines(id))
+                        Call names.AddRange(id.Repeats(timePoints.Length))
+                    End If
+                Next
+
+                ' loadd all compound data
+                Dim lines As New DataFrame With {
+                    .features = New Dictionary(Of String, FeatureVector) From {
+                        {"time", New FeatureVector("time", time)},
+                        {"expression", New FeatureVector("expression", expression)},
+                        {"names", New FeatureVector("names", names)}
+                    }
+                }
+                Dim plot As ggplot.ggplot = ggplotFunction.ggplot(
+                    data:=lines,
+                    mapping:=aes("time", "expression", color:="names"),
+                    colorSet:="paper",
+                    padding:="padding: 5% 10% 10% 10%;")
+
+                plot += geom_point(size:=6)
+
+                Return plot
+            End Function)
+    End Function
+
+    Private Async Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
         Dim node = e.Node
 
         If node Is Nothing Then
             Return
         End If
 
-        Dim node_id = node.Text
+        Dim node_id As String() = vcellPack.comparts _
+            .SafeQuery _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .ToArray
 
-        If moleculeLines.ContainsKey(node_id) Then
-            Call RefreshPlot({node_id})
-        End If
+        Await RefreshPlot(node_id)
     End Sub
 End Class
