@@ -231,7 +231,7 @@ Public Class CellBrowser
         Call CheckedListBox1.Items.Clear()
 
         For Each col As FeatureVector In matrix.Values
-            Call cols.Add((col.name, moleculeLines(col.name)))
+            Call cols.Add((col.name, col.TryCast(Of Double)))
             Call CheckedListBox1.Items.Add(col.name)
             Call CheckedListBox1.SetItemChecked(CheckedListBox1.Items.Count - 1, True)
         Next
