@@ -342,7 +342,7 @@ Public Class CellBrowser
             .Select(Function(cid) node.Text & "@" & cid) _
             .ToArray
         Dim idset As Index(Of String) = node_id
-        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.right.Any(Function(v) idset(v.id & "@" & v.compartment_id) > -1)).ToArray
+        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.right.Any(Function(v) idset(v.id) > -1)).ToArray
 
         FormBuzyLoader.Loading(
             Sub(println)
@@ -361,7 +361,7 @@ Public Class CellBrowser
             .Select(Function(cid) node.Text & "@" & cid) _
             .ToArray
         Dim idset As Index(Of String) = node_id
-        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.left.Any(Function(v) idset(v.id & "@" & v.compartment_id) > -1)).ToArray
+        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.left.Any(Function(v) idset(v.id) > -1)).ToArray
 
         FormBuzyLoader.Loading(
             Sub(println)
