@@ -26,6 +26,8 @@ Partial Class CellBrowser
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
         OpenVirtualCellDataFileToolStripMenuItem = New ToolStripMenuItem()
+        BrowserToolStripMenuItem = New ToolStripMenuItem()
+        ResetNetworkTableToolStripMenuItem = New ToolStripMenuItem()
         PlotView1 = New ggviewer.PlotView()
         GroupBox2 = New GroupBox()
         SplitContainer2 = New SplitContainer()
@@ -39,6 +41,8 @@ Partial Class CellBrowser
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        FilterNetworkToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -55,11 +59,12 @@ Partial Class CellBrowser
         TabPage2.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
+        ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' MenuStrip1
         ' 
-        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, BrowserToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Size = New Size(1183, 24)
@@ -78,6 +83,19 @@ Partial Class CellBrowser
         OpenVirtualCellDataFileToolStripMenuItem.Name = "OpenVirtualCellDataFileToolStripMenuItem"
         OpenVirtualCellDataFileToolStripMenuItem.Size = New Size(208, 22)
         OpenVirtualCellDataFileToolStripMenuItem.Text = "Open VirtualCell Data File"
+        ' 
+        ' BrowserToolStripMenuItem
+        ' 
+        BrowserToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ResetNetworkTableToolStripMenuItem})
+        BrowserToolStripMenuItem.Name = "BrowserToolStripMenuItem"
+        BrowserToolStripMenuItem.Size = New Size(61, 20)
+        BrowserToolStripMenuItem.Text = "Browser"
+        ' 
+        ' ResetNetworkTableToolStripMenuItem
+        ' 
+        ResetNetworkTableToolStripMenuItem.Name = "ResetNetworkTableToolStripMenuItem"
+        ResetNetworkTableToolStripMenuItem.Size = New Size(180, 22)
+        ResetNetworkTableToolStripMenuItem.Text = "Reset Network Table"
         ' 
         ' PlotView1
         ' 
@@ -123,6 +141,7 @@ Partial Class CellBrowser
         ' 
         ' TreeView1
         ' 
+        TreeView1.ContextMenuStrip = ContextMenuStrip1
         TreeView1.Dock = DockStyle.Fill
         TreeView1.Location = New Point(0, 0)
         TreeView1.Name = "TreeView1"
@@ -220,6 +239,18 @@ Partial Class CellBrowser
         DataGridView2.Size = New Size(1169, 516)
         DataGridView2.TabIndex = 0
         ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {FilterNetworkToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(181, 48)
+        ' 
+        ' FilterNetworkToolStripMenuItem
+        ' 
+        FilterNetworkToolStripMenuItem.Name = "FilterNetworkToolStripMenuItem"
+        FilterNetworkToolStripMenuItem.Size = New Size(180, 22)
+        FilterNetworkToolStripMenuItem.Text = "Filter Network"
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -247,6 +278,7 @@ Partial Class CellBrowser
         TabPage2.ResumeLayout(False)
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
+        ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -267,4 +299,8 @@ Partial Class CellBrowser
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents BrowserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ResetNetworkTableToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents FilterNetworkToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
 Imports ggplot
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
@@ -15,6 +14,7 @@ Public Class CellBrowser
 
     Dim vcellPack As Raw.Reader
     Dim network As Dictionary(Of String, FluxEdge)
+    Dim nodeLinks As Dictionary(Of String, FluxEdge())
     Dim timePoints As Double()
     Dim moleculeSet As Dictionary(Of String, String())
     Dim moleculeLines As New Dictionary(Of String, Double())
@@ -41,9 +41,25 @@ Public Class CellBrowser
                         Call println("loading molecule list ui...")
                         Call Me.Invoke(Sub() LoadTree())
                         Call Me.Invoke(Sub() LoadMatrix())
+                        Call Me.Invoke(Sub() LoadNodeStar())
                     End Sub)
             End If
         End Using
+    End Sub
+
+    Private Sub LoadNodeStar()
+        nodeLinks = network.Values _
+            .Select(Function(n)
+                        Return n.FactorIds.Select(Function(id) (id, n))
+                    End Function) _
+            .IteratesALL _
+            .GroupBy(Function(n) n.id) _
+            .ToDictionary(Function(n) n.Key,
+                          Function(n)
+                              Return n _
+                                 .Select(Function(a) a.Item2) _
+                                 .ToArray
+                          End Function)
     End Sub
 
     Private Sub LoadTree()
@@ -93,13 +109,20 @@ Public Class CellBrowser
         Call vcellPack.LoadIndex()
 
         For Each block As StreamBlock In dir.ListFiles(recursive:=False).OfType(Of StreamBlock)
-            index(block.fileName.BaseName) = dataRoot.ReadText(block).LoadJSON(Of FluxEdge)
+            Dim key As String = block.fileName.BaseName
+
+            index(key) = dataRoot.ReadText(block).LoadJSON(Of FluxEdge)
+            index(key).id = key
         Next
 
         Call Me.Invoke(Sub() LoadUI(index.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value))))
 
         Return index
     End Function
+
+    Private Sub ResetNetworkUI()
+        Call LoadUI(network.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value)))
+    End Sub
 
     Private Sub LoadUI(network As IEnumerable(Of NamedValue(Of FluxEdge)))
         Dim offset As Integer
@@ -194,5 +217,27 @@ Public Class CellBrowser
             .ToArray
 
         Await RefreshPlot(node_id)
+    End Sub
+
+    Private Sub ResetNetworkTableToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetNetworkTableToolStripMenuItem.Click
+        FormBuzyLoader.Loading(Sub(println) Me.Invoke(Sub() ResetNetworkUI()))
+    End Sub
+
+    Private Sub FilterNetworkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterNetworkToolStripMenuItem.Click
+        If TreeView1.SelectedNode Is Nothing Then
+            Return
+        End If
+
+        Dim node As TreeNode = TreeView1.SelectedNode
+        Dim node_id As String() = vcellPack.comparts _
+            .SafeQuery _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .ToArray
+        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.ToArray
+
+        FormBuzyLoader.Loading(
+            Sub(println)
+                Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+            End Sub)
     End Sub
 End Class
