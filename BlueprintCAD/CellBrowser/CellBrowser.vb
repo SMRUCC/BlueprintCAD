@@ -40,28 +40,31 @@ Public Class CellBrowser
                 moleculeSet = vcellPack.GetMoleculeIdList
 
                 Call FormBuzyLoader.Loading(
-                    Sub(println)
+                    Async Function(println)
                         Call println("loading molecule list ui... [metabolite tree]")
-                        Call Me.Invoke(Sub() LoadTree())
+                        Call Me.Invoke(Sub() LoadTree(println))
                         Call println("loading molecule list ui... [metabolite matrix]")
-                        Call Me.Invoke(Sub() LoadMatrix())
+                        Await LoadMatrix()
                         Call println("loading molecule list ui... [metabolite star links]")
                         Call Me.Invoke(Sub() LoadNodeStar())
-                    End Sub)
-
-                Call FormBuzyLoader.Loading(
-                    Sub(println)
                         Call println("load flux dynamics data into memory...")
                         Call LoadFluxData()
-                    End Sub)
+                    End Function)
             End If
         End Using
     End Sub
 
     Private Sub LoadFluxData()
         For Each fluxSet In moleculeSet.Where(Function(a) a.Key.EndsWith("-Flux"))
-            For Each fluxId As String In fluxSet.Value
-                fluxLines(fluxId) = moleculeLines(fluxId)
+            For Each compart_id As String In vcellPack.comparts
+                For Each fluxId As String In fluxSet.Value
+                    fluxId = fluxId & "@" & compart_id
+
+                    If moleculeLines.ContainsKey(fluxId) Then
+                        fluxLines(fluxId) = moleculeLines(fluxId)
+                        moleculeLines.Remove(fluxId)
+                    End If
+                Next
             Next
         Next
     End Sub
@@ -81,20 +84,23 @@ Public Class CellBrowser
                           End Function)
     End Sub
 
-    Private Sub LoadTree()
+    Private Sub LoadTree(println As Action(Of String))
         For Each molSet In moleculeSet.Where(Function(a) Not a.Key.EndsWith("-Flux"))
             Dim root = TreeView1.Nodes.Add(molSet.Key)
 
             For Each id As String In molSet.Value
                 Call root.Nodes.Add(id)
             Next
+
+            Call Application.DoEvents()
+            Call println($"loading molecule list ui... [metabolite tree -> {molSet.Key}]")
         Next
     End Sub
 
     ''' <summary>
     ''' metabolite + flux
     ''' </summary>
-    Private Sub LoadMatrix()
+    Private Async Function LoadMatrix() As Task
         Dim times As New List(Of (Double, Dictionary(Of String, Double)))
 
         For Each ti As Double In timePoints
@@ -109,18 +115,22 @@ Public Class CellBrowser
             Next
 
             Call times.Add((ti, data))
+            Call Application.DoEvents()
         Next
 
-        Dim mols As String() = times _
-            .Select(Function(a) a.Item2.Keys) _
-            .IteratesALL _
-            .Distinct _
-            .ToArray
+        Dim mols As String() = Await Task.Run(
+            Function()
+                Return times _
+                    .Select(Function(a) a.Item2.Keys) _
+                    .IteratesALL _
+                    .Distinct _
+                    .ToArray
+            End Function)
 
         For Each id As String In mols
             Call moleculeLines.Add(id, times.Select(Function(ti) ti.Item2(id)).ToArray)
         Next
-    End Sub
+    End Function
 
     Private Function LoadNetwork(println As Action(Of String)) As Dictionary(Of String, FluxEdge)
         Dim dataRoot As StreamPack = vcellPack.GetStream
