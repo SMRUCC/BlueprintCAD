@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
 Imports ggplot
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
@@ -18,6 +19,7 @@ Public Class CellBrowser
     Dim timePoints As Double()
     Dim moleculeSet As Dictionary(Of String, String())
     Dim moleculeLines As New Dictionary(Of String, Double())
+    Dim plotMatrix As New Dictionary(Of String, FeatureVector)
 
     Shared Sub New()
         Call SkiaDriver.Register()
@@ -165,51 +167,71 @@ Public Class CellBrowser
         End If
     End Function
 
+    Private Function CreatePlotMatrix(idset As IEnumerable(Of String)) As Dictionary(Of String, FeatureVector)
+        Call plotMatrix.Clear()
+
+        For Each id As String In idset
+            If moleculeLines.ContainsKey(id) Then
+                plotMatrix(id) = New FeatureVector(id, moleculeLines(id))
+            End If
+        Next
+
+        Return plotMatrix
+    End Function
+
     Private Async Function CreateGgplot(idset As IEnumerable(Of String)) As Task(Of ggplot.ggplot)
+        Dim matrix = CreatePlotMatrix(idset)
+        Dim cols As New List(Of (name$, expr As Double()))
+
+        If matrix.Count = 0 Then
+            Return Nothing
+        End If
+
+        Call CheckedListBox1.Items.Clear()
+
+        For Each col As FeatureVector In matrix.Values
+            Call cols.Add((col.name, moleculeLines(col.name)))
+            Call CheckedListBox1.Items.Add(col.name)
+            Call CheckedListBox1.SetItemChecked(CheckedListBox1.Items.Count - 1, True)
+        Next
+
+        Call DataGridView2.Rows.Clear()
+        Call DataGridView2.Columns.Clear()
+        Call DataGridView2.Columns.Add("Time", "Time")
+
+        For Each col In cols
+            Call DataGridView2.Columns.Add(col.name, col.name)
+        Next
+
+        For i As Integer = 0 To timePoints.Length - 1
+            Dim v As Object() = New Object(cols.Count) {}
+
+            v(0) = timePoints(i)
+
+            For j As Integer = 0 To cols.Count - 1
+                v(j + 1) = cols(j).expr(i)
+            Next
+
+            Call DataGridView2.Rows.Add(v)
+        Next
+
+        Call DataGridView2.CommitEdit(DataGridViewDataErrorContexts.Commit)
+
+        Return Await CreateGgplot(matrix)
+    End Function
+
+    Private Async Function CreateGgplot(matrix As Dictionary(Of String, FeatureVector)) As Task(Of ggplot.ggplot)
         Return Await Task.Run(
             Function()
                 Dim time As New List(Of Double)
                 Dim expression As New List(Of Double)
                 Dim names As New List(Of String)
-                Dim cols As New List(Of (name$, expr As Double()))
 
-                For Each id As String In idset
-                    If moleculeLines.ContainsKey(id) Then
-                        Call time.AddRange(timePoints)
-                        Call expression.AddRange(moleculeLines(id))
-                        Call names.AddRange(id.Repeats(timePoints.Length))
-                        Call cols.Add((id, moleculeLines(id)))
-                    End If
+                For Each col As FeatureVector In matrix.Values
+                    Call time.AddRange(timePoints)
+                    Call expression.AddRange(col.TryCast(Of Double))
+                    Call names.AddRange(col.name.Repeats(timePoints.Length))
                 Next
-
-                If Not time.Any Then
-                    Return Nothing
-                Else
-                    Call Me.Invoke(
-                        Sub()
-                            Call DataGridView2.Rows.Clear()
-                            Call DataGridView2.Columns.Clear()
-                            Call DataGridView2.Columns.Add("Time", "Time")
-
-                            For Each col In cols
-                                Call DataGridView2.Columns.Add(col.name, col.name)
-                            Next
-
-                            For i As Integer = 0 To timePoints.Length - 1
-                                Dim v As Object() = New Object(cols.Count) {}
-
-                                v(0) = timePoints(i)
-
-                                For j As Integer = 0 To cols.Count - 1
-                                    v(j + 1) = cols(j).expr(i)
-                                Next
-
-                                Call DataGridView2.Rows.Add(v)
-                            Next
-
-                            Call DataGridView2.CommitEdit(DataGridViewDataErrorContexts.Commit)
-                        End Sub)
-                End If
 
                 ' loadd all compound data
                 Dim lines As New DataFrame With {
@@ -266,5 +288,9 @@ Public Class CellBrowser
             Sub(println)
                 Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
             End Sub)
+    End Sub
+
+    Private Sub SplitContainer2_SplitterMoved(sender As Object, e As SplitterEventArgs) Handles SplitContainer2.SplitterMoved
+
     End Sub
 End Class

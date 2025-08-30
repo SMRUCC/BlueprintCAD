@@ -40,6 +40,8 @@ Partial Class CellBrowser
         SplitContainer1 = New SplitContainer()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        SplitContainer3 = New SplitContainer()
+        CheckedListBox1 = New CheckedListBox()
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
@@ -57,6 +59,10 @@ Partial Class CellBrowser
         SplitContainer1.SuspendLayout()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
+        CType(SplitContainer3, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer3.Panel1.SuspendLayout()
+        SplitContainer3.Panel2.SuspendLayout()
+        SplitContainer3.SuspendLayout()
         TabPage2.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +73,7 @@ Partial Class CellBrowser
         MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, BrowserToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1183, 24)
+        MenuStrip1.Size = New Size(1524, 24)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -103,10 +109,10 @@ Partial Class CellBrowser
         PlotView1.Debug = True
         PlotView1.Dock = DockStyle.Fill
         PlotView1.ggplot = Nothing
-        PlotView1.Location = New Point(3, 3)
+        PlotView1.Location = New Point(0, 0)
         PlotView1.Name = "PlotView1"
         PlotView1.ScaleFactor = 1.25F
-        PlotView1.Size = New Size(1169, 516)
+        PlotView1.Size = New Size(1167, 572)
         PlotView1.TabIndex = 1
         ' 
         ' GroupBox2
@@ -115,7 +121,7 @@ Partial Class CellBrowser
         GroupBox2.Dock = DockStyle.Fill
         GroupBox2.Location = New Point(0, 0)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(1183, 278)
+        GroupBox2.Size = New Size(1524, 308)
         GroupBox2.TabIndex = 3
         GroupBox2.TabStop = False
         GroupBox2.Text = "Browser"
@@ -135,7 +141,7 @@ Partial Class CellBrowser
         ' SplitContainer2.Panel2
         ' 
         SplitContainer2.Panel2.Controls.Add(DataGridView1)
-        SplitContainer2.Size = New Size(1177, 256)
+        SplitContainer2.Size = New Size(1518, 286)
         SplitContainer2.SplitterDistance = 344
         SplitContainer2.TabIndex = 0
         ' 
@@ -145,7 +151,7 @@ Partial Class CellBrowser
         TreeView1.Dock = DockStyle.Fill
         TreeView1.Location = New Point(0, 0)
         TreeView1.Name = "TreeView1"
-        TreeView1.Size = New Size(344, 256)
+        TreeView1.Size = New Size(344, 286)
         TreeView1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -172,7 +178,7 @@ Partial Class CellBrowser
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(829, 256)
+        DataGridView1.Size = New Size(1170, 286)
         DataGridView1.TabIndex = 0
         ' 
         ' Column1
@@ -205,8 +211,8 @@ Partial Class CellBrowser
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(GroupBox2)
-        SplitContainer1.Size = New Size(1183, 832)
-        SplitContainer1.SplitterDistance = 550
+        SplitContainer1.Size = New Size(1524, 918)
+        SplitContainer1.SplitterDistance = 606
         SplitContainer1.TabIndex = 4
         ' 
         ' TabControl1
@@ -217,19 +223,46 @@ Partial Class CellBrowser
         TabControl1.Location = New Point(0, 0)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1183, 550)
+        TabControl1.Size = New Size(1524, 606)
         TabControl1.TabIndex = 0
         ' 
         ' TabPage1
         ' 
-        TabPage1.Controls.Add(PlotView1)
+        TabPage1.Controls.Add(SplitContainer3)
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1175, 522)
+        TabPage1.Size = New Size(1516, 578)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Dynamics Plot"
         TabPage1.UseVisualStyleBackColor = True
+        ' 
+        ' SplitContainer3
+        ' 
+        SplitContainer3.Dock = DockStyle.Fill
+        SplitContainer3.FixedPanel = FixedPanel.Panel1
+        SplitContainer3.Location = New Point(3, 3)
+        SplitContainer3.Name = "SplitContainer3"
+        ' 
+        ' SplitContainer3.Panel1
+        ' 
+        SplitContainer3.Panel1.Controls.Add(CheckedListBox1)
+        ' 
+        ' SplitContainer3.Panel2
+        ' 
+        SplitContainer3.Panel2.Controls.Add(PlotView1)
+        SplitContainer3.Size = New Size(1510, 572)
+        SplitContainer3.SplitterDistance = 339
+        SplitContainer3.TabIndex = 2
+        ' 
+        ' CheckedListBox1
+        ' 
+        CheckedListBox1.Dock = DockStyle.Fill
+        CheckedListBox1.FormattingEnabled = True
+        CheckedListBox1.Location = New Point(0, 0)
+        CheckedListBox1.Name = "CheckedListBox1"
+        CheckedListBox1.Size = New Size(339, 572)
+        CheckedListBox1.TabIndex = 0
         ' 
         ' TabPage2
         ' 
@@ -260,7 +293,7 @@ Partial Class CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1183, 856)
+        ClientSize = New Size(1524, 942)
         Controls.Add(SplitContainer1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
@@ -281,6 +314,10 @@ Partial Class CellBrowser
         SplitContainer1.ResumeLayout(False)
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
+        SplitContainer3.Panel1.ResumeLayout(False)
+        SplitContainer3.Panel2.ResumeLayout(False)
+        CType(SplitContainer3, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer3.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
@@ -308,4 +345,6 @@ Partial Class CellBrowser
     Friend WithEvents ResetNetworkTableToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents FilterNetworkToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SplitContainer3 As SplitContainer
+    Friend WithEvents CheckedListBox1 As CheckedListBox
 End Class
