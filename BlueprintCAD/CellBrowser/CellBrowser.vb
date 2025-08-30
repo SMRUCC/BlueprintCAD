@@ -225,6 +225,10 @@ Public Class CellBrowser
     End Function
 
     Private Async Function CreateGgplot(matrix As Dictionary(Of String, FeatureVector)) As Task(Of ggplot.ggplot)
+        If matrix.Count = 0 Then
+            Return Nothing
+        End If
+
         Return Await Task.Run(
             Function()
                 Dim time As New List(Of Double)
