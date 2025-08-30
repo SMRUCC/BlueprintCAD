@@ -32,6 +32,8 @@ Partial Class CellBrowser
         GroupBox2 = New GroupBox()
         SplitContainer2 = New SplitContainer()
         TreeView1 = New TreeView()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        FilterNetworkToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewLinkColumn()
         Column2 = New DataGridViewLinkColumn()
@@ -41,14 +43,13 @@ Partial Class CellBrowser
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
-        ContextMenuStrip1 = New ContextMenuStrip(components)
-        FilterNetworkToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
         SplitContainer2.Panel2.SuspendLayout()
         SplitContainer2.SuspendLayout()
+        ContextMenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
@@ -59,7 +60,6 @@ Partial Class CellBrowser
         TabPage2.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
-        ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -148,6 +148,18 @@ Partial Class CellBrowser
         TreeView1.Size = New Size(344, 256)
         TreeView1.TabIndex = 0
         ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {FilterNetworkToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(149, 26)
+        ' 
+        ' FilterNetworkToolStripMenuItem
+        ' 
+        FilterNetworkToolStripMenuItem.Name = "FilterNetworkToolStripMenuItem"
+        FilterNetworkToolStripMenuItem.Size = New Size(148, 22)
+        FilterNetworkToolStripMenuItem.Text = "Filter Network"
+        ' 
         ' DataGridView1
         ' 
         DataGridView1.AllowUserToAddRows = False
@@ -232,24 +244,17 @@ Partial Class CellBrowser
         ' 
         ' DataGridView2
         ' 
+        DataGridView2.AllowUserToAddRows = False
+        DataGridView2.AllowUserToDeleteRows = False
+        DataGridView2.BackgroundColor = Color.Gainsboro
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView2.Dock = DockStyle.Fill
         DataGridView2.Location = New Point(3, 3)
         DataGridView2.Name = "DataGridView2"
+        DataGridView2.ReadOnly = True
+        DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView2.Size = New Size(1169, 516)
         DataGridView2.TabIndex = 0
-        ' 
-        ' ContextMenuStrip1
-        ' 
-        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {FilterNetworkToolStripMenuItem})
-        ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(181, 48)
-        ' 
-        ' FilterNetworkToolStripMenuItem
-        ' 
-        FilterNetworkToolStripMenuItem.Name = "FilterNetworkToolStripMenuItem"
-        FilterNetworkToolStripMenuItem.Size = New Size(180, 22)
-        FilterNetworkToolStripMenuItem.Text = "Filter Network"
         ' 
         ' CellBrowser
         ' 
@@ -268,6 +273,7 @@ Partial Class CellBrowser
         SplitContainer2.Panel2.ResumeLayout(False)
         CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer2.ResumeLayout(False)
+        ContextMenuStrip1.ResumeLayout(False)
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
@@ -278,7 +284,6 @@ Partial Class CellBrowser
         TabPage2.ResumeLayout(False)
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
-        ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub

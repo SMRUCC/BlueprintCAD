@@ -171,17 +171,44 @@ Public Class CellBrowser
                 Dim time As New List(Of Double)
                 Dim expression As New List(Of Double)
                 Dim names As New List(Of String)
+                Dim cols As New List(Of (name$, expr As Double()))
 
                 For Each id As String In idset
                     If moleculeLines.ContainsKey(id) Then
                         Call time.AddRange(timePoints)
                         Call expression.AddRange(moleculeLines(id))
                         Call names.AddRange(id.Repeats(timePoints.Length))
+                        Call cols.Add((id, moleculeLines(id)))
                     End If
                 Next
 
                 If Not time.Any Then
                     Return Nothing
+                Else
+                    Call Me.Invoke(
+                        Sub()
+                            Call DataGridView2.Rows.Clear()
+                            Call DataGridView2.Columns.Clear()
+                            Call DataGridView2.Columns.Add("Time", "Time")
+
+                            For Each col In cols
+                                Call DataGridView2.Columns.Add(col.name, col.name)
+                            Next
+
+                            For i As Integer = 0 To timePoints.Length - 1
+                                Dim v As Object() = New Object(cols.Count) {}
+
+                                v(0) = timePoints(i)
+
+                                For j As Integer = 0 To cols.Count - 1
+                                    v(j + 1) = cols(j).expr(i)
+                                Next
+
+                                Call DataGridView2.Rows.Add(v)
+                            Next
+
+                            Call DataGridView2.CommitEdit(DataGridViewDataErrorContexts.Commit)
+                        End Sub)
                 End If
 
                 ' loadd all compound data
