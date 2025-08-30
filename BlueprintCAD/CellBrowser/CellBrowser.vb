@@ -292,7 +292,7 @@ Public Class CellBrowser
                     colorSet:="paper",
                     padding:="padding: 5% 10% 10% 10%;")
 
-                plot += geom_point(size:=6)
+                plot += geom_point(size:=6, color:="paper")
 
                 Return plot
             End Function)
