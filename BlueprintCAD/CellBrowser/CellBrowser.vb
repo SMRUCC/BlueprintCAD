@@ -19,6 +19,7 @@ Public Class CellBrowser
     Dim timePoints As Double()
     Dim moleculeSet As Dictionary(Of String, String())
     Dim moleculeLines As New Dictionary(Of String, Double())
+    Dim fluxLines As New Dictionary(Of String, Double())
     Dim plotMatrix As New Dictionary(Of String, FeatureVector)
 
     Shared Sub New()
@@ -47,8 +48,22 @@ Public Class CellBrowser
                         Call println("loading molecule list ui... [metabolite star links]")
                         Call Me.Invoke(Sub() LoadNodeStar())
                     End Sub)
+
+                Call FormBuzyLoader.Loading(
+                    Sub(println)
+                        Call println("load flux dynamics data into memory...")
+                        Call LoadFluxData()
+                    End Sub)
             End If
         End Using
+    End Sub
+
+    Private Sub LoadFluxData()
+        For Each fluxSet In moleculeSet.Where(Function(a) a.Key.EndsWith("-Flux"))
+            For Each fluxId As String In fluxSet.Value
+                fluxLines(fluxId) = moleculeLines(fluxId)
+            Next
+        Next
     End Sub
 
     Private Sub LoadNodeStar()
@@ -76,6 +91,9 @@ Public Class CellBrowser
         Next
     End Sub
 
+    ''' <summary>
+    ''' metabolite + flux
+    ''' </summary>
     Private Sub LoadMatrix()
         Dim times As New List(Of (Double, Dictionary(Of String, Double)))
 
