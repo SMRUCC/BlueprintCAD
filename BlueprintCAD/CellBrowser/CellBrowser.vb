@@ -123,6 +123,10 @@ Public Class CellBrowser
     End Function
 
     Private Sub ResetNetworkUI()
+        If network Is Nothing Then
+            Return
+        End If
+
         Call LoadUI(network.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value)))
     End Sub
 
@@ -292,5 +296,29 @@ Public Class CellBrowser
 
     Private Sub SplitContainer2_SplitterMoved(sender As Object, e As SplitterEventArgs) Handles SplitContainer2.SplitterMoved
 
+    End Sub
+
+    Private Sub CheckedListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox1.SelectedIndexChanged
+
+    End Sub
+
+    Private Async Sub CheckedListBox1_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles CheckedListBox1.ItemCheck
+        Dim matrix As New Dictionary(Of String, FeatureVector)
+        Dim id As String
+
+        For i As Integer = 0 To CheckedListBox1.Items.Count - 1
+            If CheckedListBox1.GetItemChecked(i) Then
+                id = CheckedListBox1.Items(i).ToString
+                matrix(id) = plotMatrix(id)
+            End If
+        Next
+
+        Dim plot As ggplot.ggplot = Await CreateGgplot(matrix)
+
+        If Not plot Is Nothing Then
+            PlotView1.ScaleFactor = 1.25
+            PlotView1.PlotPadding = plot.ggplotTheme.padding
+            PlotView1.ggplot = plot
+        End If
     End Sub
 End Class

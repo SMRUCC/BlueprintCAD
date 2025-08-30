@@ -270,7 +270,7 @@ Partial Class CellBrowser
         TabPage2.Location = New Point(4, 24)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1175, 522)
+        TabPage2.Size = New Size(1516, 578)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Matrix"
         TabPage2.UseVisualStyleBackColor = True
@@ -286,7 +286,7 @@ Partial Class CellBrowser
         DataGridView2.Name = "DataGridView2"
         DataGridView2.ReadOnly = True
         DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView2.Size = New Size(1169, 516)
+        DataGridView2.Size = New Size(1510, 572)
         DataGridView2.TabIndex = 0
         ' 
         ' CellBrowser
