@@ -191,6 +191,8 @@ Public Class CellBrowser
         Dim link = CStr(row.Cells(0).Value)
         Dim edge As FluxEdge = row.Tag
 
+        TextBox1.Text = edge.GetJson(indent:=True)
+
         Await RefreshPlot(edge.FactorIds.Distinct)
     End Sub
 
