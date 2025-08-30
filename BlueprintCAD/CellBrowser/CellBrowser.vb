@@ -431,4 +431,26 @@ Public Class CellBrowser
             End If
         End Using
     End Sub
+
+    Private Async Sub ViewMassActivityLoadsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewMassActivityLoadsToolStripMenuItem.Click
+        Dim loads = vcellPack.ActivityLoads.ToArray
+        Dim idset = Await Task.Run(Function() loads.Select(Function(ti) ti.Keys).IteratesALL.Distinct.ToArray)
+        Dim matrix = idset _
+            .ToDictionary(Function(id) id,
+                          Function(id)
+                              Return New FeatureVector(id, loads.Select(Function(ti) ti(id)))
+                          End Function)
+
+        Dim plot As ggplot.ggplot = Await CreatePlot(matrix:=matrix)
+
+        If Not plot Is Nothing Then
+            Try
+                PlotView1.ScaleFactor = 1.25
+                PlotView1.PlotPadding = plot.ggplotTheme.padding
+                PlotView1.ggplot = plot
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
 End Class

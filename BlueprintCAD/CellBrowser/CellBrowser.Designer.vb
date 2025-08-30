@@ -51,6 +51,7 @@ Partial Class CellBrowser
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
+        ViewMassActivityLoadsToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -110,7 +111,7 @@ Partial Class CellBrowser
         ' 
         ' BrowserToolStripMenuItem
         ' 
-        BrowserToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ResetNetworkTableToolStripMenuItem})
+        BrowserToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ResetNetworkTableToolStripMenuItem, ViewMassActivityLoadsToolStripMenuItem})
         BrowserToolStripMenuItem.Name = "BrowserToolStripMenuItem"
         BrowserToolStripMenuItem.Size = New Size(61, 20)
         BrowserToolStripMenuItem.Text = "Browser"
@@ -118,7 +119,7 @@ Partial Class CellBrowser
         ' ResetNetworkTableToolStripMenuItem
         ' 
         ResetNetworkTableToolStripMenuItem.Name = "ResetNetworkTableToolStripMenuItem"
-        ResetNetworkTableToolStripMenuItem.Size = New Size(180, 22)
+        ResetNetworkTableToolStripMenuItem.Size = New Size(206, 22)
         ResetNetworkTableToolStripMenuItem.Text = "Reset Network Table"
         ' 
         ' ViewerToolStripMenuItem
@@ -333,6 +334,12 @@ Partial Class CellBrowser
         DataGridView2.Size = New Size(1510, 572)
         DataGridView2.TabIndex = 0
         ' 
+        ' ViewMassActivityLoadsToolStripMenuItem
+        ' 
+        ViewMassActivityLoadsToolStripMenuItem.Name = "ViewMassActivityLoadsToolStripMenuItem"
+        ViewMassActivityLoadsToolStripMenuItem.Size = New Size(206, 22)
+        ViewMassActivityLoadsToolStripMenuItem.Text = "View Mass Activity Loads"
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -398,4 +405,5 @@ Partial Class CellBrowser
     Friend WithEvents ExportPlotMatrixToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewMassActivityLoadsToolStripMenuItem As ToolStripMenuItem
 End Class
