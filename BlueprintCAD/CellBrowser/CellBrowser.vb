@@ -40,9 +40,11 @@ Public Class CellBrowser
 
                 Call FormBuzyLoader.Loading(
                     Sub(println)
-                        Call println("loading molecule list ui...")
+                        Call println("loading molecule list ui... [metabolite tree]")
                         Call Me.Invoke(Sub() LoadTree())
+                        Call println("loading molecule list ui... [metabolite matrix]")
                         Call Me.Invoke(Sub() LoadMatrix())
+                        Call println("loading molecule list ui... [metabolite star links]")
                         Call Me.Invoke(Sub() LoadNodeStar())
                     End Sub)
             End If
@@ -115,8 +117,11 @@ Public Class CellBrowser
 
             index(key) = dataRoot.ReadText(block).LoadJSON(Of FluxEdge)
             index(key).id = key
+
+            Call Application.DoEvents()
         Next
 
+        Call println("Loading flux data into table UI...")
         Call Me.Invoke(Sub() LoadUI(index.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value))))
 
         Return index
