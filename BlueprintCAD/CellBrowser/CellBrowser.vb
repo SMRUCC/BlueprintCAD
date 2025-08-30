@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports ggplot
+Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.Data.Framework.IO
@@ -317,6 +318,55 @@ Public Class CellBrowser
 
     Private Sub ResetNetworkTableToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetNetworkTableToolStripMenuItem.Click
         FormBuzyLoader.Loading(Sub(println) Me.Invoke(Sub() ResetNetworkUI()))
+    End Sub
+
+    Private Sub CopyNameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyNameToolStripMenuItem.Click
+        If TreeView1.SelectedNode Is Nothing Then
+            Return
+        End If
+
+        Dim node As TreeNode = TreeView1.SelectedNode
+        Dim node_id As String = node.Text
+
+        Call Clipboard.SetText(node_id)
+    End Sub
+
+    Private Sub FilterSubstrateNetworkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterSubstrateNetworkToolStripMenuItem.Click
+        If TreeView1.SelectedNode Is Nothing Then
+            Return
+        End If
+
+        Dim node As TreeNode = TreeView1.SelectedNode
+        Dim node_id As String() = vcellPack.comparts _
+            .SafeQuery _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .ToArray
+        Dim idset As Index(Of String) = node_id
+        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.right.Any(Function(v) idset(v.id & "@" & v.compartment_id) > -1)).ToArray
+
+        FormBuzyLoader.Loading(
+            Sub(println)
+                Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+            End Sub)
+    End Sub
+
+    Private Sub FilterProductNetworkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterProductNetworkToolStripMenuItem.Click
+        If TreeView1.SelectedNode Is Nothing Then
+            Return
+        End If
+
+        Dim node As TreeNode = TreeView1.SelectedNode
+        Dim node_id As String() = vcellPack.comparts _
+            .SafeQuery _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .ToArray
+        Dim idset As Index(Of String) = node_id
+        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.left.Any(Function(v) idset(v.id & "@" & v.compartment_id) > -1)).ToArray
+
+        FormBuzyLoader.Loading(
+            Sub(println)
+                Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+            End Sub)
     End Sub
 
     Private Sub FilterNetworkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterNetworkToolStripMenuItem.Click

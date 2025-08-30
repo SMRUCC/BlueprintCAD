@@ -30,6 +30,7 @@ Partial Class CellBrowser
         ExitToolStripMenuItem = New ToolStripMenuItem()
         BrowserToolStripMenuItem = New ToolStripMenuItem()
         ResetNetworkTableToolStripMenuItem = New ToolStripMenuItem()
+        ViewMassActivityLoadsToolStripMenuItem = New ToolStripMenuItem()
         ViewerToolStripMenuItem = New ToolStripMenuItem()
         ExportPlotMatrixToolStripMenuItem = New ToolStripMenuItem()
         PlotView1 = New ggviewer.PlotView()
@@ -38,6 +39,8 @@ Partial Class CellBrowser
         TreeView1 = New TreeView()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         FilterNetworkToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem2 = New ToolStripSeparator()
+        CopyNameToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewLinkColumn()
         Column2 = New DataGridViewLinkColumn()
@@ -51,7 +54,8 @@ Partial Class CellBrowser
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
-        ViewMassActivityLoadsToolStripMenuItem = New ToolStripMenuItem()
+        FilterSubstrateNetworkToolStripMenuItem = New ToolStripMenuItem()
+        FilterProductNetworkToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -122,6 +126,12 @@ Partial Class CellBrowser
         ResetNetworkTableToolStripMenuItem.Size = New Size(206, 22)
         ResetNetworkTableToolStripMenuItem.Text = "Reset Network Table"
         ' 
+        ' ViewMassActivityLoadsToolStripMenuItem
+        ' 
+        ViewMassActivityLoadsToolStripMenuItem.Name = "ViewMassActivityLoadsToolStripMenuItem"
+        ViewMassActivityLoadsToolStripMenuItem.Size = New Size(206, 22)
+        ViewMassActivityLoadsToolStripMenuItem.Text = "View Mass Activity Loads"
+        ' 
         ' ViewerToolStripMenuItem
         ' 
         ViewerToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ExportPlotMatrixToolStripMenuItem})
@@ -132,7 +142,7 @@ Partial Class CellBrowser
         ' ExportPlotMatrixToolStripMenuItem
         ' 
         ExportPlotMatrixToolStripMenuItem.Name = "ExportPlotMatrixToolStripMenuItem"
-        ExportPlotMatrixToolStripMenuItem.Size = New Size(180, 22)
+        ExportPlotMatrixToolStripMenuItem.Size = New Size(169, 22)
         ExportPlotMatrixToolStripMenuItem.Text = "Export Plot Matrix"
         ' 
         ' PlotView1
@@ -188,15 +198,26 @@ Partial Class CellBrowser
         ' 
         ' ContextMenuStrip1
         ' 
-        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {FilterNetworkToolStripMenuItem})
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {FilterNetworkToolStripMenuItem, FilterSubstrateNetworkToolStripMenuItem, FilterProductNetworkToolStripMenuItem, ToolStripMenuItem2, CopyNameToolStripMenuItem})
         ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(149, 26)
+        ContextMenuStrip1.Size = New Size(201, 120)
         ' 
         ' FilterNetworkToolStripMenuItem
         ' 
         FilterNetworkToolStripMenuItem.Name = "FilterNetworkToolStripMenuItem"
-        FilterNetworkToolStripMenuItem.Size = New Size(148, 22)
+        FilterNetworkToolStripMenuItem.Size = New Size(200, 22)
         FilterNetworkToolStripMenuItem.Text = "Filter Network"
+        ' 
+        ' ToolStripMenuItem2
+        ' 
+        ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        ToolStripMenuItem2.Size = New Size(197, 6)
+        ' 
+        ' CopyNameToolStripMenuItem
+        ' 
+        CopyNameToolStripMenuItem.Name = "CopyNameToolStripMenuItem"
+        CopyNameToolStripMenuItem.Size = New Size(200, 22)
+        CopyNameToolStripMenuItem.Text = "Copy Name"
         ' 
         ' DataGridView1
         ' 
@@ -334,11 +355,17 @@ Partial Class CellBrowser
         DataGridView2.Size = New Size(1510, 572)
         DataGridView2.TabIndex = 0
         ' 
-        ' ViewMassActivityLoadsToolStripMenuItem
+        ' FilterSubstrateNetworkToolStripMenuItem
         ' 
-        ViewMassActivityLoadsToolStripMenuItem.Name = "ViewMassActivityLoadsToolStripMenuItem"
-        ViewMassActivityLoadsToolStripMenuItem.Size = New Size(206, 22)
-        ViewMassActivityLoadsToolStripMenuItem.Text = "View Mass Activity Loads"
+        FilterSubstrateNetworkToolStripMenuItem.Name = "FilterSubstrateNetworkToolStripMenuItem"
+        FilterSubstrateNetworkToolStripMenuItem.Size = New Size(200, 22)
+        FilterSubstrateNetworkToolStripMenuItem.Text = "Filter Substrate Network"
+        ' 
+        ' FilterProductNetworkToolStripMenuItem
+        ' 
+        FilterProductNetworkToolStripMenuItem.Name = "FilterProductNetworkToolStripMenuItem"
+        FilterProductNetworkToolStripMenuItem.Size = New Size(200, 22)
+        FilterProductNetworkToolStripMenuItem.Text = "Filter Product Network"
         ' 
         ' CellBrowser
         ' 
@@ -406,4 +433,8 @@ Partial Class CellBrowser
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewMassActivityLoadsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
+    Friend WithEvents CopyNameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FilterSubstrateNetworkToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FilterProductNetworkToolStripMenuItem As ToolStripMenuItem
 End Class
