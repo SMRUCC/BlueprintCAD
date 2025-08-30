@@ -339,6 +339,11 @@ Public Class CellBrowser
     End Sub
 
     Private Sub ViewFluxDynamicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewFluxDynamicsToolStripMenuItem.Click
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim id As String = CStr(DataGridView1.SelectedRows(0).Cells(0).Value)
 
     End Sub
 
