@@ -226,6 +226,8 @@ Public Class CellBrowser
 
         If matrix.IsNullOrEmpty Then
             Return Nothing
+        Else
+            plotMatrix = matrix
         End If
 
         Call CheckedListBox1.Items.Clear()
