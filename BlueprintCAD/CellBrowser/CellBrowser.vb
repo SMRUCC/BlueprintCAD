@@ -387,7 +387,17 @@ Public Class CellBrowser
             End If
         Next
 
-        Await CreatePlot(matrix:=data)
+        Dim plot As ggplot.ggplot = Await CreatePlot(matrix:=data)
+
+        If Not plot Is Nothing Then
+            Try
+                PlotView1.ScaleFactor = 1.25
+                PlotView1.PlotPadding = plot.ggplotTheme.padding
+                PlotView1.ggplot = plot
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
