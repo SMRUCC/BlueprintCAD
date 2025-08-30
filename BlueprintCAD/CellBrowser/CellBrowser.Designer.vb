@@ -39,6 +39,8 @@ Partial Class CellBrowser
         TreeView1 = New TreeView()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         FilterNetworkToolStripMenuItem = New ToolStripMenuItem()
+        FilterSubstrateNetworkToolStripMenuItem = New ToolStripMenuItem()
+        FilterProductNetworkToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem2 = New ToolStripSeparator()
         CopyNameToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
@@ -54,8 +56,7 @@ Partial Class CellBrowser
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
-        FilterSubstrateNetworkToolStripMenuItem = New ToolStripMenuItem()
-        FilterProductNetworkToolStripMenuItem = New ToolStripMenuItem()
+        CloseFileToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +92,7 @@ Partial Class CellBrowser
         ' 
         ' FileToolStripMenuItem
         ' 
-        FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {OpenVirtualCellDataFileToolStripMenuItem, ToolStripMenuItem1, ExitToolStripMenuItem})
+        FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {OpenVirtualCellDataFileToolStripMenuItem, CloseFileToolStripMenuItem, ToolStripMenuItem1, ExitToolStripMenuItem})
         FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         FileToolStripMenuItem.Size = New Size(37, 20)
         FileToolStripMenuItem.Text = "File"
@@ -200,13 +201,25 @@ Partial Class CellBrowser
         ' 
         ContextMenuStrip1.Items.AddRange(New ToolStripItem() {FilterNetworkToolStripMenuItem, FilterSubstrateNetworkToolStripMenuItem, FilterProductNetworkToolStripMenuItem, ToolStripMenuItem2, CopyNameToolStripMenuItem})
         ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(201, 120)
+        ContextMenuStrip1.Size = New Size(201, 98)
         ' 
         ' FilterNetworkToolStripMenuItem
         ' 
         FilterNetworkToolStripMenuItem.Name = "FilterNetworkToolStripMenuItem"
         FilterNetworkToolStripMenuItem.Size = New Size(200, 22)
         FilterNetworkToolStripMenuItem.Text = "Filter Network"
+        ' 
+        ' FilterSubstrateNetworkToolStripMenuItem
+        ' 
+        FilterSubstrateNetworkToolStripMenuItem.Name = "FilterSubstrateNetworkToolStripMenuItem"
+        FilterSubstrateNetworkToolStripMenuItem.Size = New Size(200, 22)
+        FilterSubstrateNetworkToolStripMenuItem.Text = "Filter Substrate Network"
+        ' 
+        ' FilterProductNetworkToolStripMenuItem
+        ' 
+        FilterProductNetworkToolStripMenuItem.Name = "FilterProductNetworkToolStripMenuItem"
+        FilterProductNetworkToolStripMenuItem.Size = New Size(200, 22)
+        FilterProductNetworkToolStripMenuItem.Text = "Filter Product Network"
         ' 
         ' ToolStripMenuItem2
         ' 
@@ -355,17 +368,11 @@ Partial Class CellBrowser
         DataGridView2.Size = New Size(1510, 572)
         DataGridView2.TabIndex = 0
         ' 
-        ' FilterSubstrateNetworkToolStripMenuItem
+        ' CloseFileToolStripMenuItem
         ' 
-        FilterSubstrateNetworkToolStripMenuItem.Name = "FilterSubstrateNetworkToolStripMenuItem"
-        FilterSubstrateNetworkToolStripMenuItem.Size = New Size(200, 22)
-        FilterSubstrateNetworkToolStripMenuItem.Text = "Filter Substrate Network"
-        ' 
-        ' FilterProductNetworkToolStripMenuItem
-        ' 
-        FilterProductNetworkToolStripMenuItem.Name = "FilterProductNetworkToolStripMenuItem"
-        FilterProductNetworkToolStripMenuItem.Size = New Size(200, 22)
-        FilterProductNetworkToolStripMenuItem.Text = "Filter Product Network"
+        CloseFileToolStripMenuItem.Name = "CloseFileToolStripMenuItem"
+        CloseFileToolStripMenuItem.Size = New Size(208, 22)
+        CloseFileToolStripMenuItem.Text = "Close File"
         ' 
         ' CellBrowser
         ' 
@@ -437,4 +444,5 @@ Partial Class CellBrowser
     Friend WithEvents CopyNameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FilterSubstrateNetworkToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FilterProductNetworkToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CloseFileToolStripMenuItem As ToolStripMenuItem
 End Class

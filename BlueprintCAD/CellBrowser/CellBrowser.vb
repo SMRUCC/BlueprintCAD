@@ -505,4 +505,8 @@ Public Class CellBrowser
             End Try
         End If
     End Sub
+
+    Private Sub CloseFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseFileToolStripMenuItem.Click
+        Call vcellPack.Dispose()
+    End Sub
 End Class
