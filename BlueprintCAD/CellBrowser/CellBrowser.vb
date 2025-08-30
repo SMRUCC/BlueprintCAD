@@ -290,7 +290,7 @@ Public Class CellBrowser
                     data:=lines,
                     mapping:=aes("time", "expression", color:="names"),
                     colorSet:="paper",
-                    padding:="padding: 5% 10% 10% 10%;")
+                    padding:="padding: 5% 20% 10% 10%;")
 
                 plot += geom_point(size:=6, color:="paper")
 
