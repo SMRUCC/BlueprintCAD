@@ -302,11 +302,11 @@ Public Class CellBrowser
 
     End Sub
 
-    Private Sub CheckedListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox1.SelectedIndexChanged
-
+    Private Async Sub CheckedListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox1.SelectedIndexChanged
+        Await RefreshPlot()
     End Sub
 
-    Private Async Sub CheckedListBox1_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles CheckedListBox1.ItemCheck
+    Private Async Function RefreshPlot() As Task
         Dim matrix As New Dictionary(Of String, FeatureVector)
         Dim id As String
 
@@ -324,5 +324,9 @@ Public Class CellBrowser
             PlotView1.PlotPadding = plot.ggplotTheme.padding
             PlotView1.ggplot = plot
         End If
+    End Function
+
+    Private Async Sub CheckedListBox1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CheckedListBox1.MouseDoubleClick
+        Await RefreshPlot()
     End Sub
 End Class
