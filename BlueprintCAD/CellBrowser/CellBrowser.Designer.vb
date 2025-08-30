@@ -63,6 +63,8 @@ Partial Class CellBrowser
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
+        TabPage3 = New TabPage()
+        TextBox1 = New TextBox()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -86,6 +88,7 @@ Partial Class CellBrowser
         TabPage2.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
+        TabPage3.SuspendLayout()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -328,6 +331,7 @@ Partial Class CellBrowser
         ' 
         TabControl1.Controls.Add(TabPage1)
         TabControl1.Controls.Add(TabPage2)
+        TabControl1.Controls.Add(TabPage3)
         TabControl1.Dock = DockStyle.Fill
         TabControl1.Location = New Point(0, 0)
         TabControl1.Name = "TabControl1"
@@ -417,6 +421,28 @@ Partial Class CellBrowser
         DataGridView2.Size = New Size(1510, 572)
         DataGridView2.TabIndex = 0
         ' 
+        ' TabPage3
+        ' 
+        TabPage3.Controls.Add(TextBox1)
+        TabPage3.Location = New Point(4, 24)
+        TabPage3.Name = "TabPage3"
+        TabPage3.Padding = New Padding(3)
+        TabPage3.Size = New Size(1516, 578)
+        TabPage3.TabIndex = 2
+        TabPage3.Text = "Flux Model"
+        TabPage3.UseVisualStyleBackColor = True
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.BorderStyle = BorderStyle.None
+        TextBox1.Dock = DockStyle.Fill
+        TextBox1.Location = New Point(3, 3)
+        TextBox1.Multiline = True
+        TextBox1.Name = "TextBox1"
+        TextBox1.ScrollBars = ScrollBars.Both
+        TextBox1.Size = New Size(1510, 572)
+        TextBox1.TabIndex = 0
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -451,6 +477,8 @@ Partial Class CellBrowser
         TabPage2.ResumeLayout(False)
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
+        TabPage3.ResumeLayout(False)
+        TabPage3.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -495,4 +523,6 @@ Partial Class CellBrowser
     Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
     Friend WithEvents UnCheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CheckAllToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TextBox1 As TextBox
 End Class
