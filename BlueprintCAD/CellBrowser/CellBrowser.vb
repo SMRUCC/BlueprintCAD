@@ -40,16 +40,16 @@ Public Class CellBrowser
                 moleculeSet = vcellPack.GetMoleculeIdList
 
                 Call FormBuzyLoader.Loading(
-                    Async Function(println)
+                    Sub(println)
                         Call println("loading molecule list ui... [metabolite tree]")
                         Call Me.Invoke(Sub() LoadTree(println))
                         Call println("loading molecule list ui... [metabolite matrix]")
-                        Await LoadMatrix()
+                        Call LoadMatrix()
                         Call println("loading molecule list ui... [metabolite star links]")
                         Call Me.Invoke(Sub() LoadNodeStar())
                         Call println("load flux dynamics data into memory...")
                         Call LoadFluxData()
-                    End Function)
+                    End Sub)
             End If
         End Using
     End Sub
@@ -100,7 +100,7 @@ Public Class CellBrowser
     ''' <summary>
     ''' metabolite + flux
     ''' </summary>
-    Private Async Function LoadMatrix() As Task
+    Private Sub LoadMatrix()
         Dim times As New List(Of (Double, Dictionary(Of String, Double)))
 
         For Each ti As Double In timePoints
@@ -118,19 +118,16 @@ Public Class CellBrowser
             Call Application.DoEvents()
         Next
 
-        Dim mols As String() = Await Task.Run(
-            Function()
-                Return times _
-                    .Select(Function(a) a.Item2.Keys) _
-                    .IteratesALL _
-                    .Distinct _
-                    .ToArray
-            End Function)
+        Dim mols As String() = times _
+            .Select(Function(a) a.Item2.Keys) _
+            .IteratesALL _
+            .Distinct _
+            .ToArray
 
         For Each id As String In mols
             Call moleculeLines.Add(id, times.Select(Function(ti) ti.Item2(id)).ToArray)
         Next
-    End Function
+    End Sub
 
     Private Function LoadNetwork(println As Action(Of String)) As Dictionary(Of String, FluxEdge)
         Dim dataRoot As StreamPack = vcellPack.GetStream
@@ -221,10 +218,13 @@ Public Class CellBrowser
     End Function
 
     Private Async Function CreateGgplot(idset As IEnumerable(Of String)) As Task(Of ggplot.ggplot)
-        Dim matrix = CreatePlotMatrix(idset)
+        Return Await CreatePlot(CreatePlotMatrix(idset))
+    End Function
+
+    Private Async Function CreatePlot(matrix As Dictionary(Of String, FeatureVector)) As Task(Of ggplot.ggplot)
         Dim cols As New List(Of (name$, expr As Double()))
 
-        If matrix.Count = 0 Then
+        If matrix.IsNullOrEmpty Then
             Return Nothing
         End If
 
@@ -371,13 +371,23 @@ Public Class CellBrowser
         Await RefreshPlot()
     End Sub
 
-    Private Sub ViewFluxDynamicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewFluxDynamicsToolStripMenuItem.Click
+    Private Async Sub ViewFluxDynamicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewFluxDynamicsToolStripMenuItem.Click
         If DataGridView1.SelectedRows.Count = 0 Then
             Return
         End If
 
         Dim id As String = CStr(DataGridView1.SelectedRows(0).Cells(0).Value)
+        Dim data As New Dictionary(Of String, FeatureVector)
 
+        For Each compart_id As String In vcellPack.comparts
+            compart_id = id & "@" & compart_id
+
+            If fluxLines.ContainsKey(compart_id) Then
+                Call data.Add(compart_id, New FeatureVector(compart_id, fluxLines(compart_id)))
+            End If
+        Next
+
+        Await CreatePlot(matrix:=data)
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
