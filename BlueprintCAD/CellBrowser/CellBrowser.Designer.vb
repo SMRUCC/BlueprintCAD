@@ -26,11 +26,15 @@ Partial Class CellBrowser
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
         OpenVirtualCellDataFileToolStripMenuItem = New ToolStripMenuItem()
+        CloseFileToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem1 = New ToolStripSeparator()
         ExitToolStripMenuItem = New ToolStripMenuItem()
         BrowserToolStripMenuItem = New ToolStripMenuItem()
         ResetNetworkTableToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem3 = New ToolStripSeparator()
         ViewMassActivityLoadsToolStripMenuItem = New ToolStripMenuItem()
+        ExportMoleculeExpressionToolStripMenuItem = New ToolStripMenuItem()
+        ExportFluxomicsToolStripMenuItem = New ToolStripMenuItem()
         ViewerToolStripMenuItem = New ToolStripMenuItem()
         ExportPlotMatrixToolStripMenuItem = New ToolStripMenuItem()
         PlotView1 = New ggviewer.PlotView()
@@ -56,7 +60,6 @@ Partial Class CellBrowser
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
-        CloseFileToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -103,6 +106,12 @@ Partial Class CellBrowser
         OpenVirtualCellDataFileToolStripMenuItem.Size = New Size(208, 22)
         OpenVirtualCellDataFileToolStripMenuItem.Text = "Open VirtualCell Data File"
         ' 
+        ' CloseFileToolStripMenuItem
+        ' 
+        CloseFileToolStripMenuItem.Name = "CloseFileToolStripMenuItem"
+        CloseFileToolStripMenuItem.Size = New Size(208, 22)
+        CloseFileToolStripMenuItem.Text = "Close File"
+        ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
@@ -116,7 +125,7 @@ Partial Class CellBrowser
         ' 
         ' BrowserToolStripMenuItem
         ' 
-        BrowserToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ResetNetworkTableToolStripMenuItem, ViewMassActivityLoadsToolStripMenuItem})
+        BrowserToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ResetNetworkTableToolStripMenuItem, ToolStripMenuItem3, ViewMassActivityLoadsToolStripMenuItem, ExportMoleculeExpressionToolStripMenuItem, ExportFluxomicsToolStripMenuItem})
         BrowserToolStripMenuItem.Name = "BrowserToolStripMenuItem"
         BrowserToolStripMenuItem.Size = New Size(61, 20)
         BrowserToolStripMenuItem.Text = "Browser"
@@ -124,14 +133,31 @@ Partial Class CellBrowser
         ' ResetNetworkTableToolStripMenuItem
         ' 
         ResetNetworkTableToolStripMenuItem.Name = "ResetNetworkTableToolStripMenuItem"
-        ResetNetworkTableToolStripMenuItem.Size = New Size(206, 22)
+        ResetNetworkTableToolStripMenuItem.Size = New Size(219, 22)
         ResetNetworkTableToolStripMenuItem.Text = "Reset Network Table"
+        ' 
+        ' ToolStripMenuItem3
+        ' 
+        ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        ToolStripMenuItem3.Size = New Size(216, 6)
         ' 
         ' ViewMassActivityLoadsToolStripMenuItem
         ' 
         ViewMassActivityLoadsToolStripMenuItem.Name = "ViewMassActivityLoadsToolStripMenuItem"
-        ViewMassActivityLoadsToolStripMenuItem.Size = New Size(206, 22)
+        ViewMassActivityLoadsToolStripMenuItem.Size = New Size(219, 22)
         ViewMassActivityLoadsToolStripMenuItem.Text = "View Mass Activity Loads"
+        ' 
+        ' ExportMoleculeExpressionToolStripMenuItem
+        ' 
+        ExportMoleculeExpressionToolStripMenuItem.Name = "ExportMoleculeExpressionToolStripMenuItem"
+        ExportMoleculeExpressionToolStripMenuItem.Size = New Size(219, 22)
+        ExportMoleculeExpressionToolStripMenuItem.Text = "Export Molecule Expression"
+        ' 
+        ' ExportFluxomicsToolStripMenuItem
+        ' 
+        ExportFluxomicsToolStripMenuItem.Name = "ExportFluxomicsToolStripMenuItem"
+        ExportFluxomicsToolStripMenuItem.Size = New Size(219, 22)
+        ExportFluxomicsToolStripMenuItem.Text = "Export Fluxomics"
         ' 
         ' ViewerToolStripMenuItem
         ' 
@@ -368,12 +394,6 @@ Partial Class CellBrowser
         DataGridView2.Size = New Size(1510, 572)
         DataGridView2.TabIndex = 0
         ' 
-        ' CloseFileToolStripMenuItem
-        ' 
-        CloseFileToolStripMenuItem.Name = "CloseFileToolStripMenuItem"
-        CloseFileToolStripMenuItem.Size = New Size(208, 22)
-        CloseFileToolStripMenuItem.Text = "Close File"
-        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -445,4 +465,7 @@ Partial Class CellBrowser
     Friend WithEvents FilterSubstrateNetworkToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FilterProductNetworkToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CloseFileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
+    Friend WithEvents ExportMoleculeExpressionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExportFluxomicsToolStripMenuItem As ToolStripMenuItem
 End Class

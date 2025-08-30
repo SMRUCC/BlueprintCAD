@@ -8,7 +8,9 @@ Imports Microsoft.VisualBasic.DataStorage.HDSPack
 Imports Microsoft.VisualBasic.DataStorage.HDSPack.FileSystem
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.Scripting.Runtime
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports SMRUCC.genomics.Analysis.HTS.DataFrame
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
 
@@ -421,6 +423,70 @@ Public Class CellBrowser
 
     Private Async Sub CheckedListBox1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CheckedListBox1.MouseDoubleClick
         Await RefreshPlot()
+    End Sub
+
+    Private Sub ExportMoleculeExpressionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportMoleculeExpressionToolStripMenuItem.Click
+        Using file As New SaveFileDialog With {.Filter = "GCModeller Matrix(*.mat)|*.mat|Excel Table(*.csv)|*.csv"}
+            If file.ShowDialog = DialogResult.OK Then
+                Dim matrix As New Matrix With {
+                    .tag = "Molecule Expression",
+                    .sampleID = timePoints.AsCharacter,
+                    .expression = moleculeLines _
+                        .Select(Function(mol)
+                                    Return New DataFrameRow With {
+                                        .geneID = mol.Key,
+                                        .experiments = mol.Value
+                                    }
+                                End Function) _
+                        .ToArray
+                }
+
+                Call FormBuzyLoader.Loading(
+                    Sub(println)
+                        Call println("Save molecule expression data matrix...")
+
+                        If file.FileName.ExtensionSuffix("csv") Then
+                            Call matrix.SaveMatrix(file.FileName, "molecule ID")
+                        Else
+                            Using s As Stream = file.OpenFile
+                                Call matrix.Save(s)
+                            End Using
+                        End If
+                    End Sub)
+            End If
+        End Using
+    End Sub
+
+    Private Sub ExportFluxomicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportFluxomicsToolStripMenuItem.Click
+        Using file As New SaveFileDialog With {.Filter = "GCModeller Matrix(*.mat)|*.mat|Excel Table(*.csv)|*.csv"}
+            If file.ShowDialog = DialogResult.OK Then
+                Dim matrix As New Matrix With {
+                    .tag = "Fluxomics",
+                    .sampleID = timePoints.AsCharacter,
+                    .expression = fluxLines _
+                        .Select(Function(flux)
+                                    Return New DataFrameRow With {
+                                        .geneID = flux.Key,
+                                        .experiments = flux.Value
+                                    }
+                                End Function) _
+                        .ToArray
+                }
+
+                Call FormBuzyLoader.Loading(
+                    Sub(println)
+                        Call println("Save flux data matrix...")
+
+                        If file.FileName.ExtensionSuffix("csv") Then
+                            Call matrix.SaveMatrix(file.FileName, "flux ID")
+                        Else
+                            Using s As Stream = file.OpenFile
+                                Call matrix.Save(s)
+                            End Using
+                        End If
+                    End Sub)
+            End If
+        End Using
     End Sub
 
     Private Async Sub ViewFluxDynamicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewFluxDynamicsToolStripMenuItem.Click
