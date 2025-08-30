@@ -57,6 +57,9 @@ Partial Class CellBrowser
         TabPage1 = New TabPage()
         SplitContainer3 = New SplitContainer()
         CheckedListBox1 = New CheckedListBox()
+        ContextMenuStrip3 = New ContextMenuStrip(components)
+        UnCheckAllToolStripMenuItem = New ToolStripMenuItem()
+        CheckAllToolStripMenuItem = New ToolStripMenuItem()
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         BindingSource1 = New BindingSource(components)
@@ -79,6 +82,7 @@ Partial Class CellBrowser
         SplitContainer3.Panel1.SuspendLayout()
         SplitContainer3.Panel2.SuspendLayout()
         SplitContainer3.SuspendLayout()
+        ContextMenuStrip3.SuspendLayout()
         TabPage2.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
@@ -362,12 +366,31 @@ Partial Class CellBrowser
         ' 
         ' CheckedListBox1
         ' 
+        CheckedListBox1.ContextMenuStrip = ContextMenuStrip3
         CheckedListBox1.Dock = DockStyle.Fill
         CheckedListBox1.FormattingEnabled = True
         CheckedListBox1.Location = New Point(0, 0)
         CheckedListBox1.Name = "CheckedListBox1"
         CheckedListBox1.Size = New Size(339, 572)
         CheckedListBox1.TabIndex = 0
+        ' 
+        ' ContextMenuStrip3
+        ' 
+        ContextMenuStrip3.Items.AddRange(New ToolStripItem() {UnCheckAllToolStripMenuItem, CheckAllToolStripMenuItem})
+        ContextMenuStrip3.Name = "ContextMenuStrip3"
+        ContextMenuStrip3.Size = New Size(140, 48)
+        ' 
+        ' UnCheckAllToolStripMenuItem
+        ' 
+        UnCheckAllToolStripMenuItem.Name = "UnCheckAllToolStripMenuItem"
+        UnCheckAllToolStripMenuItem.Size = New Size(139, 22)
+        UnCheckAllToolStripMenuItem.Text = "UnCheck All"
+        ' 
+        ' CheckAllToolStripMenuItem
+        ' 
+        CheckAllToolStripMenuItem.Name = "CheckAllToolStripMenuItem"
+        CheckAllToolStripMenuItem.Size = New Size(139, 22)
+        CheckAllToolStripMenuItem.Text = "Check All"
         ' 
         ' TabPage2
         ' 
@@ -424,6 +447,7 @@ Partial Class CellBrowser
         SplitContainer3.Panel2.ResumeLayout(False)
         CType(SplitContainer3, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer3.ResumeLayout(False)
+        ContextMenuStrip3.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
@@ -468,4 +492,7 @@ Partial Class CellBrowser
     Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
     Friend WithEvents ExportMoleculeExpressionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExportFluxomicsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
+    Friend WithEvents UnCheckAllToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckAllToolStripMenuItem As ToolStripMenuItem
 End Class

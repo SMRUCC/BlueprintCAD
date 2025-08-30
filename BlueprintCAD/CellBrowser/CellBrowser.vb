@@ -344,7 +344,7 @@ Public Class CellBrowser
             .Select(Function(cid) node.Text & "@" & cid) _
             .ToArray
         Dim idset As Index(Of String) = node_id
-        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.right.Any(Function(v) idset(v.id) > -1)).ToArray
+        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.left.Any(Function(v) idset(v.id) > -1)).ToArray
 
         FormBuzyLoader.Loading(
             Sub(println)
@@ -363,7 +363,7 @@ Public Class CellBrowser
             .Select(Function(cid) node.Text & "@" & cid) _
             .ToArray
         Dim idset As Index(Of String) = node_id
-        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.left.Any(Function(v) idset(v.id) > -1)).ToArray
+        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.right.Any(Function(v) idset(v.id) > -1)).ToArray
 
         FormBuzyLoader.Loading(
             Sub(println)
@@ -574,5 +574,17 @@ Public Class CellBrowser
 
     Private Sub CloseFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseFileToolStripMenuItem.Click
         Call vcellPack.Dispose()
+    End Sub
+
+    Private Sub CheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckAllToolStripMenuItem.Click
+        For i As Integer = 0 To CheckedListBox1.Items.Count - 1
+            Call CheckedListBox1.SetItemChecked(i, True)
+        Next
+    End Sub
+
+    Private Sub UnCheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UnCheckAllToolStripMenuItem.Click
+        For i As Integer = 0 To CheckedListBox1.Items.Count - 1
+            Call CheckedListBox1.SetItemChecked(i, False)
+        Next
     End Sub
 End Class
