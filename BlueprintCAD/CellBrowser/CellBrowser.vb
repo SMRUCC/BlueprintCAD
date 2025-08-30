@@ -2,6 +2,7 @@
 Imports ggplot
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
+Imports Microsoft.VisualBasic.Data.Framework.IO
 Imports Microsoft.VisualBasic.DataStorage.HDSPack
 Imports Microsoft.VisualBasic.DataStorage.HDSPack.FileSystem
 Imports Microsoft.VisualBasic.Drawing
@@ -335,5 +336,41 @@ Public Class CellBrowser
 
     Private Async Sub CheckedListBox1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles CheckedListBox1.MouseDoubleClick
         Await RefreshPlot()
+    End Sub
+
+    Private Sub ViewFluxDynamicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewFluxDynamicsToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Close()
+    End Sub
+
+    Private Sub ExportPlotMatrixToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportPlotMatrixToolStripMenuItem.Click
+        Using file As New SaveFileDialog With {.Filter = "Excel Table(*.csv)|*.csv"}
+            If file.ShowDialog = DialogResult.OK Then
+                Using s As StreamWriter = file.FileName.OpenWriter
+                    Dim row As New RowObject
+
+                    For i As Integer = 0 To DataGridView2.Columns.Count - 1
+                        Call row.Add(DataGridView2.Columns(i).HeaderText)
+                    Next
+
+                    Call s.WriteLine(row.AsLine)
+
+                    For i As Integer = 0 To DataGridView2.Rows.Count - 1
+                        Dim r = DataGridView2.Rows(i)
+
+                        Call row.Clear()
+
+                        For offset As Integer = 0 To DataGridView2.Columns.Count - 1
+                            Call row.Add(CStr(r.Cells(offset).Value))
+                        Next
+
+                        Call s.WriteLine(row.AsLine)
+                    Next
+                End Using
+            End If
+        End Using
     End Sub
 End Class

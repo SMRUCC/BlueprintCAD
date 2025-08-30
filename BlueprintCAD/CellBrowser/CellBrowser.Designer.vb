@@ -26,8 +26,12 @@ Partial Class CellBrowser
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
         OpenVirtualCellDataFileToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem1 = New ToolStripSeparator()
+        ExitToolStripMenuItem = New ToolStripMenuItem()
         BrowserToolStripMenuItem = New ToolStripMenuItem()
         ResetNetworkTableToolStripMenuItem = New ToolStripMenuItem()
+        ViewerToolStripMenuItem = New ToolStripMenuItem()
+        ExportPlotMatrixToolStripMenuItem = New ToolStripMenuItem()
         PlotView1 = New ggviewer.PlotView()
         GroupBox2 = New GroupBox()
         SplitContainer2 = New SplitContainer()
@@ -37,6 +41,8 @@ Partial Class CellBrowser
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewLinkColumn()
         Column2 = New DataGridViewLinkColumn()
+        ContextMenuStrip2 = New ContextMenuStrip(components)
+        ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
         SplitContainer1 = New SplitContainer()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
@@ -53,6 +59,7 @@ Partial Class CellBrowser
         SplitContainer2.SuspendLayout()
         ContextMenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        ContextMenuStrip2.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
@@ -70,7 +77,7 @@ Partial Class CellBrowser
         ' 
         ' MenuStrip1
         ' 
-        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, BrowserToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, BrowserToolStripMenuItem, ViewerToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Size = New Size(1524, 24)
@@ -79,7 +86,7 @@ Partial Class CellBrowser
         ' 
         ' FileToolStripMenuItem
         ' 
-        FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {OpenVirtualCellDataFileToolStripMenuItem})
+        FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {OpenVirtualCellDataFileToolStripMenuItem, ToolStripMenuItem1, ExitToolStripMenuItem})
         FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         FileToolStripMenuItem.Size = New Size(37, 20)
         FileToolStripMenuItem.Text = "File"
@@ -89,6 +96,17 @@ Partial Class CellBrowser
         OpenVirtualCellDataFileToolStripMenuItem.Name = "OpenVirtualCellDataFileToolStripMenuItem"
         OpenVirtualCellDataFileToolStripMenuItem.Size = New Size(208, 22)
         OpenVirtualCellDataFileToolStripMenuItem.Text = "Open VirtualCell Data File"
+        ' 
+        ' ToolStripMenuItem1
+        ' 
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        ToolStripMenuItem1.Size = New Size(205, 6)
+        ' 
+        ' ExitToolStripMenuItem
+        ' 
+        ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        ExitToolStripMenuItem.Size = New Size(208, 22)
+        ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' BrowserToolStripMenuItem
         ' 
@@ -102,6 +120,19 @@ Partial Class CellBrowser
         ResetNetworkTableToolStripMenuItem.Name = "ResetNetworkTableToolStripMenuItem"
         ResetNetworkTableToolStripMenuItem.Size = New Size(180, 22)
         ResetNetworkTableToolStripMenuItem.Text = "Reset Network Table"
+        ' 
+        ' ViewerToolStripMenuItem
+        ' 
+        ViewerToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ExportPlotMatrixToolStripMenuItem})
+        ViewerToolStripMenuItem.Name = "ViewerToolStripMenuItem"
+        ViewerToolStripMenuItem.Size = New Size(54, 20)
+        ViewerToolStripMenuItem.Text = "Viewer"
+        ' 
+        ' ExportPlotMatrixToolStripMenuItem
+        ' 
+        ExportPlotMatrixToolStripMenuItem.Name = "ExportPlotMatrixToolStripMenuItem"
+        ExportPlotMatrixToolStripMenuItem.Size = New Size(180, 22)
+        ExportPlotMatrixToolStripMenuItem.Text = "Export Plot Matrix"
         ' 
         ' PlotView1
         ' 
@@ -173,6 +204,7 @@ Partial Class CellBrowser
         DataGridView1.BackgroundColor = Color.WhiteSmoke
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2})
+        DataGridView1.ContextMenuStrip = ContextMenuStrip2
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(0, 0)
         DataGridView1.Name = "DataGridView1"
@@ -196,6 +228,18 @@ Partial Class CellBrowser
         Column2.HeaderText = "Network"
         Column2.Name = "Column2"
         Column2.ReadOnly = True
+        ' 
+        ' ContextMenuStrip2
+        ' 
+        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewFluxDynamicsToolStripMenuItem})
+        ContextMenuStrip2.Name = "ContextMenuStrip2"
+        ContextMenuStrip2.Size = New Size(180, 26)
+        ' 
+        ' ViewFluxDynamicsToolStripMenuItem
+        ' 
+        ViewFluxDynamicsToolStripMenuItem.Name = "ViewFluxDynamicsToolStripMenuItem"
+        ViewFluxDynamicsToolStripMenuItem.Size = New Size(179, 22)
+        ViewFluxDynamicsToolStripMenuItem.Text = "View Flux Dynamics"
         ' 
         ' SplitContainer1
         ' 
@@ -308,6 +352,7 @@ Partial Class CellBrowser
         SplitContainer2.ResumeLayout(False)
         ContextMenuStrip1.ResumeLayout(False)
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        ContextMenuStrip2.ResumeLayout(False)
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
@@ -347,4 +392,10 @@ Partial Class CellBrowser
     Friend WithEvents FilterNetworkToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SplitContainer3 As SplitContainer
     Friend WithEvents CheckedListBox1 As CheckedListBox
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents ViewFluxDynamicsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExportPlotMatrixToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class
