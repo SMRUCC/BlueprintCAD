@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
 Imports ggplot
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
@@ -165,9 +164,13 @@ Public Class CellBrowser
         Dim plot As ggplot.ggplot = Await CreateGgplot(idset)
 
         If Not plot Is Nothing Then
-            PlotView1.ScaleFactor = 1.25
-            PlotView1.PlotPadding = plot.ggplotTheme.padding
-            PlotView1.ggplot = plot
+            Try
+                PlotView1.ScaleFactor = 1.25
+                PlotView1.PlotPadding = plot.ggplotTheme.padding
+                PlotView1.ggplot = plot
+            Catch ex As Exception
+
+            End Try
         End If
     End Function
 
@@ -320,9 +323,13 @@ Public Class CellBrowser
         Dim plot As ggplot.ggplot = Await CreateGgplot(matrix)
 
         If Not plot Is Nothing Then
-            PlotView1.ScaleFactor = 1.25
-            PlotView1.PlotPadding = plot.ggplotTheme.padding
-            PlotView1.ggplot = plot
+            Try
+                PlotView1.ScaleFactor = 1.25
+                PlotView1.PlotPadding = plot.ggplotTheme.padding
+                PlotView1.ggplot = plot
+            Catch ex As Exception
+
+            End Try
         End If
     End Function
 
