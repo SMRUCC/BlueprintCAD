@@ -7,6 +7,7 @@ Imports Microsoft.VisualBasic.Data.Framework.IO
 Imports Microsoft.VisualBasic.DataStorage.HDSPack
 Imports Microsoft.VisualBasic.DataStorage.HDSPack.FileSystem
 Imports Microsoft.VisualBasic.Drawing
+Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Scripting.Runtime
 Imports Microsoft.VisualBasic.Serialization.JSON
@@ -134,20 +135,21 @@ Public Class CellBrowser
 
     Private Function LoadNetwork(println As Action(Of String)) As Dictionary(Of String, FluxEdge)
         Dim dataRoot As StreamPack = vcellPack.GetStream
-        Dim dir As StreamGroup = dataRoot.OpenFolder("/cellular_graph/")
+        Dim jsonl As Stream = dataRoot.OpenFile("/cellular_graph.jsonl")
+        Dim text As New StreamReader(jsonl)
         Dim index As New Dictionary(Of String, FluxEdge)
+        Dim line As Value(Of String) = ""
 
         Call println("Loading network from the virtual cell data pack...")
         Call vcellPack.LoadIndex()
 
-        For Each block As StreamBlock In dir.ListFiles(recursive:=False).OfType(Of StreamBlock)
-            Dim key As String = block.fileName.BaseName
+        Do While (line = text.ReadLine) IsNot Nothing
+            Dim flux = CStr(line).LoadJSON(Of FluxEdge)
+            Dim key As String = flux.id
 
-            index(key) = dataRoot.ReadText(block).LoadJSON(Of FluxEdge)
-            index(key).id = key
-
-            Call Application.DoEvents()
-        Next
+            index(key) = flux
+            Application.DoEvents()
+        Loop
 
         Call println("Loading flux data into table UI...")
         Call Me.Invoke(Sub() LoadUI(index.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value))))
