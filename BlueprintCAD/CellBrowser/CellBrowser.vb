@@ -4,7 +4,6 @@ Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.Data.Framework.IO
-Imports Microsoft.VisualBasic.DataStorage.HDSPack
 Imports Microsoft.VisualBasic.DataStorage.HDSPack.FileSystem
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Language
@@ -14,6 +13,7 @@ Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Analysis.HTS.DataFrame
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
+Imports std = System.Math
 
 Public Class CellBrowser
 
@@ -271,6 +271,8 @@ Public Class CellBrowser
     End Function
 
     Private Async Function CreateGgplot(matrix As Dictionary(Of String, FeatureVector)) As Task(Of ggplot.ggplot)
+        Dim logscale As Boolean = ExpressionValueLogScaleToolStripMenuItem.Checked
+
         If matrix.Count = 0 Then
             Return Nothing
         End If
@@ -287,11 +289,19 @@ Public Class CellBrowser
                     Call names.AddRange(col.name.Repeats(timePoints.Length))
                 Next
 
+                Dim exprVec As FeatureVector
+
+                If logscale Then
+                    exprVec = New FeatureVector("expression", expression.Select(Function(xi) std.Log(xi + 1)))
+                Else
+                    exprVec = New FeatureVector("expression", expression)
+                End If
+
                 ' loadd all compound data
                 Dim lines As New DataFrame With {
                     .features = New Dictionary(Of String, FeatureVector) From {
                         {"time", New FeatureVector("time", time)},
-                        {"expression", New FeatureVector("expression", expression)},
+                        {"expression", exprVec},
                         {"names", New FeatureVector("names", names)}
                     }
                 }
@@ -590,5 +600,9 @@ Public Class CellBrowser
         For i As Integer = 0 To CheckedListBox1.Items.Count - 1
             Call CheckedListBox1.SetItemChecked(i, False)
         Next
+    End Sub
+
+    Private Sub ExpressionValueLogScaleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExpressionValueLogScaleToolStripMenuItem.Click
+
     End Sub
 End Class
