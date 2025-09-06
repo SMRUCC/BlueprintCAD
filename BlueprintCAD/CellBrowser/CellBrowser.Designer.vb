@@ -23,6 +23,7 @@ Partial Class CellBrowser
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CellBrowser))
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
         OpenVirtualCellDataFileToolStripMenuItem = New ToolStripMenuItem()
@@ -62,9 +63,10 @@ Partial Class CellBrowser
         CheckAllToolStripMenuItem = New ToolStripMenuItem()
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
-        BindingSource1 = New BindingSource(components)
         TabPage3 = New TabPage()
         TextBox1 = New TextBox()
+        BindingSource1 = New BindingSource(components)
+        ExpressionValueLogScaleToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -87,8 +89,8 @@ Partial Class CellBrowser
         ContextMenuStrip3.SuspendLayout()
         TabPage2.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage3.SuspendLayout()
+        CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -109,6 +111,7 @@ Partial Class CellBrowser
         ' 
         ' OpenVirtualCellDataFileToolStripMenuItem
         ' 
+        OpenVirtualCellDataFileToolStripMenuItem.Image = CType(resources.GetObject("OpenVirtualCellDataFileToolStripMenuItem.Image"), Image)
         OpenVirtualCellDataFileToolStripMenuItem.Name = "OpenVirtualCellDataFileToolStripMenuItem"
         OpenVirtualCellDataFileToolStripMenuItem.Size = New Size(208, 22)
         OpenVirtualCellDataFileToolStripMenuItem.Text = "Open VirtualCell Data File"
@@ -126,6 +129,7 @@ Partial Class CellBrowser
         ' 
         ' ExitToolStripMenuItem
         ' 
+        ExitToolStripMenuItem.Image = CType(resources.GetObject("ExitToolStripMenuItem.Image"), Image)
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         ExitToolStripMenuItem.Size = New Size(208, 22)
         ExitToolStripMenuItem.Text = "Exit"
@@ -139,6 +143,7 @@ Partial Class CellBrowser
         ' 
         ' ResetNetworkTableToolStripMenuItem
         ' 
+        ResetNetworkTableToolStripMenuItem.Image = CType(resources.GetObject("ResetNetworkTableToolStripMenuItem.Image"), Image)
         ResetNetworkTableToolStripMenuItem.Name = "ResetNetworkTableToolStripMenuItem"
         ResetNetworkTableToolStripMenuItem.Size = New Size(219, 22)
         ResetNetworkTableToolStripMenuItem.Text = "Reset Network Table"
@@ -168,15 +173,16 @@ Partial Class CellBrowser
         ' 
         ' ViewerToolStripMenuItem
         ' 
-        ViewerToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ExportPlotMatrixToolStripMenuItem})
+        ViewerToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ExportPlotMatrixToolStripMenuItem, ExpressionValueLogScaleToolStripMenuItem})
         ViewerToolStripMenuItem.Name = "ViewerToolStripMenuItem"
         ViewerToolStripMenuItem.Size = New Size(54, 20)
         ViewerToolStripMenuItem.Text = "Viewer"
         ' 
         ' ExportPlotMatrixToolStripMenuItem
         ' 
+        ExportPlotMatrixToolStripMenuItem.Image = CType(resources.GetObject("ExportPlotMatrixToolStripMenuItem.Image"), Image)
         ExportPlotMatrixToolStripMenuItem.Name = "ExportPlotMatrixToolStripMenuItem"
-        ExportPlotMatrixToolStripMenuItem.Size = New Size(169, 22)
+        ExportPlotMatrixToolStripMenuItem.Size = New Size(214, 22)
         ExportPlotMatrixToolStripMenuItem.Text = "Export Plot Matrix"
         ' 
         ' PlotView1
@@ -443,6 +449,14 @@ Partial Class CellBrowser
         TextBox1.Size = New Size(1510, 572)
         TextBox1.TabIndex = 0
         ' 
+        ' ExpressionValueLogScaleToolStripMenuItem
+        ' 
+        ExpressionValueLogScaleToolStripMenuItem.CheckOnClick = True
+        ExpressionValueLogScaleToolStripMenuItem.Image = CType(resources.GetObject("ExpressionValueLogScaleToolStripMenuItem.Image"), Image)
+        ExpressionValueLogScaleToolStripMenuItem.Name = "ExpressionValueLogScaleToolStripMenuItem"
+        ExpressionValueLogScaleToolStripMenuItem.Size = New Size(214, 22)
+        ExpressionValueLogScaleToolStripMenuItem.Text = "Expression Value Log Scale"
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -476,9 +490,9 @@ Partial Class CellBrowser
         ContextMenuStrip3.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
-        CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
         TabPage3.ResumeLayout(False)
         TabPage3.PerformLayout()
+        CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -525,4 +539,5 @@ Partial Class CellBrowser
     Friend WithEvents CheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ExpressionValueLogScaleToolStripMenuItem As ToolStripMenuItem
 End Class
