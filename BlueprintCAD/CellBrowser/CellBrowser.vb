@@ -4,7 +4,6 @@ Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.Data.Framework.IO
-Imports Microsoft.VisualBasic.DataStorage.HDSPack.FileSystem
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
@@ -17,13 +16,11 @@ Imports std = System.Math
 
 Public Class CellBrowser
 
-    Dim vcellPack As Raw.Reader
+    Dim vcellPack As VCellMatrixReader
     Dim network As Dictionary(Of String, FluxEdge)
     Dim nodeLinks As Dictionary(Of String, FluxEdge())
     Dim timePoints As Double()
-    Dim moleculeSet As Dictionary(Of String, String())
-    Dim moleculeLines As New Dictionary(Of String, Double())
-    Dim fluxLines As New Dictionary(Of String, Double())
+    Dim moleculeSet As (compartment_id As String, modules As NamedCollection(Of String)())()
     Dim plotMatrix As New Dictionary(Of String, FeatureVector)
 
     Shared Sub New()
@@ -37,40 +34,23 @@ Public Class CellBrowser
                     Call vcellPack.Dispose()
                 End If
 
-                vcellPack = New Raw.Reader(file.FileName.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+                vcellPack = New VCellMatrixReader(file.FileName.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
                 Text = $"VirtualCell Browser [{file.FileName}]"
                 network = FormBuzyLoader.Loading(Function(println) LoadNetwork(println))
-                timePoints = vcellPack.AllTimePoints.ToArray
-                moleculeSet = vcellPack.GetMoleculeIdList
+                timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
+                moleculeSet = vcellPack.GetCellularMolecules.ToArray
 
                 Call FormBuzyLoader.Loading(
                     Sub(println)
                         Call println("loading molecule list ui... [metabolite tree]")
                         Call Me.Invoke(Sub() LoadTree(println))
                         Call println("loading molecule list ui... [metabolite matrix]")
-                        Call LoadMatrix()
                         Call println("loading molecule list ui... [metabolite star links]")
                         Call Me.Invoke(Sub() LoadNodeStar())
                         Call println("load flux dynamics data into memory...")
-                        Call LoadFluxData()
                     End Sub)
             End If
         End Using
-    End Sub
-
-    Private Sub LoadFluxData()
-        For Each fluxSet In moleculeSet.Where(Function(a) a.Key.EndsWith("-Flux"))
-            For Each compart_id As String In vcellPack.comparts
-                For Each fluxId As String In fluxSet.Value
-                    fluxId = fluxId & "@" & compart_id
-
-                    If moleculeLines.ContainsKey(fluxId) Then
-                        fluxLines(fluxId) = moleculeLines(fluxId)
-                        moleculeLines.Remove(fluxId)
-                    End If
-                Next
-            Next
-        Next
     End Sub
 
     Private Sub LoadNodeStar()
@@ -88,6 +68,10 @@ Public Class CellBrowser
                           End Function)
     End Sub
 
+    ''' <summary>
+    ''' load the molecule file tree
+    ''' </summary>
+    ''' <param name="println"></param>
     Private Sub LoadTree(println As Action(Of String))
         For Each molSet In moleculeSet.Where(Function(a) Not a.Key.EndsWith("-Flux"))
             Dim root = TreeView1.Nodes.Add(molSet.Key)
@@ -101,56 +85,10 @@ Public Class CellBrowser
         Next
     End Sub
 
-    ''' <summary>
-    ''' metabolite + flux
-    ''' </summary>
-    Private Sub LoadMatrix()
-        Dim times As New List(Of (Double, Dictionary(Of String, Double)))
-
-        For Each ti As Double In timePoints
-            Dim data As New Dictionary(Of String, Double)
-
-            For Each mod_id As String In moleculeSet.Keys
-                Dim vec = vcellPack.Read(ti, mod_id)
-
-                For Each item As KeyValuePair(Of String, Double) In vec
-                    data(item.Key) = item.Value
-                Next
-            Next
-
-            Call times.Add((ti, data))
-            Call Application.DoEvents()
-        Next
-
-        Dim mols As String() = times _
-            .Select(Function(a) a.Item2.Keys) _
-            .IteratesALL _
-            .Distinct _
-            .ToArray
-
-        For Each id As String In mols
-            Call moleculeLines.Add(id, times.Select(Function(ti) ti.Item2(id)).ToArray)
-        Next
-    End Sub
-
     Private Function LoadNetwork(println As Action(Of String)) As Dictionary(Of String, FluxEdge)
-        Dim dataRoot As StreamPack = vcellPack.GetStream
-        Dim jsonl As Stream = dataRoot.OpenFile("/cellular_graph.jsonl")
-        Dim text As New StreamReader(jsonl)
-        Dim index As New Dictionary(Of String, FluxEdge)
-        Dim line As Value(Of String) = ""
+        Dim index As Dictionary(Of String, FluxEdge) = vcellPack.network
 
-        Call println("Loading network from the virtual cell data pack...")
-        Call vcellPack.LoadIndex()
-
-        Do While (line = text.ReadLine) IsNot Nothing
-            Dim flux = CStr(line).LoadJSON(Of FluxEdge)
-            Dim key As String = flux.id
-
-            index(key) = flux
-            Application.DoEvents()
-        Loop
-
+        Call println("Loading network from the virtual cell data pack.")
         Call println("Loading flux data into table UI...")
         Call Me.Invoke(Sub() LoadUI(index.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value))))
 
@@ -216,9 +154,10 @@ Public Class CellBrowser
         Call plotMatrix.Clear()
 
         For Each id As String In idset
-            If moleculeLines.ContainsKey(id) Then
-                plotMatrix(id) = New FeatureVector(id, moleculeLines(id))
-            End If
+            Dim vec As Double() = vcellPack.GetExpression(id)
+            Dim col As New FeatureVector(id, vec)
+
+            plotMatrix(id) = col
         Next
 
         Return plotMatrix
@@ -324,10 +263,7 @@ Public Class CellBrowser
             Return
         End If
 
-        Dim node_id As String() = vcellPack.comparts _
-            .SafeQuery _
-            .Select(Function(cid) node.Text & "@" & cid) _
-            .ToArray
+        Dim node_id As String()
 
         Await RefreshPlot(node_id)
     End Sub
@@ -353,10 +289,7 @@ Public Class CellBrowser
         End If
 
         Dim node As TreeNode = TreeView1.SelectedNode
-        Dim node_id As String() = vcellPack.comparts _
-            .SafeQuery _
-            .Select(Function(cid) node.Text & "@" & cid) _
-            .ToArray
+        Dim node_id As String()
         Dim idset As Index(Of String) = node_id
         Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.left.Any(Function(v) idset(v.id) > -1)).ToArray
 
@@ -372,10 +305,7 @@ Public Class CellBrowser
         End If
 
         Dim node As TreeNode = TreeView1.SelectedNode
-        Dim node_id As String() = vcellPack.comparts _
-            .SafeQuery _
-            .Select(Function(cid) node.Text & "@" & cid) _
-            .ToArray
+        Dim node_id As String()
         Dim idset As Index(Of String) = node_id
         Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.right.Any(Function(v) idset(v.id) > -1)).ToArray
 
@@ -391,10 +321,7 @@ Public Class CellBrowser
         End If
 
         Dim node As TreeNode = TreeView1.SelectedNode
-        Dim node_id As String() = vcellPack.comparts _
-            .SafeQuery _
-            .Select(Function(cid) node.Text & "@" & cid) _
-            .ToArray
+        Dim node_id As String()
         Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.ToArray
 
         FormBuzyLoader.Loading(
@@ -444,15 +371,7 @@ Public Class CellBrowser
             If file.ShowDialog = DialogResult.OK Then
                 Dim matrix As New Matrix With {
                     .tag = "Molecule Expression",
-                    .sampleID = timePoints.AsCharacter,
-                    .expression = moleculeLines _
-                        .Select(Function(mol)
-                                    Return New DataFrameRow With {
-                                        .geneID = mol.Key,
-                                        .experiments = mol.Value
-                                    }
-                                End Function) _
-                        .ToArray
+                    .sampleID = timePoints.AsCharacter
                 }
 
                 Call FormBuzyLoader.Loading(
@@ -476,15 +395,7 @@ Public Class CellBrowser
             If file.ShowDialog = DialogResult.OK Then
                 Dim matrix As New Matrix With {
                     .tag = "Fluxomics",
-                    .sampleID = timePoints.AsCharacter,
-                    .expression = fluxLines _
-                        .Select(Function(flux)
-                                    Return New DataFrameRow With {
-                                        .geneID = flux.Key,
-                                        .experiments = flux.Value
-                                    }
-                                End Function) _
-                        .ToArray
+                    .sampleID = timePoints.AsCharacter
                 }
 
                 Call FormBuzyLoader.Loading(
@@ -511,12 +422,12 @@ Public Class CellBrowser
         Dim id As String = CStr(DataGridView1.SelectedRows(0).Cells(0).Value)
         Dim data As New Dictionary(Of String, FeatureVector)
 
-        For Each compart_id As String In vcellPack.comparts
+        For Each compart_id As String In vcellPack.compartmentIds
             compart_id = id & "@" & compart_id
 
-            If fluxLines.ContainsKey(compart_id) Then
-                Call data.Add(compart_id, New FeatureVector(compart_id, fluxLines(compart_id)))
-            End If
+            ' If fluxLines.ContainsKey(compart_id) Then
+            ' Call data.Add(compart_id, New FeatureVector(compart_id, fluxLines(compart_id)))
+            ' End If
         Next
 
         Dim plot As ggplot.ggplot = Await CreatePlot(matrix:=data)
@@ -565,12 +476,11 @@ Public Class CellBrowser
     End Sub
 
     Private Async Sub ViewMassActivityLoadsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewMassActivityLoadsToolStripMenuItem.Click
-        Dim loads = vcellPack.ActivityLoads.ToArray
-        Dim idset = Await Task.Run(Function() loads.Select(Function(ti) ti.Keys).IteratesALL.Distinct.ToArray)
-        Dim matrix = idset _
-            .ToDictionary(Function(id) id,
+        Dim loads = Await Task.Run(Function() vcellPack.ActivityLoads)
+        Dim matrix = loads _
+            .ToDictionary(Function(id) id.Key,
                           Function(id)
-                              Return New FeatureVector(id, loads.Select(Function(ti) ti(id)))
+                              Return New FeatureVector(id.Key, id.Value)
                           End Function)
 
         Dim plot As ggplot.ggplot = Await CreatePlot(matrix:=matrix)
