@@ -73,7 +73,7 @@ Public Class CellBrowser
     ''' </summary>
     ''' <param name="println"></param>
     Private Sub LoadTree(println As Action(Of String))
-        For Each molSet In moleculeSet.Where(Function(a) Not a.Key.EndsWith("-Flux"))
+        For Each molSet In vcellPack.ReadMoleculeTree
             Dim root = TreeView1.Nodes.Add(molSet.Key)
 
             For Each id As String In molSet.Value
@@ -153,7 +153,7 @@ Public Class CellBrowser
     Private Function CreatePlotMatrix(idset As IEnumerable(Of String)) As Dictionary(Of String, FeatureVector)
         Call plotMatrix.Clear()
 
-        For Each id As String In idset
+        For Each id As String In idset.Where(Function(mol) vcellPack.CheckSymbol(mol))
             Dim vec As Double() = vcellPack.GetExpression(id)
             Dim col As New FeatureVector(id, vec)
 
@@ -259,11 +259,13 @@ Public Class CellBrowser
     Private Async Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView1.AfterSelect
         Dim node = e.Node
 
-        If node Is Nothing Then
+        If node Is Nothing OrElse node.Nodes.Count > 0 Then
             Return
         End If
 
-        Dim node_id As String()
+        Dim node_id As String() = vcellPack.compartmentIds _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .ToArray
 
         Await RefreshPlot(node_id)
     End Sub
