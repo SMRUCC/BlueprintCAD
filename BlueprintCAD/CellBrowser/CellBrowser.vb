@@ -152,7 +152,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-
+                Call Message(ex.Message)
             End Try
         End If
     End Function
@@ -392,7 +392,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-
+                Call Message(ex.Message)
             End Try
         End If
     End Function
@@ -455,15 +455,15 @@ Public Class CellBrowser
         End If
 
         Dim id As String = CStr(DataGridView1.SelectedRows(0).Cells(0).Value)
-        Dim data As New Dictionary(Of String, FeatureVector)
+        Dim vec As Double() = vcellPack.GetFluxExpression(id)
 
-        For Each compart_id As String In vcellPack.compartmentIds
-            compart_id = id & "@" & compart_id
+        If vec Is Nothing Then
+            Return
+        End If
 
-            ' If fluxLines.ContainsKey(compart_id) Then
-            ' Call data.Add(compart_id, New FeatureVector(compart_id, fluxLines(compart_id)))
-            ' End If
-        Next
+        Dim data As New Dictionary(Of String, FeatureVector) From {
+            {id, New FeatureVector(id, vec)}
+        }
 
         Dim plot As ggplot.ggplot = Await CreatePlot(matrix:=data)
 
@@ -473,7 +473,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-
+                Call Message(ex.Message)
             End Try
         End If
     End Sub
@@ -510,6 +510,10 @@ Public Class CellBrowser
         End Using
     End Sub
 
+    Public Sub Message(str As String)
+        Call Me.Invoke(Sub() ToolStripStatusLabel1.Text = str)
+    End Sub
+
     Private Async Sub ViewMassActivityLoadsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewMassActivityLoadsToolStripMenuItem.Click
         Dim loads = Await Task.Run(Function() vcellPack.ActivityLoads)
         Dim matrix = loads _
@@ -526,7 +530,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-
+                Call Message(ex.Message)
             End Try
         End If
     End Sub

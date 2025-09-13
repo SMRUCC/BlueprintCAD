@@ -54,6 +54,9 @@ Partial Class CellBrowser
         Column2 = New DataGridViewLinkColumn()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
+        ToolStrip1 = New ToolStrip()
+        ToolStripLabel1 = New ToolStripLabel()
+        ToolStripComboBox1 = New ToolStripComboBox()
         SplitContainer1 = New SplitContainer()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
@@ -67,9 +70,8 @@ Partial Class CellBrowser
         TabPage3 = New TabPage()
         TextBox1 = New TextBox()
         BindingSource1 = New BindingSource(components)
-        ToolStrip1 = New ToolStrip()
-        ToolStripLabel1 = New ToolStripLabel()
-        ToolStripComboBox1 = New ToolStripComboBox()
+        StatusStrip1 = New StatusStrip()
+        ToolStripStatusLabel1 = New ToolStripStatusLabel()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -79,6 +81,7 @@ Partial Class CellBrowser
         ContextMenuStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip2.SuspendLayout()
+        ToolStrip1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
@@ -94,7 +97,7 @@ Partial Class CellBrowser
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         TabPage3.SuspendLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
-        ToolStrip1.SuspendLayout()
+        StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -206,7 +209,7 @@ Partial Class CellBrowser
         PlotView1.Location = New Point(0, 0)
         PlotView1.Name = "PlotView1"
         PlotView1.ScaleFactor = 1.25F
-        PlotView1.Size = New Size(1167, 572)
+        PlotView1.Size = New Size(1167, 557)
         PlotView1.TabIndex = 1
         ' 
         ' GroupBox2
@@ -215,7 +218,7 @@ Partial Class CellBrowser
         GroupBox2.Dock = DockStyle.Fill
         GroupBox2.Location = New Point(0, 0)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(1524, 308)
+        GroupBox2.Size = New Size(1524, 301)
         GroupBox2.TabIndex = 3
         GroupBox2.TabStop = False
         GroupBox2.Text = "Browser"
@@ -236,7 +239,7 @@ Partial Class CellBrowser
         ' 
         SplitContainer2.Panel2.Controls.Add(DataGridView1)
         SplitContainer2.Panel2.Controls.Add(ToolStrip1)
-        SplitContainer2.Size = New Size(1518, 286)
+        SplitContainer2.Size = New Size(1518, 279)
         SplitContainer2.SplitterDistance = 344
         SplitContainer2.TabIndex = 0
         ' 
@@ -246,7 +249,7 @@ Partial Class CellBrowser
         TreeView1.Dock = DockStyle.Fill
         TreeView1.Location = New Point(0, 0)
         TreeView1.Name = "TreeView1"
-        TreeView1.Size = New Size(344, 286)
+        TreeView1.Size = New Size(344, 279)
         TreeView1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -297,7 +300,7 @@ Partial Class CellBrowser
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(1170, 261)
+        DataGridView1.Size = New Size(1170, 254)
         DataGridView1.TabIndex = 0
         ' 
         ' Column1
@@ -320,13 +323,35 @@ Partial Class CellBrowser
         ' 
         ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewFluxDynamicsToolStripMenuItem})
         ContextMenuStrip2.Name = "ContextMenuStrip2"
-        ContextMenuStrip2.Size = New Size(180, 26)
+        ContextMenuStrip2.Size = New Size(181, 48)
         ' 
         ' ViewFluxDynamicsToolStripMenuItem
         ' 
+        ViewFluxDynamicsToolStripMenuItem.Image = CType(resources.GetObject("ViewFluxDynamicsToolStripMenuItem.Image"), Image)
         ViewFluxDynamicsToolStripMenuItem.Name = "ViewFluxDynamicsToolStripMenuItem"
-        ViewFluxDynamicsToolStripMenuItem.Size = New Size(179, 22)
+        ViewFluxDynamicsToolStripMenuItem.Size = New Size(180, 22)
         ViewFluxDynamicsToolStripMenuItem.Text = "View Flux Dynamics"
+        ' 
+        ' ToolStrip1
+        ' 
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripComboBox1})
+        ToolStrip1.Location = New Point(0, 0)
+        ToolStrip1.Name = "ToolStrip1"
+        ToolStrip1.Size = New Size(1170, 25)
+        ToolStrip1.TabIndex = 1
+        ToolStrip1.Text = "ToolStrip1"
+        ' 
+        ' ToolStripLabel1
+        ' 
+        ToolStripLabel1.Name = "ToolStripLabel1"
+        ToolStripLabel1.Size = New Size(133, 22)
+        ToolStripLabel1.Text = "Select Network Module:"
+        ' 
+        ' ToolStripComboBox1
+        ' 
+        ToolStripComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+        ToolStripComboBox1.Name = "ToolStripComboBox1"
+        ToolStripComboBox1.Size = New Size(300, 25)
         ' 
         ' SplitContainer1
         ' 
@@ -342,8 +367,8 @@ Partial Class CellBrowser
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(GroupBox2)
-        SplitContainer1.Size = New Size(1524, 918)
-        SplitContainer1.SplitterDistance = 606
+        SplitContainer1.Size = New Size(1524, 896)
+        SplitContainer1.SplitterDistance = 591
         SplitContainer1.TabIndex = 4
         ' 
         ' TabControl1
@@ -355,7 +380,7 @@ Partial Class CellBrowser
         TabControl1.Location = New Point(0, 0)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1524, 606)
+        TabControl1.Size = New Size(1524, 591)
         TabControl1.TabIndex = 0
         ' 
         ' TabPage1
@@ -364,7 +389,7 @@ Partial Class CellBrowser
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1516, 578)
+        TabPage1.Size = New Size(1516, 563)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Dynamics Plot"
         TabPage1.UseVisualStyleBackColor = True
@@ -383,7 +408,7 @@ Partial Class CellBrowser
         ' SplitContainer3.Panel2
         ' 
         SplitContainer3.Panel2.Controls.Add(PlotView1)
-        SplitContainer3.Size = New Size(1510, 572)
+        SplitContainer3.Size = New Size(1510, 557)
         SplitContainer3.SplitterDistance = 339
         SplitContainer3.TabIndex = 2
         ' 
@@ -394,7 +419,7 @@ Partial Class CellBrowser
         CheckedListBox1.FormattingEnabled = True
         CheckedListBox1.Location = New Point(0, 0)
         CheckedListBox1.Name = "CheckedListBox1"
-        CheckedListBox1.Size = New Size(339, 572)
+        CheckedListBox1.Size = New Size(339, 557)
         CheckedListBox1.TabIndex = 0
         ' 
         ' ContextMenuStrip3
@@ -421,7 +446,7 @@ Partial Class CellBrowser
         TabPage2.Location = New Point(4, 24)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1516, 578)
+        TabPage2.Size = New Size(1516, 563)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Matrix"
         TabPage2.UseVisualStyleBackColor = True
@@ -437,7 +462,7 @@ Partial Class CellBrowser
         DataGridView2.Name = "DataGridView2"
         DataGridView2.ReadOnly = True
         DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView2.Size = New Size(1510, 572)
+        DataGridView2.Size = New Size(1510, 557)
         DataGridView2.TabIndex = 0
         ' 
         ' TabPage3
@@ -446,7 +471,7 @@ Partial Class CellBrowser
         TabPage3.Location = New Point(4, 24)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1516, 578)
+        TabPage3.Size = New Size(1516, 563)
         TabPage3.TabIndex = 2
         TabPage3.Text = "Flux Model"
         TabPage3.UseVisualStyleBackColor = True
@@ -459,29 +484,23 @@ Partial Class CellBrowser
         TextBox1.Multiline = True
         TextBox1.Name = "TextBox1"
         TextBox1.ScrollBars = ScrollBars.Both
-        TextBox1.Size = New Size(1510, 572)
+        TextBox1.Size = New Size(1510, 557)
         TextBox1.TabIndex = 0
         ' 
-        ' ToolStrip1
+        ' StatusStrip1
         ' 
-        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripComboBox1})
-        ToolStrip1.Location = New Point(0, 0)
-        ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Size = New Size(1170, 25)
-        ToolStrip1.TabIndex = 1
-        ToolStrip1.Text = "ToolStrip1"
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
+        StatusStrip1.Location = New Point(0, 920)
+        StatusStrip1.Name = "StatusStrip1"
+        StatusStrip1.Size = New Size(1524, 22)
+        StatusStrip1.TabIndex = 5
+        StatusStrip1.Text = "StatusStrip1"
         ' 
-        ' ToolStripLabel1
+        ' ToolStripStatusLabel1
         ' 
-        ToolStripLabel1.Name = "ToolStripLabel1"
-        ToolStripLabel1.Size = New Size(133, 22)
-        ToolStripLabel1.Text = "Select Network Module:"
-        ' 
-        ' ToolStripComboBox1
-        ' 
-        ToolStripComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
-        ToolStripComboBox1.Name = "ToolStripComboBox1"
-        ToolStripComboBox1.Size = New Size(300, 25)
+        ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        ToolStripStatusLabel1.Size = New Size(42, 17)
+        ToolStripStatusLabel1.Text = "Ready!"
         ' 
         ' CellBrowser
         ' 
@@ -490,6 +509,7 @@ Partial Class CellBrowser
         ClientSize = New Size(1524, 942)
         Controls.Add(SplitContainer1)
         Controls.Add(MenuStrip1)
+        Controls.Add(StatusStrip1)
         MainMenuStrip = MenuStrip1
         Name = "CellBrowser"
         Text = "Cell Browser"
@@ -504,6 +524,8 @@ Partial Class CellBrowser
         ContextMenuStrip1.ResumeLayout(False)
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ContextMenuStrip2.ResumeLayout(False)
+        ToolStrip1.ResumeLayout(False)
+        ToolStrip1.PerformLayout()
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
@@ -520,8 +542,8 @@ Partial Class CellBrowser
         TabPage3.ResumeLayout(False)
         TabPage3.PerformLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
-        ToolStrip1.ResumeLayout(False)
-        ToolStrip1.PerformLayout()
+        StatusStrip1.ResumeLayout(False)
+        StatusStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -572,4 +594,6 @@ Partial Class CellBrowser
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
 End Class
