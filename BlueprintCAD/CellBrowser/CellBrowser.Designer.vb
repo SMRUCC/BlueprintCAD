@@ -38,6 +38,7 @@ Partial Class CellBrowser
         ExportFluxomicsToolStripMenuItem = New ToolStripMenuItem()
         ViewerToolStripMenuItem = New ToolStripMenuItem()
         ExportPlotMatrixToolStripMenuItem = New ToolStripMenuItem()
+        ExpressionValueLogScaleToolStripMenuItem = New ToolStripMenuItem()
         PlotView1 = New ggviewer.PlotView()
         GroupBox2 = New GroupBox()
         SplitContainer2 = New SplitContainer()
@@ -66,7 +67,9 @@ Partial Class CellBrowser
         TabPage3 = New TabPage()
         TextBox1 = New TextBox()
         BindingSource1 = New BindingSource(components)
-        ExpressionValueLogScaleToolStripMenuItem = New ToolStripMenuItem()
+        ToolStrip1 = New ToolStrip()
+        ToolStripLabel1 = New ToolStripLabel()
+        ToolStripComboBox1 = New ToolStripComboBox()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -91,6 +94,7 @@ Partial Class CellBrowser
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         TabPage3.SuspendLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
+        ToolStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -185,6 +189,14 @@ Partial Class CellBrowser
         ExportPlotMatrixToolStripMenuItem.Size = New Size(214, 22)
         ExportPlotMatrixToolStripMenuItem.Text = "Export Plot Matrix"
         ' 
+        ' ExpressionValueLogScaleToolStripMenuItem
+        ' 
+        ExpressionValueLogScaleToolStripMenuItem.CheckOnClick = True
+        ExpressionValueLogScaleToolStripMenuItem.Image = CType(resources.GetObject("ExpressionValueLogScaleToolStripMenuItem.Image"), Image)
+        ExpressionValueLogScaleToolStripMenuItem.Name = "ExpressionValueLogScaleToolStripMenuItem"
+        ExpressionValueLogScaleToolStripMenuItem.Size = New Size(214, 22)
+        ExpressionValueLogScaleToolStripMenuItem.Text = "Expression Value Log Scale"
+        ' 
         ' PlotView1
         ' 
         PlotView1.BackColor = Color.SkyBlue
@@ -223,6 +235,7 @@ Partial Class CellBrowser
         ' SplitContainer2.Panel2
         ' 
         SplitContainer2.Panel2.Controls.Add(DataGridView1)
+        SplitContainer2.Panel2.Controls.Add(ToolStrip1)
         SplitContainer2.Size = New Size(1518, 286)
         SplitContainer2.SplitterDistance = 344
         SplitContainer2.TabIndex = 0
@@ -280,11 +293,11 @@ Partial Class CellBrowser
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2})
         DataGridView1.ContextMenuStrip = ContextMenuStrip2
         DataGridView1.Dock = DockStyle.Fill
-        DataGridView1.Location = New Point(0, 0)
+        DataGridView1.Location = New Point(0, 25)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(1170, 286)
+        DataGridView1.Size = New Size(1170, 261)
         DataGridView1.TabIndex = 0
         ' 
         ' Column1
@@ -449,13 +462,26 @@ Partial Class CellBrowser
         TextBox1.Size = New Size(1510, 572)
         TextBox1.TabIndex = 0
         ' 
-        ' ExpressionValueLogScaleToolStripMenuItem
+        ' ToolStrip1
         ' 
-        ExpressionValueLogScaleToolStripMenuItem.CheckOnClick = True
-        ExpressionValueLogScaleToolStripMenuItem.Image = CType(resources.GetObject("ExpressionValueLogScaleToolStripMenuItem.Image"), Image)
-        ExpressionValueLogScaleToolStripMenuItem.Name = "ExpressionValueLogScaleToolStripMenuItem"
-        ExpressionValueLogScaleToolStripMenuItem.Size = New Size(214, 22)
-        ExpressionValueLogScaleToolStripMenuItem.Text = "Expression Value Log Scale"
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripComboBox1})
+        ToolStrip1.Location = New Point(0, 0)
+        ToolStrip1.Name = "ToolStrip1"
+        ToolStrip1.Size = New Size(1170, 25)
+        ToolStrip1.TabIndex = 1
+        ToolStrip1.Text = "ToolStrip1"
+        ' 
+        ' ToolStripLabel1
+        ' 
+        ToolStripLabel1.Name = "ToolStripLabel1"
+        ToolStripLabel1.Size = New Size(133, 22)
+        ToolStripLabel1.Text = "Select Network Module:"
+        ' 
+        ' ToolStripComboBox1
+        ' 
+        ToolStripComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+        ToolStripComboBox1.Name = "ToolStripComboBox1"
+        ToolStripComboBox1.Size = New Size(300, 25)
         ' 
         ' CellBrowser
         ' 
@@ -472,6 +498,7 @@ Partial Class CellBrowser
         GroupBox2.ResumeLayout(False)
         SplitContainer2.Panel1.ResumeLayout(False)
         SplitContainer2.Panel2.ResumeLayout(False)
+        SplitContainer2.Panel2.PerformLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer2.ResumeLayout(False)
         ContextMenuStrip1.ResumeLayout(False)
@@ -493,6 +520,8 @@ Partial Class CellBrowser
         TabPage3.ResumeLayout(False)
         TabPage3.PerformLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
+        ToolStrip1.ResumeLayout(False)
+        ToolStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -540,4 +569,7 @@ Partial Class CellBrowser
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents ExpressionValueLogScaleToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
 End Class

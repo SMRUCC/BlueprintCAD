@@ -49,6 +49,13 @@ Public Class CellBrowser
                         Call Me.Invoke(Sub() LoadNodeStar())
                         Call println("load flux dynamics data into memory...")
                     End Sub)
+
+                Call ToolStripComboBox1.Items.Clear()
+                Call ToolStripComboBox1.Items.Add("*")
+
+                For Each item In vcellPack.fluxSet
+                    Call ToolStripComboBox1.Items.Add(item)
+                Next
             End If
         End Using
     End Sub
@@ -291,7 +298,9 @@ Public Class CellBrowser
         End If
 
         Dim node As TreeNode = TreeView1.SelectedNode
-        Dim node_id As String()
+        Dim node_id As String() = vcellPack.compartmentIds _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .ToArray
         Dim idset As Index(Of String) = node_id
         Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.left.Any(Function(v) idset(v.id) > -1)).ToArray
 
@@ -307,7 +316,9 @@ Public Class CellBrowser
         End If
 
         Dim node As TreeNode = TreeView1.SelectedNode
-        Dim node_id As String()
+        Dim node_id As String() = vcellPack.compartmentIds _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .ToArray
         Dim idset As Index(Of String) = node_id
         Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.right.Any(Function(v) idset(v.id) > -1)).ToArray
 
@@ -323,8 +334,13 @@ Public Class CellBrowser
         End If
 
         Dim node As TreeNode = TreeView1.SelectedNode
-        Dim node_id As String()
-        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.ToArray
+        Dim node_id As String() = vcellPack.compartmentIds _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .ToArray
+        Dim edges As FluxEdge() = node_id _
+            .Select(Function(id) nodeLinks.TryGetValue(id)) _
+            .IteratesALL _
+            .ToArray
 
         FormBuzyLoader.Loading(
             Sub(println)
@@ -332,8 +348,25 @@ Public Class CellBrowser
             End Sub)
     End Sub
 
-    Private Sub SplitContainer2_SplitterMoved(sender As Object, e As SplitterEventArgs) Handles SplitContainer2.SplitterMoved
+    Private Sub ToolStripComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ToolStripComboBox1.SelectedIndexChanged
+        Dim item As Object = ToolStripComboBox1.SelectedItem
 
+        If TypeOf item Is String AndAlso CStr(item) = "*" Then
+            ' display all
+            network = FormBuzyLoader.Loading(Function(println) LoadNetwork(println))
+        Else
+            ' display a specific module
+            Dim fluxIdSet As String() = CType(item, NamedCollection(Of String))
+            Dim edges As FluxEdge() = fluxIdSet _
+               .Select(Function(id) network.TryGetValue(id)) _
+               .Where(Function(f) Not f Is Nothing) _
+               .ToArray
+
+            FormBuzyLoader.Loading(
+                Sub(println)
+                    Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+                End Sub)
+        End If
     End Sub
 
     Private Async Sub CheckedListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CheckedListBox1.SelectedIndexChanged
@@ -515,6 +548,10 @@ Public Class CellBrowser
     End Sub
 
     Private Sub ExpressionValueLogScaleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExpressionValueLogScaleToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ToolStripComboBox1_Click(sender As Object, e As EventArgs) Handles ToolStripComboBox1.Click
 
     End Sub
 End Class
