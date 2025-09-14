@@ -430,9 +430,24 @@ Public Class CellBrowser
             If file.ShowDialog = DialogResult.OK Then
                 Dim matrix As New Matrix With {
                     .tag = "Fluxomics",
-                    .sampleID = timePoints.AsCharacter
+                    .sampleID = timePoints _
+                        .AsCharacter _
+                        .ToArray
                 }
 
+                Call FormBuzyLoader.Loading(
+                    Sub(println)
+                        Call println("Loading flux data...")
+
+                        matrix.expression = network.Keys _
+                            .Select(Function(flux_id)
+                                        Return New DataFrameRow With {
+                                            .geneID = flux_id,
+                                            .experiments = vcellPack.GetFluxExpression(flux_id)
+                                        }
+                                    End Function) _
+                            .ToArray
+                    End Sub)
                 Call FormBuzyLoader.Loading(
                     Sub(println)
                         Call println("Save flux data matrix...")
@@ -536,7 +551,13 @@ Public Class CellBrowser
     End Sub
 
     Private Sub CloseFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseFileToolStripMenuItem.Click
-        Call vcellPack.Dispose()
+        If Not vcellPack Is Nothing Then
+            Try
+                Call vcellPack.Dispose()
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
 
     Private Sub CheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckAllToolStripMenuItem.Click
