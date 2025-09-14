@@ -406,9 +406,35 @@ Public Class CellBrowser
             If file.ShowDialog = DialogResult.OK Then
                 Dim matrix As New Matrix With {
                     .tag = "Molecule Expression",
-                    .sampleID = timePoints.AsCharacter
+                    .sampleID = timePoints _
+                        .AsCharacter _
+                        .ToArray
                 }
 
+                Call FormBuzyLoader.Loading(
+                    Sub(println)
+                        Call println("Loading the molecule expression data...")
+
+                        matrix.expression = vcellPack _
+                            .GetCellularMolecules _
+                            .Select(Function(n) n.Item2) _
+                            .IteratesALL _
+                            .Select(Function(m) m.AsEnumerable) _
+                            .IteratesALL _
+                            .Distinct _
+                            .Select(Function(id)
+                                        If vcellPack.CheckSymbol(id) Then
+                                            Return New DataFrameRow With {
+                                                .geneID = id,
+                                                .experiments = vcellPack.GetExpression(id)
+                                            }
+                                        Else
+                                            Call println($"Missing molecule epxression data of {id}")
+                                            Return Nothing
+                                        End If
+                                    End Function) _
+                            .ToArray
+                    End Sub)
                 Call FormBuzyLoader.Loading(
                     Sub(println)
                         Call println("Save molecule expression data matrix...")
@@ -441,11 +467,17 @@ Public Class CellBrowser
 
                         matrix.expression = network.Keys _
                             .Select(Function(flux_id)
-                                        Return New DataFrameRow With {
-                                            .geneID = flux_id,
-                                            .experiments = vcellPack.GetFluxExpression(flux_id)
-                                        }
+                                        If vcellPack.FluxExpressionExists(flux_id) Then
+                                            Return New DataFrameRow With {
+                                                .geneID = flux_id,
+                                                .experiments = vcellPack.GetFluxExpression(flux_id)
+                                            }
+                                        Else
+                                            Call println($"missing flux expression data of {flux_id}!")
+                                            Return Nothing
+                                        End If
                                     End Function) _
+                            .Where(Function(f) f IsNot Nothing) _
                             .ToArray
                     End Sub)
                 Call FormBuzyLoader.Loading(
