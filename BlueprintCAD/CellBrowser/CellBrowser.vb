@@ -116,6 +116,8 @@ Public Class CellBrowser
         Call DataGridView1.Rows.Clear()
 
         For Each edge As NamedValue(Of FluxEdge) In network
+            Dim forward = edge.Value.regulation
+
             offset = DataGridView1.Rows.Add(edge.Name, edge.Value.ToString)
             DataGridView1.Rows(offset).Tag = edge.Value
         Next

@@ -50,8 +50,6 @@ Partial Class CellBrowser
         ToolStripMenuItem2 = New ToolStripSeparator()
         CopyNameToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
-        Column1 = New DataGridViewLinkColumn()
-        Column2 = New DataGridViewLinkColumn()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip1 = New ToolStrip()
@@ -72,6 +70,10 @@ Partial Class CellBrowser
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        Column1 = New DataGridViewLinkColumn()
+        Column2 = New DataGridViewLinkColumn()
+        Column3 = New DataGridViewLinkColumn()
+        Column4 = New DataGridViewLinkColumn()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -293,7 +295,7 @@ Partial Class CellBrowser
         DataGridView1.AllowUserToDeleteRows = False
         DataGridView1.BackgroundColor = Color.WhiteSmoke
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2})
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4})
         DataGridView1.ContextMenuStrip = ContextMenuStrip2
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(0, 25)
@@ -303,33 +305,17 @@ Partial Class CellBrowser
         DataGridView1.Size = New Size(1170, 254)
         DataGridView1.TabIndex = 0
         ' 
-        ' Column1
-        ' 
-        Column1.HeaderText = "Flux Edge ID"
-        Column1.Name = "Column1"
-        Column1.ReadOnly = True
-        Column1.Resizable = DataGridViewTriState.True
-        Column1.SortMode = DataGridViewColumnSortMode.Automatic
-        Column1.Width = 200
-        ' 
-        ' Column2
-        ' 
-        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        Column2.HeaderText = "Network"
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        ' 
         ' ContextMenuStrip2
         ' 
         ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewFluxDynamicsToolStripMenuItem})
         ContextMenuStrip2.Name = "ContextMenuStrip2"
-        ContextMenuStrip2.Size = New Size(181, 48)
+        ContextMenuStrip2.Size = New Size(180, 26)
         ' 
         ' ViewFluxDynamicsToolStripMenuItem
         ' 
         ViewFluxDynamicsToolStripMenuItem.Image = CType(resources.GetObject("ViewFluxDynamicsToolStripMenuItem.Image"), Image)
         ViewFluxDynamicsToolStripMenuItem.Name = "ViewFluxDynamicsToolStripMenuItem"
-        ViewFluxDynamicsToolStripMenuItem.Size = New Size(180, 22)
+        ViewFluxDynamicsToolStripMenuItem.Size = New Size(179, 22)
         ViewFluxDynamicsToolStripMenuItem.Text = "View Flux Dynamics"
         ' 
         ' ToolStrip1
@@ -502,6 +488,40 @@ Partial Class CellBrowser
         ToolStripStatusLabel1.Size = New Size(42, 17)
         ToolStripStatusLabel1.Text = "Ready!"
         ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "Flux Edge ID"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        Column1.Resizable = DataGridViewTriState.True
+        Column1.SortMode = DataGridViewColumnSortMode.Automatic
+        Column1.Width = 200
+        ' 
+        ' Column2
+        ' 
+        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column2.HeaderText = "Network"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Forward Regulation"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        Column3.Resizable = DataGridViewTriState.True
+        Column3.SortMode = DataGridViewColumnSortMode.Automatic
+        Column3.Width = 250
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Reverse Regulation"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        Column4.Resizable = DataGridViewTriState.True
+        Column4.SortMode = DataGridViewColumnSortMode.Automatic
+        Column4.Width = 250
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -557,8 +577,6 @@ Partial Class CellBrowser
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents TreeView1 As TreeView
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Column1 As DataGridViewLinkColumn
-    Friend WithEvents Column2 As DataGridViewLinkColumn
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
@@ -596,4 +614,8 @@ Partial Class CellBrowser
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents Column1 As DataGridViewLinkColumn
+    Friend WithEvents Column2 As DataGridViewLinkColumn
+    Friend WithEvents Column3 As DataGridViewLinkColumn
+    Friend WithEvents Column4 As DataGridViewLinkColumn
 End Class
