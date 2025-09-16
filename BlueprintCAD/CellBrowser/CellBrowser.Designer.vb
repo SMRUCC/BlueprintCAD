@@ -24,6 +24,8 @@ Partial Class CellBrowser
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CellBrowser))
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
         OpenVirtualCellDataFileToolStripMenuItem = New ToolStripMenuItem()
@@ -50,6 +52,9 @@ Partial Class CellBrowser
         ToolStripMenuItem2 = New ToolStripSeparator()
         CopyNameToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New DataGridView()
+        Column2 = New DataGridViewLinkColumn()
+        Column3 = New DataGridViewLinkColumn()
+        Column4 = New DataGridViewLinkColumn()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip1 = New ToolStrip()
@@ -70,10 +75,6 @@ Partial Class CellBrowser
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
-        Column1 = New DataGridViewLinkColumn()
-        Column2 = New DataGridViewLinkColumn()
-        Column3 = New DataGridViewLinkColumn()
-        Column4 = New DataGridViewLinkColumn()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -293,17 +294,54 @@ Partial Class CellBrowser
         ' 
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders
         DataGridView1.BackgroundColor = Color.WhiteSmoke
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4})
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column2, Column3, Column4})
         DataGridView1.ContextMenuStrip = ContextMenuStrip2
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(0, 25)
+        DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
+        DataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Control
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(1170, 254)
         DataGridView1.TabIndex = 0
+        ' 
+        ' Column2
+        ' 
+        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column2.HeaderText = "Network"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Forward Regulation"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        Column3.Resizable = DataGridViewTriState.True
+        Column3.SortMode = DataGridViewColumnSortMode.Automatic
+        Column3.Width = 250
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Reverse Regulation"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        Column4.Resizable = DataGridViewTriState.True
+        Column4.SortMode = DataGridViewColumnSortMode.Automatic
+        Column4.Width = 250
         ' 
         ' ContextMenuStrip2
         ' 
@@ -443,6 +481,14 @@ Partial Class CellBrowser
         DataGridView2.AllowUserToDeleteRows = False
         DataGridView2.BackgroundColor = Color.Gainsboro
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        DataGridView2.DefaultCellStyle = DataGridViewCellStyle2
         DataGridView2.Dock = DockStyle.Fill
         DataGridView2.Location = New Point(3, 3)
         DataGridView2.Name = "DataGridView2"
@@ -487,40 +533,6 @@ Partial Class CellBrowser
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         ToolStripStatusLabel1.Size = New Size(42, 17)
         ToolStripStatusLabel1.Text = "Ready!"
-        ' 
-        ' Column1
-        ' 
-        Column1.HeaderText = "Flux Edge ID"
-        Column1.Name = "Column1"
-        Column1.ReadOnly = True
-        Column1.Resizable = DataGridViewTriState.True
-        Column1.SortMode = DataGridViewColumnSortMode.Automatic
-        Column1.Width = 200
-        ' 
-        ' Column2
-        ' 
-        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        Column2.HeaderText = "Network"
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Forward Regulation"
-        Column3.Name = "Column3"
-        Column3.ReadOnly = True
-        Column3.Resizable = DataGridViewTriState.True
-        Column3.SortMode = DataGridViewColumnSortMode.Automatic
-        Column3.Width = 250
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "Reverse Regulation"
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
-        Column4.Resizable = DataGridViewTriState.True
-        Column4.SortMode = DataGridViewColumnSortMode.Automatic
-        Column4.Width = 250
         ' 
         ' CellBrowser
         ' 
@@ -614,7 +626,6 @@ Partial Class CellBrowser
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents Column1 As DataGridViewLinkColumn
     Friend WithEvents Column2 As DataGridViewLinkColumn
     Friend WithEvents Column3 As DataGridViewLinkColumn
     Friend WithEvents Column4 As DataGridViewLinkColumn

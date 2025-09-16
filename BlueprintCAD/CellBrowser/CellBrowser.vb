@@ -120,8 +120,9 @@ Public Class CellBrowser
             Dim forward As VariableFactor() = flux.regulation.Where(Function(m) m.factor > 0).ToArray
             Dim reverse As VariableFactor() = flux.regulation.Where(Function(m) m.factor < 0).ToArray
 
-            offset = DataGridView1.Rows.Add(edge.Name, flux, forward.JoinBy("; "), reverse.JoinBy("; "))
+            offset = DataGridView1.Rows.Add(flux, forward.JoinBy("; "), reverse.JoinBy("; "))
             DataGridView1.Rows(offset).Tag = flux
+            DataGridView1.Rows(offset).HeaderCell.Value = flux.id
         Next
 
         Call DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
@@ -139,7 +140,6 @@ Public Class CellBrowser
         End If
 
         Dim row = DataGridView1.SelectedRows(0)
-        Dim link = CStr(row.Cells(0).Value)
         Dim edge As FluxEdge = row.Tag
 
         TextBox1.Text = edge.GetJson(indent:=True)
@@ -178,6 +178,11 @@ Public Class CellBrowser
         Return Await CreatePlot(CreatePlotMatrix(idset))
     End Function
 
+    ''' <summary>
+    ''' Create ggplot chart and render dataframe into data grid table view
+    ''' </summary>
+    ''' <param name="matrix"></param>
+    ''' <returns></returns>
     Private Async Function CreatePlot(matrix As Dictionary(Of String, FeatureVector)) As Task(Of ggplot.ggplot)
         Dim cols As New List(Of (name$, expr As Double()))
 
@@ -197,22 +202,21 @@ Public Class CellBrowser
 
         Call DataGridView2.Rows.Clear()
         Call DataGridView2.Columns.Clear()
-        Call DataGridView2.Columns.Add("Time", "Time")
 
         For Each col In cols
             Call DataGridView2.Columns.Add(col.name, col.name)
         Next
 
         For i As Integer = 0 To timePoints.Length - 1
-            Dim v As Object() = New Object(cols.Count) {}
-
-            v(0) = timePoints(i)
+            Dim v As Object() = New Object(cols.Count - 1) {}
 
             For j As Integer = 0 To cols.Count - 1
-                v(j + 1) = cols(j).expr(i)
+                v(j) = cols(j).expr(i).ToString("G4")
             Next
 
-            Call DataGridView2.Rows.Add(v)
+            Dim offset As Integer = DataGridView2.Rows.Add(v)
+
+            DataGridView2.Rows(offset).HeaderCell.Value = timePoints(i)
         Next
 
         Call DataGridView2.CommitEdit(DataGridViewDataErrorContexts.Commit)
@@ -539,6 +543,8 @@ Public Class CellBrowser
                 Using s As StreamWriter = file.FileName.OpenWriter
                     Dim row As New RowObject
 
+                    Call row.Add("#Time")
+
                     For i As Integer = 0 To DataGridView2.Columns.Count - 1
                         Call row.Add(DataGridView2.Columns(i).HeaderText)
                     Next
@@ -549,6 +555,7 @@ Public Class CellBrowser
                         Dim r = DataGridView2.Rows(i)
 
                         Call row.Clear()
+                        Call row.Add(r.HeaderCell.Value.ToString)
 
                         For offset As Integer = 0 To DataGridView2.Columns.Count - 1
                             Call row.Add(CStr(r.Cells(offset).Value))
