@@ -116,10 +116,12 @@ Public Class CellBrowser
         Call DataGridView1.Rows.Clear()
 
         For Each edge As NamedValue(Of FluxEdge) In network
-            Dim forward = edge.Value.regulation
+            Dim flux As FluxEdge = edge.Value
+            Dim forward As VariableFactor() = flux.regulation.Where(Function(m) m.factor > 0).ToArray
+            Dim reverse As VariableFactor() = flux.regulation.Where(Function(m) m.factor < 0).ToArray
 
-            offset = DataGridView1.Rows.Add(edge.Name, edge.Value.ToString)
-            DataGridView1.Rows(offset).Tag = edge.Value
+            offset = DataGridView1.Rows.Add(edge.Name, flux, forward.JoinBy("; "), reverse.JoinBy("; "))
+            DataGridView1.Rows(offset).Tag = flux
         Next
 
         Call DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
