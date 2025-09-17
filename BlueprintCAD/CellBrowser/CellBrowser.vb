@@ -509,7 +509,7 @@ Public Class CellBrowser
             Return
         End If
 
-        Dim id As String = CStr(DataGridView1.SelectedRows(0).Cells(0).Value)
+        Dim id As String = CStr(DataGridView1.SelectedRows(0).HeaderCell.Value)
         Dim vec As Double() = vcellPack.GetFluxExpression(id)
 
         If vec Is Nothing Then
