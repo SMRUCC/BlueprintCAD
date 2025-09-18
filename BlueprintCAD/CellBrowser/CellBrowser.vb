@@ -510,14 +510,23 @@ Public Class CellBrowser
         End If
 
         Dim id As String = CStr(DataGridView1.SelectedRows(0).HeaderCell.Value)
+
+        If Not vcellPack.FluxExpressionExists(id) Then
+            Return
+        End If
+
         Dim vec As Double() = vcellPack.GetFluxExpression(id)
+        Dim forward As Double() = vcellPack.GetRegulationExpression(id, "forward")
+        Dim reverse As Double() = vcellPack.GetRegulationExpression(id, "reverse")
 
         If vec Is Nothing Then
             Return
         End If
 
         Dim data As New Dictionary(Of String, FeatureVector) From {
-            {id, New FeatureVector(id, vec)}
+            {id, New FeatureVector(id, vec)},
+            {"forward", New FeatureVector("forward", vec)},
+            {"reverse", New FeatureVector("reverse", vec)}
         }
 
         Dim plot As ggplot.ggplot = Await CreatePlot(matrix:=data)
