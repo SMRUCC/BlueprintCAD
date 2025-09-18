@@ -310,7 +310,11 @@ Public Class CellBrowser
             .Select(Function(cid) node.Text & "@" & cid) _
             .ToArray
         Dim idset As Index(Of String) = node_id
-        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.left.Any(Function(v) idset(v.id) > -1)).ToArray
+        Dim edges As FluxEdge() = node_id _
+            .Select(Function(id) nodeLinks.TryGetValue(id)) _
+            .IteratesALL _
+            .Where(Function(f) f.left.Any(Function(v) idset(v.id) > -1)) _
+            .ToArray
 
         FormBuzyLoader.Loading(
             Sub(println)
@@ -328,7 +332,34 @@ Public Class CellBrowser
             .Select(Function(cid) node.Text & "@" & cid) _
             .ToArray
         Dim idset As Index(Of String) = node_id
-        Dim edges As FluxEdge() = node_id.Select(Function(id) nodeLinks.TryGetValue(id)).IteratesALL.Where(Function(f) f.right.Any(Function(v) idset(v.id) > -1)).ToArray
+        Dim edges As FluxEdge() = node_id _
+            .Select(Function(id) nodeLinks.TryGetValue(id)) _
+            .IteratesALL _
+            .Where(Function(f) f.right.Any(Function(v) idset(v.id) > -1)) _
+            .ToArray
+
+        FormBuzyLoader.Loading(
+            Sub(println)
+                Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+            End Sub)
+    End Sub
+
+    Private Sub FilterRegulationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FilterRegulationToolStripMenuItem.Click
+        If TreeView1.SelectedNode Is Nothing Then
+            Return
+        End If
+
+        Dim node As TreeNode = TreeView1.SelectedNode
+        Dim node_id As String() = vcellPack.compartmentIds _
+            .Select(Function(cid) node.Text & "@" & cid) _
+            .JoinIterates({node.Text}) _
+            .ToArray
+        Dim idset As Index(Of String) = node_id
+        Dim edges As FluxEdge() = node_id _
+            .Select(Function(id) nodeLinks.TryGetValue(id)) _
+            .IteratesALL _
+            .Where(Function(f) f.regulation.Any(Function(v) idset(v.id) > -1)) _
+            .ToArray
 
         FormBuzyLoader.Loading(
             Sub(println)

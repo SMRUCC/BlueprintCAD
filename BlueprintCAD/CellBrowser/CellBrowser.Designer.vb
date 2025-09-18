@@ -24,8 +24,8 @@ Partial Class CellBrowser
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CellBrowser))
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
         OpenVirtualCellDataFileToolStripMenuItem = New ToolStripMenuItem()
@@ -75,6 +75,7 @@ Partial Class CellBrowser
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        FilterRegulationToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
@@ -208,6 +209,7 @@ Partial Class CellBrowser
         PlotView1.BackColor = Color.SkyBlue
         PlotView1.Debug = True
         PlotView1.Dock = DockStyle.Fill
+        PlotView1.Dpi = 120
         PlotView1.ggplot = Nothing
         PlotView1.Location = New Point(0, 0)
         PlotView1.Name = "PlotView1"
@@ -257,12 +259,13 @@ Partial Class CellBrowser
         ' 
         ' ContextMenuStrip1
         ' 
-        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {FilterNetworkToolStripMenuItem, FilterSubstrateNetworkToolStripMenuItem, FilterProductNetworkToolStripMenuItem, ToolStripMenuItem2, CopyNameToolStripMenuItem})
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {FilterNetworkToolStripMenuItem, FilterSubstrateNetworkToolStripMenuItem, FilterProductNetworkToolStripMenuItem, FilterRegulationToolStripMenuItem, ToolStripMenuItem2, CopyNameToolStripMenuItem})
         ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(201, 98)
+        ContextMenuStrip1.Size = New Size(201, 142)
         ' 
         ' FilterNetworkToolStripMenuItem
         ' 
+        FilterNetworkToolStripMenuItem.Image = CType(resources.GetObject("FilterNetworkToolStripMenuItem.Image"), Image)
         FilterNetworkToolStripMenuItem.Name = "FilterNetworkToolStripMenuItem"
         FilterNetworkToolStripMenuItem.Size = New Size(200, 22)
         FilterNetworkToolStripMenuItem.Text = "Filter Network"
@@ -305,14 +308,14 @@ Partial Class CellBrowser
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
         DataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = SystemColors.Control
-        DataGridViewCellStyle1.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle1.ForeColor = SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
-        DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Control
+        DataGridViewCellStyle3.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle3.ForeColor = SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(1170, 254)
@@ -481,14 +484,14 @@ Partial Class CellBrowser
         DataGridView2.AllowUserToDeleteRows = False
         DataGridView2.BackgroundColor = Color.Gainsboro
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = SystemColors.Window
-        DataGridViewCellStyle2.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        DataGridView2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Window
+        DataGridViewCellStyle1.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
+        DataGridView2.DefaultCellStyle = DataGridViewCellStyle1
         DataGridView2.Dock = DockStyle.Fill
         DataGridView2.Location = New Point(3, 3)
         DataGridView2.Name = "DataGridView2"
@@ -533,6 +536,13 @@ Partial Class CellBrowser
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         ToolStripStatusLabel1.Size = New Size(42, 17)
         ToolStripStatusLabel1.Text = "Ready!"
+        ' 
+        ' FilterRegulationToolStripMenuItem
+        ' 
+        FilterRegulationToolStripMenuItem.Image = CType(resources.GetObject("FilterRegulationToolStripMenuItem.Image"), Image)
+        FilterRegulationToolStripMenuItem.Name = "FilterRegulationToolStripMenuItem"
+        FilterRegulationToolStripMenuItem.Size = New Size(200, 22)
+        FilterRegulationToolStripMenuItem.Text = "Filter Regulation"
         ' 
         ' CellBrowser
         ' 
@@ -629,4 +639,5 @@ Partial Class CellBrowser
     Friend WithEvents Column2 As DataGridViewLinkColumn
     Friend WithEvents Column3 As DataGridViewLinkColumn
     Friend WithEvents Column4 As DataGridViewLinkColumn
+    Friend WithEvents FilterRegulationToolStripMenuItem As ToolStripMenuItem
 End Class
