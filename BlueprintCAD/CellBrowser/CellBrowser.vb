@@ -525,8 +525,8 @@ Public Class CellBrowser
 
         Dim data As New Dictionary(Of String, FeatureVector) From {
             {id, New FeatureVector(id, vec)},
-            {"forward", New FeatureVector("forward", vec)},
-            {"reverse", New FeatureVector("reverse", vec)}
+            {"forward", New FeatureVector("forward", forward)},
+            {"reverse", New FeatureVector("reverse", reverse)}
         }
 
         Dim plot As ggplot.ggplot = Await CreatePlot(matrix:=data)
