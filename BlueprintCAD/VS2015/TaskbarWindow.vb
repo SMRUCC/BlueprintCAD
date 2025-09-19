@@ -77,8 +77,8 @@ Module TaskBarWindow
         Next
 
         ' Also activate our parent form (incase we are minimized, this will restore it)
-        If Workbench.AppHost.GetWindowState = FormWindowState.Minimized Then
-            Workbench.AppHost.SetWindowState(FormWindowState.Normal)
+        If Workbench.AppHost.WindowState = FormWindowState.Minimized Then
+            Workbench.AppHost.WindowState = FormWindowState.Normal
         End If
     End Sub
 
@@ -95,12 +95,8 @@ Module TaskBarWindow
 
         If pageClosed IsNot Nothing Then
             ' Remove the event handlers
-
-
             ' Dispose the tab
             pageClosed.Close()
-
-
         End If
 
         Dim tabbedThumbnail As TabbedThumbnail = TryCast(sender, TabbedThumbnail)
@@ -116,7 +112,7 @@ Module TaskBarWindow
     Friend Sub preview_TabbedThumbnailMaximized(sender As Object, e As TabbedThumbnailEventArgs)
         ' User clicked on the maximize button on the thumbnail's context menu
         ' Maximize the app
-        Workbench.AppHost.SetWindowState(FormWindowState.Maximized)
+        Workbench.AppHost.WindowState = FormWindowState.Maximized
 
         ' If there is a selected tab, take it's screenshot
         ' invalidate the tab's thumbnail
@@ -129,7 +125,7 @@ Module TaskBarWindow
     Friend Sub preview_TabbedThumbnailMinimized(sender As Object, e As TabbedThumbnailEventArgs)
         ' User clicked on the minimize button on the thumbnail's context menu
         ' Minimize the app
-        Workbench.AppHost.SetWindowState(FormWindowState.Minimized)
+        Workbench.AppHost.WindowState = FormWindowState.Minimized
     End Sub
 
     ''' <summary>
@@ -144,8 +140,6 @@ Module TaskBarWindow
                 Dim bitmap As Bitmap = TabbedThumbnailScreenCapture.GrabWindowBitmap(tabPage.Handle, tabPage.Size)
                 preview.SetImage(bitmap)
             End If
-
-
         End If
     End Sub
 End Module
