@@ -662,4 +662,8 @@ Public Class CellBrowser
     Private Sub ToolStripComboBox1_Click(sender As Object, e As EventArgs) Handles ToolStripComboBox1.Click
 
     End Sub
+
+    Private Sub PhenotypeAnalysisToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PhenotypeAnalysisToolStripMenuItem.Click
+
+    End Sub
 End Class
