@@ -39,9 +39,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripMenuItem2 = New ToolStripSeparator()
         CopyNameToolStripMenuItem = New ToolStripMenuItem()
         DataGridView1 = New AdvancedDataGridView()
-        Column2 = New DataGridViewLinkColumn()
-        Column3 = New DataGridViewLinkColumn()
-        Column4 = New DataGridViewLinkColumn()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip1 = New AdvancedDataGridViewSearchToolBar()
@@ -190,10 +187,9 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.AllowUserToDeleteRows = False
-        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         DataGridView1.BackgroundColor = Color.WhiteSmoke
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column2, Column3, Column4})
         DataGridView1.ContextMenuStrip = ContextMenuStrip2
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.FilterAndSortEnabled = True
@@ -213,40 +209,12 @@ Partial Class CellBrowser : Inherits DocumentWindow
         DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
         DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.RowHeadersVisible = False
         DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(1170, 261)
         DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         DataGridView1.TabIndex = 0
-        ' 
-        ' Column2
-        ' 
-        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        Column2.HeaderText = "Network"
-        Column2.MinimumWidth = 24
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        Column2.SortMode = DataGridViewColumnSortMode.Programmatic
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Forward Regulation"
-        Column3.MinimumWidth = 24
-        Column3.Name = "Column3"
-        Column3.ReadOnly = True
-        Column3.Resizable = DataGridViewTriState.True
-        Column3.SortMode = DataGridViewColumnSortMode.Programmatic
-        Column3.Width = 250
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "Reverse Regulation"
-        Column4.MinimumWidth = 24
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
-        Column4.Resizable = DataGridViewTriState.True
-        Column4.SortMode = DataGridViewColumnSortMode.Programmatic
-        Column4.Width = 250
         ' 
         ' ContextMenuStrip2
         ' 
@@ -454,7 +422,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         ' CellBrowser
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1524, 942)
         Controls.Add(SplitContainer1)
@@ -526,9 +494,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents Column2 As DataGridViewLinkColumn
-    Friend WithEvents Column3 As DataGridViewLinkColumn
-    Friend WithEvents Column4 As DataGridViewLinkColumn
     Friend WithEvents FilterRegulationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class

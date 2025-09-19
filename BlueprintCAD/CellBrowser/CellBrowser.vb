@@ -12,6 +12,7 @@ Imports RibbonLib.Interop
 Imports SMRUCC.genomics.Analysis.HTS.DataFrame
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
+Imports Zuby.ADGV
 Imports std = System.Math
 
 Public Class CellBrowser
@@ -33,6 +34,9 @@ Public Class CellBrowser
     Shared ReadOnly phenotypeKitButton As New RibbonEventBinding(Workbench.Ribbon.ButtonPhenotypeAnalysis)
 
     Shared ReadOnly plotMatrixExportButton As New RibbonEventBinding(Workbench.Ribbon.ButtonExportPlotMatrix)
+
+    Dim dataTable As GridLoaderHandler
+    Dim dataSearch As GridSearchHandler
 
     Public Sub OpenVirtualCellDataFile(filepath As String)
         If vcellPack IsNot Nothing Then
@@ -114,21 +118,24 @@ Public Class CellBrowser
     End Sub
 
     Private Sub LoadUI(network As IEnumerable(Of NamedValue(Of FluxEdge)))
-        Dim offset As Integer
+        Call dataTable.LoadTable(
+            Sub(tbl)
+                tbl.Columns.Add("ID", GetType(String))
+                tbl.Columns.Add("Flux Edge", GetType(String))
+                tbl.Columns.Add("Forward", GetType(String))
+                tbl.Columns.Add("Reverse", GetType(String))
 
-        Call DataGridView1.Rows.Clear()
+                For Each edge As NamedValue(Of FluxEdge) In network
+                    Dim flux As FluxEdge = edge.Value
+                    Dim forward As VariableFactor() = flux.regulation.Where(Function(m) m.factor > 0).ToArray
+                    Dim reverse As VariableFactor() = flux.regulation.Where(Function(m) m.factor < 0).ToArray
+                    Dim row = tbl.Rows.Add(flux.id, flux.ToString, forward.JoinBy("; "), reverse.JoinBy("; "))
+                Next
+            End Sub)
 
-        For Each edge As NamedValue(Of FluxEdge) In network
-            Dim flux As FluxEdge = edge.Value
-            Dim forward As VariableFactor() = flux.regulation.Where(Function(m) m.factor > 0).ToArray
-            Dim reverse As VariableFactor() = flux.regulation.Where(Function(m) m.factor < 0).ToArray
-
-            offset = DataGridView1.Rows.Add(flux, forward.JoinBy("; "), reverse.JoinBy("; "))
-            DataGridView1.Rows(offset).Tag = flux
-            DataGridView1.Rows(offset).HeaderCell.Value = flux.id
+        For Each column As DataGridViewColumn In DataGridView1.Columns
+            Call ApplyVsTheme(column.ContextMenuStrip)
         Next
-
-        Call DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
     End Sub
 
     Private Sub CellBrowser_Closed(sender As Object, e As EventArgs) Handles Me.Closed
@@ -143,7 +150,7 @@ Public Class CellBrowser
         End If
 
         Dim row = DataGridView1.SelectedRows(0)
-        Dim edge As FluxEdge = row.Tag
+        Dim edge As FluxEdge = network(row.Cells(0).Value)
 
         TextBox1.Text = edge.GetJson(indent:=True)
 
@@ -543,7 +550,8 @@ Public Class CellBrowser
             Return
         End If
 
-        Dim id As String = CStr(DataGridView1.SelectedRows(0).HeaderCell.Value)
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim id As String = CStr(row.Cells(0).Value)
 
         If Not vcellPack.FluxExpressionExists(id) Then
             Return
@@ -655,6 +663,11 @@ Public Class CellBrowser
     End Sub
 
     Private Sub CellBrowser_Load(sender As Object, e As EventArgs) Handles Me.Load
+        dataSearch = New GridSearchHandler(DataGridView1)
+        dataTable = New GridLoaderHandler(DataGridView1, ToolStrip1, BindingSource1)
+
+        AddHandler ToolStrip1.Search, AddressOf dataSearch.AdvancedDataGridViewSearchToolBar1_Search
+
         Call CellBrowser_Activated(sender, e)
         Call ApplyVsTheme(ContextMenuStrip1, ContextMenuStrip2, ContextMenuStrip3, ToolStrip1, PlotView1.ContextMenuStrip)
     End Sub
