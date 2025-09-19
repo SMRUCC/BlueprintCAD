@@ -1,8 +1,10 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿Imports Zuby.ADGV
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CellBrowser : Inherits DocumentWindow
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -19,7 +21,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CellBrowser))
@@ -36,13 +38,14 @@ Partial Class CellBrowser : Inherits DocumentWindow
         FilterRegulationToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem2 = New ToolStripSeparator()
         CopyNameToolStripMenuItem = New ToolStripMenuItem()
-        DataGridView1 = New DataGridView()
+        DataGridView1 = New AdvancedDataGridView()
         Column2 = New DataGridViewLinkColumn()
         Column3 = New DataGridViewLinkColumn()
         Column4 = New DataGridViewLinkColumn()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
-        ToolStrip1 = New ToolStrip()
+        ToolStrip1 = New AdvancedDataGridViewSearchToolBar()
+        ToolStripSeparator1 = New ToolStripSeparator()
         ToolStripLabel1 = New ToolStripLabel()
         ToolStripComboBox1 = New ToolStripComboBox()
         SplitContainer1 = New SplitContainer()
@@ -193,10 +196,14 @@ Partial Class CellBrowser : Inherits DocumentWindow
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column2, Column3, Column4})
         DataGridView1.ContextMenuStrip = ContextMenuStrip2
         DataGridView1.Dock = DockStyle.Fill
-        DataGridView1.Location = New Point(0, 25)
+        DataGridView1.FilterAndSortEnabled = True
+        DataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
+        DataGridView1.Location = New Point(0, 27)
+        DataGridView1.MaxFilterButtonImageHeight = 23
         DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
+        DataGridView1.RightToLeft = RightToLeft.No
         DataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = SystemColors.Control
@@ -208,32 +215,37 @@ Partial Class CellBrowser : Inherits DocumentWindow
         DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(1170, 263)
+        DataGridView1.Size = New Size(1170, 261)
+        DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         DataGridView1.TabIndex = 0
         ' 
         ' Column2
         ' 
         Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         Column2.HeaderText = "Network"
+        Column2.MinimumWidth = 24
         Column2.Name = "Column2"
         Column2.ReadOnly = True
+        Column2.SortMode = DataGridViewColumnSortMode.Programmatic
         ' 
         ' Column3
         ' 
         Column3.HeaderText = "Forward Regulation"
+        Column3.MinimumWidth = 24
         Column3.Name = "Column3"
         Column3.ReadOnly = True
         Column3.Resizable = DataGridViewTriState.True
-        Column3.SortMode = DataGridViewColumnSortMode.Automatic
+        Column3.SortMode = DataGridViewColumnSortMode.Programmatic
         Column3.Width = 250
         ' 
         ' Column4
         ' 
         Column4.HeaderText = "Reverse Regulation"
+        Column4.MinimumWidth = 24
         Column4.Name = "Column4"
         Column4.ReadOnly = True
         Column4.Resizable = DataGridViewTriState.True
-        Column4.SortMode = DataGridViewColumnSortMode.Automatic
+        Column4.SortMode = DataGridViewColumnSortMode.Programmatic
         Column4.Width = 250
         ' 
         ' ContextMenuStrip2
@@ -251,24 +263,37 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         ' ToolStrip1
         ' 
-        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripComboBox1})
+        ToolStrip1.AllowMerge = False
+        ToolStrip1.GripStyle = ToolStripGripStyle.Hidden
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripSeparator1, ToolStripLabel1, ToolStripComboBox1})
         ToolStrip1.Location = New Point(0, 0)
+        ToolStrip1.MaximumSize = New Size(0, 27)
+        ToolStrip1.MinimumSize = New Size(0, 27)
         ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Size = New Size(1170, 25)
+        ToolStrip1.RenderMode = ToolStripRenderMode.Professional
+        ToolStrip1.Size = New Size(1170, 27)
         ToolStrip1.TabIndex = 1
         ToolStrip1.Text = "ToolStrip1"
+        ' 
+        ' ToolStripSeparator1
+        ' 
+        ToolStripSeparator1.Name = "ToolStripSeparator1"
+        ToolStripSeparator1.Overflow = ToolStripItemOverflow.Never
+        ToolStripSeparator1.Size = New Size(6, 27)
         ' 
         ' ToolStripLabel1
         ' 
         ToolStripLabel1.Name = "ToolStripLabel1"
-        ToolStripLabel1.Size = New Size(133, 22)
+        ToolStripLabel1.Overflow = ToolStripItemOverflow.Never
+        ToolStripLabel1.Size = New Size(133, 24)
         ToolStripLabel1.Text = "Select Network Module:"
         ' 
         ' ToolStripComboBox1
         ' 
         ToolStripComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ToolStripComboBox1.Name = "ToolStripComboBox1"
-        ToolStripComboBox1.Size = New Size(300, 25)
+        ToolStripComboBox1.Overflow = ToolStripItemOverflow.Never
+        ToolStripComboBox1.Size = New Size(300, 27)
         ' 
         ' SplitContainer1
         ' 
@@ -363,7 +388,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage2.Location = New Point(4, 24)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1516, 563)
+        TabPage2.Size = New Size(1516, 578)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Matrix"
         TabPage2.UseVisualStyleBackColor = True
@@ -387,7 +412,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         DataGridView2.Name = "DataGridView2"
         DataGridView2.ReadOnly = True
         DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView2.Size = New Size(1510, 557)
+        DataGridView2.Size = New Size(1510, 572)
         DataGridView2.TabIndex = 0
         ' 
         ' TabPage3
@@ -396,7 +421,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage3.Location = New Point(4, 24)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1516, 563)
+        TabPage3.Size = New Size(1516, 578)
         TabPage3.TabIndex = 2
         TabPage3.Text = "Flux Model"
         TabPage3.UseVisualStyleBackColor = True
@@ -409,7 +434,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TextBox1.Multiline = True
         TextBox1.Name = "TextBox1"
         TextBox1.ScrollBars = ScrollBars.Both
-        TextBox1.Size = New Size(1510, 557)
+        TextBox1.Size = New Size(1510, 572)
         TextBox1.TabIndex = 0
         ' 
         ' StatusStrip1
@@ -429,7 +454,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         ' CellBrowser
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1524, 942)
         Controls.Add(SplitContainer1)
@@ -475,7 +500,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents TreeView1 As TreeView
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridView1 As AdvancedDataGridView
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
@@ -496,7 +521,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents CheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStrip1 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
     Friend WithEvents StatusStrip1 As StatusStrip
@@ -505,4 +530,5 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents Column3 As DataGridViewLinkColumn
     Friend WithEvents Column4 As DataGridViewLinkColumn
     Friend WithEvents FilterRegulationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class
