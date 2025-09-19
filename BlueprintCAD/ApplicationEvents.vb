@@ -34,7 +34,7 @@ Namespace My
         End Sub
 
         Public Shared Sub OpenVirtualCellViewer(sender As Object, e As ExecuteEventArgs)
-
+            Call Workbench.OpenDocument(Of CellBrowser)()
         End Sub
     End Class
 End Namespace

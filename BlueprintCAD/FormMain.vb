@@ -54,6 +54,8 @@ Public Class FormMain
     End Sub
 
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call Workbench.SetHost(appHost:=Me)
+
         m_ribbon.Dock = DockStyle.Top
         m_ribbon.Height = 42
         m_ribbon.ResourceName = "BlueprintCAD.RibbonMarkup.ribbon"
@@ -63,7 +65,5 @@ Public Class FormMain
         Call PanelBase.Controls.Add(Me.m_dockPanel)
         Call initializeVSPanel()
         Call MyApplication.SetRibbonEvents()
-
-        Call Workbench.SetHost(appHost:=Me)
     End Sub
 End Class
