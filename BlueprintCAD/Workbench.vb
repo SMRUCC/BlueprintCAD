@@ -1,8 +1,20 @@
-﻿Imports WeifenLuo.WinFormsUI.Docking
+﻿Imports BlueprintCAD.RibbonLib.Controls
+Imports Microsoft.VisualBasic.Drawing
+Imports WeifenLuo.WinFormsUI.Docking
 
 Public Module Workbench
 
     Public ReadOnly Property AppHost As FormMain
+
+    Friend ReadOnly Property Ribbon As RibbonItems
+        Get
+            Return AppHost.m_ribbonItems
+        End Get
+    End Property
+
+    Sub New()
+        Call SkiaDriver.Register()
+    End Sub
 
     Public Sub SetHost(appHost As FormMain)
         _AppHost = appHost

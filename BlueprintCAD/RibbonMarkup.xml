@@ -1,7 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://schemas.microsoft.com/windows/2009/Ribbon">
   <Application.Commands>
-    <Command Name="cmdButtonOpenVirtualCellViewer" Comment="Open VirtualCell Viewer" Id="2" LabelTitle="Open VirtualCell Viewer" LabelDescription="Open VirtualCell Viewer" TooltipTitle="Open VirtualCell Viewer" TooltipDescription="Open VirtualCell Viewer" Keytip="Open VirtualCell Viewer" />
+    <Command Name="cmdMenuVirtualCellViewer" Comment="VirtualCell Viewer" Id="2" LabelTitle="VirtualCell Viewer" LabelDescription="VirtualCell Viewer" TooltipTitle="VirtualCell Viewer" TooltipDescription="VirtualCell Viewer" Keytip="VirtualCell Viewer" />
+    <Command Name="cmdButtonOpenVirtualCellPackFile" Comment="Open VirtualCell Pack File" Id="3" LabelTitle="Open VirtualCell Pack File" LabelDescription="Open VirtualCell Pack File" TooltipTitle="Open VirtualCell Pack File" TooltipDescription="Open VirtualCell Pack File" Keytip="Open VirtualCell Pack File" />
+    <Command Name="cmdButtonExit" Comment="Exit" Id="4" LabelTitle="Exit" LabelDescription="Exit" TooltipTitle="Exit" TooltipDescription="Exit" Keytip="Exit" />
+    <Command Name="cmdTabVirtualCellBrowser" Id="5" LabelTitle="Browser" />
+    <Command Name="cmdTabDataViewer" Id="6" LabelTitle="Data Viewer" />
+    <Command Name="cmdGroupVirtualCellBrowser" Comment="Virtual Cell Browser" Id="7" LabelTitle="Virtual Cell Browser" LabelDescription="Virtual Cell Browser" TooltipTitle="Virtual Cell Browser" TooltipDescription="Virtual Cell Browser" Keytip="Virtual Cell Browser" />
+    <Command Name="cmdGroupDataViewer" Comment="Data Viewer" Id="8" LabelTitle="Data Viewer" LabelDescription="Data Viewer" TooltipTitle="Data Viewer" TooltipDescription="Data Viewer" Keytip="Data Viewer" />
+    <Command Name="cmdButtonResetNetworkTable" Comment="Reset Network Table" Id="9" LabelTitle="Reset Network Table" LabelDescription="Reset Network Table" TooltipTitle="Reset Network Table" TooltipDescription="Reset Network Table" Keytip="Reset Network Table" />
+    <Command Name="cmdButtonViewMassActivityLoads" Comment="View Mass Activity Loads" Id="10" LabelTitle="View Mass Activity Loads" />
+    <Command Name="cmdButtonExportMoleculeExpression" Id="11" LabelTitle="Export Molecule Expression" />
+    <Command Name="cmdButtonExportFluxomics" Comment="Export Fluxomics" Id="12" LabelTitle="Export Fluxomics" />
+    <Command Name="cmdButtonPhenotypeAnalysis" Comment="Phenotype Analysis" Id="13" LabelTitle="Phenotype Analysis" />
+    <Command Name="cmdButtonExportPlotMatrix" Comment="Export Plot Matrix" Id="14" LabelTitle="Export Plot Matrix" />
+    <Command Name="cmdCheckPlotLogScale" Comment="Log Scale" Id="15" LabelTitle="Log Scale" />
+    <Command Name="cmdGroupDataBrowser" Id="16" LabelTitle="Data Browser" />
+    <Command Name="cmdGroupBrowserToolkit" Id="17" LabelTitle="Browser Toolkit" />
   </Application.Commands>
   <Application.Views>
     <Ribbon>
@@ -11,13 +26,39 @@
             <RecentItems />
           </ApplicationMenu.RecentItems>
           <MenuGroup>
-            <Button CommandName="cmdButtonOpenVirtualCellViewer" />
+            <Button CommandName="cmdButtonOpenVirtualCellPackFile" />
+          </MenuGroup>
+          <MenuGroup>
+            <Button CommandName="cmdButtonExit" />
           </MenuGroup>
         </ApplicationMenu>
       </Ribbon.ApplicationMenu>
       <Ribbon.QuickAccessToolbar>
         <QuickAccessToolbar />
       </Ribbon.QuickAccessToolbar>
+      <Ribbon.ContextualTabs>
+        <TabGroup CommandName="cmdMenuVirtualCellViewer">
+          <Tab CommandName="cmdTabVirtualCellBrowser">
+            <Group CommandName="cmdGroupVirtualCellBrowser" SizeDefinition="OneButton">
+              <Button CommandName="cmdButtonResetNetworkTable" />
+            </Group>
+            <Group CommandName="cmdGroupDataBrowser" SizeDefinition="ThreeButtons">
+              <Button CommandName="cmdButtonViewMassActivityLoads" />
+              <Button CommandName="cmdButtonExportMoleculeExpression" />
+              <Button CommandName="cmdButtonExportFluxomics" />
+            </Group>
+            <Group CommandName="cmdGroupBrowserToolkit" SizeDefinition="OneButton">
+              <Button CommandName="cmdButtonPhenotypeAnalysis" />
+            </Group>
+          </Tab>
+          <Tab CommandName="cmdTabDataViewer">
+            <Group CommandName="cmdGroupDataViewer">
+              <Button CommandName="cmdButtonExportPlotMatrix" />
+              <CheckBox CommandName="cmdCheckPlotLogScale" />
+            </Group>
+          </Tab>
+        </TabGroup>
+      </Ribbon.ContextualTabs>
     </Ribbon>
     <ContextPopup />
   </Application.Views>

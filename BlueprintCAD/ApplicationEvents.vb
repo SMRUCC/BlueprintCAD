@@ -1,5 +1,4 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
-Imports Microsoft.VisualBasic.ApplicationServices
 Imports RibbonLib.Controls.Events
 
 Namespace My
@@ -30,11 +29,24 @@ Namespace My
         Public Shared Sub SetRibbonEvents()
             Dim ribbon As RibbonItems = Workbench.AppHost.m_ribbonItems
 
-            AddHandler ribbon.ButtonOpenVirtualCellViewer.ExecuteEvent, AddressOf OpenVirtualCellViewer
+            AddHandler ribbon.ButtonOpenVirtualCellPackFile.ExecuteEvent, AddressOf OpenVirtualCellPackFile
+            AddHandler ribbon.ButtonExit.ExecuteEvent, AddressOf Close
         End Sub
 
-        Public Shared Sub OpenVirtualCellViewer(sender As Object, e As ExecuteEventArgs)
-            Call Workbench.OpenDocument(Of CellBrowser)()
+        Private Shared Sub Close(sender As Object, e As ExecuteEventArgs)
+            Try
+                Call AppHost.Close()
+                Call App.Exit()
+            Catch ex As Exception
+            End Try
+        End Sub
+
+        Public Shared Sub OpenVirtualCellPackFile(sender As Object, e As ExecuteEventArgs)
+            Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
+                If file.ShowDialog = DialogResult.OK Then
+                    Call Workbench.OpenDocument(Of CellBrowser)()
+                End If
+            End Using
         End Sub
     End Class
 End Namespace

@@ -18,23 +18,98 @@ namespace RibbonLib.Controls
     {
         private static class Cmd
         {
-            public const uint cmdButtonOpenVirtualCellViewer = 2;
+            public const uint cmdButtonOpenVirtualCellPackFile = 3;
+            public const uint cmdButtonExit = 4;
+            public const uint cmdMenuVirtualCellViewer = 2;
+            public const uint cmdTabVirtualCellBrowser = 5;
+            public const uint cmdGroupVirtualCellBrowser = 7;
+            public const uint cmdButtonResetNetworkTable = 9;
+            public const uint cmdGroupDataBrowser = 16;
+            public const uint cmdButtonViewMassActivityLoads = 10;
+            public const uint cmdButtonExportMoleculeExpression = 11;
+            public const uint cmdButtonExportFluxomics = 12;
+            public const uint cmdGroupBrowserToolkit = 17;
+            public const uint cmdButtonPhenotypeAnalysis = 13;
+            public const uint cmdTabDataViewer = 6;
+            public const uint cmdGroupDataViewer = 8;
+            public const uint cmdButtonExportPlotMatrix = 14;
+            public const uint cmdCheckPlotLogScale = 15;
         }
 
         // ContextPopup CommandName
 
         public Ribbon Ribbon { get; private set; }
         /// <summary>
-        /// Open VirtualCell Viewer
+        /// Open VirtualCell Pack File
         /// </summary>
-        public RibbonButton ButtonOpenVirtualCellViewer { get; private set; }
+        public RibbonButton ButtonOpenVirtualCellPackFile { get; private set; }
+        /// <summary>
+        /// Exit
+        /// </summary>
+        public RibbonButton ButtonExit { get; private set; }
+        /// <summary>
+        /// VirtualCell Viewer
+        /// </summary>
+        public RibbonTabGroup MenuVirtualCellViewer { get; private set; }
+        public RibbonTab TabVirtualCellBrowser { get; private set; }
+        /// <summary>
+        /// Virtual Cell Browser
+        /// </summary>
+        public RibbonGroup GroupVirtualCellBrowser { get; private set; }
+        /// <summary>
+        /// Reset Network Table
+        /// </summary>
+        public RibbonButton ButtonResetNetworkTable { get; private set; }
+        public RibbonGroup GroupDataBrowser { get; private set; }
+        /// <summary>
+        /// View Mass Activity Loads
+        /// </summary>
+        public RibbonButton ButtonViewMassActivityLoads { get; private set; }
+        public RibbonButton ButtonExportMoleculeExpression { get; private set; }
+        /// <summary>
+        /// Export Fluxomics
+        /// </summary>
+        public RibbonButton ButtonExportFluxomics { get; private set; }
+        public RibbonGroup GroupBrowserToolkit { get; private set; }
+        /// <summary>
+        /// Phenotype Analysis
+        /// </summary>
+        public RibbonButton ButtonPhenotypeAnalysis { get; private set; }
+        public RibbonTab TabDataViewer { get; private set; }
+        /// <summary>
+        /// Data Viewer
+        /// </summary>
+        public RibbonGroup GroupDataViewer { get; private set; }
+        /// <summary>
+        /// Export Plot Matrix
+        /// </summary>
+        public RibbonButton ButtonExportPlotMatrix { get; private set; }
+        /// <summary>
+        /// Log Scale
+        /// </summary>
+        public RibbonCheckBox CheckPlotLogScale { get; private set; }
 
         public RibbonItems(Ribbon ribbon)
         {
             if (ribbon == null)
                 throw new ArgumentNullException(nameof(ribbon), "Parameter is null");
             this.Ribbon = ribbon;
-            ButtonOpenVirtualCellViewer = new RibbonButton(ribbon, Cmd.cmdButtonOpenVirtualCellViewer);
+            ButtonOpenVirtualCellPackFile = new RibbonButton(ribbon, Cmd.cmdButtonOpenVirtualCellPackFile);
+            ButtonExit = new RibbonButton(ribbon, Cmd.cmdButtonExit);
+            MenuVirtualCellViewer = new RibbonTabGroup(ribbon, Cmd.cmdMenuVirtualCellViewer);
+            TabVirtualCellBrowser = new RibbonTab(ribbon, Cmd.cmdTabVirtualCellBrowser);
+            GroupVirtualCellBrowser = new RibbonGroup(ribbon, Cmd.cmdGroupVirtualCellBrowser);
+            ButtonResetNetworkTable = new RibbonButton(ribbon, Cmd.cmdButtonResetNetworkTable);
+            GroupDataBrowser = new RibbonGroup(ribbon, Cmd.cmdGroupDataBrowser);
+            ButtonViewMassActivityLoads = new RibbonButton(ribbon, Cmd.cmdButtonViewMassActivityLoads);
+            ButtonExportMoleculeExpression = new RibbonButton(ribbon, Cmd.cmdButtonExportMoleculeExpression);
+            ButtonExportFluxomics = new RibbonButton(ribbon, Cmd.cmdButtonExportFluxomics);
+            GroupBrowserToolkit = new RibbonGroup(ribbon, Cmd.cmdGroupBrowserToolkit);
+            ButtonPhenotypeAnalysis = new RibbonButton(ribbon, Cmd.cmdButtonPhenotypeAnalysis);
+            TabDataViewer = new RibbonTab(ribbon, Cmd.cmdTabDataViewer);
+            GroupDataViewer = new RibbonGroup(ribbon, Cmd.cmdGroupDataViewer);
+            ButtonExportPlotMatrix = new RibbonButton(ribbon, Cmd.cmdButtonExportPlotMatrix);
+            CheckPlotLogScale = new RibbonCheckBox(ribbon, Cmd.cmdCheckPlotLogScale);
         }
 
     }

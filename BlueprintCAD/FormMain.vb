@@ -56,8 +56,8 @@ Public Class FormMain
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call Workbench.SetHost(appHost:=Me)
 
+        m_ribbon.Height = 60
         m_ribbon.Dock = DockStyle.Top
-        m_ribbon.Height = 42
         m_ribbon.ResourceName = "BlueprintCAD.RibbonMarkup.ribbon"
         m_ribbonItems = New RibbonItems(m_ribbon)
 

@@ -9,6 +9,7 @@ Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Scripting.Runtime
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports RibbonLib.Interop
 Imports SMRUCC.genomics.Analysis.HTS.DataFrame
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
@@ -22,10 +23,6 @@ Public Class CellBrowser
     Dim timePoints As Double()
     Dim moleculeSet As (compartment_id As String, modules As NamedCollection(Of String)())()
     Dim plotMatrix As New Dictionary(Of String, FeatureVector)
-
-    Shared Sub New()
-        Call SkiaDriver.Register()
-    End Sub
 
     Private Sub OpenVirtualCellDataFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenVirtualCellDataFileToolStripMenuItem.Click
         Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
@@ -665,5 +662,9 @@ Public Class CellBrowser
 
     Private Sub PhenotypeAnalysisToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PhenotypeAnalysisToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub CellBrowser_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Workbench.Ribbon.MenuVirtualCellViewer.ContextAvailable = ContextAvailability.Active
     End Sub
 End Class

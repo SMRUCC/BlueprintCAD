@@ -15,7 +15,22 @@ Imports RibbonLib.Controls
 Namespace RibbonLib.Controls
     Partial Class RibbonItems
         Private Class Cmd
-            Public Const cmdButtonOpenVirtualCellViewer As UInteger = 2
+            Public Const cmdButtonOpenVirtualCellPackFile As UInteger = 3
+            Public Const cmdButtonExit As UInteger = 4
+            Public Const cmdMenuVirtualCellViewer As UInteger = 2
+            Public Const cmdTabVirtualCellBrowser As UInteger = 5
+            Public Const cmdGroupVirtualCellBrowser As UInteger = 7
+            Public Const cmdButtonResetNetworkTable As UInteger = 9
+            Public Const cmdGroupDataBrowser As UInteger = 16
+            Public Const cmdButtonViewMassActivityLoads As UInteger = 10
+            Public Const cmdButtonExportMoleculeExpression As UInteger = 11
+            Public Const cmdButtonExportFluxomics As UInteger = 12
+            Public Const cmdGroupBrowserToolkit As UInteger = 17
+            Public Const cmdButtonPhenotypeAnalysis As UInteger = 13
+            Public Const cmdTabDataViewer As UInteger = 6
+            Public Const cmdGroupDataViewer As UInteger = 8
+            Public Const cmdButtonExportPlotMatrix As UInteger = 14
+            Public Const cmdCheckPlotLogScale As UInteger = 15
         End Class
 
         ' ContextPopup CommandName
@@ -26,13 +41,133 @@ Namespace RibbonLib.Controls
                 Return _ribbon
             End Get
         End Property
-        Private _ButtonOpenVirtualCellViewer As RibbonButton
+        Private _ButtonOpenVirtualCellPackFile As RibbonButton
         ''' <summary>
-        ''' Open VirtualCell Viewer
+        ''' Open VirtualCell Pack File
         ''' </summary>
-        Public ReadOnly Property ButtonOpenVirtualCellViewer As RibbonButton
+        Public ReadOnly Property ButtonOpenVirtualCellPackFile As RibbonButton
             Get
-                Return _ButtonOpenVirtualCellViewer
+                Return _ButtonOpenVirtualCellPackFile
+            End Get
+        End Property
+        Private _ButtonExit As RibbonButton
+        ''' <summary>
+        ''' Exit
+        ''' </summary>
+        Public ReadOnly Property ButtonExit As RibbonButton
+            Get
+                Return _ButtonExit
+            End Get
+        End Property
+        Private _MenuVirtualCellViewer As RibbonTabGroup
+        ''' <summary>
+        ''' VirtualCell Viewer
+        ''' </summary>
+        Public ReadOnly Property MenuVirtualCellViewer As RibbonTabGroup
+            Get
+                Return _MenuVirtualCellViewer
+            End Get
+        End Property
+        Private _TabVirtualCellBrowser As RibbonTab
+        Public ReadOnly Property TabVirtualCellBrowser As RibbonTab
+            Get
+                Return _TabVirtualCellBrowser
+            End Get
+        End Property
+        Private _GroupVirtualCellBrowser As RibbonGroup
+        ''' <summary>
+        ''' Virtual Cell Browser
+        ''' </summary>
+        Public ReadOnly Property GroupVirtualCellBrowser As RibbonGroup
+            Get
+                Return _GroupVirtualCellBrowser
+            End Get
+        End Property
+        Private _ButtonResetNetworkTable As RibbonButton
+        ''' <summary>
+        ''' Reset Network Table
+        ''' </summary>
+        Public ReadOnly Property ButtonResetNetworkTable As RibbonButton
+            Get
+                Return _ButtonResetNetworkTable
+            End Get
+        End Property
+        Private _GroupDataBrowser As RibbonGroup
+        Public ReadOnly Property GroupDataBrowser As RibbonGroup
+            Get
+                Return _GroupDataBrowser
+            End Get
+        End Property
+        Private _ButtonViewMassActivityLoads As RibbonButton
+        ''' <summary>
+        ''' View Mass Activity Loads
+        ''' </summary>
+        Public ReadOnly Property ButtonViewMassActivityLoads As RibbonButton
+            Get
+                Return _ButtonViewMassActivityLoads
+            End Get
+        End Property
+        Private _ButtonExportMoleculeExpression As RibbonButton
+        Public ReadOnly Property ButtonExportMoleculeExpression As RibbonButton
+            Get
+                Return _ButtonExportMoleculeExpression
+            End Get
+        End Property
+        Private _ButtonExportFluxomics As RibbonButton
+        ''' <summary>
+        ''' Export Fluxomics
+        ''' </summary>
+        Public ReadOnly Property ButtonExportFluxomics As RibbonButton
+            Get
+                Return _ButtonExportFluxomics
+            End Get
+        End Property
+        Private _GroupBrowserToolkit As RibbonGroup
+        Public ReadOnly Property GroupBrowserToolkit As RibbonGroup
+            Get
+                Return _GroupBrowserToolkit
+            End Get
+        End Property
+        Private _ButtonPhenotypeAnalysis As RibbonButton
+        ''' <summary>
+        ''' Phenotype Analysis
+        ''' </summary>
+        Public ReadOnly Property ButtonPhenotypeAnalysis As RibbonButton
+            Get
+                Return _ButtonPhenotypeAnalysis
+            End Get
+        End Property
+        Private _TabDataViewer As RibbonTab
+        Public ReadOnly Property TabDataViewer As RibbonTab
+            Get
+                Return _TabDataViewer
+            End Get
+        End Property
+        Private _GroupDataViewer As RibbonGroup
+        ''' <summary>
+        ''' Data Viewer
+        ''' </summary>
+        Public ReadOnly Property GroupDataViewer As RibbonGroup
+            Get
+                Return _GroupDataViewer
+            End Get
+        End Property
+        Private _ButtonExportPlotMatrix As RibbonButton
+        ''' <summary>
+        ''' Export Plot Matrix
+        ''' </summary>
+        Public ReadOnly Property ButtonExportPlotMatrix As RibbonButton
+            Get
+                Return _ButtonExportPlotMatrix
+            End Get
+        End Property
+        Private _CheckPlotLogScale As RibbonCheckBox
+        ''' <summary>
+        ''' Log Scale
+        ''' </summary>
+        Public ReadOnly Property CheckPlotLogScale As RibbonCheckBox
+            Get
+                Return _CheckPlotLogScale
             End Get
         End Property
 
@@ -41,7 +176,22 @@ Namespace RibbonLib.Controls
                 Throw New ArgumentNullException(NameOf(ribbon), "Parameter is Nothing")
             End If
             _ribbon = ribbon
-            _ButtonOpenVirtualCellViewer = New RibbonButton(_ribbon, Cmd.cmdButtonOpenVirtualCellViewer)
+            _ButtonOpenVirtualCellPackFile = New RibbonButton(_ribbon, Cmd.cmdButtonOpenVirtualCellPackFile)
+            _ButtonExit = New RibbonButton(_ribbon, Cmd.cmdButtonExit)
+            _MenuVirtualCellViewer = New RibbonTabGroup(_ribbon, Cmd.cmdMenuVirtualCellViewer)
+            _TabVirtualCellBrowser = New RibbonTab(_ribbon, Cmd.cmdTabVirtualCellBrowser)
+            _GroupVirtualCellBrowser = New RibbonGroup(_ribbon, Cmd.cmdGroupVirtualCellBrowser)
+            _ButtonResetNetworkTable = New RibbonButton(_ribbon, Cmd.cmdButtonResetNetworkTable)
+            _GroupDataBrowser = New RibbonGroup(_ribbon, Cmd.cmdGroupDataBrowser)
+            _ButtonViewMassActivityLoads = New RibbonButton(_ribbon, Cmd.cmdButtonViewMassActivityLoads)
+            _ButtonExportMoleculeExpression = New RibbonButton(_ribbon, Cmd.cmdButtonExportMoleculeExpression)
+            _ButtonExportFluxomics = New RibbonButton(_ribbon, Cmd.cmdButtonExportFluxomics)
+            _GroupBrowserToolkit = New RibbonGroup(_ribbon, Cmd.cmdGroupBrowserToolkit)
+            _ButtonPhenotypeAnalysis = New RibbonButton(_ribbon, Cmd.cmdButtonPhenotypeAnalysis)
+            _TabDataViewer = New RibbonTab(_ribbon, Cmd.cmdTabDataViewer)
+            _GroupDataViewer = New RibbonGroup(_ribbon, Cmd.cmdGroupDataViewer)
+            _ButtonExportPlotMatrix = New RibbonButton(_ribbon, Cmd.cmdButtonExportPlotMatrix)
+            _CheckPlotLogScale = New RibbonCheckBox(_ribbon, Cmd.cmdCheckPlotLogScale)
         End Sub
 
     End Class
