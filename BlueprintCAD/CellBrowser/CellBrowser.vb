@@ -154,7 +154,7 @@ Public Class CellBrowser
 
         TextBox1.Json = "{}"
         TextBox1.RootTag = "Tree Of '" & edge.id & "'"
-        TextBox1.Json = edge.GetJson(indent:=True)
+        TextBox1.Json = edge.GetJson
 
         Await RefreshPlot(edge.FactorIds.Distinct)
     End Sub

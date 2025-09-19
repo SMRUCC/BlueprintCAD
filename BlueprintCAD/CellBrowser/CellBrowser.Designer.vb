@@ -56,7 +56,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         TabPage3 = New TabPage()
-        TextBox1 = New JsonViewer.JsonViewer
+        TextBox1 = New JsonViewer.JsonViewer()
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
@@ -396,12 +396,14 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         ' TextBox1
         ' 
-        TextBox1.BorderStyle = BorderStyle.None
+        TextBox1.BackColor = Color.White
         TextBox1.Dock = DockStyle.Fill
+        TextBox1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TextBox1.Json = "{}"
         TextBox1.Location = New Point(3, 3)
-
+        TextBox1.Margin = New Padding(5, 6, 5, 6)
         TextBox1.Name = "TextBox1"
-
+        TextBox1.RootTag = "JSON"
         TextBox1.Size = New Size(1510, 572)
         TextBox1.TabIndex = 0
         ' 
@@ -456,7 +458,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage2.ResumeLayout(False)
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         TabPage3.ResumeLayout(False)
-        TabPage3.PerformLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()
