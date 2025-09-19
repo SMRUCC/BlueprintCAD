@@ -56,7 +56,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         TabPage3 = New TabPage()
-        TextBox1 = New TextBox()
+        TextBox1 = New JsonViewer.JsonViewer
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
@@ -399,9 +399,9 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TextBox1.BorderStyle = BorderStyle.None
         TextBox1.Dock = DockStyle.Fill
         TextBox1.Location = New Point(3, 3)
-        TextBox1.Multiline = True
+
         TextBox1.Name = "TextBox1"
-        TextBox1.ScrollBars = ScrollBars.Both
+
         TextBox1.Size = New Size(1510, 572)
         TextBox1.TabIndex = 0
         ' 
@@ -488,7 +488,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents UnCheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox1 As JsonViewer.JsonViewer
     Friend WithEvents ToolStrip1 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox

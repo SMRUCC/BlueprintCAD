@@ -87,6 +87,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="JsonViewer">
+      <HintPath>..\dist\JsonViewer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.Windows.Form">
       <HintPath>..\dist\dockpanelsuite\Microsoft.VisualStudio.Windows.Form.dll</HintPath>
     </Reference>

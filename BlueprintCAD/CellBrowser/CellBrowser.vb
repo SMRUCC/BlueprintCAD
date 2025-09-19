@@ -152,7 +152,9 @@ Public Class CellBrowser
         Dim row = DataGridView1.SelectedRows(0)
         Dim edge As FluxEdge = network(row.Cells(0).Value)
 
-        TextBox1.Text = edge.GetJson(indent:=True)
+        TextBox1.Json = "{}"
+        TextBox1.RootTag = "Tree Of '" & edge.id & "'"
+        TextBox1.Json = edge.GetJson(indent:=True)
 
         Await RefreshPlot(edge.FactorIds.Distinct)
     End Sub
