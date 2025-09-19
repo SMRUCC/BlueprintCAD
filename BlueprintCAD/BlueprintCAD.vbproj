@@ -76,6 +76,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.Windows.Form">
+      <HintPath>..\dist\dockpanelsuite\Microsoft.VisualStudio.Windows.Form.dll</HintPath>
+    </Reference>
+    <Reference Include="ThemeVS2015">
+      <HintPath>..\dist\dockpanelsuite\ThemeVS2015.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="My Project\Application.Designer.vb">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
