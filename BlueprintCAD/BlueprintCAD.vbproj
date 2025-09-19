@@ -79,6 +79,9 @@
     <Reference Include="Microsoft.VisualStudio.Windows.Form">
       <HintPath>..\dist\dockpanelsuite\Microsoft.VisualStudio.Windows.Form.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Windows.FeatureAPI">
+      <HintPath>..\dist\Microsoft.Windows.FeatureAPI.dll</HintPath>
+    </Reference>
     <Reference Include="ThemeVS2015">
       <HintPath>..\dist\dockpanelsuite\ThemeVS2015.dll</HintPath>
     </Reference>
@@ -110,6 +113,10 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="VS2015\" />
   </ItemGroup>
 
 </Project>
