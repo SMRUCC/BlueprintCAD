@@ -1,4 +1,6 @@
-﻿Imports Microsoft.VisualBasic.ApplicationServices
+﻿Imports BlueprintCAD.RibbonLib.Controls
+Imports Microsoft.VisualBasic.ApplicationServices
+Imports RibbonLib.Controls.Events
 
 Namespace My
     ' The following events are available for MyApplication:
@@ -25,5 +27,14 @@ Namespace My
 
     Partial Friend Class MyApplication
 
+        Public Shared Sub SetRibbonEvents()
+            Dim ribbon As RibbonItems = Workbench.AppHost.m_ribbonItems
+
+            AddHandler ribbon.ButtonOpenVirtualCellViewer.ExecuteEvent, AddressOf OpenVirtualCellViewer
+        End Sub
+
+        Public Shared Sub OpenVirtualCellViewer(sender As Object, e As ExecuteEventArgs)
+
+        End Sub
     End Class
 End Namespace

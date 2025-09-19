@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://schemas.microsoft.com/windows/2009/Ribbon">
+  <Application.Commands>
+    <Command Name="cmdButtonOpenVirtualCellViewer" Comment="Open VirtualCell Viewer" Id="2" LabelTitle="Open VirtualCell Viewer" LabelDescription="Open VirtualCell Viewer" TooltipTitle="Open VirtualCell Viewer" TooltipDescription="Open VirtualCell Viewer" Keytip="Open VirtualCell Viewer" />
+  </Application.Commands>
+  <Application.Views>
+    <Ribbon>
+      <Ribbon.ApplicationMenu>
+        <ApplicationMenu>
+          <ApplicationMenu.RecentItems>
+            <RecentItems />
+          </ApplicationMenu.RecentItems>
+          <MenuGroup>
+            <Button CommandName="cmdButtonOpenVirtualCellViewer" />
+          </MenuGroup>
+        </ApplicationMenu>
+      </Ribbon.ApplicationMenu>
+      <Ribbon.QuickAccessToolbar>
+        <QuickAccessToolbar />
+      </Ribbon.QuickAccessToolbar>
+    </Ribbon>
+    <ContextPopup />
+  </Application.Views>
+</Application>
+<!--ResourceName Value="APPLICATION"-->

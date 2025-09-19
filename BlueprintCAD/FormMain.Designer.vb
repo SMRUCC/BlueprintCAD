@@ -28,9 +28,10 @@ Partial Class FormMain
         ' 
         ' PanelBase
         ' 
-        PanelBase.Location = New Point(0, 392)
+        PanelBase.Dock = DockStyle.Fill
+        PanelBase.Location = New Point(0, 0)
         PanelBase.Name = "PanelBase"
-        PanelBase.Size = New Size(1260, 299)
+        PanelBase.Size = New Size(1260, 691)
         PanelBase.TabIndex = 0
         ' 
         ' StatusStrip1
