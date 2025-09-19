@@ -22,8 +22,11 @@ Partial Class FormMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMain))
         PanelBase = New Panel()
         StatusStrip1 = New StatusStrip()
+        ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' PanelBase
@@ -36,11 +39,19 @@ Partial Class FormMain
         ' 
         ' StatusStrip1
         ' 
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
         StatusStrip1.Location = New Point(0, 691)
         StatusStrip1.Name = "StatusStrip1"
         StatusStrip1.Size = New Size(1260, 22)
         StatusStrip1.TabIndex = 1
         StatusStrip1.Text = "StatusStrip1"
+        ' 
+        ' ToolStripStatusLabel1
+        ' 
+        ToolStripStatusLabel1.Image = CType(resources.GetObject("ToolStripStatusLabel1.Image"), Image)
+        ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        ToolStripStatusLabel1.Size = New Size(58, 17)
+        ToolStripStatusLabel1.Text = "Ready!"
         ' 
         ' FormMain
         ' 
@@ -51,10 +62,13 @@ Partial Class FormMain
         Controls.Add(StatusStrip1)
         Name = "FormMain"
         Text = "Sophia VirtualCell Workshop"
+        StatusStrip1.ResumeLayout(False)
+        StatusStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents PanelBase As Panel
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
 End Class

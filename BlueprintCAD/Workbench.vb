@@ -21,11 +21,11 @@ Public Module Workbench
     End Sub
 
     Friend Sub LogText(v As String)
-
+        Call AppHost.Invoke(Sub() AppHost.ToolStripStatusLabel1.Text = v)
     End Sub
 
     Friend Sub Warning(v As String)
-
+        Call AppHost.Invoke(Sub() AppHost.ToolStripStatusLabel1.Text = v)
     End Sub
 
     Public Function OpenDocument(Of T As {New, DocumentWindow})(Optional title As String = Nothing) As T

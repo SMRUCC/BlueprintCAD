@@ -8,7 +8,6 @@ Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Scripting.Runtime
 Imports Microsoft.VisualBasic.Serialization.JSON
-Imports RibbonLib.Controls.Events
 Imports RibbonLib.Interop
 Imports SMRUCC.genomics.Analysis.HTS.DataFrame
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
@@ -26,6 +25,14 @@ Public Class CellBrowser
 
     Shared ReadOnly resetButton As New RibbonEventBinding(Workbench.Ribbon.ButtonResetNetworkTable)
     Shared ReadOnly closeFileButton As New RibbonEventBinding(Workbench.Ribbon.ButtonCloseVirtualCellPackFile)
+
+    Shared ReadOnly massLoadsButton As New RibbonEventBinding(Workbench.Ribbon.ButtonViewMassActivityLoads)
+    Shared ReadOnly moleculeExportButton As New RibbonEventBinding(Workbench.Ribbon.ButtonExportMoleculeExpression)
+    Shared ReadOnly fluxomicsExportButton As New RibbonEventBinding(Workbench.Ribbon.ButtonExportFluxomics)
+
+    Shared ReadOnly phenotypeKitButton As New RibbonEventBinding(Workbench.Ribbon.ButtonPhenotypeAnalysis)
+
+    Shared ReadOnly plotMatrixExportButton As New RibbonEventBinding(Workbench.Ribbon.ButtonExportPlotMatrix)
 
     Public Sub OpenVirtualCellDataFile(filepath As String)
         If vcellPack IsNot Nothing Then
@@ -152,7 +159,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Call Message(ex.Message)
+                Call Workbench.Warning(ex.Message)
             End Try
         End If
     End Function
@@ -427,7 +434,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Call Message(ex.Message)
+                Call Workbench.Warning(ex.Message)
             End Try
         End If
     End Function
@@ -436,7 +443,7 @@ Public Class CellBrowser
         Await RefreshPlot()
     End Sub
 
-    Private Sub ExportMoleculeExpressionToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub ExportMoleculeExpression()
         Using file As New SaveFileDialog With {.Filter = "GCModeller Matrix(*.mat)|*.mat|Excel Table(*.csv)|*.csv"}
             If file.ShowDialog = DialogResult.OK Then
                 Dim matrix As New Matrix With {
@@ -486,7 +493,7 @@ Public Class CellBrowser
         End Using
     End Sub
 
-    Private Sub ExportFluxomicsToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub ExportFluxomics()
         Using file As New SaveFileDialog With {.Filter = "GCModeller Matrix(*.mat)|*.mat|Excel Table(*.csv)|*.csv"}
             If file.ShowDialog = DialogResult.OK Then
                 Dim matrix As New Matrix With {
@@ -564,16 +571,12 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Call Message(ex.Message)
+                Call Workbench.Warning(ex.Message)
             End Try
         End If
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Close()
-    End Sub
-
-    Private Sub ExportPlotMatrixToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Sub ExportPlotMatrix()
         Using file As New SaveFileDialog With {.Filter = "Excel Table(*.csv)|*.csv"}
             If file.ShowDialog = DialogResult.OK Then
                 Using s = file.FileName.OpenWriter
@@ -604,11 +607,7 @@ Public Class CellBrowser
         End Using
     End Sub
 
-    Public Sub Message(str As String)
-        Call Me.Invoke(Sub() ToolStripStatusLabel1.Text = str)
-    End Sub
-
-    Private Async Sub ViewMassActivityLoadsToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    Private Async Sub ViewMassActivityLoads()
         Dim loads = Await Task.Run(Function() vcellPack.ActivityLoads)
         Dim matrix = loads _
             .ToDictionary(Function(id) id.Key,
@@ -624,7 +623,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Message(ex.Message)
+                Workbench.Warning(ex.Message)
             End Try
         End If
     End Sub
@@ -637,6 +636,10 @@ Public Class CellBrowser
 
             End Try
         End If
+    End Sub
+
+    Private Shared Sub OpenPhenotypeTool()
+
     End Sub
 
     Private Sub CheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckAllToolStripMenuItem.Click
@@ -653,11 +656,20 @@ Public Class CellBrowser
 
     Private Sub CellBrowser_Load(sender As Object, e As EventArgs) Handles Me.Load
         Call CellBrowser_Activated(sender, e)
+        Call ApplyVsTheme(ContextMenuStrip1, ContextMenuStrip2, ContextMenuStrip3, ToolStrip1)
     End Sub
 
     Private Sub CellBrowser_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         resetButton.evt = AddressOf ResetNetworkTable
         closeFileButton.evt = AddressOf CloseFile
+
+        massLoadsButton.evt = AddressOf ViewMassActivityLoads
+        moleculeExportButton.evt = AddressOf ExportMoleculeExpression
+        fluxomicsExportButton.evt = AddressOf ExportFluxomics
+
+        phenotypeKitButton.evt = AddressOf OpenPhenotypeTool
+
+        plotMatrixExportButton.evt = AddressOf ExportPlotMatrix
 
         Workbench.Ribbon.MenuVirtualCellViewer.ContextAvailable = ContextAvailability.Active
     End Sub
@@ -665,5 +677,13 @@ Public Class CellBrowser
     Private Sub CellBrowser_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
         resetButton.ClearHook()
         closeFileButton.ClearHook()
+
+        massLoadsButton.ClearHook()
+        moleculeExportButton.ClearHook()
+        fluxomicsExportButton.ClearHook()
+
+        phenotypeKitButton.ClearHook()
+
+        plotMatrixExportButton.ClearHook()
     End Sub
 End Class
