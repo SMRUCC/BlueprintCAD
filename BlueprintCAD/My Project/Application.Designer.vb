@@ -33,7 +33,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.BlueprintCAD.CellBrowser
+            Me.MainForm = Global.BlueprintCAD.FormMain
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
