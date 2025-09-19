@@ -44,7 +44,7 @@ Namespace My
         Public Shared Sub OpenVirtualCellPackFile(sender As Object, e As ExecuteEventArgs)
             Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
                 If file.ShowDialog = DialogResult.OK Then
-                    Call Workbench.OpenDocument(Of CellBrowser)()
+                    Call Workbench.OpenDocument(Of CellBrowser)().OpenVirtualCellDataFile(file.FileName)
                 End If
             End Using
         End Sub
