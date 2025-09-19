@@ -4,7 +4,6 @@ Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.Data.Framework.IO
-Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Scripting.Runtime
@@ -24,37 +23,33 @@ Public Class CellBrowser
     Dim moleculeSet As (compartment_id As String, modules As NamedCollection(Of String)())()
     Dim plotMatrix As New Dictionary(Of String, FeatureVector)
 
-    Private Sub OpenVirtualCellDataFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenVirtualCellDataFileToolStripMenuItem.Click
-        Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
-            If file.ShowDialog = DialogResult.OK Then
-                If vcellPack IsNot Nothing Then
-                    Call vcellPack.Dispose()
-                End If
+    Public Sub OpenVirtualCellDataFile(filepath As String)
+        If vcellPack IsNot Nothing Then
+            Call vcellPack.Dispose()
+        End If
 
-                vcellPack = New VCellMatrixReader(file.FileName.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
-                Text = $"VirtualCell Browser [{file.FileName}]"
-                network = FormBuzyLoader.Loading(Function(println) LoadNetwork(println))
-                timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
-                moleculeSet = vcellPack.GetCellularMolecules.ToArray
+        vcellPack = New VCellMatrixReader(filepath.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+        Workbench.AppHost.Text = $"VirtualCell Browser [{filepath}]"
+        network = FormBuzyLoader.Loading(Function(println) LoadNetwork(println))
+        timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
+        moleculeSet = vcellPack.GetCellularMolecules.ToArray
 
-                Call FormBuzyLoader.Loading(
-                    Sub(println)
-                        Call println("loading molecule list ui... [metabolite tree]")
-                        Call Me.Invoke(Sub() LoadTree(println))
-                        Call println("loading molecule list ui... [metabolite matrix]")
-                        Call println("loading molecule list ui... [metabolite star links]")
-                        Call Me.Invoke(Sub() LoadNodeStar())
-                        Call println("load flux dynamics data into memory...")
-                    End Sub)
+        Call FormBuzyLoader.Loading(
+            Sub(println)
+                Call println("loading molecule list ui... [metabolite tree]")
+                Call Me.Invoke(Sub() LoadTree(println))
+                Call println("loading molecule list ui... [metabolite matrix]")
+                Call println("loading molecule list ui... [metabolite star links]")
+                Call Me.Invoke(Sub() LoadNodeStar())
+                Call println("load flux dynamics data into memory...")
+            End Sub)
 
-                Call ToolStripComboBox1.Items.Clear()
-                Call ToolStripComboBox1.Items.Add("*")
+        Call ToolStripComboBox1.Items.Clear()
+        Call ToolStripComboBox1.Items.Add("*")
 
-                For Each item In vcellPack.fluxSet
-                    Call ToolStripComboBox1.Items.Add(item)
-                Next
-            End If
-        End Using
+        For Each item In vcellPack.fluxSet
+            Call ToolStripComboBox1.Items.Add(item)
+        Next
     End Sub
 
     Private Sub LoadNodeStar()

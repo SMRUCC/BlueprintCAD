@@ -20,6 +20,7 @@ Namespace RibbonLib.Controls
             Public Const cmdMenuVirtualCellViewer As UInteger = 2
             Public Const cmdTabVirtualCellBrowser As UInteger = 5
             Public Const cmdGroupVirtualCellBrowser As UInteger = 7
+            Public Const cmdButtonCloseVirtualCellPackFile As UInteger = 18
             Public Const cmdButtonResetNetworkTable As UInteger = 9
             Public Const cmdGroupDataBrowser As UInteger = 16
             Public Const cmdButtonViewMassActivityLoads As UInteger = 10
@@ -81,6 +82,12 @@ Namespace RibbonLib.Controls
         Public ReadOnly Property GroupVirtualCellBrowser As RibbonGroup
             Get
                 Return _GroupVirtualCellBrowser
+            End Get
+        End Property
+        Private _ButtonCloseVirtualCellPackFile As RibbonButton
+        Public ReadOnly Property ButtonCloseVirtualCellPackFile As RibbonButton
+            Get
+                Return _ButtonCloseVirtualCellPackFile
             End Get
         End Property
         Private _ButtonResetNetworkTable As RibbonButton
@@ -181,6 +188,7 @@ Namespace RibbonLib.Controls
             _MenuVirtualCellViewer = New RibbonTabGroup(_ribbon, Cmd.cmdMenuVirtualCellViewer)
             _TabVirtualCellBrowser = New RibbonTab(_ribbon, Cmd.cmdTabVirtualCellBrowser)
             _GroupVirtualCellBrowser = New RibbonGroup(_ribbon, Cmd.cmdGroupVirtualCellBrowser)
+            _ButtonCloseVirtualCellPackFile = New RibbonButton(_ribbon, Cmd.cmdButtonCloseVirtualCellPackFile)
             _ButtonResetNetworkTable = New RibbonButton(_ribbon, Cmd.cmdButtonResetNetworkTable)
             _GroupDataBrowser = New RibbonGroup(_ribbon, Cmd.cmdGroupDataBrowser)
             _ButtonViewMassActivityLoads = New RibbonButton(_ribbon, Cmd.cmdButtonViewMassActivityLoads)

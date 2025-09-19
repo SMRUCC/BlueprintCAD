@@ -23,6 +23,7 @@ namespace RibbonLib.Controls
             public const uint cmdMenuVirtualCellViewer = 2;
             public const uint cmdTabVirtualCellBrowser = 5;
             public const uint cmdGroupVirtualCellBrowser = 7;
+            public const uint cmdButtonCloseVirtualCellPackFile = 18;
             public const uint cmdButtonResetNetworkTable = 9;
             public const uint cmdGroupDataBrowser = 16;
             public const uint cmdButtonViewMassActivityLoads = 10;
@@ -56,6 +57,7 @@ namespace RibbonLib.Controls
         /// Virtual Cell Browser
         /// </summary>
         public RibbonGroup GroupVirtualCellBrowser { get; private set; }
+        public RibbonButton ButtonCloseVirtualCellPackFile { get; private set; }
         /// <summary>
         /// Reset Network Table
         /// </summary>
@@ -99,6 +101,7 @@ namespace RibbonLib.Controls
             MenuVirtualCellViewer = new RibbonTabGroup(ribbon, Cmd.cmdMenuVirtualCellViewer);
             TabVirtualCellBrowser = new RibbonTab(ribbon, Cmd.cmdTabVirtualCellBrowser);
             GroupVirtualCellBrowser = new RibbonGroup(ribbon, Cmd.cmdGroupVirtualCellBrowser);
+            ButtonCloseVirtualCellPackFile = new RibbonButton(ribbon, Cmd.cmdButtonCloseVirtualCellPackFile);
             ButtonResetNetworkTable = new RibbonButton(ribbon, Cmd.cmdButtonResetNetworkTable);
             GroupDataBrowser = new RibbonGroup(ribbon, Cmd.cmdGroupDataBrowser);
             ButtonViewMassActivityLoads = new RibbonButton(ribbon, Cmd.cmdButtonViewMassActivityLoads);

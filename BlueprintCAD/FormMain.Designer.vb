@@ -50,7 +50,7 @@ Partial Class FormMain
         Controls.Add(PanelBase)
         Controls.Add(StatusStrip1)
         Name = "FormMain"
-        Text = "Form1"
+        Text = "Sophia VirtualCell Workshop"
         ResumeLayout(False)
         PerformLayout()
     End Sub
