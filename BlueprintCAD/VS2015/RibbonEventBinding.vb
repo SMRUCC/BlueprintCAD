@@ -96,6 +96,9 @@ Public Class RibbonEventBinding : Implements IDisposable
         AddHandler ribbon.ExecuteEvent, Sub() Call exec_call()
     End Sub
 
+    ''' <summary>
+    ''' set <see cref="evt"/> delegate as nothing
+    ''' </summary>
     Public Sub ClearHook()
         evt = Nothing
     End Sub

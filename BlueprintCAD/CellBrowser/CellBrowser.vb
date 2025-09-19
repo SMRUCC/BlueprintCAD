@@ -8,6 +8,7 @@ Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Scripting.Runtime
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports RibbonLib.Controls.Events
 Imports RibbonLib.Interop
 Imports SMRUCC.genomics.Analysis.HTS.DataFrame
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
@@ -22,6 +23,9 @@ Public Class CellBrowser
     Dim timePoints As Double()
     Dim moleculeSet As (compartment_id As String, modules As NamedCollection(Of String)())()
     Dim plotMatrix As New Dictionary(Of String, FeatureVector)
+
+    Shared ReadOnly resetButton As New RibbonEventBinding(Workbench.Ribbon.ButtonResetNetworkTable)
+    Shared ReadOnly closeFileButton As New RibbonEventBinding(Workbench.Ribbon.ButtonCloseVirtualCellPackFile)
 
     Public Sub OpenVirtualCellDataFile(filepath As String)
         If vcellPack IsNot Nothing Then
@@ -217,7 +221,7 @@ Public Class CellBrowser
     End Function
 
     Private Async Function CreateGgplot(matrix As Dictionary(Of String, FeatureVector)) As Task(Of ggplot.ggplot)
-        Dim logscale As Boolean = ExpressionValueLogScaleToolStripMenuItem.Checked
+        Dim logscale As Boolean = Workbench.Ribbon.CheckPlotLogScale.BooleanValue
 
         If matrix.Count = 0 Then
             Return Nothing
@@ -277,8 +281,8 @@ Public Class CellBrowser
         Await RefreshPlot(node_id)
     End Sub
 
-    Private Sub ResetNetworkTableToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetNetworkTableToolStripMenuItem.Click
-        FormBuzyLoader.Loading(Sub(println) Me.Invoke(Sub() ResetNetworkUI()))
+    Private Sub ResetNetworkTable()
+        Call FormBuzyLoader.Loading(Sub(println) Me.Invoke(Sub() ResetNetworkUI()))
     End Sub
 
     Private Sub CopyNameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyNameToolStripMenuItem.Click
@@ -432,7 +436,7 @@ Public Class CellBrowser
         Await RefreshPlot()
     End Sub
 
-    Private Sub ExportMoleculeExpressionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportMoleculeExpressionToolStripMenuItem.Click
+    Private Sub ExportMoleculeExpressionToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Using file As New SaveFileDialog With {.Filter = "GCModeller Matrix(*.mat)|*.mat|Excel Table(*.csv)|*.csv"}
             If file.ShowDialog = DialogResult.OK Then
                 Dim matrix As New Matrix With {
@@ -442,9 +446,9 @@ Public Class CellBrowser
                         .ToArray
                 }
 
-                Call FormBuzyLoader.Loading(
+                FormBuzyLoader.Loading(
                     Sub(println)
-                        Call println("Loading the molecule expression data...")
+                        println("Loading the molecule expression data...")
 
                         matrix.expression = vcellPack _
                             .GetCellularMolecules _
@@ -460,21 +464,21 @@ Public Class CellBrowser
                                                 .experiments = vcellPack.GetExpression(id)
                                             }
                                         Else
-                                            Call println($"Missing molecule epxression data of {id}")
+                                            println($"Missing molecule epxression data of {id}")
                                             Return Nothing
                                         End If
                                     End Function) _
                             .ToArray
                     End Sub)
-                Call FormBuzyLoader.Loading(
+                FormBuzyLoader.Loading(
                     Sub(println)
-                        Call println("Save molecule expression data matrix...")
+                        println("Save molecule expression data matrix...")
 
                         If file.FileName.ExtensionSuffix("csv") Then
-                            Call matrix.SaveMatrix(file.FileName, "molecule ID")
+                            matrix.SaveMatrix(file.FileName, "molecule ID")
                         Else
-                            Using s As Stream = file.OpenFile
-                                Call matrix.Save(s)
+                            Using s = file.OpenFile
+                                matrix.Save(s)
                             End Using
                         End If
                     End Sub)
@@ -482,7 +486,7 @@ Public Class CellBrowser
         End Using
     End Sub
 
-    Private Sub ExportFluxomicsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportFluxomicsToolStripMenuItem.Click
+    Private Sub ExportFluxomicsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Using file As New SaveFileDialog With {.Filter = "GCModeller Matrix(*.mat)|*.mat|Excel Table(*.csv)|*.csv"}
             If file.ShowDialog = DialogResult.OK Then
                 Dim matrix As New Matrix With {
@@ -492,9 +496,9 @@ Public Class CellBrowser
                         .ToArray
                 }
 
-                Call FormBuzyLoader.Loading(
+                FormBuzyLoader.Loading(
                     Sub(println)
-                        Call println("Loading flux data...")
+                        println("Loading flux data...")
 
                         matrix.expression = network.Keys _
                             .Select(Function(flux_id)
@@ -504,22 +508,22 @@ Public Class CellBrowser
                                                 .experiments = vcellPack.GetFluxExpression(flux_id)
                                             }
                                         Else
-                                            Call println($"missing flux expression data of {flux_id}!")
+                                            println($"missing flux expression data of {flux_id}!")
                                             Return Nothing
                                         End If
                                     End Function) _
                             .Where(Function(f) f IsNot Nothing) _
                             .ToArray
                     End Sub)
-                Call FormBuzyLoader.Loading(
+                FormBuzyLoader.Loading(
                     Sub(println)
-                        Call println("Save flux data matrix...")
+                        println("Save flux data matrix...")
 
                         If file.FileName.ExtensionSuffix("csv") Then
-                            Call matrix.SaveMatrix(file.FileName, "flux ID")
+                            matrix.SaveMatrix(file.FileName, "flux ID")
                         Else
-                            Using s As Stream = file.OpenFile
-                                Call matrix.Save(s)
+                            Using s = file.OpenFile
+                                matrix.Save(s)
                             End Using
                         End If
                     End Sub)
@@ -565,35 +569,35 @@ Public Class CellBrowser
         End If
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Close()
     End Sub
 
-    Private Sub ExportPlotMatrixToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportPlotMatrixToolStripMenuItem.Click
+    Private Sub ExportPlotMatrixToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Using file As New SaveFileDialog With {.Filter = "Excel Table(*.csv)|*.csv"}
             If file.ShowDialog = DialogResult.OK Then
-                Using s As StreamWriter = file.FileName.OpenWriter
+                Using s = file.FileName.OpenWriter
                     Dim row As New RowObject
 
-                    Call row.Add("#Time")
+                    row.Add("#Time")
 
-                    For i As Integer = 0 To DataGridView2.Columns.Count - 1
-                        Call row.Add(DataGridView2.Columns(i).HeaderText)
+                    For i = 0 To DataGridView2.Columns.Count - 1
+                        row.Add(DataGridView2.Columns(i).HeaderText)
                     Next
 
-                    Call s.WriteLine(row.AsLine)
+                    s.WriteLine(row.AsLine)
 
-                    For i As Integer = 0 To DataGridView2.Rows.Count - 1
+                    For i = 0 To DataGridView2.Rows.Count - 1
                         Dim r = DataGridView2.Rows(i)
 
-                        Call row.Clear()
-                        Call row.Add(r.HeaderCell.Value.ToString)
+                        row.Clear()
+                        row.Add(r.HeaderCell.Value.ToString)
 
                         For offset As Integer = 0 To DataGridView2.Columns.Count - 1
-                            Call row.Add(CStr(r.Cells(offset).Value))
+                            row.Add(CStr(r.Cells(offset).Value))
                         Next
 
-                        Call s.WriteLine(row.AsLine)
+                        s.WriteLine(row.AsLine)
                     Next
                 End Using
             End If
@@ -604,7 +608,7 @@ Public Class CellBrowser
         Call Me.Invoke(Sub() ToolStripStatusLabel1.Text = str)
     End Sub
 
-    Private Async Sub ViewMassActivityLoadsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewMassActivityLoadsToolStripMenuItem.Click
+    Private Async Sub ViewMassActivityLoadsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim loads = Await Task.Run(Function() vcellPack.ActivityLoads)
         Dim matrix = loads _
             .ToDictionary(Function(id) id.Key,
@@ -612,7 +616,7 @@ Public Class CellBrowser
                               Return New FeatureVector(id.Key, id.Value)
                           End Function)
 
-        Dim plot As ggplot.ggplot = Await CreatePlot(matrix:=matrix)
+        Dim plot = Await CreatePlot(matrix:=matrix)
 
         If Not plot Is Nothing Then
             Try
@@ -620,15 +624,15 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Call Message(ex.Message)
+                Message(ex.Message)
             End Try
         End If
     End Sub
 
-    Private Sub CloseFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseFileToolStripMenuItem.Click
+    Private Sub CloseFile()
         If Not vcellPack Is Nothing Then
             Try
-                Call vcellPack.Dispose()
+                vcellPack.Dispose()
             Catch ex As Exception
 
             End Try
@@ -647,19 +651,19 @@ Public Class CellBrowser
         Next
     End Sub
 
-    Private Sub ExpressionValueLogScaleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExpressionValueLogScaleToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub ToolStripComboBox1_Click(sender As Object, e As EventArgs) Handles ToolStripComboBox1.Click
-
-    End Sub
-
-    Private Sub PhenotypeAnalysisToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PhenotypeAnalysisToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub CellBrowser_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Call CellBrowser_Activated(sender, e)
+    End Sub
+
+    Private Sub CellBrowser_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        resetButton.evt = AddressOf ResetNetworkTable
+        closeFileButton.evt = AddressOf CloseFile
+
         Workbench.Ribbon.MenuVirtualCellViewer.ContextAvailable = ContextAvailability.Active
+    End Sub
+
+    Private Sub CellBrowser_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+        resetButton.ClearHook()
+        closeFileButton.ClearHook()
     End Sub
 End Class

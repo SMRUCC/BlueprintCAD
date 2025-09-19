@@ -25,21 +25,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CellBrowser))
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        MenuStrip1 = New MenuStrip()
-        FileToolStripMenuItem = New ToolStripMenuItem()
-        OpenVirtualCellDataFileToolStripMenuItem = New ToolStripMenuItem()
-        CloseFileToolStripMenuItem = New ToolStripMenuItem()
-        ToolStripMenuItem1 = New ToolStripSeparator()
-        ExitToolStripMenuItem = New ToolStripMenuItem()
-        BrowserToolStripMenuItem = New ToolStripMenuItem()
-        ResetNetworkTableToolStripMenuItem = New ToolStripMenuItem()
-        ToolStripMenuItem3 = New ToolStripSeparator()
-        ViewMassActivityLoadsToolStripMenuItem = New ToolStripMenuItem()
-        ExportMoleculeExpressionToolStripMenuItem = New ToolStripMenuItem()
-        ExportFluxomicsToolStripMenuItem = New ToolStripMenuItem()
-        ViewerToolStripMenuItem = New ToolStripMenuItem()
-        ExportPlotMatrixToolStripMenuItem = New ToolStripMenuItem()
-        ExpressionValueLogScaleToolStripMenuItem = New ToolStripMenuItem()
         PlotView1 = New ggviewer.PlotView()
         GroupBox2 = New GroupBox()
         SplitContainer2 = New SplitContainer()
@@ -75,9 +60,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
-        ToolStripMenuItem4 = New ToolStripSeparator()
-        PhenotypeAnalysisToolStripMenuItem = New ToolStripMenuItem()
-        MenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
@@ -105,106 +87,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' MenuStrip1
-        ' 
-        MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, BrowserToolStripMenuItem, ViewerToolStripMenuItem})
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(1524, 24)
-        MenuStrip1.TabIndex = 0
-        MenuStrip1.Text = "MenuStrip1"
-        ' 
-        ' FileToolStripMenuItem
-        ' 
-        FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {OpenVirtualCellDataFileToolStripMenuItem, CloseFileToolStripMenuItem, ToolStripMenuItem1, ExitToolStripMenuItem})
-        FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        FileToolStripMenuItem.Size = New Size(37, 20)
-        FileToolStripMenuItem.Text = "File"
-        ' 
-        ' OpenVirtualCellDataFileToolStripMenuItem
-        ' 
-        OpenVirtualCellDataFileToolStripMenuItem.Image = CType(resources.GetObject("OpenVirtualCellDataFileToolStripMenuItem.Image"), Image)
-        OpenVirtualCellDataFileToolStripMenuItem.Name = "OpenVirtualCellDataFileToolStripMenuItem"
-        OpenVirtualCellDataFileToolStripMenuItem.Size = New Size(208, 22)
-        OpenVirtualCellDataFileToolStripMenuItem.Text = "Open VirtualCell Data File"
-        ' 
-        ' CloseFileToolStripMenuItem
-        ' 
-        CloseFileToolStripMenuItem.Name = "CloseFileToolStripMenuItem"
-        CloseFileToolStripMenuItem.Size = New Size(208, 22)
-        CloseFileToolStripMenuItem.Text = "Close File"
-        ' 
-        ' ToolStripMenuItem1
-        ' 
-        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(205, 6)
-        ' 
-        ' ExitToolStripMenuItem
-        ' 
-        ExitToolStripMenuItem.Image = CType(resources.GetObject("ExitToolStripMenuItem.Image"), Image)
-        ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(208, 22)
-        ExitToolStripMenuItem.Text = "Exit"
-        ' 
-        ' BrowserToolStripMenuItem
-        ' 
-        BrowserToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ResetNetworkTableToolStripMenuItem, ToolStripMenuItem3, ViewMassActivityLoadsToolStripMenuItem, ExportMoleculeExpressionToolStripMenuItem, ExportFluxomicsToolStripMenuItem, ToolStripMenuItem4, PhenotypeAnalysisToolStripMenuItem})
-        BrowserToolStripMenuItem.Name = "BrowserToolStripMenuItem"
-        BrowserToolStripMenuItem.Size = New Size(61, 20)
-        BrowserToolStripMenuItem.Text = "Browser"
-        ' 
-        ' ResetNetworkTableToolStripMenuItem
-        ' 
-        ResetNetworkTableToolStripMenuItem.Image = CType(resources.GetObject("ResetNetworkTableToolStripMenuItem.Image"), Image)
-        ResetNetworkTableToolStripMenuItem.Name = "ResetNetworkTableToolStripMenuItem"
-        ResetNetworkTableToolStripMenuItem.Size = New Size(219, 22)
-        ResetNetworkTableToolStripMenuItem.Text = "Reset Network Table"
-        ' 
-        ' ToolStripMenuItem3
-        ' 
-        ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        ToolStripMenuItem3.Size = New Size(216, 6)
-        ' 
-        ' ViewMassActivityLoadsToolStripMenuItem
-        ' 
-        ViewMassActivityLoadsToolStripMenuItem.Name = "ViewMassActivityLoadsToolStripMenuItem"
-        ViewMassActivityLoadsToolStripMenuItem.Size = New Size(219, 22)
-        ViewMassActivityLoadsToolStripMenuItem.Text = "View Mass Activity Loads"
-        ' 
-        ' ExportMoleculeExpressionToolStripMenuItem
-        ' 
-        ExportMoleculeExpressionToolStripMenuItem.Name = "ExportMoleculeExpressionToolStripMenuItem"
-        ExportMoleculeExpressionToolStripMenuItem.Size = New Size(219, 22)
-        ExportMoleculeExpressionToolStripMenuItem.Text = "Export Molecule Expression"
-        ' 
-        ' ExportFluxomicsToolStripMenuItem
-        ' 
-        ExportFluxomicsToolStripMenuItem.Name = "ExportFluxomicsToolStripMenuItem"
-        ExportFluxomicsToolStripMenuItem.Size = New Size(219, 22)
-        ExportFluxomicsToolStripMenuItem.Text = "Export Fluxomics"
-        ' 
-        ' ViewerToolStripMenuItem
-        ' 
-        ViewerToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ExportPlotMatrixToolStripMenuItem, ExpressionValueLogScaleToolStripMenuItem})
-        ViewerToolStripMenuItem.Name = "ViewerToolStripMenuItem"
-        ViewerToolStripMenuItem.Size = New Size(54, 20)
-        ViewerToolStripMenuItem.Text = "Viewer"
-        ' 
-        ' ExportPlotMatrixToolStripMenuItem
-        ' 
-        ExportPlotMatrixToolStripMenuItem.Image = CType(resources.GetObject("ExportPlotMatrixToolStripMenuItem.Image"), Image)
-        ExportPlotMatrixToolStripMenuItem.Name = "ExportPlotMatrixToolStripMenuItem"
-        ExportPlotMatrixToolStripMenuItem.Size = New Size(214, 22)
-        ExportPlotMatrixToolStripMenuItem.Text = "Export Plot Matrix"
-        ' 
-        ' ExpressionValueLogScaleToolStripMenuItem
-        ' 
-        ExpressionValueLogScaleToolStripMenuItem.CheckOnClick = True
-        ExpressionValueLogScaleToolStripMenuItem.Image = CType(resources.GetObject("ExpressionValueLogScaleToolStripMenuItem.Image"), Image)
-        ExpressionValueLogScaleToolStripMenuItem.Name = "ExpressionValueLogScaleToolStripMenuItem"
-        ExpressionValueLogScaleToolStripMenuItem.Size = New Size(214, 22)
-        ExpressionValueLogScaleToolStripMenuItem.Text = "Expression Value Log Scale"
-        ' 
         ' PlotView1
         ' 
         PlotView1.BackColor = Color.SkyBlue
@@ -215,7 +97,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         PlotView1.Location = New Point(0, 0)
         PlotView1.Name = "PlotView1"
         PlotView1.ScaleFactor = 1.25F
-        PlotView1.Size = New Size(1167, 557)
+        PlotView1.Size = New Size(1167, 572)
         PlotView1.TabIndex = 1
         ' 
         ' GroupBox2
@@ -224,7 +106,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         GroupBox2.Dock = DockStyle.Fill
         GroupBox2.Location = New Point(0, 0)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(1524, 301)
+        GroupBox2.Size = New Size(1524, 310)
         GroupBox2.TabIndex = 3
         GroupBox2.TabStop = False
         GroupBox2.Text = "Browser"
@@ -245,7 +127,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         SplitContainer2.Panel2.Controls.Add(DataGridView1)
         SplitContainer2.Panel2.Controls.Add(ToolStrip1)
-        SplitContainer2.Size = New Size(1518, 279)
+        SplitContainer2.Size = New Size(1518, 288)
         SplitContainer2.SplitterDistance = 344
         SplitContainer2.TabIndex = 0
         ' 
@@ -255,7 +137,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TreeView1.Dock = DockStyle.Fill
         TreeView1.Location = New Point(0, 0)
         TreeView1.Name = "TreeView1"
-        TreeView1.Size = New Size(344, 279)
+        TreeView1.Size = New Size(344, 288)
         TreeView1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -326,7 +208,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(1170, 254)
+        DataGridView1.Size = New Size(1170, 263)
         DataGridView1.TabIndex = 0
         ' 
         ' Column2
@@ -391,7 +273,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' SplitContainer1
         ' 
         SplitContainer1.Dock = DockStyle.Fill
-        SplitContainer1.Location = New Point(0, 24)
+        SplitContainer1.Location = New Point(0, 0)
         SplitContainer1.Name = "SplitContainer1"
         SplitContainer1.Orientation = Orientation.Horizontal
         ' 
@@ -402,8 +284,8 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(GroupBox2)
-        SplitContainer1.Size = New Size(1524, 896)
-        SplitContainer1.SplitterDistance = 591
+        SplitContainer1.Size = New Size(1524, 920)
+        SplitContainer1.SplitterDistance = 606
         SplitContainer1.TabIndex = 4
         ' 
         ' TabControl1
@@ -415,7 +297,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabControl1.Location = New Point(0, 0)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1524, 591)
+        TabControl1.Size = New Size(1524, 606)
         TabControl1.TabIndex = 0
         ' 
         ' TabPage1
@@ -424,7 +306,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1516, 563)
+        TabPage1.Size = New Size(1516, 578)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Dynamics Plot"
         TabPage1.UseVisualStyleBackColor = True
@@ -443,7 +325,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' SplitContainer3.Panel2
         ' 
         SplitContainer3.Panel2.Controls.Add(PlotView1)
-        SplitContainer3.Size = New Size(1510, 557)
+        SplitContainer3.Size = New Size(1510, 572)
         SplitContainer3.SplitterDistance = 339
         SplitContainer3.TabIndex = 2
         ' 
@@ -454,7 +336,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         CheckedListBox1.FormattingEnabled = True
         CheckedListBox1.Location = New Point(0, 0)
         CheckedListBox1.Name = "CheckedListBox1"
-        CheckedListBox1.Size = New Size(339, 557)
+        CheckedListBox1.Size = New Size(339, 572)
         CheckedListBox1.TabIndex = 0
         ' 
         ' ContextMenuStrip3
@@ -545,30 +427,17 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripStatusLabel1.Size = New Size(42, 17)
         ToolStripStatusLabel1.Text = "Ready!"
         ' 
-        ' ToolStripMenuItem4
-        ' 
-        ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        ToolStripMenuItem4.Size = New Size(216, 6)
-        ' 
-        ' PhenotypeAnalysisToolStripMenuItem
-        ' 
-        PhenotypeAnalysisToolStripMenuItem.Name = "PhenotypeAnalysisToolStripMenuItem"
-        PhenotypeAnalysisToolStripMenuItem.Size = New Size(219, 22)
-        PhenotypeAnalysisToolStripMenuItem.Text = "Phenotype Analysis"
-        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1524, 942)
         Controls.Add(SplitContainer1)
-        Controls.Add(MenuStrip1)
         Controls.Add(StatusStrip1)
-        MainMenuStrip = MenuStrip1
+        DoubleBuffered = True
         Name = "CellBrowser"
+        TabPageContextMenuStrip = DockContextMenuStrip1
         Text = "Cell Browser"
-        MenuStrip1.ResumeLayout(False)
-        MenuStrip1.PerformLayout()
         GroupBox2.ResumeLayout(False)
         SplitContainer2.Panel1.ResumeLayout(False)
         SplitContainer2.Panel2.ResumeLayout(False)
@@ -601,10 +470,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OpenVirtualCellDataFileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PlotView1 As ggviewer.PlotView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents SplitContainer1 As SplitContainer
@@ -616,33 +481,21 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents BindingSource1 As BindingSource
-    Friend WithEvents BrowserToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ResetNetworkTableToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents FilterNetworkToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SplitContainer3 As SplitContainer
     Friend WithEvents CheckedListBox1 As CheckedListBox
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents ViewFluxDynamicsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ViewerToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExportPlotMatrixToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
-    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ViewMassActivityLoadsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
     Friend WithEvents CopyNameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FilterSubstrateNetworkToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FilterProductNetworkToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CloseFileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
-    Friend WithEvents ExportMoleculeExpressionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExportFluxomicsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
     Friend WithEvents UnCheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ExpressionValueLogScaleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
@@ -652,6 +505,4 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents Column3 As DataGridViewLinkColumn
     Friend WithEvents Column4 As DataGridViewLinkColumn
     Friend WithEvents FilterRegulationToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
-    Friend WithEvents PhenotypeAnalysisToolStripMenuItem As ToolStripMenuItem
 End Class
