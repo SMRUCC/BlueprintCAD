@@ -55,6 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\cell-farm\src\VirtualCell\VirtualCell.vbproj" />
     <ProjectReference Include="..\..\GCModeller\src\GCModeller\analysis\HTS_matrix\HTS_matrix-netcore5.vbproj" />
     <ProjectReference Include="..\..\GCModeller\src\GCModeller\core\Bio.Assembly\biocore-netcore5.vbproj" />
     <ProjectReference Include="..\..\GCModeller\src\GCModeller\engine\BootstrapLoader\BootstrapLoader.NET5.vbproj" />
