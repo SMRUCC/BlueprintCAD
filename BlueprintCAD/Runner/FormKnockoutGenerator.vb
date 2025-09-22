@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.Serialization.JSON
+﻿Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports VirtualCellHost
 
@@ -8,6 +9,11 @@ Public Class FormKnockoutGenerator
     Dim config As Config
     Dim models As New Dictionary(Of String, VirtualCell)
 
+    ''' <summary>
+    ''' current selected cell model
+    ''' </summary>
+    Dim cell As VirtualCell
+
     Public Function LoadModelFiles(files As IEnumerable(Of String)) As FormKnockoutGenerator
         Dim cell As VirtualCell
 
@@ -16,6 +22,10 @@ Public Class FormKnockoutGenerator
             models(cell.cellular_id) = cell
             ListBox1.Items.Add(cell)
         Next
+
+        If ListBox1.Items.Count > 0 Then
+            ListBox1.SelectedIndex = 0
+        End If
 
         Return Me
     End Function
@@ -39,7 +49,7 @@ Public Class FormKnockoutGenerator
             Return
         End If
 
-        Dim cell As VirtualCell = ListBox1.SelectedItem
+        cell = ListBox1.SelectedItem
 
         ListBox2.Items.Clear()
 
@@ -51,4 +61,62 @@ Public Class FormKnockoutGenerator
             Next
         End If
     End Sub
+
+    Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
+        If ListBox2.SelectedIndex < 0 Then
+            Return
+        End If
+
+        Dim gene As New KnockoutGene With {
+            .genome = cell.cellular_id,
+            .gene = ListBox2.SelectedItem
+        }
+
+        Call ViewMetabolicNetwork(gene)
+    End Sub
+
+    Private Sub ListBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox4.SelectedIndexChanged
+        If ListBox4.SelectedIndex < 0 Then
+            Return
+        End If
+
+        Dim gene As KnockoutGene = ListBox4.SelectedItem
+
+        Call ViewMetabolicNetwork(gene)
+    End Sub
+
+    Private Sub ViewMetabolicNetwork(gene As KnockoutGene)
+        Dim cell As VirtualCell = models(gene.genome)
+        Dim proteins As String() = gene.gene.protein_id
+        Dim proteinList As protein() = proteins _
+            .Select(Function(id)
+                        Return protein.ProteinRoutine(cell.genome.proteins, id)
+                    End Function) _
+            .IteratesALL _
+            .Distinct _
+            .ToArray
+
+        Call ListBox3.Items.Clear()
+
+        For Each impact As Reaction In proteinList _
+            .Select(Function(prot)
+                        Return cell.metabolismStructure.GetImpactedMetabolicNetwork(prot.protein_id)
+                    End Function) _
+            .IteratesALL _
+            .Distinct
+
+            Call ListBox3.Items.Add(impact)
+        Next
+    End Sub
+End Class
+
+Public Class KnockoutGene
+
+    Public Property genome As String
+    Public Property gene As gene
+
+    Public Overrides Function ToString() As String
+        Return $"[{genome}] {gene}"
+    End Function
+
 End Class
