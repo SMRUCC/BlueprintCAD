@@ -1,4 +1,5 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
+Imports Microsoft.VisualBasic.ApplicationServices
 Imports RibbonLib.Controls.Events
 
 Namespace My
@@ -45,7 +46,8 @@ Namespace My
         Public Shared Sub OpenVirtualCellPackFile(sender As Object, e As ExecuteEventArgs)
             Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
                 If file.ShowDialog = DialogResult.OK Then
-                    Call Workbench.OpenDocument(Of CellBrowser)().OpenVirtualCellDataFile(file.FileName)
+                    Call Workbench.OpenDocument(Of CellBrowser)() _
+                        .OpenVirtualCellDataFile(file.FileName)
                 End If
             End Using
         End Sub
@@ -54,10 +56,26 @@ Namespace My
             Dim step1 As New FormConfigGenerator()
 
             If step1.ShowDialog() = DialogResult.OK Then
-                Dim step2 = New FormKnockoutGenerator().LoadConfig(step1.configFile).LoadModelFiles(step1.modelFiles)
+                Dim step2 = New FormKnockoutGenerator() _
+                    .LoadConfig(step1.configFile) _
+                    .LoadModelFiles(step1.modelFiles)
 
                 If step2.ShowDialog = DialogResult.OK Then
+                    ' run the virtual cell simulation
+                    Dim vc As String = $"{App.HOME}/VirtualCell.exe"
+                    Dim args As String = $"--run {step1.configFile.CLIPath}"
+                    Dim proc As New Process With {
+                        .StartInfo = New ProcessStartInfo With {
+                            .FileName = vc,
+                            .Arguments = args,
+                            .UseShellExecute = True,
+                            .CreateNoWindow = False,
+                            .RedirectStandardOutput = False,
+                            .RedirectStandardError = False
+                        }
+                    }
 
+                    Call proc.Start()
                 End If
             End If
         End Sub
