@@ -4,6 +4,7 @@ Imports VirtualCellHost
 Public Class FormConfigGenerator
 
     Dim modelFiles As String()
+    Dim configFile As String
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Using file As New OpenFileDialog With {
@@ -27,8 +28,15 @@ Public Class FormConfigGenerator
                     .tqdm_progress = True
                 }
 
-                Call config.GetJson.SaveTo(file.FileName)
+                configFile = file.FileName
+                config.GetJson.SaveTo(file.FileName)
+
+                Me.DialogResult = DialogResult.OK
             End If
         End Using
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.DialogResult = DialogResult.Cancel
     End Sub
 End Class

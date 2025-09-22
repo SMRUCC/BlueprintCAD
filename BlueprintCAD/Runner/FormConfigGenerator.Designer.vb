@@ -25,6 +25,7 @@ Partial Class FormConfigGenerator
         Button1 = New Button()
         ListBox1 = New ListBox()
         Button2 = New Button()
+        Button3 = New Button()
         SuspendLayout()
         ' 
         ' Button1
@@ -51,14 +52,24 @@ Partial Class FormConfigGenerator
         Button2.Name = "Button2"
         Button2.Size = New Size(75, 23)
         Button2.TabIndex = 2
-        Button2.Text = "Button2"
+        Button2.Text = "Start"
         Button2.UseVisualStyleBackColor = True
+        ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(392, 376)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(75, 23)
+        Button3.TabIndex = 3
+        Button3.Text = "Cancel"
+        Button3.UseVisualStyleBackColor = True
         ' 
         ' FormConfigGenerator
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(ListBox1)
         Controls.Add(Button1)
@@ -70,4 +81,5 @@ Partial Class FormConfigGenerator
     Friend WithEvents Button1 As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

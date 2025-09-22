@@ -31,6 +31,7 @@ Namespace My
 
             AddHandler ribbon.ButtonOpenVirtualCellPackFile.ExecuteEvent, AddressOf OpenVirtualCellPackFile
             AddHandler ribbon.ButtonExit.ExecuteEvent, AddressOf Close
+            AddHandler ribbon.ButtonRun.ExecuteEvent, AddressOf RunVirtualCell
         End Sub
 
         Private Shared Sub Close(sender As Object, e As ExecuteEventArgs)
@@ -47,6 +48,10 @@ Namespace My
                     Call Workbench.OpenDocument(Of CellBrowser)().OpenVirtualCellDataFile(file.FileName)
                 End If
             End Using
+        End Sub
+
+        Public Shared Sub RunVirtualCell(sender As Object, e As ExecuteEventArgs)
+            Call New FormConfigGenerator().ShowDialog()
         End Sub
     End Class
 End Namespace
