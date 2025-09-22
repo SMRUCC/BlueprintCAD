@@ -51,6 +51,7 @@ Public Class FormKnockoutGenerator
         Next
 
         Me.config.knockouts = knockouts.Distinct.ToArray
+        Me.config.GetJson.SaveTo(Me.file)
         Me.DialogResult = DialogResult.OK
     End Sub
 
