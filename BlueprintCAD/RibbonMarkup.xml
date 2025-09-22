@@ -88,9 +88,19 @@
     <Command Name="cmdMenuVirtualCellViewer" Comment="VirtualCell Viewer" Id="2" LabelTitle="VirtualCell Viewer" LabelDescription="VirtualCell Viewer" TooltipTitle="VirtualCell Viewer" TooltipDescription="VirtualCell Viewer" Keytip="VirtualCell Viewer" />
     <Command Name="cmdTabDataViewer" Id="6" LabelTitle="Data Viewer" />
     <Command Name="cmdTabVirtualCellBrowser" Id="5" LabelTitle="Browser" />
+    <Command Name="cmdMenuWorkbench" Comment="Workbench" Id="19" LabelTitle="Workbench" LabelDescription="Workbench" TooltipTitle="Workbench" TooltipDescription="Workbench" Keytip="Workbench" />
+    <Command Name="cmdTabWorkbench" Comment="Workbench" Id="20" LabelTitle="Workbench" LabelDescription="Workbench" TooltipTitle="Workbench" TooltipDescription="Workbench" Keytip="Workbench" />
+    <Command Name="cmdButtonRun" Comment="Run" Id="21" LabelTitle="Run" LabelDescription="Run" TooltipTitle="Run" TooltipDescription="Run" Keytip="Run">
+      <Command.SmallImages>
+        <Image MinDPI="192">Resources/icons8-play-96.png</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image MinDPI="192">Resources/icons8-play-96.png</Image>
+      </Command.LargeImages>
+    </Command>
   </Application.Commands>
   <Application.Views>
-    <Ribbon>
+    <Ribbon Name="Sophia VirtualCell Workshop">
       <Ribbon.ApplicationMenu>
         <ApplicationMenu>
           <ApplicationMenu.RecentItems>
@@ -131,6 +141,13 @@
           </Tab>
         </TabGroup>
       </Ribbon.ContextualTabs>
+      <Ribbon.Tabs>
+        <Tab CommandName="cmdMenuWorkbench">
+          <Group CommandName="cmdTabWorkbench" SizeDefinition="OneButton">
+            <Button CommandName="cmdButtonRun" />
+          </Group>
+        </Tab>
+      </Ribbon.Tabs>
     </Ribbon>
     <ContextPopup />
   </Application.Views>

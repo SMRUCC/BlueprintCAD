@@ -32,6 +32,9 @@ Namespace RibbonLib.Controls
             Public Const cmdGroupDataViewer As UInteger = 8
             Public Const cmdButtonExportPlotMatrix As UInteger = 14
             Public Const cmdCheckPlotLogScale As UInteger = 15
+            Public Const cmdMenuWorkbench As UInteger = 19
+            Public Const cmdTabWorkbench As UInteger = 20
+            Public Const cmdButtonRun As UInteger = 21
         End Class
 
         ' ContextPopup CommandName
@@ -177,6 +180,33 @@ Namespace RibbonLib.Controls
                 Return _CheckPlotLogScale
             End Get
         End Property
+        Private _MenuWorkbench As RibbonTab
+        ''' <summary>
+        ''' Workbench
+        ''' </summary>
+        Public ReadOnly Property MenuWorkbench As RibbonTab
+            Get
+                Return _MenuWorkbench
+            End Get
+        End Property
+        Private _TabWorkbench As RibbonGroup
+        ''' <summary>
+        ''' Workbench
+        ''' </summary>
+        Public ReadOnly Property TabWorkbench As RibbonGroup
+            Get
+                Return _TabWorkbench
+            End Get
+        End Property
+        Private _ButtonRun As RibbonButton
+        ''' <summary>
+        ''' Run
+        ''' </summary>
+        Public ReadOnly Property ButtonRun As RibbonButton
+            Get
+                Return _ButtonRun
+            End Get
+        End Property
 
         Public Sub New(ByVal ribbon As Ribbon)
             If ribbon Is Nothing Then
@@ -200,6 +230,9 @@ Namespace RibbonLib.Controls
             _GroupDataViewer = New RibbonGroup(_ribbon, Cmd.cmdGroupDataViewer)
             _ButtonExportPlotMatrix = New RibbonButton(_ribbon, Cmd.cmdButtonExportPlotMatrix)
             _CheckPlotLogScale = New RibbonCheckBox(_ribbon, Cmd.cmdCheckPlotLogScale)
+            _MenuWorkbench = New RibbonTab(_ribbon, Cmd.cmdMenuWorkbench)
+            _TabWorkbench = New RibbonGroup(_ribbon, Cmd.cmdTabWorkbench)
+            _ButtonRun = New RibbonButton(_ribbon, Cmd.cmdButtonRun)
         End Sub
 
     End Class

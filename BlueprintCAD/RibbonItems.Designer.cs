@@ -35,6 +35,9 @@ namespace RibbonLib.Controls
             public const uint cmdGroupDataViewer = 8;
             public const uint cmdButtonExportPlotMatrix = 14;
             public const uint cmdCheckPlotLogScale = 15;
+            public const uint cmdMenuWorkbench = 19;
+            public const uint cmdTabWorkbench = 20;
+            public const uint cmdButtonRun = 21;
         }
 
         // ContextPopup CommandName
@@ -90,6 +93,18 @@ namespace RibbonLib.Controls
         /// Log Scale
         /// </summary>
         public RibbonCheckBox CheckPlotLogScale { get; private set; }
+        /// <summary>
+        /// Workbench
+        /// </summary>
+        public RibbonTab MenuWorkbench { get; private set; }
+        /// <summary>
+        /// Workbench
+        /// </summary>
+        public RibbonGroup TabWorkbench { get; private set; }
+        /// <summary>
+        /// Run
+        /// </summary>
+        public RibbonButton ButtonRun { get; private set; }
 
         public RibbonItems(Ribbon ribbon)
         {
@@ -113,6 +128,9 @@ namespace RibbonLib.Controls
             GroupDataViewer = new RibbonGroup(ribbon, Cmd.cmdGroupDataViewer);
             ButtonExportPlotMatrix = new RibbonButton(ribbon, Cmd.cmdButtonExportPlotMatrix);
             CheckPlotLogScale = new RibbonCheckBox(ribbon, Cmd.cmdCheckPlotLogScale);
+            MenuWorkbench = new RibbonTab(ribbon, Cmd.cmdMenuWorkbench);
+            TabWorkbench = new RibbonGroup(ribbon, Cmd.cmdTabWorkbench);
+            ButtonRun = new RibbonButton(ribbon, Cmd.cmdButtonRun);
         }
 
     }
