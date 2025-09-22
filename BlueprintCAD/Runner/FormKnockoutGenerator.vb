@@ -2,6 +2,7 @@
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
+Imports SMRUCC.genomics.GCModeller.ModellingEngine.BootstrapLoader.Definitions
 Imports VirtualCellHost
 
 Public Class FormKnockoutGenerator
@@ -18,15 +19,21 @@ Public Class FormKnockoutGenerator
 
     Public Function LoadModelFiles(files As IEnumerable(Of String)) As FormKnockoutGenerator
         Dim cell As VirtualCell
+        Dim compounds_id As New List(Of String)
 
         For Each file As String In files
             cell = file.LoadXml(Of VirtualCell)
             models(cell.cellular_id) = cell
+            compounds_id.AddRange(cell.metabolismStructure.compounds.Keys)
             ListBox1.Items.Add(cell)
         Next
 
         If ListBox1.Items.Count > 0 Then
             ListBox1.SelectedIndex = 0
+        End If
+
+        If config IsNot Nothing Then
+            config.mapping = Definition.MetaCyc(compounds_id.Distinct, Double.NaN)
         End If
 
         Return Me
@@ -35,6 +42,7 @@ Public Class FormKnockoutGenerator
     Public Function LoadConfig(file As String) As FormKnockoutGenerator
         _file = file
         _config = file.LoadJsonFile(Of Config)
+        _config.kinetics = New FluxBaseline
 
         Return Me
     End Function
