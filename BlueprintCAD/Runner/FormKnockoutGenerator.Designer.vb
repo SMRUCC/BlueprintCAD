@@ -139,9 +139,12 @@ Partial Class FormKnockoutGenerator
         Controls.Add(Label2)
         Controls.Add(ListBox1)
         Controls.Add(Label1)
+        FormBorderStyle = FormBorderStyle.FixedDialog
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "FormKnockoutGenerator"
         StartPosition = FormStartPosition.CenterParent
-        Text = "Form1"
+        Text = "Config Gene Knockout List"
         ResumeLayout(False)
         PerformLayout()
     End Sub

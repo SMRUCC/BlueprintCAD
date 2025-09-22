@@ -44,8 +44,8 @@ Public Class FormKnockoutGenerator
         ListBox2.Items.Clear()
 
         If cell.genome IsNot Nothing AndAlso Not cell.genome.replicons.IsNullOrEmpty Then
-            For Each rep In cell.genome.replicons
-                For Each gene In rep.GetGeneList
+            For Each rep As replicon In cell.genome.replicons
+                For Each gene As gene In rep.GetGeneList
                     Call ListBox2.Items.Add(gene)
                 Next
             Next
