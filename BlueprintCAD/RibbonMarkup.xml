@@ -98,15 +98,17 @@
         <Image MinDPI="192">Resources/icons8-play-96.png</Image>
       </Command.LargeImages>
     </Command>
+    <Command Name="cmdListRecentItems" Comment="Recent Items" Id="22" LabelTitle="Recent Items" LabelDescription="Recent Items" TooltipTitle="Recent Items" TooltipDescription="Recent Items" Keytip="Recent Items" />
   </Application.Commands>
   <Application.Views>
     <Ribbon Name="Sophia VirtualCell Workshop">
       <Ribbon.ApplicationMenu>
         <ApplicationMenu>
           <ApplicationMenu.RecentItems>
-            <RecentItems />
+            <RecentItems CommandName="cmdListRecentItems" />
           </ApplicationMenu.RecentItems>
           <MenuGroup>
+            <Button CommandName="cmdButtonRun" />
             <Button CommandName="cmdButtonOpenVirtualCellPackFile" />
           </MenuGroup>
           <MenuGroup>

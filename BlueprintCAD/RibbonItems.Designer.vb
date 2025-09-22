@@ -15,6 +15,8 @@ Imports RibbonLib.Controls
 Namespace RibbonLib.Controls
     Partial Class RibbonItems
         Private Class Cmd
+            Public Const cmdListRecentItems As UInteger = 22
+            Public Const cmdButtonRun As UInteger = 21
             Public Const cmdButtonOpenVirtualCellPackFile As UInteger = 3
             Public Const cmdButtonExit As UInteger = 4
             Public Const cmdMenuVirtualCellViewer As UInteger = 2
@@ -34,7 +36,6 @@ Namespace RibbonLib.Controls
             Public Const cmdCheckPlotLogScale As UInteger = 15
             Public Const cmdMenuWorkbench As UInteger = 19
             Public Const cmdTabWorkbench As UInteger = 20
-            Public Const cmdButtonRun As UInteger = 21
         End Class
 
         ' ContextPopup CommandName
@@ -43,6 +44,24 @@ Namespace RibbonLib.Controls
         Public ReadOnly Property Ribbon As Ribbon
             Get
                 Return _ribbon
+            End Get
+        End Property
+        Private _ListRecentItems As RibbonRecentItems
+        ''' <summary>
+        ''' Recent Items
+        ''' </summary>
+        Public ReadOnly Property ListRecentItems As RibbonRecentItems
+            Get
+                Return _ListRecentItems
+            End Get
+        End Property
+        Private _ButtonRun As RibbonButton
+        ''' <summary>
+        ''' Run
+        ''' </summary>
+        Public ReadOnly Property ButtonRun As RibbonButton
+            Get
+                Return _ButtonRun
             End Get
         End Property
         Private _ButtonOpenVirtualCellPackFile As RibbonButton
@@ -198,21 +217,14 @@ Namespace RibbonLib.Controls
                 Return _TabWorkbench
             End Get
         End Property
-        Private _ButtonRun As RibbonButton
-        ''' <summary>
-        ''' Run
-        ''' </summary>
-        Public ReadOnly Property ButtonRun As RibbonButton
-            Get
-                Return _ButtonRun
-            End Get
-        End Property
 
         Public Sub New(ByVal ribbon As Ribbon)
             If ribbon Is Nothing Then
                 Throw New ArgumentNullException(NameOf(ribbon), "Parameter is Nothing")
             End If
             _ribbon = ribbon
+            _ListRecentItems = New RibbonRecentItems(_ribbon, Cmd.cmdListRecentItems)
+            _ButtonRun = New RibbonButton(_ribbon, Cmd.cmdButtonRun)
             _ButtonOpenVirtualCellPackFile = New RibbonButton(_ribbon, Cmd.cmdButtonOpenVirtualCellPackFile)
             _ButtonExit = New RibbonButton(_ribbon, Cmd.cmdButtonExit)
             _MenuVirtualCellViewer = New RibbonTabGroup(_ribbon, Cmd.cmdMenuVirtualCellViewer)
@@ -232,7 +244,6 @@ Namespace RibbonLib.Controls
             _CheckPlotLogScale = New RibbonCheckBox(_ribbon, Cmd.cmdCheckPlotLogScale)
             _MenuWorkbench = New RibbonTab(_ribbon, Cmd.cmdMenuWorkbench)
             _TabWorkbench = New RibbonGroup(_ribbon, Cmd.cmdTabWorkbench)
-            _ButtonRun = New RibbonButton(_ribbon, Cmd.cmdButtonRun)
         End Sub
 
     End Class

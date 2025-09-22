@@ -18,6 +18,8 @@ namespace RibbonLib.Controls
     {
         private static class Cmd
         {
+            public const uint cmdListRecentItems = 22;
+            public const uint cmdButtonRun = 21;
             public const uint cmdButtonOpenVirtualCellPackFile = 3;
             public const uint cmdButtonExit = 4;
             public const uint cmdMenuVirtualCellViewer = 2;
@@ -37,12 +39,19 @@ namespace RibbonLib.Controls
             public const uint cmdCheckPlotLogScale = 15;
             public const uint cmdMenuWorkbench = 19;
             public const uint cmdTabWorkbench = 20;
-            public const uint cmdButtonRun = 21;
         }
 
         // ContextPopup CommandName
 
         public Ribbon Ribbon { get; private set; }
+        /// <summary>
+        /// Recent Items
+        /// </summary>
+        public RibbonRecentItems ListRecentItems { get; private set; }
+        /// <summary>
+        /// Run
+        /// </summary>
+        public RibbonButton ButtonRun { get; private set; }
         /// <summary>
         /// Open VirtualCell Pack File
         /// </summary>
@@ -101,16 +110,14 @@ namespace RibbonLib.Controls
         /// Workbench
         /// </summary>
         public RibbonGroup TabWorkbench { get; private set; }
-        /// <summary>
-        /// Run
-        /// </summary>
-        public RibbonButton ButtonRun { get; private set; }
 
         public RibbonItems(Ribbon ribbon)
         {
             if (ribbon == null)
                 throw new ArgumentNullException(nameof(ribbon), "Parameter is null");
             this.Ribbon = ribbon;
+            ListRecentItems = new RibbonRecentItems(ribbon, Cmd.cmdListRecentItems);
+            ButtonRun = new RibbonButton(ribbon, Cmd.cmdButtonRun);
             ButtonOpenVirtualCellPackFile = new RibbonButton(ribbon, Cmd.cmdButtonOpenVirtualCellPackFile);
             ButtonExit = new RibbonButton(ribbon, Cmd.cmdButtonExit);
             MenuVirtualCellViewer = new RibbonTabGroup(ribbon, Cmd.cmdMenuVirtualCellViewer);
@@ -130,7 +137,6 @@ namespace RibbonLib.Controls
             CheckPlotLogScale = new RibbonCheckBox(ribbon, Cmd.cmdCheckPlotLogScale);
             MenuWorkbench = new RibbonTab(ribbon, Cmd.cmdMenuWorkbench);
             TabWorkbench = new RibbonGroup(ribbon, Cmd.cmdTabWorkbench);
-            ButtonRun = new RibbonButton(ribbon, Cmd.cmdButtonRun);
         }
 
     }

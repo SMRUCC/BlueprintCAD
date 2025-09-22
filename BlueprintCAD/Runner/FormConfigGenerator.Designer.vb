@@ -30,7 +30,7 @@ Partial Class FormConfigGenerator
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(670, 37)
+        Button1.Location = New Point(534, 22)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 0
@@ -41,7 +41,7 @@ Partial Class FormConfigGenerator
         ' 
         ListBox1.FormattingEnabled = True
         ListBox1.ItemHeight = 15
-        ListBox1.Location = New Point(82, 37)
+        ListBox1.Location = New Point(43, 22)
         ListBox1.Name = "ListBox1"
         ListBox1.Size = New Size(449, 94)
         ListBox1.TabIndex = 1
@@ -68,13 +68,17 @@ Partial Class FormConfigGenerator
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(692, 450)
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(ListBox1)
         Controls.Add(Button1)
+        FormBorderStyle = FormBorderStyle.FixedDialog
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "FormConfigGenerator"
-        Text = "Form1"
+        StartPosition = FormStartPosition.CenterParent
+        Text = "Runner Wizard"
         ResumeLayout(False)
     End Sub
 

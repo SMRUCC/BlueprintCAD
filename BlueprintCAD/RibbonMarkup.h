@@ -103,5 +103,10 @@
 #define cmdButtonRun_TooltipDescription_RESID 60076
 #define cmdButtonRun_SmallImages_192__RESID 60077
 #define cmdButtonRun_LargeImages_192__RESID 60078
-#define InternalCmd2_LabelTitle_RESID 60079
-#define InternalCmd4_LabelTitle_RESID 60080
+#define cmdListRecentItems 22  /* Recent Items */ 
+#define cmdListRecentItems_LabelTitle_RESID 60079
+#define cmdListRecentItems_LabelDescription_RESID 60080
+#define cmdListRecentItems_Keytip_RESID 60081
+#define cmdListRecentItems_TooltipTitle_RESID 60082
+#define cmdListRecentItems_TooltipDescription_RESID 60083
+#define InternalCmd2_LabelTitle_RESID 60084
