@@ -91,6 +91,7 @@ Public Class FormKnockoutGenerator
         Dim proteins As String() = gene.gene.protein_id
         Dim visited As New Index(Of String)
         Dim proteinList As protein() = proteins _
+            .SafeQuery _
             .Select(Function(id)
                         Return protein.ProteinRoutine(cell.genome.proteins, id, visited)
                     End Function) _
