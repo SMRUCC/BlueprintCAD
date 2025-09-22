@@ -51,7 +51,15 @@ Namespace My
         End Sub
 
         Public Shared Sub RunVirtualCell(sender As Object, e As ExecuteEventArgs)
-            Call New FormConfigGenerator().ShowDialog()
+            Dim step1 As New FormConfigGenerator()
+
+            If step1.ShowDialog() = DialogResult.OK Then
+                Dim step2 = New FormKnockoutGenerator().LoadConfig(step1.configFile).LoadModelFiles(step1.modelFiles)
+
+                If step2.ShowDialog = DialogResult.OK Then
+
+                End If
+            End If
         End Sub
     End Class
 End Namespace

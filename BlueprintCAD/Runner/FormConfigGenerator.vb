@@ -3,8 +3,8 @@ Imports VirtualCellHost
 
 Public Class FormConfigGenerator
 
-    Dim modelFiles As String()
-    Dim configFile As String
+    Friend modelFiles As String()
+    Friend configFile As String
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Using file As New OpenFileDialog With {
@@ -25,7 +25,9 @@ Public Class FormConfigGenerator
                 Dim config As New Config With {
                     .debug = False,
                     .models = modelFiles,
-                    .tqdm_progress = True
+                    .tqdm_progress = True,
+                    .iterations = NumericUpDown1.Value,
+                    .resolution = NumericUpDown2.Value
                 }
 
                 configFile = file.FileName
