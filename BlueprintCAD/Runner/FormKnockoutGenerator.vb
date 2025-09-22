@@ -20,11 +20,13 @@ Public Class FormKnockoutGenerator
     Public Function LoadModelFiles(files As IEnumerable(Of String)) As FormKnockoutGenerator
         Dim cell As VirtualCell
         Dim compounds_id As New List(Of String)
+        Dim copy As New Dictionary(Of String, Integer)
 
         For Each file As String In files
             cell = file.LoadXml(Of VirtualCell)
             models(cell.cellular_id) = cell
             compounds_id.AddRange(cell.metabolismStructure.compounds.Keys)
+            copy.Add(cell.cellular_id, 1000)
             ListBox1.Items.Add(cell)
         Next
 
@@ -34,6 +36,7 @@ Public Class FormKnockoutGenerator
 
         If config IsNot Nothing Then
             config.mapping = Definition.MetaCyc(compounds_id.Distinct, Double.NaN)
+            config.copy_number = copy
         End If
 
         Return Me
