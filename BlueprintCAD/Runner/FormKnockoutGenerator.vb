@@ -6,9 +6,10 @@ Imports VirtualCellHost
 
 Public Class FormKnockoutGenerator
 
-    Dim file As String
-    Dim config As Config
     Dim models As New Dictionary(Of String, VirtualCell)
+
+    Public ReadOnly Property config As Config
+    Public ReadOnly Property file As String
 
     ''' <summary>
     ''' current selected cell model
@@ -32,8 +33,9 @@ Public Class FormKnockoutGenerator
     End Function
 
     Public Function LoadConfig(file As String) As FormKnockoutGenerator
-        Me.file = file
-        Me.config = file.LoadJsonFile(Of Config)
+        _file = file
+        _config = file.LoadJsonFile(Of Config)
+
         Return Me
     End Function
 
@@ -42,6 +44,13 @@ Public Class FormKnockoutGenerator
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim knockouts As New List(Of String)
+
+        For i As Integer = 0 To ListBox4.Items.Count - 1
+            Call knockouts.Add(DirectCast(ListBox4.Items(i), KnockoutGene).gene.locus_tag)
+        Next
+
+        Me.config.knockouts = knockouts.Distinct.ToArray
         Me.DialogResult = DialogResult.OK
     End Sub
 
@@ -110,6 +119,19 @@ Public Class FormKnockoutGenerator
 
             Call ListBox3.Items.Add(impact)
         Next
+    End Sub
+
+    Private Sub AddToKnockoutListToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToKnockoutListToolStripMenuItem.Click
+        If ListBox2.SelectedIndex < 0 Then
+            Return
+        End If
+
+        Dim gene As New KnockoutGene With {
+            .genome = cell.cellular_id,
+            .gene = ListBox2.SelectedItem
+        }
+
+        Call ListBox4.Items.Add(gene)
     End Sub
 End Class
 

@@ -22,6 +22,7 @@ Partial Class FormKnockoutGenerator
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Label1 = New Label()
         ListBox1 = New ListBox()
         Label2 = New Label()
@@ -32,6 +33,9 @@ Partial Class FormKnockoutGenerator
         ListBox4 = New ListBox()
         ListBox3 = New ListBox()
         Label4 = New Label()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        AddToKnockoutListToolStripMenuItem = New ToolStripMenuItem()
+        ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -63,6 +67,7 @@ Partial Class FormKnockoutGenerator
         ' 
         ' ListBox2
         ' 
+        ListBox2.ContextMenuStrip = ContextMenuStrip1
         ListBox2.FormattingEnabled = True
         ListBox2.ItemHeight = 15
         ListBox2.Location = New Point(30, 197)
@@ -124,6 +129,18 @@ Partial Class FormKnockoutGenerator
         Label4.TabIndex = 10
         Label4.Text = "Genes Knockout List:"
         ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {AddToKnockoutListToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(187, 48)
+        ' 
+        ' AddToKnockoutListToolStripMenuItem
+        ' 
+        AddToKnockoutListToolStripMenuItem.Name = "AddToKnockoutListToolStripMenuItem"
+        AddToKnockoutListToolStripMenuItem.Size = New Size(186, 22)
+        AddToKnockoutListToolStripMenuItem.Text = "Add To Knockout List"
+        ' 
         ' FormKnockoutGenerator
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -145,6 +162,7 @@ Partial Class FormKnockoutGenerator
         Name = "FormKnockoutGenerator"
         StartPosition = FormStartPosition.CenterParent
         Text = "Config Gene Knockout List"
+        ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -159,4 +177,6 @@ Partial Class FormKnockoutGenerator
     Friend WithEvents ListBox4 As ListBox
     Friend WithEvents ListBox3 As ListBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents AddToKnockoutListToolStripMenuItem As ToolStripMenuItem
 End Class
