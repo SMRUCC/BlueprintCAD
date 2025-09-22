@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.Linq
+﻿Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports VirtualCellHost
@@ -88,9 +89,10 @@ Public Class FormKnockoutGenerator
     Private Sub ViewMetabolicNetwork(gene As KnockoutGene)
         Dim cell As VirtualCell = models(gene.genome)
         Dim proteins As String() = gene.gene.protein_id
+        Dim visited As New Index(Of String)
         Dim proteinList As protein() = proteins _
             .Select(Function(id)
-                        Return protein.ProteinRoutine(cell.genome.proteins, id)
+                        Return protein.ProteinRoutine(cell.genome.proteins, id, visited)
                     End Function) _
             .IteratesALL _
             .Distinct _
