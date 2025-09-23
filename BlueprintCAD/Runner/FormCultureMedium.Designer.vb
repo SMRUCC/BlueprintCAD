@@ -29,11 +29,15 @@ Partial Class FormCultureMedium
         Label1 = New Label()
         Label2 = New Label()
         ListBox2 = New ListBox()
+        ContextMenuStrip2 = New ContextMenuStrip(components)
+        RemovesToolStripMenuItem = New ToolStripMenuItem()
+        ClearToolStripMenuItem = New ToolStripMenuItem()
         Label3 = New Label()
         NumericUpDown1 = New NumericUpDown()
         Button1 = New Button()
         Button2 = New Button()
         ContextMenuStrip1.SuspendLayout()
+        ContextMenuStrip2.SuspendLayout()
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -79,12 +83,31 @@ Partial Class FormCultureMedium
         ' 
         ' ListBox2
         ' 
+        ListBox2.ContextMenuStrip = ContextMenuStrip2
         ListBox2.FormattingEnabled = True
         ListBox2.ItemHeight = 15
         ListBox2.Location = New Point(358, 53)
         ListBox2.Name = "ListBox2"
         ListBox2.Size = New Size(232, 319)
         ListBox2.TabIndex = 4
+        ' 
+        ' ContextMenuStrip2
+        ' 
+        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {RemovesToolStripMenuItem, ClearToolStripMenuItem})
+        ContextMenuStrip2.Name = "ContextMenuStrip2"
+        ContextMenuStrip2.Size = New Size(123, 48)
+        ' 
+        ' RemovesToolStripMenuItem
+        ' 
+        RemovesToolStripMenuItem.Name = "RemovesToolStripMenuItem"
+        RemovesToolStripMenuItem.Size = New Size(122, 22)
+        RemovesToolStripMenuItem.Text = "Removes"
+        ' 
+        ' ClearToolStripMenuItem
+        ' 
+        ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
+        ClearToolStripMenuItem.Size = New Size(122, 22)
+        ClearToolStripMenuItem.Text = "Clear"
         ' 
         ' Label3
         ' 
@@ -138,6 +161,7 @@ Partial Class FormCultureMedium
         Name = "FormCultureMedium"
         Text = "Form1"
         ContextMenuStrip1.ResumeLayout(False)
+        ContextMenuStrip2.ResumeLayout(False)
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -153,4 +177,7 @@ Partial Class FormCultureMedium
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents RemovesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem
 End Class

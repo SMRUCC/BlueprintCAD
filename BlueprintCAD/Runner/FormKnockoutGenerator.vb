@@ -17,6 +17,12 @@ Public Class FormKnockoutGenerator
     ''' </summary>
     Dim cell As VirtualCell
 
+    Public ReadOnly Property modelList As VirtualCell()
+        Get
+            Return models.Values.ToArray
+        End Get
+    End Property
+
     Public Function LoadModelFiles(files As IEnumerable(Of String)) As FormKnockoutGenerator
         Dim cell As VirtualCell
         Dim compounds_id As New List(Of String)

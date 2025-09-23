@@ -61,21 +61,25 @@ Namespace My
                     .LoadModelFiles(step1.modelFiles)
 
                 If step2.ShowDialog = DialogResult.OK Then
-                    ' run the virtual cell simulation
-                    Dim vc As String = $"{App.HOME}/VirtualCell.exe"
-                    Dim args As String = $"--run {step1.configFile.CLIPath}"
-                    Dim proc As New Process With {
-                        .StartInfo = New ProcessStartInfo With {
-                            .FileName = vc,
-                            .Arguments = args,
-                            .UseShellExecute = True,
-                            .CreateNoWindow = False,
-                            .RedirectStandardOutput = False,
-                            .RedirectStandardError = False
-                        }
-                    }
+                    Dim step3 = New FormCultureMedium().SetConfigAndModels(step2.config, step1.configFile, step2.modelList)
 
-                    Call proc.Start()
+                    If step3.ShowDialog = DialogResult.OK Then
+                        ' run the virtual cell simulation
+                        Dim vc As String = $"{App.HOME}/VirtualCell.exe"
+                        Dim args As String = $"--run {step1.configFile.CLIPath}"
+                        Dim proc As New Process With {
+                            .StartInfo = New ProcessStartInfo With {
+                                .FileName = vc,
+                                .Arguments = args,
+                                .UseShellExecute = True,
+                                .CreateNoWindow = False,
+                                .RedirectStandardOutput = False,
+                                .RedirectStandardError = False
+                            }
+                        }
+
+                        Call proc.Start()
+                    End If
                 End If
             End If
         End Sub
