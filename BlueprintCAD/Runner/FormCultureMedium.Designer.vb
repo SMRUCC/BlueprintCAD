@@ -158,8 +158,12 @@ Partial Class FormCultureMedium
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(ListBox1)
+        FormBorderStyle = FormBorderStyle.FixedDialog
+        MaximizeBox = False
+        MinimizeBox = False
         Name = "FormCultureMedium"
-        Text = "Form1"
+        StartPosition = FormStartPosition.CenterParent
+        Text = "Setup Culture Medium"
         ContextMenuStrip1.ResumeLayout(False)
         ContextMenuStrip2.ResumeLayout(False)
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
