@@ -24,6 +24,11 @@ Partial Class FormCellCopyNumber
     Private Sub InitializeComponent()
         Button1 = New Button()
         Button2 = New Button()
+        Label1 = New Label()
+        ListBox1 = New ListBox()
+        Label2 = New Label()
+        NumericUpDown1 = New NumericUpDown()
+        CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Button1
@@ -44,18 +49,64 @@ Partial Class FormCellCopyNumber
         Button2.Text = "Cancel"
         Button2.UseVisualStyleBackColor = True
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(57, 38)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(69, 15)
+        Label1.TabIndex = 2
+        Label1.Text = "Cell Clones:"
+        ' 
+        ' ListBox1
+        ' 
+        ListBox1.FormattingEnabled = True
+        ListBox1.ItemHeight = 15
+        ListBox1.Location = New Point(57, 77)
+        ListBox1.Name = "ListBox1"
+        ListBox1.Size = New Size(321, 259)
+        ListBox1.TabIndex = 3
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(443, 77)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(90, 15)
+        Label2.TabIndex = 4
+        Label2.Text = "Copy Numbers:"
+        ' 
+        ' NumericUpDown1
+        ' 
+        NumericUpDown1.Increment = New Decimal(New Integer() {100, 0, 0, 0})
+        NumericUpDown1.Location = New Point(443, 122)
+        NumericUpDown1.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+        NumericUpDown1.Name = "NumericUpDown1"
+        NumericUpDown1.Size = New Size(196, 23)
+        NumericUpDown1.TabIndex = 5
+        ' 
         ' FormCellCopyNumber
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(NumericUpDown1)
+        Controls.Add(Label2)
+        Controls.Add(ListBox1)
+        Controls.Add(Label1)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Name = "FormCellCopyNumber"
-        Text = "Form1"
+        Text = "Set Cell Copy Numbers"
+        CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents NumericUpDown1 As NumericUpDown
 End Class
