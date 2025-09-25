@@ -7,30 +7,19 @@ Imports VirtualCellHost
 
 Public Class FormKnockoutGenerator
 
-    Dim models As New Dictionary(Of String, VirtualCell)
-
-    Public ReadOnly Property config As Config
-    Public ReadOnly Property file As String
-
     ''' <summary>
     ''' current selected cell model
     ''' </summary>
     Dim cell As VirtualCell
+    Dim wizard As Wizard
 
-    Public ReadOnly Property modelList As VirtualCell()
-        Get
-            Return models.Values.ToArray
-        End Get
-    End Property
-
-    Public Function LoadModelFiles(files As IEnumerable(Of String)) As FormKnockoutGenerator
+    Private Function LoadModelFiles()
         Dim cell As VirtualCell
         Dim compounds_id As New List(Of String)
         Dim copy As New Dictionary(Of String, Integer)
 
-        For Each file As String In files
-            cell = file.LoadXml(Of VirtualCell)
-            models(cell.cellular_id) = cell
+        For Each file As ModelFile In wizard.models.Values
+            cell = file.model
             compounds_id.AddRange(cell.metabolismStructure.compounds.Keys)
             copy.Add(cell.cellular_id, 1000)
             ListBox1.Items.Add(cell)
@@ -40,18 +29,15 @@ Public Class FormKnockoutGenerator
             ListBox1.SelectedIndex = 0
         End If
 
-        If config IsNot Nothing Then
-            config.mapping = Definition.MetaCyc(compounds_id.Distinct, Double.NaN)
-            config.copy_number = copy
-        End If
+        wizard.config.mapping = Definition.MetaCyc(compounds_id.Distinct, Double.NaN)
+        wizard.config.copy_number = copy
 
         Return Me
     End Function
 
-    Public Function LoadConfig(file As String) As FormKnockoutGenerator
-        _file = file
-        _config = file.LoadJsonFile(Of Config)
-        _config.kinetics = New FluxBaseline
+    Public Function LoadWizard(wizard As Wizard) As FormKnockoutGenerator
+        Me.wizard = wizard
+        Me.LoadModelFiles()
 
         Return Me
     End Function
@@ -67,8 +53,8 @@ Public Class FormKnockoutGenerator
             Call knockouts.Add(DirectCast(ListBox4.Items(i), KnockoutGene).gene.locus_tag)
         Next
 
-        Me.config.knockouts = knockouts.Distinct.ToArray
-        Me.config.GetJson.SaveTo(Me.file)
+        wizard.config.knockouts = knockouts.Distinct.ToArray
+
         Me.DialogResult = DialogResult.OK
     End Sub
 
@@ -114,7 +100,7 @@ Public Class FormKnockoutGenerator
     End Sub
 
     Private Sub ViewMetabolicNetwork(gene As KnockoutGene)
-        Dim cell As VirtualCell = models(gene.genome)
+        Dim cell As VirtualCell = wizard.models(gene.genome).model
         Dim proteins As String() = gene.gene.protein_id
         Dim visited As New Index(Of String)
         Dim proteinList As protein() = proteins _

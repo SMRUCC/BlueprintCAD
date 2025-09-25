@@ -56,17 +56,15 @@ Namespace My
             Dim step1 As New FormConfigGenerator()
 
             If step1.ShowDialog() = DialogResult.OK Then
-                Dim step2 = New FormKnockoutGenerator() _
-                    .LoadConfig(step1.configFile) _
-                    .LoadModelFiles(step1.modelFiles)
+                Dim step2 = New FormKnockoutGenerator().LoadWizard(step1.wizardConfig)
 
                 If step2.ShowDialog = DialogResult.OK Then
-                    Dim step3 = New FormCultureMedium().SetConfigAndModels(step2.config, step1.configFile, step2.modelList)
+                    Dim step3 = New FormCultureMedium().SetConfigAndModels(step1.wizardConfig)
 
                     If step3.ShowDialog = DialogResult.OK Then
                         ' run the virtual cell simulation
                         Dim vc As String = $"{App.HOME}/VirtualCell.exe"
-                        Dim args As String = $"--run {step1.configFile.CLIPath}"
+                        Dim args As String = $"--run {step1.wizardConfig.configFile.CLIPath}"
                         Dim proc As New Process With {
                             .StartInfo = New ProcessStartInfo With {
                                 .FileName = vc,
@@ -78,6 +76,7 @@ Namespace My
                             }
                         }
 
+                        Call step1.wizardConfig.Save()
                         Call proc.Start()
                     End If
                 End If

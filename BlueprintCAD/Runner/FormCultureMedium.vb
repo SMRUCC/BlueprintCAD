@@ -1,27 +1,12 @@
 ﻿Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
-Imports Microsoft.VisualBasic.MIME.application.json
-Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
-Imports VirtualCellHost
 
 Public Class FormCultureMedium
 
-    Public ReadOnly Property config As Config
-    Public ReadOnly Property models As VirtualCell()
-    Public ReadOnly Property configfile As String
+    Dim wizard As Wizard
 
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="config"></param>
-    ''' <param name="models"></param>
-    ''' <returns></returns>
-    Public Function SetConfigAndModels(config As Config, configfile As String, models As VirtualCell()) As FormCultureMedium
-        _config = config
-        _models = models
-        _configfile = configfile
-
-        For Each compound As String In models.Select(Function(c) c.metabolismStructure.compounds).IteratesALL.Keys.Distinct
+    Public Function SetConfigAndModels(wizard As Wizard) As FormCultureMedium
+        For Each compound As String In wizard.models.Values.Select(Function(c) c.model.metabolismStructure.compounds).IteratesALL.Keys.Distinct
             Call ListBox1.Items.Add(compound)
         Next
 
@@ -39,8 +24,7 @@ Public Class FormCultureMedium
             data(compound.id) = compound.content
         Next
 
-        config.cultureMedium = data
-        config.GetJson.SaveTo(configfile)
+        wizard.config.cultureMedium = data
 
         Me.DialogResult = DialogResult.OK
     End Sub

@@ -1,10 +1,9 @@
-﻿Imports Microsoft.VisualBasic.Serialization.JSON
+﻿Imports SMRUCC.genomics.GCModeller.ModellingEngine.BootstrapLoader.Definitions
 Imports VirtualCellHost
 
 Public Class FormConfigGenerator
 
-    Friend modelFiles As String()
-    Friend configFile As String
+    Friend ReadOnly wizardConfig As New Wizard
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Using file As New OpenFileDialog With {
@@ -12,9 +11,9 @@ Public Class FormConfigGenerator
             .Filter = "Virtual Cell Model File(*.xml)|*.xml"
         }
             If file.ShowDialog = DialogResult.OK Then
-                modelFiles = file.FileNames
+                wizardConfig.SetModelFiles(file.FileNames)
                 ListBox1.Items.Clear()
-                ListBox1.Items.AddRange(modelFiles)
+                ListBox1.Items.AddRange(file.FileNames)
             End If
         End Using
     End Sub
@@ -24,14 +23,15 @@ Public Class FormConfigGenerator
             If file.ShowDialog = DialogResult.OK Then
                 Dim config As New Config With {
                     .debug = False,
-                    .models = modelFiles,
+                    .models = wizardConfig.GetModelFiles.ToArray,
                     .tqdm_progress = True,
                     .iterations = NumericUpDown1.Value,
-                    .resolution = NumericUpDown2.Value
+                    .resolution = NumericUpDown2.Value,
+                    .kinetics = New FluxBaseline
                 }
 
-                configFile = file.FileName
-                config.GetJson.SaveTo(file.FileName)
+                wizardConfig.configFile = file.FileName
+                wizardConfig.config = config
 
                 Me.DialogResult = DialogResult.OK
             End If
