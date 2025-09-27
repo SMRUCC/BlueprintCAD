@@ -62,22 +62,26 @@ Namespace My
                     Dim step3 = New FormCultureMedium().SetConfigAndModels(step1.wizardConfig)
 
                     If step3.ShowDialog = DialogResult.OK Then
-                        ' run the virtual cell simulation
-                        Dim vc As String = $"{App.HOME}/VirtualCell.exe"
-                        Dim args As String = $"--run {step1.wizardConfig.configFile.CLIPath}"
-                        Dim proc As New Process With {
-                            .StartInfo = New ProcessStartInfo With {
-                                .FileName = vc,
-                                .Arguments = args,
-                                .UseShellExecute = True,
-                                .CreateNoWindow = False,
-                                .RedirectStandardOutput = False,
-                                .RedirectStandardError = False
-                            }
-                        }
+                        Dim step4 = New FormCellCopyNumber().LoadConfig(step1.wizardConfig)
 
-                        Call step1.wizardConfig.Save()
-                        Call proc.Start()
+                        If step4.ShowDialog = DialogResult.OK Then
+                            ' run the virtual cell simulation
+                            Dim vc As String = $"{App.HOME}/VirtualCell.exe"
+                            Dim args As String = $"--run {step1.wizardConfig.configFile.CLIPath}"
+                            Dim proc As New Process With {
+                                .StartInfo = New ProcessStartInfo With {
+                                    .FileName = vc,
+                                    .Arguments = args,
+                                    .UseShellExecute = True,
+                                    .CreateNoWindow = False,
+                                    .RedirectStandardOutput = False,
+                                    .RedirectStandardError = False
+                                }
+                            }
+
+                            Call step1.wizardConfig.Save()
+                            Call proc.Start()
+                        End If
                     End If
                 End If
             End If
