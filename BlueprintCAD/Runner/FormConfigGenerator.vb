@@ -4,7 +4,7 @@ Imports VirtualCellHost
 
 Public Class FormConfigGenerator : Implements IDataContainer
 
-    Dim wizardConfig As New Wizard
+    Dim wizardConfig As Wizard
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         wizardConfig = DirectCast(data, Wizard)
