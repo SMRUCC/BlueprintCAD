@@ -1,4 +1,5 @@
-﻿Imports BlueprintCAD.RibbonLib.Controls
+﻿Imports System.Runtime.CompilerServices
+Imports BlueprintCAD.RibbonLib.Controls
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports RibbonLib.Controls.Events
@@ -61,23 +62,51 @@ Namespace My
                 .ThenDialog(Of FormCultureMedium)(wizardConfig) _
                 .ThenDialog(Of FormCellCopyNumber)(wizardConfig) _
                 .Finally(Sub()
-                             ' run the virtual cell simulation
-                             Dim vc As String = $"{App.HOME}/VirtualCell.exe"
-                             Dim args As String = $"--run {wizardConfig.configFile.CLIPath}"
-                             Dim proc As New Process With {
-                                .StartInfo = New ProcessStartInfo With {
-                                    .FileName = vc,
-                                    .Arguments = args,
-                                    .UseShellExecute = True,
-                                    .CreateNoWindow = False,
-                                    .RedirectStandardOutput = False,
-                                    .RedirectStandardError = False
-                                }
-                             }
-
-                             Call wizardConfig.Save()
-                             Call proc.Start()
+                             Call RunVirtualCell(wizardConfig)
                          End Sub)
+        End Sub
+
+        Private Shared Sub RunVirtualCell(wizardConfig As Wizard)
+            Using file As New SaveFileDialog With {
+                .Filter = "Virtual Cell Result File(*.vcellpack)|*.vcellpack"
+            }
+                If file.ShowDialog = DialogResult.OK Then
+                    ' run the virtual cell simulation
+                    Dim saveResult As String = file.FileName
+                    Dim vc As String = $"{App.HOME}/VirtualCell.exe"
+                    Dim tempfile As String = $"{wizardConfig.configFile.ParentPath}/run.vcelldata"
+                    Dim args As String = $"--run {wizardConfig.configFile.CLIPath} --output {tempfile.CLIPath}"
+                    Dim proc As New Process With {
+                       .StartInfo = New ProcessStartInfo With {
+                           .FileName = vc,
+                           .Arguments = args,
+                           .UseShellExecute = True,
+                           .CreateNoWindow = False,
+                           .RedirectStandardOutput = False,
+                           .RedirectStandardError = False
+                       }
+                    }
+
+                    Call wizardConfig.Save()
+                    Call proc.Start()
+                    Call proc.WaitForExit()
+
+                    ' --convert --data <result.vcelldata> [--output <output.vcellPack>]
+                    args = $"--convert --data {tempfile.CLIPath} --output {saveResult.CLIPath}"
+                    proc = New Process With {
+                       .StartInfo = New ProcessStartInfo With {
+                           .FileName = vc,
+                           .Arguments = args,
+                           .UseShellExecute = True,
+                           .CreateNoWindow = False,
+                           .RedirectStandardOutput = False,
+                           .RedirectStandardError = False
+                       }
+                    }
+
+                    Call proc.Start()
+                End If
+            End Using
         End Sub
     End Class
 End Namespace

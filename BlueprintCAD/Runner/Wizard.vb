@@ -8,6 +8,9 @@ Public Class Wizard
     Public Property config As Config
     Public Property configFile As String
 
+    ''' <summary>
+    ''' save config data to config file location
+    ''' </summary>
     Public Sub Save()
         Call config.GetJson.SaveTo(configFile)
     End Sub
