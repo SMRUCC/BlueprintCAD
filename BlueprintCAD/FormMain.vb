@@ -1,9 +1,10 @@
 ﻿Imports BlueprintCAD.My
 Imports BlueprintCAD.RibbonLib.Controls
+Imports Galaxy.Workbench
 Imports RibbonLib
 Imports WeifenLuo.WinFormsUI.Docking
 
-Public Class FormMain
+Public Class FormMain : Implements AppHost
 
     Friend WithEvents m_dockPanel As New DockPanel
     Friend WithEvents m_ribbon As New Ribbon
@@ -13,6 +14,8 @@ Public Class FormMain
     Dim vsToolStripExtender1 As New VisualStudioToolStripExtender
 
     ReadOnly _toolStripProfessionalRenderer As New ToolStripProfessionalRenderer()
+
+    Public Event ResizeForm As AppHost.ResizeFormEventHandler Implements AppHost.ResizeForm
 
     Public ReadOnly Property DockPanel As DockPanel
         Get
@@ -66,4 +69,12 @@ Public Class FormMain
         Call initializeVSPanel()
         Call MyApplication.SetRibbonEvents()
     End Sub
+
+    Public Function GetDesktopLocation() As Point Implements AppHost.GetDesktopLocation
+        Return Location
+    End Function
+
+    Public Function GetClientSize() As Size Implements AppHost.GetClientSize
+        Return Size
+    End Function
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
+Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports RibbonLib.Controls.Events
 
@@ -53,6 +54,13 @@ Namespace My
         End Sub
 
         Public Shared Sub RunVirtualCell(sender As Object, e As ExecuteEventArgs)
+            Dim wizard As New Wizard
+
+            Call InputDialog.OpenDialog(Of FormConfigGenerator)(wizard) _
+                .ThenDialog(Of FormKnockoutGenerator)(wizard) _
+                .ThenDialog(Of FormCultureMedium)(wizard) _
+                .ThenDialog(Of FormCellCopyNumber)(wizard)
+
             Dim step1 As New FormConfigGenerator()
 
             If step1.ShowDialog() = DialogResult.OK Then
