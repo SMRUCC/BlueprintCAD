@@ -1,16 +1,26 @@
-﻿Imports Microsoft.VisualBasic.ComponentModel.Collection
+﻿Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
 
-Public Class FormCultureMedium
+Public Class FormCultureMedium : Implements IDataContainer
 
-    Dim wizard As Wizard
+    Dim wizardConfig As New Wizard
 
-    Public Function SetConfigAndModels(wizard As Wizard) As FormCultureMedium
-        For Each compound As String In wizard.models.Values.Select(Function(c) c.model.metabolismStructure.compounds).IteratesALL.Keys.Distinct
+    Public Sub SetData(data As Object) Implements IDataContainer.SetData
+        wizardConfig = DirectCast(data, Wizard)
+
+        For Each compound As String In wizardConfig.models.Values _
+            .Select(Function(c) c.model.metabolismStructure.compounds) _
+            .IteratesALL _
+            .Keys _
+            .Distinct
+
             Call ListBox1.Items.Add(compound)
         Next
+    End Sub
 
-        Return Me
+    Public Function GetData() As Object Implements IDataContainer.GetData
+        Return wizardConfig
     End Function
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -24,7 +34,7 @@ Public Class FormCultureMedium
             data(compound.id) = compound.content
         Next
 
-        wizard.config.cultureMedium = data
+        wizardConfig.config.cultureMedium = data
 
         Me.DialogResult = DialogResult.OK
     End Sub

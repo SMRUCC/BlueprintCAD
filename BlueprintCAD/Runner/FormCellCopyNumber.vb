@@ -1,20 +1,22 @@
-﻿Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
+﻿Imports Galaxy.Workbench
 
-Public Class FormCellCopyNumber
+Public Class FormCellCopyNumber : Implements IDataContainer
 
-    Dim wizard As Wizard
     Dim copyNum As New Dictionary(Of String, Integer)
     Dim model As String
+    Dim wizardConfig As New Wizard
 
-    Public Function LoadConfig(wizard As Wizard) As FormCellCopyNumber
-        Me.wizard = wizard
+    Public Sub SetData(data As Object) Implements IDataContainer.SetData
+        wizardConfig = DirectCast(data, Wizard)
 
-        For Each model As String In wizard.models.Keys
+        For Each model As String In wizardConfig.models.Keys
             Call ListBox1.Items.Add(model)
             Call copyNum.Add(model, 1000)
         Next
+    End Sub
 
-        Return Me
+    Public Function GetData() As Object Implements IDataContainer.GetData
+        Return wizardConfig
     End Function
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -22,7 +24,7 @@ Public Class FormCellCopyNumber
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        wizard.config.copy_number = copyNum
+        wizardConfig.config.copy_number = copyNum
 
         Me.DialogResult = DialogResult.OK
     End Sub

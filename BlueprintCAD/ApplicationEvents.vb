@@ -54,29 +54,17 @@ Namespace My
         End Sub
 
         Public Shared Sub RunVirtualCell(sender As Object, e As ExecuteEventArgs)
-            Dim wizard As New Wizard
+            Dim wizardConfig As New Wizard
 
-            Call InputDialog.OpenDialog(Of FormConfigGenerator)(wizard) _
-                .ThenDialog(Of FormKnockoutGenerator)(wizard) _
-                .ThenDialog(Of FormCultureMedium)(wizard) _
-                .ThenDialog(Of FormCellCopyNumber)(wizard)
-
-            Dim step1 As New FormConfigGenerator()
-
-            If step1.ShowDialog() = DialogResult.OK Then
-                Dim step2 = New FormKnockoutGenerator().LoadWizard(step1.wizardConfig)
-
-                If step2.ShowDialog = DialogResult.OK Then
-                    Dim step3 = New FormCultureMedium().SetConfigAndModels(step1.wizardConfig)
-
-                    If step3.ShowDialog = DialogResult.OK Then
-                        Dim step4 = New FormCellCopyNumber().LoadConfig(step1.wizardConfig)
-
-                        If step4.ShowDialog = DialogResult.OK Then
-                            ' run the virtual cell simulation
-                            Dim vc As String = $"{App.HOME}/VirtualCell.exe"
-                            Dim args As String = $"--run {step1.wizardConfig.configFile.CLIPath}"
-                            Dim proc As New Process With {
+            Call InputDialog.OpenDialog(Of FormConfigGenerator)(wizardConfig) _
+                .ThenDialog(Of FormKnockoutGenerator)(wizardConfig) _
+                .ThenDialog(Of FormCultureMedium)(wizardConfig) _
+                .ThenDialog(Of FormCellCopyNumber)(wizardConfig) _
+                .Finally(Sub()
+                             ' run the virtual cell simulation
+                             Dim vc As String = $"{App.HOME}/VirtualCell.exe"
+                             Dim args As String = $"--run {wizardConfig.configFile.CLIPath}"
+                             Dim proc As New Process With {
                                 .StartInfo = New ProcessStartInfo With {
                                     .FileName = vc,
                                     .Arguments = args,
@@ -85,14 +73,11 @@ Namespace My
                                     .RedirectStandardOutput = False,
                                     .RedirectStandardError = False
                                 }
-                            }
+                             }
 
-                            Call step1.wizardConfig.Save()
-                            Call proc.Start()
-                        End If
-                    End If
-                End If
-            End If
+                             Call wizardConfig.Save()
+                             Call proc.Start()
+                         End Sub)
         End Sub
     End Class
 End Namespace

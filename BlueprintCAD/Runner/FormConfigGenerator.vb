@@ -1,9 +1,18 @@
-﻿Imports SMRUCC.genomics.GCModeller.ModellingEngine.BootstrapLoader.Definitions
+﻿Imports Galaxy.Workbench
+Imports SMRUCC.genomics.GCModeller.ModellingEngine.BootstrapLoader.Definitions
 Imports VirtualCellHost
 
-Public Class FormConfigGenerator
+Public Class FormConfigGenerator : Implements IDataContainer
 
-    Friend ReadOnly wizardConfig As New Wizard
+    Dim wizardConfig As New Wizard
+
+    Public Sub SetData(data As Object) Implements IDataContainer.SetData
+        wizardConfig = DirectCast(data, Wizard)
+    End Sub
+
+    Public Function GetData() As Object Implements IDataContainer.GetData
+        Return wizardConfig
+    End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Using file As New OpenFileDialog With {
