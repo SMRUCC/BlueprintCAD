@@ -38,8 +38,8 @@ Partial Class FormKnockoutGenerator
         ListBox3 = New ListBox()
         Label4 = New Label()
         GroupBox1 = New GroupBox()
-        RichTextBox1 = New RichTextBox()
         Label5 = New Label()
+        RichTextBox1 = New RichTextBox()
         ContextMenuStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
         SuspendLayout()
@@ -165,16 +165,6 @@ Partial Class FormKnockoutGenerator
         GroupBox1.TabStop = False
         GroupBox1.Text = "Add Genes To Knockout"
         ' 
-        ' RichTextBox1
-        ' 
-        RichTextBox1.BorderStyle = BorderStyle.FixedSingle
-        RichTextBox1.Location = New Point(9, 402)
-        RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.ReadOnly = True
-        RichTextBox1.Size = New Size(826, 198)
-        RichTextBox1.TabIndex = 12
-        RichTextBox1.Text = ""
-        ' 
         ' Label5
         ' 
         Label5.AutoSize = True
@@ -183,6 +173,17 @@ Partial Class FormKnockoutGenerator
         Label5.Size = New Size(31, 15)
         Label5.TabIndex = 11
         Label5.Text = ">>>"
+        ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.BackColor = Color.White
+        RichTextBox1.BorderStyle = BorderStyle.None
+        RichTextBox1.Location = New Point(9, 402)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.ReadOnly = True
+        RichTextBox1.Size = New Size(826, 198)
+        RichTextBox1.TabIndex = 12
+        RichTextBox1.Text = ""
         ' 
         ' FormKnockoutGenerator
         ' 

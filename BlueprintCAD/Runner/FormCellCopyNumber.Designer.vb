@@ -94,7 +94,8 @@ Partial Class FormCellCopyNumber
         ' 
         ' RichTextBox1
         ' 
-        RichTextBox1.BorderStyle = BorderStyle.FixedSingle
+        RichTextBox1.BackColor = Color.White
+        RichTextBox1.BorderStyle = BorderStyle.None
         RichTextBox1.Location = New Point(448, 21)
         RichTextBox1.Name = "RichTextBox1"
         RichTextBox1.ReadOnly = True
