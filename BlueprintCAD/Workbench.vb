@@ -1,10 +1,15 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
+Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Drawing
 Imports WeifenLuo.WinFormsUI.Docking
 
 Public Module Workbench
 
     Public ReadOnly Property AppHost As FormMain
+        Get
+            Return DirectCast(CommonRuntime.AppHost, FormMain)
+        End Get
+    End Property
 
     Friend ReadOnly Property Ribbon As RibbonItems
         Get
@@ -17,7 +22,7 @@ Public Module Workbench
     End Sub
 
     Public Sub SetHost(appHost As FormMain)
-        _AppHost = appHost
+        CommonRuntime.Hook(appHost)
     End Sub
 
     Friend Sub LogText(v As String)
