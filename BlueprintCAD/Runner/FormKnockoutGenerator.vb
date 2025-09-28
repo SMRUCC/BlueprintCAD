@@ -139,6 +139,18 @@ Public Class FormKnockoutGenerator : Implements IDataContainer
 
         Call ListBox4.Items.Add(gene)
     End Sub
+
+    Private Sub FormKnockoutGenerator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RichTextBox1.Rtf = "{\rtf1\ansi\ansicpg936\deff0\nouicompat\deflang1033\deflangfe2052{\fonttbl{\f0\fnil\fcharset0 Cambria;}}
+{\colortbl ;\red0\green77\blue187;}
+{\*\generator Riched20 10.0.20348}\viewkind4\uc1 
+\pard 
+{\pntext\f0 I.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pnucrm{\pntxta.}}
+\fi-360\li720\sa200\sl276\slmult1\f0\fs22\lang9 First, \cf1\b select the target genome model\cf0\b0 . The program will then display a list of all genes in the selected genome. \par
+{\pntext\f0 II.\tab}Click on a specific gene, and the affected biochemical reaction network will be listed below to assist in the preliminary assessment of the gene knockout effect. \par
+{\pntext\f0 III.\tab}After selecting a gene, use the ""\cf1\b Add to Gene Knockout List\cf0\b0 "" option from the right-click context menu to add the selected gene to the knockout list for subsequent modification of the virtual cell model.\par
+}"
+    End Sub
 End Class
 
 Public Class KnockoutGene

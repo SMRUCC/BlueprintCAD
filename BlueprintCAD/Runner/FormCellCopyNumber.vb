@@ -46,4 +46,12 @@ Public Class FormCellCopyNumber : Implements IDataContainer
             copyNum(model) = NumericUpDown1.Value
         End If
     End Sub
+
+    Private Sub FormCellCopyNumber_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RichTextBox1.Rtf = "{\rtf1\ansi\ansicpg936\deff0\nouicompat\deflang1033\deflangfe2052{\fonttbl{\f0\fnil\fcharset0 Cambria;}}
+{\colortbl ;\red0\green77\blue187;}
+{\*\generator Riched20 10.0.20348}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs22\lang9 Copy number\cf1\u8203? \b0 refers to the quantity of a specific gene, plasmid, or genomic region present within a single cell's genome . \ul It is a fundamental concept in genetics and molecular biology, describing how many copies of a particular DNA sequence exist.\par
+}"
+    End Sub
 End Class

@@ -33,13 +33,15 @@ Partial Class FormConfigGenerator
         NumericUpDown1 = New NumericUpDown()
         Label3 = New Label()
         NumericUpDown2 = New NumericUpDown()
+        GroupBox1 = New GroupBox()
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown2, ComponentModel.ISupportInitialize).BeginInit()
+        GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(511, 42)
+        Button1.Location = New Point(455, 45)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 0
@@ -50,14 +52,14 @@ Partial Class FormConfigGenerator
         ' 
         ListBox1.FormattingEnabled = True
         ListBox1.ItemHeight = 15
-        ListBox1.Location = New Point(45, 42)
+        ListBox1.Location = New Point(10, 45)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(449, 94)
+        ListBox1.Size = New Size(439, 94)
         ListBox1.TabIndex = 1
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(511, 298)
+        Button2.Location = New Point(464, 234)
         Button2.Name = "Button2"
         Button2.Size = New Size(75, 23)
         Button2.TabIndex = 2
@@ -66,7 +68,7 @@ Partial Class FormConfigGenerator
         ' 
         ' Button3
         ' 
-        Button3.Location = New Point(419, 298)
+        Button3.Location = New Point(383, 234)
         Button3.Name = "Button3"
         Button3.Size = New Size(75, 23)
         Button3.TabIndex = 3
@@ -76,7 +78,7 @@ Partial Class FormConfigGenerator
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(45, 22)
+        Label1.Location = New Point(6, 24)
         Label1.Name = "Label1"
         Label1.Size = New Size(113, 15)
         Label1.TabIndex = 4
@@ -85,7 +87,7 @@ Partial Class FormConfigGenerator
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(45, 173)
+        Label2.Location = New Point(26, 153)
         Label2.Name = "Label2"
         Label2.Size = New Size(88, 15)
         Label2.TabIndex = 5
@@ -94,7 +96,7 @@ Partial Class FormConfigGenerator
         ' NumericUpDown1
         ' 
         NumericUpDown1.Increment = New Decimal(New Integer() {50, 0, 0, 0})
-        NumericUpDown1.Location = New Point(139, 171)
+        NumericUpDown1.Location = New Point(120, 151)
         NumericUpDown1.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         NumericUpDown1.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
         NumericUpDown1.Name = "NumericUpDown1"
@@ -105,7 +107,7 @@ Partial Class FormConfigGenerator
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(67, 218)
+        Label3.Location = New Point(48, 184)
         Label3.Name = "Label3"
         Label3.Size = New Size(66, 15)
         Label3.TabIndex = 7
@@ -114,7 +116,7 @@ Partial Class FormConfigGenerator
         ' NumericUpDown2
         ' 
         NumericUpDown2.Increment = New Decimal(New Integer() {50, 0, 0, 0})
-        NumericUpDown2.Location = New Point(139, 216)
+        NumericUpDown2.Location = New Point(120, 182)
         NumericUpDown2.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         NumericUpDown2.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
         NumericUpDown2.Name = "NumericUpDown2"
@@ -122,30 +124,38 @@ Partial Class FormConfigGenerator
         NumericUpDown2.TabIndex = 8
         NumericUpDown2.Value = New Decimal(New Integer() {100, 0, 0, 0})
         ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(ListBox1)
+        GroupBox1.Controls.Add(NumericUpDown2)
+        GroupBox1.Controls.Add(Button1)
+        GroupBox1.Controls.Add(Label3)
+        GroupBox1.Controls.Add(Label1)
+        GroupBox1.Controls.Add(NumericUpDown1)
+        GroupBox1.Controls.Add(Label2)
+        GroupBox1.Location = New Point(9, 9)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(541, 219)
+        GroupBox1.TabIndex = 9
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Basic Experiment Setup"
+        ' 
         ' FormConfigGenerator
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(605, 337)
-        Controls.Add(NumericUpDown2)
-        Controls.Add(Label3)
-        Controls.Add(NumericUpDown1)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
+        ClientSize = New Size(572, 268)
+        Controls.Add(GroupBox1)
         Controls.Add(Button3)
         Controls.Add(Button2)
-        Controls.Add(ListBox1)
-        Controls.Add(Button1)
         FormBorderStyle = FormBorderStyle.FixedDialog
-        MaximizeBox = False
-        MinimizeBox = False
         Name = "FormConfigGenerator"
-        StartPosition = FormStartPosition.CenterParent
         Text = "Runner Wizard"
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown2, ComponentModel.ISupportInitialize).EndInit()
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents Button1 As Button
@@ -157,4 +167,5 @@ Partial Class FormConfigGenerator
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label3 As Label
     Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
