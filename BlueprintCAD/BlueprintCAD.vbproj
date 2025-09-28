@@ -56,6 +56,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\cell-farm\src\VirtualCell\VirtualCell.vbproj" />
+    <ProjectReference Include="..\..\galaxy\src\GalaxyData\GalaxyData.vbproj" />
     <ProjectReference Include="..\..\galaxy\src\GalaxyWorkbench\GalaxyWorkbench.vbproj" />
     <ProjectReference Include="..\..\GCModeller\src\GCModeller\analysis\HTS_matrix\HTS_matrix-netcore5.vbproj" />
     <ProjectReference Include="..\..\GCModeller\src\GCModeller\core\Bio.Assembly\biocore-netcore5.vbproj" />
@@ -89,9 +90,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="JsonViewer">
-      <HintPath>..\dist\JsonViewer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.Windows.Form">
       <HintPath>..\dist\dockpanelsuite\Microsoft.VisualStudio.Windows.Form.dll</HintPath>
     </Reference>

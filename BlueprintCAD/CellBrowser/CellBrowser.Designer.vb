@@ -1,4 +1,5 @@
-﻿Imports Zuby.ADGV
+﻿Imports Galaxy.Data.JSON
+Imports Zuby.ADGV
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CellBrowser : Inherits DocumentWindow
@@ -56,7 +57,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage2 = New TabPage()
         DataGridView2 = New DataGridView()
         TabPage3 = New TabPage()
-        TextBox1 = New JsonViewer.JsonViewer()
+        TextBox1 = New JsonViewer()
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
@@ -489,7 +490,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents UnCheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CheckAllToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents TextBox1 As JsonViewer.JsonViewer
+    Friend WithEvents TextBox1 As JsonViewer
     Friend WithEvents ToolStrip1 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
