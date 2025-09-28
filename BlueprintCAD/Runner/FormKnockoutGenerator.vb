@@ -57,14 +57,68 @@ selecting 【No】 will perform the knockout experiment on the original model.",
                            MessageBoxButtons.YesNo,
                            MessageBoxIcon.Information) = DialogResult.Yes Then
 
+            ' create mutant for each gene knockout
+            Dim newModels As Dictionary(Of String, ModelFile) = wizardConfig.models
+
+            For i As Integer = 0 To ListBox4.Items.Count - 1
+                Dim knockout = DirectCast(ListBox4.Items(i), KnockoutGene)
+                Dim modelFile As ModelFile = wizardConfig.models(knockout.genome)
+                Dim model As VirtualCell = modelFile.model
+                Dim knockout_id As String = $"{model.cellular_id}-{knockout.gene.locus_tag}"
+                Dim saveModel As String = $"{modelFile.filepath.ParentPath}/knockouts/{knockout_id}.xml"
+
+                model = New VirtualCell With {
+                    .cellular_id = knockout_id,
+                    .taxonomy = model.taxonomy,
+                    .properties = model.properties,
+                    .metabolismStructure = model.metabolismStructure,
+                    .genome = New Genome With {
+                        .proteins = model.genome.proteins,
+                        .regulations = model.genome.regulations,
+                        .replicons = model.genome.replicons _
+                            .Select(Function(rep)
+                                        Return New replicon With {
+                                            .genomeName = rep.genomeName & $"-{knockout.gene.locus_tag}",
+                                            .isPlasmid = rep.isPlasmid,
+                                            .RNAs = rep.RNAs _
+                                                .Where(Function(r) r.gene <> knockout.gene.locus_tag) _
+                                                .ToArray,
+                                            .operons = rep.operons _
+                                                .Select(Function(o)
+                                                            Return New TranscriptUnit With {
+                                                                .id = o.id,
+                                                                .name = o.name,
+                                                                .note = o.note,
+                                                                .sites = o.sites,
+                                                                .genes = o.genes.Where(Function(g) g.locus_tag <> knockout.gene.locus_tag).ToArray
+                                                            }
+                                                        End Function) _
+                                                .ToArray
+                                        }
+                                    End Function) _
+                            .ToArray
+                    }
+                }
+
+                Call model.GetXml.SaveTo(saveModel)
+                Call newModels.Add(knockout_id, New ModelFile With {
+                    .model = model,
+                    .filepath = saveModel
+                })
+            Next
+
+            wizardConfig.config.models = newModels.Values _
+                .Select(Function(c) c.filepath) _
+                .ToArray
+        Else
+            Dim knockouts As New List(Of String)
+
+            For i As Integer = 0 To ListBox4.Items.Count - 1
+                Call knockouts.Add(DirectCast(ListBox4.Items(i), KnockoutGene).gene.locus_tag)
+            Next
+
+            wizardConfig.config.knockouts = knockouts.Distinct.ToArray
         End If
-        Dim knockouts As New List(Of String)
-
-        For i As Integer = 0 To ListBox4.Items.Count - 1
-            Call knockouts.Add(DirectCast(ListBox4.Items(i), KnockoutGene).gene.locus_tag)
-        Next
-
-        wizardConfig.config.knockouts = knockouts.Distinct.ToArray
 
         Me.DialogResult = DialogResult.OK
     End Sub
