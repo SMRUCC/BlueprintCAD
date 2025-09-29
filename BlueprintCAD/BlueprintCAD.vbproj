@@ -11,6 +11,8 @@
     <Platforms>AnyCPU;x64</Platforms>
     <UseWPF>True</UseWPF>
     <ImportedNamespaces>System.Data=False,System.Drawing=False,System.Windows.Forms=False,System.Xaml=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,BlueprintCAD=True</ImportedNamespaces>
+    <AssemblyName>Sophia</AssemblyName>
+    <Title>Sophia VirtualCell Workshop</Title>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows|AnyCPU'">
