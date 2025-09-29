@@ -21,6 +21,8 @@ Public Class FormConsoleHost
             With commandQueue.Dequeue
                 Call console.StartProcess(.cmdl, .args)
             End With
+        Else
+
         End If
     End Sub
 
