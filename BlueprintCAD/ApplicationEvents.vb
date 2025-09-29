@@ -75,36 +75,16 @@ Namespace My
                     Dim saveResult As String = file.FileName
                     Dim vc As String = $"{App.HOME}/VirtualCell.exe"
                     Dim tempfile As String = $"{wizardConfig.configFile.ParentPath}/run.vcelldata"
-                    Dim args As String = $"--run {wizardConfig.configFile.CLIPath} --output {tempfile.CLIPath}"
-                    Dim proc As New Process With {
-                       .StartInfo = New ProcessStartInfo With {
-                           .FileName = vc,
-                           .Arguments = args,
-                           .UseShellExecute = True,
-                           .CreateNoWindow = False,
-                           .RedirectStandardOutput = False,
-                           .RedirectStandardError = False
-                       }
-                    }
+                    Dim args As String = $"--run {wizardConfig.configFile.CLIPath} --output {tempfile.CLIPath} /@set tqdm=false"
+                    Dim proc As FormConsoleHost = Workbench.OpenDocument(Of FormConsoleHost)("Run Virtual Cell Experiment")
 
                     Call wizardConfig.Save()
-                    Call proc.Start()
-                    Call proc.WaitForExit()
+                    Call proc.Run(vc, args)
 
                     ' --convert --data <result.vcelldata> [--output <output.vcellPack>]
-                    args = $"--convert --data {tempfile.CLIPath} --output {saveResult.CLIPath}"
-                    proc = New Process With {
-                       .StartInfo = New ProcessStartInfo With {
-                           .FileName = vc,
-                           .Arguments = args,
-                           .UseShellExecute = True,
-                           .CreateNoWindow = False,
-                           .RedirectStandardOutput = False,
-                           .RedirectStandardError = False
-                       }
-                    }
+                    args = $"--convert --data {tempfile.CLIPath} --output {saveResult.CLIPath} /@set tqdm=false"
 
-                    Call proc.Start()
+                    Call proc.Run(vc, args)
                 End If
             End Using
         End Sub
