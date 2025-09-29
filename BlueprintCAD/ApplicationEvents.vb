@@ -84,7 +84,7 @@ Namespace My
                     ' --convert --data <result.vcelldata> [--output <output.vcellPack>]
                     args = $"--convert --data {tempfile.CLIPath} --output {saveResult.CLIPath} /@set tqdm=false"
 
-                    Call proc.Run(vc, args)
+                    Call proc.NextCommand(vc, args)
                 End If
             End Using
         End Sub
