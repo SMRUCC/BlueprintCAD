@@ -99,6 +99,32 @@
       </Command.LargeImages>
     </Command>
     <Command Name="cmdListRecentItems" Comment="Recent Items" Id="22" LabelTitle="Recent Items" LabelDescription="Recent Items" TooltipTitle="Recent Items" TooltipDescription="Recent Items" Keytip="Recent Items" />
+    <Command Name="cmdGroupTools" Comment="Tools" Id="23" LabelTitle="Tools" LabelDescription="Tools" TooltipTitle="Tools" TooltipDescription="Tools" Keytip="Tools" />
+    <Command Name="cmdButtonEditCultureMedium" Comment="Edit the preset profile of the culture medium." Id="24" LabelTitle="Edit Culture Medium" LabelDescription="Edit the preset profile of the culture medium." TooltipTitle="Edit the preset profile of the culture medium." TooltipDescription="Edit the preset profile of the culture medium." Keytip="Edit the preset profile of the culture medium.">
+      <Command.SmallImages>
+        <Image MinDPI="192">Resources/icons8-map-as-drive-96.png</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image MinDPI="192">Resources/icons8-map-as-drive-96.png</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="cmdGroupModelling" Comment="Virtual cell modelling" Id="25" LabelTitle="Modelling" LabelDescription="Virtual cell modelling" TooltipTitle="Virtual cell modelling" TooltipDescription="Virtual cell modelling" Keytip="Virtual cell modelling" />
+    <Command Name="cmdButtonIDAnnotation" Comment="Make cell component id annotation via blastp alignment with the local database." Id="26" LabelTitle="ID Annotation" LabelDescription="Make cell component id annotation via blastp alignment with the local database." TooltipTitle="Make cell component id annotation via blastp alignment with the local database." TooltipDescription="Make cell component id annotation via blastp alignment with the local database." Keytip="Make cell component id annotation via blastp alignment with the local database.">
+      <Command.SmallImages>
+        <Image MinDPI="192">Resources/icons8-candlestick-chart-96.png</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image MinDPI="192">Resources/icons8-candlestick-chart-96.png</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="cmdButtonInspectCellModel" Comment="Inspect the virtual cell network model" Id="27" LabelTitle="Inspect Cell Model" LabelDescription="Inspect the virtual cell network model" TooltipTitle="Inspect the virtual cell network model" TooltipDescription="Inspect the virtual cell network model" Keytip="Inspect the virtual cell network model">
+      <Command.SmallImages>
+        <Image MinDPI="192">Resources/icons8-done-144.png</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image MinDPI="192">Resources/icons8-done-144.png</Image>
+      </Command.LargeImages>
+    </Command>
   </Application.Commands>
   <Application.Views>
     <Ribbon Name="Sophia VirtualCell Workshop">
@@ -145,8 +171,15 @@
       </Ribbon.ContextualTabs>
       <Ribbon.Tabs>
         <Tab CommandName="cmdMenuWorkbench">
-          <Group CommandName="cmdTabWorkbench" SizeDefinition="OneButton">
+          <Group CommandName="cmdTabWorkbench" SizeDefinition="TwoButtons">
             <Button CommandName="cmdButtonRun" />
+            <Button CommandName="cmdButtonInspectCellModel" />
+          </Group>
+          <Group CommandName="cmdGroupTools" SizeDefinition="OneButton">
+            <Button CommandName="cmdButtonEditCultureMedium" />
+          </Group>
+          <Group CommandName="cmdGroupModelling" SizeDefinition="OneButton">
+            <Button CommandName="cmdButtonIDAnnotation" />
           </Group>
         </Tab>
       </Ribbon.Tabs>

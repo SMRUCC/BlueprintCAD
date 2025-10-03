@@ -36,6 +36,11 @@ Namespace RibbonLib.Controls
             Public Const cmdCheckPlotLogScale As UInteger = 15
             Public Const cmdMenuWorkbench As UInteger = 19
             Public Const cmdTabWorkbench As UInteger = 20
+            Public Const cmdButtonInspectCellModel As UInteger = 27
+            Public Const cmdGroupTools As UInteger = 23
+            Public Const cmdButtonEditCultureMedium As UInteger = 24
+            Public Const cmdGroupModelling As UInteger = 25
+            Public Const cmdButtonIDAnnotation As UInteger = 26
         End Class
 
         ' ContextPopup CommandName
@@ -217,6 +222,51 @@ Namespace RibbonLib.Controls
                 Return _TabWorkbench
             End Get
         End Property
+        Private _ButtonInspectCellModel As RibbonButton
+        ''' <summary>
+        ''' Inspect the virtual cell network model
+        ''' </summary>
+        Public ReadOnly Property ButtonInspectCellModel As RibbonButton
+            Get
+                Return _ButtonInspectCellModel
+            End Get
+        End Property
+        Private _GroupTools As RibbonGroup
+        ''' <summary>
+        ''' Tools
+        ''' </summary>
+        Public ReadOnly Property GroupTools As RibbonGroup
+            Get
+                Return _GroupTools
+            End Get
+        End Property
+        Private _ButtonEditCultureMedium As RibbonButton
+        ''' <summary>
+        ''' Edit the preset profile of the culture medium.
+        ''' </summary>
+        Public ReadOnly Property ButtonEditCultureMedium As RibbonButton
+            Get
+                Return _ButtonEditCultureMedium
+            End Get
+        End Property
+        Private _GroupModelling As RibbonGroup
+        ''' <summary>
+        ''' Virtual cell modelling
+        ''' </summary>
+        Public ReadOnly Property GroupModelling As RibbonGroup
+            Get
+                Return _GroupModelling
+            End Get
+        End Property
+        Private _ButtonIDAnnotation As RibbonButton
+        ''' <summary>
+        ''' Make cell component id annotation via blastp alignment with the local database.
+        ''' </summary>
+        Public ReadOnly Property ButtonIDAnnotation As RibbonButton
+            Get
+                Return _ButtonIDAnnotation
+            End Get
+        End Property
 
         Public Sub New(ByVal ribbon As Ribbon)
             If ribbon Is Nothing Then
@@ -244,6 +294,11 @@ Namespace RibbonLib.Controls
             _CheckPlotLogScale = New RibbonCheckBox(_ribbon, Cmd.cmdCheckPlotLogScale)
             _MenuWorkbench = New RibbonTab(_ribbon, Cmd.cmdMenuWorkbench)
             _TabWorkbench = New RibbonGroup(_ribbon, Cmd.cmdTabWorkbench)
+            _ButtonInspectCellModel = New RibbonButton(_ribbon, Cmd.cmdButtonInspectCellModel)
+            _GroupTools = New RibbonGroup(_ribbon, Cmd.cmdGroupTools)
+            _ButtonEditCultureMedium = New RibbonButton(_ribbon, Cmd.cmdButtonEditCultureMedium)
+            _GroupModelling = New RibbonGroup(_ribbon, Cmd.cmdGroupModelling)
+            _ButtonIDAnnotation = New RibbonButton(_ribbon, Cmd.cmdButtonIDAnnotation)
         End Sub
 
     End Class

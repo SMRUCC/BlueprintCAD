@@ -109,4 +109,40 @@
 #define cmdListRecentItems_Keytip_RESID 60081
 #define cmdListRecentItems_TooltipTitle_RESID 60082
 #define cmdListRecentItems_TooltipDescription_RESID 60083
-#define InternalCmd2_LabelTitle_RESID 60084
+#define cmdGroupTools 23  /* Tools */ 
+#define cmdGroupTools_LabelTitle_RESID 60084
+#define cmdGroupTools_LabelDescription_RESID 60085
+#define cmdGroupTools_Keytip_RESID 60086
+#define cmdGroupTools_TooltipTitle_RESID 60087
+#define cmdGroupTools_TooltipDescription_RESID 60088
+#define cmdButtonEditCultureMedium 24  /* Edit the preset profile of the culture medium. */ 
+#define cmdButtonEditCultureMedium_LabelTitle_RESID 60089
+#define cmdButtonEditCultureMedium_LabelDescription_RESID 60090
+#define cmdButtonEditCultureMedium_Keytip_RESID 60091
+#define cmdButtonEditCultureMedium_TooltipTitle_RESID 60092
+#define cmdButtonEditCultureMedium_TooltipDescription_RESID 60093
+#define cmdButtonEditCultureMedium_SmallImages_192__RESID 60094
+#define cmdButtonEditCultureMedium_LargeImages_192__RESID 60095
+#define cmdGroupModelling 25  /* Virtual cell modelling */ 
+#define cmdGroupModelling_LabelTitle_RESID 60096
+#define cmdGroupModelling_LabelDescription_RESID 60097
+#define cmdGroupModelling_Keytip_RESID 60098
+#define cmdGroupModelling_TooltipTitle_RESID 60099
+#define cmdGroupModelling_TooltipDescription_RESID 60100
+#define cmdButtonIDAnnotation 26  /* Make cell component id annotation via blastp alignment with the local database. */ 
+#define cmdButtonIDAnnotation_LabelTitle_RESID 60101
+#define cmdButtonIDAnnotation_LabelDescription_RESID 60102
+#define cmdButtonIDAnnotation_Keytip_RESID 60103
+#define cmdButtonIDAnnotation_TooltipTitle_RESID 60104
+#define cmdButtonIDAnnotation_TooltipDescription_RESID 60105
+#define cmdButtonIDAnnotation_SmallImages_192__RESID 60106
+#define cmdButtonIDAnnotation_LargeImages_192__RESID 60107
+#define cmdButtonInspectCellModel 27  /* Inspect the virtual cell network model */ 
+#define cmdButtonInspectCellModel_LabelTitle_RESID 60108
+#define cmdButtonInspectCellModel_LabelDescription_RESID 60109
+#define cmdButtonInspectCellModel_Keytip_RESID 60110
+#define cmdButtonInspectCellModel_TooltipTitle_RESID 60111
+#define cmdButtonInspectCellModel_TooltipDescription_RESID 60112
+#define cmdButtonInspectCellModel_SmallImages_192__RESID 60113
+#define cmdButtonInspectCellModel_LargeImages_192__RESID 60114
+#define InternalCmd2_LabelTitle_RESID 60115

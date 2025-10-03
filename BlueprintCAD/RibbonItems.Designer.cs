@@ -39,6 +39,11 @@ namespace RibbonLib.Controls
             public const uint cmdCheckPlotLogScale = 15;
             public const uint cmdMenuWorkbench = 19;
             public const uint cmdTabWorkbench = 20;
+            public const uint cmdButtonInspectCellModel = 27;
+            public const uint cmdGroupTools = 23;
+            public const uint cmdButtonEditCultureMedium = 24;
+            public const uint cmdGroupModelling = 25;
+            public const uint cmdButtonIDAnnotation = 26;
         }
 
         // ContextPopup CommandName
@@ -110,6 +115,26 @@ namespace RibbonLib.Controls
         /// Workbench
         /// </summary>
         public RibbonGroup TabWorkbench { get; private set; }
+        /// <summary>
+        /// Inspect the virtual cell network model
+        /// </summary>
+        public RibbonButton ButtonInspectCellModel { get; private set; }
+        /// <summary>
+        /// Tools
+        /// </summary>
+        public RibbonGroup GroupTools { get; private set; }
+        /// <summary>
+        /// Edit the preset profile of the culture medium.
+        /// </summary>
+        public RibbonButton ButtonEditCultureMedium { get; private set; }
+        /// <summary>
+        /// Virtual cell modelling
+        /// </summary>
+        public RibbonGroup GroupModelling { get; private set; }
+        /// <summary>
+        /// Make cell component id annotation via blastp alignment with the local database.
+        /// </summary>
+        public RibbonButton ButtonIDAnnotation { get; private set; }
 
         public RibbonItems(Ribbon ribbon)
         {
@@ -137,6 +162,11 @@ namespace RibbonLib.Controls
             CheckPlotLogScale = new RibbonCheckBox(ribbon, Cmd.cmdCheckPlotLogScale);
             MenuWorkbench = new RibbonTab(ribbon, Cmd.cmdMenuWorkbench);
             TabWorkbench = new RibbonGroup(ribbon, Cmd.cmdTabWorkbench);
+            ButtonInspectCellModel = new RibbonButton(ribbon, Cmd.cmdButtonInspectCellModel);
+            GroupTools = new RibbonGroup(ribbon, Cmd.cmdGroupTools);
+            ButtonEditCultureMedium = new RibbonButton(ribbon, Cmd.cmdButtonEditCultureMedium);
+            GroupModelling = new RibbonGroup(ribbon, Cmd.cmdGroupModelling);
+            ButtonIDAnnotation = new RibbonButton(ribbon, Cmd.cmdButtonIDAnnotation);
         }
 
     }
