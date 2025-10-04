@@ -35,6 +35,7 @@ Namespace My
             AddHandler ribbon.ButtonOpenVirtualCellPackFile.ExecuteEvent, AddressOf OpenVirtualCellPackFile
             AddHandler ribbon.ButtonExit.ExecuteEvent, AddressOf Close
             AddHandler ribbon.ButtonRun.ExecuteEvent, AddressOf RunVirtualCell
+            AddHandler ribbon.ButtonInspectCellModel.ExecuteEvent, AddressOf OpenCellViewer
         End Sub
 
         Private Shared Sub OpenCellViewer(sender As Object, e As ExecuteEventArgs)

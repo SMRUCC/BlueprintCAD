@@ -21,6 +21,17 @@ Public Module Workbench
         Call SkiaDriver.Register()
     End Sub
 
+    Dim title As String = "Sophia VirtualCell Workshop"
+
+    Public Sub SetFormActiveTitle(subtitle As String)
+        title = AppHost.Text
+        AppHost.Text = $"Sophia VirtualCell Workshop [{subtitle}]"
+    End Sub
+
+    Public Sub RestoreFormTitle()
+        AppHost.Text = title
+    End Sub
+
     Public Sub SetHost(appHost As FormMain)
         CommonRuntime.Hook(appHost)
     End Sub
