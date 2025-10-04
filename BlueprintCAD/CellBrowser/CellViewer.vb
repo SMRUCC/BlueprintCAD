@@ -1,4 +1,5 @@
-﻿Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
+﻿Imports Galaxy.Workbench
+Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Public Class CellViewer
 
@@ -6,7 +7,7 @@ Public Class CellViewer
     Dim filepath As String
 
     Private Sub CellViewer_Load(sender As Object, e As EventArgs) Handles Me.Load
-
+        Call WebViewLoader.Init(WebView21, tabText:="Virtual Cell Viewer")
     End Sub
 
     Private Sub CellViewer_Activated(sender As Object, e As EventArgs) Handles Me.Activated

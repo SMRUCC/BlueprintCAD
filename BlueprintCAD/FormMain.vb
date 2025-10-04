@@ -77,4 +77,9 @@ Public Class FormMain : Implements AppHost
     Public Function GetClientSize() As Size Implements AppHost.GetClientSize
         Return Size
     End Function
+
+    Public Sub StatusMessage(msg As String, Optional icon As Image = Nothing) Implements AppHost.StatusMessage
+        ToolStripStatusLabel1.Text = msg
+        ToolStripStatusLabel1.Image = icon
+    End Sub
 End Class
