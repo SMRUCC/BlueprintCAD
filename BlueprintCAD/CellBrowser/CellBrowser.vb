@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Galaxy.Workbench
 Imports ggplot
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
@@ -168,7 +169,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Call Workbench.Warning(ex.Message)
+                Call CommonRuntime.Warning(ex.Message)
             End Try
         End If
     End Function
@@ -443,7 +444,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Call Workbench.Warning(ex.Message)
+                Call CommonRuntime.Warning(ex.Message)
             End Try
         End If
     End Function
@@ -581,7 +582,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Call Workbench.Warning(ex.Message)
+                Call CommonRuntime.Warning(ex.Message)
             End Try
         End If
     End Sub
@@ -633,7 +634,7 @@ Public Class CellBrowser
                 PlotView1.PlotPadding = plot.ggplotTheme.padding
                 PlotView1.ggplot = plot
             Catch ex As Exception
-                Workbench.Warning(ex.Message)
+                Call CommonRuntime.Warning(ex.Message)
             End Try
         End If
     End Sub
