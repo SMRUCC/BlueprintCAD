@@ -45,18 +45,18 @@ Public Class CellBrowser
 
         vcellPack = New VCellMatrixReader(filepath.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Workbench.AppHost.Text = $"VirtualCell Browser [{filepath}]"
-        network = FormBuzyLoader.Loading(Function(println) LoadNetwork(println))
+        network = TaskProgress.LoadData(Function(println As Action(Of String)) LoadNetwork(println))
         timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
         moleculeSet = vcellPack.GetCellularMolecules.ToArray
 
-        Call FormBuzyLoader.Loading(
+        Call TaskProgress.RunAction(
             Sub(println)
-                Call println("loading molecule list ui... [metabolite tree]")
+                Call println.SetInfo("loading molecule list ui... [metabolite tree]")
                 Call Me.Invoke(Sub() LoadTree(println))
-                Call println("loading molecule list ui... [metabolite matrix]")
-                Call println("loading molecule list ui... [metabolite star links]")
+                Call println.SetInfo("loading molecule list ui... [metabolite matrix]")
+                Call println.SetInfo("loading molecule list ui... [metabolite star links]")
                 Call Me.Invoke(Sub() LoadNodeStar())
-                Call println("load flux dynamics data into memory...")
+                Call println.SetInfo("load flux dynamics data into memory...")
             End Sub)
 
         Call ToolStripComboBox1.Items.Clear()
@@ -298,7 +298,7 @@ Public Class CellBrowser
     End Sub
 
     Private Sub ResetNetworkTable()
-        Call FormBuzyLoader.Loading(Sub(println) Me.Invoke(Sub() ResetNetworkUI()))
+        Call TaskProgress.RunAction(Sub(println) Me.Invoke(Sub() ResetNetworkUI()))
     End Sub
 
     Private Sub CopyNameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyNameToolStripMenuItem.Click
@@ -328,7 +328,7 @@ Public Class CellBrowser
             .Where(Function(f) f.left.Any(Function(v) idset(v.id) > -1)) _
             .ToArray
 
-        FormBuzyLoader.Loading(
+        Call TaskProgress.RunAction(
             Sub(println)
                 Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
             End Sub)
@@ -350,7 +350,7 @@ Public Class CellBrowser
             .Where(Function(f) f.right.Any(Function(v) idset(v.id) > -1)) _
             .ToArray
 
-        FormBuzyLoader.Loading(
+        Call TaskProgress.RunAction(
             Sub(println)
                 Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
             End Sub)
@@ -373,7 +373,7 @@ Public Class CellBrowser
             .Where(Function(f) f.regulation.Any(Function(v) idset(v.id) > -1)) _
             .ToArray
 
-        FormBuzyLoader.Loading(
+        Call TaskProgress.RunAction(
             Sub(println)
                 Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
             End Sub)
@@ -393,7 +393,7 @@ Public Class CellBrowser
             .IteratesALL _
             .ToArray
 
-        FormBuzyLoader.Loading(
+        Call TaskProgress.RunAction(
             Sub(println)
                 Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
             End Sub)
@@ -404,7 +404,7 @@ Public Class CellBrowser
 
         If TypeOf item Is String AndAlso CStr(item) = "*" Then
             ' display all
-            network = FormBuzyLoader.Loading(Function(println) LoadNetwork(println))
+            network = TaskProgress.LoadData(Function(println As Action(Of String)) LoadNetwork(println))
         Else
             ' display a specific module
             Dim fluxIdSet As String() = CType(item, NamedCollection(Of String))
@@ -413,7 +413,7 @@ Public Class CellBrowser
                .Where(Function(f) Not f Is Nothing) _
                .ToArray
 
-            FormBuzyLoader.Loading(
+            Call TaskProgress.RunAction(
                 Sub(println)
                     Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
                 End Sub)
@@ -462,9 +462,9 @@ Public Class CellBrowser
                         .ToArray
                 }
 
-                FormBuzyLoader.Loading(
+                Call TaskProgress.RunAction(
                     Sub(println)
-                        println("Loading the molecule expression data...")
+                        println.SetInfo("Loading the molecule expression data...")
 
                         matrix.expression = vcellPack _
                             .GetCellularMolecules _
@@ -480,15 +480,15 @@ Public Class CellBrowser
                                                 .experiments = vcellPack.GetExpression(id)
                                             }
                                         Else
-                                            println($"Missing molecule epxression data of {id}")
+                                            println.SetInfo($"Missing molecule epxression data of {id}")
                                             Return Nothing
                                         End If
                                     End Function) _
                             .ToArray
                     End Sub)
-                FormBuzyLoader.Loading(
+                Call TaskProgress.RunAction(
                     Sub(println)
-                        println("Save molecule expression data matrix...")
+                        println.SetInfo("Save molecule expression data matrix...")
 
                         If file.FileName.ExtensionSuffix("csv") Then
                             matrix.SaveMatrix(file.FileName, "molecule ID")
@@ -512,9 +512,9 @@ Public Class CellBrowser
                         .ToArray
                 }
 
-                FormBuzyLoader.Loading(
+                Call TaskProgress.RunAction(
                     Sub(println)
-                        println("Loading flux data...")
+                        println.SetInfo("Loading flux data...")
 
                         matrix.expression = network.Keys _
                             .Select(Function(flux_id)
@@ -524,16 +524,16 @@ Public Class CellBrowser
                                                 .experiments = vcellPack.GetFluxExpression(flux_id)
                                             }
                                         Else
-                                            println($"missing flux expression data of {flux_id}!")
+                                            println.SetInfo($"missing flux expression data of {flux_id}!")
                                             Return Nothing
                                         End If
                                     End Function) _
                             .Where(Function(f) f IsNot Nothing) _
                             .ToArray
                     End Sub)
-                FormBuzyLoader.Loading(
+                Call TaskProgress.RunAction(
                     Sub(println)
-                        println("Save flux data matrix...")
+                        println.SetInfo("Save flux data matrix...")
 
                         If file.FileName.ExtensionSuffix("csv") Then
                             matrix.SaveMatrix(file.FileName, "flux ID")
