@@ -79,7 +79,7 @@ Public Class FormMain : Implements AppHost
     End Function
 
     Public Sub StatusMessage(msg As String, Optional icon As Image = Nothing) Implements AppHost.StatusMessage
-        ToolStripStatusLabel1.Text = msg
-        ToolStripStatusLabel1.Image = icon
+        Call Invoke(Sub() ToolStripStatusLabel1.Text = msg)
+        Call Invoke(Sub() ToolStripStatusLabel1.Image = If(icon, Icons8.Information))
     End Sub
 End Class
