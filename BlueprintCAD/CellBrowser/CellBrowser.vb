@@ -50,13 +50,14 @@ Public Class CellBrowser
         moleculeSet = vcellPack.GetCellularMolecules.ToArray
 
         Call TaskProgress.RunAction(
-            Sub(println)
-                Call println.SetInfo("loading molecule list ui... [metabolite tree]")
+            Sub(echo)
+                Dim println = New Action(Of String)(AddressOf echo.SetInfo)
+                Call println("loading molecule list ui... [metabolite tree]")
                 Call Me.Invoke(Sub() LoadTree(println))
-                Call println.SetInfo("loading molecule list ui... [metabolite matrix]")
-                Call println.SetInfo("loading molecule list ui... [metabolite star links]")
+                Call println("loading molecule list ui... [metabolite matrix]")
+                Call println("loading molecule list ui... [metabolite star links]")
                 Call Me.Invoke(Sub() LoadNodeStar())
-                Call println.SetInfo("load flux dynamics data into memory...")
+                Call println("load flux dynamics data into memory...")
             End Sub)
 
         Call ToolStripComboBox1.Items.Clear()
