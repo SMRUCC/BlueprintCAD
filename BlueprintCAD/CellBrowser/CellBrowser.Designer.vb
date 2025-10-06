@@ -1,5 +1,5 @@
 ﻿Imports Galaxy.Data.JSON
-Imports Zuby.ADGV
+Imports Galaxy.Data.TableSheet
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CellBrowser : Inherits DocumentWindow

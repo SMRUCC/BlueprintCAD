@@ -1,4 +1,5 @@
-﻿Imports Zuby.ADGV
+﻿Imports Galaxy.Data.TableSheet
+Imports Galaxy.Data.TableSheet.Events
 
 Public Class GridSearchHandler
 

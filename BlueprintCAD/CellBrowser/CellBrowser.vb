@@ -13,7 +13,6 @@ Imports RibbonLib.Interop
 Imports SMRUCC.genomics.Analysis.HTS.DataFrame
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
-Imports Zuby.ADGV
 Imports std = System.Math
 
 Public Class CellBrowser

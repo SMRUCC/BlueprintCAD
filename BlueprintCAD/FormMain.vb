@@ -23,6 +23,14 @@ Public Class FormMain : Implements AppHost
         End Get
     End Property
 
+    Private Property AppHost_WindowState As FormWindowState Implements AppHost.WindowState
+
+    Public ReadOnly Property ActiveDocument As Form Implements AppHost.ActiveDocument
+        Get
+            Return m_dockPanel.ActiveDocument
+        End Get
+    End Property
+
     Private Sub initializeVSPanel()
         m_dockPanel.ShowDocumentIcon = True
 
@@ -82,4 +90,12 @@ Public Class FormMain : Implements AppHost
         Call Invoke(Sub() ToolStripStatusLabel1.Text = msg)
         Call Invoke(Sub() ToolStripStatusLabel1.Image = If(icon, Icons8.Information))
     End Sub
+
+    Public Function GetDocuments() As IEnumerable(Of Form) Implements AppHost.GetDocuments
+        Throw New NotImplementedException()
+    End Function
+
+    Public Function GetDockPanel() As Control Implements AppHost.GetDockPanel
+        Throw New NotImplementedException()
+    End Function
 End Class
