@@ -37,6 +37,14 @@ Namespace My
             AddHandler ribbon.ButtonRun.ExecuteEvent, AddressOf RunVirtualCell
         End Sub
 
+        Private Shared Sub OpenCellViewer(sender As Object, e As ExecuteEventArgs)
+            Dim file As New OpenFileDialog With {.Filter = "GCModeller Markup Model File(*.xml)|*.xml"}
+
+            If file.ShowDialog = DialogResult.OK Then
+                Call Workbench.OpenDocument(Of CellViewer)(file.FileName).LoadModel(file.FileName)
+            End If
+        End Sub
+
         Private Shared Sub Close(sender As Object, e As ExecuteEventArgs)
             Try
                 Call AppHost.Close()
