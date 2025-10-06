@@ -60,6 +60,7 @@
     <ProjectReference Include="..\..\cell-farm\src\VirtualCell\VirtualCell.vbproj" />
     <ProjectReference Include="..\..\galaxy\src\GalaxyData\GalaxyData.vbproj" />
     <ProjectReference Include="..\..\galaxy\src\GalaxyWorkbench\GalaxyWorkbench.vbproj" />
+    <ProjectReference Include="..\..\galaxy\src\Microsoft.Windows.FeatureAPI\Microsoft.Windows.FeatureAPI.vbproj" />
     <ProjectReference Include="..\..\GCModeller\src\GCModeller\analysis\HTS_matrix\HTS_matrix-netcore5.vbproj" />
     <ProjectReference Include="..\..\GCModeller\src\GCModeller\core\Bio.Assembly\biocore-netcore5.vbproj" />
     <ProjectReference Include="..\..\GCModeller\src\GCModeller\engine\BootstrapLoader\BootstrapLoader.NET5.vbproj" />
@@ -96,14 +97,8 @@
     <Reference Include="Microsoft.VisualStudio.Windows.Form">
       <HintPath>..\dist\dockpanelsuite\Microsoft.VisualStudio.Windows.Form.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Windows.FeatureAPI">
-      <HintPath>..\dist\Microsoft.Windows.FeatureAPI.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Windows.Ribbon">
       <HintPath>..\dist\ribbon\Microsoft.Windows.Ribbon.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms.DataGridView">
-      <HintPath>..\dist\System.Windows.Forms.DataGridView.dll</HintPath>
     </Reference>
     <Reference Include="ThemeVS2015">
       <HintPath>..\dist\dockpanelsuite\ThemeVS2015.dll</HintPath>
