@@ -6,8 +6,8 @@ Public Class CellViewer
     Dim cell As VirtualCell
     Dim filepath As String
 
-    Private Sub CellViewer_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Call WebViewLoader.Init(WebView21, tabText:="Virtual Cell Viewer")
+    Private Async Sub CellViewer_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Await WebViewLoader.Init(WebView21)
     End Sub
 
     Private Sub CellViewer_Activated(sender As Object, e As EventArgs) Handles Me.Activated

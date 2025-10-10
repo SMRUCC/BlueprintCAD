@@ -1,7 +1,7 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Drawing
-Imports WeifenLuo.WinFormsUI.Docking
+Imports Microsoft.VisualStudio.WinForms.Docking
 
 Public Module Workbench
 

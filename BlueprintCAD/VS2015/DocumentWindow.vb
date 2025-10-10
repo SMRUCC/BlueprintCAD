@@ -54,8 +54,9 @@
 #End Region
 
 Imports Galaxy.Workbench
+Imports Microsoft.VisualStudio.WinForms.Docking
 Imports Microsoft.Windows.Taskbar
-Imports WeifenLuo.WinFormsUI.Docking
+Imports ThemeVS2015
 
 Public Class DocumentWindow : Implements IDocumentWindow
 
@@ -106,10 +107,10 @@ Public Class DocumentWindow : Implements IDocumentWindow
         TaskbarManager.Instance.TabbedThumbnail.AddThumbnailPreview(preview)
 
         ' Event handlers for this preview
-        AddHandler preview.TabbedThumbnailActivated, AddressOf TaskBarWindow.preview_TabbedThumbnailActivated
-        AddHandler preview.TabbedThumbnailClosed, AddressOf TaskBarWindow.preview_TabbedThumbnailClosed
+        AddHandler preview.TabbedThumbnailActivated, AddressOf TaskBarWindow.Preview_TabbedThumbnailActivated
+        AddHandler preview.TabbedThumbnailClosed, AddressOf TaskBarWindow.Preview_TabbedThumbnailClosed
         AddHandler preview.TabbedThumbnailMaximized, AddressOf TaskBarWindow.Preview_TabbedThumbnailMaximized
-        AddHandler preview.TabbedThumbnailMinimized, AddressOf TaskBarWindow.preview_TabbedThumbnailMinimized
+        AddHandler preview.TabbedThumbnailMinimized, AddressOf TaskBarWindow.Preview_TabbedThumbnailMinimized
 
         TaskBarWindow.UpdatePreviewBitmap(Me)
     End Sub

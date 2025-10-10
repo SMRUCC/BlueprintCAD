@@ -1,8 +1,9 @@
 ﻿Imports BlueprintCAD.My
 Imports BlueprintCAD.RibbonLib.Controls
 Imports Galaxy.Workbench
+Imports Microsoft.VisualStudio.WinForms.Docking
 Imports RibbonLib
-Imports WeifenLuo.WinFormsUI.Docking
+Imports ThemeVS2015
 
 Public Class FormMain : Implements AppHost
 
@@ -16,6 +17,7 @@ Public Class FormMain : Implements AppHost
     ReadOnly _toolStripProfessionalRenderer As New ToolStripProfessionalRenderer()
 
     Public Event ResizeForm As AppHost.ResizeFormEventHandler Implements AppHost.ResizeForm
+    Public Event CloseWorkbench As AppHost.CloseWorkbenchEventHandler Implements AppHost.CloseWorkbench
 
     Public ReadOnly Property DockPanel As DockPanel
         Get
@@ -23,11 +25,15 @@ Public Class FormMain : Implements AppHost
         End Get
     End Property
 
-    Private Property AppHost_WindowState As FormWindowState Implements AppHost.WindowState
-
     Public ReadOnly Property ActiveDocument As Form Implements AppHost.ActiveDocument
         Get
             Return m_dockPanel.ActiveDocument
+        End Get
+    End Property
+
+    Private ReadOnly Property AppHost_ClientRectangle As Rectangle Implements AppHost.ClientRectangle
+        Get
+            Return New Rectangle(Location, Size)
         End Get
     End Property
 
@@ -92,10 +98,38 @@ Public Class FormMain : Implements AppHost
     End Sub
 
     Public Function GetDocuments() As IEnumerable(Of Form) Implements AppHost.GetDocuments
-        Throw New NotImplementedException()
+        Return m_dockPanel.Documents.Select(Function(d) DirectCast(d, Form))
     End Function
 
     Public Function GetDockPanel() As Control Implements AppHost.GetDockPanel
-        Throw New NotImplementedException()
+        Return m_dockPanel
     End Function
+
+    Public Sub SetWorkbenchVisible(visible As Boolean) Implements AppHost.SetWorkbenchVisible
+
+    End Sub
+
+    Public Sub SetWindowState(stat As FormWindowState) Implements AppHost.SetWindowState
+        WindowState = stat
+    End Sub
+
+    Public Function GetWindowState() As FormWindowState Implements AppHost.GetWindowState
+        Return WindowState
+    End Function
+
+    Public Sub SetTitle(title As String) Implements AppHost.SetTitle
+        Call Workbench.SetFormActiveTitle(title)
+    End Sub
+
+    Public Sub Warning(msg As String) Implements AppHost.Warning
+
+    End Sub
+
+    Public Sub LogText(text As String) Implements AppHost.LogText
+
+    End Sub
+
+    Public Sub ShowProperties(obj As Object) Implements AppHost.ShowProperties
+
+    End Sub
 End Class
