@@ -65,7 +65,9 @@ Public Class FormCultureMedium : Implements IDataContainer
     End Sub
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
-        compound.content = NumericUpDown1.Value
+        If Not compound Is Nothing Then
+            compound.content = NumericUpDown1.Value
+        End If
     End Sub
 
     Private Sub RemovesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemovesToolStripMenuItem.Click
