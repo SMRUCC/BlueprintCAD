@@ -1,7 +1,6 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Drawing
-Imports Microsoft.VisualStudio.WinForms.Docking
 
 Public Module Workbench
 
@@ -16,6 +15,8 @@ Public Module Workbench
             Return AppHost.m_ribbonItems
         End Get
     End Property
+
+    Public ReadOnly Property Settings As Settings
 
     Sub New()
         Call SkiaDriver.Register()
@@ -34,5 +35,7 @@ Public Module Workbench
 
     Public Sub SetHost(appHost As FormMain)
         CommonRuntime.Hook(appHost)
+
+        _Settings = Settings.Load
     End Sub
 End Module
