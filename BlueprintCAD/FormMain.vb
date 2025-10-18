@@ -1,4 +1,5 @@
-﻿Imports BlueprintCAD.My
+﻿Imports System.ComponentModel
+Imports BlueprintCAD.My
 Imports BlueprintCAD.RibbonLib.Controls
 Imports Galaxy.Workbench
 Imports Microsoft.VisualStudio.WinForms.Docking
@@ -131,5 +132,9 @@ Public Class FormMain : Implements AppHost
 
     Public Sub ShowProperties(obj As Object) Implements AppHost.ShowProperties
 
+    End Sub
+
+    Private Sub FormMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Call CommonRuntime.SaveUISettings()
     End Sub
 End Class
