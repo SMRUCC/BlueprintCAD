@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.CompilerServices
 Imports BlueprintCAD.RibbonLib.Controls
+Imports Galaxy.Workbench
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports RibbonLib.Controls.Events
@@ -42,7 +43,7 @@ Namespace My
             Dim file As New OpenFileDialog With {.Filter = "GCModeller Markup Model File(*.xml)|*.xml"}
 
             If file.ShowDialog = DialogResult.OK Then
-                Call Workbench.OpenDocument(Of CellViewer)(file.FileName).LoadModel(file.FileName)
+                Call CommonRuntime.ShowDocument(Of CellViewer)(file.FileName).LoadModel(file.FileName)
             End If
         End Sub
 
@@ -57,7 +58,7 @@ Namespace My
         Public Shared Sub OpenVirtualCellPackFile(sender As Object, e As ExecuteEventArgs)
             Using file As New OpenFileDialog With {.Filter = "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"}
                 If file.ShowDialog = DialogResult.OK Then
-                    Call Workbench.OpenDocument(Of CellBrowser)() _
+                    Call CommonRuntime.ShowDocument(Of CellBrowser)() _
                         .OpenVirtualCellDataFile(file.FileName)
                 End If
             End Using
@@ -85,7 +86,7 @@ Namespace My
                     Dim vc As String = $"{App.HOME}/VirtualCell.exe"
                     Dim tempfile As String = $"{wizardConfig.configFile.ParentPath}/run.vcelldata"
                     Dim args As String = $"--run {wizardConfig.configFile.CLIPath} --output {tempfile.CLIPath} /@set tqdm=false"
-                    Dim proc As FormConsoleHost = Workbench.OpenDocument(Of FormConsoleHost)("Run Virtual Cell Experiment")
+                    Dim proc As FormConsoleHost = CommonRuntime.ShowDocument(Of FormConsoleHost)("Run Virtual Cell Experiment")
 
                     Call wizardConfig.Save()
                     Call proc.Run(vc, args)

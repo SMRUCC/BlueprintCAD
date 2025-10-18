@@ -1,5 +1,6 @@
 ﻿Imports Galaxy.Data.JSON
 Imports Galaxy.Data.TableSheet
+Imports Galaxy.Workbench.DockDocument
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CellBrowser : Inherits DocumentWindow

@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports ggplot
 Imports Microsoft.VisualBasic.ComponentModel.Collection

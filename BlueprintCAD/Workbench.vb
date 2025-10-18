@@ -35,20 +35,4 @@ Public Module Workbench
     Public Sub SetHost(appHost As FormMain)
         CommonRuntime.Hook(appHost)
     End Sub
-
-    Public Function OpenDocument(Of T As {New, DocumentWindow})(Optional title As String = Nothing) As T
-        Dim docPage As New T
-
-        If Not title.StringEmpty(, True) Then
-            docPage.TabText = title
-            docPage.Text = title
-        Else
-            docPage.TabText = title
-        End If
-
-        docPage.Show(AppHost.DockPanel)
-        docPage.DockState = DockState.Document
-
-        Return docPage
-    End Function
 End Module
