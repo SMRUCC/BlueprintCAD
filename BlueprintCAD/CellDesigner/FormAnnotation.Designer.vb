@@ -24,14 +24,18 @@ Partial Class FormAnnotation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
         TabPage2 = New TabPage()
         Button1 = New Button()
         TextBox1 = New TextBox()
         Label1 = New Label()
+        ToolStrip1 = New ToolStrip()
+        ToolStripButton1 = New ToolStripButton()
         TabControl1.SuspendLayout()
         TabPage2.SuspendLayout()
+        ToolStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -39,10 +43,10 @@ Partial Class FormAnnotation
         TabControl1.Controls.Add(TabPage1)
         TabControl1.Controls.Add(TabPage2)
         TabControl1.Dock = DockStyle.Fill
-        TabControl1.Location = New Point(0, 0)
+        TabControl1.Location = New Point(0, 25)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1354, 743)
+        TabControl1.Size = New Size(1354, 718)
         TabControl1.TabIndex = 1
         ' 
         ' TabPage1
@@ -50,7 +54,7 @@ Partial Class FormAnnotation
         TabPage1.Location = New Point(4, 26)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1346, 713)
+        TabPage1.Size = New Size(1346, 688)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Annotation"
         TabPage1.UseVisualStyleBackColor = True
@@ -93,12 +97,31 @@ Partial Class FormAnnotation
         Label1.TabIndex = 0
         Label1.Text = "Set NCBI Blast+:"
         ' 
+        ' ToolStrip1
+        ' 
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripButton1})
+        ToolStrip1.Location = New Point(0, 0)
+        ToolStrip1.Name = "ToolStrip1"
+        ToolStrip1.Size = New Size(1354, 25)
+        ToolStrip1.TabIndex = 2
+        ToolStrip1.Text = "ToolStrip1"
+        ' 
+        ' ToolStripButton1
+        ' 
+        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
+        ToolStripButton1.ImageTransparentColor = Color.Magenta
+        ToolStripButton1.Name = "ToolStripButton1"
+        ToolStripButton1.Size = New Size(23, 22)
+        ToolStripButton1.Text = "Build Model"
+        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1354, 743)
         Controls.Add(TabControl1)
+        Controls.Add(ToolStrip1)
         DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
         DoubleBuffered = True
         Name = "FormAnnotation"
@@ -107,7 +130,10 @@ Partial Class FormAnnotation
         TabControl1.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
+        ToolStrip1.ResumeLayout(False)
+        ToolStrip1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents TabControl1 As TabControl
@@ -116,4 +142,6 @@ Partial Class FormAnnotation
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

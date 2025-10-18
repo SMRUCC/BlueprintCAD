@@ -37,4 +37,12 @@ Public Class FormAnnotation
     Private Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
         TextBox1.Text = Workbench.Settings.ncbi_blast
     End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Using file As New SaveFileDialog With {.Filter = "GCModeller VirtualCell Model File(*.xml)|*.xml"}
+            If file.ShowDialog = DialogResult.OK Then
+
+            End If
+        End Using
+    End Sub
 End Class
