@@ -26,9 +26,15 @@ Public Class FormAnnotation
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Using dir As New FolderBrowserDialog With {.InitialDirectory = Workbench.Settings.ncbi_blast}
             If dir.ShowDialog = DialogResult.OK Then
+                TextBox1.Text = dir.SelectedPath
+
                 Workbench.Settings.ncbi_blast = dir.SelectedPath
                 Workbench.Settings.Save()
             End If
         End Using
+    End Sub
+
+    Private Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
+        TextBox1.Text = Workbench.Settings.ncbi_blast
     End Sub
 End Class
