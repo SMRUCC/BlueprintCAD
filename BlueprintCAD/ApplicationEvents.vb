@@ -37,6 +37,15 @@ Namespace My
             AddHandler ribbon.ButtonExit.ExecuteEvent, AddressOf Close
             AddHandler ribbon.ButtonRun.ExecuteEvent, AddressOf RunVirtualCell
             AddHandler ribbon.ButtonInspectCellModel.ExecuteEvent, AddressOf OpenCellViewer
+            AddHandler ribbon.ButtonIDAnnotation.ExecuteEvent, AddressOf OpenAnnotationTool
+        End Sub
+
+        Public Shared Sub OpenAnnotationTool(sender As Object, e As ExecuteEventArgs)
+            Dim file As New OpenFileDialog With {.Filter = "NCBI GenBank(*.gb;*.gbk;*.gbff)|*.gb;*.gbk;*.gbff"}
+
+            If file.ShowDialog = DialogResult.OK Then
+                Call CommonRuntime.ShowDocument(Of FormAnnotation)(file.FileName).LoadModel(file.FileName)
+            End If
         End Sub
 
         Private Shared Sub OpenCellViewer(sender As Object, e As ExecuteEventArgs)
