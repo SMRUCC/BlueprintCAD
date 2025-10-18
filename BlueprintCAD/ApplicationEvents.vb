@@ -1,8 +1,8 @@
-﻿Imports System.Runtime.CompilerServices
-Imports BlueprintCAD.RibbonLib.Controls
+﻿Imports BlueprintCAD.RibbonLib.Controls
 Imports Galaxy.Workbench
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports Microsoft.VisualStudio.WinForms.Docking
 Imports RibbonLib.Controls.Events
 
 Namespace My
@@ -44,7 +44,7 @@ Namespace My
             Dim file As New OpenFileDialog With {.Filter = "NCBI GenBank(*.gb;*.gbk;*.gbff)|*.gb;*.gbk;*.gbff"}
 
             If file.ShowDialog = DialogResult.OK Then
-                Call CommonRuntime.ShowDocument(Of FormAnnotation)(file.FileName).LoadModel(file.FileName)
+                Call CommonRuntime.ShowDocument(Of FormAnnotation)(DockState.Document, "Build Model: " & file.FileName.FileName).LoadModel(file.FileName)
             End If
         End Sub
 
@@ -52,7 +52,7 @@ Namespace My
             Dim file As New OpenFileDialog With {.Filter = "GCModeller Markup Model File(*.xml)|*.xml"}
 
             If file.ShowDialog = DialogResult.OK Then
-                Call CommonRuntime.ShowDocument(Of CellViewer)(file.FileName).LoadModel(file.FileName)
+                Call CommonRuntime.ShowDocument(Of CellViewer)(DockState.Document, "View Model: " & file.FileName.FileName).LoadModel(file.FileName)
             End If
         End Sub
 
@@ -95,7 +95,7 @@ Namespace My
                     Dim vc As String = $"{App.HOME}/VirtualCell.exe"
                     Dim tempfile As String = $"{wizardConfig.configFile.ParentPath}/run.vcelldata"
                     Dim args As String = $"--run {wizardConfig.configFile.CLIPath} --output {tempfile.CLIPath} /@set tqdm=false"
-                    Dim proc As FormConsoleHost = CommonRuntime.ShowDocument(Of FormConsoleHost)("Run Virtual Cell Experiment")
+                    Dim proc As FormConsoleHost = CommonRuntime.ShowDocument(Of FormConsoleHost)(DockState.Document, "Run Virtual Cell Experiment")
 
                     Call wizardConfig.Save()
                     Call proc.Run(vc, args)
