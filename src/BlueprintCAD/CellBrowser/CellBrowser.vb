@@ -37,7 +37,6 @@ Public Class CellBrowser
     Shared ReadOnly plotMatrixExportButton As New RibbonEventBinding(Workbench.Ribbon.ButtonExportPlotMatrix)
 
     Dim dataTable As GridLoaderHandler
-    Dim dataSearch As GridSearchHandler
 
     Public Sub OpenVirtualCellDataFile(filepath As String)
         If vcellPack IsNot Nothing Then
@@ -667,10 +666,7 @@ Public Class CellBrowser
     End Sub
 
     Private Sub CellBrowser_Load(sender As Object, e As EventArgs) Handles Me.Load
-        dataSearch = New GridSearchHandler(DataGridView1)
-        dataTable = New GridLoaderHandler(DataGridView1, ToolStrip1, BindingSource1)
-
-        AddHandler ToolStrip1.Search, AddressOf dataSearch.AdvancedDataGridViewSearchToolBar1_Search
+        dataTable = New GridLoaderHandler(DataGridView1, ToolStrip1)
 
         Call CellBrowser_Activated(sender, e)
         Call ApplyVsTheme(ContextMenuStrip1, ContextMenuStrip2, ContextMenuStrip3, ToolStrip1, PlotView1.ContextMenuStrip)

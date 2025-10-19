@@ -1,17 +1,19 @@
 ﻿Imports System.IO
+Imports Galaxy.Data.TableSheet
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
-Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.InteropService
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
-Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 
 Public Class FormAnnotation
 
     Dim filepath As String
     Dim proj As GenBankProject
+
+    Dim enzymeLoader As GridLoaderHandler
+    Dim enzymeSearch As GridSearchHandler
 
     Private Sub FormAnnotation_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         Workbench.SetFormActiveTitle(TabText)
@@ -24,6 +26,8 @@ Public Class FormAnnotation
     Public Function LoadProject(filepath As String) As FormAnnotation
         Me.filepath = filepath
         Me.proj = GenBankProject.Load(filepath)
+
+        Call LoadEnzymeHits()
 
         Return Me
     End Function
@@ -76,6 +80,9 @@ Public Class FormAnnotation
     Private Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
         TextBox1.Text = Workbench.Settings.ncbi_blast
 
+        enzymeLoader = New GridLoaderHandler(DataGridView1, ToolStrip1)
+        enzymeSearch = New GridSearchHandler(DataGridView1)
+
         Call ApplyVsTheme(ToolStrip1)
     End Sub
 
@@ -106,6 +113,10 @@ Public Class FormAnnotation
         End If
     End Sub
 
+    Private Sub LoadEnzymeHits()
+
+    End Sub
+
     Private Async Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="enzyme_blast")
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
@@ -124,5 +135,7 @@ Public Class FormAnnotation
             .RunParser(tempOutfile) _
             .ExportHistResult _
             .ToArray
+
+        Call LoadEnzymeHits()
     End Sub
 End Class
