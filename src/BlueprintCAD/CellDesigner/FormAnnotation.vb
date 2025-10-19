@@ -105,14 +105,13 @@ Public Class FormAnnotation
 
         Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
             Call proj.DumpProteinFasta(s)
-            Call s.Flush()
         End Using
 
-        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast)
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 8}
         Dim enzyme_db As String = $"{App.HOME}/data/ec_numbers.fasta"
 
         Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
-        Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=1))
+        Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=1).Run())
 
         proj.enzyme_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
