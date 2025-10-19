@@ -36,6 +36,8 @@ Public Class FormAnnotation
 
     Private Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
         TextBox1.Text = Workbench.Settings.ncbi_blast
+
+        Call ApplyVsTheme(ToolStrip1)
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click

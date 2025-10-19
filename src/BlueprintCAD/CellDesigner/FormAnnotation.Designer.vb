@@ -27,13 +27,19 @@ Partial Class FormAnnotation
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        TabControl2 = New TabControl()
+        TabPage3 = New TabPage()
+        TabPage4 = New TabPage()
         TabPage2 = New TabPage()
         Button1 = New Button()
         TextBox1 = New TextBox()
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
+        TabPage5 = New TabPage()
         TabControl1.SuspendLayout()
+        TabPage1.SuspendLayout()
+        TabControl2.SuspendLayout()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
         SuspendLayout()
@@ -51,6 +57,7 @@ Partial Class FormAnnotation
         ' 
         ' TabPage1
         ' 
+        TabPage1.Controls.Add(TabControl2)
         TabPage1.Location = New Point(4, 26)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
@@ -58,6 +65,37 @@ Partial Class FormAnnotation
         TabPage1.TabIndex = 0
         TabPage1.Text = "Annotation"
         TabPage1.UseVisualStyleBackColor = True
+        ' 
+        ' TabControl2
+        ' 
+        TabControl2.Controls.Add(TabPage3)
+        TabControl2.Controls.Add(TabPage4)
+        TabControl2.Controls.Add(TabPage5)
+        TabControl2.Location = New Point(8, 89)
+        TabControl2.Name = "TabControl2"
+        TabControl2.SelectedIndex = 0
+        TabControl2.Size = New Size(1267, 566)
+        TabControl2.TabIndex = 0
+        ' 
+        ' TabPage3
+        ' 
+        TabPage3.Location = New Point(4, 26)
+        TabPage3.Name = "TabPage3"
+        TabPage3.Padding = New Padding(3)
+        TabPage3.Size = New Size(1259, 536)
+        TabPage3.TabIndex = 0
+        TabPage3.Text = "Enzyme"
+        TabPage3.UseVisualStyleBackColor = True
+        ' 
+        ' TabPage4
+        ' 
+        TabPage4.Location = New Point(4, 26)
+        TabPage4.Name = "TabPage4"
+        TabPage4.Padding = New Padding(3)
+        TabPage4.Size = New Size(1259, 536)
+        TabPage4.TabIndex = 1
+        TabPage4.Text = "Transcript Units"
+        TabPage4.UseVisualStyleBackColor = True
         ' 
         ' TabPage2
         ' 
@@ -67,7 +105,7 @@ Partial Class FormAnnotation
         TabPage2.Location = New Point(4, 26)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1346, 713)
+        TabPage2.Size = New Size(1346, 688)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Settings"
         TabPage2.UseVisualStyleBackColor = True
@@ -115,9 +153,18 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
+        ' TabPage5
+        ' 
+        TabPage5.Location = New Point(4, 26)
+        TabPage5.Name = "TabPage5"
+        TabPage5.Size = New Size(1259, 536)
+        TabPage5.TabIndex = 2
+        TabPage5.Text = "Transcript Factor"
+        TabPage5.UseVisualStyleBackColor = True
+        ' 
         ' FormAnnotation
         ' 
-        AutoScaleDimensions = New SizeF(7F, 17F)
+        AutoScaleDimensions = New SizeF(7.0F, 17.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1354, 743)
         Controls.Add(TabControl1)
@@ -128,6 +175,8 @@ Partial Class FormAnnotation
         ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
         TabPageContextMenuStrip = DockContextMenuStrip1
         TabControl1.ResumeLayout(False)
+        TabPage1.ResumeLayout(False)
+        TabControl2.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
@@ -144,4 +193,8 @@ Partial Class FormAnnotation
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents TabControl2 As TabControl
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents TabPage5 As TabPage
 End Class
