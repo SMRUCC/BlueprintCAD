@@ -2,6 +2,7 @@
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.InteropService
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 
@@ -96,7 +97,7 @@ Public Class FormAnnotation
         End If
     End Sub
 
-    Private Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run
+    Private Async Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="enzyme_blast")
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
 
@@ -108,7 +109,9 @@ Public Class FormAnnotation
         Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast)
         Dim enzyme_db As String = $"{App.HOME}/data/ec_numbers.fasta"
 
-        Call blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run()
-        Call blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=1)
+        Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
+        Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=1))
+
+        Dim parse = BlastpOutputReader.RunParser(tempOutfile).ToArray
     End Sub
 End Class
