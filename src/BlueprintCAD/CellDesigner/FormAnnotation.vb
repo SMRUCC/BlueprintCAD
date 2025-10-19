@@ -1,4 +1,5 @@
 ﻿Imports SMRUCC.genomics.Assembly.NCBI.GenBank
+Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
 
 Public Class FormAnnotation
 
@@ -15,7 +16,23 @@ Public Class FormAnnotation
 
     Public Function LoadModel(filepath As String) As FormAnnotation
         Dim genbank = GBFF.File.Load(filepath)
-        Dim proj As New GenBankProject With {.taxonomy = genbank.Source.GetTaxonomy}
+        Dim proj As New GenBankProject With {
+            .taxonomy = genbank.Source.GetTaxonomy,
+            .nt = genbank.Origin.SequenceData,
+            .genes = genbank _
+                .EnumerateGeneFeatures _
+                .ToDictionary(Function(a) a.Query(FeatureQualifiers.locus_tag),
+                              Function(a)
+                                  Return a.SequenceData
+                              End Function),
+            .proteins = genbank _
+                .ExportProteins_Short(True) _
+                .ToDictionary(Function(a) a.Title,
+                              Function(a)
+                                  Return a.SequenceData
+                              End Function),
+            .gene_table = genbank.ExportGeneFeatures
+        }
 
         Me.proj = proj
         Me.filepath = Nothing
