@@ -138,10 +138,10 @@
 
   <ItemGroup>
     <Reference Include="Microsoft.Windows.Ribbon">
-      <HintPath>\galaxy\third-party\ribbon\Microsoft.Windows.Ribbon.dll</HintPath>
+      <HintPath>..\..\..\galaxy\third-party\ribbon\Microsoft.Windows.Ribbon.dll</HintPath>
     </Reference>
   </ItemGroup>
 
-  <Import Project="\galaxy\src\RibbonEventBinding\RibbonEventBinding.projitems" Label="Shared" />
+  <Import Project="..\..\..\galaxy\src\RibbonEventBinding\RibbonEventBinding.projitems" Label="Shared" />
 
 </Project>
