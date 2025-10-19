@@ -119,12 +119,26 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("positive", GetType(Double))
 
         For Each enzyme As HitCollection In proj.enzyme_hits
+            Dim top = enzyme.hits.Take(10).ToArray
+            Dim identities As Double = 0
+            Dim positive As Double = 0
+            Dim annotation As String = "-"
+
+            If top.Any Then
+                annotation = top.Select(Function(a) a.hitName.Split("|"c).First) _
+                    .GroupBy(Function(id) id) _
+                    .OrderByDescending(Function(a) a.Count) _
+                    .First.Key
+                identities = top.Select(Function(a) a.identities).Average
+                positive = top.Select(Function(a) a.positive).Average
+            End If
+
             Call tbl.Rows.Add(
                 enzyme.QueryName,
                 enzyme.hits.TryCount,
-                enzyme.hits.Take(10).Select(Function(a) a.hitName.Split("|"c).First).GroupBy(Function(id) id).OrderByDescending(Function(a) a.Count).First.Key,
-                enzyme.hits.Take(10).Select(Function(a) a.identities).Average,
-                enzyme.hits.Take(10).Select(Function(a) a.positive).Average
+                annotation,
+                identities,
+                positive
             )
         Next
     End Sub
