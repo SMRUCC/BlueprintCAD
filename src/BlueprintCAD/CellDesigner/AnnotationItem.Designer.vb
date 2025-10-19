@@ -22,6 +22,7 @@ Partial Class AnnotationItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AnnotationItem))
         PictureBox1 = New PictureBox()
         LinkLabel1 = New LinkLabel()
         Button1 = New Button()
@@ -30,6 +31,7 @@ Partial Class AnnotationItem
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
         PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox1.Location = New Point(3, 3)
         PictureBox1.Name = "PictureBox1"

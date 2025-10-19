@@ -42,6 +42,7 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
+        SplitContainer1 = New SplitContainer()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         FlowLayoutPanel1.SuspendLayout()
@@ -50,6 +51,10 @@ Partial Class FormAnnotation
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer1.Panel1.SuspendLayout()
+        SplitContainer1.Panel2.SuspendLayout()
+        SplitContainer1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -65,8 +70,7 @@ Partial Class FormAnnotation
         ' 
         ' TabPage1
         ' 
-        TabPage1.Controls.Add(FlowLayoutPanel1)
-        TabPage1.Controls.Add(TabControl2)
+        TabPage1.Controls.Add(SplitContainer1)
         TabPage1.Location = New Point(4, 26)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
@@ -77,14 +81,14 @@ Partial Class FormAnnotation
         ' 
         ' FlowLayoutPanel1
         ' 
-        FlowLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         FlowLayoutPanel1.AutoScroll = True
         FlowLayoutPanel1.BackColor = Color.White
         FlowLayoutPanel1.Controls.Add(EnzymeAnnotationCmd)
+        FlowLayoutPanel1.Dock = DockStyle.Fill
         FlowLayoutPanel1.FlowDirection = FlowDirection.TopDown
-        FlowLayoutPanel1.Location = New Point(8, 6)
+        FlowLayoutPanel1.Location = New Point(0, 0)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(1330, 219)
+        FlowLayoutPanel1.Size = New Size(1340, 194)
         FlowLayoutPanel1.TabIndex = 1
         ' 
         ' EnzymeAnnotationCmd
@@ -97,14 +101,14 @@ Partial Class FormAnnotation
         ' 
         ' TabControl2
         ' 
-        TabControl2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         TabControl2.Controls.Add(TabPage3)
         TabControl2.Controls.Add(TabPage4)
         TabControl2.Controls.Add(TabPage5)
-        TabControl2.Location = New Point(8, 231)
+        TabControl2.Dock = DockStyle.Fill
+        TabControl2.Location = New Point(0, 0)
         TabControl2.Name = "TabControl2"
         TabControl2.SelectedIndex = 0
-        TabControl2.Size = New Size(1330, 449)
+        TabControl2.Size = New Size(1340, 484)
         TabControl2.TabIndex = 0
         ' 
         ' TabPage3
@@ -114,7 +118,7 @@ Partial Class FormAnnotation
         TabPage3.Location = New Point(4, 26)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1322, 419)
+        TabPage3.Size = New Size(1332, 454)
         TabPage3.TabIndex = 0
         TabPage3.Text = "Enzyme"
         TabPage3.UseVisualStyleBackColor = True
@@ -132,7 +136,7 @@ Partial Class FormAnnotation
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RightToLeft = RightToLeft.No
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(1316, 386)
+        DataGridView1.Size = New Size(1326, 421)
         DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         DataGridView1.TabIndex = 0
         ' 
@@ -145,7 +149,7 @@ Partial Class FormAnnotation
         ToolStrip2.MinimumSize = New Size(0, 27)
         ToolStrip2.Name = "ToolStrip2"
         ToolStrip2.RenderMode = ToolStripRenderMode.Professional
-        ToolStrip2.Size = New Size(1316, 27)
+        ToolStrip2.Size = New Size(1326, 27)
         ToolStrip2.TabIndex = 1
         ToolStrip2.Text = "ToolStrip2"
         ' 
@@ -154,7 +158,7 @@ Partial Class FormAnnotation
         TabPage4.Location = New Point(4, 26)
         TabPage4.Name = "TabPage4"
         TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(1322, 419)
+        TabPage4.Size = New Size(1332, 419)
         TabPage4.TabIndex = 1
         TabPage4.Text = "Transcript Units"
         TabPage4.UseVisualStyleBackColor = True
@@ -163,7 +167,7 @@ Partial Class FormAnnotation
         ' 
         TabPage5.Location = New Point(4, 26)
         TabPage5.Name = "TabPage5"
-        TabPage5.Size = New Size(1322, 419)
+        TabPage5.Size = New Size(1332, 419)
         TabPage5.TabIndex = 2
         TabPage5.Text = "Transcript Factor"
         TabPage5.UseVisualStyleBackColor = True
@@ -224,6 +228,25 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
+        ' SplitContainer1
+        ' 
+        SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.FixedPanel = FixedPanel.Panel1
+        SplitContainer1.Location = New Point(3, 3)
+        SplitContainer1.Name = "SplitContainer1"
+        SplitContainer1.Orientation = Orientation.Horizontal
+        ' 
+        ' SplitContainer1.Panel1
+        ' 
+        SplitContainer1.Panel1.Controls.Add(FlowLayoutPanel1)
+        ' 
+        ' SplitContainer1.Panel2
+        ' 
+        SplitContainer1.Panel2.Controls.Add(TabControl2)
+        SplitContainer1.Size = New Size(1340, 682)
+        SplitContainer1.SplitterDistance = 194
+        SplitContainer1.TabIndex = 2
+        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
@@ -247,6 +270,10 @@ Partial Class FormAnnotation
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
+        SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel2.ResumeLayout(False)
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -267,4 +294,5 @@ Partial Class FormAnnotation
     Friend WithEvents ToolStrip2 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents EnzymeAnnotationCmd As AnnotationItem
+    Friend WithEvents SplitContainer1 As SplitContainer
 End Class
