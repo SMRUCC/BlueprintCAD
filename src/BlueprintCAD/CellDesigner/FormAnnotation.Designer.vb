@@ -28,6 +28,8 @@ Partial Class FormAnnotation
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        FlowLayoutPanel1 = New FlowLayoutPanel()
+        EnzymeAnnotationCmd = New AnnotationItem()
         TabControl2 = New TabControl()
         TabPage3 = New TabPage()
         DataGridView1 = New AdvancedDataGridView()
@@ -40,9 +42,9 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
-        FlowLayoutPanel1 = New FlowLayoutPanel()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
+        FlowLayoutPanel1.SuspendLayout()
         TabControl2.SuspendLayout()
         TabPage3.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +74,26 @@ Partial Class FormAnnotation
         TabPage1.TabIndex = 0
         TabPage1.Text = "Annotation"
         TabPage1.UseVisualStyleBackColor = True
+        ' 
+        ' FlowLayoutPanel1
+        ' 
+        FlowLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        FlowLayoutPanel1.AutoScroll = True
+        FlowLayoutPanel1.BackColor = Color.White
+        FlowLayoutPanel1.Controls.Add(EnzymeAnnotationCmd)
+        FlowLayoutPanel1.FlowDirection = FlowDirection.TopDown
+        FlowLayoutPanel1.Location = New Point(8, 6)
+        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        FlowLayoutPanel1.Size = New Size(1330, 219)
+        FlowLayoutPanel1.TabIndex = 1
+        ' 
+        ' EnzymeAnnotationCmd
+        ' 
+        EnzymeAnnotationCmd.BackColor = Color.WhiteSmoke
+        EnzymeAnnotationCmd.Location = New Point(3, 3)
+        EnzymeAnnotationCmd.Name = "EnzymeAnnotationCmd"
+        EnzymeAnnotationCmd.Size = New Size(552, 71)
+        EnzymeAnnotationCmd.TabIndex = 0
         ' 
         ' TabControl2
         ' 
@@ -202,14 +224,6 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
-        ' FlowLayoutPanel1
-        ' 
-        FlowLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        FlowLayoutPanel1.Location = New Point(8, 6)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(1330, 219)
-        FlowLayoutPanel1.TabIndex = 1
-        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
@@ -224,6 +238,7 @@ Partial Class FormAnnotation
         TabPageContextMenuStrip = DockContextMenuStrip1
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
+        FlowLayoutPanel1.ResumeLayout(False)
         TabControl2.ResumeLayout(False)
         TabPage3.ResumeLayout(False)
         TabPage3.PerformLayout()
@@ -251,4 +266,5 @@ Partial Class FormAnnotation
     Friend WithEvents DataGridView1 As AdvancedDataGridView
     Friend WithEvents ToolStrip2 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents EnzymeAnnotationCmd As AnnotationItem
 End Class

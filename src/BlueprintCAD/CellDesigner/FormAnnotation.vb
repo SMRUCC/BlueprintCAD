@@ -47,4 +47,10 @@ Public Class FormAnnotation
             End If
         End Using
     End Sub
+
+    Private Sub FlowLayoutPanel1_SizeChanged(sender As Object, e As EventArgs) Handles FlowLayoutPanel1.SizeChanged
+        For Each item As Control In FlowLayoutPanel1.Controls
+            item.Width = FlowLayoutPanel1.Width - 10
+        Next
+    End Sub
 End Class

@@ -61,6 +61,7 @@ Partial Class AnnotationItem
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.WhiteSmoke
         Controls.Add(Button1)
         Controls.Add(LinkLabel1)
         Controls.Add(PictureBox1)
