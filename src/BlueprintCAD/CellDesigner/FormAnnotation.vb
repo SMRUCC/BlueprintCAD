@@ -3,7 +3,7 @@
 Public Class FormAnnotation
 
     Dim filepath As String
-    Dim genbank As GBFF.File
+    Dim proj As GenBankProject
 
     Private Sub FormAnnotation_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         Workbench.SetFormActiveTitle(TabText)
@@ -14,7 +14,12 @@ Public Class FormAnnotation
     End Sub
 
     Public Function LoadModel(filepath As String) As FormAnnotation
-        genbank = GBFF.File.Load(filepath)
+        Dim genbank = GBFF.File.Load(filepath)
+        Dim proj As New GenBankProject With {.taxonomy = genbank.Source.GetTaxonomy}
+
+        Me.proj = proj
+        Me.filepath = Nothing
+
         Return Me
     End Function
 
@@ -52,5 +57,18 @@ Public Class FormAnnotation
         For Each item As Control In FlowLayoutPanel1.Controls
             item.Width = FlowLayoutPanel1.Width - 10
         Next
+    End Sub
+
+    Protected Overrides Sub SaveDocument()
+        If filepath.StringEmpty Then
+            Using file As New SaveFileDialog With {.Filter = "Annotation Project(*.gcproj)|*.gcproj"}
+                If file.ShowDialog = DialogResult.OK Then
+                    filepath = file.FileName
+                End If
+            End Using
+        End If
+        If Not filepath.StringEmpty Then
+            Call proj.SaveZip(filepath)
+        End If
     End Sub
 End Class
