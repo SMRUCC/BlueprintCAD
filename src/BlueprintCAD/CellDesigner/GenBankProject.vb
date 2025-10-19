@@ -19,6 +19,7 @@ Public Class GenBankProject
             Call zip.WriteText(nt, "/source.txt")
             Call FASTA.StreamWriter.WriteList(genes, zip.OpenFile("/genes.txt", access:=FileAccess.Write))
             Call FASTA.StreamWriter.WriteList(proteins, zip.OpenFile("/proteins.txt", access:=FileAccess.Write))
+            Call zip.WriteText(gene_table.GetJson, "/genes.json")
         End Using
     End Sub
 End Class
