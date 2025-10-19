@@ -30,13 +30,13 @@ Partial Class FormAnnotation
         TabControl2 = New TabControl()
         TabPage3 = New TabPage()
         TabPage4 = New TabPage()
+        TabPage5 = New TabPage()
         TabPage2 = New TabPage()
         Button1 = New Button()
         TextBox1 = New TextBox()
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
-        TabPage5 = New TabPage()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabControl2.SuspendLayout()
@@ -68,13 +68,14 @@ Partial Class FormAnnotation
         ' 
         ' TabControl2
         ' 
+        TabControl2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         TabControl2.Controls.Add(TabPage3)
         TabControl2.Controls.Add(TabPage4)
         TabControl2.Controls.Add(TabPage5)
-        TabControl2.Location = New Point(8, 89)
+        TabControl2.Location = New Point(8, 247)
         TabControl2.Name = "TabControl2"
         TabControl2.SelectedIndex = 0
-        TabControl2.Size = New Size(1267, 566)
+        TabControl2.Size = New Size(1330, 433)
         TabControl2.TabIndex = 0
         ' 
         ' TabPage3
@@ -82,7 +83,7 @@ Partial Class FormAnnotation
         TabPage3.Location = New Point(4, 26)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1259, 536)
+        TabPage3.Size = New Size(1322, 403)
         TabPage3.TabIndex = 0
         TabPage3.Text = "Enzyme"
         TabPage3.UseVisualStyleBackColor = True
@@ -92,10 +93,19 @@ Partial Class FormAnnotation
         TabPage4.Location = New Point(4, 26)
         TabPage4.Name = "TabPage4"
         TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(1259, 536)
+        TabPage4.Size = New Size(1259, 500)
         TabPage4.TabIndex = 1
         TabPage4.Text = "Transcript Units"
         TabPage4.UseVisualStyleBackColor = True
+        ' 
+        ' TabPage5
+        ' 
+        TabPage5.Location = New Point(4, 26)
+        TabPage5.Name = "TabPage5"
+        TabPage5.Size = New Size(1259, 500)
+        TabPage5.TabIndex = 2
+        TabPage5.Text = "Transcript Factor"
+        TabPage5.UseVisualStyleBackColor = True
         ' 
         ' TabPage2
         ' 
@@ -152,15 +162,6 @@ Partial Class FormAnnotation
         ToolStripButton1.Name = "ToolStripButton1"
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
-        ' 
-        ' TabPage5
-        ' 
-        TabPage5.Location = New Point(4, 26)
-        TabPage5.Name = "TabPage5"
-        TabPage5.Size = New Size(1259, 536)
-        TabPage5.TabIndex = 2
-        TabPage5.Text = "Transcript Factor"
-        TabPage5.UseVisualStyleBackColor = True
         ' 
         ' FormAnnotation
         ' 
