@@ -1,11 +1,12 @@
-﻿Imports Galaxy.Workbench.DockDocument
+﻿Imports Galaxy.Data.TableSheet
+Imports Galaxy.Workbench.DockDocument
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormAnnotation
     Inherits DocumentWindow
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -22,13 +23,15 @@ Partial Class FormAnnotation
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
         TabControl2 = New TabControl()
         TabPage3 = New TabPage()
+        DataGridView1 = New AdvancedDataGridView()
+        ToolStrip2 = New AdvancedDataGridViewSearchToolBar()
         TabPage4 = New TabPage()
         TabPage5 = New TabPage()
         TabPage2 = New TabPage()
@@ -40,6 +43,8 @@ Partial Class FormAnnotation
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabControl2.SuspendLayout()
+        TabPage3.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
         SuspendLayout()
@@ -68,32 +73,64 @@ Partial Class FormAnnotation
         ' 
         ' TabControl2
         ' 
-        TabControl2.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        TabControl2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         TabControl2.Controls.Add(TabPage3)
         TabControl2.Controls.Add(TabPage4)
         TabControl2.Controls.Add(TabPage5)
-        TabControl2.Location = New Point(8, 247)
+        TabControl2.Location = New Point(8, 231)
         TabControl2.Name = "TabControl2"
         TabControl2.SelectedIndex = 0
-        TabControl2.Size = New Size(1330, 433)
+        TabControl2.Size = New Size(1330, 449)
         TabControl2.TabIndex = 0
         ' 
         ' TabPage3
         ' 
+        TabPage3.Controls.Add(DataGridView1)
+        TabPage3.Controls.Add(ToolStrip2)
         TabPage3.Location = New Point(4, 26)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1322, 403)
+        TabPage3.Size = New Size(1322, 419)
         TabPage3.TabIndex = 0
         TabPage3.Text = "Enzyme"
         TabPage3.UseVisualStyleBackColor = True
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.BackgroundColor = Color.WhiteSmoke
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.FilterAndSortEnabled = True
+        DataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
+        DataGridView1.Location = New Point(3, 30)
+        DataGridView1.MaxFilterButtonImageHeight = 23
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RightToLeft = RightToLeft.No
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridView1.Size = New Size(1316, 386)
+        DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
+        DataGridView1.TabIndex = 0
+        ' 
+        ' ToolStrip2
+        ' 
+        ToolStrip2.AllowMerge = False
+        ToolStrip2.GripStyle = ToolStripGripStyle.Hidden
+        ToolStrip2.Location = New Point(3, 3)
+        ToolStrip2.MaximumSize = New Size(0, 27)
+        ToolStrip2.MinimumSize = New Size(0, 27)
+        ToolStrip2.Name = "ToolStrip2"
+        ToolStrip2.RenderMode = ToolStripRenderMode.Professional
+        ToolStrip2.Size = New Size(1316, 27)
+        ToolStrip2.TabIndex = 1
+        ToolStrip2.Text = "ToolStrip2"
         ' 
         ' TabPage4
         ' 
         TabPage4.Location = New Point(4, 26)
         TabPage4.Name = "TabPage4"
         TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(1259, 500)
+        TabPage4.Size = New Size(1322, 419)
         TabPage4.TabIndex = 1
         TabPage4.Text = "Transcript Units"
         TabPage4.UseVisualStyleBackColor = True
@@ -102,7 +139,7 @@ Partial Class FormAnnotation
         ' 
         TabPage5.Location = New Point(4, 26)
         TabPage5.Name = "TabPage5"
-        TabPage5.Size = New Size(1259, 500)
+        TabPage5.Size = New Size(1322, 419)
         TabPage5.TabIndex = 2
         TabPage5.Text = "Transcript Factor"
         TabPage5.UseVisualStyleBackColor = True
@@ -165,7 +202,7 @@ Partial Class FormAnnotation
         ' 
         ' FormAnnotation
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 17.0F)
+        AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1354, 743)
         Controls.Add(TabControl1)
@@ -178,6 +215,9 @@ Partial Class FormAnnotation
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         TabControl2.ResumeLayout(False)
+        TabPage3.ResumeLayout(False)
+        TabPage3.PerformLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
@@ -198,4 +238,6 @@ Partial Class FormAnnotation
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents DataGridView1 As AdvancedDataGridView
+    Friend WithEvents ToolStrip2 As AdvancedDataGridViewSearchToolBar
 End Class
