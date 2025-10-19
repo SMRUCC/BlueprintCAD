@@ -1,5 +1,9 @@
-﻿Imports SMRUCC.genomics.Assembly.NCBI.GenBank
+﻿Imports System.IO
+Imports Microsoft.VisualBasic.ApplicationServices
+Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.InteropService
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 
 Public Class FormAnnotation
 
@@ -90,5 +94,21 @@ Public Class FormAnnotation
         If Not filepath.StringEmpty Then
             Call proj.SaveZip(filepath)
         End If
+    End Sub
+
+    Private Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run
+        Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="enzyme_blast")
+        Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
+
+        Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
+            Call proj.DumpProteinFasta(s)
+            Call s.Flush()
+        End Using
+
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast)
+        Dim enzyme_db As String = $"{App.HOME}/data/ec_numbers.fasta"
+
+        Call blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run()
+        Call blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=1)
     End Sub
 End Class
