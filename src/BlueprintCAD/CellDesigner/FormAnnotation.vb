@@ -5,6 +5,8 @@ Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.InteropService
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 
 Public Class FormAnnotation
 
@@ -112,6 +114,9 @@ Public Class FormAnnotation
         Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
         Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=1))
 
-        Dim parse = BlastpOutputReader.RunParser(tempOutfile).ToArray
+        proj.enzyme_hits = BlastpOutputReader _
+            .RunParser(tempOutfile) _
+            .ExportHistResult _
+            .ToArray
     End Sub
 End Class

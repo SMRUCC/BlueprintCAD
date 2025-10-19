@@ -2,6 +2,7 @@
 Imports Microsoft.VisualBasic.ApplicationServices.Zip
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports SMRUCC.genomics.ComponentModel.Annotation
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 Imports SMRUCC.genomics.Metagenomics
 Imports SMRUCC.genomics.SequenceModel
 
@@ -12,6 +13,7 @@ Public Class GenBankProject
     Public Property genes As Dictionary(Of String, String)
     Public Property proteins As Dictionary(Of String, String)
     Public Property gene_table As GeneTable()
+    Public Property enzyme_hits As HitCollection()
 
     Public Sub DumpProteinFasta(s As Stream)
         Call FASTA.StreamWriter.WriteList(proteins, s)
@@ -24,6 +26,7 @@ Public Class GenBankProject
             Call FASTA.StreamWriter.WriteList(genes, zip.OpenFile("/genes.txt", access:=FileAccess.Write))
             Call DumpProteinFasta(zip.OpenFile("/proteins.txt", access:=FileAccess.Write))
             Call zip.WriteText(gene_table.GetJson, "/genes.json")
+            Call zip.WriteText(enzyme_hits.GetJson, "/localblast/enzyme_hits.json")
         End Using
     End Sub
 End Class
