@@ -141,6 +141,10 @@ Public Class FormAnnotation
                 positive
             )
         Next
+
+        If Not proj.enzyme_hits.IsNullOrEmpty Then
+            '  Call EnzymeAnnotationCmd.SetStatusIcon(My.Resources.Icons)
+        End If
     End Sub
 
     Private Async Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run
