@@ -112,6 +112,8 @@ Public Class FormAnnotation
     End Sub
 
     Private Sub LoadEnzymeHits(tbl As DataTable)
+        Dim hits As Integer = 0
+
         Call tbl.Columns.Add("gene", GetType(String))
         Call tbl.Columns.Add("hits", GetType(Integer))
         Call tbl.Columns.Add("ec_number", GetType(String))
@@ -131,6 +133,7 @@ Public Class FormAnnotation
                     .First.Key
                 identities = top.Select(Function(a) a.identities).Average
                 positive = top.Select(Function(a) a.positive).Average
+                hits += 1
             End If
 
             Call tbl.Rows.Add(
@@ -143,7 +146,8 @@ Public Class FormAnnotation
         Next
 
         If Not proj.enzyme_hits.IsNullOrEmpty Then
-            '  Call EnzymeAnnotationCmd.SetStatusIcon(My.Resources.Icons)
+            Call EnzymeAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call EnzymeAnnotationCmd.SetStatusText($"{hits}/{proj.enzyme_hits.Length} enzyme number hits.")
         End If
     End Sub
 
