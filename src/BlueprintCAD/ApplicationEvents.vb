@@ -41,10 +41,18 @@ Namespace My
         End Sub
 
         Public Shared Sub OpenAnnotationTool(sender As Object, e As ExecuteEventArgs)
-            Dim file As New OpenFileDialog With {.Filter = "NCBI GenBank(*.gb;*.gbk;*.gbff)|*.gb;*.gbk;*.gbff"}
+            Dim file As New OpenFileDialog With {
+                .Filter = "NCBI GenBank(*.gb;*.gbk;*.gbff)|*.gb;*.gbk;*.gbff|GCModeller VirtualCell Project(*.gcproj)|*.gcproj"
+            }
 
             If file.ShowDialog = DialogResult.OK Then
-                Call CommonRuntime.ShowDocument(Of FormAnnotation)(DockState.Document, "Build Model: " & file.FileName.FileName).LoadModel(file.FileName)
+                Dim page = CommonRuntime.ShowDocument(Of FormAnnotation)(DockState.Document, "Build Model: " & file.FileName.FileName)
+
+                If file.FileName.ExtensionSuffix("gcproj") Then
+                    Call page.LoadProject(file.FileName)
+                Else
+                    Call page.LoadModel(file.FileName)
+                End If
             End If
         End Sub
 

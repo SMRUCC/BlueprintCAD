@@ -21,6 +21,13 @@ Public Class FormAnnotation
         Workbench.RestoreFormTitle()
     End Sub
 
+    Public Function LoadProject(filepath As String) As FormAnnotation
+        Me.filepath = filepath
+        Me.proj = GenBankProject.Load(filepath)
+
+        Return Me
+    End Function
+
     Public Function LoadModel(filepath As String) As FormAnnotation
         Dim genbank = GBFF.File.Load(filepath)
         Dim nucl = genbank _
