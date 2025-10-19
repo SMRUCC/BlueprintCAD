@@ -111,7 +111,7 @@ Public Class FormAnnotation
         Dim enzyme_db As String = $"{App.HOME}/data/ec_numbers.fasta"
 
         Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
-        Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=1).Run())
+        Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=0.01).Run())
 
         proj.enzyme_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _

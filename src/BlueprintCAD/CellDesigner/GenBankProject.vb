@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports Microsoft.VisualBasic.ApplicationServices.Zip
+Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
@@ -25,8 +26,8 @@ Public Class GenBankProject
             Call zip.WriteText(nt, "/source.txt")
             Call FASTA.StreamWriter.WriteList(genes, zip.OpenFile("/genes.txt", access:=FileAccess.Write))
             Call DumpProteinFasta(zip.OpenFile("/proteins.txt", access:=FileAccess.Write))
-            Call zip.WriteText(gene_table.GetJson, "/genes.json")
-            Call zip.WriteText(enzyme_hits.GetJson, "/localblast/enzyme_hits.json")
+            Call zip.WriteLines(gene_table.SafeQuery.Select(Function(a) a.GetJson), "/genes.jsonl")
+            Call zip.WriteLines(enzyme_hits.SafeQuery.Select(Function(q) q.GetJson), "/localblast/enzyme_hits.jsonl")
         End Using
     End Sub
 End Class
