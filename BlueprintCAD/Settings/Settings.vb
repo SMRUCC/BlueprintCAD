@@ -3,6 +3,7 @@
 Public Class Settings
 
     Public Property ncbi_blast As String
+    Public Property registry_server As String
 
     Shared ReadOnly defaultConfig As String = App.ProductProgramData & "/settings.json"
 
@@ -10,7 +11,7 @@ Public Class Settings
         Dim config As Settings = defaultConfig.LoadJsonFile(Of Settings)(throwEx:=False)
 
         If config Is Nothing Then
-            config = New Settings
+            config = New Settings With {.registry_server = "http://biocad.innovation.ac.cn"}
         End If
 
         Return config

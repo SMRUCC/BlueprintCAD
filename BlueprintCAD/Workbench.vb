@@ -1,4 +1,5 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
+Imports CADRegistry
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Drawing
 
@@ -17,6 +18,12 @@ Public Module Workbench
     End Property
 
     Public ReadOnly Property Settings As Settings
+
+    Public ReadOnly Property CADRegistry As RegistryUrl
+        Get
+            Return New RegistryUrl(Settings.registry_server)
+        End Get
+    End Property
 
     Sub New()
         Call SkiaDriver.Register()
