@@ -6,6 +6,7 @@ Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 
 Public Class FormAnnotation
 
@@ -13,7 +14,6 @@ Public Class FormAnnotation
     Dim proj As GenBankProject
 
     Dim enzymeLoader As GridLoaderHandler
-    Dim enzymeSearch As GridSearchHandler
 
     Private Sub FormAnnotation_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         Workbench.SetFormActiveTitle(TabText)
@@ -27,7 +27,7 @@ Public Class FormAnnotation
         Me.filepath = filepath
         Me.proj = GenBankProject.Load(filepath)
 
-        Call LoadEnzymeHits()
+        Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
 
         Return Me
     End Function
@@ -79,9 +79,7 @@ Public Class FormAnnotation
 
     Private Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
         TextBox1.Text = Workbench.Settings.ncbi_blast
-
         enzymeLoader = New GridLoaderHandler(DataGridView1, ToolStrip1)
-        enzymeSearch = New GridSearchHandler(DataGridView1)
 
         Call ApplyVsTheme(ToolStrip1)
     End Sub
@@ -113,8 +111,22 @@ Public Class FormAnnotation
         End If
     End Sub
 
-    Private Sub LoadEnzymeHits()
+    Private Sub LoadEnzymeHits(tbl As DataTable)
+        Call tbl.Columns.Add("gene", GetType(String))
+        Call tbl.Columns.Add("hits", GetType(Integer))
+        Call tbl.Columns.Add("ec_number", GetType(String))
+        Call tbl.Columns.Add("identities", GetType(Double))
+        Call tbl.Columns.Add("positive", GetType(Double))
 
+        For Each enzyme As HitCollection In proj.enzyme_hits
+            Call tbl.Rows.Add(
+                enzyme.QueryName,
+                enzyme.hits.TryCount,
+                enzyme.hits.Take(10).Select(Function(a) a.hitName.Split("|"c).First).GroupBy(Function(id) id).OrderByDescending(Function(a) a.Count).First.Key,
+                enzyme.hits.Take(10).Select(Function(a) a.identities).Average,
+                enzyme.hits.Take(10).Select(Function(a) a.positive).Average
+            )
+        Next
     End Sub
 
     Private Async Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run
@@ -136,6 +148,6 @@ Public Class FormAnnotation
             .ExportHistResult _
             .ToArray
 
-        Call LoadEnzymeHits()
+        Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
     End Sub
 End Class
