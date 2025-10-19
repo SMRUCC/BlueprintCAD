@@ -40,6 +40,7 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
+        FlowLayoutPanel1 = New FlowLayoutPanel()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         TabControl2.SuspendLayout()
@@ -62,6 +63,7 @@ Partial Class FormAnnotation
         ' 
         ' TabPage1
         ' 
+        TabPage1.Controls.Add(FlowLayoutPanel1)
         TabPage1.Controls.Add(TabControl2)
         TabPage1.Location = New Point(4, 26)
         TabPage1.Name = "TabPage1"
@@ -200,6 +202,14 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
+        ' FlowLayoutPanel1
+        ' 
+        FlowLayoutPanel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        FlowLayoutPanel1.Location = New Point(8, 6)
+        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        FlowLayoutPanel1.Size = New Size(1330, 219)
+        FlowLayoutPanel1.TabIndex = 1
+        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
@@ -240,4 +250,5 @@ Partial Class FormAnnotation
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents DataGridView1 As AdvancedDataGridView
     Friend WithEvents ToolStrip2 As AdvancedDataGridViewSearchToolBar
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class
