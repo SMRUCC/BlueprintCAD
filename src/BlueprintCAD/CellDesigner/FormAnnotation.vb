@@ -16,21 +16,23 @@ Public Class FormAnnotation
 
     Public Function LoadModel(filepath As String) As FormAnnotation
         Dim genbank = GBFF.File.Load(filepath)
+        Dim nucl = genbank _
+            .EnumerateGeneFeatures _
+            .ToDictionary(Function(a) a.Query(FeatureQualifiers.locus_tag),
+                            Function(a)
+                                Return a.SequenceData
+                            End Function)
+        Dim prot = genbank _
+            .ExportProteins_Short(True) _
+            .ToDictionary(Function(a) a.Title,
+                            Function(a)
+                                Return a.SequenceData
+                            End Function)
         Dim proj As New GenBankProject With {
             .taxonomy = genbank.Source.GetTaxonomy,
             .nt = genbank.Origin.SequenceData,
-            .genes = genbank _
-                .EnumerateGeneFeatures _
-                .ToDictionary(Function(a) a.Query(FeatureQualifiers.locus_tag),
-                              Function(a)
-                                  Return a.SequenceData
-                              End Function),
-            .proteins = genbank _
-                .ExportProteins_Short(True) _
-                .ToDictionary(Function(a) a.Title,
-                              Function(a)
-                                  Return a.SequenceData
-                              End Function),
+            .genes = nucl,
+            .proteins = prot,
             .gene_table = genbank.ExportGeneFeatures
         }
 
