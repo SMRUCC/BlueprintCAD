@@ -25,36 +25,46 @@ Partial Class FormAnnotation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        SplitContainer1 = New SplitContainer()
         FlowLayoutPanel1 = New FlowLayoutPanel()
         EnzymeAnnotationCmd = New AnnotationItem()
+        SplitContainer2 = New SplitContainer()
         TabControl2 = New TabControl()
         TabPage3 = New TabPage()
         DataGridView1 = New AdvancedDataGridView()
         ToolStrip2 = New AdvancedDataGridViewSearchToolBar()
         TabPage4 = New TabPage()
         TabPage5 = New TabPage()
+        AdvancedDataGridView1 = New AdvancedDataGridView()
+        AdvancedDataGridViewSearchToolBar1 = New AdvancedDataGridViewSearchToolBar()
         TabPage2 = New TabPage()
         Button1 = New Button()
         TextBox1 = New TextBox()
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
-        SplitContainer1 = New SplitContainer()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
-        FlowLayoutPanel1.SuspendLayout()
-        TabControl2.SuspendLayout()
-        TabPage3.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
-        TabPage2.SuspendLayout()
-        ToolStrip1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        FlowLayoutPanel1.SuspendLayout()
+        CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer2.Panel1.SuspendLayout()
+        SplitContainer2.Panel2.SuspendLayout()
+        SplitContainer2.SuspendLayout()
+        TabControl2.SuspendLayout()
+        TabPage3.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        TabPage2.SuspendLayout()
+        ToolStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -79,6 +89,25 @@ Partial Class FormAnnotation
         TabPage1.Text = "Annotation"
         TabPage1.UseVisualStyleBackColor = True
         ' 
+        ' SplitContainer1
+        ' 
+        SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.FixedPanel = FixedPanel.Panel1
+        SplitContainer1.Location = New Point(3, 3)
+        SplitContainer1.Name = "SplitContainer1"
+        SplitContainer1.Orientation = Orientation.Horizontal
+        ' 
+        ' SplitContainer1.Panel1
+        ' 
+        SplitContainer1.Panel1.Controls.Add(FlowLayoutPanel1)
+        ' 
+        ' SplitContainer1.Panel2
+        ' 
+        SplitContainer1.Panel2.Controls.Add(SplitContainer2)
+        SplitContainer1.Size = New Size(1340, 682)
+        SplitContainer1.SplitterDistance = 194
+        SplitContainer1.TabIndex = 2
+        ' 
         ' FlowLayoutPanel1
         ' 
         FlowLayoutPanel1.AutoScroll = True
@@ -96,8 +125,27 @@ Partial Class FormAnnotation
         EnzymeAnnotationCmd.BackColor = Color.WhiteSmoke
         EnzymeAnnotationCmd.Location = New Point(3, 3)
         EnzymeAnnotationCmd.Name = "EnzymeAnnotationCmd"
+        EnzymeAnnotationCmd.Running = False
         EnzymeAnnotationCmd.Size = New Size(552, 71)
         EnzymeAnnotationCmd.TabIndex = 0
+        ' 
+        ' SplitContainer2
+        ' 
+        SplitContainer2.Dock = DockStyle.Fill
+        SplitContainer2.Location = New Point(0, 0)
+        SplitContainer2.Name = "SplitContainer2"
+        ' 
+        ' SplitContainer2.Panel1
+        ' 
+        SplitContainer2.Panel1.Controls.Add(TabControl2)
+        ' 
+        ' SplitContainer2.Panel2
+        ' 
+        SplitContainer2.Panel2.Controls.Add(AdvancedDataGridView1)
+        SplitContainer2.Panel2.Controls.Add(AdvancedDataGridViewSearchToolBar1)
+        SplitContainer2.Size = New Size(1340, 484)
+        SplitContainer2.SplitterDistance = 737
+        SplitContainer2.TabIndex = 1
         ' 
         ' TabControl2
         ' 
@@ -108,7 +156,7 @@ Partial Class FormAnnotation
         TabControl2.Location = New Point(0, 0)
         TabControl2.Name = "TabControl2"
         TabControl2.SelectedIndex = 0
-        TabControl2.Size = New Size(1340, 484)
+        TabControl2.Size = New Size(737, 484)
         TabControl2.TabIndex = 0
         ' 
         ' TabPage3
@@ -118,7 +166,7 @@ Partial Class FormAnnotation
         TabPage3.Location = New Point(4, 26)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(1332, 454)
+        TabPage3.Size = New Size(729, 454)
         TabPage3.TabIndex = 0
         TabPage3.Text = "Enzyme"
         TabPage3.UseVisualStyleBackColor = True
@@ -128,15 +176,24 @@ Partial Class FormAnnotation
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.BackgroundColor = Color.WhiteSmoke
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Window
+        DataGridViewCellStyle1.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.FilterAndSortEnabled = True
         DataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
         DataGridView1.Location = New Point(3, 30)
         DataGridView1.MaxFilterButtonImageHeight = 23
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
         DataGridView1.RightToLeft = RightToLeft.No
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(1326, 421)
+        DataGridView1.Size = New Size(723, 421)
         DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         DataGridView1.TabIndex = 0
         ' 
@@ -149,7 +206,7 @@ Partial Class FormAnnotation
         ToolStrip2.MinimumSize = New Size(0, 27)
         ToolStrip2.Name = "ToolStrip2"
         ToolStrip2.RenderMode = ToolStripRenderMode.Professional
-        ToolStrip2.Size = New Size(1326, 27)
+        ToolStrip2.Size = New Size(723, 27)
         ToolStrip2.TabIndex = 1
         ToolStrip2.Text = "ToolStrip2"
         ' 
@@ -158,7 +215,7 @@ Partial Class FormAnnotation
         TabPage4.Location = New Point(4, 26)
         TabPage4.Name = "TabPage4"
         TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(1332, 419)
+        TabPage4.Size = New Size(729, 454)
         TabPage4.TabIndex = 1
         TabPage4.Text = "Transcript Units"
         TabPage4.UseVisualStyleBackColor = True
@@ -167,10 +224,49 @@ Partial Class FormAnnotation
         ' 
         TabPage5.Location = New Point(4, 26)
         TabPage5.Name = "TabPage5"
-        TabPage5.Size = New Size(1332, 419)
+        TabPage5.Size = New Size(729, 454)
         TabPage5.TabIndex = 2
         TabPage5.Text = "Transcript Factor"
         TabPage5.UseVisualStyleBackColor = True
+        ' 
+        ' AdvancedDataGridView1
+        ' 
+        AdvancedDataGridView1.AllowUserToAddRows = False
+        AdvancedDataGridView1.BackgroundColor = Color.WhiteSmoke
+        AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        AdvancedDataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        AdvancedDataGridView1.Dock = DockStyle.Fill
+        AdvancedDataGridView1.FilterAndSortEnabled = True
+        AdvancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView1.Location = New Point(0, 27)
+        AdvancedDataGridView1.MaxFilterButtonImageHeight = 23
+        AdvancedDataGridView1.Name = "AdvancedDataGridView1"
+        AdvancedDataGridView1.ReadOnly = True
+        AdvancedDataGridView1.RightToLeft = RightToLeft.No
+        AdvancedDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        AdvancedDataGridView1.Size = New Size(599, 457)
+        AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView1.TabIndex = 2
+        ' 
+        ' AdvancedDataGridViewSearchToolBar1
+        ' 
+        AdvancedDataGridViewSearchToolBar1.AllowMerge = False
+        AdvancedDataGridViewSearchToolBar1.GripStyle = ToolStripGripStyle.Hidden
+        AdvancedDataGridViewSearchToolBar1.Location = New Point(0, 0)
+        AdvancedDataGridViewSearchToolBar1.MaximumSize = New Size(0, 27)
+        AdvancedDataGridViewSearchToolBar1.MinimumSize = New Size(0, 27)
+        AdvancedDataGridViewSearchToolBar1.Name = "AdvancedDataGridViewSearchToolBar1"
+        AdvancedDataGridViewSearchToolBar1.RenderMode = ToolStripRenderMode.Professional
+        AdvancedDataGridViewSearchToolBar1.Size = New Size(599, 27)
+        AdvancedDataGridViewSearchToolBar1.TabIndex = 3
+        AdvancedDataGridViewSearchToolBar1.Text = "AdvancedDataGridViewSearchToolBar1"
         ' 
         ' TabPage2
         ' 
@@ -228,25 +324,6 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
-        ' SplitContainer1
-        ' 
-        SplitContainer1.Dock = DockStyle.Fill
-        SplitContainer1.FixedPanel = FixedPanel.Panel1
-        SplitContainer1.Location = New Point(3, 3)
-        SplitContainer1.Name = "SplitContainer1"
-        SplitContainer1.Orientation = Orientation.Horizontal
-        ' 
-        ' SplitContainer1.Panel1
-        ' 
-        SplitContainer1.Panel1.Controls.Add(FlowLayoutPanel1)
-        ' 
-        ' SplitContainer1.Panel2
-        ' 
-        SplitContainer1.Panel2.Controls.Add(TabControl2)
-        SplitContainer1.Size = New Size(1340, 682)
-        SplitContainer1.SplitterDistance = 194
-        SplitContainer1.TabIndex = 2
-        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
@@ -261,19 +338,25 @@ Partial Class FormAnnotation
         TabPageContextMenuStrip = DockContextMenuStrip1
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
-        FlowLayoutPanel1.ResumeLayout(False)
-        TabControl2.ResumeLayout(False)
-        TabPage3.ResumeLayout(False)
-        TabPage3.PerformLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
-        TabPage2.ResumeLayout(False)
-        TabPage2.PerformLayout()
-        ToolStrip1.ResumeLayout(False)
-        ToolStrip1.PerformLayout()
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        FlowLayoutPanel1.ResumeLayout(False)
+        SplitContainer2.Panel1.ResumeLayout(False)
+        SplitContainer2.Panel2.ResumeLayout(False)
+        SplitContainer2.Panel2.PerformLayout()
+        CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer2.ResumeLayout(False)
+        TabControl2.ResumeLayout(False)
+        TabPage3.ResumeLayout(False)
+        TabPage3.PerformLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        TabPage2.ResumeLayout(False)
+        TabPage2.PerformLayout()
+        ToolStrip1.ResumeLayout(False)
+        ToolStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -295,4 +378,7 @@ Partial Class FormAnnotation
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents EnzymeAnnotationCmd As AnnotationItem
     Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents SplitContainer2 As SplitContainer
+    Friend WithEvents AdvancedDataGridView1 As AdvancedDataGridView
+    Friend WithEvents AdvancedDataGridViewSearchToolBar1 As AdvancedDataGridViewSearchToolBar
 End Class

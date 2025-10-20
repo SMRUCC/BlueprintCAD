@@ -1,6 +1,8 @@
 ﻿Imports System.IO
 Imports Galaxy.Data.TableSheet
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
@@ -14,6 +16,7 @@ Public Class FormAnnotation
     Dim proj As GenBankProject
 
     Dim enzymeLoader As GridLoaderHandler
+    Dim blastLoader As GridLoaderHandler
 
     Private Sub FormAnnotation_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         Workbench.SetFormActiveTitle(TabText)
@@ -80,8 +83,9 @@ Public Class FormAnnotation
     Private Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
         TextBox1.Text = Workbench.Settings.ncbi_blast
         enzymeLoader = New GridLoaderHandler(DataGridView1, ToolStrip2)
+        blastLoader = New GridLoaderHandler(AdvancedDataGridView1, AdvancedDataGridViewSearchToolBar1)
 
-        Call ApplyVsTheme(ToolStrip1, ToolStrip2)
+        Call ApplyVsTheme(ToolStrip1, ToolStrip2, AdvancedDataGridViewSearchToolBar1)
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
@@ -181,5 +185,33 @@ Public Class FormAnnotation
             .ToArray
 
         Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim gene_id As String = CStr(row.Cells(0).Value)
+        Dim hits As HitCollection = proj.enzyme_hits.KeyItem(gene_id)
+
+        If hits Is Nothing Then
+            Call blastLoader.ClearData()
+        Else
+            Call blastLoader.LoadTable(
+                Sub(tbl)
+                    Call tbl.Columns.Add("ec_number", GetType(String))
+                    Call tbl.Columns.Add("registry_id", GetType(String))
+                    Call tbl.Columns.Add("identities", GetType(String))
+                    Call tbl.Columns.Add("positive", GetType(String))
+
+                    For Each hit As Hit In hits.AsEnumerable
+                        Dim annotation As String() = hit.hitName.Split("|"c)
+
+                        Call tbl.Rows.Add(annotation(0), annotation(1), hit.identities, hit.positive)
+                    Next
+                End Sub)
+        End If
     End Sub
 End Class
