@@ -145,6 +145,8 @@ Public Class FormAnnotation
             )
         Next
 
+        EnzymeAnnotationCmd.Running = False
+
         If Not proj.enzyme_hits.IsNullOrEmpty Then
             Call EnzymeAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
             Call EnzymeAnnotationCmd.SetStatusText($"{hits}/{proj.enzyme_hits.Length} enzyme number hits.")
@@ -155,14 +157,22 @@ Public Class FormAnnotation
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="enzyme_blast")
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
 
+        If EnzymeAnnotationCmd.Running Then
+            Return
+        Else
+            EnzymeAnnotationCmd.Running = True
+            EnzymeAnnotationCmd.SetStatusText("Running the annotation...")
+            EnzymeAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+        End If
+
         Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
             Call proj.DumpProteinFasta(s)
         End Using
 
-        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 8}
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 12}
         Dim enzyme_db As String = $"{App.HOME}/data/ec_numbers.fasta"
 
-        Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
+        ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
         Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=0.01).Run())
 
         proj.enzyme_hits = BlastpOutputReader _

@@ -2,6 +2,15 @@
 
     Public Event Run()
 
+    Public Property Running As Boolean
+        Get
+            Return Not Button1.Enabled
+        End Get
+        Set(value As Boolean)
+            Button1.Enabled = Not value
+        End Set
+    End Property
+
     Public Sub SetStatusIcon(icon As Image)
         PictureBox1.BackgroundImage = icon
     End Sub
