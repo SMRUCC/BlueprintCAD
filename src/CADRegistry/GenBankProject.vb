@@ -13,6 +13,7 @@ Public Class GenBankProject
     Public Property tss_upstream As Dictionary(Of String, String)
     Public Property gene_table As GeneTable()
     Public Property enzyme_hits As HitCollection()
+    Public Property ec_numbers As Dictionary(Of String, ECNumberAnnotation)
 
     Public Sub DumpProteinFasta(s As Stream)
         Call FASTA.StreamWriter.WriteList(proteins, s)
