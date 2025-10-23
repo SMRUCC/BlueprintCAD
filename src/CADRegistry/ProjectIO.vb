@@ -22,6 +22,7 @@ Public Module ProjectIO
             Dim source_nt As String = zip.ReadAllText("/source.txt")
             Dim nucl_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/genes.txt")).ToArray
             Dim prot_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/proteins.txt")).ToArray
+            Dim tss_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/tss_upstream.txt")).ToArray
             Dim genes As GeneTable() = zip _
                 .ReadLines("/genes.jsonl") _
                 .SafeQuery _
@@ -41,7 +42,8 @@ Public Module ProjectIO
                 .taxonomy = source_json.LoadJSON(Of Taxonomy)(throwEx:=False),
                 .gene_table = genes,
                 .genes = nucl_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
-                .proteins = prot_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData)
+                .proteins = prot_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
+                .tss_upstream = tss_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData)
             }
         End Using
     End Function
