@@ -35,6 +35,12 @@ Public Module ProjectIO
                 .Select(Function(line) line.LoadJSON(Of HitCollection)(throwEx:=False)) _
                 .Where(Function(line) Not line Is Nothing) _
                 .ToArray
+            Dim ec_numbers As Dictionary(Of String, ECNumberAnnotation) = zip _
+                .ReadLines("/localblast/ec_numbers.jsonl") _
+                .SafeQuery _
+                .Select(Function(line) line.LoadJSON(Of ECNumberAnnotation)(throwEx:=False)) _
+                .Where(Function(line) Not line Is Nothing) _
+                .ToDictionary(Function(e) e.gene_id)
 
             Return New GenBankProject With {
                 .enzyme_hits = enzyme_hits,
@@ -43,7 +49,8 @@ Public Module ProjectIO
                 .gene_table = genes,
                 .genes = nucl_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
                 .proteins = prot_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
-                .tss_upstream = tss_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData)
+                .tss_upstream = tss_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
+                .ec_numbers = ec_numbers
             }
         End Using
     End Function
@@ -60,6 +67,7 @@ Public Module ProjectIO
 
             Call zip.WriteLines(proj.gene_table.SafeQuery.Select(Function(a) a.GetJson), "/genes.jsonl")
             Call zip.WriteLines(proj.enzyme_hits.SafeQuery.Select(Function(q) q.GetJson), "/localblast/enzyme_hits.jsonl")
+            Call zip.WriteLines(proj.ec_numbers.SafeQuery.Select(Function(e) e.Value.GetJson), "/localblast/ec_numbers.jsonl")
         End Using
     End Sub
 End Module
