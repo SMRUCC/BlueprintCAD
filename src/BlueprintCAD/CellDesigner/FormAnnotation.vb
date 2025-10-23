@@ -98,33 +98,32 @@ Public Class FormAnnotation
         Dim hits As Integer = 0
 
         Call tbl.Columns.Add("gene", GetType(String))
-        Call tbl.Columns.Add("hits", GetType(Integer))
+        Call tbl.Columns.Add("supports", GetType(Integer))
         Call tbl.Columns.Add("ec_number", GetType(String))
-        Call tbl.Columns.Add("identities", GetType(Double))
-        Call tbl.Columns.Add("positive", GetType(Double))
+        Call tbl.Columns.Add("score", GetType(Double))
+        Call tbl.Columns.Add("sources", GetType(Double))
 
         For Each enzyme As HitCollection In proj.enzyme_hits
-            Dim top = enzyme.hits.Take(10).ToArray
-            Dim identities As Double = 0
-            Dim positive As Double = 0
+            Dim supports As Integer = 0
             Dim annotation As String = "-"
+            Dim score As Double = 0
+            Dim source_id As String = "-"
 
-            If top.Any Then
-                annotation = top.Select(Function(a) a.hitName.Split("|"c).First) _
-                    .GroupBy(Function(id) id) _
-                    .OrderByDescending(Function(a) a.Count) _
-                    .First.Key
-                identities = top.Select(Function(a) a.identities).Average
-                positive = top.Select(Function(a) a.positive).Average
-                hits += 1
+            If proj.ec_numbers.ContainsKey(enzyme.QueryName) Then
+                Dim result As ECNumberAnnotation = proj.ec_numbers(enzyme.QueryName)
+
+                supports = result.SourceIDs.Length
+                annotation = result.EC
+                score = result.Score
+                source_id = result.SourceIDs.JoinBy(", ")
             End If
 
             Call tbl.Rows.Add(
                 enzyme.QueryName,
-                enzyme.hits.TryCount,
+                supports,
                 annotation,
-                identities,
-                positive
+                score,
+                source_id
             )
         Next
 
@@ -182,13 +181,16 @@ Public Class FormAnnotation
                 Sub(tbl)
                     Call tbl.Columns.Add("ec_number", GetType(String))
                     Call tbl.Columns.Add("registry_id", GetType(String))
-                    Call tbl.Columns.Add("identities", GetType(String))
-                    Call tbl.Columns.Add("positive", GetType(String))
+                    Call tbl.Columns.Add("identities", GetType(Double))
+                    Call tbl.Columns.Add("positive", GetType(Double))
+                    Call tbl.Columns.Add("gaps", GetType(Double))
+                    Call tbl.Columns.Add("score", GetType(Double))
+                    Call tbl.Columns.Add("e-value", GetType(Double))
 
                     For Each hit As Hit In hits.AsEnumerable
                         Dim annotation As String() = hit.hitName.Split("|"c)
 
-                        Call tbl.Rows.Add(annotation(0), annotation(1), hit.identities, hit.positive)
+                        Call tbl.Rows.Add(annotation(0), annotation(1), hit.identities, hit.positive, hit.gaps, hit.score, hit.evalue)
                     Next
                 End Sub)
         End If
