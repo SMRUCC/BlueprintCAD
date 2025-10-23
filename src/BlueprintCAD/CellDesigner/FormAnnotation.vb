@@ -29,7 +29,7 @@ Public Class FormAnnotation
 
     Public Function LoadProject(filepath As String) As FormAnnotation
         Me.filepath = filepath
-        Me.proj = GenBankProject.Load(filepath)
+        Me.proj = ProjectIO.Load(filepath)
 
         Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
 
@@ -37,29 +37,7 @@ Public Class FormAnnotation
     End Function
 
     Public Function LoadModel(filepath As String) As FormAnnotation
-        Dim genbank = GBFF.File.Load(filepath)
-        Dim nucl = genbank _
-            .EnumerateGeneFeatures(ORF:=False) _
-            .GroupBy(Function(a) a.Query(FeatureQualifiers.locus_tag)) _
-            .ToDictionary(Function(a) a.Key,
-                          Function(a)
-                              Return a.First.SequenceData
-                          End Function)
-        Dim prot = genbank _
-            .ExportProteins_Short(True) _
-            .ToDictionary(Function(a) a.Title,
-                          Function(a)
-                              Return a.SequenceData
-                          End Function)
-        Dim proj As New GenBankProject With {
-            .taxonomy = genbank.Source.GetTaxonomy,
-            .nt = genbank.Origin.SequenceData,
-            .genes = nucl,
-            .proteins = prot,
-            .gene_table = genbank.ExportGeneFeatures
-        }
-
-        Me.proj = proj
+        Me.proj = ProjectCreator.FromGenBank(GBFF.File.Load(filepath))
         Me.filepath = Nothing
 
         Return Me
