@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports CADRegistry
 Imports Galaxy.Data.TableSheet
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
