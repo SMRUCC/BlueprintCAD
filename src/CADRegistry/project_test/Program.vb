@@ -11,6 +11,10 @@ Module Program
             .RunParser("G:\BlueprintCAD\demo\tmp\Sophia\19032\enzyme_blast650548.txt") _
             .ExportHistResult _
             .ToArray
+        proj.ec_numbers = proj.enzyme_hits _
+            .Select(Function(hits) hits.AssignECNumber()) _
+            .Where(Function(ec) Not ec Is Nothing) _
+            .ToDictionary(Function(a) a.gene_id)
 
         proj.SaveZip("G:\BlueprintCAD\demo\ECOLI.gcproj")
 
