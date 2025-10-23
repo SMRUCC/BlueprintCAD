@@ -101,7 +101,7 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("supports", GetType(Integer))
         Call tbl.Columns.Add("ec_number", GetType(String))
         Call tbl.Columns.Add("score", GetType(Double))
-        Call tbl.Columns.Add("sources", GetType(Double))
+        Call tbl.Columns.Add("sources", GetType(String))
 
         For Each enzyme As HitCollection In proj.enzyme_hits
             Dim supports As Integer = 0
