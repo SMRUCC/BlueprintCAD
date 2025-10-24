@@ -43,7 +43,7 @@ Public Class GraphPad
         Me.nav.SetView(PictureBox1.Size)
     End Sub
 
-    Private Sub AddNodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNodeToolStripMenuItem.Click
+    Private Async Sub AddNodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNodeToolStripMenuItem.Click
         Dim x, y As Integer
 
         Call GetCanvasXY(x, y)
@@ -52,7 +52,7 @@ Public Class GraphPad
             .size = {10},
             .color = Brushes.Red
         })
-        Rendering()
+        Await Rendering()
     End Sub
 
     Private Sub GetCanvasXY(<Out> ByRef x As Integer, <Out> ByRef y As Integer)
@@ -61,13 +61,17 @@ Public Class GraphPad
         y = clickPos.Y + ViewPosition.Y
     End Sub
 
-    Private Function RenderView() As System.Drawing.Image
+    Private Async Function RenderView() As Task(Of System.Drawing.Image)
         Dim sz = PictureBox1.Size
 
         If sz.Width <= 0 OrElse sz.Height <= 0 Then
             Return New System.Drawing.Bitmap(1, 1)
+        Else
+            Return Await Task.Run(Function() RenderGraph(sz))
         End If
+    End Function
 
+    Private Function RenderGraph(sz As Size) As System.Drawing.Image
         Using view As Graphics2D = PictureBox1.Size.CreateGDIDevice(BackColor)
             ' find all nodes insdie current view
             Dim rect As New Rectangle(ViewPosition, PictureBox1.Size)
@@ -98,9 +102,9 @@ Public Class GraphPad
         End Using
     End Function
 
-    Public Sub Rendering()
-        PictureBox1.BackgroundImage = RenderView()
-    End Sub
+    Public Async Function Rendering() As Task
+        PictureBox1.BackgroundImage = Await RenderView()
+    End Function
 
     Private Sub GraphPad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox1.Dock = DockStyle.Fill
@@ -110,17 +114,15 @@ Public Class GraphPad
 
     End Sub
 
-    Private Sub GraphPad_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
-        PictureBox1.BackgroundImage = RenderView()
+    Private Async Sub GraphPad_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        PictureBox1.BackgroundImage = Await RenderView()
 
         If Not nav Is Nothing Then
             nav.SetView(PictureBox1.Size)
         End If
     End Sub
 
-    ' Public Property DampingFactor As Double = 35
-
-    Private Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
+    Private Async Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         Dim movX = e.X - offsetX
         Dim movY = e.Y - offsetY
 
@@ -141,7 +143,7 @@ Public Class GraphPad
             dragNode.data.initialPostion.x = x
             dragNode.data.initialPostion.y = y
 
-            Rendering()
+            Await Rendering()
         ElseIf dragCanvas Then
             ' move the current canvas view
             RaiseEvent PrintMessage($"Move canvas viewbox by delta({movX},{movY})", MSG_TYPES.DEBUG)
@@ -162,7 +164,7 @@ Public Class GraphPad
                 nav.SetView(ViewPosition)
             End If
 
-            Rendering()
+            Await Rendering()
         ElseIf addLink AndAlso Not U Is Nothing Then
 
         Else

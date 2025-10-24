@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
+Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
 Imports Microsoft.VisualBasic.Serialization.JSON
 
 Public Class FormEditor
@@ -8,7 +9,7 @@ Public Class FormEditor
         ToolStripStatusLabel1.Text = $"[{level.Description}] " & msg
     End Sub
 
-    Private Sub FormEditor_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Async Sub FormEditor_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim nav As New FormNavigator
 
         Call nav.Show()
@@ -16,12 +17,19 @@ Public Class FormEditor
         GraphPad1.BackColor = Color.AliceBlue
         GraphPad1.Canvas = New Size(5000, 5000)
         GraphPad1.Hook(nav)
-        GraphPad1.Rendering()
+
+        Await GraphPad1.Rendering()
     End Sub
 
-    Public Sub LoadModel(g As NetworkGraph)
+    Public Async Function LoadModel(g As NetworkGraph) As Task
+        Call g.doRandomLayout
+
+        Await Task.Run(Sub()
+                           Call forceNetwork.doForceLayout(g)
+                       End Sub)
         Call GraphPad1.SetGraphModel(g)
-    End Sub
+        Await GraphPad1.Rendering()
+    End Function
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         App.Exit(0)

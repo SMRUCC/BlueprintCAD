@@ -227,20 +227,20 @@ Public Class FormAnnotation
             Dim u = g.CreateNode(reaction.guid, New NodeData With {.label = reaction.name, .origID = reaction.name})
 
             For Each mol As WebJSON.Substrate In reaction.left
-                Dim data = cacheMols.ComputeIfAbsent(mol.molecule_id, Function() Workbench.CADRegistry.GetMoleculeDataById(mol.molecule_id))
+                Dim data = Await Task.Run(Function() cacheMols.ComputeIfAbsent(mol.molecule_id, Function() Workbench.CADRegistry.GetMoleculeDataById(mol.molecule_id)))
 
                 v = g.CreateNode(mol.molecule_id.ToString, New NodeData With {.label = data.name, .origID = data.name})
                 g.CreateEdge(v, u)
             Next
 
             For Each mol As WebJSON.Substrate In reaction.right
-                Dim data = cacheMols.ComputeIfAbsent(mol.molecule_id, Function() Workbench.CADRegistry.GetMoleculeDataById(mol.molecule_id))
+                Dim data = Await Task.Run(Function() cacheMols.ComputeIfAbsent(mol.molecule_id, Function() Workbench.CADRegistry.GetMoleculeDataById(mol.molecule_id)))
 
                 v = g.CreateNode(mol.molecule_id.ToString, New NodeData With {.label = data.name, .origID = data.name})
                 g.CreateEdge(u, v)
             Next
         Next
 
-        Call editor.LoadModel(g)
+        Await editor.LoadModel(g)
     End Sub
 End Class
