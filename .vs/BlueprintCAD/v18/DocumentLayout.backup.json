@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "G:\\BlueprintCAD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\settings\\settings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|solutionrelative:src\\blueprintcad\\settings\\settings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\celldesigner\\formannotation.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|solutionrelative:src\\blueprintcad\\celldesigner\\formannotation.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4615D605-2F4A-BBB5-0B85-89EF1262AB1E}|src\\CADRegistry\\CADRegistry.vbproj|g:\\blueprintcad\\src\\cadregistry\\registryurl.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -13,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\workbench.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|solutionrelative:src\\blueprintcad\\workbench.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\settings\\settings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|solutionrelative:src\\blueprintcad\\settings\\settings.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\celldesigner\\formeditor.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -36,10 +40,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\celldesigner\\graphpad.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|solutionrelative:src\\blueprintcad\\celldesigner\\graphpad.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\celldesigner\\formannotation.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|solutionrelative:src\\blueprintcad\\celldesigner\\formannotation.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4615D605-2F4A-BBB5-0B85-89EF1262AB1E}|src\\CADRegistry\\CADRegistry.vbproj|g:\\blueprintcad\\src\\cadregistry\\webjson\\reaction.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -69,21 +69,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 192,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 18,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Settings.vb",
-              "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\Settings\\Settings.vb",
-              "RelativeDocumentMoniker": "src\\BlueprintCAD\\Settings\\Settings.vb",
-              "ToolTip": "G:\\BlueprintCAD\\src\\BlueprintCAD\\Settings\\Settings.vb",
-              "RelativeToolTip": "src\\BlueprintCAD\\Settings\\Settings.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-10-24T12:20:39.761Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -102,20 +89,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Settings.vb",
+              "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\Settings\\Settings.vb",
+              "RelativeDocumentMoniker": "src\\BlueprintCAD\\Settings\\Settings.vb",
+              "ToolTip": "G:\\BlueprintCAD\\src\\BlueprintCAD\\Settings\\Settings.vb",
+              "RelativeToolTip": "src\\BlueprintCAD\\Settings\\Settings.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-10-24T12:20:39.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Workbench.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\Workbench.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\Workbench.vb",
               "ToolTip": "G:\\BlueprintCAD\\src\\BlueprintCAD\\Workbench.vb",
               "RelativeToolTip": "src\\BlueprintCAD\\Workbench.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-10-24T12:20:35.321Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "forceNetwork.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\forceNetwork.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\forceNetwork.vb",
@@ -127,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LayoutUpdater.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\SpringForce\\LayoutUpdater.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\SpringForce\\LayoutUpdater.vb",
@@ -139,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Spring.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\SpringForce\\Layout\\Spring.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\SpringForce\\Layout\\Spring.vb",
@@ -151,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SpringEmbedder.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\SpringEmbedder.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\SpringEmbedder.vb",
@@ -163,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Parameters.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\SpringForce\\Parameters.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\network_layout\\SpringForce\\Parameters.vb",
@@ -175,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "GraphPad.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\CellDesigner\\GraphPad.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\CellDesigner\\GraphPad.vb",
@@ -211,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FormEditor.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\CellDesigner\\FormEditor.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\CellDesigner\\FormEditor.vb",
@@ -254,22 +254,23 @@
               "RelativeDocumentMoniker": "src\\CADRegistry\\RegistryUrl.vb",
               "ToolTip": "G:\\BlueprintCAD\\src\\CADRegistry\\RegistryUrl.vb",
               "RelativeToolTip": "src\\CADRegistry\\RegistryUrl.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwCEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-10-24T10:25:16.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "FormAnnotation.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\CellDesigner\\FormAnnotation.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\CellDesigner\\FormAnnotation.vb",
               "ToolTip": "G:\\BlueprintCAD\\src\\BlueprintCAD\\CellDesigner\\FormAnnotation.vb",
               "RelativeToolTip": "src\\BlueprintCAD\\CellDesigner\\FormAnnotation.vb",
-              "ViewState": "AgIAALoAAAAAAAAAAAAAAPMAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAALYAAAAAAAAAAAASwOAAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-10-24T10:21:58.86Z"
+              "WhenOpened": "2025-10-24T10:21:58.86Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

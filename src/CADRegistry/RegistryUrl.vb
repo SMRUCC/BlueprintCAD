@@ -28,6 +28,11 @@ Public Class RegistryUrl
         Dim url As String = $"{server}/registry/reaction_network/?ec_number={ec_number}&simple={simple.ToString.ToLower}"
         Dim json_str As String = url.GET
         Dim json As JsonObject = JsonParser.Parse(json_str)
+
+        If json Is Nothing Then
+            Return Nothing
+        End If
+
         Dim code As Integer = DirectCast(json!code, JsonValue)
 
         If code <> 0 Then

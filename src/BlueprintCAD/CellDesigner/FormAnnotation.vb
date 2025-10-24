@@ -217,7 +217,15 @@ Public Class FormAnnotation
         Dim geneRow As DataGridViewRow = DataGridView1.SelectedRows(0)
         Dim ec_number As String = CStr(geneRow.Cells(2).Value)
         Dim network = Await Task.Run(Function()
-                                         Return cache.ComputeIfAbsent(ec_number, Function(any) Workbench.CADRegistry.GetAssociatedReactions(ec_number, simple:=True).Values.ToArray)
+                                         Return cache.ComputeIfAbsent(ec_number, Function(any)
+                                                                                     Dim listSet = Workbench.CADRegistry.GetAssociatedReactions(ec_number, simple:=True)
+
+                                                                                     If listSet Is Nothing Then
+                                                                                         Return {}
+                                                                                     Else
+                                                                                         Return listSet.Values.ToArray
+                                                                                     End If
+                                                                                 End Function)
                                      End Function)
         Dim g As New NetworkGraph
         Dim editor As FormEditor = CommonRuntime.ShowDocument(Of FormEditor)(, $"Network of enzyme {ec_number}")
