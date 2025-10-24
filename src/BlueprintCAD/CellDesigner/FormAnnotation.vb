@@ -232,19 +232,39 @@ Public Class FormAnnotation
         Dim v As Node
 
         For Each reaction As WebJSON.Reaction In network
-            Dim u = g.CreateNode(reaction.guid, New NodeData With {.label = reaction.name, .origID = reaction.name})
+            Dim u = g.CreateNode(reaction.guid, New NodeData With {.label = reaction.name, .origID = reaction.name, .size = {12}})
 
             For Each mol As WebJSON.Substrate In reaction.left
                 Dim data = Await Task.Run(Function() cacheMols.ComputeIfAbsent(mol.molecule_id, Function() Workbench.CADRegistry.GetMoleculeDataById(mol.molecule_id)))
+                Dim cad_id As String = mol.molecule_id.ToString
 
-                v = g.CreateNode(mol.molecule_id.ToString, New NodeData With {.label = data.name, .origID = data.name})
+                If cad_id = "0" Then
+                    Continue For
+                End If
+
+                If g.GetElementByID(cad_id) Is Nothing Then
+                    v = g.CreateNode(cad_id, New NodeData With {.label = data.name, .origID = data.name, .size = {6}})
+                Else
+                    v = g.GetElementByID(cad_id)
+                End If
+
                 g.CreateEdge(v, u)
             Next
 
             For Each mol As WebJSON.Substrate In reaction.right
                 Dim data = Await Task.Run(Function() cacheMols.ComputeIfAbsent(mol.molecule_id, Function() Workbench.CADRegistry.GetMoleculeDataById(mol.molecule_id)))
+                Dim cad_id As String = mol.molecule_id.ToString
 
-                v = g.CreateNode(mol.molecule_id.ToString, New NodeData With {.label = data.name, .origID = data.name})
+                If cad_id = "0" Then
+                    Continue For
+                End If
+
+                If g.GetElementByID(cad_id) Is Nothing Then
+                    v = g.CreateNode(cad_id, New NodeData With {.label = data.name, .origID = data.name, .size = {6}})
+                Else
+                    v = g.GetElementByID(cad_id)
+                End If
+
                 g.CreateEdge(u, v)
             Next
         Next

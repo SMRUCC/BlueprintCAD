@@ -5,6 +5,9 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging
+Imports Microsoft.VisualBasic.Imaging.Drawing2D.Math2D.MarchingSquares
+Imports Microsoft.VisualBasic.MIME.Html.CSS
+Imports Microsoft.VisualBasic.MIME.Html.Render
 Imports Node = Microsoft.VisualBasic.Data.visualize.Network.Graph.Node
 
 Public Class GraphPad
@@ -19,7 +22,18 @@ Public Class GraphPad
     Public Event PrintMessage(msg As String, level As MSG_TYPES)
 
     Public Sub SetGraphModel(g As NetworkGraph)
+        Dim polygon As New Math2D.Polygon2D(g.vertex.Select(Function(v) New PointF(v.data.initialPostion.x, v.data.initialPostion.y)).ToArray)
+        Dim centroid As PointF = polygon.centroid
+        Dim canvasCenter As New PointF(PictureBox1.Width / 2, PictureBox1.Height / 2)
+        Dim deltaX = canvasCenter.X - centroid.X
+        Dim deltaY = canvasCenter.Y - centroid.Y
+
         Me.g = g
+
+        For Each node As Node In g.vertex
+            node.data.initialPostion.x += deltaX
+            node.data.initialPostion.y += deltaY
+        Next
     End Sub
 
     Public Function GetProject() As DesignProject
@@ -71,6 +85,8 @@ Public Class GraphPad
         End If
     End Function
 
+    Public Property EdgeStroke As Stroke = New Stroke(Color.LightGray, 2)
+
     Private Function RenderGraph(sz As Size) As System.Drawing.Image
         Using view As Graphics2D = PictureBox1.Size.CreateGDIDevice(BackColor)
             ' find all nodes insdie current view
@@ -82,20 +98,27 @@ Public Class GraphPad
                        End Function) _
                 .ToArray
             Dim pos As PointF
+            Dim css As CSSEnvirnment = view.LoadEnvironment
             Dim nodeIndex = nodeInBox.Select(Function(vi) vi.ID.ToString).Indexing
+            Dim defaultPen As Pen = css.GetPen(EdgeStroke)
+            Dim defaultSize As Single = 5
+            Dim size As Single
+            Dim defaultFill As Brush = Brushes.Red
 
             For Each edge In g.graphEdges
                 If edge.V.ID.ToString Like nodeIndex OrElse edge.U.ID.ToString Like nodeIndex Then
                     Dim a As New PointF(edge.U.data.initialPostion.x - ViewPosition.X, edge.U.data.initialPostion.y - ViewPosition.Y)
                     Dim b As New PointF(edge.V.data.initialPostion.x - ViewPosition.X, edge.V.data.initialPostion.y - ViewPosition.Y)
 
-                    view.DrawLine(edge.data.style, a, b)
+                    view.DrawLine(If(edge.data.style, defaultPen), a, b)
                 End If
             Next
 
             For Each node As Node In nodeInBox
-                pos = New PointF(node.data.initialPostion.x - ViewPosition.X, node.data.initialPostion.y - ViewPosition.Y)
-                view.DrawCircle(pos, CSng(node.data.size(0)), node.data.color)
+                pos = New PointF(node.data.initialPostion.x - ViewPosition.X,
+                                 node.data.initialPostion.y - ViewPosition.Y)
+                size = node.data.size.ElementAtOrDefault(0, defaultSize)
+                view.DrawCircle(pos, size, If(node.data.color, defaultFill))
             Next
 
             Return view.GetImageResource
