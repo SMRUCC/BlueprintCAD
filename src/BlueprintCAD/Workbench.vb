@@ -21,7 +21,7 @@ Public Module Workbench
 
     Public ReadOnly Property CADRegistry As RegistryUrl
         Get
-            Return New RegistryUrl(Settings.registry_server)
+            Return New RegistryUrl(If(Settings.registry_server.StringEmpty, RegistryUrl.defaultServer, Settings.registry_server))
         End Get
     End Property
 

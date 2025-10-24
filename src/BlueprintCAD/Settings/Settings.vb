@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.Serialization.JSON
+﻿Imports CADRegistry
+Imports Microsoft.VisualBasic.Serialization.JSON
 
 Public Class Settings
 
@@ -11,7 +12,7 @@ Public Class Settings
         Dim config As Settings = defaultConfig.LoadJsonFile(Of Settings)(throwEx:=False)
 
         If config Is Nothing Then
-            config = New Settings With {.registry_server = "http://biocad.innovation.ac.cn"}
+            config = New Settings With {.registry_server = RegistryUrl.defaultServer}
         End If
 
         Return config
