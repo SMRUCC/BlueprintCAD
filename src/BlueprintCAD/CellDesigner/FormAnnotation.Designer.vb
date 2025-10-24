@@ -25,6 +25,7 @@ Partial Class FormAnnotation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
@@ -48,6 +49,8 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        ViewNetworkToolStripMenuItem = New ToolStripMenuItem()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -65,6 +68,7 @@ Partial Class FormAnnotation
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
+        ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -176,6 +180,7 @@ Partial Class FormAnnotation
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.BackgroundColor = Color.WhiteSmoke
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.ContextMenuStrip = ContextMenuStrip1
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = SystemColors.Window
         DataGridViewCellStyle1.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -324,6 +329,18 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {ViewNetworkToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(181, 48)
+        ' 
+        ' ViewNetworkToolStripMenuItem
+        ' 
+        ViewNetworkToolStripMenuItem.Name = "ViewNetworkToolStripMenuItem"
+        ViewNetworkToolStripMenuItem.Size = New Size(180, 22)
+        ViewNetworkToolStripMenuItem.Text = "View Network"
+        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
@@ -357,6 +374,7 @@ Partial Class FormAnnotation
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
+        ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -381,4 +399,6 @@ Partial Class FormAnnotation
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents AdvancedDataGridView1 As AdvancedDataGridView
     Friend WithEvents AdvancedDataGridViewSearchToolBar1 As AdvancedDataGridViewSearchToolBar
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ViewNetworkToolStripMenuItem As ToolStripMenuItem
 End Class

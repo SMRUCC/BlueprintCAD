@@ -1,8 +1,10 @@
 ﻿Imports System.IO
 Imports CADRegistry
 Imports Galaxy.Data.TableSheet
+Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
@@ -64,7 +66,10 @@ Public Class FormAnnotation
         enzymeLoader = New GridLoaderHandler(DataGridView1, ToolStrip2)
         blastLoader = New GridLoaderHandler(AdvancedDataGridView1, AdvancedDataGridViewSearchToolBar1)
 
-        Call ApplyVsTheme(ToolStrip1, ToolStrip2, AdvancedDataGridViewSearchToolBar1)
+        Call ApplyVsTheme(ToolStrip1,
+                          ToolStrip2,
+                          AdvancedDataGridViewSearchToolBar1,
+                          ContextMenuStrip1)
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
@@ -190,9 +195,52 @@ Public Class FormAnnotation
                     For Each hit As Hit In hits.AsEnumerable
                         Dim annotation As String() = hit.hitName.Split("|"c)
 
-                        Call tbl.Rows.Add(annotation(0), annotation(1), hit.identities, hit.positive, hit.gaps, hit.score, hit.evalue)
+                        Call tbl.Rows.Add(annotation(0), annotation(1),
+                                          hit.identities,
+                                          hit.positive,
+                                          hit.gaps,
+                                          hit.score,
+                                          hit.evalue)
                     Next
                 End Sub)
         End If
+    End Sub
+
+    Shared cache As New Dictionary(Of String, WebJSON.Reaction())
+    Shared cacheMols As New Dictionary(Of String, WebJSON.Molecule)
+
+    Private Async Sub ViewNetworkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewNetworkToolStripMenuItem.Click
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim geneRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+        Dim ec_number As String = CStr(geneRow.Cells(2).Value)
+        Dim network = Await Task.Run(Function()
+                                         Return cache.ComputeIfAbsent(ec_number, Function(any) Workbench.CADRegistry.GetAssociatedReactions(ec_number, simple:=True).Values.ToArray)
+                                     End Function)
+        Dim g As New NetworkGraph
+        Dim editor As FormEditor = CommonRuntime.ShowDocument(Of FormEditor)(, $"Network of enzyme {ec_number}")
+        Dim v As Node
+
+        For Each reaction As WebJSON.Reaction In network
+            Dim u = g.CreateNode(reaction.guid, New NodeData With {.label = reaction.name, .origID = reaction.name})
+
+            For Each mol As WebJSON.Substrate In reaction.left
+                Dim data = cacheMols.ComputeIfAbsent(mol.molecule_id, Function() Workbench.CADRegistry.GetMoleculeDataById(mol.molecule_id))
+
+                v = g.CreateNode(mol.molecule_id.ToString, New NodeData With {.label = data.name, .origID = data.name})
+                g.CreateEdge(v, u)
+            Next
+
+            For Each mol As WebJSON.Substrate In reaction.right
+                Dim data = cacheMols.ComputeIfAbsent(mol.molecule_id, Function() Workbench.CADRegistry.GetMoleculeDataById(mol.molecule_id))
+
+                v = g.CreateNode(mol.molecule_id.ToString, New NodeData With {.label = data.name, .origID = data.name})
+                g.CreateEdge(u, v)
+            Next
+        Next
+
+        Call editor.LoadModel(g)
     End Sub
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
+Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Serialization.JSON
 
 Public Class FormEditor
@@ -16,6 +17,10 @@ Public Class FormEditor
         GraphPad1.Canvas = New Size(5000, 5000)
         GraphPad1.Hook(nav)
         GraphPad1.Rendering()
+    End Sub
+
+    Public Sub LoadModel(g As NetworkGraph)
+        Call GraphPad1.SetGraphModel(g)
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click

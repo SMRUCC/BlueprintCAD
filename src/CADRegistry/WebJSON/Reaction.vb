@@ -1,6 +1,7 @@
 ﻿Namespace WebJSON
 
     Public Class Reaction
+        Public Property guid As String
         Public Property name As String
         Public Property reaction As String
         Public Property left As Substrate()

@@ -22,8 +22,8 @@ Public Class RegistryUrl
         End If
     End Function
 
-    Public Function GetAssociatedReactions(ec_number As String) As Dictionary(Of String, WebJSON.Reaction)
-        Dim url As String = $"{server}/registry/reaction_network/?ec_number={ec_number}"
+    Public Function GetAssociatedReactions(ec_number As String, Optional simple As Boolean = False) As Dictionary(Of String, WebJSON.Reaction)
+        Dim url As String = $"{server}/registry/reaction_network/?ec_number={ec_number}&simple={simple.ToString.ToLower}"
         Dim json_str As String = url.GET
         Dim json As JsonObject = JsonParser.Parse(json_str)
         Dim code As Integer = DirectCast(json!code, JsonValue)
