@@ -1,7 +1,12 @@
-Imports System
+Imports Microsoft.VisualBasic.CommandLine
 
 Module Program
-    Sub Main(args As String())
-        Console.WriteLine("Hello World!")
-    End Sub
+
+    Public Function Main(args As String()) As Integer
+        Return GetType(Program).RunCLI(App.CommandLine, executeFile:=AddressOf CompileProjectFile)
+    End Function
+
+    Public Function CompileProjectFile(file As String, args As CommandLine) As Integer
+
+    End Function
 End Module
