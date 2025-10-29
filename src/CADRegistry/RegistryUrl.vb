@@ -5,7 +5,7 @@ Public Class RegistryUrl
 
     ReadOnly server As String
 
-    Public Shared ReadOnly Property defaultServer As String = "http://biocad.innovation.ac.cn"
+    Public Const defaultServer As String = "http://biocad.innovation.ac.cn"
 
     Sub New(server As String)
         Me.server = Strings.Trim(server).TrimEnd("/"c)
