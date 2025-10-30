@@ -1,4 +1,5 @@
-﻿Imports SMRUCC.genomics.ComponentModel.Annotation
+﻿Imports Microsoft.VisualBasic.Serialization.JSON
+Imports SMRUCC.genomics.ComponentModel.Annotation
 
 ' Operon的类型枚举
 Public Enum OperonType
@@ -15,5 +16,9 @@ Public Class AnnotatedOperon
     Public Property KnownGeneIds As String() ' 参考Operon中应有的基因ID
     Public Property InsertedGeneIds As String() ' 插入的新基因ID
     Public Property MissingGeneIds As String() ' 缺失的基因ID
+
+    Public Overrides Function ToString() As String
+        Return $"{Type.Description} #{OperonID}{Genes.GetJson}"
+    End Function
 End Class
 

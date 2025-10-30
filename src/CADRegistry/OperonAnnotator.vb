@@ -103,39 +103,62 @@ Public Module OperonAnnotator
     ''' 辅助函数，用于对一个连续的基因区块进行Operon类型分类。
     ''' </summary>
     Private Function ClassifyOperonBlock(block As List(Of GeneTable), operonId As String, knownOperon As WebJSON.Operon, blastDict As Dictionary(Of String, HitCollection)) As AnnotatedOperon
-        ' 使用HashSet可以提高查找效率
-        Dim blockGeneIds = block.Select(Function(g) g.locus_id).ToHashSet()
-        Dim knownGeneIds = knownOperon.members.ToHashSet()
-        Dim subjectMaps As String() = blockGeneIds _
-            .Select(Function(id)
-                        Dim q = blastDict(id)
-                        Dim hits As String() = q.hits.Select(Function(hit) hit.hitName).ToArray
-                        Return hits.Where(Function(id2) knownGeneIds.Contains(id2))
-                    End Function) _
-            .IteratesALL _
-            .Distinct _
-            .ToArray
-        ' 找出插入的基因（在区块中但不在参考Operon中）
-        Dim insertedIds = blockGeneIds.Except(knownGeneIds).ToArray
-        ' 找出缺失的基因（在参考Operon中但未在区块中找到）
-        Dim missingIds = knownGeneIds.Except(blockGeneIds).ToArray
-        Dim opType As OperonType
+        ' 1. 准备基础数据集
+        ' 目标区块中所有基因的locus_id
+        Dim blockLocusIds = block.Select(Function(g) g.locus_id).ToHashSet()
+        ' 参考Operon中所有成员基因的ID (hitName)
+        Dim knownHitNames = knownOperon.members.ToHashSet()
 
-        If insertedIds.Any() Then
+        ' 2. 找出目标区块中，实际匹配到参考Operon成员的基因 (hitName)
+        ' 使用SelectMany来“扁平化”查询，即对每个基因的每个hit都进行检查
+        Dim matchedHitNames = blockLocusIds _
+        .SelectMany(Function(locusId)
+                        ' 如果blastDict中没有这个基因的记录，返回一个空的Hit集合
+                        If Not blastDict.ContainsKey(locusId) Then Return {}
+                        ' 否则，返回该基因的所有Hit
+                        Return blastDict(locusId).hits
+                    End Function) _
+        .Where(Function(hit) hit.tag = operonId AndAlso knownHitNames.Contains(hit.hitName)) _
+        .Select(Function(hit) hit.hitName) _
+        .ToHashSet()
+
+        ' 3. 识别缺失的基因
+        ' 缺失的基因 = 参考Operon中的所有成员 - 实际被匹配到的成员
+        Dim missingGeneIds = knownHitNames.Except(matchedHitNames).ToList()
+
+        ' 4. 识别插入的基因
+        ' 插入的基因 = 区块中的基因 - 其BLAST结果能匹配到当前Operon的基因
+        ' 一个基因是插入的，如果它没有任何BLAST结果，或者它的所有BLAST结果都指向了别的Operon
+        Dim insertedLocusIds = blockLocusIds _
+        .Where(Function(locusId)
+                   ' 条件1: 基因没有BLAST结果
+                   If Not blastDict.ContainsKey(locusId) Then Return True
+                   ' 条件2: 基因有BLAST结果，但没有任何一个hit的tag是当前Operon的ID
+                   Return Not blastDict(locusId).hits.Any(Function(hit) hit.tag = operonId)
+               End Function) _
+        .ToList()
+
+        ' 5. 根据插入和缺失情况确定Operon类型
+        Dim opType As OperonType
+        If insertedLocusIds.Any() Then
+            ' 只要有插入，就优先标记为插入突变
             opType = OperonType.Insertion
-        ElseIf missingIds.Any() Then
+        ElseIf missingGeneIds.Any() Then
+            ' 没有插入但有缺失，标记为缺失突变
             opType = OperonType.Deletion
         Else
+            ' 两者都没有，是保守的
             opType = OperonType.Conserved
         End If
 
+        ' 6. 构建并返回最终的注释结果
         Return New AnnotatedOperon With {
-            .OperonID = operonId,
-            .Type = opType,
-            .Genes = blockGeneIds.ToArray,
-            .KnownGeneIds = knownGeneIds.ToArray,
-            .InsertedGeneIds = insertedIds,
-            .MissingGeneIds = missingIds
-        }
+        .OperonID = operonId,
+        .Type = opType,
+        .Genes = block.Select(Function(gene) gene.locus_id).ToArray, ' 保留完整的GeneTable对象列表
+        .KnownGeneIds = knownHitNames.ToArray,
+        .InsertedGeneIds = insertedLocusIds.ToArray, ' 插入的是目标基因组的locus_id
+        .MissingGeneIds = missingGeneIds.ToArray    ' 缺失的是参考数据库的hitName
+    }
     End Function
 End Module
