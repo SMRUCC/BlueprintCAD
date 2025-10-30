@@ -271,4 +271,34 @@ Public Class FormAnnotation
 
         Await editor.LoadModel(g)
     End Sub
+
+    Private Async Sub OperonAnnotationCmd_Run() Handles OperonAnnotationCmd.Run
+        Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="operon_blast")
+        Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
+
+        If EnzymeAnnotationCmd.Running Then
+            Return
+        Else
+            EnzymeAnnotationCmd.Running = True
+            EnzymeAnnotationCmd.SetStatusText("Running the annotation...")
+            EnzymeAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+        End If
+
+        Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
+            Call proj.DumpGeneFasta(s)
+        End Using
+
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 12}
+        Dim operon_db As String = $"{App.HOME}/data/operon.fasta"
+
+        Await Task.Run(Sub() blastp.FormatDb(operon_db, dbType:=blastp.MolTypeNucleotide).Run())
+        Await Task.Run(Sub() blastp.Blastn(tempfile, operon_db, tempOutfile, e:=0.01).Run())
+
+        proj.operon_hits = BlastpOutputReader _
+            .RunParser(tempOutfile) _
+            .ExportHistResult _
+            .ToArray
+
+
+    End Sub
 End Class
