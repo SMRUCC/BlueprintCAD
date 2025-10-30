@@ -64,6 +64,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .Keys
         Dim metadata As WebJSON.Molecule() = compounds_id _
             .Select(Function(id) registry.GetMoleculeDataById(id)) _
+            .Where(Function(c) Not c Is Nothing) _
             .ToArray
 
         Return New MetabolismStructure With {
