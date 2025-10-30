@@ -162,12 +162,13 @@ Public Module OperonAnnotator
 
         ' 6. 构建并返回最终的注释结果
         Return New AnnotatedOperon With {
-        .OperonID = operonId,
-        .Type = opType,
-        .Genes = block.Select(Function(gene) gene.locus_id).ToArray, ' 保留完整的GeneTable对象列表
-        .KnownGeneIds = knownHitNames.ToArray,
-        .InsertedGeneIds = insertedLocusIds.ToArray, ' 插入的是目标基因组的locus_id
-        .MissingGeneIds = missingGeneIds.ToArray    ' 缺失的是参考数据库的hitName
-    }
+            .OperonID = operonId,
+            .name = knownOperon.name,
+            .Type = opType,
+            .Genes = block.Select(Function(gene) gene.locus_id).ToArray, ' 保留完整的GeneTable对象列表
+            .KnownGeneIds = knownHitNames.ToArray,
+            .InsertedGeneIds = insertedLocusIds.ToArray, ' 插入的是目标基因组的locus_id
+            .MissingGeneIds = missingGeneIds.ToArray    ' 缺失的是参考数据库的hitName
+        }
     End Function
 End Module

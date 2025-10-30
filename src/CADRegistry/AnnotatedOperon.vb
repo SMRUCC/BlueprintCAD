@@ -10,6 +10,7 @@ End Enum
 ' 用于表示最终注释结果的Operon结构
 Public Class AnnotatedOperon
     Public Property OperonID As String
+    Public Property name As String
     Public Property Type As OperonType
     Public Property Genes As String() ' 组成此Operon的基因组上的基因
     Public Property KnownGeneIds As String() ' 参考Operon中应有的基因ID

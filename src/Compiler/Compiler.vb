@@ -117,7 +117,11 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     End Function
 
     Private Function BuildGenome() As Genome
-        Dim genes As TranscriptUnit()
+        Dim genes As TranscriptUnit() = proj.operons.SafeQuery.Select(Function(op)
+                                                                          Return New TranscriptUnit With {
+                                                                            .id = op.OperonID
+                                                                          }
+                                                                      End Function).ToArray
         Dim genomics As New replicon With {
             .genomeName = proj.taxonomy.scientificName,
             .isPlasmid = False,
