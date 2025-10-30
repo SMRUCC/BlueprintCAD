@@ -8,9 +8,22 @@ Public Class RegistryUrl
 
     Public Const defaultServer As String = "http://biocad.innovation.ac.cn"
 
-    Sub New(server As String)
+    Sub New(Optional server As String = defaultServer)
         Me.server = Strings.Trim(server).TrimEnd("/"c)
     End Sub
+
+    Public Function GetAllKnownOperons() As WebJSON.Operon()
+        Dim url As String = $"{server}/registry/known_operons/"
+        Dim json_str As String = url.GET
+        Dim json As JsonObject = JsonParser.Parse(json_str)
+        Dim code As Integer = DirectCast(json!code, JsonValue)
+
+        If code <> 0 Then
+            Return Nothing
+        Else
+            Return json!info.CreateObject(Of WebJSON.Operon())
+        End If
+    End Function
 
     Public Function GetMoleculeDataById(id As UInteger) As WebJSON.Molecule
         Dim url As String = $"{server}/registry/molecule/?id={id}"

@@ -11,8 +11,8 @@ Public Module OperonAnnotator
             If Not hits.hits.IsNullOrEmpty Then
                 For Each hit As Hit In hits.hits
                     With hit.hitName.GetTagValue("|")
-                        hit.tag = .Name
-                        hit.hitName = .Value
+                        hit.tag = .Value.Split("|"c).First
+                        hit.hitName = .Name
                     End With
                 Next
             End If
@@ -21,107 +21,111 @@ Public Module OperonAnnotator
         Next
     End Function
 
+    ' --- 2. 核心逻辑模块 ---
+
     ''' <summary>
-    ''' 主函数：基于BLASTN结果注释基因组中的Operon。
+    ''' 基于BLASTN比对结果和已知Operon信息，对基因组进行Operon注释。
     ''' </summary>
-    ''' <param name="allGenes">目标基因组中的所有基因。</param>
-    ''' <param name="allBlastResults">所有基因的BLASTN比对结果。</param>
-    ''' <returns>一个包含所有已注释Operon的列表。</returns>
-    Public Function AnnotateOperons(allGenes As GeneTable(), allBlastResults As HitCollection()) As AnnotatedOperon()
-        ' 1. 预处理：创建一个快速查找BLAST结果的字典
-        Dim blastLookup As New Dictionary(Of String, HitCollection)()
-        For Each hc In allBlastResults
-            If Not blastLookup.ContainsKey(hc.QueryName) Then
-                blastLookup.Add(hc.QueryName, hc)
+    ''' <param name="allGenes">基因组中所有基因的数组。</param>
+    ''' <param name="blastResults">所有基因的BLASTN比对结果数组。</param>
+    ''' <param name="knownOperonsDict">包含所有已知Operon信息的字典。</param>
+    ''' <returns>一个包含所有注释到的Operon的列表。</returns>
+    Public Iterator Function AnnotateOperons(
+    allGenes As GeneTable(),
+    blastResults As HitCollection(),
+    knownOperonsDict As Dictionary(Of String, WebJSON.Operon)
+) As IEnumerable(Of AnnotatedOperon)
+
+        ' --- 步骤 1: 为每个基因投票，确定其最可能的Operon ID ---
+
+        ' 创建一个从基因locus_id到其注释的OperonID的映射
+        Dim geneToOperonMap As New Dictionary(Of String, String)
+
+        ' 将blastResults转换为字典，方便通过QueryName查找
+        Dim blastDict = blastResults.ToDictionary(Function(hc) hc.QueryName)
+
+        For Each gene As GeneTable In allGenes
+            If blastDict.ContainsKey(gene.locus_id) Then
+                Dim hc As HitCollection = blastDict(gene.locus_id)
+                If hc.hits IsNot Nothing AndAlso hc.hits.Length > 0 Then
+                    ' 按tag分组并计算总分
+                    Dim operonScores = hc.hits.GroupBy(Function(h) h.tag) _
+                                          .ToDictionary(
+                                              Function(g) g.Key,
+                                              Function(g) g.Sum(Function(h) h.score * h.identities * (1 - h.gaps))
+                                          )
+
+                    ' 找到得分最高的Operon ID
+                    If operonScores.Any() Then
+                        Dim bestOperonId = operonScores.OrderByDescending(Function(kvp) kvp.Value).First().Key
+                        geneToOperonMap(gene.locus_id) = bestOperonId
+                    End If
+                End If
             End If
         Next
 
-        ' 2. 按链分组并排序基因
-        Dim forwardStrandGenes = allGenes.Where(Function(g) g.strand.Equals("+", StringComparison.OrdinalIgnoreCase)).OrderBy(Function(g) g.left).ToArray
-        Dim reverseStrandGenes = allGenes.Where(Function(g) g.strand.Equals("-", StringComparison.OrdinalIgnoreCase)).OrderBy(Function(g) g.left).ToArray
+        ' --- 步骤 2: 在基因组上寻找连续的、具有相同Operon ID的基因区块 ---
+        ' 按链方向和位置对基因进行排序，这是识别相邻基因的关键
+        Dim sortedGenes = allGenes.OrderBy(Function(g) g.strand) _
+                             .ThenBy(Function(g) If(g.strand = "+", g.left, g.right)) _
+                             .ToList()
 
-        ' 3. 分别处理每条链上的基因
-        Dim finalAnnotations As New List(Of AnnotatedOperon)()
-        finalAnnotations.AddRange(ProcessGeneStrand(forwardStrandGenes, "+", blastLookup))
-        finalAnnotations.AddRange(ProcessGeneStrand(reverseStrandGenes, "-", blastLookup))
-
-        ' 4. 对最终结果进行排序，方便查看
-        Return finalAnnotations _
-            .OrderBy(Function(o) o.Strand) _
-            .ThenBy(Function(o) o.LeftmostPosition) _
-            .ToArray
-    End Function
-
-    ''' <summary>
-    ''' 处理单条链上的基因，识别Operon。
-    ''' </summary>
-    Private Iterator Function ProcessGeneStrand(sortedGenes As GeneTable(), strandName As String, blastLookup As Dictionary(Of String, HitCollection)) As IEnumerable(Of AnnotatedOperon)
         Dim i As Integer = 0
-
-        While i < sortedGenes.Length
+        While i < sortedGenes.Count
             Dim currentGene = sortedGenes(i)
 
-            ' 获取当前基因的最佳比对Hit
-            Dim bestHit As Hit = GetBestHitForGene(currentGene.locus_id, blastLookup)
+            ' 检查当前基因是否被注释到了某个Operon
+            If geneToOperonMap.ContainsKey(currentGene.locus_id) Then
+                Dim currentOperonId = geneToOperonMap(currentGene.locus_id)
+                Dim operonBlock As New List(Of GeneTable) From {currentGene}
 
-            ' 如果没有比对结果，则跳过此基因，检查下一个
-            If bestHit Is Nothing Then
+                ' 向后查找连续的、具有相同Operon ID的基因
                 i += 1
-                Continue While
-            End If
+                While i < sortedGenes.Count AndAlso geneToOperonMap.ContainsKey(sortedGenes(i).locus_id) _
+                  AndAlso geneToOperonMap(sortedGenes(i).locus_id) = currentOperonId
+                    operonBlock.Add(sortedGenes(i))
+                    i += 1
+                End While
 
-            ' 如果有比对结果，开始一个潜在的Operon链
-            Dim currentOperonTag As String = bestHit.tag
-            Dim clusterGenes As New List(Of String) From {currentGene.locus_id}
-            Dim j As Integer = i + 1
-
-            ' 向后查找所有连续的、比对到同一个Operon的基因
-            While j < sortedGenes.Length
-                Dim nextGene = sortedGenes(j)
-                Dim nextBestHit As Hit = GetBestHitForGene(nextGene.locus_id, blastLookup)
-
-                ' 如果下一个基因的最佳比对也属于同一个Operon，则将其加入链
-                If nextBestHit IsNot Nothing AndAlso nextBestHit.tag = currentOperonTag Then
-                    clusterGenes.Add(nextGene.locus_id)
-                    j += 1
-                Else
-                    ' 链中断，退出循环
-                    Exit While
+                ' --- 步骤 3: 对找到的基因区块进行分类（保守、插入、缺失） ---
+                If knownOperonsDict.ContainsKey(currentOperonId) Then
+                    Yield ClassifyOperonBlock(operonBlock, currentOperonId, knownOperonsDict(currentOperonId))
                 End If
-            End While
-
-            ' 将找到的连续基因链记录为一个Operon
-            ' 即使只有一个基因，也认为是一个（残缺的）Operon
-            Dim newOperon As New AnnotatedOperon With {
-                .OperonTag = currentOperonTag,
-                .GeneIds = clusterGenes.ToArray,
-                .Strand = strandName,
-                .LeftmostPosition = sortedGenes(i).left
-            }
-
-            Yield newOperon
-
-            ' 将主索引i移动到已处理链的末尾，继续搜索
-            i = j
+            Else
+                ' 当前基因不属于任何Operon，继续处理下一个
+                i += 1
+            End If
         End While
     End Function
 
     ''' <summary>
-    ''' 辅助函数：根据基因ID查找其最佳比对Hit。
-    ''' 最佳定义为evalue最小，如果evalue相同则score最高。
+    ''' 辅助函数，用于对一个连续的基因区块进行Operon类型分类。
     ''' </summary>
-    Private Function GetBestHitForGene(locusId As String, blastLookup As Dictionary(Of String, HitCollection)) As Hit
-        If Not blastLookup.ContainsKey(locusId) Then
-            Return Nothing
+    Private Function ClassifyOperonBlock(block As List(Of GeneTable), operonId As String, knownOperon As WebJSON.Operon) As AnnotatedOperon
+        ' 使用HashSet可以提高查找效率
+        Dim blockGeneIds = block.Select(Function(g) g.locus_id).ToHashSet()
+        Dim knownGeneIds = knownOperon.members.ToHashSet()
+        ' 找出插入的基因（在区块中但不在参考Operon中）
+        Dim insertedIds = blockGeneIds.Except(knownGeneIds).ToArray
+        ' 找出缺失的基因（在参考Operon中但未在区块中找到）
+        Dim missingIds = knownGeneIds.Except(blockGeneIds).ToArray
+        Dim opType As OperonType
+
+        If insertedIds.Any() Then
+            opType = OperonType.Insertion
+        ElseIf missingIds.Any() Then
+            opType = OperonType.Deletion
+        Else
+            opType = OperonType.Conserved
         End If
 
-        Dim hc As HitCollection = blastLookup(locusId)
-        If hc.hits Is Nothing OrElse hc.hits.Length = 0 Then
-            Return Nothing
-        End If
-
-        ' 按evalue升序，score降序排序，取第一个
-        Dim bestHit = hc.hits.OrderBy(Function(h) h.evalue).ThenByDescending(Function(h) h.score).FirstOrDefault()
-        Return bestHit
+        Return New AnnotatedOperon With {
+            .OperonID = operonId,
+            .Type = opType,
+            .Genes = blockGeneIds.ToArray,
+            .KnownGeneIds = knownGeneIds.ToArray,
+            .InsertedGeneIds = insertedIds,
+            .MissingGeneIds = missingIds
+        }
     End Function
 End Module

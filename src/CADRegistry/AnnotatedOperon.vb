@@ -1,34 +1,19 @@
-﻿Imports Microsoft.VisualBasic.Serialization.JSON
+﻿Imports SMRUCC.genomics.ComponentModel.Annotation
 
+' Operon的类型枚举
+Public Enum OperonType
+    Conserved  ' 保守的
+    Insertion  ' 插入突变
+    Deletion   ' 缺失突变
+End Enum
+
+' 用于表示最终注释结果的Operon结构
 Public Class AnnotatedOperon
-    ''' <summary>
-    ''' 被注释的Operon的Tag (来自Hit.tag)
-    ''' </summary>
-    Public Property OperonTag As String
-
-    ''' <summary>
-    ''' 组成此Operon的基因的locus_id列表
-    ''' </summary>
-    Public Property GeneIds As String()
-
-    ''' <summary>
-    ''' Operon所在的链
-    ''' </summary>
-    Public Property Strand As String
-
-    ''' <summary>
-    ''' Operon在基因组上的最左侧位置，用于排序
-    ''' </summary>
-    Public Property LeftmostPosition As Integer
-
-    ''' <summary>
-    ''' 根据算法，任何连续的比对链都是一个有效的注释。
-    ''' 此处可以标记为True，或者根据更复杂的规则（如比对成员数量）来判断。
-    ''' </summary>
-    Public Property IsConserved As Boolean = True
-
-    Public Overrides Function ToString() As String
-        Return $"operon_{OperonTag}{GeneIds.GetJson}, conserved:{IsConserved.ToString.ToLower}"
-    End Function
-
+    Public Property OperonID As String
+    Public Property Type As OperonType
+    Public Property Genes As String() ' 组成此Operon的基因组上的基因
+    Public Property KnownGeneIds As String() ' 参考Operon中应有的基因ID
+    Public Property InsertedGeneIds As String() ' 插入的新基因ID
+    Public Property MissingGeneIds As String() ' 缺失的基因ID
 End Class
+
