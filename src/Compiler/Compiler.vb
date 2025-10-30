@@ -1,5 +1,8 @@
 ﻿Imports CADRegistry
 Imports Microsoft.VisualBasic.CommandLine
+Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports SMRUCC.genomics.GCModeller.CompilerServices
 
@@ -16,7 +19,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     Protected Overrides Function PreCompile(args As CommandLine) As Integer
         m_compiledModel = New VirtualCell With {
             .taxonomy = proj.taxonomy,
-            .properties = New [Property]
+            .properties = New [Property],
+            .cellular_id = args("--name") Or ("cell" & Now.ToShortDateString)
         }
 
         Return 0
@@ -24,12 +28,79 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
     Protected Overrides Function CompileImpl(args As CommandLine) As Integer
         Dim enzymes As Dictionary(Of String, ECNumberAnnotation) = proj.ec_numbers
-        Dim network As New List(Of WebJSON.Reaction)
+        Dim network As New Dictionary(Of String, WebJSON.Reaction)
+        Dim ec_numbers As New Dictionary(Of String, List(Of String))
 
         For Each enzyme As ECNumberAnnotation In enzymes.Values
-            Call network.AddRange(registry.GetAssociatedReactions(enzyme.EC, simple:=False).Values)
+            Dim ec_number As String = enzyme.EC
+            Dim list = registry.GetAssociatedReactions(enzyme.EC, simple:=False)
+
+            Call network.AddRange(list, replaceDuplicated:=True)
+
+            For Each guid As String In list.Keys
+                If Not ec_numbers.ContainsKey(guid) Then
+                    Call ec_numbers.Add(guid, New List(Of String))
+                End If
+
+                ec_numbers(guid).Add(ec_number)
+            Next
         Next
 
+        Dim compounds_id As UInteger() = network.Values _
+            .Select(Function(r) r.left.JoinIterates(r.right)) _
+            .IteratesALL _
+            .GroupBy(Function(a) a.molecule_id) _
+            .Keys
+        Dim metadata As WebJSON.Molecule() = compounds_id _
+            .Select(Function(id) registry.GetMoleculeDataById(id)) _
+            .ToArray
 
+        m_compiledModel.metabolismStructure = New MetabolismStructure With {
+            .compounds = metadata _
+                .Select(Function(c)
+                            Return New Compound With {
+                                .formula = c.formula,
+                                .ID = FormatCompoundId(c.id),
+                                .name = c.name
+                            }
+                        End Function) _
+                .ToArray,
+            .reactions = New ReactionGroup With {
+                .enzymatic = network.Values _
+                    .Select(Function(a)
+                                Return New Reaction With {
+                                    .ID = a.guid,
+                                    .ec_number = ec_numbers(a.guid).ToArray,
+                                    .bounds = {5, 5},
+                                    .is_enzymatic = True,
+                                    .name = a.name,
+                                    .note = a.reaction,
+                                    .substrate = a.left _
+                                        .Select(Function(c)
+                                                    Return New CompoundFactor With {
+                                                        .factor = c.factor,
+                                                        .compound = FormatCompoundId(c.molecule_id)
+                                                    }
+                                                End Function) _
+                                        .ToArray,
+                                    .product = a.right _
+                                        .Select(Function(c)
+                                                    Return New CompoundFactor With {
+                                                        .factor = c.factor,
+                                                        .compound = FormatCompoundId(c.molecule_id)
+                                                    }
+                                                End Function) _
+                                        .ToArray
+                                }
+                            End Function) _
+                    .ToArray
+            }
+        }
+
+        Return 0
+    End Function
+
+    Private Function FormatCompoundId(id As UInteger) As String
+        Return "BioCAD" & id.ToString.PadLeft(11, "0"c)
     End Function
 End Class
