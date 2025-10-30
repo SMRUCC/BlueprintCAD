@@ -46,7 +46,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 Continue For
             End If
 
-            Call network.AddRange(list, replaceDuplicated:=True)
+            Call network.AddRange(list.Where(Function(r) r.Value.left.JoinIterates(r.Value.right).All(Function(a) a.molecule_id > 0)), replaceDuplicated:=True)
 
             For Each guid As String In list.Keys
                 If Not ec_numbers.ContainsKey(guid) Then
@@ -88,7 +88,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     .Select(Function(a)
                                 Return New Reaction With {
                                     .ID = a.guid,
-                                    .ec_number = ec_numbers(a.guid).ToArray,
+                                    .ec_number = ec_numbers(a.guid).Distinct.ToArray,
                                     .bounds = {5, 5},
                                     .is_enzymatic = True,
                                     .name = a.name,
