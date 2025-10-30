@@ -3,8 +3,14 @@ Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.Text.Xml.Models
+Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports SMRUCC.genomics.GCModeller.CompilerServices
+Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model
+Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model.Cellular
+Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model.Cellular.Vector
+Imports SMRUCC.genomics.SequenceModel.NucleotideModels.Translation
 
 Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
@@ -19,7 +25,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     Protected Overrides Function PreCompile(args As CommandLine) As Integer
         m_compiledModel = New VirtualCell With {
             .taxonomy = proj.taxonomy,
-            .properties = New [Property],
+            .properties = New SMRUCC.genomics.GCModeller.CompilerServices.[Property],
             .cellular_id = args("--name") Or ("cell" & Now.ToShortDateString)
         }
 
@@ -116,12 +122,61 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         }
     End Function
 
+    Private Iterator Function GeneObjects() As IEnumerable(Of gene)
+        Dim nt As Dictionary(Of String, String) = proj.genes
+
+        For Each gene As GeneTable In proj.gene_table
+            Dim nt_seq As String = nt(gene.locus_id)
+            Dim bases As NumericVector = RNAComposition.FromNtSequence(nt_seq, gene.locus_id & "_rna").CreateVector
+            Dim residues As NumericVector = Nothing
+            Dim gene_type As RNATypes
+
+            If Not gene.Translation.StringEmpty Then
+                residues = ProteinComposition.FromRefSeq(gene.Translation, If(gene.ProteinId, gene.locus_id & "_protein")).CreateVector
+                gene_type = RNATypes.mRNA
+            Else
+                Select Case gene.type
+                    Case "CDS"
+                        Dim trans As String = TranslationTable.Translate(nt_seq)
+
+                        residues = ProteinComposition.FromRefSeq(trans, If(gene.ProteinId, gene.locus_id & "_protein")).CreateVector
+                        gene_type = RNATypes.mRNA
+                    Case Else
+                        gene_type = RNATypes.micsRNA
+                End Select
+            End If
+
+            Yield New gene With {
+                .locus_tag = gene.locus_id,
+                .left = gene.left,
+                .right = gene.right,
+                .strand = gene.strand,
+                .product = {gene.function},
+                .type = gene_type,
+                .amino_acid = residues,
+                .nucleotide_base = bases,
+                .protein_id = If(residues Is Nothing, Nothing, {residues.name})
+            }
+        Next
+    End Function
+
     Private Function BuildGenome() As Genome
-        Dim genes As TranscriptUnit() = proj.operons.SafeQuery.Select(Function(op)
-                                                                          Return New TranscriptUnit With {
-                                                                            .id = op.OperonID
-                                                                          }
-                                                                      End Function).ToArray
+        Dim geneSet = GeneObjects.GroupBy(Function(a) a.locus_tag).ToDictionary(Function(a) a.Key, Function(a) a.First)
+        Dim genes As TranscriptUnit() = proj.operons _
+            .SafeQuery _
+            .Select(Function(op)
+                        Return New TranscriptUnit With {
+                            .id = op.OperonID,
+                            .name = op.name,
+                            .note = op.Type.Description,
+                            .genes = op.Genes _
+                                .Select(Function(gene_id)
+                                            Return geneSet(gene_id)
+                                        End Function) _
+                                .ToArray
+                        }
+                    End Function) _
+            .ToArray
         Dim genomics As New replicon With {
             .genomeName = proj.taxonomy.scientificName,
             .isPlasmid = False,
