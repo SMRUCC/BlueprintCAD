@@ -1,5 +1,4 @@
 ﻿Imports Microsoft.VisualBasic.Serialization.JSON
-Imports SMRUCC.genomics.ComponentModel.Annotation
 
 ' Operon的类型枚举
 Public Enum OperonType
