@@ -1,4 +1,5 @@
 ﻿Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
@@ -42,7 +43,7 @@ Public Module OperonAnnotator
         Dim geneToOperonMap As New Dictionary(Of String, String)
 
         ' 将blastResults转换为字典，方便通过QueryName查找
-        Dim blastDict = blastResults.ToDictionary(Function(hc) hc.QueryName)
+        Dim blastDict As Dictionary(Of String, HitCollection) = blastResults.ToDictionary(Function(hc) hc.QueryName)
 
         For Each gene As GeneTable In allGenes
             If blastDict.ContainsKey(gene.locus_id) Then
@@ -89,7 +90,7 @@ Public Module OperonAnnotator
 
                 ' --- 步骤 3: 对找到的基因区块进行分类（保守、插入、缺失） ---
                 If knownOperonsDict.ContainsKey(currentOperonId) Then
-                    Yield ClassifyOperonBlock(operonBlock, currentOperonId, knownOperonsDict(currentOperonId))
+                    Yield ClassifyOperonBlock(operonBlock, currentOperonId, knownOperonsDict(currentOperonId), blastDict)
                 End If
             Else
                 ' 当前基因不属于任何Operon，继续处理下一个
@@ -101,10 +102,19 @@ Public Module OperonAnnotator
     ''' <summary>
     ''' 辅助函数，用于对一个连续的基因区块进行Operon类型分类。
     ''' </summary>
-    Private Function ClassifyOperonBlock(block As List(Of GeneTable), operonId As String, knownOperon As WebJSON.Operon) As AnnotatedOperon
+    Private Function ClassifyOperonBlock(block As List(Of GeneTable), operonId As String, knownOperon As WebJSON.Operon, blastDict As Dictionary(Of String, HitCollection)) As AnnotatedOperon
         ' 使用HashSet可以提高查找效率
         Dim blockGeneIds = block.Select(Function(g) g.locus_id).ToHashSet()
         Dim knownGeneIds = knownOperon.members.ToHashSet()
+        Dim subjectMaps As String() = blockGeneIds _
+            .Select(Function(id)
+                        Dim q = blastDict(id)
+                        Dim hits As String() = q.hits.Select(Function(hit) hit.hitName).ToArray
+                        Return hits.Where(Function(id2) knownGeneIds.Contains(id2))
+                    End Function) _
+            .IteratesALL _
+            .Distinct _
+            .ToArray
         ' 找出插入的基因（在区块中但不在参考Operon中）
         Dim insertedIds = blockGeneIds.Except(knownGeneIds).ToArray
         ' 找出缺失的基因（在参考Operon中但未在区块中找到）
