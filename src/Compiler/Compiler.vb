@@ -27,6 +27,13 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     End Function
 
     Protected Overrides Function CompileImpl(args As CommandLine) As Integer
+        m_compiledModel.genome = BuildGenome()
+        m_compiledModel.metabolismStructure = CreateMetabolismNetwork()
+
+        Return 0
+    End Function
+
+    Private Function CreateMetabolismNetwork() As MetabolismStructure
         Dim enzymes As Dictionary(Of String, ECNumberAnnotation) = proj.ec_numbers
         Dim network As New Dictionary(Of String, WebJSON.Reaction)
         Dim ec_numbers As New Dictionary(Of String, List(Of String))
@@ -55,8 +62,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .Select(Function(id) registry.GetMoleculeDataById(id)) _
             .ToArray
 
-        m_compiledModel.metabolismStructure = New MetabolismStructure With {
-            .compounds = metadata _
+        Return New MetabolismStructure With {
+            .compounds = MetaData _
                 .Select(Function(c)
                             Return New Compound With {
                                 .formula = c.formula,
@@ -96,8 +103,19 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     .ToArray
             }
         }
+    End Function
 
-        Return 0
+    Private Function BuildGenome() As Genome
+        Dim genes As TranscriptUnit()
+        Dim genomics As New replicon With {
+            .genomeName = proj.taxonomy.scientificName,
+            .isPlasmid = False,
+            .operons = genes
+        }
+
+        Return New Genome With {
+            .replicons = {genomics}
+        }
     End Function
 
     Private Function FormatCompoundId(id As UInteger) As String
