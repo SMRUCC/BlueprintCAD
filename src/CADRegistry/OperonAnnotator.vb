@@ -1,8 +1,25 @@
 ﻿Imports Microsoft.VisualBasic.Language
 Imports SMRUCC.genomics.ComponentModel.Annotation
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 
 Public Module OperonAnnotator
+
+    Public Iterator Function ParseBlastn(blastn As String) As IEnumerable(Of HitCollection)
+        For Each hits As HitCollection In BlastnOutputReader.RunParser(blastn).ExportHistResult
+            If Not hits.hits.IsNullOrEmpty Then
+                For Each hit As Hit In hits.hits
+                    With hit.hitName.GetTagValue("|")
+                        hit.tag = .Name
+                        hit.hitName = .Value
+                    End With
+                Next
+            End If
+
+            Yield hits
+        Next
+    End Function
 
     ''' <summary>
     ''' 主函数：基于BLASTN结果注释基因组中的Operon。
@@ -10,7 +27,7 @@ Public Module OperonAnnotator
     ''' <param name="allGenes">目标基因组中的所有基因。</param>
     ''' <param name="allBlastResults">所有基因的BLASTN比对结果。</param>
     ''' <returns>一个包含所有已注释Operon的列表。</returns>
-    Public Function AnnotateOperons(allGenes As GeneTable(), allBlastResults As HitCollection()) As List(Of AnnotatedOperon)
+    Public Function AnnotateOperons(allGenes As GeneTable(), allBlastResults As HitCollection()) As AnnotatedOperon()
         ' 1. 预处理：创建一个快速查找BLAST结果的字典
         Dim blastLookup As New Dictionary(Of String, HitCollection)()
         For Each hc In allBlastResults
@@ -20,28 +37,28 @@ Public Module OperonAnnotator
         Next
 
         ' 2. 按链分组并排序基因
-        Dim forwardStrandGenes = allGenes.Where(Function(g) g.strand.Equals("forward", StringComparison.OrdinalIgnoreCase)).OrderBy(Function(g) g.left).ToList()
-        Dim reverseStrandGenes = allGenes.Where(Function(g) g.strand.Equals("reverse", StringComparison.OrdinalIgnoreCase)).OrderBy(Function(g) g.left).ToList()
+        Dim forwardStrandGenes = allGenes.Where(Function(g) g.strand.Equals("+", StringComparison.OrdinalIgnoreCase)).OrderBy(Function(g) g.left).ToArray
+        Dim reverseStrandGenes = allGenes.Where(Function(g) g.strand.Equals("-", StringComparison.OrdinalIgnoreCase)).OrderBy(Function(g) g.left).ToArray
 
         ' 3. 分别处理每条链上的基因
         Dim finalAnnotations As New List(Of AnnotatedOperon)()
-        finalAnnotations.AddRange(ProcessGeneStrand(forwardStrandGenes, "forward", blastLookup))
-        finalAnnotations.AddRange(ProcessGeneStrand(reverseStrandGenes, "reverse", blastLookup))
+        finalAnnotations.AddRange(ProcessGeneStrand(forwardStrandGenes, "+", blastLookup))
+        finalAnnotations.AddRange(ProcessGeneStrand(reverseStrandGenes, "-", blastLookup))
 
         ' 4. 对最终结果进行排序，方便查看
-        finalAnnotations = finalAnnotations.OrderBy(Function(o) o.Strand).ThenBy(Function(o) o.LeftmostPosition).ToList()
-
-        Return finalAnnotations
+        Return finalAnnotations _
+            .OrderBy(Function(o) o.Strand) _
+            .ThenBy(Function(o) o.LeftmostPosition) _
+            .ToArray
     End Function
 
     ''' <summary>
     ''' 处理单条链上的基因，识别Operon。
     ''' </summary>
-    Private Function ProcessGeneStrand(sortedGenes As List(Of GeneTable), strandName As String, blastLookup As Dictionary(Of String, HitCollection)) As List(Of AnnotatedOperon)
-        Dim annotations As New List(Of AnnotatedOperon)()
+    Private Iterator Function ProcessGeneStrand(sortedGenes As GeneTable(), strandName As String, blastLookup As Dictionary(Of String, HitCollection)) As IEnumerable(Of AnnotatedOperon)
         Dim i As Integer = 0
 
-        While i < sortedGenes.Count
+        While i < sortedGenes.Length
             Dim currentGene = sortedGenes(i)
 
             ' 获取当前基因的最佳比对Hit
@@ -59,7 +76,7 @@ Public Module OperonAnnotator
             Dim j As Integer = i + 1
 
             ' 向后查找所有连续的、比对到同一个Operon的基因
-            While j < sortedGenes.Count
+            While j < sortedGenes.Length
                 Dim nextGene = sortedGenes(j)
                 Dim nextBestHit As Hit = GetBestHitForGene(nextGene.locus_id, blastLookup)
 
@@ -77,17 +94,16 @@ Public Module OperonAnnotator
             ' 即使只有一个基因，也认为是一个（残缺的）Operon
             Dim newOperon As New AnnotatedOperon With {
                 .OperonTag = currentOperonTag,
-                .GeneIds = clusterGenes,
+                .GeneIds = clusterGenes.ToArray,
                 .Strand = strandName,
                 .LeftmostPosition = sortedGenes(i).left
             }
-            annotations.Add(newOperon)
+
+            Yield newOperon
 
             ' 将主索引i移动到已处理链的末尾，继续搜索
             i = j
         End While
-
-        Return annotations
     End Function
 
     ''' <summary>

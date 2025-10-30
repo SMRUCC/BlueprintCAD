@@ -7,6 +7,9 @@ Module Program
     Sub Main(args As String())
         Dim proj = ProjectCreator.FromGenBank(GBFF.File.Load("G:\BlueprintCAD\demo\Escherichia coli str. K-12 substr. MG1655.gbff"))
 
+        proj.operon_hits = OperonAnnotator.ParseBlastn("G:\BlueprintCAD\demo\tmp\Sophia\41948\operon_blast869219.txt").ToArray
+        proj.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, proj.operon_hits)
+
         proj.enzyme_hits = BlastpOutputReader _
             .RunParser("G:\BlueprintCAD\demo\tmp\Sophia\19032\enzyme_blast650548.txt") _
             .ExportHistResult _

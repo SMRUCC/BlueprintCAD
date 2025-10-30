@@ -24,6 +24,8 @@ Public Class GenBankProject
     ''' </summary>
     ''' <returns></returns>
     Public Property operon_hits As HitCollection()
+
+    Public Property operons As AnnotatedOperon()
     Public Property ec_numbers As Dictionary(Of String, ECNumberAnnotation)
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>

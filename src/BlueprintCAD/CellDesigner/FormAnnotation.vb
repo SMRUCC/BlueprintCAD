@@ -294,7 +294,7 @@ Public Class FormAnnotation
         Await Task.Run(Sub() blastp.FormatDb(operon_db, dbType:=blastp.MolTypeNucleotide).Run())
         Await Task.Run(Sub() blastp.Blastn(tempfile, operon_db, tempOutfile, e:=0.01).Run())
 
-        proj.operon_hits = BlastpOutputReader _
+        proj.operon_hits = BlastnOutputReader _
             .RunParser(tempOutfile) _
             .ExportHistResult _
             .ToArray

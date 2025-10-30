@@ -1,4 +1,6 @@
-﻿Public Class AnnotatedOperon
+﻿Imports Microsoft.VisualBasic.Serialization.JSON
+
+Public Class AnnotatedOperon
     ''' <summary>
     ''' 被注释的Operon的Tag (来自Hit.tag)
     ''' </summary>
@@ -7,7 +9,7 @@
     ''' <summary>
     ''' 组成此Operon的基因的locus_id列表
     ''' </summary>
-    Public Property GeneIds As List(Of String)
+    Public Property GeneIds As String()
 
     ''' <summary>
     ''' Operon所在的链
@@ -24,4 +26,9 @@
     ''' 此处可以标记为True，或者根据更复杂的规则（如比对成员数量）来判断。
     ''' </summary>
     Public Property IsConserved As Boolean = True
+
+    Public Overrides Function ToString() As String
+        Return $"operon_{OperonTag}{GeneIds.GetJson}, conserved:{IsConserved.ToString.ToLower}"
+    End Function
+
 End Class
