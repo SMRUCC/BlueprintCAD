@@ -38,25 +38,18 @@ Public Module OperonAnnotator
 ) As IEnumerable(Of AnnotatedOperon)
 
         ' --- 步骤 1: 为每个基因投票，确定其最可能的Operon ID ---
-
-        ' 创建一个从基因locus_id到其注释的OperonID的映射
+        ' (此部分逻辑保持不变)
         Dim geneToOperonMap As New Dictionary(Of String, String)
-
-        ' 将blastResults转换为字典，方便通过QueryName查找
-        Dim blastDict As Dictionary(Of String, HitCollection) = blastResults.ToDictionary(Function(hc) hc.QueryName)
-
+        Dim blastDict = blastResults.ToDictionary(Function(hc) hc.QueryName)
         For Each gene As GeneTable In allGenes
             If blastDict.ContainsKey(gene.locus_id) Then
                 Dim hc As HitCollection = blastDict(gene.locus_id)
                 If hc.hits IsNot Nothing AndAlso hc.hits.Length > 0 Then
-                    ' 按tag分组并计算总分
                     Dim operonScores = hc.hits.GroupBy(Function(h) h.tag) _
                                           .ToDictionary(
                                               Function(g) g.Key,
                                               Function(g) g.Sum(Function(h) h.score * h.identities * (1 - h.gaps))
                                           )
-
-                    ' 找到得分最高的Operon ID
                     If operonScores.Any() Then
                         Dim bestOperonId = operonScores.OrderByDescending(Function(kvp) kvp.Value).First().Key
                         geneToOperonMap(gene.locus_id) = bestOperonId
@@ -66,9 +59,10 @@ Public Module OperonAnnotator
         Next
 
         ' --- 步骤 2: 在基因组上寻找连续的、具有相同Operon ID的基因区块 ---
-        ' 按链方向和位置对基因进行排序，这是识别相邻基因的关键
+        ' (此部分逻辑已修正，以处理插入突变)
+        ' 按链方向和位置对基因进行排序
         Dim sortedGenes = allGenes.OrderBy(Function(g) g.strand) _
-                             .ThenBy(Function(g) If(g.strand = "+", g.left, g.right)) _
+                             .ThenBy(Function(g) If(g.strand = "forward", g.left, g.right)) _
                              .ToList()
 
         Dim i As Integer = 0
@@ -80,16 +74,31 @@ Public Module OperonAnnotator
                 Dim currentOperonId = geneToOperonMap(currentGene.locus_id)
                 Dim operonBlock As New List(Of GeneTable) From {currentGene}
 
-                ' 向后查找连续的、具有相同Operon ID的基因
+                ' --- 修正后的核心逻辑 ---
+                ' 向后查找，形成一个连续的区块。该区块可以包含没有OperonID的基因（作为潜在的插入基因），
+                ' 直到遇到一个属于“另一个”Operon的基因为止。
                 i += 1
-                While i < sortedGenes.Count AndAlso geneToOperonMap.ContainsKey(sortedGenes(i).locus_id) _
-                  AndAlso geneToOperonMap(sortedGenes(i).locus_id) = currentOperonId
-                    operonBlock.Add(sortedGenes(i))
-                    i += 1
+                While i < sortedGenes.Count
+                    Dim nextGene = sortedGenes(i)
+
+                    ' 条件1: 下一个基因属于同一个Operon
+                    If geneToOperonMap.ContainsKey(nextGene.locus_id) AndAlso geneToOperonMap(nextGene.locus_id) = currentOperonId Then
+                        operonBlock.Add(nextGene)
+                        i += 1
+                        ' 条件2: 下一个基因没有OperonID注释，我们将其视为潜在的插入基因并包含进区块
+                    ElseIf Not geneToOperonMap.ContainsKey(nextGene.locus_id) Then
+                        operonBlock.Add(nextGene)
+                        i += 1
+                        ' 条件3: 下一个基因属于另一个Operon，或者链的方向改变了，当前区块结束
+                    Else
+                        ' 停止扩展当前区块，因为它被一个不同的Operon基因“打断”了
+                        Exit While
+                    End If
                 End While
 
                 ' --- 步骤 3: 对找到的基因区块进行分类（保守、插入、缺失） ---
                 If knownOperonsDict.ContainsKey(currentOperonId) Then
+                    ' 调用修正后的ClassifyOperonBlock函数
                     Yield ClassifyOperonBlock(operonBlock, currentOperonId, knownOperonsDict(currentOperonId), blastDict)
                 End If
             Else
