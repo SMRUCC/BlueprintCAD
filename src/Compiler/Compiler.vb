@@ -42,6 +42,10 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Dim ec_number As String = enzyme.EC
             Dim list = registry.GetAssociatedReactions(enzyme.EC, simple:=False)
 
+            If list Is Nothing Then
+                Continue For
+            End If
+
             Call network.AddRange(list, replaceDuplicated:=True)
 
             For Each guid As String In list.Keys
@@ -63,12 +67,18 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .ToArray
 
         Return New MetabolismStructure With {
-            .compounds = MetaData _
+            .compounds = metadata _
                 .Select(Function(c)
+                            Dim biocyc_id As WebJSON.DBXref = c.db_xrefs _
+                                .SafeQuery _
+                                .Where(Function(r) r.dbname = "MetaCyc") _
+                                .FirstOrDefault
+
                             Return New Compound With {
                                 .formula = c.formula,
                                 .ID = FormatCompoundId(c.id),
-                                .name = c.name
+                                .name = c.name,
+                                .referenceIds = If(biocyc_id Is Nothing, Nothing, {biocyc_id.xref_id})
                             }
                         End Function) _
                 .ToArray,
