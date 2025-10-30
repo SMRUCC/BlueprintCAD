@@ -35,12 +35,12 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
     Protected Overrides Function CompileImpl(args As CommandLine) As Integer
         m_compiledModel.genome = BuildGenome()
-        m_compiledModel.metabolismStructure = CreateMetabolismNetwork()
+        m_compiledModel.metabolismStructure = CreateMetabolismNetwork(m_compiledModel.genome.replicons.Select(Function(r) r.GetGeneList).IteratesALL.GroupBy(Function(a) a.locus_tag).ToDictionary(Function(a) a.Key, Function(a) a.First))
 
         Return 0
     End Function
 
-    Private Function CreateMetabolismNetwork() As MetabolismStructure
+    Private Function CreateMetabolismNetwork(genes As Dictionary(Of String, gene)) As MetabolismStructure
         Dim enzymes As Dictionary(Of String, ECNumberAnnotation) = proj.ec_numbers
         Dim network As New Dictionary(Of String, WebJSON.Reaction)
         Dim ec_numbers As New Dictionary(Of String, List(Of String))
@@ -55,7 +55,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Else
                 Dim model As New Enzyme With {
                     .ECNumber = enzyme.EC,
-                    .proteinID = enzyme.gene_id,
+                    .proteinID = If(genes.ContainsKey(enzyme.gene_id), genes(enzyme.gene_id).protein_id.ElementAtOrDefault(0, enzyme.gene_id), enzyme.gene_id),
                     .catalysis = list.Values _
                          .Select(Function(reaction)
                                      Return reaction.law _
@@ -64,10 +64,20 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                                                     Dim pars = law.params.Keys.ToArray
                                                     Dim args As KineticsParameter() = law.params _
                                                         .Select(Function(a)
-                                                                    Return New KineticsParameter With {
-                                                                        .name = a.Key,
-                                                                        .value = a.Value
-                                                                    }
+                                                                    If a.Value.IsNumeric Then
+                                                                        Return New KineticsParameter With {
+                                                                            .name = a.Key,
+                                                                            .value = Val(a.Value),
+                                                                            .isModifier = False
+                                                                        }
+                                                                    Else
+                                                                        Return New KineticsParameter With {
+                                                                            .name = a.Key,
+                                                                            .value = 0,
+                                                                            .isModifier = False,
+                                                                            .target = a.Value
+                                                                        }
+                                                                    End If
                                                                 End Function) _
                                                         .ToArray
 
