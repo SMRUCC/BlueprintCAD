@@ -3,6 +3,7 @@ Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.Math.Scripting.MathExpression
 Imports Microsoft.VisualBasic.Text.Xml.Models
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -43,6 +44,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Dim enzymes As Dictionary(Of String, ECNumberAnnotation) = proj.ec_numbers
         Dim network As New Dictionary(Of String, WebJSON.Reaction)
         Dim ec_numbers As New Dictionary(Of String, List(Of String))
+        Dim enzymeModels As New List(Of Enzyme)
 
         For Each enzyme As ECNumberAnnotation In enzymes.Values
             Dim ec_number As String = enzyme.EC
@@ -50,6 +52,43 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
             If list Is Nothing Then
                 Continue For
+            Else
+                Dim model As New Enzyme With {
+                    .ECNumber = enzyme.EC,
+                    .proteinID = enzyme.gene_id,
+                    .catalysis = list.Values _
+                         .Select(Function(reaction)
+                                     Return reaction.law _
+                                        .SafeQuery _
+                                        .Select(Function(law)
+                                                    Dim pars = law.params.Keys.ToArray
+                                                    Dim args As KineticsParameter() = law.params _
+                                                        .Select(Function(a)
+                                                                    Return New KineticsParameter With {
+                                                                        .name = a.Key,
+                                                                        .value = a.Value
+                                                                    }
+                                                                End Function) _
+                                                        .ToArray
+
+                                                    Return New Catalysis With {
+                                                        .reaction = reaction.guid,
+                                                        .temperature = 36,
+                                                        .PH = 7.0,
+                                                        .formula = New FunctionElement With {
+                                                            .lambda = law.lambda,
+                                                            .name = enzyme.EC,
+                                                            .parameters = pars
+                                                        },
+                                                        .parameter = args
+                                                    }
+                                                End Function)
+                                 End Function) _
+                         .IteratesALL _
+                         .ToArray
+                }
+
+                Call enzymeModels.Add(model)
             End If
 
             Call network.AddRange(list.Where(Function(r) r.Value.left.JoinIterates(r.Value.right).All(Function(a) a.molecule_id > 0)), replaceDuplicated:=True)
@@ -118,7 +157,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                                 }
                             End Function) _
                     .ToArray
-            }
+            },
+            .enzymes = enzymeModels.ToArray
         }
     End Function
 
