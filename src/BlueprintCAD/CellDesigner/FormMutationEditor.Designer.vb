@@ -29,6 +29,7 @@ Partial Class FormMutationEditor
         Button1 = New Button()
         DataGridView1 = New DataGridView()
         Label2 = New Label()
+        ListBox1 = New ListBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -73,11 +74,21 @@ Partial Class FormMutationEditor
         Label2.TabIndex = 5
         Label2.Text = "Mutation:"
         ' 
+        ' ListBox1
+        ' 
+        ListBox1.FormattingEnabled = True
+        ListBox1.ItemHeight = 15
+        ListBox1.Location = New Point(42, 80)
+        ListBox1.Name = "ListBox1"
+        ListBox1.Size = New Size(371, 349)
+        ListBox1.TabIndex = 6
+        ' 
         ' FormMutationEditor
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1210, 845)
+        Controls.Add(ListBox1)
         Controls.Add(Label2)
         Controls.Add(DataGridView1)
         Controls.Add(Button1)
@@ -98,4 +109,5 @@ Partial Class FormMutationEditor
     Friend WithEvents Button1 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label2 As Label
+    Friend WithEvents ListBox1 As ListBox
 End Class

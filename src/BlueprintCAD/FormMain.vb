@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports BlueprintCAD.My
 Imports BlueprintCAD.RibbonLib.Controls
+Imports CADRegistry
 Imports Galaxy.Workbench
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports RibbonLib
@@ -83,6 +84,7 @@ Public Class FormMain : Implements AppHost
         Call PanelBase.Controls.Add(Me.m_dockPanel)
         Call initializeVSPanel()
         Call MyApplication.SetRibbonEvents()
+        Call Timer1.Start()
     End Sub
 
     Public Function GetDesktopLocation() As Point Implements AppHost.GetDesktopLocation
@@ -136,5 +138,23 @@ Public Class FormMain : Implements AppHost
 
     Private Sub FormMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Call CommonRuntime.SaveUISettings()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Call ToolStripStatusLabel2_Click()
+    End Sub
+
+    Private Sub ToolStripStatusLabel2_Click() Handles ToolStripStatusLabel2.Click
+        If Not Workbench.Settings.registry_server.StringEmpty(, True) Then
+            Dim test As New RegistryUrl(Workbench.Settings.registry_server)
+
+            If test.Ping Then
+                ToolStripStatusLabel2.Text = "Connected To Server"
+                ToolStripStatusLabel2.Image = My.Resources.Icons.icons8_wifi_96
+            Else
+                ToolStripStatusLabel2.Text = "Server Offline"
+                ToolStripStatusLabel2.Image = My.Resources.Icons.icons8_offline_96
+            End If
+        End If
     End Sub
 End Class

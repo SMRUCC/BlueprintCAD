@@ -14,6 +14,9 @@ Public Class Settings
         If config Is Nothing Then
             config = New Settings With {.registry_server = RegistryUrl.defaultServer}
         End If
+        If config.registry_server.StringEmpty(, True) Then
+            config.registry_server = RegistryUrl.defaultServer
+        End If
 
         Return config
     End Function

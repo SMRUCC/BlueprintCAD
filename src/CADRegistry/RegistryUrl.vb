@@ -1,3 +1,4 @@
+Imports System.Threading
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.MIME.application.json.Javascript
@@ -23,6 +24,12 @@ Public Class RegistryUrl
         Else
             Return json!info.CreateObject(Of WebJSON.Operon())
         End If
+    End Function
+
+    Public Function Ping() As Boolean
+        Dim url As String = $"{server}/ping/"
+        Dim test As String = url.GET(timeoutSec:=1)
+        Return Not test Is Nothing
     End Function
 
     Public Function GetMoleculeDataById(id As UInteger) As WebJSON.Molecule

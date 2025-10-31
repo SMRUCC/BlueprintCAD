@@ -22,10 +22,14 @@ Partial Class FormMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMain))
         PanelBase = New Panel()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        ToolStripStatusLabel3 = New ToolStripStatusLabel()
+        ToolStripStatusLabel2 = New ToolStripStatusLabel()
+        Timer1 = New Timer(components)
         StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -39,7 +43,7 @@ Partial Class FormMain
         ' 
         ' StatusStrip1
         ' 
-        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel3, ToolStripStatusLabel2})
         StatusStrip1.Location = New Point(0, 691)
         StatusStrip1.Name = "StatusStrip1"
         StatusStrip1.Size = New Size(1260, 22)
@@ -52,6 +56,25 @@ Partial Class FormMain
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         ToolStripStatusLabel1.Size = New Size(58, 17)
         ToolStripStatusLabel1.Text = "Ready!"
+        ' 
+        ' ToolStripStatusLabel3
+        ' 
+        ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+        ToolStripStatusLabel3.Size = New Size(1025, 17)
+        ToolStripStatusLabel3.Spring = True
+        ' 
+        ' ToolStripStatusLabel2
+        ' 
+        ToolStripStatusLabel2.Image = CType(resources.GetObject("ToolStripStatusLabel2.Image"), Image)
+        ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        ToolStripStatusLabel2.Size = New Size(131, 17)
+        ToolStripStatusLabel2.Text = "Connected To Server"
+        ToolStripStatusLabel2.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' Timer1
+        ' 
+        Timer1.Enabled = True
+        Timer1.Interval = 1000
         ' 
         ' FormMain
         ' 
@@ -71,4 +94,7 @@ Partial Class FormMain
     Friend WithEvents PanelBase As Panel
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents Timer1 As Timer
 End Class
