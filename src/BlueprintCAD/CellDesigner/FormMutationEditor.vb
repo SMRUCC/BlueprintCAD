@@ -1,4 +1,6 @@
-﻿Imports Galaxy.Workbench
+﻿Imports System.Windows.Controls
+Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Public Class FormMutationEditor
@@ -51,6 +53,32 @@ Public Class FormMutationEditor
         Call ListBox2.Items.Add(target)
     End Sub
 
+    Private Sub ViewMetabolicNetwork(gene As KnockoutGene)
+        Dim cell As VirtualCell = wizardConfig.models(gene.genome).model
+        Dim proteins As String() = gene.gene.protein_id
+        Dim visited As New Index(Of String)
+        Dim proteinList As protein() = proteins _
+            .SafeQuery _
+            .Select(Function(id)
+                        Return protein.ProteinRoutine(cell.genome.proteins, id, visited)
+                    End Function) _
+            .IteratesALL _
+            .Distinct _
+            .ToArray
+
+        Call ListBox3.Items.Clear()
+
+        For Each impact As Reaction In proteinList _
+            .Select(Function(prot)
+                        Return cell.metabolismStructure.GetImpactedMetabolicNetwork(prot.protein_id)
+                    End Function) _
+            .IteratesALL _
+            .Distinct
+
+            Call ListBox3.Items.Add(impact)
+        Next
+    End Sub
+
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         Dim knockouts As New List(Of String)
 
@@ -61,7 +89,6 @@ Public Class FormMutationEditor
         Next
 
         updated = model.DeleteMutation(knockouts.ToArray)
-
     End Sub
 End Class
 
