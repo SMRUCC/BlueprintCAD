@@ -29,6 +29,10 @@ Partial Class FormMutationEditor
         TextBox1 = New TextBox()
         Button1 = New Button()
         DataGridView1 = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
         Label2 = New Label()
         ListBox1 = New ListBox()
         ListBox2 = New ListBox()
@@ -69,11 +73,37 @@ Partial Class FormMutationEditor
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.BackgroundColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4})
         DataGridView1.Location = New Point(31, 477)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.Size = New Size(1150, 332)
         DataGridView1.TabIndex = 4
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "Name"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Reaction"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Substrates"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Products"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
         ' 
         ' Label2
         ' 
@@ -199,4 +229,8 @@ Partial Class FormMutationEditor
     Friend WithEvents Button2 As Button
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class

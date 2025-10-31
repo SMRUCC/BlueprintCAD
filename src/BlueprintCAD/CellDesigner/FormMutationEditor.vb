@@ -1,6 +1,6 @@
-﻿Imports System.Windows.Controls
-Imports Galaxy.Workbench
+﻿Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Public Class FormMutationEditor
@@ -50,11 +50,18 @@ Public Class FormMutationEditor
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        For Each item As MutationEdit In ListBox2.Items
+            ' avoid duplicated item
+            If item.gene.locus_tag = target.gene.locus_tag Then
+                Return
+            End If
+        Next
+
         Call ListBox2.Items.Add(target)
     End Sub
 
-    Private Sub ViewMetabolicNetwork(gene As KnockoutGene)
-        Dim cell As VirtualCell = wizardConfig.models(gene.genome).model
+    Private Sub ViewMetabolicNetwork(gene As MutationEdit)
+        Dim cell As VirtualCell = model
         Dim proteins As String() = gene.gene.protein_id
         Dim visited As New Index(Of String)
         Dim proteinList As protein() = proteins _
@@ -66,7 +73,7 @@ Public Class FormMutationEditor
             .Distinct _
             .ToArray
 
-        Call ListBox3.Items.Clear()
+        Call DataGridView1.Rows.Clear()
 
         For Each impact As Reaction In proteinList _
             .Select(Function(prot)
@@ -75,7 +82,12 @@ Public Class FormMutationEditor
             .IteratesALL _
             .Distinct
 
-            Call ListBox3.Items.Add(impact)
+            Dim offset = DataGridView1.Rows.Add(impact.name,
+                                                impact.equation,
+                                                impact.substrate.Select(Function(a) a.compound).JoinBy(", "),
+                                                impact.product.Select(Function(a) a.compound).JoinBy(", "))
+
+            DataGridView1.Rows(offset).HeaderCell.Value = impact.ID
         Next
     End Sub
 
@@ -85,10 +97,30 @@ Public Class FormMutationEditor
         For Each edit As MutationEdit In ListBox2.Items
             If edit.knockout Then
                 Call knockouts.Add(edit.gene.locus_tag)
+            Else
+                edit.gene.expression_level = edit.expression_level
             End If
         Next
 
         updated = model.DeleteMutation(knockouts.ToArray)
+    End Sub
+
+    Private Sub FormMutationEditor_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Call ApplyVsTheme(ToolStrip1)
+    End Sub
+
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+        If Not target Is Nothing Then
+            target.expression_level = NumericUpDown1.Value
+        End If
+    End Sub
+
+    Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
+        If ListBox2.SelectedIndex > -1 Then
+            target = ListBox2.SelectedItem
+            NumericUpDown1.Value = target.expression_level
+            CheckBox1.Checked = target.knockout
+        End If
     End Sub
 End Class
 
