@@ -125,16 +125,18 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Return New MetabolismStructure With {
             .compounds = metadata _
                 .Select(Function(c)
-                            Dim biocyc_id As WebJSON.DBXref = c.db_xrefs _
+                            Dim biocyc_id As WebJSON.DBXref() = c.db_xrefs _
                                 .SafeQuery _
                                 .Where(Function(r) r.dbname = "MetaCyc") _
-                                .FirstOrDefault
+                                .ToArray
 
                             Return New Compound With {
                                 .formula = c.formula,
                                 .ID = FormatCompoundId(c.id),
                                 .name = c.name,
-                                .referenceIds = If(biocyc_id Is Nothing, Nothing, {biocyc_id.xref_id})
+                                .referenceIds = biocyc_id _
+                                    .Select(Function(xi) xi.xref_id) _
+                                    .ToArray
                             }
                         End Function) _
                 .ToArray,
