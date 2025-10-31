@@ -7,6 +7,11 @@ Public Class FormMutationEditor
 
     Public Function LoadModel(file As String) As FormMutationEditor
         model = file.LoadXml(Of VirtualCell)
+
+        For Each gene As gene In model.genome.GetAllGeneLocusTags
+
+        Next
+
         Return Me
     End Function
 
