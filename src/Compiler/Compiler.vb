@@ -172,8 +172,9 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         }
     End Function
 
-    Private Iterator Function GeneObjects() As IEnumerable(Of gene)
+    Private Iterator Function GeneObjects(rnas As List(Of RNA)) As IEnumerable(Of gene)
         Dim nt As Dictionary(Of String, String) = proj.genes
+        Dim RNA As RNA
 
         For Each gene As GeneTable In proj.gene_table
             Dim nt_seq As String = nt(gene.locus_id)
@@ -191,6 +192,28 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
                         residues = ProteinComposition.FromRefSeq(trans, If(gene.ProteinId, gene.locus_id & "_protein")).CreateVector
                         gene_type = RNATypes.mRNA
+                    Case "rRNA"
+                        Dim rRNA = gene.commonName.Split(" "c, "-"c).First.ToLower
+
+                        gene_type = RNATypes.ribosomalRNA
+                        RNA = New RNA With {
+                            .gene = gene.locus_id,
+                            .id = gene.commonName,
+                            .note = gene.commonName,
+                            .type = gene_type,
+                            .val = rRNA
+                        }
+                        rnas.Add(RNA)
+                    Case "tRNA"
+                        gene_type = RNATypes.tRNA
+                        RNA = New RNA With {
+                            .gene = gene.locus_id,
+                            .id = gene.commonName,
+                            .note = gene.commonName,
+                            .type = gene_type,
+                            .val = gene.commonName.Split("-"c).Last
+                        }
+                        rnas.Add(RNA)
                     Case Else
                         gene_type = RNATypes.micsRNA
                 End Select
@@ -211,7 +234,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     End Function
 
     Private Function BuildGenome() As Genome
-        Dim geneSet = GeneObjects.GroupBy(Function(a) a.locus_tag).ToDictionary(Function(a) a.Key, Function(a) a.First)
+        Dim RNAs As New List(Of RNA)
+        Dim geneSet = GeneObjects(RNAs).GroupBy(Function(a) a.locus_tag).ToDictionary(Function(a) a.Key, Function(a) a.First)
         Dim genes As TranscriptUnit() = proj.operons _
             .SafeQuery _
             .Select(Function(op)
@@ -230,7 +254,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Dim genomics As New replicon With {
             .genomeName = proj.taxonomy.scientificName,
             .isPlasmid = False,
-            .operons = genes
+            .operons = genes,
+            .RNAs = RNAs.ToArray
         }
 
         Return New Genome With {
