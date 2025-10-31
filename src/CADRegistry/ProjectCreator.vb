@@ -20,7 +20,7 @@ Public Module ProjectCreator
                           Function(a)
                               Return a.SequenceData
                           End Function)
-        Dim genes As GeneTable() = genbank.ExportGeneFeatures()
+        Dim genes As GeneTable() = genbank.EnumerateGeneFeatures.ExportTable().ToArray
         Dim nt As New FastaSeq({"nt"}, genbank.Origin.SequenceData)
         Dim tss As Dictionary(Of String, String) = genes _
             .Select(Function(gene)
