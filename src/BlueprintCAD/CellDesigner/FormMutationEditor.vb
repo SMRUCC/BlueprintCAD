@@ -10,8 +10,6 @@ Public Class FormMutationEditor
     Public Function LoadModel(file As String) As FormMutationEditor
         Call ProgressSpinner.DoLoading(Sub() model = file.LoadXml(Of VirtualCell))
 
-        updated = New VirtualCell(model)
-
         For Each gene As gene In model.genome.GetAllGenes
             Call ListBox1.Items.Add(gene)
         Next
@@ -54,9 +52,16 @@ Public Class FormMutationEditor
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-        For Each edit As MutationEdit In ListBox2.Items
+        Dim knockouts As New List(Of String)
 
+        For Each edit As MutationEdit In ListBox2.Items
+            If edit.knockout Then
+                Call knockouts.Add(edit.gene.locus_tag)
+            End If
         Next
+
+        updated = model.DeleteMutation(knockouts.ToArray)
+
     End Sub
 End Class
 
