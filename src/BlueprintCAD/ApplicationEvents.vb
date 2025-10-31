@@ -38,22 +38,33 @@ Namespace My
             AddHandler ribbon.ButtonRun.ExecuteEvent, AddressOf RunVirtualCell
             AddHandler ribbon.ButtonInspectCellModel.ExecuteEvent, AddressOf OpenCellViewer
             AddHandler ribbon.ButtonIDAnnotation.ExecuteEvent, AddressOf OpenAnnotationTool
+            AddHandler ribbon.ButtonEditMutation.ExecuteEvent, AddressOf OpenMutationEditor
+        End Sub
+
+        Public Shared Sub OpenMutationEditor(sender As Object, e As ExecuteEventArgs)
+            Using file As New OpenFileDialog With {
+                .Filter = "GCModeller Virtual Cell Model File(*.xml)|*.xml"
+            }
+                If file.ShowDialog = DialogResult.OK Then
+                    Call CommonRuntime.ShowDocument(Of FormMutationEditor)(, "Edit Model: " & file.FileName.FileName).LoadModel(file.FileName)
+                End If
+            End Using
         End Sub
 
         Public Shared Sub OpenAnnotationTool(sender As Object, e As ExecuteEventArgs)
-            Dim file As New OpenFileDialog With {
+            Using file As New OpenFileDialog With {
                 .Filter = "NCBI GenBank(*.gb;*.gbk;*.gbff)|*.gb;*.gbk;*.gbff|GCModeller VirtualCell Project(*.gcproj)|*.gcproj"
             }
+                If file.ShowDialog = DialogResult.OK Then
+                    Dim page = CommonRuntime.ShowDocument(Of FormAnnotation)(DockState.Document, "Build Model: " & file.FileName.FileName)
 
-            If file.ShowDialog = DialogResult.OK Then
-                Dim page = CommonRuntime.ShowDocument(Of FormAnnotation)(DockState.Document, "Build Model: " & file.FileName.FileName)
-
-                If file.FileName.ExtensionSuffix("gcproj") Then
-                    Call page.LoadProject(file.FileName)
-                Else
-                    Call page.LoadModel(file.FileName)
+                    If file.FileName.ExtensionSuffix("gcproj") Then
+                        Call page.LoadProject(file.FileName)
+                    Else
+                        Call page.LoadModel(file.FileName)
+                    End If
                 End If
-            End If
+            End Using
         End Sub
 
         Private Shared Sub OpenCellViewer(sender As Object, e As ExecuteEventArgs)
