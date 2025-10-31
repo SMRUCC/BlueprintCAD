@@ -96,7 +96,6 @@ Namespace My
             Dim wizardConfig As New Wizard
 
             Call InputDialog.OpenDialog(Of FormConfigGenerator)(wizardConfig) _
-                .ThenDialog(Of FormKnockoutGenerator)(wizardConfig) _
                 .ThenDialog(Of FormCultureMedium)(wizardConfig) _
                 .ThenDialog(Of FormCellCopyNumber)(wizardConfig) _
                 .Finally(Sub()
