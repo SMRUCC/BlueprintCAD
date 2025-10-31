@@ -39,6 +39,7 @@ Namespace RibbonLib.Controls
             Public Const cmdButtonInspectCellModel As UInteger = 27
             Public Const cmdGroupTools As UInteger = 23
             Public Const cmdButtonEditCultureMedium As UInteger = 24
+            Public Const cmdButtonEditMutation As UInteger = 28
             Public Const cmdGroupModelling As UInteger = 25
             Public Const cmdButtonIDAnnotation As UInteger = 26
         End Class
@@ -249,6 +250,15 @@ Namespace RibbonLib.Controls
                 Return _ButtonEditCultureMedium
             End Get
         End Property
+        Private _ButtonEditMutation As RibbonButton
+        ''' <summary>
+        ''' Mutation Tool
+        ''' </summary>
+        Public ReadOnly Property ButtonEditMutation As RibbonButton
+            Get
+                Return _ButtonEditMutation
+            End Get
+        End Property
         Private _GroupModelling As RibbonGroup
         ''' <summary>
         ''' Virtual cell modelling
@@ -297,6 +307,7 @@ Namespace RibbonLib.Controls
             _ButtonInspectCellModel = New RibbonButton(_ribbon, Cmd.cmdButtonInspectCellModel)
             _GroupTools = New RibbonGroup(_ribbon, Cmd.cmdGroupTools)
             _ButtonEditCultureMedium = New RibbonButton(_ribbon, Cmd.cmdButtonEditCultureMedium)
+            _ButtonEditMutation = New RibbonButton(_ribbon, Cmd.cmdButtonEditMutation)
             _GroupModelling = New RibbonGroup(_ribbon, Cmd.cmdGroupModelling)
             _ButtonIDAnnotation = New RibbonButton(_ribbon, Cmd.cmdButtonIDAnnotation)
         End Sub

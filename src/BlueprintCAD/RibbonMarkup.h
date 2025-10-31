@@ -145,4 +145,11 @@
 #define cmdButtonInspectCellModel_TooltipDescription_RESID 60112
 #define cmdButtonInspectCellModel_SmallImages_192__RESID 60113
 #define cmdButtonInspectCellModel_LargeImages_192__RESID 60114
-#define InternalCmd2_LabelTitle_RESID 60115
+#define cmdButtonEditMutation 28  /* Mutation Tool */ 
+#define cmdButtonEditMutation_LabelTitle_RESID 60115
+#define cmdButtonEditMutation_LabelDescription_RESID 60116
+#define cmdButtonEditMutation_TooltipTitle_RESID 60117
+#define cmdButtonEditMutation_TooltipDescription_RESID 60118
+#define cmdButtonEditMutation_SmallImages_192__RESID 60119
+#define cmdButtonEditMutation_LargeImages_192__RESID 60120
+#define InternalCmd2_LabelTitle_RESID 60121

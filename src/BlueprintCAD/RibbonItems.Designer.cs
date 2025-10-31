@@ -42,6 +42,7 @@ namespace RibbonLib.Controls
             public const uint cmdButtonInspectCellModel = 27;
             public const uint cmdGroupTools = 23;
             public const uint cmdButtonEditCultureMedium = 24;
+            public const uint cmdButtonEditMutation = 28;
             public const uint cmdGroupModelling = 25;
             public const uint cmdButtonIDAnnotation = 26;
         }
@@ -128,6 +129,10 @@ namespace RibbonLib.Controls
         /// </summary>
         public RibbonButton ButtonEditCultureMedium { get; private set; }
         /// <summary>
+        /// Mutation Tool
+        /// </summary>
+        public RibbonButton ButtonEditMutation { get; private set; }
+        /// <summary>
         /// Virtual cell modelling
         /// </summary>
         public RibbonGroup GroupModelling { get; private set; }
@@ -165,6 +170,7 @@ namespace RibbonLib.Controls
             ButtonInspectCellModel = new RibbonButton(ribbon, Cmd.cmdButtonInspectCellModel);
             GroupTools = new RibbonGroup(ribbon, Cmd.cmdGroupTools);
             ButtonEditCultureMedium = new RibbonButton(ribbon, Cmd.cmdButtonEditCultureMedium);
+            ButtonEditMutation = new RibbonButton(ribbon, Cmd.cmdButtonEditMutation);
             GroupModelling = new RibbonGroup(ribbon, Cmd.cmdGroupModelling);
             ButtonIDAnnotation = new RibbonButton(ribbon, Cmd.cmdButtonIDAnnotation);
         }
