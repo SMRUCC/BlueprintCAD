@@ -1,4 +1,5 @@
-﻿Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
+﻿Imports Galaxy.Workbench
+Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Public Class FormMutationEditor
 
@@ -6,10 +7,10 @@ Public Class FormMutationEditor
     Dim model As VirtualCell
 
     Public Function LoadModel(file As String) As FormMutationEditor
-        model = file.LoadXml(Of VirtualCell)
+        Call ProgressSpinner.DoLoading(Sub() model = file.LoadXml(Of VirtualCell))
 
-        For Each gene As gene In model.genome.GetAllGeneLocusTags
-
+        For Each gene As gene In model.genome.GetAllGenes
+            Call ListBox1.Items.Add(gene)
         Next
 
         Return Me
