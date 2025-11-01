@@ -34,7 +34,8 @@ Public Module OperonAnnotator
     Public Iterator Function AnnotateOperons(
     allGenes As GeneTable(),
     blastResults As HitCollection(),
-    knownOperonsDict As Dictionary(Of String, WebJSON.Operon)
+    knownOperonsDict As Dictionary(Of String, WebJSON.Operon),
+    Optional geneDistCutoff As Integer = 2000
 ) As IEnumerable(Of AnnotatedOperon)
 
         ' --- 步骤 1: 为每个基因投票，确定其最可能的Operon ID ---
@@ -62,7 +63,7 @@ Public Module OperonAnnotator
         ' (此部分逻辑已修正，以处理插入突变)
         ' 按链方向和位置对基因进行排序
         Dim sortedGenes = allGenes.OrderBy(Function(g) g.strand) _
-                             .ThenBy(Function(g) If(g.strand = "forward", g.left, g.right)) _
+                             .ThenBy(Function(g) If(g.strand = "+", g.left, g.right)) _
                              .ToList()
 
         Dim i As Integer = 0
@@ -106,6 +107,20 @@ Public Module OperonAnnotator
                 i += 1
             End If
         End While
+    End Function
+
+    ''' <summary>
+    ''' 计算两个相邻基因间的距离（单位：bp）。
+    ''' 注意：考虑链方向，确保距离始终为非负数。
+    ''' </summary>
+    Private Function CalculateGeneDistance(gene1 As GeneTable, gene2 As GeneTable) As Integer
+        If gene1.strand = "+" Then
+            ' 正向链：gene2.left - gene1.right
+            Return Math.Max(0, gene2.left - gene1.right)
+        Else
+            ' 反向链：gene1.left - gene2.right（因为基因按right升序排列）
+            Return Math.Max(0, gene1.left - gene2.right)
+        End If
     End Function
 
     ''' <summary>

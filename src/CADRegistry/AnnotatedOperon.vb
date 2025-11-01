@@ -13,12 +13,17 @@ Public Class AnnotatedOperon
     Public Property name As String
     Public Property Type As OperonType
     Public Property Genes As String() ' 组成此Operon的基因组上的基因
+    Public Property Scores As Double() ' 每个基因对当前OperonID的投票总得分
     Public Property KnownGeneIds As String() ' 参考Operon中应有的基因ID
     Public Property InsertedGeneIds As String() ' 插入的新基因ID
     Public Property MissingGeneIds As String() ' 缺失的基因ID
 
+    Public Property strand As String
+    Public Property left As Integer
+    Public Property right As Integer
+
     Public Overrides Function ToString() As String
-        Return $"{Type.Description} #{OperonID}{Genes.GetJson}"
+        Return $"{Type.Description} #{OperonID} at {strand}:{left}-{right} with {Genes.TryCount} gene members {Genes.GetJson}"
     End Function
 End Class
 
