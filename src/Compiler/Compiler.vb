@@ -209,6 +209,12 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             If Not gene.Translation.StringEmpty Then
                 residues = ProteinComposition.FromRefSeq(gene.Translation, translate_id).CreateVector
                 gene_type = RNATypes.mRNA
+
+                Call proteins.Add(New protein With {
+                    .name = "Protein[" & translate_id & "]",
+                    .peptide_chains = {translate_id},
+                    .protein_id = "Protein[" & translate_id & "]"
+                })
             Else
                 Select Case gene.type
                     Case "CDS"
@@ -246,6 +252,14 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                         rnas.Add(RNA)
                     Case Else
                         gene_type = RNATypes.micsRNA
+                        RNA = New RNA With {
+                            .gene = gene.locus_id,
+                            .id = If(gene.commonName, gene.locus_id & "_micsRNA"),
+                            .note = gene.commonName,
+                            .type = gene_type,
+                            .val = ""
+                        }
+                        rnas.Add(RNA)
                 End Select
             End If
 
