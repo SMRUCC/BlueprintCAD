@@ -35,7 +35,7 @@ Public Module OperonAnnotator
     allGenes As GeneTable(),
     blastResults As HitCollection(),
     knownOperonsDict As Dictionary(Of String, WebJSON.Operon),
-    Optional geneDistCutoff As Integer = 2000
+    Optional geneDistCutoff As Integer = 500
 ) As IEnumerable(Of AnnotatedOperon)
 
         ' --- 步骤 1: 为每个基因投票，确定其最可能的Operon ID及得分 ---
