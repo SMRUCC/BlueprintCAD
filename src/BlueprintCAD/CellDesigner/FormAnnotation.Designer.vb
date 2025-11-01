@@ -55,6 +55,8 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
+        ToolStripMenuItem1 = New ToolStripSeparator()
+        ViewEnzymeInRegistryToolStripMenuItem = New ToolStripMenuItem()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -220,14 +222,14 @@ Partial Class FormAnnotation
         ' 
         ' ContextMenuStrip1
         ' 
-        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {ViewNetworkToolStripMenuItem})
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {ViewNetworkToolStripMenuItem, ToolStripMenuItem1, ViewEnzymeInRegistryToolStripMenuItem})
         ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(148, 26)
+        ContextMenuStrip1.Size = New Size(202, 76)
         ' 
         ' ViewNetworkToolStripMenuItem
         ' 
         ViewNetworkToolStripMenuItem.Name = "ViewNetworkToolStripMenuItem"
-        ViewNetworkToolStripMenuItem.Size = New Size(147, 22)
+        ViewNetworkToolStripMenuItem.Size = New Size(201, 22)
         ViewNetworkToolStripMenuItem.Text = "View Network"
         ' 
         ' ToolStrip2
@@ -398,6 +400,17 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
+        ' ToolStripMenuItem1
+        ' 
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        ToolStripMenuItem1.Size = New Size(198, 6)
+        ' 
+        ' ViewEnzymeInRegistryToolStripMenuItem
+        ' 
+        ViewEnzymeInRegistryToolStripMenuItem.Name = "ViewEnzymeInRegistryToolStripMenuItem"
+        ViewEnzymeInRegistryToolStripMenuItem.Size = New Size(201, 22)
+        ViewEnzymeInRegistryToolStripMenuItem.Text = "View Enzyme In Registry"
+        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -464,4 +477,6 @@ Partial Class FormAnnotation
     Friend WithEvents OperonAnnotationCmd As AnnotationItem
     Friend WithEvents AdvancedDataGridView2 As AdvancedDataGridView
     Friend WithEvents AdvancedDataGridViewSearchToolBar2 As AdvancedDataGridViewSearchToolBar
+    Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
+    Friend WithEvents ViewEnzymeInRegistryToolStripMenuItem As ToolStripMenuItem
 End Class

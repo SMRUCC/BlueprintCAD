@@ -344,4 +344,17 @@ Public Class FormAnnotation
 
         Call operonLoader.LoadTable(AddressOf LoadOperonHits)
     End Sub
+
+    Private Sub ViewEnzymeInRegistryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewEnzymeInRegistryToolStripMenuItem.Click
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim ec_number = CStr(row.Cells(2).Value)
+
+        If ec_number <> "-" Then
+            Call Tools.OpenUrlWithDefaultBrowser($"http://biocad.innovation.ac.cn/enzyme/{ec_number}")
+        End If
+    End Sub
 End Class
