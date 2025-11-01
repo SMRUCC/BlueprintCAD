@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.MIME.application.json
+﻿Imports System.Runtime.CompilerServices
+Imports Microsoft.VisualBasic.MIME.application.json
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports VirtualCellHost
 
@@ -27,6 +28,7 @@ Public Class Wizard
         Next
     End Sub
 
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Function GetModelFiles() As IEnumerable(Of String)
         Return models.Values.Select(Function(m) m.filepath)
     End Function
