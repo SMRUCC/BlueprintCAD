@@ -24,6 +24,7 @@ Public Class CellBrowser
     Dim timePoints As Double()
     Dim moleculeSet As (compartment_id As String, modules As NamedCollection(Of String)())()
     Dim plotMatrix As New Dictionary(Of String, FeatureVector)
+    Dim symbols As Dictionary(Of String, String)
 
     Shared ReadOnly resetButton As New RibbonEventBinding(Workbench.Ribbon.ButtonResetNetworkTable)
     Shared ReadOnly closeFileButton As New RibbonEventBinding(Workbench.Ribbon.ButtonCloseVirtualCellPackFile)
@@ -45,6 +46,7 @@ Public Class CellBrowser
 
         vcellPack = New VCellMatrixReader(filepath.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Workbench.AppHost.Text = $"VirtualCell Browser [{filepath}]"
+        symbols = vcellPack.LoadSymbols
         network = TaskProgress.LoadData(Function(println As Action(Of String)) LoadNetwork(println))
         timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
         moleculeSet = vcellPack.GetCellularMolecules.ToArray
