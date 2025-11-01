@@ -50,6 +50,8 @@ Partial Class FormAnnotation
         AdvancedDataGridViewSearchToolBar2 = New AdvancedDataGridViewSearchToolBar()
         TabPage5 = New TabPage()
         AdvancedDataGridView1 = New AdvancedDataGridView()
+        ContextMenuStrip2 = New ContextMenuStrip(components)
+        ViewGeneInRegistryToolStripMenuItem = New ToolStripMenuItem()
         AdvancedDataGridViewSearchToolBar1 = New AdvancedDataGridViewSearchToolBar()
         TabPage2 = New TabPage()
         Button1 = New Button()
@@ -57,8 +59,8 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
-        ContextMenuStrip2 = New ContextMenuStrip(components)
-        ViewGeneInRegistryToolStripMenuItem = New ToolStripMenuItem()
+        ContextMenuStrip3 = New ContextMenuStrip(components)
+        ViewOperonToolStripMenuItem = New ToolStripMenuItem()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -77,9 +79,10 @@ Partial Class FormAnnotation
         TabPage4.SuspendLayout()
         CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        ContextMenuStrip2.SuspendLayout()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
-        ContextMenuStrip2.SuspendLayout()
+        ContextMenuStrip3.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -276,6 +279,7 @@ Partial Class FormAnnotation
         AdvancedDataGridView2.AllowUserToAddRows = False
         AdvancedDataGridView2.BackgroundColor = Color.WhiteSmoke
         AdvancedDataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        AdvancedDataGridView2.ContextMenuStrip = ContextMenuStrip3
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = SystemColors.Window
         DataGridViewCellStyle2.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -346,6 +350,18 @@ Partial Class FormAnnotation
         AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         AdvancedDataGridView1.TabIndex = 2
         ' 
+        ' ContextMenuStrip2
+        ' 
+        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewGeneInRegistryToolStripMenuItem})
+        ContextMenuStrip2.Name = "ContextMenuStrip2"
+        ContextMenuStrip2.Size = New Size(188, 26)
+        ' 
+        ' ViewGeneInRegistryToolStripMenuItem
+        ' 
+        ViewGeneInRegistryToolStripMenuItem.Name = "ViewGeneInRegistryToolStripMenuItem"
+        ViewGeneInRegistryToolStripMenuItem.Size = New Size(187, 22)
+        ViewGeneInRegistryToolStripMenuItem.Text = "View Gene In Registry"
+        ' 
         ' AdvancedDataGridViewSearchToolBar1
         ' 
         AdvancedDataGridViewSearchToolBar1.AllowMerge = False
@@ -415,17 +431,17 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
-        ' ContextMenuStrip2
+        ' ContextMenuStrip3
         ' 
-        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewGeneInRegistryToolStripMenuItem})
-        ContextMenuStrip2.Name = "ContextMenuStrip2"
-        ContextMenuStrip2.Size = New Size(188, 26)
+        ContextMenuStrip3.Items.AddRange(New ToolStripItem() {ViewOperonToolStripMenuItem})
+        ContextMenuStrip3.Name = "ContextMenuStrip3"
+        ContextMenuStrip3.Size = New Size(181, 48)
         ' 
-        ' ViewGeneInRegistryToolStripMenuItem
+        ' ViewOperonToolStripMenuItem
         ' 
-        ViewGeneInRegistryToolStripMenuItem.Name = "ViewGeneInRegistryToolStripMenuItem"
-        ViewGeneInRegistryToolStripMenuItem.Size = New Size(187, 22)
-        ViewGeneInRegistryToolStripMenuItem.Text = "View Gene In Registry"
+        ViewOperonToolStripMenuItem.Name = "ViewOperonToolStripMenuItem"
+        ViewOperonToolStripMenuItem.Size = New Size(180, 22)
+        ViewOperonToolStripMenuItem.Text = "View Operon"
         ' 
         ' FormAnnotation
         ' 
@@ -460,11 +476,12 @@ Partial Class FormAnnotation
         TabPage4.PerformLayout()
         CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).EndInit()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        ContextMenuStrip2.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
-        ContextMenuStrip2.ResumeLayout(False)
+        ContextMenuStrip3.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -498,4 +515,6 @@ Partial Class FormAnnotation
     Friend WithEvents ViewEnzymeInRegistryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents ViewGeneInRegistryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
+    Friend WithEvents ViewOperonToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -389,4 +389,13 @@ Public Class FormAnnotation
     Private Sub AdvancedDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView1.CellContentClick
 
     End Sub
+
+    Private Sub ViewOperonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewOperonToolStripMenuItem.Click
+        If AdvancedDataGridView2.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = AdvancedDataGridView2.SelectedRows(0)
+
+    End Sub
 End Class
