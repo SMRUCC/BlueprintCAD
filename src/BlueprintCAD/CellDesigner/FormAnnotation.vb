@@ -4,8 +4,10 @@ Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.ComponentModel.Ranges.Unit
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
@@ -86,7 +88,18 @@ Public Class FormAnnotation
                     Return
                 End If
 
+                ' run compile of the virtual cell model
+                Dim saveResult As String = file.FileName
+                Dim gcc As String = $"{App.HOME}/Compiler.exe"
+                Dim server As String = Workbench.Settings.registry_server
+                Dim args As String = $"{filepath.CLIPath} --out {saveResult.CLIPath} --server ""{server}"" --name {saveResult.BaseName}  /@set tqdm=false"
+                Dim proc As FormConsoleHost = CommonRuntime.ShowDocument(Of FormConsoleHost)(DockState.Document, "Build Virtual Cell...")
 
+                Call proc.Run(gcc, args)
+
+                If saveResult.FileLength > ByteSize.KB Then
+                    Call MessageBox.Show("Build Virtual Cell Model Success!", "Build Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
             End If
         End Using
     End Sub
