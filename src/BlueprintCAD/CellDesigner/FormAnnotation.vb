@@ -351,7 +351,7 @@ Public Class FormAnnotation
         Dim ec_number = CStr(row.Cells(2).Value)
 
         If ec_number <> "-" Then
-            Call Tools.OpenUrlWithDefaultBrowser($"http://biocad.innovation.ac.cn/enzyme/{ec_number}")
+            Call Tools.OpenUrlWithDefaultBrowser($"{Workbench.Settings.registry_server}/enzyme/{ec_number}")
         End If
     End Sub
 End Class
