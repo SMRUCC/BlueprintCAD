@@ -719,4 +719,16 @@ Public Class CellBrowser
 
         plotMatrixExportButton.ClearHook()
     End Sub
+
+    Private Sub ViewReactionModelInRegistryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewReactionModelInRegistryToolStripMenuItem.Click
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim id As String = CStr(row.Cells(0).Value)
+        Dim url As String = $"{Workbench.Settings.registry_server}/redirect_obj/?hashcode=" & id.UrlEncode
+
+        Call Tools.OpenUrlWithDefaultBrowser(url)
+    End Sub
 End Class

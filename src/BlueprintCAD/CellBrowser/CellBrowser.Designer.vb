@@ -63,6 +63,8 @@ Partial Class CellBrowser : Inherits DocumentWindow
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        ToolStripMenuItem1 = New ToolStripSeparator()
+        ViewReactionModelInRegistryToolStripMenuItem = New ToolStripMenuItem()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
@@ -229,15 +231,15 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         ' ContextMenuStrip2
         ' 
-        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewFluxDynamicsToolStripMenuItem})
+        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewFluxDynamicsToolStripMenuItem, ToolStripMenuItem1, ViewReactionModelInRegistryToolStripMenuItem})
         ContextMenuStrip2.Name = "ContextMenuStrip2"
-        ContextMenuStrip2.Size = New Size(180, 26)
+        ContextMenuStrip2.Size = New Size(244, 76)
         ' 
         ' ViewFluxDynamicsToolStripMenuItem
         ' 
         ViewFluxDynamicsToolStripMenuItem.Image = CType(resources.GetObject("ViewFluxDynamicsToolStripMenuItem.Image"), Image)
         ViewFluxDynamicsToolStripMenuItem.Name = "ViewFluxDynamicsToolStripMenuItem"
-        ViewFluxDynamicsToolStripMenuItem.Size = New Size(179, 22)
+        ViewFluxDynamicsToolStripMenuItem.Size = New Size(243, 22)
         ViewFluxDynamicsToolStripMenuItem.Text = "View Flux Dynamics"
         ' 
         ' ToolStrip1
@@ -433,6 +435,17 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripStatusLabel1.Size = New Size(42, 17)
         ToolStripStatusLabel1.Text = "Ready!"
         ' 
+        ' ToolStripMenuItem1
+        ' 
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        ToolStripMenuItem1.Size = New Size(240, 6)
+        ' 
+        ' ViewReactionModelInRegistryToolStripMenuItem
+        ' 
+        ViewReactionModelInRegistryToolStripMenuItem.Name = "ViewReactionModelInRegistryToolStripMenuItem"
+        ViewReactionModelInRegistryToolStripMenuItem.Size = New Size(243, 22)
+        ViewReactionModelInRegistryToolStripMenuItem.Text = "View Reaction Model In Registry"
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -440,8 +453,10 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ClientSize = New Size(1524, 942)
         Controls.Add(SplitContainer1)
         Controls.Add(StatusStrip1)
+        DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
         DoubleBuffered = True
         Name = "CellBrowser"
+        ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
         TabPageContextMenuStrip = DockContextMenuStrip1
         Text = "Cell Browser"
         GroupBox2.ResumeLayout(False)
@@ -508,4 +523,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents FilterRegulationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
+    Friend WithEvents ViewReactionModelInRegistryToolStripMenuItem As ToolStripMenuItem
 End Class
