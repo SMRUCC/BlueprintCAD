@@ -5,6 +5,7 @@ Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Math.Scripting.MathExpression
+Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.Text.Xml.Models
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -31,6 +32,9 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .cellular_id = args("--name") Or ("cell" & Now.ToShortDateString)
         }
 
+        Call $"target genome taxonomy information: {proj.taxonomy.GetJson}".info
+        Call $"cell name: {m_compiledModel.cellular_id}".info
+
         Return 0
     End Function
 
@@ -47,11 +51,14 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Dim ec_numbers As New Dictionary(Of String, List(Of String))
         Dim enzymeModels As New List(Of Enzyme)
 
+        Call $"processing of {enzymes.Count} enzyme annotations".debug
+
         For Each enzyme As ECNumberAnnotation In enzymes.Values
             Dim ec_number As String = enzyme.EC
             Dim list = registry.GetAssociatedReactions(enzyme.EC, simple:=False)
 
             If list Is Nothing Then
+                Call $"missing metabolic network inside registry which is associated with enzyme {enzyme.EC}!".warning
                 Continue For
             Else
                 Dim model As New Enzyme With {
@@ -113,6 +120,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Next
         Next
 
+        Call $"load {network.Count} enzymatic reactions!".debug
+
         Dim compounds_id As UInteger() = network.Values _
             .Select(Function(r) r.left.JoinIterates(r.right)) _
             .IteratesALL _
@@ -122,6 +131,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .Select(Function(id) registry.GetMoleculeDataById(id)) _
             .Where(Function(c) Not c Is Nothing) _
             .ToArray
+
+        Call $"found {compounds_id.Length} associated metabolites!".debug
 
         Return New MetabolismStructure With {
             .compounds = metadata _
@@ -179,6 +190,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Dim nt As Dictionary(Of String, String) = proj.genes
         Dim RNA As RNA
 
+        Call $"processing compile of {nt.Count} genes!".debug
+
         For Each gene As GeneTable In proj.gene_table
             Dim nt_seq As String = nt(gene.locus_id)
             Dim bases As NumericVector = RNAComposition.FromNtSequence(nt_seq, gene.locus_id & "_rna").CreateVector
@@ -234,6 +247,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 .protein_id = If(residues Is Nothing, Nothing, {residues.name})
             }
         Next
+
+        Call $"found {rnas.Count} RNA models!".debug
     End Function
 
     Private Function BuildGenome() As Genome
@@ -259,6 +274,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .IteratesALL _
             .Select(Function(gene) gene.locus_tag) _
             .Indexing
+
+        Call $"get {operons.Count} operons was annotated in this genome model!".info
 
         For Each gene As gene In geneSet.Values
             If Not gene.locus_tag Like operon_genes Then
