@@ -726,7 +726,7 @@ Public Class CellBrowser
         End If
 
         Dim row = DataGridView1.SelectedRows(0)
-        Dim id As String = CStr(row.Cells(0).Value)
+        Dim id As String = CStr(row.Cells(0).Value).GetTagValue("@").Name
         Dim url As String = $"{Workbench.Settings.registry_server}/redirect_obj/?hashcode=" & id.UrlEncode
 
         Call Tools.OpenUrlWithDefaultBrowser(url)
