@@ -102,7 +102,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     enzyme.gene_id)
                 Dim model As New Enzyme With {
                     .ECNumber = enzyme.EC,
-                    .proteinID = modelPorteinId,
+                    .proteinID = $"Protein[{modelPorteinId}]",
                     .catalysis = list.Values _
                          .Select(Function(reaction) BuildLaws(reaction, enzyme)) _
                          .IteratesALL _
