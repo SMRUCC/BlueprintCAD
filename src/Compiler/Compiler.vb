@@ -45,6 +45,42 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Return 0
     End Function
 
+    Private Iterator Function BuildLaws(reaction As WebJSON.Reaction, enzyme As ECNumberAnnotation) As IEnumerable(Of Catalysis)
+        For Each law As WebJSON.LawData In reaction.law.SafeQuery
+            Dim pars = law.params.Keys.ToArray
+            Dim args As KineticsParameter() = law.params _
+                .Select(Function(a)
+                            If a.Value.IsNumeric Then
+                                Return New KineticsParameter With {
+                                    .name = a.Key,
+                                    .value = Val(a.Value),
+                                    .isModifier = False
+                                }
+                            Else
+                                Return New KineticsParameter With {
+                                    .name = a.Key,
+                                    .value = 0,
+                                    .isModifier = False,
+                                    .target = a.Value
+                                }
+                            End If
+                        End Function) _
+                .ToArray
+
+            Yield New Catalysis With {
+                .reaction = reaction.guid,
+                .temperature = 36,
+                .PH = 7.0,
+                .formula = New FunctionElement With {
+                    .lambda = law.lambda,
+                    .name = enzyme.EC,
+                    .parameters = pars
+                },
+                .parameter = args
+            }
+        Next
+    End Function
+
     Private Function CreateMetabolismNetwork(genes As Dictionary(Of String, gene)) As MetabolismStructure
         Dim enzymes As Dictionary(Of String, ECNumberAnnotation) = proj.ec_numbers
         Dim network As New Dictionary(Of String, WebJSON.Reaction)
@@ -61,47 +97,14 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 Call $"missing metabolic network inside registry which is associated with enzyme {enzyme.EC}!".warning
                 Continue For
             Else
+                Dim modelPorteinId = If(genes.ContainsKey(enzyme.gene_id),
+                    genes(enzyme.gene_id).protein_id.ElementAtOrDefault(0, enzyme.gene_id),
+                    enzyme.gene_id)
                 Dim model As New Enzyme With {
                     .ECNumber = enzyme.EC,
-                    .proteinID = If(genes.ContainsKey(enzyme.gene_id), genes(enzyme.gene_id).protein_id.ElementAtOrDefault(0, enzyme.gene_id), enzyme.gene_id),
+                    .proteinID = modelPorteinId,
                     .catalysis = list.Values _
-                         .Select(Function(reaction)
-                                     Return reaction.law _
-                                        .SafeQuery _
-                                        .Select(Function(law)
-                                                    Dim pars = law.params.Keys.ToArray
-                                                    Dim args As KineticsParameter() = law.params _
-                                                        .Select(Function(a)
-                                                                    If a.Value.IsNumeric Then
-                                                                        Return New KineticsParameter With {
-                                                                            .name = a.Key,
-                                                                            .value = Val(a.Value),
-                                                                            .isModifier = False
-                                                                        }
-                                                                    Else
-                                                                        Return New KineticsParameter With {
-                                                                            .name = a.Key,
-                                                                            .value = 0,
-                                                                            .isModifier = False,
-                                                                            .target = a.Value
-                                                                        }
-                                                                    End If
-                                                                End Function) _
-                                                        .ToArray
-
-                                                    Return New Catalysis With {
-                                                        .reaction = reaction.guid,
-                                                        .temperature = 36,
-                                                        .PH = 7.0,
-                                                        .formula = New FunctionElement With {
-                                                            .lambda = law.lambda,
-                                                            .name = enzyme.EC,
-                                                            .parameters = pars
-                                                        },
-                                                        .parameter = args
-                                                    }
-                                                End Function)
-                                 End Function) _
+                         .Select(Function(reaction) BuildLaws(reaction, enzyme)) _
                          .IteratesALL _
                          .ToArray
                 }
@@ -109,7 +112,11 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 Call enzymeModels.Add(model)
             End If
 
-            Call network.AddRange(list.Where(Function(r) r.Value.left.JoinIterates(r.Value.right).All(Function(a) a.molecule_id > 0)), replaceDuplicated:=True)
+            Call network.AddRange(From r
+                                  In list
+                                  Where r.Value.left _
+                                      .JoinIterates(r.Value.right) _
+                                      .All(Function(a) a.molecule_id > 0), replaceDuplicated:=True)
 
             For Each guid As String In list.Keys
                 If Not ec_numbers.ContainsKey(guid) Then
