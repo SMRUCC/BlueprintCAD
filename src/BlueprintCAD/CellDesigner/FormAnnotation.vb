@@ -79,6 +79,13 @@ Public Class FormAnnotation
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         Using file As New SaveFileDialog With {.Filter = "GCModeller VirtualCell Model File(*.xml)|*.xml"}
             If file.ShowDialog = DialogResult.OK Then
+                ' 保存工程项目
+                Call SaveDocument()
+
+                If filepath.StringEmpty(, True) Then
+                    Return
+                End If
+
 
             End If
         End Using

@@ -8,6 +8,7 @@ Module Program
         Return GetType(Program).RunCLI(App.CommandLine, executeFile:=AddressOf CompileProjectFile)
     End Function
 
+    ' ./target.gcproj --out model.xml --server "http://biocad.innovation.ac.cn" --name XXXX 
     Public Function CompileProjectFile(file As String, args As CommandLine) As Integer
         Dim proj As GenBankProject = ProjectIO.Load(file)
         Dim serverUrl As String = args("--server") Or RegistryUrl.defaultServer
