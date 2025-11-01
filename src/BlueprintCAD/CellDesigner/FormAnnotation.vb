@@ -396,6 +396,9 @@ Public Class FormAnnotation
         End If
 
         Dim row = AdvancedDataGridView2.SelectedRows(0)
+        Dim operon_id As String = CStr(row.Cells(0).Value)
+        Dim url As String = $"http://biocad.innovation.ac.cn/operon/{operon_id}/"
 
+        Call Tools.OpenUrlWithDefaultBrowser(url)
     End Sub
 End Class

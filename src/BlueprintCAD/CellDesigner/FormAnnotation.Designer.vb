@@ -47,6 +47,8 @@ Partial Class FormAnnotation
         ToolStrip2 = New AdvancedDataGridViewSearchToolBar()
         TabPage4 = New TabPage()
         AdvancedDataGridView2 = New AdvancedDataGridView()
+        ContextMenuStrip3 = New ContextMenuStrip(components)
+        ViewOperonToolStripMenuItem = New ToolStripMenuItem()
         AdvancedDataGridViewSearchToolBar2 = New AdvancedDataGridViewSearchToolBar()
         TabPage5 = New TabPage()
         AdvancedDataGridView1 = New AdvancedDataGridView()
@@ -59,8 +61,6 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
-        ContextMenuStrip3 = New ContextMenuStrip(components)
-        ViewOperonToolStripMenuItem = New ToolStripMenuItem()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -78,11 +78,11 @@ Partial Class FormAnnotation
         ContextMenuStrip1.SuspendLayout()
         TabPage4.SuspendLayout()
         CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).BeginInit()
+        ContextMenuStrip3.SuspendLayout()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip2.SuspendLayout()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
-        ContextMenuStrip3.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -301,6 +301,18 @@ Partial Class FormAnnotation
         AdvancedDataGridView2.SortStringChangedInvokeBeforeDatasourceUpdate = True
         AdvancedDataGridView2.TabIndex = 2
         ' 
+        ' ContextMenuStrip3
+        ' 
+        ContextMenuStrip3.Items.AddRange(New ToolStripItem() {ViewOperonToolStripMenuItem})
+        ContextMenuStrip3.Name = "ContextMenuStrip3"
+        ContextMenuStrip3.Size = New Size(182, 48)
+        ' 
+        ' ViewOperonToolStripMenuItem
+        ' 
+        ViewOperonToolStripMenuItem.Name = "ViewOperonToolStripMenuItem"
+        ViewOperonToolStripMenuItem.Size = New Size(181, 22)
+        ViewOperonToolStripMenuItem.Text = "View Source Operon"
+        ' 
         ' AdvancedDataGridViewSearchToolBar2
         ' 
         AdvancedDataGridViewSearchToolBar2.AllowMerge = False
@@ -431,18 +443,6 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
-        ' ContextMenuStrip3
-        ' 
-        ContextMenuStrip3.Items.AddRange(New ToolStripItem() {ViewOperonToolStripMenuItem})
-        ContextMenuStrip3.Name = "ContextMenuStrip3"
-        ContextMenuStrip3.Size = New Size(181, 48)
-        ' 
-        ' ViewOperonToolStripMenuItem
-        ' 
-        ViewOperonToolStripMenuItem.Name = "ViewOperonToolStripMenuItem"
-        ViewOperonToolStripMenuItem.Size = New Size(180, 22)
-        ViewOperonToolStripMenuItem.Text = "View Operon"
-        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -475,13 +475,13 @@ Partial Class FormAnnotation
         TabPage4.ResumeLayout(False)
         TabPage4.PerformLayout()
         CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).EndInit()
+        ContextMenuStrip3.ResumeLayout(False)
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ContextMenuStrip2.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
-        ContextMenuStrip3.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
