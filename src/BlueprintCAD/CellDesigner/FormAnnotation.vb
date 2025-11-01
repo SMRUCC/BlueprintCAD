@@ -317,12 +317,12 @@ Public Class FormAnnotation
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="operon_blast")
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
 
-        If EnzymeAnnotationCmd.Running Then
+        If OperonAnnotationCmd.Running Then
             Return
         Else
-            EnzymeAnnotationCmd.Running = True
-            EnzymeAnnotationCmd.SetStatusText("Running the annotation...")
-            EnzymeAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+            OperonAnnotationCmd.Running = True
+            OperonAnnotationCmd.SetStatusText("Running the annotation...")
+            OperonAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
         End If
 
         Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
@@ -336,10 +336,7 @@ Public Class FormAnnotation
         Await Task.Run(Sub() blastp.FormatDb(operon_db, dbType:=blastp.MolTypeNucleotide).Run())
         Await Task.Run(Sub() blastp.Blastn(tempfile, operon_db, tempOutfile, e:=0.01).Run())
 
-        proj.operon_hits = Await Task.Run(Function() BlastnOutputReader _
-            .RunParser(tempOutfile) _
-            .ExportHistResult _
-            .ToArray)
+        proj.operon_hits = Await Task.Run(Function() OperonAnnotator.ParseBlastn(tempOutfile).ToArray)
         proj.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, proj.operon_hits, knownOperons).ToArray
 
         Call operonLoader.LoadTable(AddressOf LoadOperonHits)
