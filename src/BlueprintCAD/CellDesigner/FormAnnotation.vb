@@ -2,6 +2,7 @@
 Imports CADRegistry
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
+Imports Microsoft.SqlServer
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
@@ -34,6 +35,7 @@ Public Class FormAnnotation
         Me.proj = ProjectIO.Load(filepath)
 
         Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
+        Call operonLoader.LoadTable(AddressOf LoadOperonHits)
 
         Return Me
     End Function
@@ -65,6 +67,7 @@ Public Class FormAnnotation
         TextBox1.Text = Workbench.Settings.ncbi_blast
         enzymeLoader = New GridLoaderHandler(DataGridView1, ToolStrip2)
         blastLoader = New GridLoaderHandler(AdvancedDataGridView1, AdvancedDataGridViewSearchToolBar1)
+        operonLoader = New GridLoaderHandler(AdvancedDataGridView2, AdvancedDataGridViewSearchToolBar2)
 
         Call ApplyVsTheme(ToolStrip1,
                           ToolStrip2,
@@ -140,6 +143,37 @@ Public Class FormAnnotation
         End If
     End Sub
 
+    Private Sub LoadOperonHits(tbl As DataTable)
+        Dim hits As Integer = 0
+
+        Call tbl.Columns.Add("operonID", GetType(String))
+        Call tbl.Columns.Add("name", GetType(String))
+        Call tbl.Columns.Add("type", GetType(String))
+        Call tbl.Columns.Add("size", GetType(Integer))
+        Call tbl.Columns.Add("genes", GetType(String))
+        Call tbl.Columns.Add("known_genes", GetType(String))
+        Call tbl.Columns.Add("inserted", GetType(String))
+        Call tbl.Columns.Add("deleted", GetType(String))
+
+        For Each operon As AnnotatedOperon In proj.operons
+            Call tbl.Rows.Add(operon.OperonID,
+                              operon.name,
+                              operon.Type.ToString,
+                              operon.Genes.TryCount,
+                              operon.Genes.JoinBy(", "),
+                              operon.KnownGeneIds.JoinBy(", "),
+                              operon.InsertedGeneIds.JoinBy(", "),
+                              operon.MissingGeneIds.JoinBy(", "))
+        Next
+
+        OperonAnnotationCmd.Running = False
+
+        If Not proj.enzyme_hits.IsNullOrEmpty Then
+            Call OperonAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call OperonAnnotationCmd.SetStatusText($"{hits}/{proj.operons.Length} operons annotated.")
+        End If
+    End Sub
+
     Private Async Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="enzyme_blast")
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
@@ -166,6 +200,10 @@ Public Class FormAnnotation
             .RunParser(tempOutfile) _
             .ExportHistResult _
             .ToArray
+        proj.ec_numbers = proj.enzyme_hits _
+            .Select(Function(hits) hits.AssignECNumber()) _
+            .Where(Function(ec) Not ec Is Nothing) _
+            .ToDictionary(Function(a) a.gene_id)
 
         Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
     End Sub
@@ -176,26 +214,26 @@ Public Class FormAnnotation
         End If
 
         Dim row = DataGridView1.SelectedRows(0)
-        Dim gene_id As String = CStr(row.Cells(0).Value)
-        Dim hits As HitCollection = proj.enzyme_hits.KeyItem(gene_id)
+        Dim gene_id = CStr(row.Cells(0).Value)
+        Dim hits = proj.enzyme_hits.KeyItem(gene_id)
 
         If hits Is Nothing Then
-            Call blastLoader.ClearData()
+            blastLoader.ClearData()
         Else
-            Call blastLoader.LoadTable(
+            blastLoader.LoadTable(
                 Sub(tbl)
-                    Call tbl.Columns.Add("ec_number", GetType(String))
-                    Call tbl.Columns.Add("registry_id", GetType(String))
-                    Call tbl.Columns.Add("identities", GetType(Double))
-                    Call tbl.Columns.Add("positive", GetType(Double))
-                    Call tbl.Columns.Add("gaps", GetType(Double))
-                    Call tbl.Columns.Add("score", GetType(Double))
-                    Call tbl.Columns.Add("e-value", GetType(Double))
+                    tbl.Columns.Add("ec_number", GetType(String))
+                    tbl.Columns.Add("registry_id", GetType(String))
+                    tbl.Columns.Add("identities", GetType(Double))
+                    tbl.Columns.Add("positive", GetType(Double))
+                    tbl.Columns.Add("gaps", GetType(Double))
+                    tbl.Columns.Add("score", GetType(Double))
+                    tbl.Columns.Add("e-value", GetType(Double))
 
-                    For Each hit As Hit In hits.AsEnumerable
-                        Dim annotation As String() = hit.hitName.Split("|"c)
+                    For Each hit In hits.AsEnumerable
+                        Dim annotation = hit.hitName.Split("|"c)
 
-                        Call tbl.Rows.Add(annotation(0), annotation(1),
+                        tbl.Rows.Add(annotation(0), annotation(1),
                                           hit.identities,
                                           hit.positive,
                                           hit.gaps,
@@ -272,6 +310,8 @@ Public Class FormAnnotation
         Await editor.LoadModel(g)
     End Sub
 
+    Dim operonLoader As GridLoaderHandler
+
     Private Async Sub OperonAnnotationCmd_Run() Handles OperonAnnotationCmd.Run
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="operon_blast")
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
@@ -290,15 +330,17 @@ Public Class FormAnnotation
 
         Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 12}
         Dim operon_db As String = $"{App.HOME}/data/operon.fasta"
+        Dim knownOperons = Await Task.Run(Function() Workbench.CADRegistry.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id))
 
         Await Task.Run(Sub() blastp.FormatDb(operon_db, dbType:=blastp.MolTypeNucleotide).Run())
         Await Task.Run(Sub() blastp.Blastn(tempfile, operon_db, tempOutfile, e:=0.01).Run())
 
-        proj.operon_hits = BlastnOutputReader _
+        proj.operon_hits = Await Task.Run(Function() BlastnOutputReader _
             .RunParser(tempOutfile) _
             .ExportHistResult _
-            .ToArray
+            .ToArray)
+        proj.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, proj.operon_hits, knownOperons).ToArray
 
-
+        Call operonLoader.LoadTable(AddressOf LoadOperonHits)
     End Sub
 End Class
