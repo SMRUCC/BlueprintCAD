@@ -40,6 +40,7 @@ Public Class FormMutationEditor
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         If ListBox1.SelectedIndex > -1 Then
             target = New MutationEdit With {.gene = ListBox1.SelectedItem}
+            UpdateTargetView()
         End If
     End Sub
 
@@ -73,6 +74,10 @@ Public Class FormMutationEditor
             .Distinct _
             .ToArray
 
+        If cell.genome.proteins.IsNullOrEmpty Then
+            Call CommonRuntime.Warning("No protein model data for inspect of the impact metabolic network.")
+        End If
+
         Call DataGridView1.Rows.Clear()
 
         For Each impact As Reaction In proteinList _
@@ -91,6 +96,11 @@ Public Class FormMutationEditor
         Next
     End Sub
 
+    ''' <summary>
+    ''' create updated model and then save the model file
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         Dim knockouts As New List(Of String)
 
@@ -103,6 +113,8 @@ Public Class FormMutationEditor
         Next
 
         updated = model.DeleteMutation(knockouts.ToArray)
+
+        Call SaveDocument()
     End Sub
 
     Private Sub FormMutationEditor_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -118,9 +130,14 @@ Public Class FormMutationEditor
     Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
         If ListBox2.SelectedIndex > -1 Then
             target = ListBox2.SelectedItem
-            NumericUpDown1.Value = target.expression_level
-            CheckBox1.Checked = target.knockout
+            UpdateTargetView()
         End If
+    End Sub
+
+    Private Sub UpdateTargetView()
+        NumericUpDown1.Value = target.expression_level
+        CheckBox1.Checked = target.knockout
+        ViewMetabolicNetwork(target)
     End Sub
 End Class
 
@@ -129,5 +146,15 @@ Public Class MutationEdit
     Public Property gene As gene
     Public Property knockout As Boolean = False
     Public Property expression_level As Double = 1
+
+    Public Overrides Function ToString() As String
+        If knockout Then
+            Return $"Knockout [{gene}]"
+        ElseIf expression_level > 1 Then
+            Return $"Overexpress [{gene}] = {expression_level}"
+        Else
+            Return $"Suppressexpress [{gene}] = {expression_level}"
+        End If
+    End Function
 
 End Class
