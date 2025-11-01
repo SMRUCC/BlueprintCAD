@@ -30,16 +30,19 @@ Public Class FormAnnotation
 
     Public Function LoadProject(filepath As String) As FormAnnotation
         Me.filepath = filepath
-        Me.proj = ProjectIO.Load(filepath)
 
-        Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
-        Call operonLoader.LoadTable(AddressOf LoadOperonHits)
+        Call ProgressSpinner.DoLoading(Sub() Me.proj = ProjectIO.Load(filepath))
+        Call TaskProgress.RunAction(Sub(bar As ITaskProgress)
+                                        Call Me.Invoke(Sub() enzymeLoader.LoadTable(AddressOf LoadEnzymeHits))
+                                        Call Me.Invoke(Sub() operonLoader.LoadTable(AddressOf LoadOperonHits))
+                                    End Sub, info:="Load annotation table data into workspace viewer...")
 
         Return Me
     End Function
 
     Public Function LoadModel(filepath As String) As FormAnnotation
-        Me.proj = ProjectCreator.FromGenBank(GBFF.File.Load(filepath))
+        Call ProgressSpinner.DoLoading(Sub() Me.proj = ProjectCreator.FromGenBank(GBFF.File.Load(filepath)))
+
         Me.filepath = Nothing
 
         Return Me
