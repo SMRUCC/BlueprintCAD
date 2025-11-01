@@ -103,8 +103,13 @@ Public Class CellBrowser
         For Each molSet In vcellPack.ReadMoleculeTree
             Dim root = TreeView1.Nodes.Add(molSet.Key)
 
-            For Each id As String In molSet.Value
-                Call root.Nodes.Add(symbols.TryGetValue(id, [default]:=id))
+            For Each id As String In molSet.Value _
+                .Select(Function(ref)
+                            Return symbols.TryGetValue(ref, [default]:=ref)
+                        End Function) _
+                .OrderBy(Function(si) si)
+
+                Call root.Nodes.Add(id)
             Next
 
             Call Application.DoEvents()
