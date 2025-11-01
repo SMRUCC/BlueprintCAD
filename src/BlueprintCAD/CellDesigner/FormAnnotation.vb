@@ -354,4 +354,19 @@ Public Class FormAnnotation
             Call Tools.OpenUrlWithDefaultBrowser($"{Workbench.Settings.registry_server}/enzyme/{ec_number}")
         End If
     End Sub
+
+    Private Sub ViewGeneInRegistryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewGeneInRegistryToolStripMenuItem.Click
+        If AdvancedDataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim sel As DataGridViewRow = AdvancedDataGridView1.SelectedRows(0)
+        Dim registry_id = CStr(sel.Cells(1).Value)
+
+        Call Tools.OpenUrlWithDefaultBrowser($"{Workbench.Settings.registry_server}/molecule/{registry_id}")
+    End Sub
+
+    Private Sub AdvancedDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView1.CellContentClick
+
+    End Sub
 End Class

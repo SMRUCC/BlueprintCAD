@@ -42,6 +42,8 @@ Partial Class FormAnnotation
         DataGridView1 = New AdvancedDataGridView()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         ViewNetworkToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem1 = New ToolStripSeparator()
+        ViewEnzymeInRegistryToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip2 = New AdvancedDataGridViewSearchToolBar()
         TabPage4 = New TabPage()
         AdvancedDataGridView2 = New AdvancedDataGridView()
@@ -55,8 +57,8 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
-        ToolStripMenuItem1 = New ToolStripSeparator()
-        ViewEnzymeInRegistryToolStripMenuItem = New ToolStripMenuItem()
+        ContextMenuStrip2 = New ContextMenuStrip(components)
+        ViewGeneInRegistryToolStripMenuItem = New ToolStripMenuItem()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -77,6 +79,7 @@ Partial Class FormAnnotation
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
+        ContextMenuStrip2.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -224,13 +227,24 @@ Partial Class FormAnnotation
         ' 
         ContextMenuStrip1.Items.AddRange(New ToolStripItem() {ViewNetworkToolStripMenuItem, ToolStripMenuItem1, ViewEnzymeInRegistryToolStripMenuItem})
         ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(202, 76)
+        ContextMenuStrip1.Size = New Size(202, 54)
         ' 
         ' ViewNetworkToolStripMenuItem
         ' 
         ViewNetworkToolStripMenuItem.Name = "ViewNetworkToolStripMenuItem"
         ViewNetworkToolStripMenuItem.Size = New Size(201, 22)
         ViewNetworkToolStripMenuItem.Text = "View Network"
+        ' 
+        ' ToolStripMenuItem1
+        ' 
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        ToolStripMenuItem1.Size = New Size(198, 6)
+        ' 
+        ' ViewEnzymeInRegistryToolStripMenuItem
+        ' 
+        ViewEnzymeInRegistryToolStripMenuItem.Name = "ViewEnzymeInRegistryToolStripMenuItem"
+        ViewEnzymeInRegistryToolStripMenuItem.Size = New Size(201, 22)
+        ViewEnzymeInRegistryToolStripMenuItem.Text = "View Enzyme In Registry"
         ' 
         ' ToolStrip2
         ' 
@@ -310,6 +324,7 @@ Partial Class FormAnnotation
         AdvancedDataGridView1.AllowUserToAddRows = False
         AdvancedDataGridView1.BackgroundColor = Color.WhiteSmoke
         AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        AdvancedDataGridView1.ContextMenuStrip = ContextMenuStrip2
         DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = SystemColors.Window
         DataGridViewCellStyle3.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -400,16 +415,17 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
-        ' ToolStripMenuItem1
+        ' ContextMenuStrip2
         ' 
-        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(198, 6)
+        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewGeneInRegistryToolStripMenuItem})
+        ContextMenuStrip2.Name = "ContextMenuStrip2"
+        ContextMenuStrip2.Size = New Size(188, 26)
         ' 
-        ' ViewEnzymeInRegistryToolStripMenuItem
+        ' ViewGeneInRegistryToolStripMenuItem
         ' 
-        ViewEnzymeInRegistryToolStripMenuItem.Name = "ViewEnzymeInRegistryToolStripMenuItem"
-        ViewEnzymeInRegistryToolStripMenuItem.Size = New Size(201, 22)
-        ViewEnzymeInRegistryToolStripMenuItem.Text = "View Enzyme In Registry"
+        ViewGeneInRegistryToolStripMenuItem.Name = "ViewGeneInRegistryToolStripMenuItem"
+        ViewGeneInRegistryToolStripMenuItem.Size = New Size(187, 22)
+        ViewGeneInRegistryToolStripMenuItem.Text = "View Gene In Registry"
         ' 
         ' FormAnnotation
         ' 
@@ -448,6 +464,7 @@ Partial Class FormAnnotation
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
+        ContextMenuStrip2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -479,4 +496,6 @@ Partial Class FormAnnotation
     Friend WithEvents AdvancedDataGridViewSearchToolBar2 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents ViewEnzymeInRegistryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents ViewGeneInRegistryToolStripMenuItem As ToolStripMenuItem
 End Class

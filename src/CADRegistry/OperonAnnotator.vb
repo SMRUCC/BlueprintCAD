@@ -92,7 +92,7 @@ Public Module OperonAnnotator
                     Else
                         ' Reverse链：距离 = 当前区块最后一个基因的left - nextGene.right
                         ' 注意：Reverse链基因按right升序排序，但物理位置是递减的
-                        distance = operonBlock.Last().left - nextGene.right
+                        distance = Math.Abs(operonBlock.Last().left - nextGene.right)
                     End If
 
                     ' 如果距离超过阈值，中断Operon扩展
