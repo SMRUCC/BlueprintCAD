@@ -25,6 +25,7 @@ Public Class CellBrowser
     Dim moleculeSet As (compartment_id As String, modules As NamedCollection(Of String)())()
     Dim plotMatrix As New Dictionary(Of String, FeatureVector)
     Dim symbols As Dictionary(Of String, String)
+    Dim symbolsToId As Dictionary(Of String, String)
 
     Shared ReadOnly resetButton As New RibbonEventBinding(Workbench.Ribbon.ButtonResetNetworkTable)
     Shared ReadOnly closeFileButton As New RibbonEventBinding(Workbench.Ribbon.ButtonCloseVirtualCellPackFile)
@@ -47,6 +48,7 @@ Public Class CellBrowser
         vcellPack = New VCellMatrixReader(filepath.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Workbench.AppHost.Text = $"VirtualCell Browser [{filepath}]"
         symbols = vcellPack.LoadSymbols
+        symbolsToId = symbols.GroupBy(Function(a) a.Value).ToDictionary(Function(a) a.Key, Function(a) a.First.Key)
         network = TaskProgress.LoadData(Function(println As Action(Of String)) LoadNetwork(println))
         timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
         moleculeSet = vcellPack.GetCellularMolecules.ToArray
@@ -69,6 +71,14 @@ Public Class CellBrowser
             Call ToolStripComboBox1.Items.Add(item)
         Next
     End Sub
+
+    Private Function toId(node As TreeNode) As String
+        If symbolsToId.ContainsKey(node.Text) Then
+            Return symbolsToId(node.Text)
+        Else
+            Return node.Text
+        End If
+    End Function
 
     Private Sub LoadNodeStar()
         nodeLinks = network.Values _
@@ -94,7 +104,7 @@ Public Class CellBrowser
             Dim root = TreeView1.Nodes.Add(molSet.Key)
 
             For Each id As String In molSet.Value
-                Call root.Nodes.Add(id)
+                Call root.Nodes.Add(symbols.TryGetValue(id, [default]:=id))
             Next
 
             Call Application.DoEvents()
@@ -294,7 +304,7 @@ Public Class CellBrowser
         End If
 
         Dim node_id As String() = vcellPack.compartmentIds _
-            .Select(Function(cid) node.Text & "@" & cid) _
+            .Select(Function(cid) toId(node) & "@" & cid) _
             .ToArray
 
         Await RefreshPlot(node_id)
@@ -322,7 +332,7 @@ Public Class CellBrowser
 
         Dim node As TreeNode = TreeView1.SelectedNode
         Dim node_id As String() = vcellPack.compartmentIds _
-            .Select(Function(cid) node.Text & "@" & cid) _
+            .Select(Function(cid) toId(node) & "@" & cid) _
             .ToArray
         Dim idset As Index(Of String) = node_id
         Dim edges As FluxEdge() = node_id _
@@ -344,7 +354,7 @@ Public Class CellBrowser
 
         Dim node As TreeNode = TreeView1.SelectedNode
         Dim node_id As String() = vcellPack.compartmentIds _
-            .Select(Function(cid) node.Text & "@" & cid) _
+            .Select(Function(cid) toId(node) & "@" & cid) _
             .ToArray
         Dim idset As Index(Of String) = node_id
         Dim edges As FluxEdge() = node_id _
@@ -366,8 +376,8 @@ Public Class CellBrowser
 
         Dim node As TreeNode = TreeView1.SelectedNode
         Dim node_id As String() = vcellPack.compartmentIds _
-            .Select(Function(cid) node.Text & "@" & cid) _
-            .JoinIterates({node.Text}) _
+            .Select(Function(cid) toId(node) & "@" & cid) _
+            .JoinIterates({toId(node)}) _
             .ToArray
         Dim idset As Index(Of String) = node_id
         Dim edges As FluxEdge() = node_id _
@@ -389,7 +399,7 @@ Public Class CellBrowser
 
         Dim node As TreeNode = TreeView1.SelectedNode
         Dim node_id As String() = vcellPack.compartmentIds _
-            .Select(Function(cid) node.Text & "@" & cid) _
+            .Select(Function(cid) toId(node) & "@" & cid) _
             .ToArray
         Dim edges As FluxEdge() = node_id _
             .Select(Function(id) nodeLinks.TryGetValue(id)) _
