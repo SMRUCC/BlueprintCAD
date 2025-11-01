@@ -38,152 +38,172 @@ Public Module OperonAnnotator
     Optional geneDistCutoff As Integer = 2000
 ) As IEnumerable(Of AnnotatedOperon)
 
-        ' --- 步骤 1: 为每个基因投票，确定其最可能的Operon ID ---
-        ' (此部分逻辑保持不变)
-        Dim geneToOperonMap As New Dictionary(Of String, String)
+        ' --- 步骤 1: 为每个基因投票，确定其最可能的Operon ID及得分 ---
+        Dim geneToOperonMap As New Dictionary(Of String, (operonId As String, score As Double))()
         Dim blastDict = blastResults.ToDictionary(Function(hc) hc.QueryName)
+
         For Each gene As GeneTable In allGenes
             If blastDict.ContainsKey(gene.locus_id) Then
                 Dim hc As HitCollection = blastDict(gene.locus_id)
                 If hc.hits IsNot Nothing AndAlso hc.hits.Length > 0 Then
+                    ' 分组计算每个Operon ID的总得分
                     Dim operonScores = hc.hits.GroupBy(Function(h) h.tag) _
-                                          .ToDictionary(
-                                              Function(g) g.Key,
-                                              Function(g) g.Sum(Function(h) h.score * h.identities * (1 - h.gaps))
-                                          )
+                                      .ToDictionary(
+                                          Function(g) g.Key,
+                                          Function(g) g.Sum(Function(h) h.score * h.identities * (1 - h.gaps))
+                                      )
                     If operonScores.Any() Then
-                        Dim bestOperonId = operonScores.OrderByDescending(Function(kvp) kvp.Value).First().Key
-                        geneToOperonMap(gene.locus_id) = bestOperonId
+                        Dim bestOperon = operonScores.OrderByDescending(Function(kvp) kvp.Value).First()
+                        geneToOperonMap(gene.locus_id) = (bestOperon.Key, bestOperon.Value)
                     End If
                 End If
             End If
         Next
 
-        ' --- 步骤 2: 在基因组上寻找连续的、具有相同Operon ID的基因区块 ---
-        ' (此部分逻辑已修正，以处理插入突变)
-        ' 按链方向和位置对基因进行排序
+        ' --- 步骤 2: 在基因组上寻找连续的、具有相同Operon ID的基因区块，考虑距离阈值 ---
         Dim sortedGenes = allGenes.OrderBy(Function(g) g.strand) _
-                             .ThenBy(Function(g) If(g.strand = "+", g.left, g.right)) _
-                             .ToList()
+                         .ThenBy(Function(g) If(g.strand = "+", g.left, g.right)) _
+                         .ToList()
 
         Dim i As Integer = 0
         While i < sortedGenes.Count
             Dim currentGene = sortedGenes(i)
 
-            ' 检查当前基因是否被注释到了某个Operon
             If geneToOperonMap.ContainsKey(currentGene.locus_id) Then
-                Dim currentOperonId = geneToOperonMap(currentGene.locus_id)
+                Dim currentOperonId = geneToOperonMap(currentGene.locus_id).operonId
                 Dim operonBlock As New List(Of GeneTable) From {currentGene}
+                Dim currentStrand = currentGene.strand
 
-                ' --- 修正后的核心逻辑 ---
-                ' 向后查找，形成一个连续的区块。该区块可以包含没有OperonID的基因（作为潜在的插入基因），
-                ' 直到遇到一个属于“另一个”Operon的基因为止。
+                ' 向后查找扩展区块
                 i += 1
                 While i < sortedGenes.Count
                     Dim nextGene = sortedGenes(i)
 
-                    ' 条件1: 下一个基因属于同一个Operon
-                    If geneToOperonMap.ContainsKey(nextGene.locus_id) AndAlso geneToOperonMap(nextGene.locus_id) = currentOperonId Then
-                        operonBlock.Add(nextGene)
-                        i += 1
-                        ' 条件2: 下一个基因没有OperonID注释，我们将其视为潜在的插入基因并包含进区块
-                    ElseIf Not geneToOperonMap.ContainsKey(nextGene.locus_id) Then
-                        operonBlock.Add(nextGene)
-                        i += 1
-                        ' 条件3: 下一个基因属于另一个Operon，或者链的方向改变了，当前区块结束
-                    Else
-                        ' 停止扩展当前区块，因为它被一个不同的Operon基因“打断”了
+                    ' 检查链方向是否一致
+                    If nextGene.strand <> currentStrand Then
                         Exit While
+                    End If
+
+                    ' 计算当前基因与下一个基因的距离
+                    Dim distance As Integer
+                    If currentStrand = "+" Then
+                        ' Forward链：距离 = nextGene.left - 当前区块最后一个基因的right
+                        distance = nextGene.left - operonBlock.Last().right
+                    Else
+                        ' Reverse链：距离 = 当前区块最后一个基因的left - nextGene.right
+                        ' 注意：Reverse链基因按right升序排序，但物理位置是递减的
+                        distance = operonBlock.Last().left - nextGene.right
+                    End If
+
+                    ' 如果距离超过阈值，中断Operon扩展
+                    If distance > geneDistCutoff Then
+                        Exit While
+                    End If
+
+                    ' 检查下一个基因是否属于同一Operon或是插入基因
+                    If geneToOperonMap.ContainsKey(nextGene.locus_id) Then
+                        If geneToOperonMap(nextGene.locus_id).operonId = currentOperonId Then
+                            operonBlock.Add(nextGene)
+                            i += 1
+                        Else
+                            ' 下一个基因属于不同Operon，中断扩展
+                            Exit While
+                        End If
+                    Else
+                        ' 下一个基因无Operon注释，视为潜在插入基因，加入区块但不影响Operon ID
+                        operonBlock.Add(nextGene)
+                        i += 1
                     End If
                 End While
 
-                ' --- 步骤 3: 对找到的基因区块进行分类（保守、插入、缺失） ---
+                ' --- 步骤 3: 对区块进行分类并生成注释结果 ---
                 If knownOperonsDict.ContainsKey(currentOperonId) Then
-                    ' 调用修正后的ClassifyOperonBlock函数
-                    Yield ClassifyOperonBlock(operonBlock, currentOperonId, knownOperonsDict(currentOperonId), blastDict)
+                    Yield ClassifyOperonBlock(
+                    operonBlock,
+                    currentOperonId,
+                    knownOperonsDict(currentOperonId),
+                    blastDict,
+                    geneToOperonMap
+                )
                 End If
             Else
-                ' 当前基因不属于任何Operon，继续处理下一个
                 i += 1
             End If
         End While
     End Function
 
     ''' <summary>
-    ''' 计算两个相邻基因间的距离（单位：bp）。
-    ''' 注意：考虑链方向，确保距离始终为非负数。
-    ''' </summary>
-    Private Function CalculateGeneDistance(gene1 As GeneTable, gene2 As GeneTable) As Integer
-        If gene1.strand = "+" Then
-            ' 正向链：gene2.left - gene1.right
-            Return Math.Max(0, gene2.left - gene1.right)
-        Else
-            ' 反向链：gene1.left - gene2.right（因为基因按right升序排列）
-            Return Math.Max(0, gene1.left - gene2.right)
-        End If
-    End Function
-
-    ''' <summary>
     ''' 辅助函数，用于对一个连续的基因区块进行Operon类型分类。
     ''' </summary>
-    Private Function ClassifyOperonBlock(block As List(Of GeneTable), operonId As String, knownOperon As WebJSON.Operon, blastDict As Dictionary(Of String, HitCollection)) As AnnotatedOperon
-        ' 1. 准备基础数据集
-        ' 目标区块中所有基因的locus_id
+    Private Function ClassifyOperonBlock(block As List(Of GeneTable),
+                                         operonId As String,
+                                         knownOperon As WebJSON.Operon,
+                                         blastDict As Dictionary(Of String, HitCollection),
+                                         geneToOperonMap As Dictionary(Of String, (operonId As String, score As Double))) As AnnotatedOperon
+        ' 1. 准备数据
         Dim blockLocusIds = block.Select(Function(g) g.locus_id).ToHashSet()
-        ' 参考Operon中所有成员基因的ID (hitName)
-        Dim knownHitNames = knownOperon.members.ToHashSet()
+        Dim knownHitNames = knownOperon.members.ToHashSet() ' 假设members是基因ID列表
 
-        ' 2. 找出目标区块中，实际匹配到参考Operon成员的基因 (hitName)
-        ' 使用SelectMany来“扁平化”查询，即对每个基因的每个hit都进行检查
+        ' 2. 识别匹配的基因
         Dim matchedHitNames = blockLocusIds _
         .SelectMany(Function(locusId)
-                        ' 如果blastDict中没有这个基因的记录，返回一个空的Hit集合
                         If Not blastDict.ContainsKey(locusId) Then Return {}
-                        ' 否则，返回该基因的所有Hit
                         Return blastDict(locusId).hits
                     End Function) _
         .Where(Function(hit) hit.tag = operonId AndAlso knownHitNames.Contains(hit.hitName)) _
         .Select(Function(hit) hit.hitName) _
         .ToHashSet()
 
-        ' 3. 识别缺失的基因
-        ' 缺失的基因 = 参考Operon中的所有成员 - 实际被匹配到的成员
+        ' 3. 识别缺失基因（参考Operon中未匹配的基因）
         Dim missingGeneIds = knownHitNames.Except(matchedHitNames).ToList()
 
-        ' 4. 识别插入的基因
-        ' 插入的基因 = 区块中的基因 - 其BLAST结果能匹配到当前Operon的基因
-        ' 一个基因是插入的，如果它没有任何BLAST结果，或者它的所有BLAST结果都指向了别的Operon
+        ' 4. 识别插入基因（区块中未注释到当前Operon的基因）
         Dim insertedLocusIds = blockLocusIds _
         .Where(Function(locusId)
-                   ' 条件1: 基因没有BLAST结果
-                   If Not blastDict.ContainsKey(locusId) Then Return True
-                   ' 条件2: 基因有BLAST结果，但没有任何一个hit的tag是当前Operon的ID
-                   Return Not blastDict(locusId).hits.Any(Function(hit) hit.tag = operonId)
+                   If Not geneToOperonMap.ContainsKey(locusId) Then Return True
+                   Return geneToOperonMap(locusId).operonId <> operonId
                End Function) _
         .ToList()
 
-        ' 5. 根据插入和缺失情况确定Operon类型
+        ' 5. 确定Operon类型
         Dim opType As OperonType
         If insertedLocusIds.Any() Then
-            ' 只要有插入，就优先标记为插入突变
             opType = OperonType.Insertion
         ElseIf missingGeneIds.Any() Then
-            ' 没有插入但有缺失，标记为缺失突变
             opType = OperonType.Deletion
         Else
-            ' 两者都没有，是保守的
             opType = OperonType.Conserved
         End If
 
-        ' 6. 构建并返回最终的注释结果
+        ' 6. 构建Scores数组：每个基因对当前OperonID的得分
+        Dim scoresArray = block _
+        .Select(Function(gene)
+                    If geneToOperonMap.ContainsKey(gene.locus_id) AndAlso
+                       geneToOperonMap(gene.locus_id).operonId = operonId Then
+                        Return geneToOperonMap(gene.locus_id).score
+                    Else
+                        Return 0.0
+                    End If
+                End Function) _
+        .ToArray()
+
+        ' 7. 计算Operon的物理位置和链方向
+        Dim operonStrand = block.First().strand
+        Dim operonLeft = block.Min(Function(g) g.left)
+        Dim operonRight = block.Max(Function(g) g.right)
+
         Return New AnnotatedOperon With {
-            .OperonID = operonId,
-            .name = knownOperon.name,
-            .Type = opType,
-            .Genes = block.Select(Function(gene) gene.locus_id).ToArray, ' 保留完整的GeneTable对象列表
-            .KnownGeneIds = knownHitNames.ToArray,
-            .InsertedGeneIds = insertedLocusIds.ToArray, ' 插入的是目标基因组的locus_id
-            .MissingGeneIds = missingGeneIds.ToArray    ' 缺失的是参考数据库的hitName
-        }
+        .OperonID = operonId,
+        .name = knownOperon.name,
+        .Type = opType,
+        .Genes = block.Select(Function(g) g.locus_id).ToArray(),
+        .Scores = scoresArray,
+        .KnownGeneIds = knownHitNames.ToArray(),
+        .InsertedGeneIds = insertedLocusIds.ToArray(),
+        .MissingGeneIds = missingGeneIds.ToArray(),
+        .strand = operonStrand,
+        .left = operonLeft,
+        .right = operonRight
+    }
     End Function
 End Module
