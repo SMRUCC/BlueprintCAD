@@ -1,12 +1,15 @@
 ﻿Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
+Imports SMRUCC.genomics.GCModeller.ModellingEngine.BootstrapLoader.Definitions
 
 Public Class FormCultureMedium : Implements IDataContainer
 
     Dim wizardConfig As New Wizard
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
+        Dim compounds_id As New List(Of String)
+
         wizardConfig = DirectCast(data, Wizard)
 
         For Each compound As String In wizardConfig.models.Values _
@@ -15,8 +18,11 @@ Public Class FormCultureMedium : Implements IDataContainer
             .Keys _
             .Distinct
 
+            Call compounds_id.Add(compound)
             Call ListBox1.Items.Add(compound)
         Next
+
+        wizardConfig.config.mapping = Definition.MetaCyc(compounds_id.Distinct, Double.NaN)
     End Sub
 
     Public Function GetData() As Object Implements IDataContainer.GetData
