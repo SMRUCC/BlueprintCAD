@@ -149,8 +149,8 @@ Public Class CellBrowser
                     Dim reverse As VariableFactor() = flux.regulation.Where(Function(m) m.factor < 0).ToArray
                     Dim row = tbl.Rows.Add(flux.id,
                                            flux.ToString(symbols),
-                                           forward.Select(Function(v) symbols.TryGetValue(v.id, [default]:=v.id)).JoinBy("; "),
-                                           reverse.Select(Function(v) symbols.TryGetValue(v.id, [default]:=v.id)).JoinBy("; "))
+                                           forward.Select(Function(v) symbols.TryGetValue(v.mass_id, [default]:=v.id)).JoinBy("; "),
+                                           reverse.Select(Function(v) symbols.TryGetValue(v.mass_id, [default]:=v.id)).JoinBy("; "))
                 Next
             End Sub)
 
