@@ -27,7 +27,7 @@ Public Class RegistryUrl
 
     Public Function Ping() As Boolean
         Dim url As String = $"{server}/ping/"
-        Dim test As String = url.GET(timeoutSec:=1)
+        Dim test As String = url.GET(timeoutSec:=1, echo:=False)
         Return Not test Is Nothing
     End Function
 
@@ -41,7 +41,7 @@ Public Class RegistryUrl
     End Function
 
     Private Shared Function GetMoleculeData(url As String) As WebJSON.Molecule
-        Dim json_str As String = url.GET
+        Dim json_str As String = url.GET(echo:=False)
         Dim json As JsonObject = JsonParser.Parse(json_str)
         Dim code As Integer = DirectCast(json!code, JsonValue)
 
@@ -62,7 +62,7 @@ Public Class RegistryUrl
     End Function
 
     Private Shared Function GetReactionList(url As String) As Dictionary(Of String, WebJSON.Reaction)
-        Dim json_str As String = url.GET
+        Dim json_str As String = url.GET(echo:=False)
         Dim json As JsonObject = JsonParser.Parse(json_str)
 
         If json Is Nothing Then
