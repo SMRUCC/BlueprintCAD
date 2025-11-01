@@ -247,7 +247,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 .left = gene.left,
                 .right = gene.right,
                 .strand = gene.strand,
-                .product = {gene.function},
+                .product = gene.commonName,
                 .type = gene_type,
                 .amino_acid = residues,
                 .nucleotide_base = bases,
