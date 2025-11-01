@@ -1,4 +1,5 @@
-﻿Imports CADRegistry
+﻿Imports System.Threading
+Imports CADRegistry
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Language
@@ -238,7 +239,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     Private Function BuildGenome() As Genome
         Dim RNAs As New List(Of RNA)
         Dim geneSet = GeneObjects(RNAs).GroupBy(Function(a) a.locus_tag).ToDictionary(Function(a) a.Key, Function(a) a.First)
-        Dim genes As TranscriptUnit() = proj.operons _
+        Dim operons As List(Of TranscriptUnit) = proj.operons _
             .SafeQuery _
             .Select(Function(op)
                         Return New TranscriptUnit With {
@@ -252,11 +253,23 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                                 .ToArray
                         }
                     End Function) _
-            .ToArray
+            .AsList
+        Dim operon_genes As Index(Of String) = operons _
+            .Select(Function(op) op.genes) _
+            .IteratesALL _
+            .Select(Function(gene) gene.locus_tag) _
+            .Indexing
+
+        For Each gene As gene In geneSet.Values
+            If Not gene.locus_tag Like operon_genes Then
+                Call operons.Add(New TranscriptUnit(gene))
+            End If
+        Next
+
         Dim genomics As New replicon With {
             .genomeName = proj.taxonomy.scientificName,
             .isPlasmid = False,
-            .operons = genes,
+            .operons = operons.ToArray,
             .RNAs = RNAs.ToArray
         }
 
