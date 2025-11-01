@@ -193,7 +193,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         }
     End Function
 
-    Private Iterator Function GeneObjects(rnas As List(Of RNA)) As IEnumerable(Of gene)
+    Private Iterator Function GeneObjects(rnas As List(Of RNA), proteins As List(Of protein)) As IEnumerable(Of gene)
         Dim nt As Dictionary(Of String, String) = proj.genes
         Dim RNA As RNA
 
@@ -204,17 +204,24 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Dim bases As NumericVector = RNAComposition.FromNtSequence(nt_seq, gene.locus_id & "_rna").CreateVector
             Dim residues As NumericVector = Nothing
             Dim gene_type As RNATypes
+            Dim translate_id As String = If(gene.ProteinId, gene.locus_id & "_translate")
 
             If Not gene.Translation.StringEmpty Then
-                residues = ProteinComposition.FromRefSeq(gene.Translation, If(gene.ProteinId, gene.locus_id & "_protein")).CreateVector
+                residues = ProteinComposition.FromRefSeq(gene.Translation, translate_id).CreateVector
                 gene_type = RNATypes.mRNA
             Else
                 Select Case gene.type
                     Case "CDS"
                         Dim trans As String = TranslationTable.Translate(nt_seq)
 
-                        residues = ProteinComposition.FromRefSeq(trans, If(gene.ProteinId, gene.locus_id & "_protein")).CreateVector
+                        residues = ProteinComposition.FromRefSeq(trans, translate_id).CreateVector
                         gene_type = RNATypes.mRNA
+
+                        Call proteins.Add(New protein With {
+                            .name = "Protein[" & translate_id & "]",
+                            .peptide_chains = {translate_id},
+                            .protein_id = "Protein[" & translate_id & "]"
+                        })
                     Case "rRNA"
                         Dim rRNA = gene.commonName.Split(" "c, "-"c).First.ToLower
 
@@ -260,7 +267,13 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
     Private Function BuildGenome() As Genome
         Dim RNAs As New List(Of RNA)
-        Dim geneSet = GeneObjects(RNAs).GroupBy(Function(a) a.locus_tag).ToDictionary(Function(a) a.Key, Function(a) a.First)
+        Dim proteins As New List(Of protein)
+        Dim geneSet As Dictionary(Of String, gene) = GeneObjects(RNAs, proteins) _
+            .GroupBy(Function(a) a.locus_tag) _
+            .ToDictionary(Function(a) a.Key,
+                          Function(a)
+                              Return a.First
+                          End Function)
         Dim operons As List(Of TranscriptUnit) = proj.operons _
             .SafeQuery _
             .Select(Function(op)
@@ -298,7 +311,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         }
 
         Return New Genome With {
-            .replicons = {genomics}
+            .replicons = {genomics},
+            .proteins = proteins.ToArray
         }
     End Function
 
