@@ -147,7 +147,10 @@ Public Class CellBrowser
                     Dim flux As FluxEdge = edge.Value
                     Dim forward As VariableFactor() = flux.regulation.Where(Function(m) m.factor > 0).ToArray
                     Dim reverse As VariableFactor() = flux.regulation.Where(Function(m) m.factor < 0).ToArray
-                    Dim row = tbl.Rows.Add(flux.id, flux.ToString, forward.JoinBy("; "), reverse.JoinBy("; "))
+                    Dim row = tbl.Rows.Add(flux.id,
+                                           flux.ToString(symbols),
+                                           forward.Select(Function(v) symbols.TryGetValue(v.id, [default]:=v.id)).JoinBy("; "),
+                                           reverse.Select(Function(v) symbols.TryGetValue(v.id, [default]:=v.id)).JoinBy("; "))
                 Next
             End Sub)
 
