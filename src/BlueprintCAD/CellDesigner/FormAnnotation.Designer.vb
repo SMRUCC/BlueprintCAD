@@ -27,9 +27,9 @@ Partial Class FormAnnotation
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
         SplitContainer1 = New SplitContainer()
@@ -44,6 +44,8 @@ Partial Class FormAnnotation
         ViewNetworkToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip2 = New AdvancedDataGridViewSearchToolBar()
         TabPage4 = New TabPage()
+        AdvancedDataGridView2 = New AdvancedDataGridView()
+        AdvancedDataGridViewSearchToolBar2 = New AdvancedDataGridViewSearchToolBar()
         TabPage5 = New TabPage()
         AdvancedDataGridView1 = New AdvancedDataGridView()
         AdvancedDataGridViewSearchToolBar1 = New AdvancedDataGridViewSearchToolBar()
@@ -53,8 +55,6 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
-        AdvancedDataGridView2 = New AdvancedDataGridView()
-        AdvancedDataGridViewSearchToolBar2 = New AdvancedDataGridViewSearchToolBar()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -71,10 +71,10 @@ Partial Class FormAnnotation
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip1.SuspendLayout()
         TabPage4.SuspendLayout()
+        CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
-        CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -255,6 +255,45 @@ Partial Class FormAnnotation
         TabPage4.Text = "Transcript Units"
         TabPage4.UseVisualStyleBackColor = True
         ' 
+        ' AdvancedDataGridView2
+        ' 
+        AdvancedDataGridView2.AllowUserToAddRows = False
+        AdvancedDataGridView2.BackgroundColor = Color.WhiteSmoke
+        AdvancedDataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        AdvancedDataGridView2.DefaultCellStyle = DataGridViewCellStyle2
+        AdvancedDataGridView2.Dock = DockStyle.Fill
+        AdvancedDataGridView2.FilterAndSortEnabled = True
+        AdvancedDataGridView2.FilterStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView2.Location = New Point(3, 30)
+        AdvancedDataGridView2.MaxFilterButtonImageHeight = 23
+        AdvancedDataGridView2.Name = "AdvancedDataGridView2"
+        AdvancedDataGridView2.ReadOnly = True
+        AdvancedDataGridView2.RightToLeft = RightToLeft.No
+        AdvancedDataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        AdvancedDataGridView2.Size = New Size(723, 425)
+        AdvancedDataGridView2.SortStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView2.TabIndex = 2
+        ' 
+        ' AdvancedDataGridViewSearchToolBar2
+        ' 
+        AdvancedDataGridViewSearchToolBar2.AllowMerge = False
+        AdvancedDataGridViewSearchToolBar2.GripStyle = ToolStripGripStyle.Hidden
+        AdvancedDataGridViewSearchToolBar2.Location = New Point(3, 3)
+        AdvancedDataGridViewSearchToolBar2.MaximumSize = New Size(0, 27)
+        AdvancedDataGridViewSearchToolBar2.MinimumSize = New Size(0, 27)
+        AdvancedDataGridViewSearchToolBar2.Name = "AdvancedDataGridViewSearchToolBar2"
+        AdvancedDataGridViewSearchToolBar2.RenderMode = ToolStripRenderMode.Professional
+        AdvancedDataGridViewSearchToolBar2.Size = New Size(723, 27)
+        AdvancedDataGridViewSearchToolBar2.TabIndex = 3
+        AdvancedDataGridViewSearchToolBar2.Text = "AdvancedDataGridViewSearchToolBar2"
+        ' 
         ' TabPage5
         ' 
         TabPage5.Location = New Point(4, 24)
@@ -359,46 +398,6 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
-        ' AdvancedDataGridView2
-        ' 
-        AdvancedDataGridView2.AllowUserToAddRows = False
-        AdvancedDataGridView2.BackgroundColor = Color.WhiteSmoke
-        AdvancedDataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        AdvancedDataGridView2.ContextMenuStrip = ContextMenuStrip1
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = SystemColors.Window
-        DataGridViewCellStyle2.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        AdvancedDataGridView2.DefaultCellStyle = DataGridViewCellStyle2
-        AdvancedDataGridView2.Dock = DockStyle.Fill
-        AdvancedDataGridView2.FilterAndSortEnabled = True
-        AdvancedDataGridView2.FilterStringChangedInvokeBeforeDatasourceUpdate = True
-        AdvancedDataGridView2.Location = New Point(3, 30)
-        AdvancedDataGridView2.MaxFilterButtonImageHeight = 23
-        AdvancedDataGridView2.Name = "AdvancedDataGridView2"
-        AdvancedDataGridView2.ReadOnly = True
-        AdvancedDataGridView2.RightToLeft = RightToLeft.No
-        AdvancedDataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        AdvancedDataGridView2.Size = New Size(723, 425)
-        AdvancedDataGridView2.SortStringChangedInvokeBeforeDatasourceUpdate = True
-        AdvancedDataGridView2.TabIndex = 2
-        ' 
-        ' AdvancedDataGridViewSearchToolBar2
-        ' 
-        AdvancedDataGridViewSearchToolBar2.AllowMerge = False
-        AdvancedDataGridViewSearchToolBar2.GripStyle = ToolStripGripStyle.Hidden
-        AdvancedDataGridViewSearchToolBar2.Location = New Point(3, 3)
-        AdvancedDataGridViewSearchToolBar2.MaximumSize = New Size(0, 27)
-        AdvancedDataGridViewSearchToolBar2.MinimumSize = New Size(0, 27)
-        AdvancedDataGridViewSearchToolBar2.Name = "AdvancedDataGridViewSearchToolBar2"
-        AdvancedDataGridViewSearchToolBar2.RenderMode = ToolStripRenderMode.Professional
-        AdvancedDataGridViewSearchToolBar2.Size = New Size(723, 27)
-        AdvancedDataGridViewSearchToolBar2.TabIndex = 3
-        AdvancedDataGridViewSearchToolBar2.Text = "AdvancedDataGridViewSearchToolBar2"
-        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -430,12 +429,12 @@ Partial Class FormAnnotation
         ContextMenuStrip1.ResumeLayout(False)
         TabPage4.ResumeLayout(False)
         TabPage4.PerformLayout()
+        CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).EndInit()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
-        CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
