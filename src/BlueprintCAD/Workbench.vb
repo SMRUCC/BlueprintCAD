@@ -19,6 +19,8 @@ Public Module Workbench
 
     Public ReadOnly Property Settings As Settings
 
+    Public ReadOnly Property ServerConnection As Boolean
+
     Public ReadOnly Property CADRegistry As RegistryUrl
         Get
             Return New RegistryUrl(If(Settings.registry_server.StringEmpty, RegistryUrl.defaultServer, Settings.registry_server))
@@ -38,6 +40,10 @@ Public Module Workbench
 
     Public Sub RestoreFormTitle()
         AppHost.Text = title
+    End Sub
+
+    Public Sub SetConnection(test As Boolean)
+        _ServerConnection = test
     End Sub
 
     Public Sub SetHost(appHost As FormMain)

@@ -68,6 +68,7 @@ Public Class FormAnnotation
 
     Private Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
         TextBox1.Text = Workbench.Settings.ncbi_blast
+        TextBox2.Text = Workbench.Settings.registry_server
         enzymeLoader = New GridLoaderHandler(DataGridView1, ToolStrip2)
         blastLoader = New GridLoaderHandler(AdvancedDataGridView1, AdvancedDataGridViewSearchToolBar1)
         operonLoader = New GridLoaderHandler(AdvancedDataGridView2, AdvancedDataGridViewSearchToolBar2)
@@ -79,6 +80,14 @@ Public Class FormAnnotation
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        If Not Workbench.ServerConnection Then
+            Call MessageBox.Show("You are disconnected from the registry server, there are no data source for the virtual cell model compiler for build the model file!",
+                                 "Disconnected",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning)
+            Return
+        End If
+
         Using file As New SaveFileDialog With {.Filter = "GCModeller VirtualCell Model File(*.xml)|*.xml"}
             If file.ShowDialog = DialogResult.OK Then
                 ' 保存工程项目
@@ -400,5 +409,14 @@ Public Class FormAnnotation
         Dim url As String = $"http://biocad.innovation.ac.cn/operon/{operon_id}/"
 
         Call Tools.OpenUrlWithDefaultBrowser(url)
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        Workbench.Settings.registry_server = Strings.Trim(TextBox2.Text)
+        Workbench.Settings.Save()
+    End Sub
+
+    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+
     End Sub
 End Class

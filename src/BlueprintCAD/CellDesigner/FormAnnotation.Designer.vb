@@ -56,6 +56,8 @@ Partial Class FormAnnotation
         ViewGeneInRegistryToolStripMenuItem = New ToolStripMenuItem()
         AdvancedDataGridViewSearchToolBar1 = New AdvancedDataGridViewSearchToolBar()
         TabPage2 = New TabPage()
+        TextBox2 = New TextBox()
+        Label2 = New Label()
         Button1 = New Button()
         TextBox1 = New TextBox()
         Label1 = New Label()
@@ -305,7 +307,7 @@ Partial Class FormAnnotation
         ' 
         ContextMenuStrip3.Items.AddRange(New ToolStripItem() {ViewOperonToolStripMenuItem})
         ContextMenuStrip3.Name = "ContextMenuStrip3"
-        ContextMenuStrip3.Size = New Size(182, 48)
+        ContextMenuStrip3.Size = New Size(182, 26)
         ' 
         ' ViewOperonToolStripMenuItem
         ' 
@@ -389,6 +391,8 @@ Partial Class FormAnnotation
         ' 
         ' TabPage2
         ' 
+        TabPage2.Controls.Add(TextBox2)
+        TabPage2.Controls.Add(Label2)
         TabPage2.Controls.Add(Button1)
         TabPage2.Controls.Add(TextBox1)
         TabPage2.Controls.Add(Label1)
@@ -399,6 +403,22 @@ Partial Class FormAnnotation
         TabPage2.TabIndex = 1
         TabPage2.Text = "Settings"
         TabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(146, 76)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(836, 23)
+        TextBox2.TabIndex = 4
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(32, 84)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(61, 15)
+        Label2.TabIndex = 3
+        Label2.Text = "Set Server:"
         ' 
         ' Button1
         ' 
@@ -517,4 +537,6 @@ Partial Class FormAnnotation
     Friend WithEvents ViewGeneInRegistryToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
     Friend WithEvents ViewOperonToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label2 As Label
 End Class

@@ -151,9 +151,11 @@ Public Class FormMain : Implements AppHost
             If test.Ping Then
                 ToolStripStatusLabel2.Text = "Connected To Server"
                 ToolStripStatusLabel2.Image = My.Resources.Icons.icons8_wifi_96
+                Workbench.SetConnection(True)
             Else
                 ToolStripStatusLabel2.Text = "Server Offline"
                 ToolStripStatusLabel2.Image = My.Resources.Icons.icons8_offline_96
+                Workbench.SetConnection(False)
             End If
         End If
     End Sub
