@@ -2,26 +2,13 @@ Imports System.IO
 Imports CADRegistry
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.CommandLine
-Imports SMRUCC.genomics.Assembly.NCBI.CDD
+Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
-Imports System.IO
-Imports CADRegistry
-Imports Galaxy.Data.TableSheet
-Imports Galaxy.Workbench
-Imports Microsoft.VisualBasic.ApplicationServices
-Imports Microsoft.VisualBasic.ComponentModel.Collection
-Imports Microsoft.VisualBasic.ComponentModel.Ranges.Unit
-Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
-Imports Microsoft.VisualBasic.Linq
-Imports Microsoft.VisualStudio.WinForms.Docking
-Imports SMRUCC.genomics.Assembly.NCBI.GenBank
-Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
-Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
-Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 
 Module Program
 
