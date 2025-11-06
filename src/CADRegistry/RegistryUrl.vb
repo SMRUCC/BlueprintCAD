@@ -1,27 +1,49 @@
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.MIME.application.json.Javascript
+Imports Microsoft.VisualBasic.Serialization.JSON
 
 Public Class RegistryUrl
 
     ReadOnly server As String
+    ''' <summary>
+    ''' just read the cached json from this directory
+    ''' </summary>
+    ReadOnly cache_dir As String
 
     Public Const defaultServer As String = "http://biocad.innovation.ac.cn"
 
-    Sub New(Optional server As String = defaultServer)
+    Sub New(Optional server As String = defaultServer, Optional cache_dir As String = Nothing)
+        Me.cache_dir = cache_dir
         Me.server = Strings.Trim(server).TrimEnd("/"c)
     End Sub
 
-    Public Function GetAllKnownOperons() As WebJSON.Operon()
-        Dim url As String = $"{server}/registry/known_operons/"
-        Dim json_str As String = url.GET
-        Dim json As JsonObject = JsonParser.Parse(json_str)
-        Dim code As Integer = DirectCast(json!code, JsonValue)
-
-        If code <> 0 Then
+    Private Function cachefile(filename As String) As String
+        If cache_dir Is Nothing OrElse Not $"{cache_dir}/{filename}".FileExists Then
             Return Nothing
         Else
-            Return json!info.CreateObject(Of WebJSON.Operon())
+            Return $"{cache_dir}/{filename}"
+        End If
+    End Function
+
+    Public Function GetAllKnownOperons() As WebJSON.Operon()
+        Dim cache As String = cachefile("known_operons.json")
+
+        If cache Is Nothing Then
+            Dim url As String = $"{server}/registry/known_operons/"
+            Dim json_str As String = url.GET
+            Dim json As JsonObject = JsonParser.Parse(json_str)
+            Dim code As Integer = DirectCast(json!code, JsonValue)
+
+            If code <> 0 Then
+                Return Nothing
+            Else
+                Return json!info.CreateObject(Of WebJSON.Operon())
+            End If
+        Else
+            ' just read cache data for local test
+            ' not used cache dir for save web request data
+            Return cache.LoadJsonFile(Of WebJSON.Operon())
         End If
     End Function
 
@@ -32,12 +54,20 @@ Public Class RegistryUrl
     End Function
 
     Public Function GetMoleculeDataById(id As UInteger) As WebJSON.Molecule
-        Dim url As String = $"{server}/registry/molecule/?id={id}"
-        Dim key As String = $"+{id}"
+        Dim hashcode As String = id.ToString.MD5
+        Dim hashfile As String = $"molecules/{hashcode.Substring(5, 3)}/{hashcode.Substring(23, 3)}/{hashcode}.json"
+        Dim cache_path As String = cachefile(hashfile)
 
-        Static cache As New Dictionary(Of String, WebJSON.Molecule)
+        If cache_path Is Nothing Then
+            Dim url As String = $"{server}/registry/molecule/?id={id}"
+            Dim key As String = $"+{id}"
 
-        Return cache.ComputeIfAbsent(key, Function() GetMoleculeData(url))
+            Static cache As New Dictionary(Of String, WebJSON.Molecule)
+
+            Return cache.ComputeIfAbsent(key, Function() GetMoleculeData(url))
+        Else
+            Return cache_path.LoadJsonFile(Of WebJSON.Molecule)
+        End If
     End Function
 
     Private Shared Function GetMoleculeData(url As String) As WebJSON.Molecule
