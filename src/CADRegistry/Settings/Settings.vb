@@ -6,6 +6,12 @@ Public Class Settings
     Public Property ncbi_blast As String
     Public Property registry_server As String
 
+    ''' <summary>
+    ''' the directory of the ncbi local blast database files
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property blastdb As String
+
     Shared ReadOnly defaultConfig As String = App.ProductProgramData & "/settings.json"
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>
