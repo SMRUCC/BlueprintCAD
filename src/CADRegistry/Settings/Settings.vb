@@ -1,4 +1,4 @@
-﻿Imports CADRegistry
+﻿Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.Serialization.JSON
 
 Public Class Settings
@@ -8,8 +8,13 @@ Public Class Settings
 
     Shared ReadOnly defaultConfig As String = App.ProductProgramData & "/settings.json"
 
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Shared Function Load() As Settings
-        Dim config As Settings = defaultConfig.LoadJsonFile(Of Settings)(throwEx:=False)
+        Return Load(defaultConfig)
+    End Function
+
+    Public Shared Function Load(configfile As String) As Settings
+        Dim config As Settings = configfile.LoadJsonFile(Of Settings)(throwEx:=False)
 
         If config Is Nothing Then
             config = New Settings With {.registry_server = RegistryUrl.defaultServer}
