@@ -9,5 +9,8 @@
     <Import_RootNamespace>WebJSON</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Molecule.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Operon.vb" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reaction.vb" />
   </ItemGroup>
 </Project>
