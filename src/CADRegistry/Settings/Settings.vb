@@ -5,6 +5,7 @@ Public Class Settings
 
     Public Property ncbi_blast As String
     Public Property registry_server As String
+    Public Property cache_dir As String
 
     ''' <summary>
     ''' the directory of the ncbi local blast database files

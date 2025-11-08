@@ -43,7 +43,7 @@ Module Program
         Dim proj = ProjectCreator.FromGenBank(GBFF.File.Load(file))
         Dim settings As Settings = Settings.Load(args("--config"))
         Dim outproj As String = args("--out")
-        Dim server As New RegistryUrl(settings.registry_server)
+        Dim server As New RegistryUrl(settings.registry_server, cache_dir:=settings.cache_dir)
         Dim blast_threads As Integer = args("--num_threads") Or 8
         Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
         Dim localblast As New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
