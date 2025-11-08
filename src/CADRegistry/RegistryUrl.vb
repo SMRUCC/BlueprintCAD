@@ -19,9 +19,16 @@ Public Class RegistryUrl
         Me.server = Strings.Trim(server).TrimEnd("/"c)
 
         If Not cache_dir.StringEmpty() Then
+            Call "start to local local cahced database files".info
+
             cachedOperon = $"{cache_dir}/all_operons.json".LoadJsonFile(Of WebJSON.Operon())
             cachedMolecules = $"{cache_dir}/molecules.json".LoadJsonFile(Of WebJSON.Molecule()).ToDictionary(Function(m) m.id)
             cachedReactions = $"{cache_dir}/enzyme_reactions.json".LoadJsonFile(Of Dictionary(Of String, WebJSON.Reaction()))
+
+            Call "load cached database from a given cache dir:".info
+            Call $" - {cachedOperon.Length} known operons".info
+            Call $" - {cachedReactions.Count} known enzyme reaction network".info
+            Call $" - {cachedMolecules.Count} associated metabolites".info
         End If
     End Sub
 
