@@ -26,9 +26,9 @@ Public Class RegistryUrl
             cachedReactions = $"{cache_dir}/enzyme_reactions.json".LoadJsonFile(Of Dictionary(Of String, WebJSON.Reaction()))
 
             Call "load cached database from a given cache dir:".info
-            Call $" - {cachedOperon.Length} known operons".info
-            Call $" - {cachedReactions.Count} known enzyme reaction network".info
-            Call $" - {cachedMolecules.Count} associated metabolites".info
+            Call $" * {cachedOperon.Length} known operons".info
+            Call $" * {cachedReactions.Count} known enzyme reaction network".info
+            Call $" * {cachedMolecules.Count} associated metabolites".info
         End If
     End Sub
 
