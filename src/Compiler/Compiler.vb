@@ -60,7 +60,10 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Return 0
     End Function
 
-    Private Iterator Function BuildLaws(reaction As WebJSON.Reaction, enzyme As ECNumberAnnotation) As IEnumerable(Of Catalysis)
+    Private Iterator Function BuildLaws(reaction As WebJSON.Reaction, enzyme As ECNumberAnnotation, gene As GeneTable) As IEnumerable(Of Catalysis)
+        Dim translate_id As String = If(gene.ProteinId, gene.locus_id & "_translate")
+        Dim protein_id As String = "Protein[" & translate_id & "]"
+
         For Each law As WebJSON.LawData In reaction.law.SafeQuery
             Dim pars = law.params.Keys.ToArray
             Dim args As KineticsParameter() = law.params _
@@ -70,6 +73,13 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                                     .name = a.Key,
                                     .value = Val(a.Value),
                                     .isModifier = False
+                                }
+                            ElseIf a.Value.StartsWith("ENZ_") Then
+                                Return New KineticsParameter With {
+                                    .name = a.Key,
+                                    .value = 0,
+                                    .isModifier = False,
+                                    .target = protein_id
                                 }
                             Else
                                 Return New KineticsParameter With {
