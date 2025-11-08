@@ -83,7 +83,7 @@ Module Program
     ' ./target.gbff --out gcmodeller.gcproj --config settings.json --num_threads 8 --workdir workspace_dir
     Public Function CompileGenbankFile(file As String, args As CommandLine) As Integer
         Dim proj = ProjectCreator.FromGenBank(GBFF.File.Load(file))
-        Dim settings As Settings = Settings.Load(args("--config"))
+        Dim settings As Settings = Settings.Load(args.Required("--config", "Missing the required configuration file, `--config` argument must be specificed!"))
         Dim outproj As String = args("--out")
         Dim server As New RegistryUrl(settings.registry_server, cache_dir:=settings.cache_dir)
         Dim blast_threads As Integer = args("--num_threads") Or 8
