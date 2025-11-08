@@ -60,10 +60,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Return 0
     End Function
 
-    Private Iterator Function BuildLaws(reaction As WebJSON.Reaction, enzyme As ECNumberAnnotation, gene As GeneTable) As IEnumerable(Of Catalysis)
-        Dim translate_id As String = If(gene.ProteinId, gene.locus_id & "_translate")
-        Dim protein_id As String = "Protein[" & translate_id & "]"
-
+    Private Iterator Function BuildLaws(reaction As WebJSON.Reaction, enzyme As ECNumberAnnotation, modelProteinId As String) As IEnumerable(Of Catalysis)
         For Each law As WebJSON.LawData In reaction.law.SafeQuery
             Dim pars = law.params.Keys.ToArray
             Dim args As KineticsParameter() = law.params _
@@ -79,7 +76,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                                     .name = a.Key,
                                     .value = 0,
                                     .isModifier = False,
-                                    .target = protein_id
+                                    .target = modelProteinId
                                 }
                             Else
                                 Return New KineticsParameter With {
@@ -111,6 +108,12 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Dim network As New Dictionary(Of String, WebJSON.Reaction)
         Dim ec_numbers As New Dictionary(Of String, List(Of String))
         Dim enzymeModels As New List(Of Enzyme)
+        Dim geneIndex = proj.gene_table _
+            .GroupBy(Function(a) a.locus_id) _
+            .ToDictionary(Function(a) a.Key,
+                          Function(a)
+                              Return a.First
+                          End Function)
 
         Call $"processing of {enzymes.Count} enzyme annotations".debug
 
@@ -122,14 +125,14 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 Call $"missing metabolic network inside registry which is associated with enzyme {enzyme.EC}!".warning
                 Continue For
             Else
-                Dim modelPorteinId = If(genes.ContainsKey(enzyme.gene_id),
-                    genes(enzyme.gene_id).protein_id.ElementAtOrDefault(0, enzyme.gene_id),
-                    enzyme.gene_id)
+                Dim gene As GeneTable = geneIndex(enzyme.gene_id)
+                Dim translate_id As String = If(gene.ProteinId, gene.locus_id & "_translate")
+                Dim modelProteinId As String = "Protein[" & translate_id & "]"
                 Dim model As New Enzyme With {
                     .ECNumber = enzyme.EC,
-                    .proteinID = $"Protein[{modelPorteinId}]",
+                    .proteinID = modelProteinId,
                     .catalysis = list.Values _
-                         .Select(Function(reaction) BuildLaws(reaction, enzyme)) _
+                         .Select(Function(reaction) BuildLaws(reaction, enzyme, modelProteinId)) _
                          .IteratesALL _
                          .GroupBy(Function(a) a.GetJson.MD5) _
                          .Select(Function(a) a.First) _
