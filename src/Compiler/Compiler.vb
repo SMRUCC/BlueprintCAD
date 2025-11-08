@@ -21,8 +21,13 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     ReadOnly registry As RegistryUrl
 
     Sub New(proj As GenBankProject, Optional serverUrl As String = RegistryUrl.defaultServer)
+        If serverUrl.ToLower.StartsWith("http://") OrElse serverUrl.ToLower.StartsWith("https://") Then
+            Me.registry = New RegistryUrl(serverUrl)
+        Else
+            Me.registry = New RegistryUrl(RegistryUrl.defaultServer, serverUrl)
+        End If
+
         Me.proj = proj
-        Me.registry = New RegistryUrl(serverUrl)
     End Sub
 
     Protected Overrides Function PreCompile(args As CommandLine) As Integer
@@ -40,7 +45,17 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
     Protected Overrides Function CompileImpl(args As CommandLine) As Integer
         m_compiledModel.genome = BuildGenome()
-        m_compiledModel.metabolismStructure = CreateMetabolismNetwork(m_compiledModel.genome.replicons.Select(Function(r) r.GetGeneList).IteratesALL.GroupBy(Function(a) a.locus_tag).ToDictionary(Function(a) a.Key, Function(a) a.First))
+        m_compiledModel.metabolismStructure = m_compiledModel.genome.replicons _
+            .Select(Function(r) r.GetGeneList) _
+            .IteratesALL _
+            .GroupBy(Function(a) a.locus_tag) _
+            .ToDictionary(Function(a) a.Key,
+                          Function(a)
+                              Return a.First
+                          End Function) _
+            .DoCall(Function(list)
+                        Return CreateMetabolismNetwork(list)
+                    End Function)
 
         Return 0
     End Function
