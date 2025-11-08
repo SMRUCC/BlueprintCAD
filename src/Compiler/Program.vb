@@ -19,6 +19,9 @@ Module Program
     End Function
 
     Private Function ShowHelp() As Integer
+        Call Console.WriteLine()
+        Call Console.WriteLine("The GCModeller Virtual Cell Compiler")
+        Call Console.WriteLine()
         Call Console.WriteLine("commandline usage:")
         Call Console.WriteLine("<target_file.gcproj/gbff> --out <model.xml/project.gcproj> [--server <database server/local cache dir>] [--name <virtual cell name>] [--config <settings.json>] [--num_threads 8] [--workdir tempdir]")
         Call Console.WriteLine("")
