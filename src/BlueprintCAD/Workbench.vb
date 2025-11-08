@@ -1,5 +1,6 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
 Imports CADRegistry
+Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Drawing
 
 Public Module Workbench
