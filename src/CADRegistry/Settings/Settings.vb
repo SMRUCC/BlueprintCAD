@@ -29,6 +29,9 @@ Public Class Settings
         If config.registry_server.StringEmpty(, True) Then
             config.registry_server = RegistryUrl.defaultServer
         End If
+        If config.blastdb.StringEmpty(, True) Then
+            config.blastdb = $"{App.HOME}/data"
+        End If
 
         Return config
     End Function
