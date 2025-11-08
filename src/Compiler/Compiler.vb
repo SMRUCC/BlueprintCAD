@@ -121,6 +121,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     .catalysis = list.Values _
                          .Select(Function(reaction) BuildLaws(reaction, enzyme)) _
                          .IteratesALL _
+                         .GroupBy(Function(a) a.GetJson.MD5) _
+                         .Select(Function(a) a.First) _
                          .ToArray
                 }
 
