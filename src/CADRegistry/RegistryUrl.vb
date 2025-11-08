@@ -6,30 +6,27 @@ Imports Microsoft.VisualBasic.Serialization.JSON
 Public Class RegistryUrl
 
     ReadOnly server As String
-    ''' <summary>
-    ''' just read the cached json from this directory
-    ''' </summary>
-    ReadOnly cache_dir As String
+
+#Region "in-memory cache data"
+    ReadOnly cachedOperon As WebJSON.Operon()
+    ReadOnly cachedReactions As Dictionary(Of String, WebJSON.Reaction())
+    ReadOnly cachedMolecules As Dictionary(Of String, WebJSON.Molecule)
+#End Region
 
     Public Const defaultServer As String = "http://biocad.innovation.ac.cn"
 
     Sub New(Optional server As String = defaultServer, Optional cache_dir As String = Nothing)
-        Me.cache_dir = cache_dir
         Me.server = Strings.Trim(server).TrimEnd("/"c)
+
+        If Not cache_dir.StringEmpty() Then
+            cachedOperon = $"{cache_dir}/all_operons.json".LoadJsonFile(Of WebJSON.Operon())
+            cachedMolecules = $"{cache_dir}/molecules.json".LoadJsonFile(Of WebJSON.Molecule()).ToDictionary(Function(m) m.id)
+            cachedReactions = $"{cache_dir}/enzyme_reactions.json".LoadJsonFile(Of Dictionary(Of String, WebJSON.Reaction()))
+        End If
     End Sub
 
-    Private Function cachefile(filename As String) As String
-        If cache_dir Is Nothing OrElse Not $"{cache_dir}/{filename}".FileExists Then
-            Return Nothing
-        Else
-            Return $"{cache_dir}/{filename}"
-        End If
-    End Function
-
     Public Function GetAllKnownOperons() As WebJSON.Operon()
-        Dim cache As String = cachefile("known_operons.json")
-
-        If cache Is Nothing Then
+        If cachedOperon Is Nothing Then
             Dim url As String = $"{server}/registry/known_operons/"
             Dim json_str As String = url.GET
             Dim json As JsonObject = JsonParser.Parse(json_str)
@@ -43,7 +40,7 @@ Public Class RegistryUrl
         Else
             ' just read cache data for local test
             ' not used cache dir for save web request data
-            Return cache.LoadJsonFile(Of WebJSON.Operon())
+            Return cachedOperon.ToArray
         End If
     End Function
 
@@ -54,11 +51,7 @@ Public Class RegistryUrl
     End Function
 
     Public Function GetMoleculeDataById(id As UInteger) As WebJSON.Molecule
-        Dim hashcode As String = id.ToString.MD5
-        Dim hashfile As String = $"molecules/{hashcode.Substring(5, 3)}/{hashcode.Substring(23, 3)}/{hashcode}.json"
-        Dim cache_path As String = cachefile(hashfile)
-
-        If cache_path Is Nothing Then
+        If cachedMolecules Is Nothing Then
             Dim url As String = $"{server}/registry/molecule/?id={id}"
             Dim key As String = $"+{id}"
 
@@ -66,7 +59,7 @@ Public Class RegistryUrl
 
             Return cache.ComputeIfAbsent(key, Function() GetMoleculeData(url))
         Else
-            Return cache_path.LoadJsonFile(Of WebJSON.Molecule)
+            Return cachedMolecules.TryGetValue(id.ToString)
         End If
     End Function
 
@@ -83,12 +76,22 @@ Public Class RegistryUrl
     End Function
 
     Public Function GetAssociatedReactions(ec_number As String, Optional simple As Boolean = False) As Dictionary(Of String, WebJSON.Reaction)
-        Dim url As String = $"{server}/registry/reaction_network/?ec_number={ec_number}&simple={simple.ToString.ToLower}"
-        Dim key As String = $"{ec_number}:{simple.ToString.ToLower}"
+        If cachedReactions Is Nothing Then
+            Dim url As String = $"{server}/registry/reaction_network/?ec_number={ec_number}&simple={simple.ToString.ToLower}"
+            Dim key As String = $"{ec_number}:{simple.ToString.ToLower}"
 
-        Static cache As New Dictionary(Of String, Dictionary(Of String, WebJSON.Reaction))
+            Static cache As New Dictionary(Of String, Dictionary(Of String, WebJSON.Reaction))
 
-        Return cache.ComputeIfAbsent(key, Function() GetReactionList(url))
+            Return cache.ComputeIfAbsent(key, Function() GetReactionList(url))
+        Else
+            Dim list = cachedReactions.TryGetValue(ec_number)
+
+            If Not list Is Nothing Then
+                Return list.ToDictionary(Function(r) r.guid)
+            Else
+                Return Nothing
+            End If
+        End If
     End Function
 
     Private Shared Function GetReactionList(url As String) As Dictionary(Of String, WebJSON.Reaction)
