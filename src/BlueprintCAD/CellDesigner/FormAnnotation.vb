@@ -9,7 +9,6 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
-Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.Motif
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
@@ -24,6 +23,7 @@ Public Class FormAnnotation
 
     Dim enzymeLoader As GridLoaderHandler
     Dim blastLoader As GridLoaderHandler
+    Dim tfbsLoad As GridLoaderHandler
 
     Private Sub FormAnnotation_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         Workbench.SetFormActiveTitle(TabText)
@@ -374,7 +374,7 @@ Public Class FormAnnotation
         Call operonLoader.LoadTable(AddressOf LoadOperonHits)
     End Sub
 
-    Private Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
+    Private Async Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
         Dim motifDbfile As String = $"{App.HOME}/data/RegPrecise.dat"
         Dim pwm As Dictionary(Of String, Probability()) = MotifDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Dim tss As FastaSeq() = proj.tss_upstream _
@@ -384,16 +384,65 @@ Public Class FormAnnotation
             .ToArray
         Dim tfbsList As New List(Of MotifMatch)
 
-        For Each region As FastaSeq In tss
-            For Each family As String In pwm.Keys
-                For Each model As Probability In pwm(family)
-                    Call tfbsList.AddRange(model.ScanSites(region, 0.85))
-                Next
-            Next
-        Next
+        If TFBSAnnotationCmd.Running Then
+            Return
+        Else
+            TFBSAnnotationCmd.Running = True
+            TFBSAnnotationCmd.SetStatusText("Running the annotation...")
+            TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+        End If
+
+        Await Task.Run(Sub()
+                           For Each region As FastaSeq In tss
+                               For Each family As String In pwm.Keys
+                                   For Each model As Probability In pwm(family)
+                                       For Each site As MotifMatch In model.ScanSites(region, 0.85)
+                                           site.seeds = {family}
+                                           tfbsList.Add(site)
+                                       Next
+                                   Next
+                               Next
+                           Next
+                       End Sub)
 
         proj.tfbs_hits = tfbsList.ToArray
 
+        Call tfbsLoad.LoadTable(AddressOf LoadTFBSList)
+    End Sub
+
+    Private Sub LoadTFBSList(tbl As DataTable)
+        Dim hits As Integer = 0
+
+        Call tbl.Columns.Add("title", GetType(String))
+        Call tbl.Columns.Add("segment", GetType(String))
+        Call tbl.Columns.Add("motif", GetType(String))
+        Call tbl.Columns.Add("start", GetType(Integer))
+        Call tbl.Columns.Add("ends", GetType(Integer))
+        Call tbl.Columns.Add("identities", GetType(Double))
+        Call tbl.Columns.Add("score1", GetType(double ))
+        Call tbl.Columns.Add("score2", GetType(Double))
+        Call tbl.Columns.Add("pvalue", GetType(Double))
+        Call tbl.Columns.Add("source", GetType(String))
+
+        For Each site As MotifMatch In proj.tfbs_hits
+            Call tbl.Rows.Add(site.title,
+                              site.segment,
+                              site.motif,
+                              site.start,
+                              site.ends,
+                              site.identities,
+                              site.score1,
+                              site.score2,
+                              site.pvalue,
+                              site.seeds(0))
+        Next
+
+        TFBSAnnotationCmd.Running = False
+
+        If Not proj.tfbs_hits.IsNullOrEmpty Then
+            Call TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call TFBSAnnotationCmd.SetStatusText($"{proj.tfbs_hits.Length} motif site was annotated.")
+        End If
     End Sub
 
     Private Sub ViewEnzymeInRegistryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewEnzymeInRegistryToolStripMenuItem.Click
