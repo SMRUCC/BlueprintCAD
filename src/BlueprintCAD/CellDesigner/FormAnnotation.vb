@@ -11,6 +11,7 @@ Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
@@ -250,12 +251,39 @@ Public Class FormAnnotation
             .RunParser(tempOutfile) _
             .ExportHistResult _
             .ToArray
-        proj.transcript_factors = proj.enzyme_hits _
-            .Select(Function(hits) hits.AssignECNumber()) _
+        proj.transcript_factors = proj.tf_hits _
+            .Select(Function(hits) hits.AssignTFFamilyHit()) _
             .Where(Function(ec) Not ec Is Nothing) _
-            .ToDictionary(Function(a) a.gene_id)
+            .ToArray
 
-        Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
+        Call tfListLoader.LoadTable(AddressOf LoadTFHits)
+    End Sub
+
+    Private Sub LoadTFHits(tbl As DataTable)
+        Call tbl.Columns.Add("gene_id", GetType(String))
+        Call tbl.Columns.Add("tf family", GetType(String))
+        Call tbl.Columns.Add("hit", GetType(String))
+        Call tbl.Columns.Add("supports", GetType(Integer))
+        Call tbl.Columns.Add("identities", GetType(Double))
+        Call tbl.Columns.Add("score", GetType(Double))
+        Call tbl.Columns.Add("e-value", GetType(Double))
+
+        For Each tf As BestHit In proj.transcript_factors
+            Call tbl.Rows.Add(tf.QueryName,
+                              tf.HitName,
+                              tf.description,
+                              tf.hit_length,
+                              tf.identities,
+                              tf.score,
+                              tf.evalue)
+        Next
+
+        TFAnnotationCmd.Running = False
+
+        If Not proj.transcript_factors.IsNullOrEmpty Then
+            Call OperonAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call OperonAnnotationCmd.SetStatusText($"{proj.transcript_factors.Length} transcript factors was annotated.")
+        End If
     End Sub
 
     Private Async Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run

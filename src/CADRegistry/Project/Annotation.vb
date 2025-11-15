@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.Linq
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 
 Public Module Annotation
@@ -31,6 +32,11 @@ Public Module Annotation
                 .OrderByDescending(Function(a) a.Score) _
                 .First
         End If
+    End Function
+
+    <Extension>
+    Public Function AssignTFFamilyHit(tfhits As HitCollection) As BestHit
+
     End Function
 
 End Module
