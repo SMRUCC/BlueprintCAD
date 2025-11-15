@@ -15,6 +15,7 @@ Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlu
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
+Imports SMRUCC.genomics.SequenceModel.FASTA
 
 Public Class FormAnnotation
 
@@ -429,6 +430,11 @@ Public Class FormAnnotation
     Private Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
         Dim motifDbfile As String = $"{App.HOME}/data/RegPrecise.dat"
         Dim pwm As Dictionary(Of String, Probability()) = PWMDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+        Dim tss As FastaSeq() = proj.tss_upstream _
+            .Select(Function(seq)
+                        Return New FastaSeq({seq.Key}, seq.Value)
+                    End Function) _
+            .ToArray
 
 
     End Sub
