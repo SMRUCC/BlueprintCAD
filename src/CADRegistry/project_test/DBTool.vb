@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Microsoft.VisualBasic.ApplicationServices.Terminal.ProgressBar.Tqdm
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.Motif
 Imports SMRUCC.genomics.Interops.NBCR.MEME_Suite.DocumentFormat.XmlOutput.MEME
@@ -9,7 +10,9 @@ Public Module DBTool
         Using s As Stream = "G:\BlueprintCAD\App\net8.0-windows\data\RegPrecise.dat".Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False),
             db As New PWMDatabase(s, is_readonly:=False)
 
-            For Each dir As String In "M:\motifs".ListDirectory
+            Call "create motif database...".info
+
+            For Each dir As String In TqdmWrapper.Wrap("M:\motifs".ListDirectory.ToArray)
                 Dim name As String = dir.BaseName.Replace("_motif_results", "")
                 Dim file As String = $"{dir}/meme.xml"
 
