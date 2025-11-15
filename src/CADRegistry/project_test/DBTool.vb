@@ -1,7 +1,6 @@
 ﻿Imports System.IO
 Imports Microsoft.VisualBasic.ApplicationServices.Terminal.ProgressBar.Tqdm
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
-Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.Motif
 Imports SMRUCC.genomics.Interops.NBCR.MEME_Suite.DocumentFormat.XmlOutput.MEME
 
 Public Module DBTool
