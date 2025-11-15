@@ -10,6 +10,12 @@ Public Class AnnotationItem
         End Get
         Set(value As Boolean)
             Button1.Enabled = Not value
+
+            If Running Then
+                Button1.Text = "Running"
+            Else
+                Button1.Text = "Run"
+            End If
         End Set
     End Property
 
