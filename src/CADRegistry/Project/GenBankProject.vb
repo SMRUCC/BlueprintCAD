@@ -2,6 +2,7 @@
 Imports System.Runtime.CompilerServices
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.ComponentModel.Annotation
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 Imports SMRUCC.genomics.Metagenomics
 Imports SMRUCC.genomics.SequenceModel
@@ -26,9 +27,12 @@ Public Class GenBankProject
     ''' <returns></returns>
     Public Property operon_hits As HitCollection()
 
+    Public Property tf_hits As HitCollection()
+
     Public Property operons As AnnotatedOperon()
     Public Property ec_numbers As Dictionary(Of String, ECNumberAnnotation)
     Public Property tfbs_hits As MotifMatch()
+    Public Property transcript_factors As BestHit()
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Sub DumpProteinFasta(s As Stream)

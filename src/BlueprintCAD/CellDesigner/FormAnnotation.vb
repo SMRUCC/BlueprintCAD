@@ -224,6 +224,40 @@ Public Class FormAnnotation
         End If
     End Sub
 
+    Private Async Sub TFAnnotationCmd_Run() Handles TFAnnotationCmd.Run
+        Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="tf_blast")
+        Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
+
+        If TFAnnotationCmd.Running Then
+            Return
+        Else
+            TFAnnotationCmd.Running = True
+            TFAnnotationCmd.SetStatusText("Running the annotation...")
+            TFAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+        End If
+
+        Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
+            Call proj.DumpProteinFasta(s)
+        End Using
+
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 12}
+        Dim enzyme_db As String = $"{App.HOME}/data/TF.fasta"
+
+        ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
+        Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=0.01).Run())
+
+        proj.tf_hits = BlastpOutputReader _
+            .RunParser(tempOutfile) _
+            .ExportHistResult _
+            .ToArray
+        proj.transcript_factors = proj.enzyme_hits _
+            .Select(Function(hits) hits.AssignECNumber()) _
+            .Where(Function(ec) Not ec Is Nothing) _
+            .ToDictionary(Function(a) a.gene_id)
+
+        Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
+    End Sub
+
     Private Async Sub EnzymeAnnotationCmd_Run() Handles EnzymeAnnotationCmd.Run
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="enzyme_blast")
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
@@ -510,7 +544,4 @@ Public Class FormAnnotation
         Workbench.Settings.registry_server = Strings.Trim(TextBox2.Text)
         Workbench.Settings.Save()
     End Sub
-
-
-
 End Class
