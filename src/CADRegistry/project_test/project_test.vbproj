@@ -8,8 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\GCModeller\src\GCModeller\analysis\Motifs\MotifGraph\MotifGraph.vbproj" />
-    <ProjectReference Include="..\..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\MotifFinder\MotifFinder.vbproj" />
+    <ProjectReference Include="..\..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\MotifScanner\MotifScanner.NET5.vbproj" />
+    <ProjectReference Include="..\..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\SequenceAlignment\SequenceAlignment.vbproj" />
+    <ProjectReference Include="..\..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\SequencePatterns.Abstract\SequencePatterns.Abstract.NET5.vbproj" />
     <ProjectReference Include="..\..\..\..\GCModeller\src\GCModeller\core\Bio.Assembly\biocore-netcore5.vbproj" />
     <ProjectReference Include="..\..\..\..\GCModeller\src\interops\localblast\LocalBLAST\localblast.NET5.vbproj" />
     <ProjectReference Include="..\..\..\..\GCModeller\src\interops\meme_suite\MEME.DocParser\MEME.DocParser.vbproj" />
