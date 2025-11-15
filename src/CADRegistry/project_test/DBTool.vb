@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports CADRegistry
 Imports Microsoft.VisualBasic.ApplicationServices.Terminal.ProgressBar.Tqdm
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.Interops.NBCR.MEME_Suite.DocumentFormat.XmlOutput.MEME
@@ -7,7 +8,7 @@ Public Module DBTool
 
     Sub CreateMotifDb()
         Using s As Stream = "G:\BlueprintCAD\App\net8.0-windows\data\RegPrecise.dat".Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False),
-            db As New PWMDatabase(s, is_readonly:=False)
+            db As New MotifDatabase(s, is_readonly:=False)
 
             Call "create motif database...".info
 
