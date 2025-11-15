@@ -262,7 +262,7 @@ Public Class FormAnnotation
         Dim hits = proj.enzyme_hits.KeyItem(gene_id)
 
         If hits Is Nothing Then
-            blastLoader.ClearData
+            blastLoader.ClearData()
         Else
             blastLoader.LoadTable(
                 Sub(tbl)
@@ -406,14 +406,14 @@ Public Class FormAnnotation
         Await Task.Run(Sub()
                            Dim i As i32 = 1
 
-                           For Each Region In tss
-                               TFBSAnnotationCmd.SetStatusText($"search TFBS for {Region.Title} ... {++i}/{tss.Length}")
+                           For Each region As FastaSeq In tss
+                               TFBSAnnotationCmd.SetStatusText($"search TFBS for {region.Title} ... {++i}/{tss.Length}")
 
                                For Each family In pwm.Keys
                                    For Each model In pwm(family)
-                                       For Each Site In model.ScanSites(Region, 0.85)
-                                           Site.seeds = {family}
-                                           tfbsList.Add(Site)
+                                       For Each site As MotifMatch In model.ScanSites(region, 0.85)
+                                           site.seeds = {family}
+                                           tfbsList.Add(site)
                                        Next
                                    Next
                                Next
