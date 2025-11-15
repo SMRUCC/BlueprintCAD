@@ -28,8 +28,9 @@ Partial Class FormAnnotation
         components = New ComponentModel.Container()
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
         SplitContainer1 = New SplitContainer()
@@ -66,6 +67,8 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
+        AdvancedDataGridView3 = New AdvancedDataGridView()
+        AdvancedDataGridViewSearchToolBar3 = New AdvancedDataGridViewSearchToolBar()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -84,10 +87,12 @@ Partial Class FormAnnotation
         TabPage4.SuspendLayout()
         CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip3.SuspendLayout()
+        TabPage6.SuspendLayout()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip2.SuspendLayout()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
+        CType(AdvancedDataGridView3, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -363,6 +368,8 @@ Partial Class FormAnnotation
         ' 
         ' TabPage6
         ' 
+        TabPage6.Controls.Add(AdvancedDataGridView3)
+        TabPage6.Controls.Add(AdvancedDataGridViewSearchToolBar3)
         TabPage6.Location = New Point(4, 24)
         TabPage6.Name = "TabPage6"
         TabPage6.Padding = New Padding(3)
@@ -377,14 +384,14 @@ Partial Class FormAnnotation
         AdvancedDataGridView1.BackgroundColor = Color.WhiteSmoke
         AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         AdvancedDataGridView1.ContextMenuStrip = ContextMenuStrip2
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = SystemColors.Window
-        DataGridViewCellStyle3.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle3.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
-        AdvancedDataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = SystemColors.Window
+        DataGridViewCellStyle4.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle4.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.False
+        AdvancedDataGridView1.DefaultCellStyle = DataGridViewCellStyle4
         AdvancedDataGridView1.Dock = DockStyle.Fill
         AdvancedDataGridView1.FilterAndSortEnabled = True
         AdvancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
@@ -497,6 +504,46 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
+        ' AdvancedDataGridView3
+        ' 
+        AdvancedDataGridView3.AllowUserToAddRows = False
+        AdvancedDataGridView3.BackgroundColor = Color.WhiteSmoke
+        AdvancedDataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        AdvancedDataGridView3.ContextMenuStrip = ContextMenuStrip3
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Window
+        DataGridViewCellStyle3.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle3.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
+        AdvancedDataGridView3.DefaultCellStyle = DataGridViewCellStyle3
+        AdvancedDataGridView3.Dock = DockStyle.Fill
+        AdvancedDataGridView3.FilterAndSortEnabled = True
+        AdvancedDataGridView3.FilterStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView3.Location = New Point(3, 30)
+        AdvancedDataGridView3.MaxFilterButtonImageHeight = 23
+        AdvancedDataGridView3.Name = "AdvancedDataGridView3"
+        AdvancedDataGridView3.ReadOnly = True
+        AdvancedDataGridView3.RightToLeft = RightToLeft.No
+        AdvancedDataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        AdvancedDataGridView3.Size = New Size(763, 589)
+        AdvancedDataGridView3.SortStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView3.TabIndex = 4
+        ' 
+        ' AdvancedDataGridViewSearchToolBar3
+        ' 
+        AdvancedDataGridViewSearchToolBar3.AllowMerge = False
+        AdvancedDataGridViewSearchToolBar3.GripStyle = ToolStripGripStyle.Hidden
+        AdvancedDataGridViewSearchToolBar3.Location = New Point(3, 3)
+        AdvancedDataGridViewSearchToolBar3.MaximumSize = New Size(0, 27)
+        AdvancedDataGridViewSearchToolBar3.MinimumSize = New Size(0, 27)
+        AdvancedDataGridViewSearchToolBar3.Name = "AdvancedDataGridViewSearchToolBar3"
+        AdvancedDataGridViewSearchToolBar3.RenderMode = ToolStripRenderMode.Professional
+        AdvancedDataGridViewSearchToolBar3.Size = New Size(763, 27)
+        AdvancedDataGridViewSearchToolBar3.TabIndex = 5
+        AdvancedDataGridViewSearchToolBar3.Text = "AdvancedDataGridViewSearchToolBar3"
+        ' 
         ' FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -530,12 +577,15 @@ Partial Class FormAnnotation
         TabPage4.PerformLayout()
         CType(AdvancedDataGridView2, ComponentModel.ISupportInitialize).EndInit()
         ContextMenuStrip3.ResumeLayout(False)
+        TabPage6.ResumeLayout(False)
+        TabPage6.PerformLayout()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ContextMenuStrip2.ResumeLayout(False)
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
+        CType(AdvancedDataGridView3, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -576,4 +626,6 @@ Partial Class FormAnnotation
     Friend WithEvents TabPage6 As TabPage
     Friend WithEvents TFAnnotationCmd As AnnotationItem
     Friend WithEvents TFBSAnnotationCmd As AnnotationItem
+    Friend WithEvents AdvancedDataGridView3 As AdvancedDataGridView
+    Friend WithEvents AdvancedDataGridViewSearchToolBar3 As AdvancedDataGridViewSearchToolBar
 End Class

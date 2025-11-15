@@ -24,7 +24,7 @@ Public Class FormAnnotation
 
     Dim enzymeLoader As GridLoaderHandler
     Dim blastLoader As GridLoaderHandler
-    Dim tfbsLoad As GridLoaderHandler
+    Dim tfbsLoader As GridLoaderHandler
 
     Private Sub FormAnnotation_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         Workbench.SetFormActiveTitle(TabText)
@@ -41,6 +41,7 @@ Public Class FormAnnotation
         Call TaskProgress.RunAction(Sub(bar As ITaskProgress)
                                         Call Me.Invoke(Sub() enzymeLoader.LoadTable(AddressOf LoadEnzymeHits))
                                         Call Me.Invoke(Sub() operonLoader.LoadTable(AddressOf LoadOperonHits))
+                                        Call Me.Invoke(Sub() tfbsLoader.LoadTable(AddressOf LoadTFBSList))
                                     End Sub, info:="Load annotation table data into workspace viewer...")
 
         Return Me
@@ -76,10 +77,13 @@ Public Class FormAnnotation
         enzymeLoader = New GridLoaderHandler(DataGridView1, ToolStrip2)
         blastLoader = New GridLoaderHandler(AdvancedDataGridView1, AdvancedDataGridViewSearchToolBar1)
         operonLoader = New GridLoaderHandler(AdvancedDataGridView2, AdvancedDataGridViewSearchToolBar2)
+        tfbsLoader = New GridLoaderHandler(AdvancedDataGridView3, AdvancedDataGridViewSearchToolBar3)
 
         Call ApplyVsTheme(ToolStrip1,
                           ToolStrip2,
                           AdvancedDataGridViewSearchToolBar1,
+                          AdvancedDataGridViewSearchToolBar2,
+                          AdvancedDataGridViewSearchToolBar3,
                           ContextMenuStrip1)
     End Sub
 
@@ -412,7 +416,7 @@ Public Class FormAnnotation
 
         proj.tfbs_hits = tfbsList.ToArray
 
-        Call tfbsLoad.LoadTable(AddressOf LoadTFBSList)
+        Call tfbsLoader.LoadTable(AddressOf LoadTFBSList)
     End Sub
 
     Private Sub LoadTFBSList(tbl As DataTable)
