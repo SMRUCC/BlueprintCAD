@@ -83,6 +83,12 @@ Public Class FormAnnotation
         tfListLoader = New GridLoaderHandler(AdvancedDataGridView4, AdvancedDataGridViewSearchToolBar4)
         transportLoader = New GridLoaderHandler(AdvancedDataGridView5, AdvancedDataGridViewSearchToolBar5)
 
+        EnzymeAnnotationCmd.Text = "Enzyme Number Annotation"
+        TFAnnotationCmd.Text = "Transcript Factor Annotation"
+        OperonAnnotationCmd.Text = "Operon Cluster Annotation"
+        TFBSAnnotationCmd.Text = "TF Binding Site Annotation"
+        TransporterAnnotationCmd.Text = "Membrane Transporter Annotation"
+
         Call ApplyVsTheme(ToolStrip1,
                           ToolStrip2,
                           AdvancedDataGridViewSearchToolBar1,
