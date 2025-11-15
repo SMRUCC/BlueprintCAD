@@ -5,6 +5,7 @@ Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.ComponentModel.Annotation
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 Imports SMRUCC.genomics.Metagenomics
 Imports SMRUCC.genomics.SequenceModel.FASTA
@@ -45,8 +46,7 @@ Public Module ProjectIO
             Dim nucl_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/genes.txt")).ToArray
             Dim prot_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/proteins.txt")).ToArray
             Dim tss_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/tss_upstream.txt")).ToArray
-            Dim genes As GeneTable() = zip _
-                .ReadLines("/genes.jsonl") _
+            Dim genes As GeneTable() = zip.ReadLines("/genes.jsonl") _
                 .SafeQuery _
                 .Select(Function(line) line.LoadJSON(Of GeneTable)) _
                 .Where(Function(line) Not line Is Nothing) _
@@ -56,22 +56,24 @@ Public Module ProjectIO
             Dim operon_hits As HitCollection() = zip.LoadHitCollection("/localblast/operon_hits.jsonl").ToArray
             Dim tf_hits As HitCollection() = zip.LoadHitCollection("/localblast/tf_hits.jsonl").ToArray
 
-            Dim operons As AnnotatedOperon() = zip _
-                .ReadLines("/localblast/operons.jsonl") _
+            Dim operons As AnnotatedOperon() = zip.ReadLines("/localblast/operons.jsonl") _
                 .SafeQuery _
                 .Select(Function(line) line.LoadJSON(Of AnnotatedOperon)(throwEx:=False)) _
                 .Where(Function(line) Not line Is Nothing) _
                 .ToArray
-            Dim ec_numbers As Dictionary(Of String, ECNumberAnnotation) = zip _
-                .ReadLines("/localblast/ec_numbers.jsonl") _
+            Dim ec_numbers As Dictionary(Of String, ECNumberAnnotation) = zip.ReadLines("/localblast/ec_numbers.jsonl") _
                 .SafeQuery _
                 .Select(Function(line) line.LoadJSON(Of ECNumberAnnotation)(throwEx:=False)) _
                 .Where(Function(line) Not line Is Nothing) _
                 .ToDictionary(Function(e) e.gene_id)
-            Dim tfbs As MotifMatch() = zip _
-                .ReadLines("/tfbs.jsonl") _
+            Dim tfbs As MotifMatch() = zip.ReadLines("/tfbs.jsonl") _
                 .SafeQuery _
                 .Select(Function(line) line.LoadJSON(Of MotifMatch)(throwEx:=False)) _
+                .Where(Function(line) Not line Is Nothing) _
+                .ToArray
+            Dim tfset As BestHit() = zip.ReadLines("/localblast/transcript_factors.jsonl") _
+                .SafeQuery _
+                .Select(Function(line) line.LoadJSON(Of BestHit)(throwEx:=False)) _
                 .Where(Function(line) Not line Is Nothing) _
                 .ToArray
 
@@ -87,7 +89,8 @@ Public Module ProjectIO
                 .operon_hits = operon_hits,
                 .operons = operons,
                 .tfbs_hits = tfbs,
-                .tf_hits = tf_hits
+                .tf_hits = tf_hits,
+                .transcript_factors = tfset
             }
         End Using
     End Function
@@ -107,6 +110,7 @@ Public Module ProjectIO
             Call zip.WriteLines(proj.operon_hits.SafeQuery.Select(Function(q) q.GetJson), "/localblast/operon_hits.jsonl")
             Call zip.WriteLines(proj.tf_hits.SafeQuery.Select(Function(q) q.GetJson), "/localblast/tf_hits.jsonl")
             Call zip.WriteLines(proj.ec_numbers.SafeQuery.Select(Function(e) e.Value.GetJson), "/localblast/ec_numbers.jsonl")
+            Call zip.WriteLines(proj.transcript_factors.SafeQuery.Select(Function(e) e.GetJson), "/localblast/transcript_factors.jsonl")
             Call zip.WriteLines(proj.operons.SafeQuery.Select(Function(e) e.GetJson), "/localblast/operons.jsonl")
             Call zip.WriteLines(proj.tfbs_hits.SafeQuery.Select(Function(e) e.GetJson), "/tfbs.jsonl")
         End Using
