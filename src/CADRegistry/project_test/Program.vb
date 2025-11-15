@@ -4,7 +4,13 @@ Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlu
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 
 Module Program
+
     Sub Main(args As String())
+        DBTool.CreateMotifDb()
+
+    End Sub
+
+    Sub testCreateProject()
         Dim proj = ProjectCreator.FromGenBank(GBFF.File.Load("G:\BlueprintCAD\demo\Escherichia coli str. K-12 substr. MG1655.gbff"))
         Dim server As New RegistryUrl()
         Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
