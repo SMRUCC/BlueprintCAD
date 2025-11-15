@@ -429,7 +429,7 @@ Public Class FormAnnotation
 
     Private Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
         Dim motifDbfile As String = $"{App.HOME}/data/RegPrecise.dat"
-        Dim pwm As Dictionary(Of String, Probability()) = PWMDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+        Dim pwm As Dictionary(Of String, Probability()) = MotifDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Dim tss As FastaSeq() = proj.tss_upstream _
             .Select(Function(seq)
                         Return New FastaSeq({seq.Key}, seq.Value)
