@@ -1,6 +1,7 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
 Imports CADRegistry
 Imports Galaxy.Workbench
+Imports Galaxy.Workbench.DockDocument.Presets
 Imports Microsoft.VisualBasic.Drawing
 
 Public Module Workbench
@@ -18,6 +19,8 @@ Public Module Workbench
     End Property
 
     Public ReadOnly Property Settings As Settings
+
+    Public ReadOnly Property properties As New PropertyWindow
 
     Public ReadOnly Property ServerConnection As Boolean
 
@@ -52,5 +55,8 @@ Public Module Workbench
         ' App.SetSystemTemp("G:\BlueprintCAD\demo\tmp")
 
         _Settings = Settings.Load
+        properties.Show(appHost.DockPanel)
+
+        CommonRuntime.RegisterToolWindow(properties)
     End Sub
 End Module

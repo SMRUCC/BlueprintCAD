@@ -22,6 +22,7 @@ Public Class FormAnnotation
 
     Dim filepath As String
     Dim proj As GenBankProject
+    Dim metadata As GenbankProperties
 
     Dim enzymeLoader As GridLoaderHandler
     Dim blastLoader As GridLoaderHandler
@@ -53,6 +54,9 @@ Public Class FormAnnotation
                                         Call println("Load transcript factors annotation result...")
                                         Call Me.Invoke(Sub() tfListLoader.LoadTable(AddressOf LoadTFHits))
                                     End Sub, info:="Load annotation table data into workspace viewer...")
+
+        metadata = New GenbankProperties(proj)
+        Workbench.properties.SetObject(metadata)
 
         Return Me
     End Function
@@ -193,6 +197,10 @@ Public Class FormAnnotation
             )
         Next
 
+        If Not metadata Is Nothing Then
+            metadata.enzymes = proj.ec_numbers.Count
+        End If
+
         EnzymeAnnotationCmd.Running = False
 
         If Not proj.enzyme_hits.IsNullOrEmpty Then
@@ -223,6 +231,10 @@ Public Class FormAnnotation
                               operon.InsertedGeneIds.JoinBy(", "),
                               operon.MissingGeneIds.JoinBy(", "))
         Next
+
+        If Not metadata Is Nothing Then
+            metadata.operons = proj.operons.Length
+        End If
 
         OperonAnnotationCmd.Running = False
 
@@ -284,6 +296,10 @@ Public Class FormAnnotation
                               tf.score,
                               tf.evalue)
         Next
+
+        If Not metadata Is Nothing Then
+            metadata.transcript_factors = proj.transcript_factors.Length
+        End If
 
         TFAnnotationCmd.Running = False
 
@@ -526,6 +542,10 @@ Public Class FormAnnotation
                               site.pvalue,
                               site.seeds(0))
         Next
+
+        If Not metadata Is Nothing Then
+            metadata.tfbs = proj.tfbs_hits.Length
+        End If
 
         TFBSAnnotationCmd.Running = False
 
