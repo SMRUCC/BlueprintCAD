@@ -173,7 +173,7 @@ Public Class FormAnnotation
 
         If Not proj.enzyme_hits.IsNullOrEmpty Then
             Call EnzymeAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
-            Call EnzymeAnnotationCmd.SetStatusText($"{hits}/{proj.enzyme_hits.Length} enzyme number hits.")
+            Call EnzymeAnnotationCmd.SetStatusText($"Found {proj.enzyme_hits.Length} enzyme number hits.")
         End If
     End Sub
 
@@ -204,7 +204,7 @@ Public Class FormAnnotation
 
         If Not proj.enzyme_hits.IsNullOrEmpty Then
             Call OperonAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
-            Call OperonAnnotationCmd.SetStatusText($"{hits}/{proj.operons.Length} operons annotated.")
+            Call OperonAnnotationCmd.SetStatusText($"{proj.operons.Length} operons was annotated.")
         End If
     End Sub
 
@@ -354,7 +354,7 @@ Public Class FormAnnotation
             Return
         Else
             OperonAnnotationCmd.Running = True
-            OperonAnnotationCmd.SetStatusText("Running the annotation...")
+            OperonAnnotationCmd.SetStatusText("Search for conserved gene clusters...")
             OperonAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
         End If
 
@@ -446,7 +446,7 @@ Public Class FormAnnotation
 
         If Not proj.tfbs_hits.IsNullOrEmpty Then
             Call TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
-            Call TFBSAnnotationCmd.SetStatusText($"{proj.tfbs_hits.Length} motif site was annotated.")
+            Call TFBSAnnotationCmd.SetStatusText($"{proj.tfbs_hits.Length} motif site was found.")
         End If
     End Sub
 
