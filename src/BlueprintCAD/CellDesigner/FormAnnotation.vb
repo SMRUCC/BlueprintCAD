@@ -6,6 +6,7 @@ Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.Ranges.Unit
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
+Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
@@ -393,7 +394,11 @@ Public Class FormAnnotation
         End If
 
         Await Task.Run(Sub()
+                           Dim i As i32 = 1
+
                            For Each region As FastaSeq In tss
+                               Call TFBSAnnotationCmd.SetStatusText($"search TFBS for {region.Title} ... {++i}/{tss.Length}")
+
                                For Each family As String In pwm.Keys
                                    For Each model As Probability In pwm(family)
                                        For Each site As MotifMatch In model.ScanSites(region, 0.85)
@@ -419,7 +424,7 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("start", GetType(Integer))
         Call tbl.Columns.Add("ends", GetType(Integer))
         Call tbl.Columns.Add("identities", GetType(Double))
-        Call tbl.Columns.Add("score1", GetType(double ))
+        Call tbl.Columns.Add("score1", GetType(Double))
         Call tbl.Columns.Add("score2", GetType(Double))
         Call tbl.Columns.Add("pvalue", GetType(Double))
         Call tbl.Columns.Add("source", GetType(String))

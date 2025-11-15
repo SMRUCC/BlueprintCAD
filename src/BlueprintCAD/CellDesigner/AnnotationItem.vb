@@ -29,7 +29,7 @@ Public Class AnnotationItem
     End Sub
 
     Public Sub SetStatusText(txt As String)
-        LinkLabel1.Text = txt
+        Call Me.Invoke(Sub() LinkLabel1.Text = txt)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
