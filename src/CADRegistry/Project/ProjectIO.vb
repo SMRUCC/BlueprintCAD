@@ -3,6 +3,7 @@ Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.ApplicationServices.Zip
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 Imports SMRUCC.genomics.Metagenomics
@@ -53,6 +54,12 @@ Public Module ProjectIO
                 .Select(Function(line) line.LoadJSON(Of ECNumberAnnotation)(throwEx:=False)) _
                 .Where(Function(line) Not line Is Nothing) _
                 .ToDictionary(Function(e) e.gene_id)
+            Dim tfbs As MotifMatch() = zip _
+                .ReadLines("/tfbs.jsonl") _
+                .SafeQuery _
+                .Select(Function(line) line.LoadJSON(Of MotifMatch)(throwEx:=False)) _
+                .Where(Function(line) Not line Is Nothing) _
+                .ToArray
 
             Return New GenBankProject With {
                 .enzyme_hits = enzyme_hits,
@@ -64,7 +71,8 @@ Public Module ProjectIO
                 .tss_upstream = tss_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
                 .ec_numbers = ec_numbers,
                 .operon_hits = operon_hits,
-                .operons = operons
+                .operons = operons,
+                .tfbs_hits = tfbs
             }
         End Using
     End Function
@@ -84,6 +92,7 @@ Public Module ProjectIO
             Call zip.WriteLines(proj.operon_hits.SafeQuery.Select(Function(q) q.GetJson), "/localblast/operon_hits.jsonl")
             Call zip.WriteLines(proj.ec_numbers.SafeQuery.Select(Function(e) e.Value.GetJson), "/localblast/ec_numbers.jsonl")
             Call zip.WriteLines(proj.operons.SafeQuery.Select(Function(e) e.GetJson), "/localblast/operons.jsonl")
+            Call zip.WriteLines(proj.tfbs_hits.SafeQuery.Select(Function(e) e.GetJson), "/tfbs.jsonl")
         End Using
     End Sub
 End Module
