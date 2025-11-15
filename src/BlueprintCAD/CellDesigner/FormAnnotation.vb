@@ -8,6 +8,8 @@ Imports Microsoft.VisualBasic.ComponentModel.Ranges.Unit
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
+Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
+Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.Motif
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
@@ -417,6 +419,17 @@ Public Class FormAnnotation
     End Sub
 
     Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+
+    End Sub
+
+    Private Sub TFBSAnnotationCmd_Load(sender As Object, e As EventArgs) Handles TFBSAnnotationCmd.Load
+
+    End Sub
+
+    Private Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
+        Dim motifDbfile As String = $"{App.HOME}/data/RegPrecise.dat"
+        Dim pwm As Dictionary(Of String, Probability()) = PWMDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+
 
     End Sub
 End Class
