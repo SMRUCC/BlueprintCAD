@@ -26,6 +26,7 @@ Partial Class AnnotationItem
         PictureBox1 = New PictureBox()
         LinkLabel1 = New LinkLabel()
         Button1 = New Button()
+        Label1 = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -42,7 +43,7 @@ Partial Class AnnotationItem
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
-        LinkLabel1.Location = New Point(61, 5)
+        LinkLabel1.Location = New Point(61, 22)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(89, 15)
         LinkLabel1.TabIndex = 1
@@ -59,11 +60,21 @@ Partial Class AnnotationItem
         Button1.Text = "Run"
         Button1.UseVisualStyleBackColor = True
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(61, 5)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(41, 15)
+        Label1.TabIndex = 3
+        Label1.Text = "Label1"
+        ' 
         ' AnnotationItem
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.WhiteSmoke
+        Controls.Add(Label1)
         Controls.Add(Button1)
         Controls.Add(LinkLabel1)
         Controls.Add(PictureBox1)
@@ -77,5 +88,6 @@ Partial Class AnnotationItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
 
 End Class

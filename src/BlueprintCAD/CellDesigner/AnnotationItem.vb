@@ -11,6 +11,16 @@
         End Set
     End Property
 
+    Public Overrides Property Text As String
+        Get
+            Return Label1.Text
+        End Get
+        Set(value As String)
+            Label1.Text = value
+            MyBase.Text = value
+        End Set
+    End Property
+
     Public Sub SetStatusIcon(icon As Image)
         PictureBox1.BackgroundImage = icon
     End Sub
