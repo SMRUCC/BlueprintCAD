@@ -17,6 +17,27 @@ Public Module ProjectIO
         End Using
     End Function
 
+    <Extension>
+    Private Iterator Function LoadHitCollection(zip As ZipStream, file As String) As IEnumerable(Of HitCollection)
+        Dim lines As String() = zip.ReadLines(file)
+
+        If lines Is Nothing Then
+            Return
+        Else
+            Dim hit As HitCollection
+
+            For Each line As String In lines
+                If Not line.StringEmpty(, True) Then
+                    hit = line.LoadJSON(Of HitCollection)(throwEx:=False)
+
+                    If Not hit Is Nothing Then
+                        Yield hit
+                    End If
+                End If
+            Next
+        End If
+    End Function
+
     Public Function Load(s As Stream) As GenBankProject
         Using zip As New ZipStream(s, is_readonly:=True)
             Dim source_json As String = zip.ReadAllText("/source.json")
@@ -30,18 +51,11 @@ Public Module ProjectIO
                 .Select(Function(line) line.LoadJSON(Of GeneTable)) _
                 .Where(Function(line) Not line Is Nothing) _
                 .ToArray
-            Dim enzyme_hits As HitCollection() = zip _
-                .ReadLines("/localblast/enzyme_hits.jsonl") _
-                .SafeQuery _
-                .Select(Function(line) line.LoadJSON(Of HitCollection)(throwEx:=False)) _
-                .Where(Function(line) Not line Is Nothing) _
-                .ToArray
-            Dim operon_hits As HitCollection() = zip _
-                .ReadLines("/localblast/operon_hits.jsonl") _
-                .SafeQuery _
-                .Select(Function(line) line.LoadJSON(Of HitCollection)(throwEx:=False)) _
-                .Where(Function(line) Not line Is Nothing) _
-                .ToArray
+
+            Dim enzyme_hits As HitCollection() = zip.LoadHitCollection("/localblast/enzyme_hits.jsonl").ToArray
+            Dim operon_hits As HitCollection() = zip.LoadHitCollection("/localblast/operon_hits.jsonl").ToArray
+            Dim tf_hits As HitCollection() = zip.LoadHitCollection("/localblast/tf_hits.jsonl").ToArray
+
             Dim operons As AnnotatedOperon() = zip _
                 .ReadLines("/localblast/operons.jsonl") _
                 .SafeQuery _
@@ -72,7 +86,8 @@ Public Module ProjectIO
                 .ec_numbers = ec_numbers,
                 .operon_hits = operon_hits,
                 .operons = operons,
-                .tfbs_hits = tfbs
+                .tfbs_hits = tfbs,
+                .tf_hits = tf_hits
             }
         End Using
     End Function
@@ -90,6 +105,7 @@ Public Module ProjectIO
             Call zip.WriteLines(proj.gene_table.SafeQuery.Select(Function(a) a.GetJson), "/genes.jsonl")
             Call zip.WriteLines(proj.enzyme_hits.SafeQuery.Select(Function(q) q.GetJson), "/localblast/enzyme_hits.jsonl")
             Call zip.WriteLines(proj.operon_hits.SafeQuery.Select(Function(q) q.GetJson), "/localblast/operon_hits.jsonl")
+            Call zip.WriteLines(proj.tf_hits.SafeQuery.Select(Function(q) q.GetJson), "/localblast/tf_hits.jsonl")
             Call zip.WriteLines(proj.ec_numbers.SafeQuery.Select(Function(e) e.Value.GetJson), "/localblast/ec_numbers.jsonl")
             Call zip.WriteLines(proj.operons.SafeQuery.Select(Function(e) e.GetJson), "/localblast/operons.jsonl")
             Call zip.WriteLines(proj.tfbs_hits.SafeQuery.Select(Function(e) e.GetJson), "/tfbs.jsonl")
