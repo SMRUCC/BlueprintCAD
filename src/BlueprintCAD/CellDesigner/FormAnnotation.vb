@@ -42,9 +42,16 @@ Public Class FormAnnotation
 
         Call ProgressSpinner.DoLoading(Sub() Me.proj = ProjectIO.Load(filepath))
         Call TaskProgress.RunAction(Sub(bar As ITaskProgress)
+                                        Dim println As Action(Of String) = bar.Echo
+
+                                        Call println("Load enzyme annotation result...")
                                         Call Me.Invoke(Sub() enzymeLoader.LoadTable(AddressOf LoadEnzymeHits))
+                                        Call println("Load conserved gene clusters annotation result...")
                                         Call Me.Invoke(Sub() operonLoader.LoadTable(AddressOf LoadOperonHits))
+                                        Call println("Load TF binding sites annotation result...")
                                         Call Me.Invoke(Sub() tfbsLoader.LoadTable(AddressOf LoadTFBSList))
+                                        Call println("Load transcript factors annotation result...")
+                                        Call Me.Invoke(Sub() tfListLoader.LoadTable(AddressOf LoadTFHits))
                                     End Sub, info:="Load annotation table data into workspace viewer...")
 
         Return Me
