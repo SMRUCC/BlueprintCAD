@@ -25,6 +25,8 @@ Public Class FormAnnotation
     Dim enzymeLoader As GridLoaderHandler
     Dim blastLoader As GridLoaderHandler
     Dim tfbsLoader As GridLoaderHandler
+    Dim tfListLoader As GridLoaderHandler
+    Dim transportLoader As GridLoaderHandler
 
     Private Sub FormAnnotation_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
         Workbench.SetFormActiveTitle(TabText)
@@ -78,12 +80,16 @@ Public Class FormAnnotation
         blastLoader = New GridLoaderHandler(AdvancedDataGridView1, AdvancedDataGridViewSearchToolBar1)
         operonLoader = New GridLoaderHandler(AdvancedDataGridView2, AdvancedDataGridViewSearchToolBar2)
         tfbsLoader = New GridLoaderHandler(AdvancedDataGridView3, AdvancedDataGridViewSearchToolBar3)
+        tfListLoader = New GridLoaderHandler(AdvancedDataGridView4, AdvancedDataGridViewSearchToolBar4)
+        transportLoader = New GridLoaderHandler(AdvancedDataGridView5, AdvancedDataGridViewSearchToolBar5)
 
         Call ApplyVsTheme(ToolStrip1,
                           ToolStrip2,
                           AdvancedDataGridViewSearchToolBar1,
                           AdvancedDataGridViewSearchToolBar2,
                           AdvancedDataGridViewSearchToolBar3,
+                          AdvancedDataGridViewSearchToolBar4,
+                          AdvancedDataGridViewSearchToolBar5,
                           ContextMenuStrip1)
     End Sub
 
@@ -256,7 +262,7 @@ Public Class FormAnnotation
         Dim hits = proj.enzyme_hits.KeyItem(gene_id)
 
         If hits Is Nothing Then
-            blastLoader.ClearData()
+            blastLoader.ClearData
         Else
             blastLoader.LoadTable(
                 Sub(tbl)
