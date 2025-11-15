@@ -1,4 +1,6 @@
-﻿Public Class AnnotationItem
+﻿Imports System.ComponentModel
+
+Public Class AnnotationItem
 
     Public Event Run()
 
@@ -11,6 +13,7 @@
         End Set
     End Property
 
+    <Browsable(True)>
     Public Overrides Property Text As String
         Get
             Return Label1.Text
