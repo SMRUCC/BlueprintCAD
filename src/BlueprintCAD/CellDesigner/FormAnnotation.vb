@@ -386,9 +386,9 @@ Public Class FormAnnotation
     End Sub
 
     Private Async Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
-        Dim motifDbfile As String = $"{App.HOME}/data/RegPrecise.dat"
-        Dim pwm As Dictionary(Of String, Probability()) = MotifDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
-        Dim tss As FastaSeq() = proj.tss_upstream _
+        Dim motifDbfile = $"{HOME}/data/RegPrecise.dat"
+        Dim pwm = MotifDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+        Dim tss = proj.tss_upstream _
             .Select(Function(seq)
                         Return New FastaSeq({seq.Key}, seq.Value)
                     End Function) _
@@ -406,14 +406,14 @@ Public Class FormAnnotation
         Await Task.Run(Sub()
                            Dim i As i32 = 1
 
-                           For Each region As FastaSeq In tss
-                               Call TFBSAnnotationCmd.SetStatusText($"search TFBS for {region.Title} ... {++i}/{tss.Length}")
+                           For Each Region In tss
+                               TFBSAnnotationCmd.SetStatusText($"search TFBS for {Region.Title} ... {++i}/{tss.Length}")
 
-                               For Each family As String In pwm.Keys
-                                   For Each model As Probability In pwm(family)
-                                       For Each site As MotifMatch In model.ScanSites(region, 0.85)
-                                           site.seeds = {family}
-                                           tfbsList.Add(site)
+                               For Each family In pwm.Keys
+                                   For Each model In pwm(family)
+                                       For Each Site In model.ScanSites(Region, 0.85)
+                                           Site.seeds = {family}
+                                           tfbsList.Add(Site)
                                        Next
                                    Next
                                Next
@@ -422,7 +422,7 @@ Public Class FormAnnotation
 
         proj.tfbs_hits = tfbsList.ToArray
 
-        Call tfbsLoader.LoadTable(AddressOf LoadTFBSList)
+        tfbsLoader.LoadTable(AddressOf LoadTFBSList)
     End Sub
 
     Private Sub LoadTFBSList(tbl As DataTable)
