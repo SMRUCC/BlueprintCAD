@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Runtime.CompilerServices
 
 Public Class AnnotationItem
 
@@ -30,10 +31,12 @@ Public Class AnnotationItem
         End Set
     End Property
 
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Sub SetStatusIcon(icon As Image)
         PictureBox1.BackgroundImage = icon
     End Sub
 
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Sub SetStatusText(txt As String)
         Call Me.Invoke(Sub() LinkLabel1.Text = txt)
     End Sub
