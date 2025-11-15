@@ -26,9 +26,9 @@ Partial Class FormAnnotation
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAnnotation))
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
@@ -36,6 +36,8 @@ Partial Class FormAnnotation
         FlowLayoutPanel1 = New FlowLayoutPanel()
         EnzymeAnnotationCmd = New AnnotationItem()
         OperonAnnotationCmd = New AnnotationItem()
+        TFAnnotationCmd = New AnnotationItem()
+        TFBSAnnotationCmd = New AnnotationItem()
         SplitContainer2 = New SplitContainer()
         TabControl2 = New TabControl()
         TabPage3 = New TabPage()
@@ -51,6 +53,7 @@ Partial Class FormAnnotation
         ViewOperonToolStripMenuItem = New ToolStripMenuItem()
         AdvancedDataGridViewSearchToolBar2 = New AdvancedDataGridViewSearchToolBar()
         TabPage5 = New TabPage()
+        TabPage6 = New TabPage()
         AdvancedDataGridView1 = New AdvancedDataGridView()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewGeneInRegistryToolStripMenuItem = New ToolStripMenuItem()
@@ -95,7 +98,7 @@ Partial Class FormAnnotation
         TabControl1.Location = New Point(0, 25)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1354, 718)
+        TabControl1.Size = New Size(1428, 882)
         TabControl1.TabIndex = 1
         ' 
         ' TabPage1
@@ -104,7 +107,7 @@ Partial Class FormAnnotation
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1346, 690)
+        TabPage1.Size = New Size(1420, 854)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Annotation"
         TabPage1.UseVisualStyleBackColor = True
@@ -124,7 +127,7 @@ Partial Class FormAnnotation
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(SplitContainer2)
-        SplitContainer1.Size = New Size(1340, 684)
+        SplitContainer1.Size = New Size(1414, 848)
         SplitContainer1.SplitterDistance = 194
         SplitContainer1.TabIndex = 2
         ' 
@@ -134,11 +137,13 @@ Partial Class FormAnnotation
         FlowLayoutPanel1.BackColor = Color.White
         FlowLayoutPanel1.Controls.Add(EnzymeAnnotationCmd)
         FlowLayoutPanel1.Controls.Add(OperonAnnotationCmd)
+        FlowLayoutPanel1.Controls.Add(TFAnnotationCmd)
+        FlowLayoutPanel1.Controls.Add(TFBSAnnotationCmd)
         FlowLayoutPanel1.Dock = DockStyle.Fill
         FlowLayoutPanel1.FlowDirection = FlowDirection.TopDown
         FlowLayoutPanel1.Location = New Point(0, 0)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(1340, 194)
+        FlowLayoutPanel1.Size = New Size(1414, 194)
         FlowLayoutPanel1.TabIndex = 1
         ' 
         ' EnzymeAnnotationCmd
@@ -147,17 +152,35 @@ Partial Class FormAnnotation
         EnzymeAnnotationCmd.Location = New Point(3, 3)
         EnzymeAnnotationCmd.Name = "EnzymeAnnotationCmd"
         EnzymeAnnotationCmd.Running = False
-        EnzymeAnnotationCmd.Size = New Size(552, 71)
+        EnzymeAnnotationCmd.Size = New Size(552, 41)
         EnzymeAnnotationCmd.TabIndex = 0
         ' 
         ' OperonAnnotationCmd
         ' 
         OperonAnnotationCmd.BackColor = Color.WhiteSmoke
-        OperonAnnotationCmd.Location = New Point(3, 80)
+        OperonAnnotationCmd.Location = New Point(3, 50)
         OperonAnnotationCmd.Name = "OperonAnnotationCmd"
         OperonAnnotationCmd.Running = False
-        OperonAnnotationCmd.Size = New Size(552, 71)
+        OperonAnnotationCmd.Size = New Size(552, 41)
         OperonAnnotationCmd.TabIndex = 1
+        ' 
+        ' TFAnnotationCmd
+        ' 
+        TFAnnotationCmd.BackColor = Color.WhiteSmoke
+        TFAnnotationCmd.Location = New Point(3, 97)
+        TFAnnotationCmd.Name = "TFAnnotationCmd"
+        TFAnnotationCmd.Running = False
+        TFAnnotationCmd.Size = New Size(552, 41)
+        TFAnnotationCmd.TabIndex = 2
+        ' 
+        ' TFBSAnnotationCmd
+        ' 
+        TFBSAnnotationCmd.BackColor = Color.WhiteSmoke
+        TFBSAnnotationCmd.Location = New Point(3, 144)
+        TFBSAnnotationCmd.Name = "TFBSAnnotationCmd"
+        TFBSAnnotationCmd.Running = False
+        TFBSAnnotationCmd.Size = New Size(552, 41)
+        TFBSAnnotationCmd.TabIndex = 3
         ' 
         ' SplitContainer2
         ' 
@@ -173,8 +196,8 @@ Partial Class FormAnnotation
         ' 
         SplitContainer2.Panel2.Controls.Add(AdvancedDataGridView1)
         SplitContainer2.Panel2.Controls.Add(AdvancedDataGridViewSearchToolBar1)
-        SplitContainer2.Size = New Size(1340, 486)
-        SplitContainer2.SplitterDistance = 737
+        SplitContainer2.Size = New Size(1414, 650)
+        SplitContainer2.SplitterDistance = 777
         SplitContainer2.TabIndex = 1
         ' 
         ' TabControl2
@@ -182,11 +205,12 @@ Partial Class FormAnnotation
         TabControl2.Controls.Add(TabPage3)
         TabControl2.Controls.Add(TabPage4)
         TabControl2.Controls.Add(TabPage5)
+        TabControl2.Controls.Add(TabPage6)
         TabControl2.Dock = DockStyle.Fill
         TabControl2.Location = New Point(0, 0)
         TabControl2.Name = "TabControl2"
         TabControl2.SelectedIndex = 0
-        TabControl2.Size = New Size(737, 486)
+        TabControl2.Size = New Size(777, 650)
         TabControl2.TabIndex = 0
         ' 
         ' TabPage3
@@ -196,7 +220,7 @@ Partial Class FormAnnotation
         TabPage3.Location = New Point(4, 24)
         TabPage3.Name = "TabPage3"
         TabPage3.Padding = New Padding(3)
-        TabPage3.Size = New Size(729, 458)
+        TabPage3.Size = New Size(769, 622)
         TabPage3.TabIndex = 0
         TabPage3.Text = "Enzyme"
         TabPage3.UseVisualStyleBackColor = True
@@ -207,14 +231,14 @@ Partial Class FormAnnotation
         DataGridView1.BackgroundColor = Color.WhiteSmoke
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.ContextMenuStrip = ContextMenuStrip1
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = SystemColors.Window
-        DataGridViewCellStyle1.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
-        DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = SystemColors.Window
+        DataGridViewCellStyle3.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle3.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.FilterAndSortEnabled = True
         DataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
@@ -224,7 +248,7 @@ Partial Class FormAnnotation
         DataGridView1.ReadOnly = True
         DataGridView1.RightToLeft = RightToLeft.No
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(723, 425)
+        DataGridView1.Size = New Size(763, 589)
         DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         DataGridView1.TabIndex = 0
         ' 
@@ -260,7 +284,7 @@ Partial Class FormAnnotation
         ToolStrip2.MinimumSize = New Size(0, 27)
         ToolStrip2.Name = "ToolStrip2"
         ToolStrip2.RenderMode = ToolStripRenderMode.Professional
-        ToolStrip2.Size = New Size(723, 27)
+        ToolStrip2.Size = New Size(763, 27)
         ToolStrip2.TabIndex = 1
         ToolStrip2.Text = "ToolStrip2"
         ' 
@@ -271,7 +295,7 @@ Partial Class FormAnnotation
         TabPage4.Location = New Point(4, 24)
         TabPage4.Name = "TabPage4"
         TabPage4.Padding = New Padding(3)
-        TabPage4.Size = New Size(729, 458)
+        TabPage4.Size = New Size(769, 622)
         TabPage4.TabIndex = 1
         TabPage4.Text = "Transcript Units"
         TabPage4.UseVisualStyleBackColor = True
@@ -282,14 +306,14 @@ Partial Class FormAnnotation
         AdvancedDataGridView2.BackgroundColor = Color.WhiteSmoke
         AdvancedDataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         AdvancedDataGridView2.ContextMenuStrip = ContextMenuStrip3
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = SystemColors.Window
-        DataGridViewCellStyle2.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        AdvancedDataGridView2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Window
+        DataGridViewCellStyle1.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
+        AdvancedDataGridView2.DefaultCellStyle = DataGridViewCellStyle1
         AdvancedDataGridView2.Dock = DockStyle.Fill
         AdvancedDataGridView2.FilterAndSortEnabled = True
         AdvancedDataGridView2.FilterStringChangedInvokeBeforeDatasourceUpdate = True
@@ -299,7 +323,7 @@ Partial Class FormAnnotation
         AdvancedDataGridView2.ReadOnly = True
         AdvancedDataGridView2.RightToLeft = RightToLeft.No
         AdvancedDataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        AdvancedDataGridView2.Size = New Size(723, 425)
+        AdvancedDataGridView2.Size = New Size(763, 589)
         AdvancedDataGridView2.SortStringChangedInvokeBeforeDatasourceUpdate = True
         AdvancedDataGridView2.TabIndex = 2
         ' 
@@ -324,7 +348,7 @@ Partial Class FormAnnotation
         AdvancedDataGridViewSearchToolBar2.MinimumSize = New Size(0, 27)
         AdvancedDataGridViewSearchToolBar2.Name = "AdvancedDataGridViewSearchToolBar2"
         AdvancedDataGridViewSearchToolBar2.RenderMode = ToolStripRenderMode.Professional
-        AdvancedDataGridViewSearchToolBar2.Size = New Size(723, 27)
+        AdvancedDataGridViewSearchToolBar2.Size = New Size(763, 27)
         AdvancedDataGridViewSearchToolBar2.TabIndex = 3
         AdvancedDataGridViewSearchToolBar2.Text = "AdvancedDataGridViewSearchToolBar2"
         ' 
@@ -332,10 +356,20 @@ Partial Class FormAnnotation
         ' 
         TabPage5.Location = New Point(4, 24)
         TabPage5.Name = "TabPage5"
-        TabPage5.Size = New Size(729, 458)
+        TabPage5.Size = New Size(769, 622)
         TabPage5.TabIndex = 2
         TabPage5.Text = "Transcript Factor"
         TabPage5.UseVisualStyleBackColor = True
+        ' 
+        ' TabPage6
+        ' 
+        TabPage6.Location = New Point(4, 24)
+        TabPage6.Name = "TabPage6"
+        TabPage6.Padding = New Padding(3)
+        TabPage6.Size = New Size(769, 622)
+        TabPage6.TabIndex = 3
+        TabPage6.Text = "TFBS Annotation"
+        TabPage6.UseVisualStyleBackColor = True
         ' 
         ' AdvancedDataGridView1
         ' 
@@ -343,14 +377,14 @@ Partial Class FormAnnotation
         AdvancedDataGridView1.BackgroundColor = Color.WhiteSmoke
         AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         AdvancedDataGridView1.ContextMenuStrip = ContextMenuStrip2
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = SystemColors.Window
-        DataGridViewCellStyle3.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle3.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
-        AdvancedDataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = SystemColors.Window
+        DataGridViewCellStyle4.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle4.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = DataGridViewTriState.False
+        AdvancedDataGridView1.DefaultCellStyle = DataGridViewCellStyle4
         AdvancedDataGridView1.Dock = DockStyle.Fill
         AdvancedDataGridView1.FilterAndSortEnabled = True
         AdvancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
@@ -360,7 +394,7 @@ Partial Class FormAnnotation
         AdvancedDataGridView1.ReadOnly = True
         AdvancedDataGridView1.RightToLeft = RightToLeft.No
         AdvancedDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        AdvancedDataGridView1.Size = New Size(599, 459)
+        AdvancedDataGridView1.Size = New Size(633, 623)
         AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         AdvancedDataGridView1.TabIndex = 2
         ' 
@@ -385,7 +419,7 @@ Partial Class FormAnnotation
         AdvancedDataGridViewSearchToolBar1.MinimumSize = New Size(0, 27)
         AdvancedDataGridViewSearchToolBar1.Name = "AdvancedDataGridViewSearchToolBar1"
         AdvancedDataGridViewSearchToolBar1.RenderMode = ToolStripRenderMode.Professional
-        AdvancedDataGridViewSearchToolBar1.Size = New Size(599, 27)
+        AdvancedDataGridViewSearchToolBar1.Size = New Size(633, 27)
         AdvancedDataGridViewSearchToolBar1.TabIndex = 3
         AdvancedDataGridViewSearchToolBar1.Text = "AdvancedDataGridViewSearchToolBar1"
         ' 
@@ -399,7 +433,7 @@ Partial Class FormAnnotation
         TabPage2.Location = New Point(4, 24)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(1346, 690)
+        TabPage2.Size = New Size(1420, 854)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Settings"
         TabPage2.UseVisualStyleBackColor = True
@@ -450,7 +484,7 @@ Partial Class FormAnnotation
         ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripButton1})
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Size = New Size(1354, 25)
+        ToolStrip1.Size = New Size(1428, 25)
         ToolStrip1.TabIndex = 2
         ToolStrip1.Text = "ToolStrip1"
         ' 
@@ -467,7 +501,7 @@ Partial Class FormAnnotation
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1354, 743)
+        ClientSize = New Size(1428, 907)
         Controls.Add(TabControl1)
         Controls.Add(ToolStrip1)
         DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
@@ -539,4 +573,7 @@ Partial Class FormAnnotation
     Friend WithEvents ViewOperonToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents TFAnnotationCmd As AnnotationItem
+    Friend WithEvents TFBSAnnotationCmd As AnnotationItem
 End Class
