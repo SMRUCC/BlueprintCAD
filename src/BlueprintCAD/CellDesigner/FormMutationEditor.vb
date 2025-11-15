@@ -139,6 +139,14 @@ Public Class FormMutationEditor
         CheckBox1.Checked = target.knockout
         ViewMetabolicNetwork(target)
     End Sub
+
+    Private Sub RemoveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemoveToolStripMenuItem.Click
+        If ListBox2.SelectedIndex < 0 Then
+            Return
+        End If
+
+        ListBox2.Items.RemoveAt(ListBox2.SelectedIndex)
+    End Sub
 End Class
 
 Public Class MutationEdit
