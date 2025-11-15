@@ -374,6 +374,28 @@ Public Class FormAnnotation
         Call operonLoader.LoadTable(AddressOf LoadOperonHits)
     End Sub
 
+    Private Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
+        Dim motifDbfile As String = $"{App.HOME}/data/RegPrecise.dat"
+        Dim pwm As Dictionary(Of String, Probability()) = MotifDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+        Dim tss As FastaSeq() = proj.tss_upstream _
+            .Select(Function(seq)
+                        Return New FastaSeq({seq.Key}, seq.Value)
+                    End Function) _
+            .ToArray
+        Dim tfbsList As New List(Of MotifMatch)
+
+        For Each region As FastaSeq In tss
+            For Each family As String In pwm.Keys
+                For Each model As Probability In pwm(family)
+                    Call tfbsList.AddRange(model.ScanSites(region, 0.85))
+                Next
+            Next
+        Next
+
+        proj.tfbs_hits = tfbsList.ToArray
+
+    End Sub
+
     Private Sub ViewEnzymeInRegistryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewEnzymeInRegistryToolStripMenuItem.Click
         If DataGridView1.SelectedRows.Count = 0 Then
             Return
@@ -419,23 +441,6 @@ Public Class FormAnnotation
         Workbench.Settings.Save()
     End Sub
 
-    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
-
-    End Sub
-
-    Private Sub TFBSAnnotationCmd_Load(sender As Object, e As EventArgs) Handles TFBSAnnotationCmd.Load
-
-    End Sub
-
-    Private Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
-        Dim motifDbfile As String = $"{App.HOME}/data/RegPrecise.dat"
-        Dim pwm As Dictionary(Of String, Probability()) = MotifDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
-        Dim tss As FastaSeq() = proj.tss_upstream _
-            .Select(Function(seq)
-                        Return New FastaSeq({seq.Key}, seq.Value)
-                    End Function) _
-            .ToArray
 
 
-    End Sub
 End Class

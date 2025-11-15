@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Runtime.CompilerServices
+Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 Imports SMRUCC.genomics.Metagenomics
@@ -27,6 +28,7 @@ Public Class GenBankProject
 
     Public Property operons As AnnotatedOperon()
     Public Property ec_numbers As Dictionary(Of String, ECNumberAnnotation)
+    Public Property tfbs_hits As MotifMatch()
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Sub DumpProteinFasta(s As Stream)
