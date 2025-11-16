@@ -118,10 +118,12 @@ Public Class FormAnnotation
                           AdvancedDataGridViewSearchToolBar5,
                           ContextMenuStrip1)
 
-        pwm = Await Task.Run(Function()
-                                 Return MotifDatabase.LoadMotifs($"{App.HOME}/data/RegPrecise.dat".Open(FileMode.Open, doClear:=False, [readOnly]:=True))
-                             End Function)
+        pwm = Await Task.Run(Function() MotifDatabase.LoadMotifs(OpenMotifDatabaseFile))
     End Sub
+
+    Private Function OpenMotifDatabaseFile() As Stream
+        Return $"{App.HOME}/data/RegPrecise.dat".Open(FileMode.Open, doClear:=False, [readOnly]:=True)
+    End Function
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         If Not Workbench.ServerConnection Then
@@ -508,7 +510,7 @@ Public Class FormAnnotation
                         Return New FastaSeq({seq.Key}, seq.Value)
                     End Function) _
             .ToArray
-        Dim tfbsList As New Dictionary(Of String, MotifMatch())
+        Dim tfbsList As Dictionary(Of String, MotifMatch()) = Nothing
 
         If TFBSAnnotationCmd.Running Then
             Return
@@ -519,24 +521,11 @@ Public Class FormAnnotation
         End If
 
         Await Task.Run(Sub()
-                           Dim i As i32 = 1
-
-                           For Each region As FastaSeq In tss
-                               Dim list As New List(Of MotifMatch)
-
-                               TFBSAnnotationCmd.SetStatusText($"search TFBS for {region.Title} ... {++i}/{tss.Length}")
-
-                               For Each family As String In pwm.Keys
-                                   For Each model As Probability In pwm(family)
-                                       For Each site As MotifMatch In model.ScanSites(region, 0.85)
-                                           site.seeds = {family, model.name}
-                                           list.Add(site)
-                                       Next
-                                   Next
-                               Next
-
-                               Call tfbsList.Add(region.Title, list.ToArray)
-                           Next
+                           tfbsList = MotifDatabase _
+                               .OpenReadOnly(OpenMotifDatabaseFile) _
+                               .ScanSites(tss,
+                                          n_threads:=App.CPUCoreNumbers,
+                                          progress:=AddressOf TFBSAnnotationCmd.SetStatusText)
                        End Sub)
 
         proj.tfbs_hits = tfbsList

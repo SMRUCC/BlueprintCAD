@@ -95,7 +95,7 @@ Module Program
         Dim localblast As New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
         Dim enzyme_db As String = $"{settings.blastdb}/ec_numbers.fasta"
         Dim workdir As String = args("--workdir")
-        Dim pwm = MotifDatabase.LoadMotifs($"{settings.blastdb}/RegPrecise.dat".Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+        Dim pwm = MotifDatabase.OpenReadOnly($"{settings.blastdb}/RegPrecise.dat".Open(FileMode.Open, doClear:=False, [readOnly]:=True))
 
         If Not workdir.StringEmpty(, True) Then
             Call App.SetSystemTemp(workdir)
@@ -106,36 +106,8 @@ Module Program
                         Return New FastaSeq({seq.Key}, seq.Value)
                     End Function) _
             .ToArray
-        Dim tfbsList As New Dictionary(Of String, MotifMatch())
-        Dim i As i32 = 1
-        Dim parallelOptions As New ParallelOptions With {
-            .MaxDegreeOfParallelism = blast_threads
-        }
-        Dim allFamily As String() = pwm.Keys.ToArray
 
-        For Each region As FastaSeq In tss
-            Dim list As New List(Of MotifMatch)
-
-            Call VBDebugger.EchoLine($"search TFBS for {region.Title} ... {++i}/{tss.Length}")
-            Call System.Threading.Tasks.Parallel.For(
-                fromInclusive:=0,
-                toExclusive:=allFamily.Length,
-                parallelOptions,
-                body:=Sub(j)
-                          Dim family As String = allFamily(j)
-
-                          For Each model As Probability In pwm(family)
-                              For Each site As MotifMatch In model.ScanSites(region, 0.85)
-                                  site.seeds = {family, model.name}
-                                  list.Add(site)
-                              Next
-                          Next
-                      End Sub)
-
-            Call tfbsList.Add(region.Title, list.ToArray)
-        Next
-
-        proj.tfbs_hits = tfbsList
+        proj.tfbs_hits = pwm.ScanSites(tss, blast_threads)
 
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"enzyme_number_{App.PID}")
         Dim tempOutfile As String = tempfile.ChangeSuffix(".txt")

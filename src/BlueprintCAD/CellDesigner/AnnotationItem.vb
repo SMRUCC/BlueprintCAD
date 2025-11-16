@@ -36,6 +36,10 @@ Public Class AnnotationItem
         PictureBox1.BackgroundImage = icon
     End Sub
 
+    ''' <summary>
+    ''' thread safe invoke of set the label text
+    ''' </summary>
+    ''' <param name="txt"></param>
     <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Public Sub SetStatusText(txt As String)
         Call Me.Invoke(Sub() LinkLabel1.Text = txt)
