@@ -163,6 +163,7 @@ Partial Class FormAnnotation
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         FlowLayoutPanel1.Size = New Size(1414, 194)
         FlowLayoutPanel1.TabIndex = 1
+        FlowLayoutPanel1.WrapContents = False
         ' 
         ' EnzymeAnnotationCmd
         ' 
@@ -203,7 +204,7 @@ Partial Class FormAnnotation
         ' TransporterAnnotationCmd
         ' 
         TransporterAnnotationCmd.BackColor = Color.WhiteSmoke
-        TransporterAnnotationCmd.Location = New Point(561, 3)
+        TransporterAnnotationCmd.Location = New Point(3, 191)
         TransporterAnnotationCmd.Name = "TransporterAnnotationCmd"
         TransporterAnnotationCmd.Running = False
         TransporterAnnotationCmd.Size = New Size(552, 41)

@@ -20,7 +20,7 @@ Public Module ProjectIO
 
     <Extension>
     Private Iterator Function LoadHitCollection(zip As ZipStream, file As String) As IEnumerable(Of HitCollection)
-        Dim lines As String() = zip.ReadLines(file)
+        Dim lines As IEnumerable(Of String) = zip.ReadLines(file)
 
         If lines Is Nothing Then
             Return
