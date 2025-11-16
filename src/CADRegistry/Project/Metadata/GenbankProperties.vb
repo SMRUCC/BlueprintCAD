@@ -13,17 +13,19 @@
     End Sub
 
     Sub New(proj As GenBankProject)
-        If Not proj.taxonomy Is Nothing Then
-            organism_name = proj.taxonomy.scientificName
-        End If
+        If proj IsNot Nothing Then
+            If Not proj.taxonomy Is Nothing Then
+                organism_name = proj.taxonomy.scientificName
+            End If
 
-        size = StringFormats.Lanudry(proj.nt.Length)
-        genes = proj.gene_table.TryCount
-        proteins = proj.proteins.TryCount
-        operons = proj.operons.TryCount
-        transcript_factors = proj.transcript_factors.TryCount
-        enzymes = proj.ec_numbers.TryCount
-        tfbs = proj.tfbs_hits.TryCount
+            size = StringFormats.Lanudry(proj.nt.Length)
+            genes = proj.gene_table.TryCount
+            proteins = proj.proteins.TryCount
+            operons = proj.operons.TryCount
+            transcript_factors = proj.transcript_factors.TryCount
+            enzymes = proj.ec_numbers.TryCount
+            tfbs = proj.tfbs_hits.TryCount
+        End If
     End Sub
 
 End Class
