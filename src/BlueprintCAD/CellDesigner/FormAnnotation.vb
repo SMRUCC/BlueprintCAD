@@ -529,7 +529,7 @@ Public Class FormAnnotation
                                For Each family As String In pwm.Keys
                                    For Each model As Probability In pwm(family)
                                        For Each site As MotifMatch In model.ScanSites(region, 0.85)
-                                           site.seeds = {family}
+                                           site.seeds = {family, model.name}
                                            list.Add(site)
                                        Next
                                    Next
