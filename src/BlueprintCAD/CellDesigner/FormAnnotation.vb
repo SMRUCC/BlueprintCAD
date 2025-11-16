@@ -556,7 +556,7 @@ Public Class FormAnnotation
             Dim topFamily = familyList.OrderByDescending(Function(a) a.Count).FirstOrDefault
 
             Call tbl.Rows.Add(site.Key,
-                              site.Value.Length,
+                              familyList.Select(Function(a) a.Count).Sum,
                               familyList.Length,
                               If(topFamily Is Nothing, "-", topFamily.Key))
         Next
