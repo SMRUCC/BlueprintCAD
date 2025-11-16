@@ -564,7 +564,7 @@ Public Class FormAnnotation
 
         If Not proj.tfbs_hits.IsNullOrEmpty Then
             Call TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
-            Call TFBSAnnotationCmd.SetStatusText($"{metadata.tfbs} motif site was found.")
+            Call TFBSAnnotationCmd.SetStatusText($"{CInt(metadata?.tfbs)} motif site was found.")
         End If
     End Sub
 
