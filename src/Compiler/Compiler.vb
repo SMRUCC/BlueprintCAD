@@ -65,27 +65,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Dim pars = law.params.Keys.ToArray
             Dim args As KineticsParameter() = law.params _
                 .Select(Function(a)
-                            If a.Value.IsNumeric Then
-                                Return New KineticsParameter With {
-                                    .name = a.Key,
-                                    .value = Val(a.Value),
-                                    .isModifier = False
-                                }
-                            ElseIf a.Value.StartsWith("ENZ_") Then
-                                Return New KineticsParameter With {
-                                    .name = a.Key,
-                                    .value = 0,
-                                    .isModifier = False,
-                                    .target = modelProteinId
-                                }
-                            Else
-                                Return New KineticsParameter With {
-                                    .name = a.Key,
-                                    .value = 0,
-                                    .isModifier = False,
-                                    .target = a.Value
-                                }
-                            End If
+                            Return CreateParameter(a, modelProteinId)
                         End Function) _
                 .ToArray
 
@@ -101,6 +81,30 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 .parameter = args
             }
         Next
+    End Function
+
+    Private Function CreateParameter(a As KeyValuePair(Of String, String), modelProteinId As String) As KineticsParameter
+        If a.Value.IsNumeric Then
+            Return New KineticsParameter With {
+                .name = a.Key,
+                .value = Val(a.Value),
+                .isModifier = False
+            }
+        ElseIf a.Value.StartsWith("ENZ_") Then
+            Return New KineticsParameter With {
+                .name = a.Key,
+                .value = 0,
+                .isModifier = False,
+                .target = modelProteinId
+            }
+        Else
+            Return New KineticsParameter With {
+                .name = a.Key,
+                .value = 0,
+                .isModifier = False,
+                .target = a.Value
+            }
+        End If
     End Function
 
     Private Function CreateMetabolismNetwork(genes As Dictionary(Of String, gene)) As MetabolismStructure

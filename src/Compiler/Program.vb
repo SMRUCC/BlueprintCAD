@@ -1,14 +1,18 @@
 Imports System.IO
 Imports CADRegistry
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports Microsoft.VisualBasic.ApplicationServices.Terminal.ProgressBar.Tqdm
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
+Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
+Imports SMRUCC.genomics.SequenceModel.FASTA
 
 Module Program
 
@@ -91,10 +95,38 @@ Module Program
         Dim localblast As New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
         Dim enzyme_db As String = $"{settings.blastdb}/ec_numbers.fasta"
         Dim workdir As String = args("--workdir")
+        Dim pwm = MotifDatabase.LoadMotifs($"{settings.blastdb}/RegPrecise.dat".Open(FileMode.Open, doClear:=False, [readOnly]:=True))
 
         If Not workdir.StringEmpty(, True) Then
             Call App.SetSystemTemp(workdir)
         End If
+
+        Dim tss = proj.tss_upstream _
+            .Select(Function(seq)
+                        Return New FastaSeq({seq.Key}, seq.Value)
+                    End Function) _
+            .ToArray
+        Dim tfbsList As New Dictionary(Of String, MotifMatch())
+        Dim i As i32 = 1
+
+        For Each region As FastaSeq In tss
+            Dim list As New List(Of MotifMatch)
+
+            Call VBDebugger.EchoLine($"search TFBS for {region.Title} ... {++i}/{tss.Length}")
+
+            For Each family As String In pwm.Keys
+                For Each model As Probability In pwm(family)
+                    For Each site As MotifMatch In model.ScanSites(region, 0.85)
+                        site.seeds = {family}
+                        list.Add(site)
+                    Next
+                Next
+            Next
+
+            Call tfbsList.Add(region.Title, list.ToArray)
+        Next
+
+        proj.tfbs_hits = tfbsList
 
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"enzyme_number_{App.PID}")
         Dim tempOutfile As String = tempfile.ChangeSuffix(".txt")
