@@ -306,6 +306,7 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("hit", GetType(String))
         Call tbl.Columns.Add("supports", GetType(Integer))
         Call tbl.Columns.Add("identities", GetType(Double))
+        Call tbl.Columns.Add("positive", GetType(Double))
         Call tbl.Columns.Add("score", GetType(Double))
         Call tbl.Columns.Add("e-value", GetType(Double))
 
@@ -319,6 +320,7 @@ Public Class FormAnnotation
                               tf.description,
                               tf.hit_length,
                               tf.identities,
+                              tf.positive,
                               tf.score,
                               tf.evalue)
         Next
@@ -698,5 +700,43 @@ Public Class FormAnnotation
 
     Private Sub TFAnnotationCmd_Load(sender As Object, e As EventArgs) Handles TFAnnotationCmd.Load
 
+    End Sub
+
+    Private Sub AdvancedDataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView4.CellContentClick
+        If AdvancedDataGridView4.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row As DataGridViewRow = AdvancedDataGridView4.SelectedRows(0)
+        Dim gene_id = CStr(row.Cells(0).Value)
+        Dim hits As HitCollection = proj.tf_hits.KeyItem(gene_id)
+
+        viewDetails = Nothing
+
+        If hits Is Nothing Then
+            blastLoader.ClearData()
+        Else
+            blastLoader.LoadTable(
+                Sub(tbl)
+                    tbl.Columns.Add("TF family", GetType(String))
+                    tbl.Columns.Add("source", GetType(String))
+                    tbl.Columns.Add("identities", GetType(Double))
+                    tbl.Columns.Add("positive", GetType(Double))
+                    tbl.Columns.Add("gaps", GetType(Double))
+                    tbl.Columns.Add("score", GetType(Double))
+                    tbl.Columns.Add("e-value", GetType(Double))
+
+                    For Each hit As Hit In hits.AsEnumerable
+                        Dim annotation = hit.hitName.Split("|"c)
+
+                        tbl.Rows.Add(annotation(0), annotation(1),
+                                          hit.identities,
+                                          hit.positive,
+                                          hit.gaps,
+                                          hit.score,
+                                          hit.evalue)
+                    Next
+                End Sub)
+        End If
     End Sub
 End Class
