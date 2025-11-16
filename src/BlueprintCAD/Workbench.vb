@@ -55,8 +55,10 @@ Public Module Workbench
         ' App.SetSystemTemp("G:\BlueprintCAD\demo\tmp")
 
         _Settings = Settings.Load
-        properties.Show(appHost.DockPanel)
+    End Sub
 
+    Public Sub InitializeWindows()
+        properties.Show(AppHost.DockPanel)
         CommonRuntime.RegisterToolWindow(properties)
     End Sub
 End Module

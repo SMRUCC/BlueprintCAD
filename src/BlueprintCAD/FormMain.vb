@@ -85,6 +85,7 @@ Public Class FormMain : Implements AppHost
         Call initializeVSPanel()
         Call MyApplication.SetRibbonEvents()
         Call Timer1.Start()
+        Call Workbench.InitializeWindows()
     End Sub
 
     Public Function GetDesktopLocation() As Point Implements AppHost.GetDesktopLocation

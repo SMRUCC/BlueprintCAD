@@ -173,7 +173,11 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("score", GetType(Double))
         Call tbl.Columns.Add("sources", GetType(String))
 
-        For Each enzyme As HitCollection In proj.enzyme_hits
+        If proj Is Nothing Then
+            Return
+        End If
+
+        For Each enzyme As HitCollection In proj.enzyme_hits.SafeQuery
             Dim supports As Integer = 0
             Dim annotation As String = "-"
             Dim score As Double = 0
@@ -220,6 +224,10 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("known_genes", GetType(String))
         Call tbl.Columns.Add("inserted", GetType(String))
         Call tbl.Columns.Add("deleted", GetType(String))
+
+        If proj Is Nothing Then
+            Return
+        End If
 
         For Each operon As AnnotatedOperon In proj.operons
             Call tbl.Rows.Add(operon.OperonID,
@@ -286,6 +294,10 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("identities", GetType(Double))
         Call tbl.Columns.Add("score", GetType(Double))
         Call tbl.Columns.Add("e-value", GetType(Double))
+
+        If proj Is Nothing Then
+            Return
+        End If
 
         For Each tf As BestHit In proj.transcript_factors
             Call tbl.Rows.Add(tf.QueryName,
@@ -529,6 +541,10 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("score2", GetType(Double))
         Call tbl.Columns.Add("pvalue", GetType(Double))
         Call tbl.Columns.Add("source", GetType(String))
+
+        If proj Is Nothing Then
+            Return
+        End If
 
         For Each site As MotifMatch In proj.tfbs_hits
             Call tbl.Rows.Add(site.title,
