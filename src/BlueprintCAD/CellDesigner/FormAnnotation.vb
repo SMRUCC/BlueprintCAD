@@ -160,7 +160,7 @@ Public Class FormAnnotation
             End Using
         End If
         If Not filepath.StringEmpty Then
-            Call proj.SaveZip(filepath)
+            Call ProgressSpinner.DoLoading(Sub() proj.SaveZip(filepath))
         End If
     End Sub
 
