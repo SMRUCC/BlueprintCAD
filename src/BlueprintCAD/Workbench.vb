@@ -32,6 +32,7 @@ Public Module Workbench
 
     Sub New()
         Call SkiaDriver.Register()
+        Call App.JoinVariable("tqdm", "false")
     End Sub
 
     Dim title As String = "Sophia VirtualCell Workshop"

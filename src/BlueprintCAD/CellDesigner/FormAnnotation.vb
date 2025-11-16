@@ -695,4 +695,8 @@ Public Class FormAnnotation
             Call viewDetails(row)
         End If
     End Sub
+
+    Private Sub TFAnnotationCmd_Load(sender As Object, e As EventArgs) Handles TFAnnotationCmd.Load
+
+    End Sub
 End Class
