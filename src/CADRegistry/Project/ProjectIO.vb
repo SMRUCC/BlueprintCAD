@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Runtime.CompilerServices
 Imports Microsoft.VisualBasic.ApplicationServices.Zip
+Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
@@ -123,7 +124,7 @@ Public Module ProjectIO
             Call zip.WriteLines(proj.ec_numbers.SafeQuery.Select(Function(e) e.Value.GetJson), "/localblast/ec_numbers.jsonl")
             Call zip.WriteLines(proj.transcript_factors.SafeQuery.Select(Function(e) e.GetJson), "/localblast/transcript_factors.jsonl")
             Call zip.WriteLines(proj.operons.SafeQuery.Select(Function(e) e.GetJson), "/localblast/operons.jsonl")
-            Call zip.WriteLines(proj.tfbs_hits.SafeQuery.Select(Function(e) e.GetJson), "/tfbs.jsonl")
+            Call zip.WriteLines(proj.tfbs_hits.SafeQuery.Values.IteratesALL.Select(Function(e) e.GetJson), "/tfbs.jsonl")
         End Using
     End Sub
 End Module
