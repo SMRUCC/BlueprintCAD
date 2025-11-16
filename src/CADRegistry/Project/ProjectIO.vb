@@ -88,7 +88,12 @@ Public Module ProjectIO
                 .ec_numbers = ec_numbers,
                 .operon_hits = operon_hits,
                 .operons = operons,
-                .tfbs_hits = tfbs,
+                .tfbs_hits = tfbs _
+                    .GroupBy(Function(a) a.title) _
+                    .ToDictionary(Function(a) a.Key,
+                                  Function(a)
+                                      Return a.ToArray
+                                  End Function),
                 .tf_hits = tf_hits,
                 .transcript_factors = tfset
             }
