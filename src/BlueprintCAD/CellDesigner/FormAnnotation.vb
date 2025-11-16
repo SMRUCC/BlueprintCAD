@@ -556,15 +556,17 @@ Public Class FormAnnotation
                               If(topFamily Is Nothing, "-", topFamily.Key))
         Next
 
+        Dim nsites As Integer = proj.tfbs_hits.Values.Sum(Function(a) a.Length)
+
         If Not metadata Is Nothing Then
-            metadata.tfbs = proj.tfbs_hits.Values.Sum(Function(a) a.Length)
+            metadata.tfbs = nsites
         End If
 
         TFBSAnnotationCmd.Running = False
 
         If Not proj.tfbs_hits.IsNullOrEmpty Then
             Call TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
-            Call TFBSAnnotationCmd.SetStatusText($"{CInt(metadata?.tfbs)} motif site was found.")
+            Call TFBSAnnotationCmd.SetStatusText($"{nsites} motif site was found.")
         End If
     End Sub
 
