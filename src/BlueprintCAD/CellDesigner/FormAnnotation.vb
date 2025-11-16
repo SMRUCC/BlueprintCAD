@@ -698,10 +698,6 @@ Public Class FormAnnotation
         End If
     End Sub
 
-    Private Sub TFAnnotationCmd_Load(sender As Object, e As EventArgs) Handles TFAnnotationCmd.Load
-
-    End Sub
-
     Private Sub AdvancedDataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView4.CellContentClick
         If AdvancedDataGridView4.SelectedRows.Count = 0 Then
             Return

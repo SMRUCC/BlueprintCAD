@@ -77,23 +77,29 @@ Public Module ProjectIO
                 .Where(Function(line) Not line Is Nothing) _
                 .ToArray
 
+            Dim geneSeqIndex = nucl_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData)
+            Dim protSeqIndex = prot_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData)
+            Dim tssSiteIndex = tss_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData)
+            Dim tfbs_groups = tfbs _
+                .Where(Function(a) Not a.title Is Nothing) _
+                .GroupBy(Function(a) a.title) _
+                .ToDictionary(Function(a) a.Key,
+                                Function(a)
+                                    Return a.ToArray
+                                End Function)
+
             Return New GenBankProject With {
                 .enzyme_hits = enzyme_hits,
                 .nt = source_nt,
                 .taxonomy = source_json.LoadJSON(Of Taxonomy)(throwEx:=False),
                 .gene_table = genes,
-                .genes = nucl_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
-                .proteins = prot_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
-                .tss_upstream = tss_fasta.ToDictionary(Function(a) a.Title, Function(a) a.SequenceData),
+                .genes = geneSeqIndex,
+                .proteins = protSeqIndex,
+                .tss_upstream = tssSiteIndex,
                 .ec_numbers = ec_numbers,
                 .operon_hits = operon_hits,
                 .operons = operons,
-                .tfbs_hits = tfbs _
-                    .GroupBy(Function(a) a.title) _
-                    .ToDictionary(Function(a) a.Key,
-                                  Function(a)
-                                      Return a.ToArray
-                                  End Function),
+                .tfbs_hits = tfbs_groups,
                 .tf_hits = tf_hits,
                 .transcript_factors = tfset
             }
