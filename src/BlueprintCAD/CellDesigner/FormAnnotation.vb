@@ -149,7 +149,7 @@ Public Class FormAnnotation
 
     Private Sub FlowLayoutPanel1_SizeChanged(sender As Object, e As EventArgs) Handles FlowLayoutPanel1.SizeChanged
         For Each item As Control In FlowLayoutPanel1.Controls
-            item.Width = FlowLayoutPanel1.Width - 10
+            item.Width = FlowLayoutPanel1.Width - 15
         Next
     End Sub
 
@@ -624,10 +624,6 @@ Public Class FormAnnotation
         Call Tools.OpenUrlWithDefaultBrowser($"{Workbench.Settings.registry_server}/molecule/{registry_id}")
     End Sub
 
-    Private Sub AdvancedDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView1.CellContentClick
-
-    End Sub
-
     Private Sub ViewOperonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewOperonToolStripMenuItem.Click
         If AdvancedDataGridView2.SelectedRows.Count = 0 Then
             Return
@@ -646,11 +642,11 @@ Public Class FormAnnotation
     End Sub
 
     Private Sub AdvancedDataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView3.CellContentClick
-        If DataGridView1.SelectedRows.Count = 0 Then
+        If AdvancedDataGridView3.SelectedRows.Count = 0 Then
             Return
         End If
 
-        Dim row = DataGridView1.SelectedRows(0)
+        Dim row = AdvancedDataGridView3.SelectedRows(0)
         Dim gene_id = CStr(row.Cells(0).Value)
         Dim hits As MotifMatch() = proj.tfbs_hits.TryGetValue(gene_id)
 
