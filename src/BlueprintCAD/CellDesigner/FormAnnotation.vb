@@ -332,8 +332,8 @@ Public Class FormAnnotation
         TFAnnotationCmd.Running = False
 
         If Not proj.transcript_factors.IsNullOrEmpty Then
-            Call OperonAnnotationCmd.SetStatusIcon(SuccessIcon)
-            Call OperonAnnotationCmd.SetStatusText($"{proj.transcript_factors.Length} transcript factors was annotated.")
+            Call TFAnnotationCmd.SetStatusIcon(SuccessIcon)
+            Call TFAnnotationCmd.SetStatusText($"{proj.transcript_factors.Length} transcript factors was annotated.")
         End If
     End Sub
 
