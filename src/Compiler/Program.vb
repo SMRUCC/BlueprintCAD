@@ -108,20 +108,29 @@ Module Program
             .ToArray
         Dim tfbsList As New Dictionary(Of String, MotifMatch())
         Dim i As i32 = 1
+        Dim parallelOptions As New ParallelOptions With {
+            .MaxDegreeOfParallelism = blast_threads
+        }
+        Dim allFamily As String() = pwm.Keys.ToArray
 
         For Each region As FastaSeq In tss
             Dim list As New List(Of MotifMatch)
 
             Call VBDebugger.EchoLine($"search TFBS for {region.Title} ... {++i}/{tss.Length}")
+            Call System.Threading.Tasks.Parallel.For(
+                fromInclusive:=0,
+                toExclusive:=allFamily.Length,
+                parallelOptions,
+                body:=Sub(j)
+                          Dim family As String = allFamily(j)
 
-            For Each family As String In pwm.Keys
-                For Each model As Probability In pwm(family)
-                    For Each site As MotifMatch In model.ScanSites(region, 0.85)
-                        site.seeds = {family, model.name}
-                        list.Add(site)
-                    Next
-                Next
-            Next
+                          For Each model As Probability In pwm(family)
+                              For Each site As MotifMatch In model.ScanSites(region, 0.85)
+                                  site.seeds = {family, model.name}
+                                  list.Add(site)
+                              Next
+                          Next
+                      End Sub)
 
             Call tfbsList.Add(region.Title, list.ToArray)
         Next
