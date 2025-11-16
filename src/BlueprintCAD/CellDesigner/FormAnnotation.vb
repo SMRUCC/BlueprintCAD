@@ -220,7 +220,7 @@ Public Class FormAnnotation
         EnzymeAnnotationCmd.Running = False
 
         If Not proj.enzyme_hits.IsNullOrEmpty Then
-            Call EnzymeAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call EnzymeAnnotationCmd.SetStatusIcon(SuccessIcon)
             Call EnzymeAnnotationCmd.SetStatusText($"Found {proj.enzyme_hits.Length} enzyme number hits.")
         End If
     End Sub
@@ -259,7 +259,7 @@ Public Class FormAnnotation
         OperonAnnotationCmd.Running = False
 
         If Not proj.enzyme_hits.IsNullOrEmpty Then
-            Call OperonAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call OperonAnnotationCmd.SetStatusIcon(SuccessIcon)
             Call OperonAnnotationCmd.SetStatusText($"{proj.operons.Length} operons was annotated.")
         End If
     End Sub
@@ -273,7 +273,7 @@ Public Class FormAnnotation
         Else
             TFAnnotationCmd.Running = True
             TFAnnotationCmd.SetStatusText("Running the annotation...")
-            TFAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+            TFAnnotationCmd.SetStatusIcon(ProcessIcon)
         End If
 
         Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
@@ -328,7 +328,7 @@ Public Class FormAnnotation
         TFAnnotationCmd.Running = False
 
         If Not proj.transcript_factors.IsNullOrEmpty Then
-            Call OperonAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call OperonAnnotationCmd.SetStatusIcon(SuccessIcon)
             Call OperonAnnotationCmd.SetStatusText($"{proj.transcript_factors.Length} transcript factors was annotated.")
         End If
     End Sub
@@ -342,7 +342,7 @@ Public Class FormAnnotation
         Else
             EnzymeAnnotationCmd.Running = True
             EnzymeAnnotationCmd.SetStatusText("Running the annotation...")
-            EnzymeAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+            EnzymeAnnotationCmd.SetStatusIcon(ProcessIcon)
         End If
 
         Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
@@ -482,7 +482,7 @@ Public Class FormAnnotation
         Else
             OperonAnnotationCmd.Running = True
             OperonAnnotationCmd.SetStatusText("Search for conserved gene clusters...")
-            OperonAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+            OperonAnnotationCmd.SetStatusIcon(ProcessIcon)
         End If
 
         Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
@@ -515,7 +515,7 @@ Public Class FormAnnotation
         Else
             TFBSAnnotationCmd.Running = True
             TFBSAnnotationCmd.SetStatusText("Running the annotation...")
-            TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), Image))
+            TFBSAnnotationCmd.SetStatusIcon(ProcessIcon)
         End If
 
         Await Task.Run(Sub()
@@ -580,10 +580,13 @@ Public Class FormAnnotation
         TFBSAnnotationCmd.Running = False
 
         If Not proj.tfbs_hits.IsNullOrEmpty Then
-            Call TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call TFBSAnnotationCmd.SetStatusIcon(SuccessIcon)
             Call TFBSAnnotationCmd.SetStatusText($"{nsites} motif site was found.")
         End If
     End Sub
+
+    Private ReadOnly SuccessIcon As System.Drawing.Image = DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), System.Drawing.Image)
+    Private ReadOnly ProcessIcon As System.Drawing.Image = DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-workflow-96"), System.Drawing.Image)
 
     Private Sub LoadGeneTFBSList(tbl As DataTable, hits As MotifMatch())
         Call tbl.Columns.Add("title", GetType(String))
