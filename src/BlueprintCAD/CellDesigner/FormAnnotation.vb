@@ -540,7 +540,7 @@ Public Class FormAnnotation
         Call tbl.Columns.Add("gene_id", GetType(String))
         Call tbl.Columns.Add("tfbs number", GetType(Integer))
         Call tbl.Columns.Add("family number", GetType(Integer))
-        Call tbl.Columns.Add("top family", GetType(Integer))
+        Call tbl.Columns.Add("top family", GetType(String))
 
         If proj Is Nothing Then
             Return
