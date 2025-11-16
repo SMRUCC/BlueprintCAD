@@ -101,6 +101,8 @@ Public Class FormAnnotation
         TFBSAnnotationCmd.Text = "TF Binding Site Annotation"
         TransporterAnnotationCmd.Text = "Membrane Transporter Annotation"
 
+        PictureBox1.Hide()
+
         Call ApplyVsTheme(ToolStrip1,
                           ToolStrip2,
                           AdvancedDataGridViewSearchToolBar1,
@@ -496,7 +498,7 @@ Public Class FormAnnotation
                         Return New FastaSeq({seq.Key}, seq.Value)
                     End Function) _
             .ToArray
-        Dim tfbsList As New List(Of MotifMatch)
+        Dim tfbsList As New Dictionary(Of String, MotifMatch())
 
         If TFBSAnnotationCmd.Running Then
             Return
@@ -510,20 +512,24 @@ Public Class FormAnnotation
                            Dim i As i32 = 1
 
                            For Each region As FastaSeq In tss
+                               Dim list As New List(Of MotifMatch)
+
                                TFBSAnnotationCmd.SetStatusText($"search TFBS for {region.Title} ... {++i}/{tss.Length}")
 
-                               For Each family In pwm.Keys
-                                   For Each model In pwm(family)
+                               For Each family As String In pwm.Keys
+                                   For Each model As Probability In pwm(family)
                                        For Each site As MotifMatch In model.ScanSites(region, 0.85)
                                            site.seeds = {family}
-                                           tfbsList.Add(site)
+                                           list.Add(site)
                                        Next
                                    Next
                                Next
+
+                               Call tfbsList.Add(region.Title, list.ToArray)
                            Next
                        End Sub)
 
-        proj.tfbs_hits = tfbsList.ToArray
+        proj.tfbs_hits = tfbsList
 
         tfbsLoader.LoadTable(AddressOf LoadTFBSList)
     End Sub
@@ -531,6 +537,38 @@ Public Class FormAnnotation
     Private Sub LoadTFBSList(tbl As DataTable)
         Dim hits As Integer = 0
 
+        Call tbl.Columns.Add("gene_id", GetType(String))
+        Call tbl.Columns.Add("tfbs number", GetType(Integer))
+        Call tbl.Columns.Add("family number", GetType(Integer))
+        Call tbl.Columns.Add("top family", GetType(Integer))
+
+        If proj Is Nothing Then
+            Return
+        End If
+
+        For Each site As KeyValuePair(Of String, MotifMatch()) In proj.tfbs_hits
+            Dim familyList = site.Value.GroupBy(Function(a) a.seeds(0)).ToArray
+            Dim topFamily = familyList.OrderByDescending(Function(a) a.Count).FirstOrDefault
+
+            Call tbl.Rows.Add(site.Key,
+                              site.Value.Length,
+                              familyList.Length,
+                              If(topFamily Is Nothing, "-", topFamily.Key))
+        Next
+
+        If Not metadata Is Nothing Then
+            metadata.tfbs = proj.tfbs_hits.Values.Sum(Function(a) a.Length)
+        End If
+
+        TFBSAnnotationCmd.Running = False
+
+        If Not proj.tfbs_hits.IsNullOrEmpty Then
+            Call TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
+            Call TFBSAnnotationCmd.SetStatusText($"{metadata.tfbs} motif site was found.")
+        End If
+    End Sub
+
+    Private Sub LoadGeneTFBSList(tbl As DataTable, hits As MotifMatch())
         Call tbl.Columns.Add("title", GetType(String))
         Call tbl.Columns.Add("segment", GetType(String))
         Call tbl.Columns.Add("motif", GetType(String))
@@ -546,7 +584,7 @@ Public Class FormAnnotation
             Return
         End If
 
-        For Each site As MotifMatch In proj.tfbs_hits
+        For Each site As MotifMatch In hits
             Call tbl.Rows.Add(site.title,
                               site.segment,
                               site.motif,
@@ -558,17 +596,6 @@ Public Class FormAnnotation
                               site.pvalue,
                               site.seeds(0))
         Next
-
-        If Not metadata Is Nothing Then
-            metadata.tfbs = proj.tfbs_hits.Length
-        End If
-
-        TFBSAnnotationCmd.Running = False
-
-        If Not proj.tfbs_hits.IsNullOrEmpty Then
-            Call TFBSAnnotationCmd.SetStatusIcon(DirectCast(My.Resources.Icons.ResourceManager.GetObject("icons8-done-144"), Image))
-            Call TFBSAnnotationCmd.SetStatusText($"{proj.tfbs_hits.Length} motif site was found.")
-        End If
     End Sub
 
     Private Sub ViewEnzymeInRegistryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewEnzymeInRegistryToolStripMenuItem.Click
@@ -614,5 +641,24 @@ Public Class FormAnnotation
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
         Workbench.Settings.registry_server = Strings.Trim(TextBox2.Text)
         Workbench.Settings.Save()
+    End Sub
+
+    Private Sub AdvancedDataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView3.CellContentClick
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim gene_id = CStr(row.Cells(0).Value)
+        Dim hits As MotifMatch() = proj.tfbs_hits.TryGetValue(gene_id)
+
+        If hits Is Nothing Then
+            blastLoader.ClearData()
+        Else
+            blastLoader.LoadTable(
+                Sub(tbl)
+                    Call LoadGeneTFBSList(tbl, hits)
+                End Sub)
+        End If
     End Sub
 End Class

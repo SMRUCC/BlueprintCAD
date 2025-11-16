@@ -31,7 +31,12 @@ Public Class GenBankProject
 
     Public Property operons As AnnotatedOperon()
     Public Property ec_numbers As Dictionary(Of String, ECNumberAnnotation)
-    Public Property tfbs_hits As MotifMatch()
+
+    ''' <summary>
+    ''' TFBS data is grouped and index by gene id
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property tfbs_hits As Dictionary(Of String, MotifMatch())
     Public Property transcript_factors As BestHit()
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>

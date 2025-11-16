@@ -69,6 +69,7 @@ Partial Class FormAnnotation
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewGeneInRegistryToolStripMenuItem = New ToolStripMenuItem()
         AdvancedDataGridViewSearchToolBar1 = New AdvancedDataGridViewSearchToolBar()
+        PictureBox1 = New PictureBox()
         TabPage2 = New TabPage()
         TextBox2 = New TextBox()
         Label2 = New Label()
@@ -103,6 +104,7 @@ Partial Class FormAnnotation
         CType(AdvancedDataGridView5, ComponentModel.ISupportInitialize).BeginInit()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip2.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
         SuspendLayout()
@@ -224,6 +226,7 @@ Partial Class FormAnnotation
         ' 
         SplitContainer2.Panel2.Controls.Add(AdvancedDataGridView1)
         SplitContainer2.Panel2.Controls.Add(AdvancedDataGridViewSearchToolBar1)
+        SplitContainer2.Panel2.Controls.Add(PictureBox1)
         SplitContainer2.Size = New Size(1414, 650)
         SplitContainer2.SplitterDistance = 777
         SplitContainer2.TabIndex = 1
@@ -559,7 +562,7 @@ Partial Class FormAnnotation
         AdvancedDataGridView1.ReadOnly = True
         AdvancedDataGridView1.RightToLeft = RightToLeft.No
         AdvancedDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        AdvancedDataGridView1.Size = New Size(633, 623)
+        AdvancedDataGridView1.Size = New Size(633, 381)
         AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         AdvancedDataGridView1.TabIndex = 2
         ' 
@@ -587,6 +590,17 @@ Partial Class FormAnnotation
         AdvancedDataGridViewSearchToolBar1.Size = New Size(633, 27)
         AdvancedDataGridViewSearchToolBar1.TabIndex = 3
         AdvancedDataGridViewSearchToolBar1.Text = "AdvancedDataGridViewSearchToolBar1"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.White
+        PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox1.Dock = DockStyle.Bottom
+        PictureBox1.Location = New Point(0, 408)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(633, 242)
+        PictureBox1.TabIndex = 4
+        PictureBox1.TabStop = False
         ' 
         ' TabPage2
         ' 
@@ -706,6 +720,7 @@ Partial Class FormAnnotation
         CType(AdvancedDataGridView5, ComponentModel.ISupportInitialize).EndInit()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ContextMenuStrip2.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
         TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
@@ -758,4 +773,5 @@ Partial Class FormAnnotation
     Friend WithEvents AdvancedDataGridView5 As AdvancedDataGridView
     Friend WithEvents AdvancedDataGridViewSearchToolBar5 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents TransporterAnnotationCmd As AnnotationItem
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
