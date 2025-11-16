@@ -6,10 +6,14 @@ Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.Ranges.Unit
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
+Imports Microsoft.VisualBasic.Drawing
+Imports Microsoft.VisualBasic.Imaging
+Imports Microsoft.VisualBasic.Imaging.Driver
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
+Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.SequenceLogo
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
@@ -372,6 +376,8 @@ Public Class FormAnnotation
         Dim gene_id = CStr(row.Cells(0).Value)
         Dim hits = proj.enzyme_hits.KeyItem(gene_id)
 
+        viewDetails = Nothing
+
         If hits Is Nothing Then
             blastLoader.ClearData()
         Else
@@ -596,17 +602,25 @@ Public Class FormAnnotation
         End If
 
         For Each site As MotifMatch In hits.Where(Function(a) a.identities > motif_identities_filter)
-            Call tbl.Rows.Add(site.title,
-                              site.segment,
-                              site.motif,
-                              site.start,
-                              site.ends,
-                              site.identities,
-                              site.score1,
-                              site.score2,
-                              site.pvalue,
-                              site.seeds(0))
+            Call tbl.Rows.Add(site.title,      ' 0
+                              site.segment,    ' 1  
+                              site.motif,      ' 2
+                              site.start,      ' 3
+                              site.ends,       ' 4
+                              site.identities, ' 5
+                              site.score1,     ' 6
+                              site.score2,     ' 7
+                              site.pvalue,     ' 8
+                              site.seeds(0))   ' 9
         Next
+    End Sub
+
+    Private Sub viewMotifSite(row As DataGridViewRow)
+        Dim family As String = CStr(row.Cells(9).Value)
+        Dim model As Probability() = pwm(family)
+        Dim logo As Image = model(0).CreateModel.DrawFrequency(family, driver:=Drivers.GDI).AsGDIImage
+
+        PictureBox1.BackgroundImage = logo.CTypeGdiImage
     End Sub
 
     Private Sub ViewEnzymeInRegistryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewEnzymeInRegistryToolStripMenuItem.Click
@@ -650,6 +664,11 @@ Public Class FormAnnotation
         Workbench.Settings.Save()
     End Sub
 
+    ''' <summary>
+    ''' view motif site details
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub AdvancedDataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView3.CellContentClick
         If AdvancedDataGridView3.SelectedRows.Count = 0 Then
             Return
@@ -658,6 +677,8 @@ Public Class FormAnnotation
         Dim row As DataGridViewRow = AdvancedDataGridView3.SelectedRows(0)
         Dim gene_id = CStr(row.Cells(0).Value)
         Dim hits As MotifMatch() = proj.tfbs_hits.TryGetValue(gene_id)
+
+        viewDetails = AddressOf viewMotifSite
 
         If hits Is Nothing Then
             blastLoader.ClearData()
