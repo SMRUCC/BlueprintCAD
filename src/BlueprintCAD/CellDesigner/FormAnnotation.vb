@@ -534,6 +534,8 @@ Public Class FormAnnotation
         tfbsLoader.LoadTable(AddressOf LoadTFBSList)
     End Sub
 
+    Dim motif_identities_filter As Double = 0.9
+
     Private Sub LoadTFBSList(tbl As DataTable)
         Dim hits As Integer = 0
 
@@ -547,7 +549,10 @@ Public Class FormAnnotation
         End If
 
         For Each site As KeyValuePair(Of String, MotifMatch()) In proj.tfbs_hits
-            Dim familyList = site.Value.GroupBy(Function(a) a.seeds(0)).ToArray
+            Dim familyList = site.Value _
+                .Where(Function(a) a.identities > motif_identities_filter) _
+                .GroupBy(Function(a) a.seeds(0)) _
+                .ToArray
             Dim topFamily = familyList.OrderByDescending(Function(a) a.Count).FirstOrDefault
 
             Call tbl.Rows.Add(site.Key,
@@ -586,7 +591,7 @@ Public Class FormAnnotation
             Return
         End If
 
-        For Each site As MotifMatch In hits
+        For Each site As MotifMatch In hits.Where(Function(a) a.identities > motif_identities_filter)
             Call tbl.Rows.Add(site.title,
                               site.segment,
                               site.motif,
