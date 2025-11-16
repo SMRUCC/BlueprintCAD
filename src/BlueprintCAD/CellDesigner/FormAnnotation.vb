@@ -85,7 +85,9 @@ Public Class FormAnnotation
         End Using
     End Sub
 
-    Private Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Dim pwm As Dictionary(Of String, Probability())
+
+    Private Async Sub FormAnnotation_Load(sender As Object, e As EventArgs) Handles Me.Load
         TextBox1.Text = Workbench.Settings.ncbi_blast
         TextBox2.Text = Workbench.Settings.registry_server
         enzymeLoader = New GridLoaderHandler(DataGridView1, ToolStrip2)
@@ -101,7 +103,7 @@ Public Class FormAnnotation
         TFBSAnnotationCmd.Text = "TF Binding Site Annotation"
         TransporterAnnotationCmd.Text = "Membrane Transporter Annotation"
 
-        PictureBox1.Hide()
+        ' PictureBox1.Hide()
 
         Call ApplyVsTheme(ToolStrip1,
                           ToolStrip2,
@@ -111,6 +113,10 @@ Public Class FormAnnotation
                           AdvancedDataGridViewSearchToolBar4,
                           AdvancedDataGridViewSearchToolBar5,
                           ContextMenuStrip1)
+
+        pwm = Await Task.Run(Function()
+                                 Return MotifDatabase.LoadMotifs($"{App.HOME}/data/RegPrecise.dat".Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+                             End Function)
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
@@ -491,8 +497,6 @@ Public Class FormAnnotation
     End Sub
 
     Private Async Sub TFBSAnnotationCmd_Run() Handles TFBSAnnotationCmd.Run
-        Dim motifDbfile = $"{HOME}/data/RegPrecise.dat"
-        Dim pwm = MotifDatabase.LoadMotifs(motifDbfile.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Dim tss = proj.tss_upstream _
             .Select(Function(seq)
                         Return New FastaSeq({seq.Key}, seq.Value)
@@ -651,7 +655,7 @@ Public Class FormAnnotation
             Return
         End If
 
-        Dim row = AdvancedDataGridView3.SelectedRows(0)
+        Dim row As DataGridViewRow = AdvancedDataGridView3.SelectedRows(0)
         Dim gene_id = CStr(row.Cells(0).Value)
         Dim hits As MotifMatch() = proj.tfbs_hits.TryGetValue(gene_id)
 
@@ -662,6 +666,20 @@ Public Class FormAnnotation
                 Sub(tbl)
                     Call LoadGeneTFBSList(tbl, hits)
                 End Sub)
+        End If
+    End Sub
+
+    Dim viewDetails As Action(Of DataGridViewRow)
+
+    Private Sub AdvancedDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView1.CellContentClick
+        If AdvancedDataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row As DataGridViewRow = AdvancedDataGridView1.SelectedRows(0)
+
+        If Not viewDetails Is Nothing Then
+            Call viewDetails(row)
         End If
     End Sub
 End Class
