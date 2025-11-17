@@ -22,6 +22,7 @@ namespace RibbonLib.Controls
             public const uint cmdButtonRun = 21;
             public const uint cmdButtonOpenVirtualCellPackFile = 3;
             public const uint cmdButtonExit = 4;
+            public const uint cmdButtonSaveMenu = 30;
             public const uint cmdMenuVirtualCellViewer = 2;
             public const uint cmdTabVirtualCellBrowser = 5;
             public const uint cmdGroupVirtualCellBrowser = 7;
@@ -37,10 +38,10 @@ namespace RibbonLib.Controls
             public const uint cmdGroupDataViewer = 8;
             public const uint cmdButtonExportPlotMatrix = 14;
             public const uint cmdCheckPlotLogScale = 15;
-            public const uint cmdMenuWorkbench = 19;
+            public const uint cmdGroupMainMenu = 31;
             public const uint cmdTabMainMenu = 32;
             public const uint cmdButtonOpenMenu = 29;
-            public const uint cmdButtonSaveMenu = 30;
+            public const uint cmdMenuWorkbench = 19;
             public const uint cmdTabWorkbench = 20;
             public const uint cmdButtonInspectCellModel = 27;
             public const uint cmdGroupTools = 23;
@@ -69,6 +70,7 @@ namespace RibbonLib.Controls
         /// Exit
         /// </summary>
         public RibbonButton ButtonExit { get; private set; }
+        public RibbonButton ButtonSaveMenu { get; private set; }
         /// <summary>
         /// VirtualCell Viewer
         /// </summary>
@@ -111,13 +113,13 @@ namespace RibbonLib.Controls
         /// Log Scale
         /// </summary>
         public RibbonCheckBox CheckPlotLogScale { get; private set; }
+        public RibbonTab GroupMainMenu { get; private set; }
+        public RibbonGroup TabMainMenu { get; private set; }
+        public RibbonButton ButtonOpenMenu { get; private set; }
         /// <summary>
         /// Virtual Cell
         /// </summary>
         public RibbonTab MenuWorkbench { get; private set; }
-        public RibbonGroup TabMainMenu { get; private set; }
-        public RibbonButton ButtonOpenMenu { get; private set; }
-        public RibbonButton ButtonSaveMenu { get; private set; }
         /// <summary>
         /// Virtual Cell
         /// </summary>
@@ -156,6 +158,7 @@ namespace RibbonLib.Controls
             ButtonRun = new RibbonButton(ribbon, Cmd.cmdButtonRun);
             ButtonOpenVirtualCellPackFile = new RibbonButton(ribbon, Cmd.cmdButtonOpenVirtualCellPackFile);
             ButtonExit = new RibbonButton(ribbon, Cmd.cmdButtonExit);
+            ButtonSaveMenu = new RibbonButton(ribbon, Cmd.cmdButtonSaveMenu);
             MenuVirtualCellViewer = new RibbonTabGroup(ribbon, Cmd.cmdMenuVirtualCellViewer);
             TabVirtualCellBrowser = new RibbonTab(ribbon, Cmd.cmdTabVirtualCellBrowser);
             GroupVirtualCellBrowser = new RibbonGroup(ribbon, Cmd.cmdGroupVirtualCellBrowser);
@@ -171,10 +174,10 @@ namespace RibbonLib.Controls
             GroupDataViewer = new RibbonGroup(ribbon, Cmd.cmdGroupDataViewer);
             ButtonExportPlotMatrix = new RibbonButton(ribbon, Cmd.cmdButtonExportPlotMatrix);
             CheckPlotLogScale = new RibbonCheckBox(ribbon, Cmd.cmdCheckPlotLogScale);
-            MenuWorkbench = new RibbonTab(ribbon, Cmd.cmdMenuWorkbench);
+            GroupMainMenu = new RibbonTab(ribbon, Cmd.cmdGroupMainMenu);
             TabMainMenu = new RibbonGroup(ribbon, Cmd.cmdTabMainMenu);
             ButtonOpenMenu = new RibbonButton(ribbon, Cmd.cmdButtonOpenMenu);
-            ButtonSaveMenu = new RibbonButton(ribbon, Cmd.cmdButtonSaveMenu);
+            MenuWorkbench = new RibbonTab(ribbon, Cmd.cmdMenuWorkbench);
             TabWorkbench = new RibbonGroup(ribbon, Cmd.cmdTabWorkbench);
             ButtonInspectCellModel = new RibbonButton(ribbon, Cmd.cmdButtonInspectCellModel);
             GroupTools = new RibbonGroup(ribbon, Cmd.cmdGroupTools);

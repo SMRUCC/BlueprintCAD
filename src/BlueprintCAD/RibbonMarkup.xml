@@ -169,7 +169,11 @@
         </ApplicationMenu>
       </Ribbon.ApplicationMenu>
       <Ribbon.QuickAccessToolbar>
-        <QuickAccessToolbar />
+        <QuickAccessToolbar>
+          <QuickAccessToolbar.ApplicationDefaults>
+            <Button CommandName="cmdButtonSaveMenu" ApplicationDefaults.IsChecked="true" />
+          </QuickAccessToolbar.ApplicationDefaults>
+        </QuickAccessToolbar>
       </Ribbon.QuickAccessToolbar>
       <Ribbon.ContextualTabs>
         <TabGroup CommandName="cmdMenuVirtualCellViewer">
@@ -196,7 +200,7 @@
         </TabGroup>
       </Ribbon.ContextualTabs>
       <Ribbon.Tabs>
-        <Tab CommandName="cmdMenuWorkbench">
+        <Tab CommandName="cmdGroupMainMenu">
           <Group CommandName="cmdTabMainMenu" SizeDefinition="TwoButtons">
             <Button CommandName="cmdButtonOpenMenu" />
             <Button CommandName="cmdButtonSaveMenu" />

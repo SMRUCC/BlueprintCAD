@@ -19,6 +19,7 @@ Namespace RibbonLib.Controls
             Public Const cmdButtonRun As UInteger = 21
             Public Const cmdButtonOpenVirtualCellPackFile As UInteger = 3
             Public Const cmdButtonExit As UInteger = 4
+            Public Const cmdButtonSaveMenu As UInteger = 30
             Public Const cmdMenuVirtualCellViewer As UInteger = 2
             Public Const cmdTabVirtualCellBrowser As UInteger = 5
             Public Const cmdGroupVirtualCellBrowser As UInteger = 7
@@ -34,10 +35,10 @@ Namespace RibbonLib.Controls
             Public Const cmdGroupDataViewer As UInteger = 8
             Public Const cmdButtonExportPlotMatrix As UInteger = 14
             Public Const cmdCheckPlotLogScale As UInteger = 15
-            Public Const cmdMenuWorkbench As UInteger = 19
+            Public Const cmdGroupMainMenu As UInteger = 31
             Public Const cmdTabMainMenu As UInteger = 32
             Public Const cmdButtonOpenMenu As UInteger = 29
-            Public Const cmdButtonSaveMenu As UInteger = 30
+            Public Const cmdMenuWorkbench As UInteger = 19
             Public Const cmdTabWorkbench As UInteger = 20
             Public Const cmdButtonInspectCellModel As UInteger = 27
             Public Const cmdGroupTools As UInteger = 23
@@ -89,6 +90,12 @@ Namespace RibbonLib.Controls
         Public ReadOnly Property ButtonExit As RibbonButton
             Get
                 Return _ButtonExit
+            End Get
+        End Property
+        Private _ButtonSaveMenu As RibbonButton
+        Public ReadOnly Property ButtonSaveMenu As RibbonButton
+            Get
+                Return _ButtonSaveMenu
             End Get
         End Property
         Private _MenuVirtualCellViewer As RibbonTabGroup
@@ -208,13 +215,10 @@ Namespace RibbonLib.Controls
                 Return _CheckPlotLogScale
             End Get
         End Property
-        Private _MenuWorkbench As RibbonTab
-        ''' <summary>
-        ''' Virtual Cell
-        ''' </summary>
-        Public ReadOnly Property MenuWorkbench As RibbonTab
+        Private _GroupMainMenu As RibbonTab
+        Public ReadOnly Property GroupMainMenu As RibbonTab
             Get
-                Return _MenuWorkbench
+                Return _GroupMainMenu
             End Get
         End Property
         Private _TabMainMenu As RibbonGroup
@@ -229,10 +233,13 @@ Namespace RibbonLib.Controls
                 Return _ButtonOpenMenu
             End Get
         End Property
-        Private _ButtonSaveMenu As RibbonButton
-        Public ReadOnly Property ButtonSaveMenu As RibbonButton
+        Private _MenuWorkbench As RibbonTab
+        ''' <summary>
+        ''' Virtual Cell
+        ''' </summary>
+        Public ReadOnly Property MenuWorkbench As RibbonTab
             Get
-                Return _ButtonSaveMenu
+                Return _MenuWorkbench
             End Get
         End Property
         Private _TabWorkbench As RibbonGroup
@@ -308,6 +315,7 @@ Namespace RibbonLib.Controls
             _ButtonRun = New RibbonButton(_ribbon, Cmd.cmdButtonRun)
             _ButtonOpenVirtualCellPackFile = New RibbonButton(_ribbon, Cmd.cmdButtonOpenVirtualCellPackFile)
             _ButtonExit = New RibbonButton(_ribbon, Cmd.cmdButtonExit)
+            _ButtonSaveMenu = New RibbonButton(_ribbon, Cmd.cmdButtonSaveMenu)
             _MenuVirtualCellViewer = New RibbonTabGroup(_ribbon, Cmd.cmdMenuVirtualCellViewer)
             _TabVirtualCellBrowser = New RibbonTab(_ribbon, Cmd.cmdTabVirtualCellBrowser)
             _GroupVirtualCellBrowser = New RibbonGroup(_ribbon, Cmd.cmdGroupVirtualCellBrowser)
@@ -323,10 +331,10 @@ Namespace RibbonLib.Controls
             _GroupDataViewer = New RibbonGroup(_ribbon, Cmd.cmdGroupDataViewer)
             _ButtonExportPlotMatrix = New RibbonButton(_ribbon, Cmd.cmdButtonExportPlotMatrix)
             _CheckPlotLogScale = New RibbonCheckBox(_ribbon, Cmd.cmdCheckPlotLogScale)
-            _MenuWorkbench = New RibbonTab(_ribbon, Cmd.cmdMenuWorkbench)
+            _GroupMainMenu = New RibbonTab(_ribbon, Cmd.cmdGroupMainMenu)
             _TabMainMenu = New RibbonGroup(_ribbon, Cmd.cmdTabMainMenu)
             _ButtonOpenMenu = New RibbonButton(_ribbon, Cmd.cmdButtonOpenMenu)
-            _ButtonSaveMenu = New RibbonButton(_ribbon, Cmd.cmdButtonSaveMenu)
+            _MenuWorkbench = New RibbonTab(_ribbon, Cmd.cmdMenuWorkbench)
             _TabWorkbench = New RibbonGroup(_ribbon, Cmd.cmdTabWorkbench)
             _ButtonInspectCellModel = New RibbonButton(_ribbon, Cmd.cmdButtonInspectCellModel)
             _GroupTools = New RibbonGroup(_ribbon, Cmd.cmdGroupTools)
