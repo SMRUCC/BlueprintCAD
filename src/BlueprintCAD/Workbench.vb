@@ -59,7 +59,9 @@ Public Module Workbench
     End Sub
 
     Public Sub InitializeWindows()
-        properties.Show(AppHost.DockPanel)
-        CommonRuntime.RegisterToolWindow(properties)
+        Call Workbench.properties.Show(AppHost.DockPanel)
+
+        Call CommonRuntime.RegisterToolWindow(properties)
+        Call CommonRuntime.ShowDocument(Of FormStartupPage)()
     End Sub
 End Module
