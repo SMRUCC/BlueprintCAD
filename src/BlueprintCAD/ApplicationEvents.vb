@@ -4,6 +4,7 @@ Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports RibbonLib.Controls.Events
+Imports RibbonLib.Interop
 
 Namespace My
     ' The following events are available for MyApplication:
@@ -42,6 +43,8 @@ Namespace My
             AddHandler ribbon.ButtonEditCultureMedium.ExecuteEvent, AddressOf OpenCMLibrary
             AddHandler ribbon.ButtonSaveMenu.ExecuteEvent, AddressOf SaveCurrentDocument
             AddHandler ribbon.ButtonOpenMenu.ExecuteEvent, AddressOf FileHandler.GlobalOpenFile
+
+            ribbon.MenuWorkbench.ContextAvailable = ContextAvailability.Available
         End Sub
 
         Public Shared Sub SaveCurrentDocument(sender As Object, e As ExecuteEventArgs)
