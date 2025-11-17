@@ -40,6 +40,11 @@ Namespace My
             AddHandler ribbon.ButtonIDAnnotation.ExecuteEvent, AddressOf OpenAnnotationTool
             AddHandler ribbon.ButtonEditMutation.ExecuteEvent, AddressOf OpenMutationEditor
             AddHandler ribbon.ButtonEditCultureMedium.ExecuteEvent, AddressOf OpenCMLibrary
+            AddHandler ribbon.ButtonSaveMenu.ExecuteEvent, AddressOf SaveCurrentDocument
+        End Sub
+
+        Public Shared Sub SaveCurrentDocument(sender As Object, e As ExecuteEventArgs)
+            Call CommonRuntime.SaveCurrentDocument()
         End Sub
 
         Public Shared Sub OpenCMLibrary(sender As Object, e As ExecuteEventArgs)
