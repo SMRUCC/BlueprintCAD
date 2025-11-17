@@ -39,6 +39,11 @@ Namespace My
             AddHandler ribbon.ButtonInspectCellModel.ExecuteEvent, AddressOf OpenCellViewer
             AddHandler ribbon.ButtonIDAnnotation.ExecuteEvent, AddressOf OpenAnnotationTool
             AddHandler ribbon.ButtonEditMutation.ExecuteEvent, AddressOf OpenMutationEditor
+            AddHandler ribbon.ButtonEditCultureMedium.ExecuteEvent, AddressOf OpenCMLibrary
+        End Sub
+
+        Public Shared Sub OpenCMLibrary(sender As Object, e As ExecuteEventArgs)
+            Call CommonRuntime.ShowDocument(Of FormCultureMediumLibrary)(, "Culture Medium Library")
         End Sub
 
         Public Shared Sub OpenMutationEditor(sender As Object, e As ExecuteEventArgs)
