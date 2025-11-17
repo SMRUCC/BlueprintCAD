@@ -1,3 +1,3 @@
 # Sophia Virtual Cell Workbench
 
-![](./docs/Capture.JPG)
+![](./docs/Capture.PNG)
