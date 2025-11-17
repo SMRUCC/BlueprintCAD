@@ -62,7 +62,9 @@ Public Module Workbench
 
     Public Sub InitializeWindows()
         Call Workbench.properties.Show(AppHost.DockPanel)
-        Call Workbench.chartPad.Show(AppHost.DockPanel, dockState:=DockState.Hidden)
+        Call Workbench.chartPad.Show(AppHost.DockPanel, dockState:=DockState.Document)
+
+        Workbench.chartPad.Hide()
 
         Call CommonRuntime.RegisterToolWindow(properties)
         Call CommonRuntime.ShowDocument(Of FormStartupPage)()
