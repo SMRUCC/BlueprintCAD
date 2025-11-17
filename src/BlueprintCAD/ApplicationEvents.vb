@@ -41,6 +41,7 @@ Namespace My
             AddHandler ribbon.ButtonEditMutation.ExecuteEvent, AddressOf OpenMutationEditor
             AddHandler ribbon.ButtonEditCultureMedium.ExecuteEvent, AddressOf OpenCMLibrary
             AddHandler ribbon.ButtonSaveMenu.ExecuteEvent, AddressOf SaveCurrentDocument
+            AddHandler ribbon.ButtonOpenMenu.ExecuteEvent, AddressOf FileHandler.GlobalOpenFile
         End Sub
 
         Public Shared Sub SaveCurrentDocument(sender As Object, e As ExecuteEventArgs)
