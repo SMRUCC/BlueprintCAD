@@ -83,13 +83,13 @@
 #define cmdTabDataViewer_LabelTitle_RESID 60060
 #define cmdTabVirtualCellBrowser 5 
 #define cmdTabVirtualCellBrowser_LabelTitle_RESID 60061
-#define cmdMenuWorkbench 19  /* Workbench */ 
+#define cmdMenuWorkbench 19  /* Virtual Cell */ 
 #define cmdMenuWorkbench_LabelTitle_RESID 60062
 #define cmdMenuWorkbench_LabelDescription_RESID 60063
 #define cmdMenuWorkbench_Keytip_RESID 60064
 #define cmdMenuWorkbench_TooltipTitle_RESID 60065
 #define cmdMenuWorkbench_TooltipDescription_RESID 60066
-#define cmdTabWorkbench 20  /* Workbench */ 
+#define cmdTabWorkbench 20  /* Virtual Cell */ 
 #define cmdTabWorkbench_LabelTitle_RESID 60067
 #define cmdTabWorkbench_LabelDescription_RESID 60068
 #define cmdTabWorkbench_Keytip_RESID 60069
@@ -152,4 +152,16 @@
 #define cmdButtonEditMutation_TooltipDescription_RESID 60118
 #define cmdButtonEditMutation_SmallImages_192__RESID 60119
 #define cmdButtonEditMutation_LargeImages_192__RESID 60120
-#define InternalCmd2_LabelTitle_RESID 60121
+#define cmdButtonOpenMenu 29 
+#define cmdButtonOpenMenu_LabelTitle_RESID 60121
+#define cmdButtonOpenMenu_SmallImages_192__RESID 60122
+#define cmdButtonOpenMenu_LargeImages_192__RESID 60123
+#define cmdButtonSaveMenu 30 
+#define cmdButtonSaveMenu_LabelTitle_RESID 60124
+#define cmdButtonSaveMenu_SmallImages_192__RESID 60125
+#define cmdButtonSaveMenu_LargeImages_192__RESID 60126
+#define cmdGroupMainMenu 31 
+#define cmdGroupMainMenu_LabelTitle_RESID 60127
+#define cmdTabMainMenu 32 
+#define cmdTabMainMenu_LabelTitle_RESID 60128
+#define InternalCmd2_LabelTitle_RESID 60129

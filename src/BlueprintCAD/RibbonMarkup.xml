@@ -88,8 +88,8 @@
     <Command Name="cmdMenuVirtualCellViewer" Comment="VirtualCell Viewer" Id="2" LabelTitle="VirtualCell Viewer" LabelDescription="VirtualCell Viewer" TooltipTitle="VirtualCell Viewer" TooltipDescription="VirtualCell Viewer" Keytip="VirtualCell Viewer" />
     <Command Name="cmdTabDataViewer" Id="6" LabelTitle="Data Viewer" />
     <Command Name="cmdTabVirtualCellBrowser" Id="5" LabelTitle="Browser" />
-    <Command Name="cmdMenuWorkbench" Comment="Workbench" Id="19" LabelTitle="Workbench" LabelDescription="Workbench" TooltipTitle="Workbench" TooltipDescription="Workbench" Keytip="Workbench" />
-    <Command Name="cmdTabWorkbench" Comment="Workbench" Id="20" LabelTitle="Workbench" LabelDescription="Workbench" TooltipTitle="Workbench" TooltipDescription="Workbench" Keytip="Workbench" />
+    <Command Name="cmdMenuWorkbench" Comment="Virtual Cell" Id="19" LabelTitle="Virtual Cell" LabelDescription="Virtual Cell" TooltipTitle="Virtual Cell" TooltipDescription="Virtual Cell" Keytip="Virtual Cell" />
+    <Command Name="cmdTabWorkbench" Comment="Virtual Cell" Id="20" LabelTitle="Virtual Cell" LabelDescription="Virtual Cell" TooltipTitle="Virtual Cell" TooltipDescription="Virtual Cell" Keytip="Virtual Cell" />
     <Command Name="cmdButtonRun" Comment="Run" Id="21" LabelTitle="Run" LabelDescription="Run" TooltipTitle="Run" TooltipDescription="Run" Keytip="Run">
       <Command.SmallImages>
         <Image MinDPI="192">Resources/icons8-play-96.png</Image>
@@ -149,6 +149,8 @@
         <Image MinDPI="192">Resources/icons8-save-all-96.png</Image>
       </Command.LargeImages>
     </Command>
+    <Command Name="cmdGroupMainMenu" Id="31" LabelTitle="Workbench" />
+    <Command Name="cmdTabMainMenu" Id="32" LabelTitle="Workbench" />
   </Application.Commands>
   <Application.Views>
     <Ribbon Name="Sophia VirtualCell Workshop">
@@ -194,6 +196,12 @@
         </TabGroup>
       </Ribbon.ContextualTabs>
       <Ribbon.Tabs>
+        <Tab CommandName="cmdMenuWorkbench">
+          <Group CommandName="cmdTabMainMenu" SizeDefinition="TwoButtons">
+            <Button CommandName="cmdButtonOpenMenu" />
+            <Button CommandName="cmdButtonSaveMenu" />
+          </Group>
+        </Tab>
         <Tab CommandName="cmdMenuWorkbench">
           <Group CommandName="cmdTabWorkbench" SizeDefinition="TwoButtons">
             <Button CommandName="cmdButtonRun" />

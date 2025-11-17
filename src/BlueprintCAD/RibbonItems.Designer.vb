@@ -35,6 +35,9 @@ Namespace RibbonLib.Controls
             Public Const cmdButtonExportPlotMatrix As UInteger = 14
             Public Const cmdCheckPlotLogScale As UInteger = 15
             Public Const cmdMenuWorkbench As UInteger = 19
+            Public Const cmdTabMainMenu As UInteger = 32
+            Public Const cmdButtonOpenMenu As UInteger = 29
+            Public Const cmdButtonSaveMenu As UInteger = 30
             Public Const cmdTabWorkbench As UInteger = 20
             Public Const cmdButtonInspectCellModel As UInteger = 27
             Public Const cmdGroupTools As UInteger = 23
@@ -207,16 +210,34 @@ Namespace RibbonLib.Controls
         End Property
         Private _MenuWorkbench As RibbonTab
         ''' <summary>
-        ''' Workbench
+        ''' Virtual Cell
         ''' </summary>
         Public ReadOnly Property MenuWorkbench As RibbonTab
             Get
                 Return _MenuWorkbench
             End Get
         End Property
+        Private _TabMainMenu As RibbonGroup
+        Public ReadOnly Property TabMainMenu As RibbonGroup
+            Get
+                Return _TabMainMenu
+            End Get
+        End Property
+        Private _ButtonOpenMenu As RibbonButton
+        Public ReadOnly Property ButtonOpenMenu As RibbonButton
+            Get
+                Return _ButtonOpenMenu
+            End Get
+        End Property
+        Private _ButtonSaveMenu As RibbonButton
+        Public ReadOnly Property ButtonSaveMenu As RibbonButton
+            Get
+                Return _ButtonSaveMenu
+            End Get
+        End Property
         Private _TabWorkbench As RibbonGroup
         ''' <summary>
-        ''' Workbench
+        ''' Virtual Cell
         ''' </summary>
         Public ReadOnly Property TabWorkbench As RibbonGroup
             Get
@@ -303,6 +324,9 @@ Namespace RibbonLib.Controls
             _ButtonExportPlotMatrix = New RibbonButton(_ribbon, Cmd.cmdButtonExportPlotMatrix)
             _CheckPlotLogScale = New RibbonCheckBox(_ribbon, Cmd.cmdCheckPlotLogScale)
             _MenuWorkbench = New RibbonTab(_ribbon, Cmd.cmdMenuWorkbench)
+            _TabMainMenu = New RibbonGroup(_ribbon, Cmd.cmdTabMainMenu)
+            _ButtonOpenMenu = New RibbonButton(_ribbon, Cmd.cmdButtonOpenMenu)
+            _ButtonSaveMenu = New RibbonButton(_ribbon, Cmd.cmdButtonSaveMenu)
             _TabWorkbench = New RibbonGroup(_ribbon, Cmd.cmdTabWorkbench)
             _ButtonInspectCellModel = New RibbonButton(_ribbon, Cmd.cmdButtonInspectCellModel)
             _GroupTools = New RibbonGroup(_ribbon, Cmd.cmdGroupTools)

@@ -38,6 +38,9 @@ namespace RibbonLib.Controls
             public const uint cmdButtonExportPlotMatrix = 14;
             public const uint cmdCheckPlotLogScale = 15;
             public const uint cmdMenuWorkbench = 19;
+            public const uint cmdTabMainMenu = 32;
+            public const uint cmdButtonOpenMenu = 29;
+            public const uint cmdButtonSaveMenu = 30;
             public const uint cmdTabWorkbench = 20;
             public const uint cmdButtonInspectCellModel = 27;
             public const uint cmdGroupTools = 23;
@@ -109,11 +112,14 @@ namespace RibbonLib.Controls
         /// </summary>
         public RibbonCheckBox CheckPlotLogScale { get; private set; }
         /// <summary>
-        /// Workbench
+        /// Virtual Cell
         /// </summary>
         public RibbonTab MenuWorkbench { get; private set; }
+        public RibbonGroup TabMainMenu { get; private set; }
+        public RibbonButton ButtonOpenMenu { get; private set; }
+        public RibbonButton ButtonSaveMenu { get; private set; }
         /// <summary>
-        /// Workbench
+        /// Virtual Cell
         /// </summary>
         public RibbonGroup TabWorkbench { get; private set; }
         /// <summary>
@@ -166,6 +172,9 @@ namespace RibbonLib.Controls
             ButtonExportPlotMatrix = new RibbonButton(ribbon, Cmd.cmdButtonExportPlotMatrix);
             CheckPlotLogScale = new RibbonCheckBox(ribbon, Cmd.cmdCheckPlotLogScale);
             MenuWorkbench = new RibbonTab(ribbon, Cmd.cmdMenuWorkbench);
+            TabMainMenu = new RibbonGroup(ribbon, Cmd.cmdTabMainMenu);
+            ButtonOpenMenu = new RibbonButton(ribbon, Cmd.cmdButtonOpenMenu);
+            ButtonSaveMenu = new RibbonButton(ribbon, Cmd.cmdButtonSaveMenu);
             TabWorkbench = new RibbonGroup(ribbon, Cmd.cmdTabWorkbench);
             ButtonInspectCellModel = new RibbonButton(ribbon, Cmd.cmdButtonInspectCellModel);
             GroupTools = new RibbonGroup(ribbon, Cmd.cmdGroupTools);

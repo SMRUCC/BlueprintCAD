@@ -274,6 +274,16 @@
     </Project>
   </Folder>
   <Folder Name="/framework/math/">
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/DataMining/DynamicProgramming/DynamicProgramming.NET5.vbproj">
+      <BuildType Solution="CFD_win32|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Docker|*" Project="Release" />
+      <BuildType Solution="LipidSearch|*" Project="nuget_release" />
+      <BuildType Solution="mzkit|*" Project="Debug" />
+      <BuildType Solution="NPSearch|*" Project="Rsharp_app_release" />
+      <BuildType Solution="PlantMAT|*" Project="Rsharp_app_release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Mathematica/Math/ANOVA/ANOVA.vbproj">
       <BuildType Solution="CFD_win32|*" Project="Rsharp_app_release" />
       <BuildType Solution="Desktop|*" Project="Rsharp_app_release" />
