@@ -1,6 +1,7 @@
 ﻿Imports Galaxy.ExcelPad
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Data.Framework.IO
+Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports RibbonLib.Controls.Events
 
 Module FileHandler
@@ -29,6 +30,7 @@ Module FileHandler
 
     Private Sub OpenCSVTableFile(filepath As String)
         With CommonRuntime.ShowDocument(Of FormExcelPad)(, filepath.FileName)
+            Call .SetCanvas(Workbench.chartPad, Designer.GetColors("paper"))
             Call ProgressSpinner.DoLoading(
                 Sub()
                     Dim df As DataFrameResolver = DataFrameResolver.Load(filepath)
