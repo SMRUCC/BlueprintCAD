@@ -151,6 +151,7 @@
     </Command>
     <Command Name="cmdGroupMainMenu" Id="31" LabelTitle="Workbench" />
     <Command Name="cmdTabMainMenu" Id="32" LabelTitle="Workbench" />
+    <Command Name="cmdTabVirtualCellTool" Id="33" LabelTitle="Virtual Cell" />
   </Application.Commands>
   <Application.Views>
     <Ribbon Name="Sophia VirtualCell Workshop">
@@ -198,25 +199,27 @@
             </Group>
           </Tab>
         </TabGroup>
+        <TabGroup CommandName="cmdMenuWorkbench">
+          <Tab CommandName="cmdTabWorkbench">
+            <Group CommandName="cmdTabVirtualCellTool">
+              <Button CommandName="cmdButtonRun" />
+              <Button CommandName="cmdButtonInspectCellModel" />
+            </Group>
+            <Group CommandName="cmdGroupTools" SizeDefinition="TwoButtons">
+              <Button CommandName="cmdButtonEditMutation" />
+              <Button CommandName="cmdButtonEditCultureMedium" />
+            </Group>
+            <Group CommandName="cmdGroupModelling" SizeDefinition="OneButton">
+              <Button CommandName="cmdButtonIDAnnotation" />
+            </Group>
+          </Tab>
+        </TabGroup>
       </Ribbon.ContextualTabs>
       <Ribbon.Tabs>
         <Tab CommandName="cmdGroupMainMenu">
           <Group CommandName="cmdTabMainMenu" SizeDefinition="TwoButtons">
             <Button CommandName="cmdButtonOpenMenu" />
             <Button CommandName="cmdButtonSaveMenu" />
-          </Group>
-        </Tab>
-        <Tab CommandName="cmdMenuWorkbench">
-          <Group CommandName="cmdTabWorkbench" SizeDefinition="TwoButtons">
-            <Button CommandName="cmdButtonRun" />
-            <Button CommandName="cmdButtonInspectCellModel" />
-          </Group>
-          <Group CommandName="cmdGroupTools" SizeDefinition="TwoButtons">
-            <Button CommandName="cmdButtonEditCultureMedium" />
-            <Button CommandName="cmdButtonEditMutation" />
-          </Group>
-          <Group CommandName="cmdGroupModelling" SizeDefinition="OneButton">
-            <Button CommandName="cmdButtonIDAnnotation" />
           </Group>
         </Tab>
       </Ribbon.Tabs>

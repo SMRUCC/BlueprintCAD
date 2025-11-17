@@ -141,15 +141,15 @@ Public Class FormMain : Implements AppHost
         Call CommonRuntime.SaveUISettings()
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Call ToolStripStatusLabel2_Click()
+    Private Async Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Await CheckServerConnectivity()
     End Sub
 
-    Private Sub ToolStripStatusLabel2_Click() Handles ToolStripStatusLabel2.Click
+    Private Async Function CheckServerConnectivity() As Task
         If Not Workbench.Settings.registry_server.StringEmpty(, True) Then
             Dim test As New RegistryUrl(Workbench.Settings.registry_server)
 
-            If test.Ping Then
+            If Await Task.Run(Function() test.Ping()) Then
                 ToolStripStatusLabel2.Text = "Connected To Server"
                 ToolStripStatusLabel2.Image = My.Resources.Icons.icons8_wifi_96
                 Workbench.SetConnection(True)
@@ -159,5 +159,9 @@ Public Class FormMain : Implements AppHost
                 Workbench.SetConnection(False)
             End If
         End If
+    End Function
+
+    Private Async Sub ToolStripStatusLabel2_Click() Handles ToolStripStatusLabel2.Click
+        Await CheckServerConnectivity()
     End Sub
 End Class

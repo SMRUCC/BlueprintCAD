@@ -164,4 +164,6 @@
 #define cmdGroupMainMenu_LabelTitle_RESID 60127
 #define cmdTabMainMenu 32 
 #define cmdTabMainMenu_LabelTitle_RESID 60128
-#define InternalCmd2_LabelTitle_RESID 60129
+#define cmdTabVirtualCellTool 33 
+#define cmdTabVirtualCellTool_LabelTitle_RESID 60129
+#define InternalCmd2_LabelTitle_RESID 60130

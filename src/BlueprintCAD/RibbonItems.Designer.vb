@@ -35,17 +35,18 @@ Namespace RibbonLib.Controls
             Public Const cmdGroupDataViewer As UInteger = 8
             Public Const cmdButtonExportPlotMatrix As UInteger = 14
             Public Const cmdCheckPlotLogScale As UInteger = 15
+            Public Const cmdMenuWorkbench As UInteger = 19
+            Public Const cmdTabWorkbench As UInteger = 20
+            Public Const cmdTabVirtualCellTool As UInteger = 33
+            Public Const cmdButtonInspectCellModel As UInteger = 27
+            Public Const cmdGroupTools As UInteger = 23
+            Public Const cmdButtonEditMutation As UInteger = 28
+            Public Const cmdButtonEditCultureMedium As UInteger = 24
+            Public Const cmdGroupModelling As UInteger = 25
+            Public Const cmdButtonIDAnnotation As UInteger = 26
             Public Const cmdGroupMainMenu As UInteger = 31
             Public Const cmdTabMainMenu As UInteger = 32
             Public Const cmdButtonOpenMenu As UInteger = 29
-            Public Const cmdMenuWorkbench As UInteger = 19
-            Public Const cmdTabWorkbench As UInteger = 20
-            Public Const cmdButtonInspectCellModel As UInteger = 27
-            Public Const cmdGroupTools As UInteger = 23
-            Public Const cmdButtonEditCultureMedium As UInteger = 24
-            Public Const cmdButtonEditMutation As UInteger = 28
-            Public Const cmdGroupModelling As UInteger = 25
-            Public Const cmdButtonIDAnnotation As UInteger = 26
         End Class
 
         ' ContextPopup CommandName
@@ -215,40 +216,28 @@ Namespace RibbonLib.Controls
                 Return _CheckPlotLogScale
             End Get
         End Property
-        Private _GroupMainMenu As RibbonTab
-        Public ReadOnly Property GroupMainMenu As RibbonTab
-            Get
-                Return _GroupMainMenu
-            End Get
-        End Property
-        Private _TabMainMenu As RibbonGroup
-        Public ReadOnly Property TabMainMenu As RibbonGroup
-            Get
-                Return _TabMainMenu
-            End Get
-        End Property
-        Private _ButtonOpenMenu As RibbonButton
-        Public ReadOnly Property ButtonOpenMenu As RibbonButton
-            Get
-                Return _ButtonOpenMenu
-            End Get
-        End Property
-        Private _MenuWorkbench As RibbonTab
+        Private _MenuWorkbench As RibbonTabGroup
         ''' <summary>
         ''' Virtual Cell
         ''' </summary>
-        Public ReadOnly Property MenuWorkbench As RibbonTab
+        Public ReadOnly Property MenuWorkbench As RibbonTabGroup
             Get
                 Return _MenuWorkbench
             End Get
         End Property
-        Private _TabWorkbench As RibbonGroup
+        Private _TabWorkbench As RibbonTab
         ''' <summary>
         ''' Virtual Cell
         ''' </summary>
-        Public ReadOnly Property TabWorkbench As RibbonGroup
+        Public ReadOnly Property TabWorkbench As RibbonTab
             Get
                 Return _TabWorkbench
+            End Get
+        End Property
+        Private _TabVirtualCellTool As RibbonGroup
+        Public ReadOnly Property TabVirtualCellTool As RibbonGroup
+            Get
+                Return _TabVirtualCellTool
             End Get
         End Property
         Private _ButtonInspectCellModel As RibbonButton
@@ -269,15 +258,6 @@ Namespace RibbonLib.Controls
                 Return _GroupTools
             End Get
         End Property
-        Private _ButtonEditCultureMedium As RibbonButton
-        ''' <summary>
-        ''' Edit the preset profile of the culture medium.
-        ''' </summary>
-        Public ReadOnly Property ButtonEditCultureMedium As RibbonButton
-            Get
-                Return _ButtonEditCultureMedium
-            End Get
-        End Property
         Private _ButtonEditMutation As RibbonButton
         ''' <summary>
         ''' Mutation Tool
@@ -285,6 +265,15 @@ Namespace RibbonLib.Controls
         Public ReadOnly Property ButtonEditMutation As RibbonButton
             Get
                 Return _ButtonEditMutation
+            End Get
+        End Property
+        Private _ButtonEditCultureMedium As RibbonButton
+        ''' <summary>
+        ''' Edit the preset profile of the culture medium.
+        ''' </summary>
+        Public ReadOnly Property ButtonEditCultureMedium As RibbonButton
+            Get
+                Return _ButtonEditCultureMedium
             End Get
         End Property
         Private _GroupModelling As RibbonGroup
@@ -303,6 +292,24 @@ Namespace RibbonLib.Controls
         Public ReadOnly Property ButtonIDAnnotation As RibbonButton
             Get
                 Return _ButtonIDAnnotation
+            End Get
+        End Property
+        Private _GroupMainMenu As RibbonTab
+        Public ReadOnly Property GroupMainMenu As RibbonTab
+            Get
+                Return _GroupMainMenu
+            End Get
+        End Property
+        Private _TabMainMenu As RibbonGroup
+        Public ReadOnly Property TabMainMenu As RibbonGroup
+            Get
+                Return _TabMainMenu
+            End Get
+        End Property
+        Private _ButtonOpenMenu As RibbonButton
+        Public ReadOnly Property ButtonOpenMenu As RibbonButton
+            Get
+                Return _ButtonOpenMenu
             End Get
         End Property
 
@@ -331,17 +338,18 @@ Namespace RibbonLib.Controls
             _GroupDataViewer = New RibbonGroup(_ribbon, Cmd.cmdGroupDataViewer)
             _ButtonExportPlotMatrix = New RibbonButton(_ribbon, Cmd.cmdButtonExportPlotMatrix)
             _CheckPlotLogScale = New RibbonCheckBox(_ribbon, Cmd.cmdCheckPlotLogScale)
+            _MenuWorkbench = New RibbonTabGroup(_ribbon, Cmd.cmdMenuWorkbench)
+            _TabWorkbench = New RibbonTab(_ribbon, Cmd.cmdTabWorkbench)
+            _TabVirtualCellTool = New RibbonGroup(_ribbon, Cmd.cmdTabVirtualCellTool)
+            _ButtonInspectCellModel = New RibbonButton(_ribbon, Cmd.cmdButtonInspectCellModel)
+            _GroupTools = New RibbonGroup(_ribbon, Cmd.cmdGroupTools)
+            _ButtonEditMutation = New RibbonButton(_ribbon, Cmd.cmdButtonEditMutation)
+            _ButtonEditCultureMedium = New RibbonButton(_ribbon, Cmd.cmdButtonEditCultureMedium)
+            _GroupModelling = New RibbonGroup(_ribbon, Cmd.cmdGroupModelling)
+            _ButtonIDAnnotation = New RibbonButton(_ribbon, Cmd.cmdButtonIDAnnotation)
             _GroupMainMenu = New RibbonTab(_ribbon, Cmd.cmdGroupMainMenu)
             _TabMainMenu = New RibbonGroup(_ribbon, Cmd.cmdTabMainMenu)
             _ButtonOpenMenu = New RibbonButton(_ribbon, Cmd.cmdButtonOpenMenu)
-            _MenuWorkbench = New RibbonTab(_ribbon, Cmd.cmdMenuWorkbench)
-            _TabWorkbench = New RibbonGroup(_ribbon, Cmd.cmdTabWorkbench)
-            _ButtonInspectCellModel = New RibbonButton(_ribbon, Cmd.cmdButtonInspectCellModel)
-            _GroupTools = New RibbonGroup(_ribbon, Cmd.cmdGroupTools)
-            _ButtonEditCultureMedium = New RibbonButton(_ribbon, Cmd.cmdButtonEditCultureMedium)
-            _ButtonEditMutation = New RibbonButton(_ribbon, Cmd.cmdButtonEditMutation)
-            _GroupModelling = New RibbonGroup(_ribbon, Cmd.cmdGroupModelling)
-            _ButtonIDAnnotation = New RibbonButton(_ribbon, Cmd.cmdButtonIDAnnotation)
         End Sub
 
     End Class

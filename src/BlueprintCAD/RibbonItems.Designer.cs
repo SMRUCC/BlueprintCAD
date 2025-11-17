@@ -38,17 +38,18 @@ namespace RibbonLib.Controls
             public const uint cmdGroupDataViewer = 8;
             public const uint cmdButtonExportPlotMatrix = 14;
             public const uint cmdCheckPlotLogScale = 15;
+            public const uint cmdMenuWorkbench = 19;
+            public const uint cmdTabWorkbench = 20;
+            public const uint cmdTabVirtualCellTool = 33;
+            public const uint cmdButtonInspectCellModel = 27;
+            public const uint cmdGroupTools = 23;
+            public const uint cmdButtonEditMutation = 28;
+            public const uint cmdButtonEditCultureMedium = 24;
+            public const uint cmdGroupModelling = 25;
+            public const uint cmdButtonIDAnnotation = 26;
             public const uint cmdGroupMainMenu = 31;
             public const uint cmdTabMainMenu = 32;
             public const uint cmdButtonOpenMenu = 29;
-            public const uint cmdMenuWorkbench = 19;
-            public const uint cmdTabWorkbench = 20;
-            public const uint cmdButtonInspectCellModel = 27;
-            public const uint cmdGroupTools = 23;
-            public const uint cmdButtonEditCultureMedium = 24;
-            public const uint cmdButtonEditMutation = 28;
-            public const uint cmdGroupModelling = 25;
-            public const uint cmdButtonIDAnnotation = 26;
         }
 
         // ContextPopup CommandName
@@ -113,17 +114,15 @@ namespace RibbonLib.Controls
         /// Log Scale
         /// </summary>
         public RibbonCheckBox CheckPlotLogScale { get; private set; }
-        public RibbonTab GroupMainMenu { get; private set; }
-        public RibbonGroup TabMainMenu { get; private set; }
-        public RibbonButton ButtonOpenMenu { get; private set; }
         /// <summary>
         /// Virtual Cell
         /// </summary>
-        public RibbonTab MenuWorkbench { get; private set; }
+        public RibbonTabGroup MenuWorkbench { get; private set; }
         /// <summary>
         /// Virtual Cell
         /// </summary>
-        public RibbonGroup TabWorkbench { get; private set; }
+        public RibbonTab TabWorkbench { get; private set; }
+        public RibbonGroup TabVirtualCellTool { get; private set; }
         /// <summary>
         /// Inspect the virtual cell network model
         /// </summary>
@@ -133,13 +132,13 @@ namespace RibbonLib.Controls
         /// </summary>
         public RibbonGroup GroupTools { get; private set; }
         /// <summary>
-        /// Edit the preset profile of the culture medium.
-        /// </summary>
-        public RibbonButton ButtonEditCultureMedium { get; private set; }
-        /// <summary>
         /// Mutation Tool
         /// </summary>
         public RibbonButton ButtonEditMutation { get; private set; }
+        /// <summary>
+        /// Edit the preset profile of the culture medium.
+        /// </summary>
+        public RibbonButton ButtonEditCultureMedium { get; private set; }
         /// <summary>
         /// Virtual cell modelling
         /// </summary>
@@ -148,6 +147,9 @@ namespace RibbonLib.Controls
         /// Make cell component id annotation via blastp alignment with the local database.
         /// </summary>
         public RibbonButton ButtonIDAnnotation { get; private set; }
+        public RibbonTab GroupMainMenu { get; private set; }
+        public RibbonGroup TabMainMenu { get; private set; }
+        public RibbonButton ButtonOpenMenu { get; private set; }
 
         public RibbonItems(Ribbon ribbon)
         {
@@ -174,17 +176,18 @@ namespace RibbonLib.Controls
             GroupDataViewer = new RibbonGroup(ribbon, Cmd.cmdGroupDataViewer);
             ButtonExportPlotMatrix = new RibbonButton(ribbon, Cmd.cmdButtonExportPlotMatrix);
             CheckPlotLogScale = new RibbonCheckBox(ribbon, Cmd.cmdCheckPlotLogScale);
+            MenuWorkbench = new RibbonTabGroup(ribbon, Cmd.cmdMenuWorkbench);
+            TabWorkbench = new RibbonTab(ribbon, Cmd.cmdTabWorkbench);
+            TabVirtualCellTool = new RibbonGroup(ribbon, Cmd.cmdTabVirtualCellTool);
+            ButtonInspectCellModel = new RibbonButton(ribbon, Cmd.cmdButtonInspectCellModel);
+            GroupTools = new RibbonGroup(ribbon, Cmd.cmdGroupTools);
+            ButtonEditMutation = new RibbonButton(ribbon, Cmd.cmdButtonEditMutation);
+            ButtonEditCultureMedium = new RibbonButton(ribbon, Cmd.cmdButtonEditCultureMedium);
+            GroupModelling = new RibbonGroup(ribbon, Cmd.cmdGroupModelling);
+            ButtonIDAnnotation = new RibbonButton(ribbon, Cmd.cmdButtonIDAnnotation);
             GroupMainMenu = new RibbonTab(ribbon, Cmd.cmdGroupMainMenu);
             TabMainMenu = new RibbonGroup(ribbon, Cmd.cmdTabMainMenu);
             ButtonOpenMenu = new RibbonButton(ribbon, Cmd.cmdButtonOpenMenu);
-            MenuWorkbench = new RibbonTab(ribbon, Cmd.cmdMenuWorkbench);
-            TabWorkbench = new RibbonGroup(ribbon, Cmd.cmdTabWorkbench);
-            ButtonInspectCellModel = new RibbonButton(ribbon, Cmd.cmdButtonInspectCellModel);
-            GroupTools = new RibbonGroup(ribbon, Cmd.cmdGroupTools);
-            ButtonEditCultureMedium = new RibbonButton(ribbon, Cmd.cmdButtonEditCultureMedium);
-            ButtonEditMutation = new RibbonButton(ribbon, Cmd.cmdButtonEditMutation);
-            GroupModelling = new RibbonGroup(ribbon, Cmd.cmdGroupModelling);
-            ButtonIDAnnotation = new RibbonButton(ribbon, Cmd.cmdButtonIDAnnotation);
         }
 
     }
