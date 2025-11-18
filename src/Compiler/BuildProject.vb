@@ -5,6 +5,7 @@ Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
+Imports SMRUCC.genomics.Assembly.NCBI.CDD
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
@@ -18,6 +19,10 @@ Module BuildProject
         Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
         Dim localblast As New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
         Dim enzyme_db As String = $"{settings.blastdb}/ec_numbers.fasta"
+        Dim transporter_db As String = $"{App.HOME}/data/Membrane.fasta"
+        Dim tf_db As String = $"{App.HOME}/data/TF.fasta"
+
+        ' ------- TFBS sites --------
         Dim pwm = MotifDatabase.OpenReadOnly($"{settings.blastdb}/RegPrecise.dat".Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Dim tss = proj.tss_upstream _
             .Select(Function(seq)
@@ -27,6 +32,7 @@ Module BuildProject
 
         proj.tfbs_hits = pwm.ScanSites(tss, blast_threads)
 
+        ' ----- enzyme hits ------
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"enzyme_number_{App.PID}")
         Dim tempOutfile As String = tempfile.ChangeSuffix(".txt")
 
@@ -45,6 +51,37 @@ Module BuildProject
             .Where(Function(ec) Not ec Is Nothing) _
             .ToDictionary(Function(a) a.gene_id)
 
+        ' -------- transcript factors --------
+        tempfile = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="tf_blast")
+        tempOutfile = tempfile.ChangeSuffix("txt")
+
+        localblast.Blastp(tempfile, tf_db, tempOutfile, e:=0.01).Run()
+
+        proj.tf_hits = BlastpOutputReader _
+            .RunParser(tempOutfile) _
+            .ExportHitsResult _
+            .ToArray
+        proj.transcript_factors = proj.tf_hits _
+            .Select(Function(hits) hits.AssignTFFamilyHit()) _
+            .Where(Function(ec) Not ec Is Nothing) _
+            .ToArray
+
+        ' ------ membrane transporter -------
+        tempfile = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="transporter_blast")
+        tempOutfile = tempfile.ChangeSuffix("txt")
+
+        localblast.Blastp(tempfile, transporter_db, tempOutfile, e:=0.01).Run()
+
+        proj.transporter = BlastpOutputReader _
+            .RunParser(tempOutfile) _
+            .ExportHitsResult(grepName:=Function(name) name.GetTagValue("|")) _
+            .ToArray
+        proj.membrane_proteins = proj.transporter _
+            .Select(Function(hits) RankTerm.RankTopTerm(hits)) _
+            .IteratesALL _
+            .ToArray
+
+        ' ------ operon, conserved gene clusters -------
         tempfile = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"operon_{App.PID}")
         tempOutfile = tempfile.ChangeSuffix(".txt")
 

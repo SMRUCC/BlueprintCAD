@@ -289,10 +289,10 @@ Public Class FormAnnotation
         End Using
 
         Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 12}
-        Dim enzyme_db As String = $"{App.HOME}/data/TF.fasta"
+        Dim tf_db As String = $"{App.HOME}/data/TF.fasta"
 
         ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
-        Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=0.01).Run())
+        Await Task.Run(Sub() blastp.Blastp(tempfile, tf_db, tempOutfile, e:=0.01).Run())
 
         proj.tf_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
