@@ -21,6 +21,9 @@ Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 Imports SMRUCC.genomics.SequenceModel.FASTA
+Imports SMRUCC.genomics.Visualize.ChromosomeMap
+Imports SMRUCC.genomics.Visualize.ChromosomeMap.Configuration
+Imports SMRUCC.genomics.Visualize.ChromosomeMap.DrawingModels
 
 Public Class FormAnnotation
 
@@ -822,5 +825,38 @@ Public Class FormAnnotation
 
     Private Sub EnzymeAnnotationCmd_SelectAnnotationTabPage() Handles EnzymeAnnotationCmd.SelectAnnotationTabPage
         TabControl2.SelectedTab = TabPage3
+    End Sub
+
+    Private Sub AdvancedDataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles AdvancedDataGridView2.CellContentClick
+        If AdvancedDataGridView2.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row As DataGridViewRow = AdvancedDataGridView2.SelectedRows(0)
+        Dim members As Index(Of String) = CStr(row.Cells(4).Value).Split(","c).Indexing
+        Dim genes As SegmentObject() = proj.gene_table _
+            .Where(Function(g) g.locus_id Like members) _
+            .OrderBy(Function(g) g.Location.left) _
+            .Select(Function(gene)
+                        Return New SegmentObject With {
+                            .Location = gene.Location,
+                            .CommonName = gene.commonName,
+                            .Direction = gene.Location.Strand,
+                            .Height = 85,
+                            .Left = gene.Location.left,
+                            .Right = gene.Location.right,
+                            .Product = gene.function,
+                            .LocusTag = gene.locus_id,
+                            .Color = Brushes.Gray
+                        }
+                    End Function) _
+            .ToArray
+        Dim map As New ChromesomeDrawingModel With {
+            .GeneObjects = genes,
+            .Configuration = New DataReader
+        }
+        Dim draw As System.Drawing.Image = RegionMap.PlotRegion(map, "1200,800", driver:=Drivers.GDI).AsGDIImage.CTypeGdiImage
+
+        PictureBox1.BackgroundImage = draw
     End Sub
 End Class
