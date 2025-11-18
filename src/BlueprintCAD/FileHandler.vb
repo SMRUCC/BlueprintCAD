@@ -3,6 +3,7 @@ Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Data.Framework.IO
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
+Imports Microsoft.VisualStudio.WinForms.Docking
 Imports RibbonLib.Controls.Events
 
 Module FileHandler
@@ -11,7 +12,8 @@ Module FileHandler
         Using file As New OpenFileDialog With {
             .Filter = {
                 "NCBI GenBank Assembly(*.gb;*.gbff;*.gbk)|*.gb;*.gbff;*.gbk",
-                "Excel Table File(*.csv)|*.csv"
+                "Excel Table File(*.csv)|*.csv",
+                "GCModeller Project(*.gcproj)|*.gcproj"
             }.JoinBy("|")
         }
             If file.ShowDialog = DialogResult.OK Then
@@ -24,9 +26,16 @@ Module FileHandler
         Select Case filepath.ExtensionSuffix
             Case "csv" : Call OpenCSVTableFile(filepath)
             Case "gb", "gbff", "gbk" : Call OpenGenBankFile(filepath)
+            Case "gcproj" : Call OpenProjectFile(filepath)
             Case Else
 
         End Select
+    End Sub
+
+    Private Sub OpenProjectFile(filepath As String)
+        Call CommonRuntime _
+            .ShowDocument(Of FormAnnotation)(DockState.Document, "Build Model: " & filepath.FileName) _
+            .LoadProject(filepath)
     End Sub
 
     Private Sub OpenCSVTableFile(filepath As String)
