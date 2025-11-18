@@ -1,6 +1,7 @@
 ﻿Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.MIME.Office.Excel.XLSX.Writer
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Public Class FormMutationEditor
@@ -94,6 +95,31 @@ Public Class FormMutationEditor
 
             DataGridView1.Rows(offset).HeaderCell.Value = impact.ID
         Next
+
+        Call DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
+    End Sub
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Using file As New SaveFileDialog With {.Filter = "Excel Table(*.xlsx)|*.xlsx"}
+            If file.ShowDialog = DialogResult.OK Then
+                Dim wb As New Workbook()
+                Dim sheet = wb.AddWorksheet("Sheet1")
+
+                Call sheet.AddNextCell("").AddNextCell("name").AddNextCell("equation").AddNextCell("substrates").AddNextCell("products").GoToNextRow()
+
+                For i As Integer = 0 To DataGridView1.Rows.Count - 1
+                    Dim row As DataGridViewRow = DataGridView1.Rows(i)
+
+                    Call sheet.AddNextCell(row.HeaderCell.Value) _
+                        .AddNextCell(row.Cells(0).Value) _
+                        .AddNextCell(row.Cells(1).Value) _
+                        .AddNextCell(row.Cells(2).Value) _
+                        .AddNextCell(row.Cells(3).Value)
+                Next
+
+                Call wb.SaveAs(file.FileName)
+            End If
+        End Using
     End Sub
 
     ''' <summary>

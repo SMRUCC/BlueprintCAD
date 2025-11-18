@@ -49,6 +49,7 @@ Partial Class FormMutationEditor
         SplitContainer1 = New SplitContainer()
         ToolStrip2 = New ToolStrip()
         ToolStripLabel1 = New ToolStripLabel()
+        ToolStripButton2 = New ToolStripButton()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip1.SuspendLayout()
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
@@ -258,9 +259,10 @@ Partial Class FormMutationEditor
         ' 
         ' ToolStrip2
         ' 
-        ToolStrip2.Items.AddRange(New ToolStripItem() {ToolStripLabel1})
+        ToolStrip2.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripButton2})
         ToolStrip2.Location = New Point(0, 0)
         ToolStrip2.Name = "ToolStrip2"
+        ToolStrip2.RenderMode = ToolStripRenderMode.System
         ToolStrip2.Size = New Size(1210, 25)
         ToolStrip2.TabIndex = 5
         ToolStrip2.Text = "ToolStrip2"
@@ -270,6 +272,15 @@ Partial Class FormMutationEditor
         ToolStripLabel1.Name = "ToolStripLabel1"
         ToolStripLabel1.Size = New Size(143, 22)
         ToolStripLabel1.Text = "Cellular Network Impacts:"
+        ' 
+        ' ToolStripButton2
+        ' 
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "Export Network Table"
         ' 
         ' FormMutationEditor
         ' 
@@ -324,4 +335,5 @@ Partial Class FormMutationEditor
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents ToolStrip2 As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class
