@@ -803,4 +803,24 @@ Public Class FormAnnotation
                 End Sub)
         End If
     End Sub
+
+    Private Sub TransporterAnnotationCmd_SelectAnnotationTabPage() Handles TransporterAnnotationCmd.SelectAnnotationTabPage
+        TabControl2.SelectedTab = TabPage7
+    End Sub
+
+    Private Sub TFBSAnnotationCmd_SelectAnnotationTabPage() Handles TFBSAnnotationCmd.SelectAnnotationTabPage
+        TabControl2.SelectedTab = TabPage6
+    End Sub
+
+    Private Sub TFAnnotationCmd_SelectAnnotationTabPage() Handles TFAnnotationCmd.SelectAnnotationTabPage
+        TabControl2.SelectedTab = TabPage5
+    End Sub
+
+    Private Sub OperonAnnotationCmd_SelectAnnotationTabPage() Handles OperonAnnotationCmd.SelectAnnotationTabPage
+        TabControl2.SelectedTab = TabPage4
+    End Sub
+
+    Private Sub EnzymeAnnotationCmd_SelectAnnotationTabPage() Handles EnzymeAnnotationCmd.SelectAnnotationTabPage
+        TabControl2.SelectedTab = TabPage3
+    End Sub
 End Class

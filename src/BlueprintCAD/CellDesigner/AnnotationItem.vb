@@ -4,6 +4,7 @@ Imports System.Runtime.CompilerServices
 Public Class AnnotationItem
 
     Public Event Run()
+    Public Event SelectAnnotationTabPage()
 
     Public Property Running As Boolean
         Get
@@ -47,5 +48,9 @@ Public Class AnnotationItem
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         RaiseEvent Run()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        RaiseEvent SelectAnnotationTabPage()
     End Sub
 End Class
