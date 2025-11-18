@@ -15,6 +15,6 @@ Public Class FormCultureMediumLibrary
     End Sub
 
     Private Sub FormCultureMediumLibrary_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call ApplyVsTheme(ToolStrip1, ToolStrip2)
+        Call ApplyVsTheme(ToolStrip2)
     End Sub
 End Class

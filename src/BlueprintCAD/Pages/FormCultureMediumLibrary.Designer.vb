@@ -26,7 +26,7 @@ Partial Class FormCultureMediumLibrary
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCultureMediumLibrary))
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        ToolStrip1 = New ToolStrip()
+        ' ToolStrip1 = New ToolStrip()
         ToolStripLabel1 = New ToolStripLabel()
         ToolStripComboBox1 = New ToolStripComboBox()
         ToolStripButton1 = New ToolStripButton()
@@ -35,18 +35,18 @@ Partial Class FormCultureMediumLibrary
         ToolStripButton2 = New ToolStripButton()
         DataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
         ToolStrip2 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
-        ToolStrip1.SuspendLayout()
+        ' ToolStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ToolStrip1
         ' 
-        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripComboBox1, ToolStripButton1, ToolStripButton3, ToolStripSeparator1, ToolStripButton2})
-        ToolStrip1.Location = New Point(0, 0)
-        ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Size = New Size(800, 25)
-        ToolStrip1.TabIndex = 1
-        ToolStrip1.Text = "ToolStrip1"
+        ' ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripComboBox1, ToolStripButton1, ToolStripButton3, ToolStripSeparator1, ToolStripButton2})
+        ' ToolStrip1.Location = New Point(0, 0)
+        ' ToolStrip1.Name = "ToolStrip1"
+        ' ToolStrip1.Size = New Size(1127, 25)
+        ' ToolStrip1.TabIndex = 1
+        ' ToolStrip1.Text = "ToolStrip1"
         ' 
         ' ToolStripLabel1
         ' 
@@ -98,7 +98,7 @@ Partial Class FormCultureMediumLibrary
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = SystemColors.Window
-        DataGridViewCellStyle1.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle1.Font = New Font("Cambria", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
         DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
@@ -113,7 +113,7 @@ Partial Class FormCultureMediumLibrary
         DataGridView1.ReadOnly = True
         DataGridView1.RightToLeft = RightToLeft.No
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(800, 398)
+        DataGridView1.Size = New Size(1127, 552)
         DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         DataGridView1.TabIndex = 2
         ' 
@@ -126,31 +126,32 @@ Partial Class FormCultureMediumLibrary
         ToolStrip2.MinimumSize = New Size(0, 27)
         ToolStrip2.Name = "ToolStrip2"
         ToolStrip2.RenderMode = ToolStripRenderMode.Professional
-        ToolStrip2.Size = New Size(800, 27)
+        ToolStrip2.Size = New Size(1127, 27)
         ToolStrip2.TabIndex = 3
         ToolStrip2.Text = "ToolStrip2"
+        ToolStrip2.Items.AddRange({ToolStripLabel1, ToolStripComboBox1, ToolStripButton1, ToolStripButton3, ToolStripSeparator1, ToolStripButton2})
         ' 
         ' FormCultureMediumLibrary
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(1127, 604)
         Controls.Add(DataGridView1)
         Controls.Add(ToolStrip2)
-        Controls.Add(ToolStrip1)
+        ' Controls.Add(ToolStrip1)
         DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
         DoubleBuffered = True
         Name = "FormCultureMediumLibrary"
         ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
         TabPageContextMenuStrip = DockContextMenuStrip1
-        ToolStrip1.ResumeLayout(False)
-        ToolStrip1.PerformLayout()
+        ' ToolStrip1.ResumeLayout(False)
+        ' ToolStrip1.PerformLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents ToolStrip1 As ToolStrip
+    ' Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
     Friend WithEvents ToolStripButton1 As ToolStripButton
