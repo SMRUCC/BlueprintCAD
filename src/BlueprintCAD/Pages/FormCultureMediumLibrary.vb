@@ -3,7 +3,6 @@ Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.MIME.Office.Excel
-Imports SMRUCC.genomics.Assembly.MetaCyc.File.DataFiles
 
 Public Class FormCultureMediumLibrary
 
