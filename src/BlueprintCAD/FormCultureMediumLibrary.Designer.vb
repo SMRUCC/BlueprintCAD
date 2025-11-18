@@ -25,14 +25,18 @@ Partial Class FormCultureMediumLibrary
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCultureMediumLibrary))
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         ToolStrip1 = New ToolStrip()
         ToolStripLabel1 = New ToolStripLabel()
         ToolStripComboBox1 = New ToolStripComboBox()
         ToolStripButton1 = New ToolStripButton()
-        ToolStripButton2 = New ToolStripButton()
-        ToolStripSeparator1 = New ToolStripSeparator()
         ToolStripButton3 = New ToolStripButton()
+        ToolStripSeparator1 = New ToolStripSeparator()
+        ToolStripButton2 = New ToolStripButton()
+        DataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
+        ToolStrip2 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
         ToolStrip1.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ToolStrip1
@@ -64,20 +68,6 @@ Partial Class FormCultureMediumLibrary
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Add New"
         ' 
-        ' ToolStripButton2
-        ' 
-        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
-        ToolStripButton2.ImageTransparentColor = Color.Magenta
-        ToolStripButton2.Name = "ToolStripButton2"
-        ToolStripButton2.Size = New Size(23, 22)
-        ToolStripButton2.Text = "Delete"
-        ' 
-        ' ToolStripSeparator1
-        ' 
-        ToolStripSeparator1.Name = "ToolStripSeparator1"
-        ToolStripSeparator1.Size = New Size(6, 25)
-        ' 
         ' ToolStripButton3
         ' 
         ToolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image
@@ -87,11 +77,66 @@ Partial Class FormCultureMediumLibrary
         ToolStripButton3.Size = New Size(23, 22)
         ToolStripButton3.Text = "Imports"
         ' 
+        ' ToolStripSeparator1
+        ' 
+        ToolStripSeparator1.Name = "ToolStripSeparator1"
+        ToolStripSeparator1.Size = New Size(6, 25)
+        ' 
+        ' ToolStripButton2
+        ' 
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "Delete"
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.BackgroundColor = Color.WhiteSmoke
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Window
+        DataGridViewCellStyle1.Font = New Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.FilterAndSortEnabled = True
+        DataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
+        DataGridView1.Location = New Point(0, 52)
+        DataGridView1.MaxFilterButtonImageHeight = 23
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
+        DataGridView1.RightToLeft = RightToLeft.No
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridView1.Size = New Size(800, 398)
+        DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
+        DataGridView1.TabIndex = 2
+        ' 
+        ' ToolStrip2
+        ' 
+        ToolStrip2.AllowMerge = False
+        ToolStrip2.GripStyle = ToolStripGripStyle.Hidden
+        ToolStrip2.Location = New Point(0, 25)
+        ToolStrip2.MaximumSize = New Size(0, 27)
+        ToolStrip2.MinimumSize = New Size(0, 27)
+        ToolStrip2.Name = "ToolStrip2"
+        ToolStrip2.RenderMode = ToolStripRenderMode.Professional
+        ToolStrip2.Size = New Size(800, 27)
+        ToolStrip2.TabIndex = 3
+        ToolStrip2.Text = "ToolStrip2"
+        ' 
         ' FormCultureMediumLibrary
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(DataGridView1)
+        Controls.Add(ToolStrip2)
         Controls.Add(ToolStrip1)
         DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
         DoubleBuffered = True
@@ -100,6 +145,7 @@ Partial Class FormCultureMediumLibrary
         TabPageContextMenuStrip = DockContextMenuStrip1
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -111,4 +157,6 @@ Partial Class FormCultureMediumLibrary
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents ToolStripButton3 As ToolStripButton
+    Friend WithEvents DataGridView1 As Galaxy.Data.TableSheet.AdvancedDataGridView
+    Friend WithEvents ToolStrip2 As Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar
 End Class
