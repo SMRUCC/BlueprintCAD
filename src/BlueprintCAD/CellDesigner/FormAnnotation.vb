@@ -398,9 +398,9 @@ Public Class FormAnnotation
             .ExportHistResult _
             .ToArray
         proj.membrane_proteins = proj.enzyme_hits _
-            .Select(Function(hits) hits.AssignECNumber()) _
-            .Where(Function(ec) Not ec Is Nothing) _
-            .ToDictionary(Function(a) a.gene_id)
+            .Select(Function(hits) RankTerm.RankTopTerm(hits)) _
+            .IteratesALL _
+            .ToArray
 
         Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
     End Sub
