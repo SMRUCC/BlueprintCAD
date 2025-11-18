@@ -4,6 +4,7 @@ Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.ComponentModel.Ranges.Model
 Imports Microsoft.VisualBasic.ComponentModel.Ranges.Unit
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Drawing
@@ -853,7 +854,8 @@ Public Class FormAnnotation
             .ToArray
         Dim map As New ChromesomeDrawingModel With {
             .GeneObjects = genes,
-            .Configuration = New DataReader
+            .Configuration = New DataReader,
+            .Size = New DoubleRange(genes.Select(Function(g) {g.Left, g.Right}).IteratesALL).Length * 1.5
         }
         Dim draw As System.Drawing.Image = RegionMap.PlotRegion(map, "1200,800", driver:=Drivers.GDI).AsGDIImage.CTypeGdiImage
 
