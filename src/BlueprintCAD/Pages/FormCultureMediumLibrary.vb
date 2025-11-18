@@ -2,6 +2,8 @@
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.Data.Framework
+Imports Microsoft.VisualBasic.MIME.Office.Excel
+Imports SMRUCC.genomics.Assembly.MetaCyc.File.DataFiles
 
 Public Class FormCultureMediumLibrary
 
@@ -23,14 +25,18 @@ Public Class FormCultureMediumLibrary
     End Sub
 
     Protected Overrides Sub SaveDocument()
-        Dim compounds As New List(Of Compound)
+        Dim compounds As FormulaCompound() = ExportTable.ToArray
         Dim savefile As String = $"{App.ProductProgramData}/cultureMediu/{edit.NormalizePathString(False, replacement:="-")}.csv"
 
+        Call compounds.SaveTo(savefile)
+    End Sub
+
+    Public Iterator Function ExportTable() As IEnumerable(Of FormulaCompound)
         For i As Integer = 0 To DataGridView1.Rows.Count - 1
             Dim row As DataGridViewRow = DataGridView1.Rows(i)
-            Dim met As New Compound With {
+            Dim met As New FormulaCompound With {
                 .registry_id = CStr(row.HeaderCell.Value),
-                .name = CStr(row.Cells(0).Value),
+                .Name = CStr(row.Cells(0).Value),
                 .formula = CStr(row.Cells(1).Value),
                 .cas_id = CStr(row.Cells(2).Value),
                 .kegg_id = CStr(row.Cells(3).Value),
@@ -38,11 +44,9 @@ Public Class FormCultureMediumLibrary
                 .value = CDbl(row.Cells(5).Value)
             }
 
-            Call compounds.Add(met)
+            Yield met
         Next
-
-        Call compounds.SaveTo(savefile)
-    End Sub
+    End Function
 
     Private Sub ToolStripComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ToolStripComboBox1.SelectedIndexChanged
         If ToolStripComboBox1.SelectedIndex < 0 Then
@@ -53,14 +57,14 @@ Public Class FormCultureMediumLibrary
 
         Dim name As String = ToolStripComboBox1.SelectedItem.ToString
         Dim savefile As String = $"{App.ProductProgramData}/cultureMedium/{name.NormalizePathString(False, replacement:="-")}.csv"
-        Dim data As Compound() = savefile.LoadCsv(Of Compound)().ToArray
+        Dim data As FormulaCompound() = savefile.LoadCsv(Of FormulaCompound)().ToArray
 
         edit = name
         ImportsTable(data)
     End Sub
 
-    Private Sub ImportsTable(data As IEnumerable(Of Compound))
-        For Each met As Compound In data
+    Private Sub ImportsTable(data As IEnumerable(Of FormulaCompound))
+        For Each met As FormulaCompound In data
             Dim offset = DataGridView1.Rows.Add(
                 met.name, met.formula, met.cas_id, met.kegg_id, met.biocyc_id, met.value
             )
@@ -88,7 +92,7 @@ Public Class FormCultureMediumLibrary
     Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
         Using file As New OpenFileDialog With {.Filter = "Excel Table(*.csv)|*.csv"}
             If file.ShowDialog = DialogResult.OK Then
-                Dim data As Compound() = file.FileName.LoadCsv(Of Compound)().ToArray
+                Dim data As FormulaCompound() = file.FileName.LoadCsv(Of FormulaCompound)().ToArray
 
                 If data.Any AndAlso DataGridView1.Rows.Count > 0 Then
                     If MessageBox.Show("We found that there are some existed data inside the editor table, going to replace[YES] the data or merge[NO] with it?",
@@ -104,6 +108,18 @@ Public Class FormCultureMediumLibrary
                 Else
                     Call DataGridView1.Rows.Clear()
                     Call ImportsTable(data)
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
+        Using file As New SaveFileDialog With {.Filter = "Excel Table(*.xlsx;*.csv)|*.xlsx;*.csv"}
+            If file.ShowDialog = DialogResult.OK Then
+                If file.FileName.ExtensionSuffix("csv") Then
+                    Call ExportTable.SaveTo(file.FileName)
+                Else
+                    Call XLSX.SaveToExcel(ExportTable, file.FileName)
                 End If
             End If
         End Using

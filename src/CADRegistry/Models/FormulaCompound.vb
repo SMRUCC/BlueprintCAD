@@ -1,7 +1,7 @@
 ﻿''' <summary>
 ''' 
 ''' </summary>
-Public Class Compound
+Public Class FormulaCompound
 
     Public Property registry_id As String
     Public Property name As String

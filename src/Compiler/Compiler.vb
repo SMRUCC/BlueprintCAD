@@ -1,5 +1,4 @@
-﻿Imports System.Threading
-Imports CADRegistry
+﻿Imports CADRegistry
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Language
@@ -8,6 +7,7 @@ Imports Microsoft.VisualBasic.Math.Scripting.MathExpression
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.Text.Xml.Models
 Imports SMRUCC.genomics.ComponentModel.Annotation
+Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports SMRUCC.genomics.GCModeller.CompilerServices
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model
@@ -183,7 +183,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                                 .Where(Function(r) r.dbname = "MetaCyc") _
                                 .ToArray
 
-                            Return New Compound With {
+                            Return New v2.Compound With {
                                 .formula = c.formula,
                                 .ID = FormatCompoundId(c.id),
                                 .name = c.name,

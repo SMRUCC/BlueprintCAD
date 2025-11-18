@@ -39,6 +39,7 @@ Partial Class FormCultureMediumLibrary
         Column4 = New DataGridViewTextBoxColumn()
         Column5 = New DataGridViewTextBoxColumn()
         Column6 = New DataGridViewTextBoxColumn()
+        ToolStripButton4 = New ToolStripButton()
         ToolStrip2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -91,7 +92,7 @@ Partial Class FormCultureMediumLibrary
         ' 
         ToolStrip2.AllowMerge = False
         ToolStrip2.GripStyle = ToolStripGripStyle.Hidden
-        ToolStrip2.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripComboBox1, ToolStripButton1, ToolStripButton3, ToolStripSeparator1, ToolStripButton2})
+        ToolStrip2.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripComboBox1, ToolStripButton1, ToolStripButton3, ToolStripButton4, ToolStripSeparator1, ToolStripButton2})
         ToolStrip2.Location = New Point(0, 0)
         ToolStrip2.MaximumSize = New Size(0, 27)
         ToolStrip2.MinimumSize = New Size(0, 27)
@@ -143,6 +144,15 @@ Partial Class FormCultureMediumLibrary
         Column6.HeaderText = "Compounds"
         Column6.Name = "Column6"
         ' 
+        ' ToolStripButton4
+        ' 
+        ToolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), Image)
+        ToolStripButton4.ImageTransparentColor = Color.Magenta
+        ToolStripButton4.Name = "ToolStripButton4"
+        ToolStripButton4.Size = New Size(23, 24)
+        ToolStripButton4.Text = "Export Table"
+        ' 
         ' FormCultureMediumLibrary
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
@@ -177,4 +187,5 @@ Partial Class FormCultureMediumLibrary
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripButton4 As ToolStripButton
 End Class
