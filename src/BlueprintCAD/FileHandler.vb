@@ -13,7 +13,8 @@ Module FileHandler
             .Filter = {
                 "NCBI GenBank Assembly(*.gb;*.gbff;*.gbk)|*.gb;*.gbff;*.gbk",
                 "Excel Table File(*.csv)|*.csv",
-                "GCModeller Project(*.gcproj)|*.gcproj"
+                "GCModeller Project(*.gcproj)|*.gcproj",
+                "Virtual Cell Data Pack(*.vcellPack)|*.vcellPack"
             }.JoinBy("|")
         }
             If file.ShowDialog = DialogResult.OK Then
@@ -27,9 +28,15 @@ Module FileHandler
             Case "csv" : Call OpenCSVTableFile(filepath)
             Case "gb", "gbff", "gbk" : Call OpenGenBankFile(filepath)
             Case "gcproj" : Call OpenProjectFile(filepath)
+            Case "vcellpack" : Call OpenVCPack(filepath)
             Case Else
 
         End Select
+    End Sub
+
+    Private Sub OpenVCPack(filepath As String)
+        Call CommonRuntime.ShowDocument(Of CellBrowser)() _
+            .OpenVirtualCellDataFile(filepath)
     End Sub
 
     Private Sub OpenProjectFile(filepath As String)
