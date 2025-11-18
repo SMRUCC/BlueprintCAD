@@ -7,6 +7,7 @@ Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 Imports SMRUCC.genomics.Metagenomics
 Imports SMRUCC.genomics.SequenceModel.FASTA
@@ -56,6 +57,7 @@ Public Module ProjectIO
             Dim enzyme_hits As HitCollection() = zip.LoadHitCollection("/localblast/enzyme_hits.jsonl").ToArray
             Dim operon_hits As HitCollection() = zip.LoadHitCollection("/localblast/operon_hits.jsonl").ToArray
             Dim tf_hits As HitCollection() = zip.LoadHitCollection("/localblast/tf_hits.jsonl").ToArray
+            Dim transport_blast As HitCollection() = zip.LoadHitCollection("/localblast/transporter.jsonl").ToArray
 
             Dim operons As AnnotatedOperon() = zip.ReadLines("/localblast/operons.jsonl") _
                 .SafeQuery _
@@ -75,6 +77,11 @@ Public Module ProjectIO
             Dim tfset As BestHit() = zip.ReadLines("/localblast/transcript_factors.jsonl") _
                 .SafeQuery _
                 .Select(Function(line) line.LoadJSON(Of BestHit)(throwEx:=False)) _
+                .Where(Function(line) Not line Is Nothing) _
+                .ToArray
+            Dim membranes As RankTerm() = zip.ReadLines("/localblast/membrane_factors.jsonl") _
+                .SafeQuery _
+                .Select(Function(line) line.LoadJSON(Of RankTerm)(throwEx:=False)) _
                 .Where(Function(line) Not line Is Nothing) _
                 .ToArray
 
@@ -102,7 +109,9 @@ Public Module ProjectIO
                 .operons = operons,
                 .tfbs_hits = tfbs_groups,
                 .tf_hits = tf_hits,
-                .transcript_factors = tfset
+                .transcript_factors = tfset,
+                .transporter = transport_blast,
+                .membrane_proteins = membranes
             }
         End Using
     End Function
@@ -125,6 +134,9 @@ Public Module ProjectIO
             Call zip.WriteLines(proj.transcript_factors.SafeQuery.Select(Function(e) e.GetJson), "/localblast/transcript_factors.jsonl")
             Call zip.WriteLines(proj.operons.SafeQuery.Select(Function(e) e.GetJson), "/localblast/operons.jsonl")
             Call zip.WriteLines(proj.tfbs_hits.SafeQuery.Values.IteratesALL.Select(Function(e) e.GetJson), "/tfbs.jsonl")
+
+            Call zip.WriteLines(proj.transporter.SafeQuery.Select(Function(e) e.GetJson), "/localblast/transporter.jsonl")
+            Call zip.WriteLines(proj.membrane_proteins.SafeQuery.Select(Function(e) e.GetJson), "/localblast/membrane_factors.jsonl")
         End Using
     End Sub
 End Module

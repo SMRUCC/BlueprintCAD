@@ -57,6 +57,8 @@ Public Class FormAnnotation
                                         Call Me.Invoke(Sub() tfbsLoader.LoadTable(AddressOf LoadTFBSList))
                                         Call println("Load transcript factors annotation result...")
                                         Call Me.Invoke(Sub() tfListLoader.LoadTable(AddressOf LoadTFHits))
+                                        Call println("Load membrane transporter annotation result...")
+                                        Call Me.Invoke(Sub() transportLoader.LoadTable(AddressOf loadTransporter))
                                     End Sub, info:="Load annotation table data into workspace viewer...")
 
         metadata = New GenbankProperties(proj)
@@ -402,7 +404,39 @@ Public Class FormAnnotation
             .IteratesALL _
             .ToArray
 
-        Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
+        Call transportLoader.LoadTable(AddressOf loadTransporter)
+    End Sub
+
+    Private Sub loadTransporter(tbl As DataTable)
+        Dim transporters As IGrouping(Of String, RankTerm)() = proj.membrane_proteins _
+            .SafeQuery _
+            .GroupBy(Function(a) a.queryName) _
+            .ToArray
+
+        Call tbl.Columns.Add("gene_id", GetType(String))
+        Call tbl.Columns.Add("subcellular location", GetType(String))
+        Call tbl.Columns.Add("supports", GetType(Integer))
+        Call tbl.Columns.Add("score", GetType(Double))
+        Call tbl.Columns.Add("sources", GetType(String))
+
+        For Each group As IGrouping(Of String, RankTerm) In transporters
+            For Each term As RankTerm In group
+                Call tbl.Rows.Add(group.Key, term.term, term.source.Length, term.score, term.source.JoinBy(", "))
+            Next
+        Next
+
+        Dim n As Integer = transporters.Length
+
+        If Not metadata Is Nothing Then
+            metadata.transporter = n
+        End If
+
+        TransporterAnnotationCmd.Running = False
+
+        If Not proj.membrane_proteins.IsNullOrEmpty Then
+            Call TransporterAnnotationCmd.SetStatusIcon(SuccessIcon)
+            Call TransporterAnnotationCmd.SetStatusText($"{n} membrane transporter was annotated.")
+        End If
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick

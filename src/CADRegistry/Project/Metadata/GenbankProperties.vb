@@ -8,6 +8,7 @@
     Public Property operons As Integer
     Public Property transcript_factors As Integer
     Public Property tfbs As Integer
+    Public Property transporter As Integer
 
     Sub New()
     End Sub
@@ -25,6 +26,7 @@
             transcript_factors = proj.transcript_factors.TryCount
             enzymes = proj.ec_numbers.TryCount
             tfbs = proj.tfbs_hits.TryCount
+            transporter = proj.transporter.TryCount
         End If
     End Sub
 
