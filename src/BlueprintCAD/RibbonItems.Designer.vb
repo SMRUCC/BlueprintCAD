@@ -18,8 +18,10 @@ Namespace RibbonLib.Controls
             Public Const cmdListRecentItems As UInteger = 22
             Public Const cmdButtonRun As UInteger = 21
             Public Const cmdButtonOpenVirtualCellPackFile As UInteger = 3
+            Public Const cmdMenuAbout As UInteger = 34
             Public Const cmdButtonExit As UInteger = 4
             Public Const cmdButtonSaveMenu As UInteger = 30
+            Public Const cmdButtonOpenMenu As UInteger = 29
             Public Const cmdMenuVirtualCellViewer As UInteger = 2
             Public Const cmdTabVirtualCellBrowser As UInteger = 5
             Public Const cmdGroupVirtualCellBrowser As UInteger = 7
@@ -46,7 +48,7 @@ Namespace RibbonLib.Controls
             Public Const cmdButtonIDAnnotation As UInteger = 26
             Public Const cmdGroupMainMenu As UInteger = 31
             Public Const cmdTabMainMenu As UInteger = 32
-            Public Const cmdButtonOpenMenu As UInteger = 29
+            Public Const cmdGroupOthers As UInteger = 35
         End Class
 
         ' ContextPopup CommandName
@@ -84,6 +86,12 @@ Namespace RibbonLib.Controls
                 Return _ButtonOpenVirtualCellPackFile
             End Get
         End Property
+        Private _MenuAbout As RibbonButton
+        Public ReadOnly Property MenuAbout As RibbonButton
+            Get
+                Return _MenuAbout
+            End Get
+        End Property
         Private _ButtonExit As RibbonButton
         ''' <summary>
         ''' Exit
@@ -97,6 +105,12 @@ Namespace RibbonLib.Controls
         Public ReadOnly Property ButtonSaveMenu As RibbonButton
             Get
                 Return _ButtonSaveMenu
+            End Get
+        End Property
+        Private _ButtonOpenMenu As RibbonButton
+        Public ReadOnly Property ButtonOpenMenu As RibbonButton
+            Get
+                Return _ButtonOpenMenu
             End Get
         End Property
         Private _MenuVirtualCellViewer As RibbonTabGroup
@@ -306,10 +320,10 @@ Namespace RibbonLib.Controls
                 Return _TabMainMenu
             End Get
         End Property
-        Private _ButtonOpenMenu As RibbonButton
-        Public ReadOnly Property ButtonOpenMenu As RibbonButton
+        Private _GroupOthers As RibbonGroup
+        Public ReadOnly Property GroupOthers As RibbonGroup
             Get
-                Return _ButtonOpenMenu
+                Return _GroupOthers
             End Get
         End Property
 
@@ -321,8 +335,10 @@ Namespace RibbonLib.Controls
             _ListRecentItems = New RibbonRecentItems(_ribbon, Cmd.cmdListRecentItems)
             _ButtonRun = New RibbonButton(_ribbon, Cmd.cmdButtonRun)
             _ButtonOpenVirtualCellPackFile = New RibbonButton(_ribbon, Cmd.cmdButtonOpenVirtualCellPackFile)
+            _MenuAbout = New RibbonButton(_ribbon, Cmd.cmdMenuAbout)
             _ButtonExit = New RibbonButton(_ribbon, Cmd.cmdButtonExit)
             _ButtonSaveMenu = New RibbonButton(_ribbon, Cmd.cmdButtonSaveMenu)
+            _ButtonOpenMenu = New RibbonButton(_ribbon, Cmd.cmdButtonOpenMenu)
             _MenuVirtualCellViewer = New RibbonTabGroup(_ribbon, Cmd.cmdMenuVirtualCellViewer)
             _TabVirtualCellBrowser = New RibbonTab(_ribbon, Cmd.cmdTabVirtualCellBrowser)
             _GroupVirtualCellBrowser = New RibbonGroup(_ribbon, Cmd.cmdGroupVirtualCellBrowser)
@@ -349,7 +365,7 @@ Namespace RibbonLib.Controls
             _ButtonIDAnnotation = New RibbonButton(_ribbon, Cmd.cmdButtonIDAnnotation)
             _GroupMainMenu = New RibbonTab(_ribbon, Cmd.cmdGroupMainMenu)
             _TabMainMenu = New RibbonGroup(_ribbon, Cmd.cmdTabMainMenu)
-            _ButtonOpenMenu = New RibbonButton(_ribbon, Cmd.cmdButtonOpenMenu)
+            _GroupOthers = New RibbonGroup(_ribbon, Cmd.cmdGroupOthers)
         End Sub
 
     End Class

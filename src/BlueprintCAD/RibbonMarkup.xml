@@ -152,6 +152,15 @@
     <Command Name="cmdGroupMainMenu" Id="31" LabelTitle="Workbench" />
     <Command Name="cmdTabMainMenu" Id="32" LabelTitle="Workbench" />
     <Command Name="cmdTabVirtualCellTool" Id="33" LabelTitle="Virtual Cell" />
+    <Command Name="cmdMenuAbout" Id="34" LabelTitle="About">
+      <Command.SmallImages>
+        <Image MinDPI="192">Resources/icons8-about-96.png</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image MinDPI="192">Resources/icons8-about-96.png</Image>
+      </Command.LargeImages>
+    </Command>
+    <Command Name="cmdGroupOthers" Id="35" LabelTitle="Mics" />
   </Application.Commands>
   <Application.Views>
     <Ribbon Name="Sophia VirtualCell Workshop">
@@ -165,6 +174,9 @@
             <Button CommandName="cmdButtonOpenVirtualCellPackFile" />
           </MenuGroup>
           <MenuGroup>
+            <Button CommandName="cmdMenuAbout" />
+          </MenuGroup>
+          <MenuGroup>
             <Button CommandName="cmdButtonExit" />
           </MenuGroup>
         </ApplicationMenu>
@@ -173,6 +185,8 @@
         <QuickAccessToolbar>
           <QuickAccessToolbar.ApplicationDefaults>
             <Button CommandName="cmdButtonSaveMenu" ApplicationDefaults.IsChecked="true" />
+            <Button CommandName="cmdButtonOpenMenu" ApplicationDefaults.IsChecked="true" />
+            <Button CommandName="cmdButtonRun" ApplicationDefaults.IsChecked="true" />
           </QuickAccessToolbar.ApplicationDefaults>
         </QuickAccessToolbar>
       </Ribbon.QuickAccessToolbar>
@@ -220,6 +234,9 @@
           <Group CommandName="cmdTabMainMenu" SizeDefinition="TwoButtons">
             <Button CommandName="cmdButtonOpenMenu" />
             <Button CommandName="cmdButtonSaveMenu" />
+          </Group>
+          <Group CommandName="cmdGroupOthers" SizeDefinition="OneButton">
+            <Button CommandName="cmdMenuAbout" />
           </Group>
         </Tab>
       </Ribbon.Tabs>

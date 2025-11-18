@@ -166,4 +166,10 @@
 #define cmdTabMainMenu_LabelTitle_RESID 60128
 #define cmdTabVirtualCellTool 33 
 #define cmdTabVirtualCellTool_LabelTitle_RESID 60129
-#define InternalCmd2_LabelTitle_RESID 60130
+#define cmdMenuAbout 34 
+#define cmdMenuAbout_LabelTitle_RESID 60130
+#define cmdMenuAbout_SmallImages_192__RESID 60131
+#define cmdMenuAbout_LargeImages_192__RESID 60132
+#define cmdGroupOthers 35 
+#define cmdGroupOthers_LabelTitle_RESID 60133
+#define InternalCmd2_LabelTitle_RESID 60134

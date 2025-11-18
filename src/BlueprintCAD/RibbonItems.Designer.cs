@@ -21,8 +21,10 @@ namespace RibbonLib.Controls
             public const uint cmdListRecentItems = 22;
             public const uint cmdButtonRun = 21;
             public const uint cmdButtonOpenVirtualCellPackFile = 3;
+            public const uint cmdMenuAbout = 34;
             public const uint cmdButtonExit = 4;
             public const uint cmdButtonSaveMenu = 30;
+            public const uint cmdButtonOpenMenu = 29;
             public const uint cmdMenuVirtualCellViewer = 2;
             public const uint cmdTabVirtualCellBrowser = 5;
             public const uint cmdGroupVirtualCellBrowser = 7;
@@ -49,7 +51,7 @@ namespace RibbonLib.Controls
             public const uint cmdButtonIDAnnotation = 26;
             public const uint cmdGroupMainMenu = 31;
             public const uint cmdTabMainMenu = 32;
-            public const uint cmdButtonOpenMenu = 29;
+            public const uint cmdGroupOthers = 35;
         }
 
         // ContextPopup CommandName
@@ -67,11 +69,13 @@ namespace RibbonLib.Controls
         /// Open VirtualCell Pack File
         /// </summary>
         public RibbonButton ButtonOpenVirtualCellPackFile { get; private set; }
+        public RibbonButton MenuAbout { get; private set; }
         /// <summary>
         /// Exit
         /// </summary>
         public RibbonButton ButtonExit { get; private set; }
         public RibbonButton ButtonSaveMenu { get; private set; }
+        public RibbonButton ButtonOpenMenu { get; private set; }
         /// <summary>
         /// VirtualCell Viewer
         /// </summary>
@@ -149,7 +153,7 @@ namespace RibbonLib.Controls
         public RibbonButton ButtonIDAnnotation { get; private set; }
         public RibbonTab GroupMainMenu { get; private set; }
         public RibbonGroup TabMainMenu { get; private set; }
-        public RibbonButton ButtonOpenMenu { get; private set; }
+        public RibbonGroup GroupOthers { get; private set; }
 
         public RibbonItems(Ribbon ribbon)
         {
@@ -159,8 +163,10 @@ namespace RibbonLib.Controls
             ListRecentItems = new RibbonRecentItems(ribbon, Cmd.cmdListRecentItems);
             ButtonRun = new RibbonButton(ribbon, Cmd.cmdButtonRun);
             ButtonOpenVirtualCellPackFile = new RibbonButton(ribbon, Cmd.cmdButtonOpenVirtualCellPackFile);
+            MenuAbout = new RibbonButton(ribbon, Cmd.cmdMenuAbout);
             ButtonExit = new RibbonButton(ribbon, Cmd.cmdButtonExit);
             ButtonSaveMenu = new RibbonButton(ribbon, Cmd.cmdButtonSaveMenu);
+            ButtonOpenMenu = new RibbonButton(ribbon, Cmd.cmdButtonOpenMenu);
             MenuVirtualCellViewer = new RibbonTabGroup(ribbon, Cmd.cmdMenuVirtualCellViewer);
             TabVirtualCellBrowser = new RibbonTab(ribbon, Cmd.cmdTabVirtualCellBrowser);
             GroupVirtualCellBrowser = new RibbonGroup(ribbon, Cmd.cmdGroupVirtualCellBrowser);
@@ -187,7 +193,7 @@ namespace RibbonLib.Controls
             ButtonIDAnnotation = new RibbonButton(ribbon, Cmd.cmdButtonIDAnnotation);
             GroupMainMenu = new RibbonTab(ribbon, Cmd.cmdGroupMainMenu);
             TabMainMenu = new RibbonGroup(ribbon, Cmd.cmdTabMainMenu);
-            ButtonOpenMenu = new RibbonButton(ribbon, Cmd.cmdButtonOpenMenu);
+            GroupOthers = new RibbonGroup(ribbon, Cmd.cmdGroupOthers);
         }
 
     }
