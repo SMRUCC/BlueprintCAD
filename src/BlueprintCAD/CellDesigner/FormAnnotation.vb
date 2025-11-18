@@ -397,7 +397,7 @@ Public Class FormAnnotation
 
         proj.transporter = BlastpOutputReader _
             .RunParser(tempOutfile) _
-            .ExportHitsResult _
+            .ExportHitsResult(grepName:=Function(name) name.GetTagValue("|")) _
             .ToArray
         proj.membrane_proteins = proj.transporter _
             .Select(Function(hits) RankTerm.RankTopTerm(hits)) _
