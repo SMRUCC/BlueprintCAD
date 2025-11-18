@@ -22,9 +22,32 @@ Partial Class FormSplashScreen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form1"
+        PictureBox1 = New PictureBox()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.White
+        PictureBox1.Dock = DockStyle.Fill
+        PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(671, 428)
+        PictureBox1.TabIndex = 0
+        PictureBox1.TabStop = False
+        ' 
+        ' FormSplashScreen
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(671, 428)
+        Controls.Add(PictureBox1)
+        FormBorderStyle = FormBorderStyle.None
+        Name = "FormSplashScreen"
+        StartPosition = FormStartPosition.CenterScreen
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
     End Sub
+
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

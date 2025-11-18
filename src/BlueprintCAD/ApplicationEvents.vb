@@ -43,6 +43,7 @@ Namespace My
             AddHandler ribbon.ButtonEditCultureMedium.ExecuteEvent, AddressOf OpenCMLibrary
             AddHandler ribbon.ButtonSaveMenu.ExecuteEvent, AddressOf SaveCurrentDocument
             AddHandler ribbon.ButtonOpenMenu.ExecuteEvent, AddressOf FileHandler.GlobalOpenFile
+            AddHandler ribbon.MenuAbout.ExecuteEvent, Sub() Call New FormSplashScreen().Show()
 
             ribbon.MenuWorkbench.ContextAvailable = ContextAvailability.Available
         End Sub
