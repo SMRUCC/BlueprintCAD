@@ -834,7 +834,7 @@ Public Class FormAnnotation
         End If
 
         Dim row As DataGridViewRow = AdvancedDataGridView2.SelectedRows(0)
-        Dim members As Index(Of String) = CStr(row.Cells(4).Value).Split(","c).Indexing
+        Dim members As Index(Of String) = CStr(row.Cells(4).Value).StringSplit("\s*,\s*").Indexing
         Dim genes As SegmentObject() = proj.gene_table _
             .Where(Function(g) g.locus_id Like members) _
             .OrderBy(Function(g) g.Location.left) _
