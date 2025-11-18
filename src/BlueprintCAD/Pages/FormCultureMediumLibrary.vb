@@ -10,6 +10,12 @@ Public Class FormCultureMediumLibrary
     Dim edit As String
     Dim loader As GridLoaderHandler
 
+    Public Shared ReadOnly Property Repo As String
+        Get
+            Return $"{App.ProductProgramData}/cultureMedium/"
+        End Get
+    End Property
+
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
         Call InputDialog.Input(Of FormInputName)(
             Sub(input)
@@ -21,12 +27,18 @@ Public Class FormCultureMediumLibrary
     End Sub
 
     Private Sub FormCultureMediumLibrary_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim files As String() = Repo.ListFiles("*.csv").Select(Function(path) path.BaseName).ToArray
+
+        For Each name As String In files
+            ToolStripComboBox1.Items.Add(name)
+        Next
+
         Call ApplyVsTheme(ToolStrip2)
     End Sub
 
     Protected Overrides Sub SaveDocument()
         Dim compounds As FormulaCompound() = ExportTable.ToArray
-        Dim savefile As String = $"{App.ProductProgramData}/cultureMediu/{edit.NormalizePathString(False, replacement:="-")}.csv"
+        Dim savefile As String = $"{Repo}/{edit.NormalizePathString(False, replacement:="-")}.csv"
 
         Call compounds.SaveTo(savefile)
     End Sub
@@ -56,7 +68,7 @@ Public Class FormCultureMediumLibrary
         End If
 
         Dim name As String = ToolStripComboBox1.SelectedItem.ToString
-        Dim savefile As String = $"{App.ProductProgramData}/cultureMedium/{name.NormalizePathString(False, replacement:="-")}.csv"
+        Dim savefile As String = $"{Repo}/{name.NormalizePathString(False, replacement:="-")}.csv"
         Dim data As FormulaCompound() = savefile.LoadCsv(Of FormulaCompound)().ToArray
 
         edit = name
@@ -83,7 +95,7 @@ Public Class FormCultureMediumLibrary
                                MessageBoxButtons.OKCancel,
                                MessageBoxIcon.Warning) = DialogResult.OK Then
 
-            Dim savefile As String = $"{App.ProductProgramData}/cultureMediu/{ToolStripComboBox1.SelectedItem.ToString.NormalizePathString(False, replacement:="-")}.csv"
+            Dim savefile As String = $"{Repo}/{ToolStripComboBox1.SelectedItem.ToString.NormalizePathString(False, replacement:="-")}.csv"
 
             Call savefile.DeleteFile
         End If
