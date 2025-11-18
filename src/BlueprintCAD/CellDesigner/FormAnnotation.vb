@@ -857,7 +857,10 @@ Public Class FormAnnotation
             .Configuration = New DataReader,
             .Size = New DoubleRange(genes.Select(Function(g) {g.Left, g.Right}).IteratesALL).Length * 1.5
         }
-        Dim draw As System.Drawing.Image = RegionMap.PlotRegion(map, "1000,500", geneShapeHeight:=200, driver:=Drivers.GDI).AsGDIImage.CTypeGdiImage
+        Dim draw As System.Drawing.Image = RegionMap _
+            .PlotRegion(map, "1000,500", geneShapeHeight:=200, driver:=Drivers.GDI) _
+            .AsGDIImage _
+            .CTypeGdiImage
 
         PictureBox1.BackgroundImage = draw
     End Sub
