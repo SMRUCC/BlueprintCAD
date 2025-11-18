@@ -8,7 +8,7 @@ Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
 Public Module OperonAnnotator
 
     Public Iterator Function ParseBlastn(blastn As String) As IEnumerable(Of HitCollection)
-        For Each hits As HitCollection In BlastnOutputReader.RunParser(blastn).ExportHistResult
+        For Each hits As HitCollection In BlastnOutputReader.RunParser(blastn).ExportHitsResult
             If Not hits.hits.IsNullOrEmpty Then
                 For Each hit As Hit In hits.hits
                     With hit.hitName.GetTagValue("|")

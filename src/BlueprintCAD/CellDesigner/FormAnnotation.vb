@@ -292,7 +292,7 @@ Public Class FormAnnotation
 
         proj.tf_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
-            .ExportHistResult _
+            .ExportHitsResult _
             .ToArray
         proj.transcript_factors = proj.tf_hits _
             .Select(Function(hits) hits.AssignTFFamilyHit()) _
@@ -363,7 +363,7 @@ Public Class FormAnnotation
 
         proj.enzyme_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
-            .ExportHistResult _
+            .ExportHitsResult _
             .ToArray
         proj.ec_numbers = proj.enzyme_hits _
             .Select(Function(hits) hits.AssignECNumber()) _
@@ -397,9 +397,9 @@ Public Class FormAnnotation
 
         proj.transporter = BlastpOutputReader _
             .RunParser(tempOutfile) _
-            .ExportHistResult _
+            .ExportHitsResult _
             .ToArray
-        proj.membrane_proteins = proj.enzyme_hits _
+        proj.membrane_proteins = proj.transporter _
             .Select(Function(hits) RankTerm.RankTopTerm(hits)) _
             .IteratesALL _
             .ToArray

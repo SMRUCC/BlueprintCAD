@@ -120,7 +120,7 @@ Module Program
 
         proj.enzyme_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
-            .ExportHistResult _
+            .ExportHitsResult _
             .ToArray
         proj.ec_numbers = proj.enzyme_hits _
             .Select(Function(hits) hits.AssignECNumber()) _

@@ -20,7 +20,7 @@ Module Program
 
         proj.enzyme_hits = BlastpOutputReader _
             .RunParser("G:\BlueprintCAD\demo\tmp\Sophia\19032\enzyme_blast650548.txt") _
-            .ExportHistResult _
+            .ExportHitsResult _
             .ToArray
         proj.ec_numbers = proj.enzyme_hits _
             .Select(Function(hits) hits.AssignECNumber()) _
