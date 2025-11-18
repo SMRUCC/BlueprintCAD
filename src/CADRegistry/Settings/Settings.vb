@@ -6,7 +6,7 @@ Public Class Settings
     Public Property ncbi_blast As String
     Public Property registry_server As String
     Public Property cache_dir As String
-
+    Public Property n_threads As Integer = 16
     ''' <summary>
     ''' the directory of the ncbi local blast database files
     ''' </summary>

@@ -371,6 +371,40 @@ Public Class FormAnnotation
         Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
     End Sub
 
+    Private Async Sub TransporterAnnotationCmd_Run() Handles TransporterAnnotationCmd.Run
+        Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="transporter_blast")
+        Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
+
+        If TransporterAnnotationCmd.Running Then
+            Return
+        Else
+            TransporterAnnotationCmd.Running = True
+            TransporterAnnotationCmd.SetStatusText("Running the annotation...")
+            TransporterAnnotationCmd.SetStatusIcon(ProcessIcon)
+        End If
+
+        Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
+            Call proj.DumpProteinFasta(s)
+        End Using
+
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
+        Dim enzyme_db As String = $"{App.HOME}/data/Membrane.fasta"
+
+        ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
+        Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=0.01).Run())
+
+        proj.transporter = BlastpOutputReader _
+            .RunParser(tempOutfile) _
+            .ExportHistResult _
+            .ToArray
+        proj.membrane_proteins = proj.enzyme_hits _
+            .Select(Function(hits) hits.AssignECNumber()) _
+            .Where(Function(ec) Not ec Is Nothing) _
+            .ToDictionary(Function(a) a.gene_id)
+
+        Call enzymeLoader.LoadTable(AddressOf LoadEnzymeHits)
+    End Sub
+
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If DataGridView1.SelectedRows.Count = 0 Then
             Return
