@@ -24,7 +24,13 @@ Public Class CellBrowser
     Dim timePoints As Double()
     Dim moleculeSet As (compartment_id As String, modules As NamedCollection(Of String)())()
     Dim plotMatrix As New Dictionary(Of String, FeatureVector)
-    Dim symbols As Dictionary(Of String, String)
+    ''' <summary>
+    ''' id to compound data
+    ''' </summary>
+    Dim symbols As Dictionary(Of String, CompoundInfo)
+    ''' <summary>
+    ''' compound name to id
+    ''' </summary>
     Dim symbolsToId As Dictionary(Of String, String)
 
     Shared ReadOnly resetButton As New RibbonEventBinding(Workbench.Ribbon.ButtonResetNetworkTable)
@@ -48,7 +54,7 @@ Public Class CellBrowser
         vcellPack = New VCellMatrixReader(filepath.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Workbench.AppHost.Text = $"VirtualCell Browser [{filepath}]"
         symbols = vcellPack.LoadSymbols
-        symbolsToId = symbols.GroupBy(Function(a) a.Value).ToDictionary(Function(a) a.Key, Function(a) a.First.Key)
+        symbolsToId = symbols.GroupBy(Function(a) a.Value.name).ToDictionary(Function(a) a.Key, Function(a) a.First.Key)
         network = TaskProgress.LoadData(Function(println As Action(Of String)) LoadNetwork(println))
         timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
         moleculeSet = vcellPack.GetCellularMolecules.ToArray
