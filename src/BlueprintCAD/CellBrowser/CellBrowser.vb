@@ -12,6 +12,7 @@ Imports Microsoft.VisualBasic.Scripting.Runtime
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports RibbonLib.Interop
 Imports SMRUCC.genomics.Analysis.HTS.DataFrame
+Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
 Imports std = System.Math
@@ -32,6 +33,7 @@ Public Class CellBrowser
     ''' compound name to id
     ''' </summary>
     Dim symbolsToId As Dictionary(Of String, String)
+    Dim search As CompoundSearchIndex
 
     Shared ReadOnly resetButton As New RibbonEventBinding(Workbench.Ribbon.ButtonResetNetworkTable)
     Shared ReadOnly closeFileButton As New RibbonEventBinding(Workbench.Ribbon.ButtonCloseVirtualCellPackFile)
@@ -58,6 +60,7 @@ Public Class CellBrowser
         network = TaskProgress.LoadData(Function(println As Action(Of String)) LoadNetwork(println))
         timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
         moleculeSet = vcellPack.GetCellularMolecules.ToArray
+        search = New CompoundSearchIndex(symbols.Values.Select(Function(c) New Compound With {.ID = c.id, .name = c.name, .db_xrefs = c.db_xrefs}), 3)
 
         Call TaskProgress.RunAction(
             Sub(echo)
@@ -107,13 +110,13 @@ Public Class CellBrowser
     ''' <param name="println"></param>
     Private Sub LoadTree(println As Action(Of String))
         For Each molSet In vcellPack.ReadMoleculeTree
-            Dim root = TreeView1.Nodes.Add(molSet.Key)
+            Dim root As TreeNode = TreeView1.Nodes.Add(molSet.Key)
 
             For Each id As String In molSet.Value _
-                .Select(Function(ref)
-                            Return symbols.TryGetValue(ref, [default]:=ref)
-                        End Function) _
-                .OrderBy(Function(si) si)
+                .Select(Function(ref) symbols.GetNameText(ref)) _
+                .OrderBy(Function(si)
+                             Return si
+                         End Function)
 
                 Call root.Nodes.Add(id)
             Next
@@ -154,9 +157,9 @@ Public Class CellBrowser
                     Dim forward As VariableFactor() = flux.regulation.Where(Function(m) m.factor > 0).ToArray
                     Dim reverse As VariableFactor() = flux.regulation.Where(Function(m) m.factor < 0).ToArray
                     Dim row = tbl.Rows.Add(flux.id,
-                                           flux.ToString(symbols),
-                                           forward.Select(Function(v) symbols.TryGetValue(v.mass_id, [default]:=v.id)).JoinBy("; "),
-                                           reverse.Select(Function(v) symbols.TryGetValue(v.mass_id, [default]:=v.id)).JoinBy("; "))
+                                           flux.MakeToString(symbols),
+                                           forward.Select(Function(v) symbols.GetNameText(v.mass_id)).JoinBy("; "),
+                                           reverse.Select(Function(v) symbols.GetNameText(v.mass_id)).JoinBy("; "))
                 Next
             End Sub)
 
