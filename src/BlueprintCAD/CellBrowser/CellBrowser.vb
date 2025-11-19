@@ -183,10 +183,24 @@ Public Class CellBrowser
 
         Dim row = DataGridView1.SelectedRows(0)
         Dim edge As FluxEdge = network(row.Cells(0).Value)
+        Dim displayTree As New FluxEdge With {
+            .id = edge.id,
+            .left = edge.left.Select(Function(a) New VariableFactor With {.compartment_id = a.compartment_id, .factor = a.factor, .id = symbols.GetNameText(a.id.GetTagValue("@").Name)}).ToArray,
+            .right = edge.right.Select(Function(a) New VariableFactor With {.compartment_id = a.compartment_id, .factor = a.factor, .id = symbols.GetNameText(a.id.GetTagValue("@").Name)}).ToArray,
+            .regulation = edge.regulation _
+                .Select(Function(a)
+                            Return New VariableFactor With {
+                                .compartment_id = a.compartment_id,
+                                .factor = a.factor,
+                                .id = symbols.GetNameText(a.id.GetTagValue("@").Name)
+                            }
+                        End Function) _
+                .ToArray
+        }
 
         TextBox1.Json = "{}"
         TextBox1.RootTag = "Tree Of '" & edge.id & "'"
-        TextBox1.Json = edge.GetJson
+        TextBox1.Json = displayTree.GetJson
 
         Await RefreshPlot(edge.FactorIds.Distinct)
     End Sub
@@ -210,9 +224,10 @@ Public Class CellBrowser
 
         For Each id As String In idset.Where(Function(mol) vcellPack.CheckSymbol(mol))
             Dim vec As Double() = vcellPack.GetExpression(id)
-            Dim col As New FeatureVector(id, vec)
+            Dim name As String = symbols.GetNameText(id.GetTagValue("@").Name)
+            Dim col As New FeatureVector(name, vec)
 
-            plotMatrix(id) = col
+            plotMatrix(name) = col
         Next
 
         Return plotMatrix

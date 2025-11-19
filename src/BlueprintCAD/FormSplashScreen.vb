@@ -8,11 +8,11 @@
 
     End Sub
 
-    Private Sub PictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles PictureBox1.Paint
+    Private Sub PictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
         Dim gfx = e.Graphics
         Dim pen As Pen = Pens.LightGray
 
-        Call gfx.DrawRectangle(pen, New RectangleF(1, 1, PictureBox1.Width - 2, PictureBox1.Height - 2))
+        Call gfx.DrawRectangle(pen, New RectangleF(1, 1, Panel1.Width - 2, Panel1.Height - 2))
     End Sub
 
     Private Sub FormSplashScreen_LostFocus(sender As Object, e As EventArgs) Handles Me.LostFocus
