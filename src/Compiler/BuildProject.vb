@@ -47,7 +47,9 @@ Module BuildProject
         proj.ec_numbers = proj.enzyme_hits _
             .Select(Function(hits) hits.AssignECNumber()) _
             .Where(Function(ec) Not ec Is Nothing) _
-            .ToDictionary(Function(a) a.gene_id)
+            .ToDictionary(Function(a)
+                              Return a.gene_id
+                          End Function)
 
         ' -------- transcript factors --------
         tempOutfile = TempFileSystem.GetAppSysTempFile(".txt", sessionID:=App.PID, prefix:="tf_blast")
