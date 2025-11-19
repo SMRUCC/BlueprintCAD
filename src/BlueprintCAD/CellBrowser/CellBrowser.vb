@@ -698,7 +698,7 @@ Public Class CellBrowser
         dataTable = New GridLoaderHandler(DataGridView1, ToolStrip1)
 
         Call CellBrowser_Activated(sender, e)
-        Call ApplyVsTheme(ContextMenuStrip1, ContextMenuStrip2, ContextMenuStrip3, ToolStrip1, PlotView1.ContextMenuStrip)
+        Call ApplyVsTheme(ContextMenuStrip1, ContextMenuStrip2, ContextMenuStrip3, ToolStrip1, PlotView1.ContextMenuStrip, ToolStrip2)
     End Sub
 
     Private Sub CellBrowser_Activated(sender As Object, e As EventArgs) Handles Me.Activated

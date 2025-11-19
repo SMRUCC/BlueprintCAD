@@ -41,9 +41,12 @@ Partial Class CellBrowser : Inherits DocumentWindow
         FilterRegulationToolStripMenuItem = New ToolStripMenuItem()
         ToolStripMenuItem2 = New ToolStripSeparator()
         CopyNameToolStripMenuItem = New ToolStripMenuItem()
+        ToolStrip2 = New ToolStrip()
         DataGridView1 = New AdvancedDataGridView()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripMenuItem1 = New ToolStripSeparator()
+        ViewReactionModelInRegistryToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip1 = New AdvancedDataGridViewSearchToolBar()
         ToolStripSeparator1 = New ToolStripSeparator()
         ToolStripLabel1 = New ToolStripLabel()
@@ -63,14 +66,16 @@ Partial Class CellBrowser : Inherits DocumentWindow
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
-        ToolStripMenuItem1 = New ToolStripSeparator()
-        ViewReactionModelInRegistryToolStripMenuItem = New ToolStripMenuItem()
+        ToolStripLabel2 = New ToolStripLabel()
+        ToolStripSpringTextBox1 = New Galaxy.CommonControls.ToolStripSpringTextBox()
+        ToolStripButton1 = New ToolStripButton()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
         SplitContainer2.Panel2.SuspendLayout()
         SplitContainer2.SuspendLayout()
         ContextMenuStrip1.SuspendLayout()
+        ToolStrip2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         ContextMenuStrip2.SuspendLayout()
         ToolStrip1.SuspendLayout()
@@ -95,6 +100,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' PlotView1
         ' 
         PlotView1.BackColor = Color.SkyBlue
+        PlotView1.BackgroundImageLayout = ImageLayout.Zoom
         PlotView1.Debug = True
         PlotView1.Dock = DockStyle.Fill
         PlotView1.Dpi = 120
@@ -127,6 +133,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' SplitContainer2.Panel1
         ' 
         SplitContainer2.Panel1.Controls.Add(TreeView1)
+        SplitContainer2.Panel1.Controls.Add(ToolStrip2)
         ' 
         ' SplitContainer2.Panel2
         ' 
@@ -138,11 +145,12 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         ' TreeView1
         ' 
+        TreeView1.BorderStyle = BorderStyle.None
         TreeView1.ContextMenuStrip = ContextMenuStrip1
         TreeView1.Dock = DockStyle.Fill
-        TreeView1.Location = New Point(0, 0)
+        TreeView1.Location = New Point(0, 25)
         TreeView1.Name = "TreeView1"
-        TreeView1.Size = New Size(344, 288)
+        TreeView1.Size = New Size(344, 263)
         TreeView1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -187,6 +195,15 @@ Partial Class CellBrowser : Inherits DocumentWindow
         CopyNameToolStripMenuItem.Name = "CopyNameToolStripMenuItem"
         CopyNameToolStripMenuItem.Size = New Size(200, 22)
         CopyNameToolStripMenuItem.Text = "Copy Name"
+        ' 
+        ' ToolStrip2
+        ' 
+        ToolStrip2.Items.AddRange(New ToolStripItem() {ToolStripLabel2, ToolStripSpringTextBox1, ToolStripButton1})
+        ToolStrip2.Location = New Point(0, 0)
+        ToolStrip2.Name = "ToolStrip2"
+        ToolStrip2.Size = New Size(344, 25)
+        ToolStrip2.TabIndex = 1
+        ToolStrip2.Text = "ToolStrip2"
         ' 
         ' DataGridView1
         ' 
@@ -233,7 +250,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         ContextMenuStrip2.Items.AddRange(New ToolStripItem() {ViewFluxDynamicsToolStripMenuItem, ToolStripMenuItem1, ViewReactionModelInRegistryToolStripMenuItem})
         ContextMenuStrip2.Name = "ContextMenuStrip2"
-        ContextMenuStrip2.Size = New Size(244, 76)
+        ContextMenuStrip2.Size = New Size(244, 54)
         ' 
         ' ViewFluxDynamicsToolStripMenuItem
         ' 
@@ -241,6 +258,17 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ViewFluxDynamicsToolStripMenuItem.Name = "ViewFluxDynamicsToolStripMenuItem"
         ViewFluxDynamicsToolStripMenuItem.Size = New Size(243, 22)
         ViewFluxDynamicsToolStripMenuItem.Text = "View Flux Dynamics"
+        ' 
+        ' ToolStripMenuItem1
+        ' 
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        ToolStripMenuItem1.Size = New Size(240, 6)
+        ' 
+        ' ViewReactionModelInRegistryToolStripMenuItem
+        ' 
+        ViewReactionModelInRegistryToolStripMenuItem.Name = "ViewReactionModelInRegistryToolStripMenuItem"
+        ViewReactionModelInRegistryToolStripMenuItem.Size = New Size(243, 22)
+        ViewReactionModelInRegistryToolStripMenuItem.Text = "View Reaction Model In Registry"
         ' 
         ' ToolStrip1
         ' 
@@ -435,16 +463,25 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripStatusLabel1.Size = New Size(42, 17)
         ToolStripStatusLabel1.Text = "Ready!"
         ' 
-        ' ToolStripMenuItem1
+        ' ToolStripLabel2
         ' 
-        ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(240, 6)
+        ToolStripLabel2.Name = "ToolStripLabel2"
+        ToolStripLabel2.Size = New Size(45, 22)
+        ToolStripLabel2.Text = "Search:"
         ' 
-        ' ViewReactionModelInRegistryToolStripMenuItem
+        ' ToolStripSpringTextBox1
         ' 
-        ViewReactionModelInRegistryToolStripMenuItem.Name = "ViewReactionModelInRegistryToolStripMenuItem"
-        ViewReactionModelInRegistryToolStripMenuItem.Size = New Size(243, 22)
-        ViewReactionModelInRegistryToolStripMenuItem.Text = "View Reaction Model In Registry"
+        ToolStripSpringTextBox1.Name = "ToolStripSpringTextBox1"
+        ToolStripSpringTextBox1.Size = New Size(233, 25)
+        ' 
+        ' ToolStripButton1
+        ' 
+        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
+        ToolStripButton1.ImageTransparentColor = Color.Magenta
+        ToolStripButton1.Name = "ToolStripButton1"
+        ToolStripButton1.Size = New Size(23, 22)
+        ToolStripButton1.Text = "Search"
         ' 
         ' CellBrowser
         ' 
@@ -461,11 +498,14 @@ Partial Class CellBrowser : Inherits DocumentWindow
         Text = "Cell Browser"
         GroupBox2.ResumeLayout(False)
         SplitContainer2.Panel1.ResumeLayout(False)
+        SplitContainer2.Panel1.PerformLayout()
         SplitContainer2.Panel2.ResumeLayout(False)
         SplitContainer2.Panel2.PerformLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer2.ResumeLayout(False)
         ContextMenuStrip1.ResumeLayout(False)
+        ToolStrip2.ResumeLayout(False)
+        ToolStrip2.PerformLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ContextMenuStrip2.ResumeLayout(False)
         ToolStrip1.ResumeLayout(False)
@@ -525,4 +565,8 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents ViewReactionModelInRegistryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStrip2 As ToolStrip
+    Friend WithEvents ToolStripLabel2 As ToolStripLabel
+    Friend WithEvents ToolStripSpringTextBox1 As Galaxy.CommonControls.ToolStripSpringTextBox
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class
