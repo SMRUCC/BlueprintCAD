@@ -11,8 +11,10 @@ Public Class FormCultureMedium : Implements IDataContainer
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         Dim compounds_id As New List(Of String)
-        Dim allCompounds = wizardConfig.models.Values _
+        Dim compoundSet = DirectCast(data, Wizard).models.Values _
             .Select(Function(c) c.model.metabolismStructure.compounds) _
+            .ToArray
+        Dim allCompounds = compoundSet _
             .IteratesALL _
             .GroupBy(Function(c) c.ID) _
             .Select(Function(c) c.First) _
