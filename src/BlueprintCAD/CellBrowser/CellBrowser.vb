@@ -109,7 +109,9 @@ Public Class CellBrowser
     ''' </summary>
     ''' <param name="println"></param>
     Private Sub LoadTree(println As Action(Of String))
-        For Each molSet In vcellPack.ReadMoleculeTree
+        Call TreeView1.Nodes.Clear()
+
+        For Each molSet As KeyValuePair(Of String, String()) In vcellPack.ReadMoleculeTree
             Dim root As TreeNode = TreeView1.Nodes.Add(molSet.Key)
 
             For Each id As String In molSet.Value _
@@ -739,5 +741,41 @@ Public Class CellBrowser
         Dim url As String = $"{Workbench.Settings.registry_server}/redirect_obj/?hashcode=" & id.UrlEncode
 
         Call Tools.OpenUrlWithDefaultBrowser(url)
+    End Sub
+
+    Private Sub ToolStripSpringTextBox1_Click(sender As Object, e As EventArgs) Handles ToolStripSpringTextBox1.Click
+
+    End Sub
+
+    Private Sub ToolStripSpringTextBox1_TextChanged(sender As Object, e As EventArgs) Handles ToolStripSpringTextBox1.TextChanged
+        Dim str As String = ToolStripSpringTextBox1.Text
+
+        If Strings.Trim(str) = "" Then
+            ' restore
+            Call TaskProgress.RunAction(Sub(echo)
+                                            Dim println = New Action(Of String)(AddressOf echo.SetInfo)
+
+                                            Call println("loading molecule list ui... [metabolite tree]")
+                                            Call Me.Invoke(Sub() LoadTree(println))
+                                        End Sub)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' search
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Dim str As String = ToolStripSpringTextBox1.Text
+        Dim find = search.Search(str).ToArray
+
+        Call TreeView1.Nodes.Clear()
+
+        Dim root = TreeView1.Nodes.Add("Search List")
+
+        For Each hit As Compound In find
+            Call root.Nodes.Add(hit.name)
+        Next
     End Sub
 End Class
