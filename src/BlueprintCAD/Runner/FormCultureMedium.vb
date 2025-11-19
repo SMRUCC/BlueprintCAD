@@ -1,25 +1,29 @@
 ﻿Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
+Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.BootstrapLoader.Definitions
 
 Public Class FormCultureMedium : Implements IDataContainer
 
     Dim wizardConfig As New Wizard
+    Dim search As CompoundSearchIndex
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         Dim compounds_id As New List(Of String)
-
-        wizardConfig = DirectCast(data, Wizard)
-
-        For Each compound As String In wizardConfig.models.Values _
+        Dim allCompounds = wizardConfig.models.Values _
             .Select(Function(c) c.model.metabolismStructure.compounds) _
             .IteratesALL _
-            .Keys _
-            .Distinct
+            .GroupBy(Function(c) c.ID) _
+            .Select(Function(c) c.First) _
+            .ToArray
 
-            Call compounds_id.Add(compound)
-            Call ListBox1.Items.Add(compound)
+        wizardConfig = DirectCast(data, Wizard)
+        search = New CompoundSearchIndex(allCompounds, 3)
+
+        For Each compound As Compound In allCompounds
+            Call compounds_id.Add(compound.ID)
+            Call ListBox1.Items.Add(New IDDisplay With {.id = compound.ID, .name = compound.name})
         Next
 
         wizardConfig.config.mapping = Definition.MetaCyc(compounds_id.Distinct, Double.NaN)
@@ -50,10 +54,11 @@ Public Class FormCultureMedium : Implements IDataContainer
             Return
         End If
 
-        Dim id As String = CStr(ListBox1.SelectedItem)
+        Dim id As IDDisplay = DirectCast(ListBox1.SelectedItem, IDDisplay)
         Dim data As New CultureMediumCompound With {
-            .id = id,
-            .content = 1
+            .id = id.id,
+            .content = 1,
+            .name = id.name
         }
 
         Call ListBox2.Items.Add(data)
@@ -87,15 +92,43 @@ Public Class FormCultureMedium : Implements IDataContainer
     Private Sub ClearToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearToolStripMenuItem.Click
         Call ListBox2.Items.Clear()
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        If TextBox1.Text.StringEmpty Then
+            Call ListBox1.Items.Clear()
+
+            For Each item In search.AsEnumerable
+                Call ListBox1.Items.Add(New IDDisplay With {
+                    .id = item.ID,
+                    .name = item.name
+                })
+            Next
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim text As String = Strings.Trim(TextBox1.Text)
+        Dim find = search.Search(text).ToArray
+
+        Call ListBox1.Items.Clear()
+
+        For Each item In find
+            Call ListBox1.Items.Add(New IDDisplay With {
+                .id = item.ID,
+                .name = item.name
+            })
+        Next
+    End Sub
 End Class
 
 Public Class CultureMediumCompound
 
     Public Property id As String
     Public Property content As Double
+    Public Property name As String
 
     Public Overrides Function ToString() As String
-        Return $"{id} ({content} mg/ml)"
+        Return $"{If(name, id)} ({content} mg/ml)"
     End Function
 
 End Class

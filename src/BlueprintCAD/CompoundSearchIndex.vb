@@ -1,17 +1,18 @@
-﻿Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
+﻿Imports System.Runtime.CompilerServices
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
 Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
-Public Class CompoundSearchIndex
+Public Class CompoundSearchIndex : Implements Enumeration(Of Compound)
 
     ReadOnly compounds As Compound()
     ReadOnly qgram As QGramIndex
 
-    Sub New(cell As VirtualCell, qgram As Integer)
+    Sub New(compounds As IEnumerable(Of Compound), qgram As Integer)
         Dim offset As Integer = 0
 
         Me.qgram = New QGramIndex(qgram)
-        Me.compounds = cell.metabolismStructure.compounds _
+        Me.compounds = compounds _
             .SafeQuery _
             .ToArray
 
@@ -26,6 +27,11 @@ Public Class CompoundSearchIndex
         Next
     End Sub
 
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
+    Sub New(cell As VirtualCell, qgram As Integer)
+        Call Me.New(cell.metabolismStructure.compounds, qgram)
+    End Sub
+
     Public Iterator Function Search(text As String, Optional top As Integer = 9) As IEnumerable(Of Compound)
         Dim index = qgram.FindSimilar(text, 0.6) _
             .OrderByDescending(Function(a) a.similarity) _
@@ -38,6 +44,12 @@ Public Class CompoundSearchIndex
 
         For Each hitResult In hits
             Yield hitResult.First.Item3
+        Next
+    End Function
+
+    Public Iterator Function GenericEnumerator() As IEnumerator(Of Compound) Implements Enumeration(Of Compound).GenericEnumerator
+        For Each c As Compound In compounds
+            Yield c
         Next
     End Function
 End Class
