@@ -10,6 +10,7 @@ Public Class FormConsoleHost
         console.Dock = DockStyle.Fill
         console.ReadOnly = True
         console.IsInputEnabled = False
+        console.Font = New Font("Consolas", 10)
     End Sub
 
     Public Sub Run(cmd As String, args As String)
