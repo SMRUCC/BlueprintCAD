@@ -184,7 +184,11 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                                 .ToArray
 
                             Return New v2.Compound With {
-                                .formula = c.formula,
+                                .db_xrefs = c.db_xrefs _
+                                    .SafeQuery _
+                                    .Select(Function(a) a.xref_id) _
+                                    .Distinct _
+                                    .ToArray,
                                 .ID = FormatCompoundId(c.id),
                                 .name = c.name,
                                 .referenceIds = biocyc_id _
