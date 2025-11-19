@@ -50,8 +50,7 @@ Module BuildProject
             .ToDictionary(Function(a) a.gene_id)
 
         ' -------- transcript factors --------
-        tempfile = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="tf_blast")
-        tempOutfile = tempfile.ChangeSuffix("txt")
+        tempOutfile = TempFileSystem.GetAppSysTempFile(".txt", sessionID:=App.PID, prefix:="tf_blast")
 
         localblast.Blastp(tempfile, tf_db, tempOutfile, e:=0.01).Run()
 
@@ -65,8 +64,7 @@ Module BuildProject
             .ToArray
 
         ' ------ membrane transporter -------
-        tempfile = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="transporter_blast")
-        tempOutfile = tempfile.ChangeSuffix("txt")
+        tempOutfile = TempFileSystem.GetAppSysTempFile(".txt", sessionID:=App.PID, prefix:="transporter_blast")
 
         localblast.Blastp(tempfile, transporter_db, tempOutfile, e:=0.01).Run()
 
