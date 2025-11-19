@@ -109,6 +109,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="HelpDocs\HelpDocs.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HelpDocs.resx</DependentUpon>
+    </Compile>
     <Compile Update="My Project\Application.Designer.vb">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -127,6 +132,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="HelpDocs\HelpDocs.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HelpDocs.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -158,10 +168,6 @@
     <Reference Include="Microsoft.Windows.Ribbon">
       <HintPath>..\..\..\galaxy\third-party\ribbon\Microsoft.Windows.Ribbon.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="HelpDocs\" />
   </ItemGroup>
 
   <Import Project="..\..\..\galaxy\src\RibbonEventBinding\RibbonEventBinding.projitems" Label="Shared" />

@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Text
 Imports CADRegistry
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
@@ -113,7 +114,7 @@ Public Class FormAnnotation
         TFBSAnnotationCmd.Text = "TF Binding Site Annotation"
         TransporterAnnotationCmd.Text = "Membrane Transporter Annotation"
 
-        ' PictureBox1.Hide()
+        RichTextBox1.Rtf = Encoding.UTF8.GetString(My.Resources.HelpDocs.ModelAnnotation)
 
         Call ApplyVsTheme(ToolStrip1,
                           ToolStrip2,
