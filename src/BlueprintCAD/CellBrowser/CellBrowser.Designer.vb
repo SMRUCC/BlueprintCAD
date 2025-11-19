@@ -42,6 +42,9 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripMenuItem2 = New ToolStripSeparator()
         CopyNameToolStripMenuItem = New ToolStripMenuItem()
         ToolStrip2 = New ToolStrip()
+        ToolStripLabel2 = New ToolStripLabel()
+        ToolStripSpringTextBox1 = New Galaxy.CommonControls.ToolStripSpringTextBox()
+        ToolStripButton1 = New ToolStripButton()
         DataGridView1 = New AdvancedDataGridView()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
@@ -66,9 +69,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
-        ToolStripLabel2 = New ToolStripLabel()
-        ToolStripSpringTextBox1 = New Galaxy.CommonControls.ToolStripSpringTextBox()
-        ToolStripButton1 = New ToolStripButton()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
@@ -204,6 +204,26 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStrip2.Size = New Size(344, 25)
         ToolStrip2.TabIndex = 1
         ToolStrip2.Text = "ToolStrip2"
+        ' 
+        ' ToolStripLabel2
+        ' 
+        ToolStripLabel2.Name = "ToolStripLabel2"
+        ToolStripLabel2.Size = New Size(45, 22)
+        ToolStripLabel2.Text = "Search:"
+        ' 
+        ' ToolStripSpringTextBox1
+        ' 
+        ToolStripSpringTextBox1.Name = "ToolStripSpringTextBox1"
+        ToolStripSpringTextBox1.Size = New Size(233, 25)
+        ' 
+        ' ToolStripButton1
+        ' 
+        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
+        ToolStripButton1.ImageTransparentColor = Color.Magenta
+        ToolStripButton1.Name = "ToolStripButton1"
+        ToolStripButton1.Size = New Size(23, 22)
+        ToolStripButton1.Text = "Search"
         ' 
         ' DataGridView1
         ' 
@@ -462,26 +482,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         ToolStripStatusLabel1.Size = New Size(42, 17)
         ToolStripStatusLabel1.Text = "Ready!"
-        ' 
-        ' ToolStripLabel2
-        ' 
-        ToolStripLabel2.Name = "ToolStripLabel2"
-        ToolStripLabel2.Size = New Size(45, 22)
-        ToolStripLabel2.Text = "Search:"
-        ' 
-        ' ToolStripSpringTextBox1
-        ' 
-        ToolStripSpringTextBox1.Name = "ToolStripSpringTextBox1"
-        ToolStripSpringTextBox1.Size = New Size(233, 25)
-        ' 
-        ' ToolStripButton1
-        ' 
-        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
-        ToolStripButton1.ImageTransparentColor = Color.Magenta
-        ToolStripButton1.Name = "ToolStripButton1"
-        ToolStripButton1.Size = New Size(23, 22)
-        ToolStripButton1.Text = "Search"
         ' 
         ' CellBrowser
         ' 
