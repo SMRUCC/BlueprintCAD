@@ -130,6 +130,8 @@ Namespace My
                     Dim args As String = $"--run {wizardConfig.configFile.CLIPath} --output {tempfile.CLIPath} /@set tqdm=false"
                     Dim proc As FormConsoleHost = CommonRuntime.ShowDocument(Of FormConsoleHost)(DockState.Document, "Run Virtual Cell Experiment")
 
+                    Call proc.LogText($"run virtualcell {args}", Color.GreenYellow)
+                    Call CommonRuntime.StatusMessage($"run virtualcell {args}")
                     Call wizardConfig.Save()
                     Call proc.Run(vc, args)
 

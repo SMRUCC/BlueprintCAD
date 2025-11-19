@@ -27,6 +27,10 @@ Public Class FormConsoleHost
         End If
     End Sub
 
+    Public Sub LogText(text As String, color As Color)
+        Call console.WriteOutput(text, color)
+    End Sub
+
     Public Function NextCommand(cmd As String, args As String) As FormConsoleHost
         commandQueue.Enqueue((cmd, args))
         Return Me
