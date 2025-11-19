@@ -160,6 +160,10 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="HelpDocs\" />
+  </ItemGroup>
+
   <Import Project="..\..\..\galaxy\src\RibbonEventBinding\RibbonEventBinding.projitems" Label="Shared" />
 
 </Project>

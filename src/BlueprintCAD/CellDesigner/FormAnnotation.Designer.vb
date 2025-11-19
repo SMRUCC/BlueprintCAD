@@ -78,6 +78,10 @@ Partial Class FormAnnotation
         Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
+        GroupBox1 = New GroupBox()
+        GroupBox2 = New GroupBox()
+        Panel1 = New Panel()
+        RichTextBox1 = New RichTextBox()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -107,6 +111,8 @@ Partial Class FormAnnotation
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         ToolStrip1.SuspendLayout()
+        GroupBox1.SuspendLayout()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -604,11 +610,8 @@ Partial Class FormAnnotation
         ' 
         ' TabPage2
         ' 
-        TabPage2.Controls.Add(TextBox2)
-        TabPage2.Controls.Add(Label2)
-        TabPage2.Controls.Add(Button1)
-        TabPage2.Controls.Add(TextBox1)
-        TabPage2.Controls.Add(Label1)
+        TabPage2.Controls.Add(RichTextBox1)
+        TabPage2.Controls.Add(Panel1)
         TabPage2.Location = New Point(4, 24)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
@@ -619,15 +622,15 @@ Partial Class FormAnnotation
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(146, 76)
+        TextBox2.Location = New Point(15, 116)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(836, 23)
+        TextBox2.Size = New Size(660, 23)
         TextBox2.TabIndex = 4
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(32, 84)
+        Label2.Location = New Point(15, 98)
         Label2.Name = "Label2"
         Label2.Size = New Size(61, 15)
         Label2.TabIndex = 3
@@ -635,7 +638,7 @@ Partial Class FormAnnotation
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(1009, 20)
+        Button1.Location = New Point(681, 63)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 2
@@ -644,15 +647,15 @@ Partial Class FormAnnotation
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(146, 20)
+        TextBox1.Location = New Point(15, 63)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(847, 23)
+        TextBox1.Size = New Size(660, 23)
         TextBox1.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(27, 23)
+        Label1.Location = New Point(15, 41)
         Label1.Name = "Label1"
         Label1.Size = New Size(92, 15)
         Label1.TabIndex = 0
@@ -675,6 +678,49 @@ Partial Class FormAnnotation
         ToolStripButton1.Name = "ToolStripButton1"
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(TextBox1)
+        GroupBox1.Controls.Add(TextBox2)
+        GroupBox1.Controls.Add(Label1)
+        GroupBox1.Controls.Add(Label2)
+        GroupBox1.Controls.Add(Button1)
+        GroupBox1.Location = New Point(13, 268)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(774, 474)
+        GroupBox1.TabIndex = 5
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Cellular Component Annotation Search"
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Location = New Point(13, 14)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(774, 236)
+        GroupBox2.TabIndex = 6
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Edit Model Metadata"
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(GroupBox2)
+        Panel1.Controls.Add(GroupBox1)
+        Panel1.Dock = DockStyle.Left
+        Panel1.Location = New Point(3, 3)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(803, 848)
+        Panel1.TabIndex = 7
+        ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.BorderStyle = BorderStyle.None
+        RichTextBox1.Dock = DockStyle.Fill
+        RichTextBox1.Location = New Point(806, 3)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(611, 848)
+        RichTextBox1.TabIndex = 8
+        RichTextBox1.Text = ""
         ' 
         ' FormAnnotation
         ' 
@@ -722,9 +768,11 @@ Partial Class FormAnnotation
         ContextMenuStrip2.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
-        TabPage2.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -774,4 +822,8 @@ Partial Class FormAnnotation
     Friend WithEvents AdvancedDataGridViewSearchToolBar5 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents TransporterAnnotationCmd As AnnotationItem
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
