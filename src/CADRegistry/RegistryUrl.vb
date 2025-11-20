@@ -11,6 +11,7 @@ Public Class RegistryUrl
     ReadOnly cachedOperon As WebJSON.Operon()
     ReadOnly cachedReactions As Dictionary(Of String, WebJSON.Reaction())
     ReadOnly cachedMolecules As Dictionary(Of String, WebJSON.Molecule)
+    ReadOnly cachedExpansion As Dictionary(Of String, WebJSON.Reaction())
 #End Region
 
     Public Const defaultServer As String = "http://biocad.innovation.ac.cn"
@@ -92,6 +93,30 @@ Public Class RegistryUrl
             Return cache.ComputeIfAbsent(key, Function() GetReactionList(url))
         Else
             Dim list = cachedReactions.TryGetValue(ec_number)
+
+            If Not list Is Nothing Then
+                Return list.ToDictionary(Function(r) r.guid)
+            Else
+                Return Nothing
+            End If
+        End If
+    End Function
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="registry_id">id of the molecule</param>
+    ''' <returns></returns>
+    Public Function ExpandNetworkByCompound(registry_id As String) As Dictionary(Of String, WebJSON.Reaction)
+        If cachedExpansion Is Nothing Then
+            Dim url As String = $"{server}/registry/expand_network/?cid={registry_id}"
+            Dim key As String = registry_id
+
+            Static cache As New Dictionary(Of String, Dictionary(Of String, WebJSON.Reaction))
+
+            Return cache.ComputeIfAbsent(key, Function() GetReactionList(url))
+        Else
+            Dim list = cachedExpansion.TryGetValue(registry_id)
 
             If Not list Is Nothing Then
                 Return list.ToDictionary(Function(r) r.guid)
