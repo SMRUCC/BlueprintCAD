@@ -42,10 +42,15 @@ Partial Class FormCultureMedium
         Button3 = New Button()
         TextBox1 = New TextBox()
         Label4 = New Label()
+        GroupBox2 = New GroupBox()
+        RichTextBox1 = New RichTextBox()
+        DataGridView1 = New DataGridView()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
+        GroupBox2.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ListBox1
@@ -136,7 +141,7 @@ Partial Class FormCultureMedium
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(604, 366)
+        Button1.Location = New Point(604, 605)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 7
@@ -145,7 +150,7 @@ Partial Class FormCultureMedium
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(514, 366)
+        Button2.Location = New Point(514, 605)
         Button2.Name = "Button2"
         Button2.Size = New Size(75, 23)
         Button2.TabIndex = 8
@@ -154,6 +159,7 @@ Partial Class FormCultureMedium
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(GroupBox2)
         GroupBox1.Controls.Add(Button3)
         GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(Label4)
@@ -165,7 +171,7 @@ Partial Class FormCultureMedium
         GroupBox1.Controls.Add(Label3)
         GroupBox1.Location = New Point(12, 12)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(684, 345)
+        GroupBox1.Size = New Size(681, 587)
         GroupBox1.TabIndex = 9
         GroupBox1.TabStop = False
         GroupBox1.Text = "Add Compound To Culture Medium"
@@ -195,11 +201,40 @@ Partial Class FormCultureMedium
         Label4.TabIndex = 7
         Label4.Text = ">>>"
         ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(DataGridView1)
+        GroupBox2.Location = New Point(9, 340)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(658, 241)
+        GroupBox2.TabIndex = 10
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Associated Membrane Transportation"
+        ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.BorderStyle = BorderStyle.FixedSingle
+        RichTextBox1.Location = New Point(702, 21)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(354, 576)
+        RichTextBox1.TabIndex = 10
+        RichTextBox1.Text = ""
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.Location = New Point(3, 19)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.Size = New Size(652, 219)
+        DataGridView1.TabIndex = 0
+        ' 
         ' FormCultureMedium
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(704, 398)
+        ClientSize = New Size(1065, 640)
+        Controls.Add(RichTextBox1)
         Controls.Add(GroupBox1)
         Controls.Add(Button2)
         Controls.Add(Button1)
@@ -211,6 +246,8 @@ Partial Class FormCultureMedium
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
+        GroupBox2.ResumeLayout(False)
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -231,4 +268,7 @@ Partial Class FormCultureMedium
     Friend WithEvents Label4 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
