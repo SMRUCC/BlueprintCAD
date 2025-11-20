@@ -121,6 +121,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Dim transporter As Index(Of String) = proj.membrane_proteins _
             .Select(Function(t) t.queryName) _
             .Indexing
+        Dim membraneTransport As New Index(Of String)
 
         Call $"processing of {enzymes.Count} enzyme annotations".debug
 
@@ -145,6 +146,12 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                          .Select(Function(a) a.First) _
                          .ToArray
                 }
+
+                If gene.locus_id Like transporter Then
+                    For Each id As String In list.Keys
+                        Call membraneTransport.Add(id)
+                    Next
+                End If
 
                 Call enzymeModels.Add(model)
             End If
@@ -171,7 +178,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Return New MetabolismStructure With {
             .compounds = metabolites,
             .reactions = New ReactionGroup With {
-                .enzymatic = CreateEnzymaticNetwork(network, ec_numbers).ToArray
+                .enzymatic = CreateEnzymaticNetwork(network, ec_numbers).ToArray,
+                .transportation = membraneTransport.Objects
             },
             .enzymes = enzymeModels.ToArray
         }
