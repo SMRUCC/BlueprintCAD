@@ -40,7 +40,7 @@ Public Class FormCultureMedium : Implements IDataContainer
             Call ListBox1.Items.Add(New IDDisplay With {.id = compound.ID, .name = compound.name})
         Next
 
-        wizardConfig.config.mapping = Definition.MetaCyc(compounds_id.Distinct, Double.NaN)
+        wizardConfig.config.mapping = Definition.MetaCyc((From c As Compound In allCompounds Select c.ID), Double.NaN)
     End Sub
 
     Private Iterator Function FilterMembraneTransportMetabolites(allCompounds As Compound()) As IEnumerable(Of Compound)
@@ -53,14 +53,19 @@ Public Class FormCultureMedium : Implements IDataContainer
             .Where(Function(id) allReactions.ContainsKey(id)) _
             .Select(Function(id) allReactions(id)) _
             .ToArray
-        Dim compoundSet As Index(Of String) = transportReactions _
-            .Select(Function(r) r.substrate.JoinIterates(r.product)) _
+        Dim compoundSet As Dictionary(Of String, String()) = transportReactions _
+            .Select(Function(r) r.substrate.JoinIterates(r.product).Select(Function(c) (c.compound, r.ID))) _
             .IteratesALL _
-            .Select(Function(c) c.compound) _
-            .Indexing
+            .GroupBy(Function(c) c.compound) _
+            .ToDictionary(Function(c) c.Key,
+                          Function(c)
+                              Return c.Select(Function(a) a.ID).Distinct.ToArray
+                          End Function)
+
+        membraneTransports = compoundSet
 
         For Each compound As Compound In allCompounds
-            If compound.ID Like compoundSet Then
+            If compoundSet.ContainsKey(compound.ID) Then
                 Yield compound
             End If
         Next
@@ -110,6 +115,8 @@ Public Class FormCultureMedium : Implements IDataContainer
 
         compound = ListBox2.SelectedItem
         NumericUpDown1.Value = compound.content
+
+        Call showTransportNetwork(compound.id)
     End Sub
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
@@ -159,6 +166,28 @@ Public Class FormCultureMedium : Implements IDataContainer
 
     Private Sub FormCultureMedium_Load(sender As Object, e As EventArgs) Handles Me.Load
         RichTextBox1.Rtf = Encoding.UTF8.GetString(My.Resources.HelpDocs.SetupCultureMedium)
+    End Sub
+
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+        Dim id As IDDisplay = DirectCast(ListBox1.SelectedItem, IDDisplay)
+
+        Call showTransportNetwork(id.id)
+    End Sub
+
+    Private Sub showTransportNetwork(cid As String)
+        Dim reaction_ids As String() = membraneTransports.TryGetValue(cid)
+
+        Call DataGridView1.Rows.Clear()
+
+        If Not reaction_ids.IsNullOrEmpty Then
+            For Each rid As String In reaction_ids
+                If allReactions.ContainsKey(rid) Then
+                    Dim model As Reaction = allReactions(rid)
+
+                    Call DataGridView1.Rows.Add(model.ID, model.name, model.equation, model.ec_number)
+                End If
+            Next
+        End If
     End Sub
 End Class
 

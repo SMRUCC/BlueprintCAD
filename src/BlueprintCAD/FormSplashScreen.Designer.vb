@@ -24,12 +24,13 @@ Partial Class FormSplashScreen
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSplashScreen))
         Panel1 = New Panel()
-        Label1 = New Label()
-        PictureBox1 = New PictureBox()
         Label2 = New Label()
-        Label3 = New Label()
+        PictureBox1 = New PictureBox()
+        Label1 = New Label()
         Panel2 = New Panel()
         Label4 = New Label()
+        Label3 = New Label()
+        Label5 = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -39,6 +40,7 @@ Partial Class FormSplashScreen
         ' 
         Panel1.BackColor = Color.White
         Panel1.BackgroundImageLayout = ImageLayout.Zoom
+        Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label1)
@@ -49,66 +51,75 @@ Partial Class FormSplashScreen
         Panel1.Size = New Size(671, 428)
         Panel1.TabIndex = 0
         ' 
-        ' Label1
+        ' Label2
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(322, 201)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(168, 15)
-        Label1.TabIndex = 0
-        Label1.Text = "Virtual Cell Engine Powered By"
+        Label2.AutoSize = True
+        Label2.Location = New Point(483, 402)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(172, 15)
+        Label2.TabIndex = 2
+        Label2.Text = "https://gcmodeller.org/  ·  2025"
         ' 
         ' PictureBox1
         ' 
         PictureBox1.BackColor = Color.Transparent
         PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
         PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox1.Location = New Point(496, 201)
+        PictureBox1.Location = New Point(496, 206)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(149, 190)
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
         ' 
-        ' Label2
+        ' Label1
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(473, 394)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(172, 15)
-        Label2.TabIndex = 2
-        Label2.Text = "https://gcmodeller.org/  ·  2025"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Cambria", 72F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = Color.White
-        Label3.Location = New Point(17, 15)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(342, 112)
-        Label3.TabIndex = 3
-        Label3.Text = "Sophia"
+        Label1.AutoSize = True
+        Label1.Location = New Point(322, 206)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(168, 15)
+        Label1.TabIndex = 0
+        Label1.Text = "Virtual Cell Engine Powered By"
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.FromArgb(CByte(136), CByte(165), CByte(200))
+        Panel2.BackColor = Color.LightGray
         Panel2.Controls.Add(Label4)
         Panel2.Controls.Add(Label3)
         Panel2.Dock = DockStyle.Top
         Panel2.Location = New Point(0, 0)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(671, 188)
+        Panel2.Size = New Size(671, 200)
         Panel2.TabIndex = 4
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(31, 143)
+        Label4.Location = New Point(108, 145)
         Label4.Name = "Label4"
         Label4.Size = New Size(237, 32)
         Label4.TabIndex = 4
         Label4.Text = "VirtualCell Workshop"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Cambria", 72F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label3.ForeColor = Color.White
+        Label3.Location = New Point(23, 9)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(342, 112)
+        Label3.TabIndex = 3
+        Label3.Text = "Sophia"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(9, 404)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(163, 15)
+        Label5.TabIndex = 5
+        Label5.Text = "重庆正雅生物科技有限公司"
         ' 
         ' FormSplashScreen
         ' 
@@ -134,4 +145,5 @@ Partial Class FormSplashScreen
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

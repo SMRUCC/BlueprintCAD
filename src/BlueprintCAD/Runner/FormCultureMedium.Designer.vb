@@ -25,6 +25,7 @@ Partial Class FormCultureMedium
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         ListBox1 = New ListBox()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddToDCultureMediumToolStripMenuItem = New ToolStripMenuItem()
@@ -39,12 +40,16 @@ Partial Class FormCultureMedium
         Button1 = New Button()
         Button2 = New Button()
         GroupBox1 = New GroupBox()
+        GroupBox2 = New GroupBox()
+        DataGridView1 = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
         Button3 = New Button()
         TextBox1 = New TextBox()
         Label4 = New Label()
-        GroupBox2 = New GroupBox()
         RichTextBox1 = New RichTextBox()
-        DataGridView1 = New DataGridView()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
@@ -176,6 +181,59 @@ Partial Class FormCultureMedium
         GroupBox1.TabStop = False
         GroupBox1.Text = "Add Compound To Culture Medium"
         ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(DataGridView1)
+        GroupBox2.Location = New Point(9, 340)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(658, 241)
+        GroupBox2.TabIndex = 10
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Associated Membrane Transportation"
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4})
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.Location = New Point(3, 19)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.Size = New Size(652, 219)
+        DataGridView1.TabIndex = 0
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "ID"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "name"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column3.HeaderText = "equation"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "ec_number"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        ' 
         ' Button3
         ' 
         Button3.Location = New Point(217, 311)
@@ -201,33 +259,15 @@ Partial Class FormCultureMedium
         Label4.TabIndex = 7
         Label4.Text = ">>>"
         ' 
-        ' GroupBox2
-        ' 
-        GroupBox2.Controls.Add(DataGridView1)
-        GroupBox2.Location = New Point(9, 340)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(658, 241)
-        GroupBox2.TabIndex = 10
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "Associated Membrane Transportation"
-        ' 
         ' RichTextBox1
         ' 
-        RichTextBox1.BorderStyle = BorderStyle.FixedSingle
+        RichTextBox1.BackColor = Color.WhiteSmoke
+        RichTextBox1.BorderStyle = BorderStyle.None
         RichTextBox1.Location = New Point(702, 21)
         RichTextBox1.Name = "RichTextBox1"
         RichTextBox1.Size = New Size(354, 576)
         RichTextBox1.TabIndex = 10
         RichTextBox1.Text = ""
-        ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Dock = DockStyle.Fill
-        DataGridView1.Location = New Point(3, 19)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(652, 219)
-        DataGridView1.TabIndex = 0
         ' 
         ' FormCultureMedium
         ' 
@@ -271,4 +311,8 @@ Partial Class FormCultureMedium
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class
