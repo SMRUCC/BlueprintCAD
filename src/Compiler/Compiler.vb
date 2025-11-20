@@ -6,6 +6,7 @@ Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Math.Scripting.MathExpression
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.Text.Xml.Models
+Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -13,12 +14,14 @@ Imports SMRUCC.genomics.GCModeller.CompilerServices
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model.Cellular
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model.Cellular.Vector
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.SequenceModel.NucleotideModels.Translation
 
 Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
     ReadOnly proj As GenBankProject
     ReadOnly registry As RegistryUrl
+    ReadOnly motifSites As Dictionary(Of String, MotifMatch())
 
     Sub New(proj As GenBankProject, Optional serverUrl As String = RegistryUrl.defaultServer)
         If serverUrl.ToLower.StartsWith("http://") OrElse serverUrl.ToLower.StartsWith("https://") Then
@@ -27,6 +30,14 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Me.registry = New RegistryUrl(RegistryUrl.defaultServer, serverUrl)
         End If
 
+        Me.motifSites = proj.tfbs_hits.Values _
+            .IteratesALL _
+            .Where(Function(a) a.identities > 0.97) _
+            .GroupBy(Function(a) a.seeds(0)) _
+            .ToDictionary(Function(a) a.Key,
+                          Function(a)
+                              Return a.ToArray
+                          End Function)
         Me.proj = proj
     End Sub
 
@@ -251,9 +262,12 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     Private Iterator Function GeneObjects(rnas As List(Of RNA), proteins As List(Of protein), regulations As List(Of transcription)) As IEnumerable(Of gene)
         Dim nt As Dictionary(Of String, String) = proj.genes
         Dim RNA As RNA
-        Dim tfs As Index(Of String) = proj.transcript_factors _
-            .Select(Function(tf) tf.QueryName) _
-            .Indexing
+        Dim tfs As Dictionary(Of String, BestHit()) = proj.transcript_factors _
+            .GroupBy(Function(tf) tf.QueryName) _
+            .ToDictionary(Function(t) t.Key,
+                          Function(t)
+                              Return t.ToArray
+                          End Function)
         Dim protein_id As String
 
         Call $"processing compile of {nt.Count} genes!".debug
@@ -264,7 +278,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Dim residues As NumericVector = Nothing
             Dim gene_type As RNATypes
             Dim translate_id As String = If(gene.ProteinId, gene.locus_id & "_translate")
-            Dim isTF As Boolean = gene.locus_id Like tfs
+            Dim isTF As Boolean = tfs.ContainsKey(gene.locus_id)
 
             If Not gene.Translation.StringEmpty Then
                 residues = ProteinComposition.FromRefSeq(gene.Translation, translate_id).CreateVector
@@ -272,7 +286,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 protein_id = "Protein[" & translate_id & "]"
 
                 If isTF Then
-                    Call regulations.AddRange(RegulationNetwork(protein_id, gene.locus_id))
+                    Call regulations.AddRange(RegulationNetwork(protein_id, gene.locus_id, annotation:=tfs(gene.locus_id)))
                 End If
 
                 Call proteins.Add(New protein With {
@@ -290,7 +304,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                         protein_id = "Protein[" & translate_id & "]"
 
                         If isTF Then
-                            Call regulations.AddRange(RegulationNetwork(protein_id, gene.locus_id))
+                            Call regulations.AddRange(RegulationNetwork(protein_id, gene.locus_id, annotation:=tfs(gene.locus_id)))
                         End If
 
                         Call proteins.Add(New protein With {
@@ -332,7 +346,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                         rnas.Add(RNA)
 
                         If isTF Then
-                            Call regulations.AddRange(RegulationNetwork(RNA.id, gene.locus_id))
+                            Call regulations.AddRange(RegulationNetwork(RNA.id, gene.locus_id, annotation:=tfs(gene.locus_id)))
                         End If
                 End Select
             End If
@@ -406,8 +420,26 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         }
     End Function
 
-    Private Iterator Function RegulationNetwork(regulator$, gene_id$) As IEnumerable(Of transcription)
-
+    Private Iterator Function RegulationNetwork(regulator$, gene_id$, annotation As BestHit()) As IEnumerable(Of transcription)
+        For Each hit As BestHit In annotation
+            If motifSites.ContainsKey(hit.HitName) Then
+                For Each site As MotifMatch In motifSites(hit.HitName)
+                    Yield New transcription With {
+                        .regulator = regulator,
+                        .targets = {site.title},
+                        .motif = New Motif With {
+                            .left = site.start,
+                            .right = site.ends,
+                            .strand = "?",
+                            .sequence = site.segment
+                        },
+                        .mode = "+"c,
+                        .note = $"TFBS match: {hit.HitName}, motif score: [{site.score1:F2}, {site.score2:F2}], identities: {site.identities:P2}",
+                        .centralDogma = {site.title}
+                    }
+                Next
+            End If
+        Next
     End Function
 
     Private Function FormatCompoundId(id As UInteger) As String
