@@ -1,6 +1,7 @@
 Imports CADRegistry
 Imports Microsoft.VisualBasic.CommandLine
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
+Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Module Program
@@ -61,6 +62,9 @@ Module Program
 
     ' ./target.gcproj --out model.xml --server "http://biocad.innovation.ac.cn" --name XXXX 
     Public Function CompileProjectFile(file As String, args As CommandLine) As Integer
+
+        Call Banner.Print(App.StdOut)
+
         Dim proj As GenBankProject = ProjectIO.Load(file)
         Dim serverUrl As String = args("--server") Or RegistryUrl.defaultServer
         Dim savefile As String = args("--out") Or file.ChangeSuffix("xml")

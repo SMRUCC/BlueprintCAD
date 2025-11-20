@@ -157,6 +157,8 @@ Public Class FormAnnotation
                 Dim args As String = $"{filepath.CLIPath} --out {saveResult.CLIPath} --server ""{server}"" --name {saveResult.BaseName}  /@set tqdm=false"
                 Dim proc As FormConsoleHost = CommonRuntime.ShowDocument(Of FormConsoleHost)(DockState.Document, "Build Virtual Cell...")
 
+                Call proc.LogText("run virtualcell compiler " & args, Color.Red)
+                Call CommonRuntime.StatusMessage("run virtualcell compiler " & args)
                 Call proc.Run(gcc, args)
 
                 If saveResult.FileLength > ByteSize.KB Then
