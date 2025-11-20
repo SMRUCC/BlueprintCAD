@@ -9,6 +9,8 @@ Public Class FormCultureMedium : Implements IDataContainer
 
     Dim wizardConfig As New Wizard
     Dim search As CompoundSearchIndex
+    Dim membraneTransports As Dictionary(Of String, String())
+    Dim allReactions As Dictionary(Of String, Reaction)
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         Dim compounds_id As New List(Of String)
@@ -21,16 +23,48 @@ Public Class FormCultureMedium : Implements IDataContainer
             .Select(Function(c) c.First) _
             .ToArray
 
-        wizardConfig = DirectCast(data, Wizard)
-        search = New CompoundSearchIndex(allCompounds, 3)
+        allReactions = DirectCast(data, Wizard).models.Values _
+            .Select(Function(c) c.model.metabolismStructure.reactions.AsEnumerable) _
+            .IteratesALL _
+            .GroupBy(Function(r) r.ID) _
+            .ToDictionary(Function(r) r.Key,
+                          Function(r)
+                              Return r.First
+                          End Function)
 
-        For Each compound As Compound In allCompounds
+        wizardConfig = DirectCast(data, Wizard)
+        search = New CompoundSearchIndex(FilterMembraneTransportMetabolites(allCompounds), 3)
+
+        For Each compound As Compound In search.AsEnumerable
             Call compounds_id.Add(compound.ID)
             Call ListBox1.Items.Add(New IDDisplay With {.id = compound.ID, .name = compound.name})
         Next
 
         wizardConfig.config.mapping = Definition.MetaCyc(compounds_id.Distinct, Double.NaN)
     End Sub
+
+    Private Iterator Function FilterMembraneTransportMetabolites(allCompounds As Compound()) As IEnumerable(Of Compound)
+        Dim transports As String() = wizardConfig.models.Values _
+            .Select(Function(c) c.model.metabolismStructure.reactions.transportation) _
+            .IteratesALL _
+            .Distinct _
+            .ToArray
+        Dim transportReactions = transports _
+            .Where(Function(id) allReactions.ContainsKey(id)) _
+            .Select(Function(id) allReactions(id)) _
+            .ToArray
+        Dim compoundSet As Index(Of String) = transportReactions _
+            .Select(Function(r) r.substrate.JoinIterates(r.product)) _
+            .IteratesALL _
+            .Select(Function(c) c.compound) _
+            .Indexing
+
+        For Each compound As Compound In allCompounds
+            If compound.ID Like compoundSet Then
+                Yield compound
+            End If
+        Next
+    End Function
 
     Public Function GetData() As Object Implements IDataContainer.GetData
         Return wizardConfig
