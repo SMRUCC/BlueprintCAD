@@ -248,9 +248,13 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Next
     End Function
 
-    Private Iterator Function GeneObjects(rnas As List(Of RNA), proteins As List(Of protein)) As IEnumerable(Of gene)
+    Private Iterator Function GeneObjects(rnas As List(Of RNA), proteins As List(Of protein), regulations As List(Of transcription)) As IEnumerable(Of gene)
         Dim nt As Dictionary(Of String, String) = proj.genes
         Dim RNA As RNA
+        Dim tfs As Index(Of String) = proj.transcript_factors _
+            .Select(Function(tf) tf.QueryName) _
+            .Indexing
+        Dim protein_id As String
 
         Call $"processing compile of {nt.Count} genes!".debug
 
@@ -260,15 +264,21 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Dim residues As NumericVector = Nothing
             Dim gene_type As RNATypes
             Dim translate_id As String = If(gene.ProteinId, gene.locus_id & "_translate")
+            Dim isTF As Boolean = gene.locus_id Like tfs
 
             If Not gene.Translation.StringEmpty Then
                 residues = ProteinComposition.FromRefSeq(gene.Translation, translate_id).CreateVector
                 gene_type = RNATypes.mRNA
+                protein_id = "Protein[" & translate_id & "]"
+
+                If isTF Then
+                    Call regulations.AddRange(RegulationNetwork(protein_id, gene.locus_id))
+                End If
 
                 Call proteins.Add(New protein With {
-                    .name = "Protein[" & translate_id & "]",
+                    .name = protein_id,
                     .peptide_chains = {translate_id},
-                    .protein_id = "Protein[" & translate_id & "]"
+                    .protein_id = protein_id
                 })
             Else
                 Select Case gene.type
@@ -277,11 +287,16 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
                         residues = ProteinComposition.FromRefSeq(trans, translate_id).CreateVector
                         gene_type = RNATypes.mRNA
+                        protein_id = "Protein[" & translate_id & "]"
+
+                        If isTF Then
+                            Call regulations.AddRange(RegulationNetwork(protein_id, gene.locus_id))
+                        End If
 
                         Call proteins.Add(New protein With {
-                            .name = "Protein[" & translate_id & "]",
+                            .name = protein_id,
                             .peptide_chains = {translate_id},
-                            .protein_id = "Protein[" & translate_id & "]"
+                            .protein_id = protein_id
                         })
                     Case "rRNA"
                         Dim rRNA = gene.commonName.Split(" "c, "-"c).First.ToLower
@@ -315,6 +330,10 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                             .val = ""
                         }
                         rnas.Add(RNA)
+
+                        If isTF Then
+                            Call regulations.AddRange(RegulationNetwork(RNA.id, gene.locus_id))
+                        End If
                 End Select
             End If
 
@@ -337,7 +356,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     Private Function BuildGenome() As Genome
         Dim RNAs As New List(Of RNA)
         Dim proteins As New List(Of protein)
-        Dim geneSet As Dictionary(Of String, gene) = GeneObjects(RNAs, proteins) _
+        Dim regulationNetwork As New List(Of transcription)
+        Dim geneSet As Dictionary(Of String, gene) = GeneObjects(RNAs, proteins, regulationNetwork) _
             .GroupBy(Function(a) a.locus_tag) _
             .ToDictionary(Function(a) a.Key,
                           Function(a)
@@ -381,8 +401,13 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
         Return New Genome With {
             .replicons = {genomics},
-            .proteins = proteins.ToArray
+            .proteins = proteins.ToArray,
+            .regulations = regulationNetwork.ToArray
         }
+    End Function
+
+    Private Iterator Function RegulationNetwork(regulator$, gene_id$) As IEnumerable(Of transcription)
+
     End Function
 
     Private Function FormatCompoundId(id As UInteger) As String
