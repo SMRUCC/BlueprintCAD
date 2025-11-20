@@ -17,11 +17,11 @@ Module Program
         Call Console.WriteLine("The GCModeller Virtual Cell Compiler")
         Call Console.WriteLine()
         Call Console.WriteLine("commandline usage:")
-        Call Console.WriteLine("<target_file.gcproj/gbff> --out <model.xml/project.gcproj> [--server <database server/local cache dir>] [--name <virtual cell name>] [--config <settings.json>] [--num_threads 8] [--workdir tempdir]")
+        Call Console.WriteLine("<target_file.gcproj/gbff> --out <model.xml/project.gcproj> [--server <database server/local cache dir>] [--skip-TRN] [--name <virtual cell name>] [--config <settings.json>] [--num_threads 8] [--workdir tempdir]")
         Call Console.WriteLine("")
         Call Console.WriteLine("step 1: build annotation project from genbank file")
         Call Console.WriteLine("--------------------------------------------------")
-        Call Console.WriteLine("target.gbff --config settings.json [--out annotation.gcproj] [--num_threads 8] [--workdir workspace_dir]")
+        Call Console.WriteLine("target.gbff --config settings.json [--out annotation.gcproj] [--skip-TRN] [--num_threads 8] [--workdir workspace_dir]")
         Call Console.WriteLine()
         Call Console.WriteLine("input file:      genbank database file of a specific bacterial genome, this genbank file should")
         Call Console.WriteLine("                 contains the features of gene, CDS, tRNA, rRNA and whole genomics sequence.")
@@ -32,6 +32,7 @@ Module Program
         Call Console.WriteLine("  --num_threads: [optional] number of the threads that used for run the localblast+ alignment ")
         Call Console.WriteLine("                 search for run the annotation workflow, default use 8 CPU threads.")
         Call Console.WriteLine("  --workdir:     [optional] set the temp workdir for run the annotation workflow.")
+        Call Console.WriteLine("  --skip-TRN:    [optional] skip of scan the TFBS site for create transcript regulation network.")
         Call Console.WriteLine()
         Call Console.WriteLine("step2: compile virtual cell model from annotation project file")
         Call Console.WriteLine("--------------------------------------------------------------")
@@ -77,13 +78,14 @@ Module Program
             .CLICode
     End Function
 
-    ' ./target.gbff --out gcmodeller.gcproj --config settings.json --num_threads 8 --workdir workspace_dir
+    ' ./target.gbff --out gcmodeller.gcproj --config settings.json --num_threads 8 --skip-TRN --workdir workspace_dir
     Public Function CompileGenbankFile(file As String, args As CommandLine) As Integer
         Dim proj = ProjectCreator.FromGenBank(GBFF.File.Load(file))
         Dim settings As Settings = Settings.Load(args.Required("--config", "Missing the required configuration file, `--config` argument must be specificed!"))
         Dim outproj As String = args("--out")
         Dim n_threads = args("--num_threads") Or -1
         Dim workdir As String = args("--workdir")
+        Dim skipTRN As Boolean = args("--skip-TRN")
 
         If n_threads > 0 Then
             settings.n_threads = n_threads
@@ -92,7 +94,7 @@ Module Program
             Call App.SetSystemTemp(workdir)
         End If
 
-        Call BuildProject.CreateModelProject(proj, settings, outproj)
+        Call BuildProject.CreateModelProject(proj, settings, skipTRN, outproj)
 
         Return 0
     End Function

@@ -11,7 +11,7 @@ Imports SMRUCC.genomics.SequenceModel.FASTA
 
 Module BuildProject
 
-    Public Sub CreateModelProject(proj As GenBankProject, settings As Settings, outproj As String)
+    Public Sub CreateModelProject(proj As GenBankProject, settings As Settings, skipTRN As Boolean, outproj As String)
         Dim server As New RegistryUrl(settings.registry_server, cache_dir:=settings.cache_dir)
         Dim blast_threads As Integer = settings.n_threads
         Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
@@ -28,7 +28,9 @@ Module BuildProject
                     End Function) _
             .ToArray
 
-        proj.tfbs_hits = pwm.ScanSites(tss, blast_threads)
+        If Not skipTRN Then
+            proj.tfbs_hits = pwm.ScanSites(tss, blast_threads)
+        End If
 
         ' ----- enzyme hits ------
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"enzyme_number_{App.PID}")
