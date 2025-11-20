@@ -1,4 +1,5 @@
-﻿Imports Galaxy.Workbench
+﻿Imports System.Text
+Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -120,6 +121,10 @@ Public Class FormCultureMedium : Implements IDataContainer
                 .name = item.name
             })
         Next
+    End Sub
+
+    Private Sub FormCultureMedium_Load(sender As Object, e As EventArgs) Handles Me.Load
+        RichTextBox1.Rtf = Encoding.UTF8.GetString(My.Resources.HelpDocs.SetupCultureMedium)
     End Sub
 End Class
 
