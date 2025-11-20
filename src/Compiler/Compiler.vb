@@ -118,6 +118,9 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                           Function(a)
                               Return a.First
                           End Function)
+        Dim transporter As Index(Of String) = proj.membrane_proteins _
+            .Select(Function(t) t.queryName) _
+            .Indexing
 
         Call $"processing of {enzymes.Count} enzyme annotations".debug
 
@@ -163,6 +166,47 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
         Call $"load {network.Count} enzymatic reactions!".debug
 
+        Dim metabolites As Compound() = CreateCompoundModel(network).ToArray
+
+        Return New MetabolismStructure With {
+            .compounds = metabolites,
+            .reactions = New ReactionGroup With {
+                .enzymatic = CreateEnzymaticNetwork(network, ec_numbers).ToArray
+            },
+            .enzymes = enzymeModels.ToArray
+        }
+    End Function
+
+    Private Iterator Function CreateEnzymaticNetwork(network As Dictionary(Of String, WebJSON.Reaction), ec_numbers As Dictionary(Of String, List(Of String))) As IEnumerable(Of Reaction)
+        For Each a As WebJSON.Reaction In network.Values
+            Yield New Reaction With {
+                .ID = a.guid,
+                .ec_number = ec_numbers(a.guid).Distinct.ToArray,
+                .bounds = {5, 5},
+                .is_enzymatic = True,
+                .name = a.name,
+                .note = a.reaction,
+                .substrate = a.left _
+                    .Select(Function(c)
+                                Return New CompoundFactor With {
+                                    .factor = c.factor,
+                                    .compound = FormatCompoundId(c.molecule_id)
+                                }
+                            End Function) _
+                    .ToArray,
+                .product = a.right _
+                    .Select(Function(c)
+                                Return New CompoundFactor With {
+                                    .factor = c.factor,
+                                    .compound = FormatCompoundId(c.molecule_id)
+                                }
+                            End Function) _
+                    .ToArray
+            }
+        Next
+    End Function
+
+    Private Iterator Function CreateCompoundModel(network As Dictionary(Of String, WebJSON.Reaction)) As IEnumerable(Of Compound)
         Dim compounds_id As UInteger() = network.Values _
             .Select(Function(r) r.left.JoinIterates(r.right)) _
             .IteratesALL _
@@ -175,60 +219,25 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
         Call $"found {compounds_id.Length} associated metabolites!".debug
 
-        Return New MetabolismStructure With {
-            .compounds = metadata _
-                .Select(Function(c)
-                            Dim biocyc_id As WebJSON.DBXref() = c.db_xrefs _
-                                .SafeQuery _
-                                .Where(Function(r) r.dbname = "MetaCyc") _
-                                .ToArray
+        For Each c As WebJSON.Molecule In metadata
+            Dim biocyc_id As WebJSON.DBXref() = c.db_xrefs _
+                .SafeQuery _
+                .Where(Function(r) r.dbname = "MetaCyc") _
+                .ToArray
 
-                            Return New v2.Compound With {
-                                .db_xrefs = c.db_xrefs _
-                                    .SafeQuery _
-                                    .Select(Function(a) a.xref_id) _
-                                    .Distinct _
-                                    .ToArray,
-                                .ID = FormatCompoundId(c.id),
-                                .name = c.name,
-                                .referenceIds = biocyc_id _
-                                    .Select(Function(xi) xi.xref_id) _
-                                    .ToArray
-                            }
-                        End Function) _
-                .ToArray,
-            .reactions = New ReactionGroup With {
-                .enzymatic = network.Values _
-                    .Select(Function(a)
-                                Return New Reaction With {
-                                    .ID = a.guid,
-                                    .ec_number = ec_numbers(a.guid).Distinct.ToArray,
-                                    .bounds = {5, 5},
-                                    .is_enzymatic = True,
-                                    .name = a.name,
-                                    .note = a.reaction,
-                                    .substrate = a.left _
-                                        .Select(Function(c)
-                                                    Return New CompoundFactor With {
-                                                        .factor = c.factor,
-                                                        .compound = FormatCompoundId(c.molecule_id)
-                                                    }
-                                                End Function) _
-                                        .ToArray,
-                                    .product = a.right _
-                                        .Select(Function(c)
-                                                    Return New CompoundFactor With {
-                                                        .factor = c.factor,
-                                                        .compound = FormatCompoundId(c.molecule_id)
-                                                    }
-                                                End Function) _
-                                        .ToArray
-                                }
-                            End Function) _
+            Yield New v2.Compound With {
+                .db_xrefs = c.db_xrefs _
+                    .SafeQuery _
+                    .Select(Function(a) a.xref_id) _
+                    .Distinct _
+                    .ToArray,
+                .ID = FormatCompoundId(c.id),
+                .name = c.name,
+                .referenceIds = biocyc_id _
+                    .Select(Function(xi) xi.xref_id) _
                     .ToArray
-            },
-            .enzymes = enzymeModels.ToArray
-        }
+            }
+        Next
     End Function
 
     Private Iterator Function GeneObjects(rnas As List(Of RNA), proteins As List(Of protein)) As IEnumerable(Of gene)
