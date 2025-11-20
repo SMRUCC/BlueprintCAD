@@ -8,6 +8,7 @@ Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlu
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 Imports SMRUCC.genomics.SequenceModel.FASTA
+Imports TRNScanner
 
 Module BuildProject
 
@@ -21,7 +22,7 @@ Module BuildProject
         Dim tf_db As String = $"{App.HOME}/data/TF.fasta"
 
         ' ------- TFBS sites --------
-        Dim pwm = MotifDatabase.OpenReadOnly($"{settings.blastdb}/RegPrecise.dat".Open(FileMode.Open, doClear:=False, [readOnly]:=True))
+        Dim motif_db As String = $"{settings.blastdb}/RegPrecise.dat"
         Dim tss = proj.tss_upstream _
             .Select(Function(seq)
                         Return New FastaSeq({seq.Key}, seq.Value)
@@ -29,7 +30,7 @@ Module BuildProject
             .ToArray
 
         If Not skipTRN Then
-            proj.tfbs_hits = pwm.ScanSites(tss, blast_threads, workflowMode:=True)
+            proj.tfbs_hits = ScannerTask.ScanSites(tss, motif_db, n_threads:=blast_threads)
         End If
 
         ' ----- enzyme hits ------
