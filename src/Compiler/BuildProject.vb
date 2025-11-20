@@ -29,7 +29,7 @@ Module BuildProject
             .ToArray
 
         If Not skipTRN Then
-            proj.tfbs_hits = pwm.ScanSites(tss, blast_threads)
+            proj.tfbs_hits = pwm.ScanSites(tss, blast_threads, workflowMode:=True)
         End If
 
         ' ----- enzyme hits ------
