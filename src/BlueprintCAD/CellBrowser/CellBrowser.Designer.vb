@@ -69,6 +69,8 @@ Partial Class CellBrowser : Inherits DocumentWindow
         BindingSource1 = New BindingSource(components)
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
+        ToolStripButton2 = New ToolStripButton()
+        ToolStripSeparator2 = New ToolStripSeparator()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
@@ -198,7 +200,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         ' ToolStrip2
         ' 
-        ToolStrip2.Items.AddRange(New ToolStripItem() {ToolStripLabel2, ToolStripSpringTextBox1, ToolStripButton1})
+        ToolStrip2.Items.AddRange(New ToolStripItem() {ToolStripLabel2, ToolStripSpringTextBox1, ToolStripButton1, ToolStripSeparator2, ToolStripButton2})
         ToolStrip2.Location = New Point(0, 0)
         ToolStrip2.Name = "ToolStrip2"
         ToolStrip2.Size = New Size(344, 25)
@@ -214,7 +216,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' ToolStripSpringTextBox1
         ' 
         ToolStripSpringTextBox1.Name = "ToolStripSpringTextBox1"
-        ToolStripSpringTextBox1.Size = New Size(233, 25)
+        ToolStripSpringTextBox1.Size = New Size(204, 25)
         ' 
         ' ToolStripButton1
         ' 
@@ -483,6 +485,20 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripStatusLabel1.Size = New Size(42, 17)
         ToolStripStatusLabel1.Text = "Ready!"
         ' 
+        ' ToolStripButton2
+        ' 
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "Reset"
+        ' 
+        ' ToolStripSeparator2
+        ' 
+        ToolStripSeparator2.Name = "ToolStripSeparator2"
+        ToolStripSeparator2.Size = New Size(6, 25)
+        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -569,4 +585,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents ToolStripLabel2 As ToolStripLabel
     Friend WithEvents ToolStripSpringTextBox1 As Galaxy.CommonControls.ToolStripSpringTextBox
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class

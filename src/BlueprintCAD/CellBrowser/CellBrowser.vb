@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Galaxy.Data.JSON
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports ggplot
@@ -766,14 +767,19 @@ Public Class CellBrowser
         Dim str As String = ToolStripSpringTextBox1.Text
 
         If Strings.Trim(str) = "" Then
-            ' restore
-            Call TaskProgress.RunAction(Sub(echo)
-                                            Dim println = New Action(Of String)(AddressOf echo.SetInfo)
-
-                                            Call println("loading molecule list ui... [metabolite tree]")
-                                            Call Me.Invoke(Sub() LoadTree(println))
-                                        End Sub)
+            Call RestoreMoleculeTree()
         End If
+    End Sub
+
+    Private Sub RestoreMoleculeTree()
+        ' restore
+        Call TaskProgress.RunAction(
+            Sub(echo)
+                Dim println = New Action(Of String)(AddressOf echo.SetInfo)
+
+                Call println("loading molecule list ui... [metabolite tree]")
+                Call Me.Invoke(Sub() LoadTree(println))
+            End Sub)
     End Sub
 
     ''' <summary>
@@ -792,5 +798,14 @@ Public Class CellBrowser
         For Each hit As Compound In find
             Call root.Nodes.Add(hit.name)
         Next
+    End Sub
+
+    Private Sub TextBox1_FindAction(node As JsonViewerTreeNode, text As String) Handles TextBox1.FindAction
+
+    End Sub
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Call ToolStripSpringTextBox1.Clear()
+        Call RestoreMoleculeTree()
     End Sub
 End Class
