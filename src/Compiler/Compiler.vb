@@ -184,14 +184,15 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
         Call $"load {network.Count} enzymatic reactions!".debug
 
-        Dim metabolites As Compound() = CreateCompoundModel(network).ToArray
+        Dim none_enzymatic = ExpandNetwork(network).ToArray
+        Dim metabolites As Compound() = CreateCompoundModel(network, none_enzymatic).ToArray
 
         Return New MetabolismStructure With {
             .compounds = metabolites,
             .reactions = New ReactionGroup With {
                 .enzymatic = CreateEnzymaticNetwork(network, ec_numbers).ToArray,
                 .transportation = membraneTransport.Objects,
-                .none_enzymatic = ExpandNetwork(network).ToArray
+                .none_enzymatic = none_enzymatic
             },
             .enzymes = enzymeModels.ToArray
         }
@@ -291,12 +292,23 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Next
     End Function
 
-    Private Iterator Function CreateCompoundModel(network As Dictionary(Of String, WebJSON.Reaction)) As IEnumerable(Of Compound)
+    Private Iterator Function CreateCompoundModel(network As Dictionary(Of String, WebJSON.Reaction), none_enzymatic As Reaction()) As IEnumerable(Of Compound)
         Dim compounds_id As UInteger() = network.Values _
             .Select(Function(r) r.left.JoinIterates(r.right)) _
             .IteratesALL _
             .GroupBy(Function(a) a.molecule_id) _
             .Keys
+
+        compounds_id = none_enzymatic _
+            .Select(Function(r)
+                        Return r.substrate.JoinIterates(r.product)
+                    End Function) _
+            .IteratesALL _
+            .Select(Function(f) UInteger.Parse(f.compound.Match("\d+"))) _
+            .JoinIterates(compounds_id) _
+            .Distinct _
+            .ToArray
+
         Dim metadata As WebJSON.Molecule() = compounds_id _
             .Select(Function(id) registry.GetMoleculeDataById(id)) _
             .Where(Function(c) Not c Is Nothing) _
