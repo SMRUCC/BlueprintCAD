@@ -788,7 +788,10 @@ Public Class CellBrowser
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-        Dim str As String = ToolStripSpringTextBox1.Text
+        Call ShowSearch(ToolStripSpringTextBox1.Text)
+    End Sub
+
+    Private Sub ShowSearch(str As String)
         Dim find = search.Search(str).ToArray
 
         Call TreeView1.Nodes.Clear()
@@ -801,7 +804,7 @@ Public Class CellBrowser
     End Sub
 
     Private Sub TextBox1_FindAction(node As JsonViewerTreeNode, text As String) Handles TextBox1.FindAction
-
+        Call ShowSearch(text)
     End Sub
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
