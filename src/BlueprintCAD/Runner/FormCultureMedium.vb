@@ -33,7 +33,7 @@ Public Class FormCultureMedium : Implements IDataContainer
                           End Function)
 
         wizardConfig = DirectCast(data, Wizard)
-        search = New CompoundSearchIndex(FilterMembraneTransportMetabolites(allCompounds), 3)
+        search = New CompoundSearchIndex(FilterMembraneTransportMetabolites(allCompounds).OrderBy(Function(c) c.name), 3)
 
         For Each compound As Compound In search.AsEnumerable
             Call compounds_id.Add(compound.ID)
@@ -156,7 +156,7 @@ Public Class FormCultureMedium : Implements IDataContainer
 
         Call ListBox1.Items.Clear()
 
-        For Each item In find
+        For Each item In find.OrderBy(Function(a) a.name)
             Call ListBox1.Items.Add(New IDDisplay With {
                 .id = item.ID,
                 .name = item.name
