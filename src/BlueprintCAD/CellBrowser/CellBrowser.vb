@@ -236,7 +236,7 @@ Public Class CellBrowser
             Dim name As String = symbols.GetNameText(locale.Name)
             Dim col As New FeatureVector(name & "@" & locale.Value, vec)
 
-            plotMatrix(name) = col
+            plotMatrix(col.name) = col
         Next
 
         Return plotMatrix
