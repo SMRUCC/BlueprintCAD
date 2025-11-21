@@ -57,7 +57,14 @@ Public Class CellBrowser
         vcellPack = New VCellMatrixReader(filepath.Open(FileMode.Open, doClear:=False, [readOnly]:=True))
         Workbench.AppHost.Text = $"VirtualCell Browser [{filepath}]"
         symbols = vcellPack.LoadSymbols
-        symbolsToId = symbols.GroupBy(Function(a) a.Value.name).ToDictionary(Function(a) a.Key, Function(a) a.First.Key)
+
+        Dim checkNull = symbols.Where(Function(a) a.Value.name Is Nothing).ToArray
+
+        If checkNull.Any Then
+            Call CommonRuntime.Warning($"there are missing symbol name for: {checkNull.Keys.GetJson}!")
+        End If
+
+        symbolsToId = symbols.GroupBy(Function(a) If(a.Value.name, "")).ToDictionary(Function(a) a.Key, Function(a) a.First.Key)
         network = TaskProgress.LoadData(Function(println As Action(Of String)) LoadNetwork(println))
         timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
         moleculeSet = vcellPack.GetCellularMolecules.ToArray
