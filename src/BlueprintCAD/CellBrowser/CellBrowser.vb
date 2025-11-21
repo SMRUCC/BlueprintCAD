@@ -232,8 +232,9 @@ Public Class CellBrowser
 
         For Each id As String In idset.Where(Function(mol) vcellPack.CheckSymbol(mol))
             Dim vec As Double() = vcellPack.GetExpression(id)
-            Dim name As String = symbols.GetNameText(id.GetTagValue("@").Name)
-            Dim col As New FeatureVector(name, vec)
+            Dim locale = id.GetTagValue("@")
+            Dim name As String = symbols.GetNameText(locale.Name)
+            Dim col As New FeatureVector(name & "@" & locale.Value, vec)
 
             plotMatrix(name) = col
         Next
