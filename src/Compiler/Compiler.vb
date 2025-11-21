@@ -190,10 +190,76 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .compounds = metabolites,
             .reactions = New ReactionGroup With {
                 .enzymatic = CreateEnzymaticNetwork(network, ec_numbers).ToArray,
-                .transportation = membraneTransport.Objects
+                .transportation = membraneTransport.Objects,
+                .none_enzymatic = ExpandNetwork(network).ToArray
             },
             .enzymes = enzymeModels.ToArray
         }
+    End Function
+
+    Private Iterator Function ExpandNetwork(network As Dictionary(Of String, WebJSON.Reaction)) As IEnumerable(Of Reaction)
+        Dim compounds_id As UInteger() = network.Values _
+           .Select(Function(r) r.left.JoinIterates(r.right)) _
+           .IteratesALL _
+           .GroupBy(Function(a) a.molecule_id) _
+           .Keys
+        Dim pending As New Queue(Of UInteger)(compounds_id)
+        Dim cache As New Dictionary(Of UInteger, WebJSON.Reaction())
+
+        Call "start to expends the reaction network...".debug
+
+        Do While pending.Count > 0
+            Dim mol_id As UInteger = pending.Dequeue
+
+            If cache.ContainsKey(mol_id) Then
+                Continue Do
+            End If
+
+            Dim expansions As Dictionary(Of String, WebJSON.Reaction) = registry.ExpandNetworkByCompound(mol_id)
+
+            Call cache.Add(mol_id, expansions.Values.ToArray)
+
+            For Each r As WebJSON.Reaction In expansions.Values
+                Dim new_compounds As UInteger() = r.left.JoinIterates(r.right) _
+                    .Select(Function(c) c.molecule_id) _
+                    .ToArray
+
+                For Each id As UInteger In new_compounds
+                    Call pending.Enqueue(id)
+                Next
+            Next
+        Loop
+
+        For Each groupdata In cache.Values.IteratesALL.GroupBy(Function(a) a.guid)
+            Dim reaction As WebJSON.Reaction = groupdata.First
+            Dim model As New Reaction With {
+                .bounds = {5, 5},
+                .compartment = Nothing,
+                .ec_number = Nothing,
+                .ID = reaction.guid,
+                .is_enzymatic = False,
+                .name = reaction.name,
+                .note = reaction.reaction,
+                .substrate = reaction.left _
+                    .Select(Function(c)
+                                Return New CompoundFactor With {
+                                    .factor = c.factor,
+                                    .compound = FormatCompoundId(c.molecule_id)
+                                }
+                            End Function) _
+                    .ToArray,
+                .product = reaction.right _
+                    .Select(Function(c)
+                                Return New CompoundFactor With {
+                                    .factor = c.factor,
+                                    .compound = FormatCompoundId(c.molecule_id)
+                                }
+                            End Function) _
+                    .ToArray
+            }
+
+            Yield model
+        Next
     End Function
 
     Private Iterator Function CreateEnzymaticNetwork(network As Dictionary(Of String, WebJSON.Reaction), ec_numbers As Dictionary(Of String, List(Of String))) As IEnumerable(Of Reaction)
