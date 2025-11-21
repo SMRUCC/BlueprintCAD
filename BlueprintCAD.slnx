@@ -552,6 +552,16 @@
     </Project>
   </Folder>
   <Folder Name="/gcmodeller/">
+    <Project Path="../GCModeller/src/GCModeller/analysis/HTS_matrix/HTS_matrix-netcore5.vbproj">
+      <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
+      <BuildType Solution="Desktop|*" Project="LipidSearch" />
+      <BuildType Solution="Docker|*" Project="Release" />
+      <BuildType Solution="mzkit|*" Project="Debug" />
+      <BuildType Solution="NPSearch|*" Project="LipidSearch" />
+      <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
+      <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
     <Project Path="../GCModeller/src/GCModeller/annotations/GSEA/FisherCore/Fisher.NET5.vbproj">
       <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
       <BuildType Solution="Docker|*" Project="Release" />
@@ -562,11 +572,28 @@
       <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
       <Platform Solution="*|x64" Project="x64" />
     </Project>
+    <Project Path="../GCModeller/src/GCModeller/core/Bio.Assembly/biocore-netcore5.vbproj">
+      <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
+      <BuildType Solution="Docker|*" Project="Release" />
+      <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
+      <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
     <Project Path="../GCModeller/src/GCModeller/visualize/DataVisualizationExtensions/datavisual-netcore5.vbproj">
       <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
       <BuildType Solution="Desktop|*" Project="LipidSearch" />
       <BuildType Solution="Docker|*" Project="Release" />
       <BuildType Solution="gcmodeller_desktop|*" Project="mzkit_win32" />
+      <BuildType Solution="mzkit|*" Project="Debug" />
+      <BuildType Solution="NPSearch|*" Project="LipidSearch" />
+      <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
+      <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/workbench/modules/ExperimentDesigner/designer-netcore5.vbproj">
+      <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
+      <BuildType Solution="Desktop|*" Project="LipidSearch" />
+      <BuildType Solution="Docker|*" Project="Release" />
       <BuildType Solution="mzkit|*" Project="Debug" />
       <BuildType Solution="NPSearch|*" Project="LipidSearch" />
       <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
@@ -646,23 +673,6 @@
     </Project>
   </Folder>
   <Folder Name="/pathway_graph/">
-    <Project Path="../GCModeller/src/GCModeller/analysis/HTS_matrix/HTS_matrix-netcore5.vbproj">
-      <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
-      <BuildType Solution="Desktop|*" Project="LipidSearch" />
-      <BuildType Solution="Docker|*" Project="Release" />
-      <BuildType Solution="mzkit|*" Project="Debug" />
-      <BuildType Solution="NPSearch|*" Project="LipidSearch" />
-      <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
-      <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
-      <Platform Solution="*|x64" Project="x64" />
-    </Project>
-    <Project Path="../GCModeller/src/GCModeller/core/Bio.Assembly/biocore-netcore5.vbproj">
-      <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
-      <BuildType Solution="Docker|*" Project="Release" />
-      <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
-      <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
-      <Platform Solution="*|x64" Project="x64" />
-    </Project>
     <Project Path="../GCModeller/src/GCModeller/core/Bio.InteractionModel/InteractionModel.NET5.vbproj">
       <BuildType Solution="CFD_win32|*" Project="Rsharp_app_release" />
       <BuildType Solution="Desktop|*" Project="Rsharp_app_release" />
@@ -696,16 +706,6 @@
       <BuildType Solution="NPSearch|*" Project="Rsharp_app_release" />
       <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
       <BuildType Solution="PlantMAT|*" Project="Rsharp_app_release" />
-      <Platform Solution="*|x64" Project="x64" />
-    </Project>
-    <Project Path="../GCModeller/src/workbench/modules/ExperimentDesigner/designer-netcore5.vbproj">
-      <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
-      <BuildType Solution="Desktop|*" Project="LipidSearch" />
-      <BuildType Solution="Docker|*" Project="Release" />
-      <BuildType Solution="mzkit|*" Project="Debug" />
-      <BuildType Solution="NPSearch|*" Project="LipidSearch" />
-      <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
-      <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
       <Platform Solution="*|x64" Project="x64" />
     </Project>
   </Folder>
