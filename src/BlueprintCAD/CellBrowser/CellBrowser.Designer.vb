@@ -30,7 +30,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        PlotView1 = New ggviewer.PlotView()
         GroupBox2 = New GroupBox()
         SplitContainer2 = New SplitContainer()
         TreeView1 = New TreeView()
@@ -45,6 +44,8 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripLabel2 = New ToolStripLabel()
         ToolStripSpringTextBox1 = New Galaxy.CommonControls.ToolStripSpringTextBox()
         ToolStripButton1 = New ToolStripButton()
+        ToolStripSeparator2 = New ToolStripSeparator()
+        ToolStripButton2 = New ToolStripButton()
         DataGridView1 = New AdvancedDataGridView()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         ViewFluxDynamicsToolStripMenuItem = New ToolStripMenuItem()
@@ -67,10 +68,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage3 = New TabPage()
         TextBox1 = New JsonViewer()
         BindingSource1 = New BindingSource(components)
-        StatusStrip1 = New StatusStrip()
-        ToolStripStatusLabel1 = New ToolStripStatusLabel()
-        ToolStripButton2 = New ToolStripButton()
-        ToolStripSeparator2 = New ToolStripSeparator()
         GroupBox2.SuspendLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer2.Panel1.SuspendLayout()
@@ -89,29 +86,13 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage1.SuspendLayout()
         CType(SplitContainer3, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer3.Panel1.SuspendLayout()
-        SplitContainer3.Panel2.SuspendLayout()
         SplitContainer3.SuspendLayout()
         ContextMenuStrip3.SuspendLayout()
         TabPage2.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         TabPage3.SuspendLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
-        StatusStrip1.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' PlotView1
-        ' 
-        PlotView1.BackColor = Color.SkyBlue
-        PlotView1.BackgroundImageLayout = ImageLayout.Zoom
-        PlotView1.Debug = True
-        PlotView1.Dock = DockStyle.Fill
-        PlotView1.Dpi = 120
-        PlotView1.ggplot = Nothing
-        PlotView1.Location = New Point(0, 0)
-        PlotView1.Name = "PlotView1"
-        PlotView1.ScaleFactor = 1.25F
-        PlotView1.Size = New Size(1167, 572)
-        PlotView1.TabIndex = 1
         ' 
         ' GroupBox2
         ' 
@@ -119,7 +100,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         GroupBox2.Dock = DockStyle.Fill
         GroupBox2.Location = New Point(0, 0)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(1524, 310)
+        GroupBox2.Size = New Size(1524, 318)
         GroupBox2.TabIndex = 3
         GroupBox2.TabStop = False
         GroupBox2.Text = "Browser"
@@ -141,7 +122,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' 
         SplitContainer2.Panel2.Controls.Add(DataGridView1)
         SplitContainer2.Panel2.Controls.Add(ToolStrip1)
-        SplitContainer2.Size = New Size(1518, 288)
+        SplitContainer2.Size = New Size(1518, 296)
         SplitContainer2.SplitterDistance = 344
         SplitContainer2.TabIndex = 0
         ' 
@@ -152,7 +133,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TreeView1.Dock = DockStyle.Fill
         TreeView1.Location = New Point(0, 25)
         TreeView1.Name = "TreeView1"
-        TreeView1.Size = New Size(344, 263)
+        TreeView1.Size = New Size(344, 271)
         TreeView1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -227,6 +208,20 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Search"
         ' 
+        ' ToolStripSeparator2
+        ' 
+        ToolStripSeparator2.Name = "ToolStripSeparator2"
+        ToolStripSeparator2.Size = New Size(6, 25)
+        ' 
+        ' ToolStripButton2
+        ' 
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "Reset"
+        ' 
         ' DataGridView1
         ' 
         DataGridView1.AllowUserToAddRows = False
@@ -264,7 +259,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         DataGridView1.RowHeadersVisible = False
         DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DataGridView1.Size = New Size(1170, 261)
+        DataGridView1.Size = New Size(1170, 269)
         DataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         DataGridView1.TabIndex = 0
         ' 
@@ -340,8 +335,8 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(GroupBox2)
-        SplitContainer1.Size = New Size(1524, 920)
-        SplitContainer1.SplitterDistance = 606
+        SplitContainer1.Size = New Size(1524, 942)
+        SplitContainer1.SplitterDistance = 620
         SplitContainer1.TabIndex = 4
         ' 
         ' TabControl1
@@ -353,7 +348,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabControl1.Location = New Point(0, 0)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1524, 606)
+        TabControl1.Size = New Size(1524, 620)
         TabControl1.TabIndex = 0
         ' 
         ' TabPage1
@@ -362,7 +357,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(1516, 578)
+        TabPage1.Size = New Size(1516, 592)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Dynamics Plot"
         TabPage1.UseVisualStyleBackColor = True
@@ -377,11 +372,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         ' SplitContainer3.Panel1
         ' 
         SplitContainer3.Panel1.Controls.Add(CheckedListBox1)
-        ' 
-        ' SplitContainer3.Panel2
-        ' 
-        SplitContainer3.Panel2.Controls.Add(PlotView1)
-        SplitContainer3.Size = New Size(1510, 572)
+        SplitContainer3.Size = New Size(1510, 586)
         SplitContainer3.SplitterDistance = 339
         SplitContainer3.TabIndex = 2
         ' 
@@ -392,7 +383,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         CheckedListBox1.FormattingEnabled = True
         CheckedListBox1.Location = New Point(0, 0)
         CheckedListBox1.Name = "CheckedListBox1"
-        CheckedListBox1.Size = New Size(339, 572)
+        CheckedListBox1.Size = New Size(339, 586)
         CheckedListBox1.TabIndex = 0
         ' 
         ' ContextMenuStrip3
@@ -470,42 +461,12 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TextBox1.Size = New Size(1510, 572)
         TextBox1.TabIndex = 0
         ' 
-        ' StatusStrip1
-        ' 
-        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
-        StatusStrip1.Location = New Point(0, 920)
-        StatusStrip1.Name = "StatusStrip1"
-        StatusStrip1.Size = New Size(1524, 22)
-        StatusStrip1.TabIndex = 5
-        StatusStrip1.Text = "StatusStrip1"
-        ' 
-        ' ToolStripStatusLabel1
-        ' 
-        ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        ToolStripStatusLabel1.Size = New Size(42, 17)
-        ToolStripStatusLabel1.Text = "Ready!"
-        ' 
-        ' ToolStripButton2
-        ' 
-        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
-        ToolStripButton2.ImageTransparentColor = Color.Magenta
-        ToolStripButton2.Name = "ToolStripButton2"
-        ToolStripButton2.Size = New Size(23, 22)
-        ToolStripButton2.Text = "Reset"
-        ' 
-        ' ToolStripSeparator2
-        ' 
-        ToolStripSeparator2.Name = "ToolStripSeparator2"
-        ToolStripSeparator2.Size = New Size(6, 25)
-        ' 
         ' CellBrowser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1524, 942)
         Controls.Add(SplitContainer1)
-        Controls.Add(StatusStrip1)
         DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
         DoubleBuffered = True
         Name = "CellBrowser"
@@ -533,7 +494,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         SplitContainer3.Panel1.ResumeLayout(False)
-        SplitContainer3.Panel2.ResumeLayout(False)
         CType(SplitContainer3, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer3.ResumeLayout(False)
         ContextMenuStrip3.ResumeLayout(False)
@@ -541,10 +501,7 @@ Partial Class CellBrowser : Inherits DocumentWindow
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         TabPage3.ResumeLayout(False)
         CType(BindingSource1, ComponentModel.ISupportInitialize).EndInit()
-        StatusStrip1.ResumeLayout(False)
-        StatusStrip1.PerformLayout()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
     Friend WithEvents PlotView1 As ggviewer.PlotView
     Friend WithEvents GroupBox2 As GroupBox
@@ -575,8 +532,6 @@ Partial Class CellBrowser : Inherits DocumentWindow
     Friend WithEvents ToolStrip1 As AdvancedDataGridViewSearchToolBar
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripComboBox1 As ToolStripComboBox
-    Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents FilterRegulationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
