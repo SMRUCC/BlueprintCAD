@@ -120,6 +120,8 @@ Namespace My
             '                 Call RunVirtualCell(wizardConfig)
             '             End Sub)
 
+            step1.SetData(wizardConfig)
+
             Call TaskWizard _
                 .ShowWizard("Run VirtualCell", step1, step2, step3) _
                 .Finally(Sub()
