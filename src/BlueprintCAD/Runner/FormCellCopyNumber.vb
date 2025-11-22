@@ -8,7 +8,7 @@ Public Class FormCellCopyNumber : Implements IDataContainer, IWizardUI
 
     Public ReadOnly Property Title As String Implements IWizardUI.Title
         Get
-            Return Text
+            Return "Cell Copy Numbers"
         End Get
     End Property
 

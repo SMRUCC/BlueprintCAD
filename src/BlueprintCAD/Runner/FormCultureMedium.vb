@@ -93,7 +93,7 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
     Dim compound As CultureMediumCompound
     Public ReadOnly Property Title As String Implements IWizardUI.Title
         Get
-            Return Text
+            Return "Culture Medium Compounds"
         End Get
     End Property
     Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged

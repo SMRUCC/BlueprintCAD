@@ -3,6 +3,7 @@ Imports BlueprintCAD.My
 Imports BlueprintCAD.RibbonLib.Controls
 Imports CADRegistry
 Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports RibbonLib
 Imports ThemeVS2015
@@ -151,10 +152,19 @@ Public Class FormMain : Implements AppHost
             Dim test As New RegistryUrl(Workbench.Settings.registry_server)
 
             If Await Task.Run(Function() test.Ping()) Then
+                If Workbench.ServerConnection = False Then
+                    Call CommonRuntime.GetOutputWindow.AddLog(Now, "database connection", "registry database server is online!", MSG_TYPES.FINEST)
+                End If
+
                 ToolStripStatusLabel2.Text = "Connected To Server"
                 ToolStripStatusLabel2.Image = My.Resources.Icons.icons8_wifi_96
                 Workbench.SetConnection(True)
             Else
+                If Workbench.ServerConnection = True Then
+                    Call CommonRuntime.GetOutputWindow.AddLog(Now, "database connection", "registry database server is offline, part of software function and virtual cell model compiler will not working!", MSG_TYPES.WRN)
+                    Call CommonRuntime.Warning("registry database server is offline, part of software function and virtual cell model compiler will not working!")
+                End If
+
                 ToolStripStatusLabel2.Text = "Server Offline"
                 ToolStripStatusLabel2.Image = My.Resources.Icons.icons8_offline_96
                 Workbench.SetConnection(False)

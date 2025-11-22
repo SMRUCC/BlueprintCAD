@@ -8,7 +8,7 @@ Public Class FormConfigGenerator : Implements IDataContainer, IWizardUI
 
     Public ReadOnly Property Title As String Implements IWizardUI.Title
         Get
-            Return Text
+            Return "Basic Configuration"
         End Get
     End Property
 
