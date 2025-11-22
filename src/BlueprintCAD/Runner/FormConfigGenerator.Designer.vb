@@ -2,7 +2,7 @@
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormConfigGenerator
-    Inherits InputDialog
+    Inherits UserControl
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -26,8 +26,6 @@ Partial Class FormConfigGenerator
     Private Sub InitializeComponent()
         Button1 = New Button()
         ListBox1 = New ListBox()
-        Button2 = New Button()
-        Button3 = New Button()
         Label1 = New Label()
         Label2 = New Label()
         NumericUpDown1 = New NumericUpDown()
@@ -56,24 +54,6 @@ Partial Class FormConfigGenerator
         ListBox1.Name = "ListBox1"
         ListBox1.Size = New Size(439, 94)
         ListBox1.TabIndex = 1
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(464, 234)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(75, 23)
-        Button2.TabIndex = 2
-        Button2.Text = "Start"
-        Button2.UseVisualStyleBackColor = True
-        ' 
-        ' Button3
-        ' 
-        Button3.Location = New Point(383, 234)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(75, 23)
-        Button3.TabIndex = 3
-        Button3.Text = "Cancel"
-        Button3.UseVisualStyleBackColor = True
         ' 
         ' Label1
         ' 
@@ -142,15 +122,9 @@ Partial Class FormConfigGenerator
         ' 
         ' FormConfigGenerator
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(572, 268)
         Controls.Add(GroupBox1)
-        Controls.Add(Button3)
-        Controls.Add(Button2)
-        FormBorderStyle = FormBorderStyle.FixedDialog
         Name = "FormConfigGenerator"
-        Text = "Runner Wizard"
+        Size = New Size(572, 268)
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
         CType(NumericUpDown2, ComponentModel.ISupportInitialize).EndInit()
         GroupBox1.ResumeLayout(False)
@@ -160,8 +134,6 @@ Partial Class FormConfigGenerator
 
     Friend WithEvents Button1 As Button
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents NumericUpDown1 As NumericUpDown

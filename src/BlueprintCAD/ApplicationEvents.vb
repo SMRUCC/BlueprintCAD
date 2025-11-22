@@ -109,10 +109,19 @@ Namespace My
 
         Public Shared Sub RunVirtualCell(sender As Object, e As ExecuteEventArgs)
             Dim wizardConfig As New Wizard
+            Dim step1 As IWizardUI = New FormConfigGenerator
+            Dim step2 As IWizardUI = New FormCultureMedium
+            Dim step3 As IWizardUI = New FormCellCopyNumber
 
-            Call InputDialog.OpenDialog(Of FormConfigGenerator)(wizardConfig) _
-                .ThenDialog(Of FormCultureMedium)(wizardConfig) _
-                .ThenDialog(Of FormCellCopyNumber)(wizardConfig) _
+            'Call InputDialog.OpenDialog(Of FormConfigGenerator)(wizardConfig) _
+            '    .ThenDialog(Of FormCultureMedium)(wizardConfig) _
+            '    .ThenDialog(Of FormCellCopyNumber)(wizardConfig) _
+            '    .Finally(Sub()
+            '                 Call RunVirtualCell(wizardConfig)
+            '             End Sub)
+
+            Call TaskWizard _
+                .ShowWizard("Run VirtualCell", step1, step2, step3) _
                 .Finally(Sub()
                              Call RunVirtualCell(wizardConfig)
                          End Sub)

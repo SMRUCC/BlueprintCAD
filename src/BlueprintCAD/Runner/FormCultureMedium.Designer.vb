@@ -2,7 +2,7 @@
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormCultureMedium
-    Inherits InputDialog
+    Inherits UserControl
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -25,7 +25,7 @@ Partial Class FormCultureMedium
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         ListBox1 = New ListBox()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddToDCultureMediumToolStripMenuItem = New ToolStripMenuItem()
@@ -37,8 +37,6 @@ Partial Class FormCultureMedium
         ClearToolStripMenuItem = New ToolStripMenuItem()
         Label3 = New Label()
         NumericUpDown1 = New NumericUpDown()
-        Button1 = New Button()
-        Button2 = New Button()
         GroupBox1 = New GroupBox()
         GroupBox2 = New GroupBox()
         DataGridView1 = New DataGridView()
@@ -144,24 +142,6 @@ Partial Class FormCultureMedium
         NumericUpDown1.Size = New Size(124, 23)
         NumericUpDown1.TabIndex = 6
         ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(604, 605)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(75, 23)
-        Button1.TabIndex = 7
-        Button1.Text = "OK"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(514, 605)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(75, 23)
-        Button2.TabIndex = 8
-        Button2.Text = "Cancel"
-        Button2.UseVisualStyleBackColor = True
-        ' 
         ' GroupBox1
         ' 
         GroupBox1.Controls.Add(GroupBox2)
@@ -195,14 +175,14 @@ Partial Class FormCultureMedium
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4})
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = SystemColors.Window
-        DataGridViewCellStyle2.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Window
+        DataGridViewCellStyle1.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(3, 19)
         DataGridView1.Name = "DataGridView1"
@@ -271,16 +251,10 @@ Partial Class FormCultureMedium
         ' 
         ' FormCultureMedium
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
-        AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1065, 640)
         Controls.Add(RichTextBox1)
         Controls.Add(GroupBox1)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
-        FormBorderStyle = FormBorderStyle.FixedDialog
         Name = "FormCultureMedium"
-        Text = "Setup Culture Medium"
+        Size = New Size(1065, 611)
         ContextMenuStrip1.ResumeLayout(False)
         ContextMenuStrip2.ResumeLayout(False)
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
@@ -299,8 +273,6 @@ Partial Class FormCultureMedium
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents Label3 As Label
     Friend WithEvents NumericUpDown1 As NumericUpDown
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents RemovesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem

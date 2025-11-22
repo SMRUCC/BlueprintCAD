@@ -1,10 +1,16 @@
 ﻿Imports Galaxy.Workbench
 
-Public Class FormCellCopyNumber : Implements IDataContainer
+Public Class FormCellCopyNumber : Implements IDataContainer, IWizardUI
 
     Dim copyNum As New Dictionary(Of String, Integer)
     Dim model As String
     Dim wizardConfig As New Wizard
+
+    Public ReadOnly Property Title As String Implements IWizardUI.Title
+        Get
+            Return Text
+        End Get
+    End Property
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         wizardConfig = DirectCast(data, Wizard)
@@ -18,16 +24,6 @@ Public Class FormCellCopyNumber : Implements IDataContainer
     Public Function GetData() As Object Implements IDataContainer.GetData
         Return wizardConfig
     End Function
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.DialogResult = DialogResult.Cancel
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        wizardConfig.config.copy_number = copyNum
-
-        Me.DialogResult = DialogResult.OK
-    End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         If ListBox1.SelectedIndex < 0 Then
@@ -54,4 +50,9 @@ Public Class FormCellCopyNumber : Implements IDataContainer
 \pard\sa200\sl276\slmult1\b\f0\fs22\lang9 Copy number\cf1\u8203? \b0 refers to the quantity of a specific gene, plasmid, or genomic region present within a single cell's genome . \ul It is a fundamental concept in genetics and molecular biology, describing how many copies of a particular DNA sequence exist.\par
 }"
     End Sub
+
+    Public Function OK() As Boolean Implements IWizardUI.OK
+        wizardConfig.config.copy_number = copyNum
+        Return True
+    End Function
 End Class

@@ -5,7 +5,7 @@ Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.BootstrapLoader.Definitions
 
-Public Class FormCultureMedium : Implements IDataContainer
+Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
 
     Dim wizardConfig As New Wizard
     Dim search As CompoundSearchIndex
@@ -75,22 +75,6 @@ Public Class FormCultureMedium : Implements IDataContainer
         Return wizardConfig
     End Function
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.DialogResult = DialogResult.Cancel
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim data As New Dictionary(Of String, Double)
-
-        For Each compound As CultureMediumCompound In ListBox2.Items
-            data(compound.id) = compound.content
-        Next
-
-        wizardConfig.config.cultureMedium = data
-
-        Me.DialogResult = DialogResult.OK
-    End Sub
-
     Private Sub AddToDCultureMediumToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToDCultureMediumToolStripMenuItem.Click
         If ListBox1.SelectedIndex < 0 Then
             Return
@@ -107,7 +91,11 @@ Public Class FormCultureMedium : Implements IDataContainer
     End Sub
 
     Dim compound As CultureMediumCompound
-
+    Public ReadOnly Property Title As String Implements IWizardUI.Title
+        Get
+            Return Text
+        End Get
+    End Property
     Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
         If ListBox2.SelectedIndex < 0 Then
             Return
@@ -189,6 +177,18 @@ Public Class FormCultureMedium : Implements IDataContainer
             Next
         End If
     End Sub
+
+    Public Function OK() As Boolean Implements IWizardUI.OK
+        Dim data As New Dictionary(Of String, Double)
+
+        For Each compound As CultureMediumCompound In ListBox2.Items
+            data(compound.id) = compound.content
+        Next
+
+        wizardConfig.config.cultureMedium = data
+
+        Return True
+    End Function
 End Class
 
 Public Class CultureMediumCompound

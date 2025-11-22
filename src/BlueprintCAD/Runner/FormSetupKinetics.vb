@@ -1,17 +1,22 @@
-﻿Public Class FormSetupKinetics
+﻿Imports Galaxy.Workbench
+
+Public Class FormSetupKinetics : Implements IDataContainer, IWizardUI
 
     Dim wizard As Wizard
+    Public ReadOnly Property Title As String Implements IWizardUI.Title
+        Get
+            Return Text
+        End Get
+    End Property
+    Public Sub SetData(data As Object) Implements IDataContainer.SetData
+        wizard = data
+    End Sub
 
-    Public Function LoadConfig(wizard As Wizard) As FormSetupKinetics
-        Me.wizard = wizard
-        Return Me
+    Public Function GetData() As Object Implements IDataContainer.GetData
+        Return wizard
     End Function
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.DialogResult = DialogResult.Cancel
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.DialogResult = DialogResult.OK
-    End Sub
+    Public Function OK() As Boolean Implements IWizardUI.OK
+        Return True
+    End Function
 End Class

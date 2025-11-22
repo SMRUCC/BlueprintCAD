@@ -2,9 +2,15 @@
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.BootstrapLoader.Definitions
 Imports VirtualCellHost
 
-Public Class FormConfigGenerator : Implements IDataContainer
+Public Class FormConfigGenerator : Implements IDataContainer, IWizardUI
 
     Dim wizardConfig As Wizard
+
+    Public ReadOnly Property Title As String Implements IWizardUI.Title
+        Get
+            Return Text
+        End Get
+    End Property
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         wizardConfig = DirectCast(data, Wizard)
@@ -27,7 +33,7 @@ Public Class FormConfigGenerator : Implements IDataContainer
         End Using
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Public Function OK() As Boolean Implements IWizardUI.OK
         Using file As New SaveFileDialog With {.Filter = "Config JSON File(*.json)|*.json"}
             If file.ShowDialog = DialogResult.OK Then
                 Dim config As New Config With {
@@ -42,12 +48,10 @@ Public Class FormConfigGenerator : Implements IDataContainer
                 wizardConfig.configFile = file.FileName
                 wizardConfig.config = config
 
-                Me.DialogResult = DialogResult.OK
+                Return True
+            Else
+                Return False
             End If
         End Using
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.DialogResult = DialogResult.Cancel
-    End Sub
+    End Function
 End Class
