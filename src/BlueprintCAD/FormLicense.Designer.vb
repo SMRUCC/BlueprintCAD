@@ -38,7 +38,7 @@ Partial Class FormLicense
         PictureBox1.Dock = DockStyle.Left
         PictureBox1.Location = New Point(0, 0)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(170, 492)
+        PictureBox1.Size = New Size(170, 522)
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
@@ -46,16 +46,15 @@ Partial Class FormLicense
         ' 
         RichTextBox1.BackColor = Color.White
         RichTextBox1.BorderStyle = BorderStyle.None
-        RichTextBox1.Location = New Point(176, 12)
+        RichTextBox1.Location = New Point(178, 12)
         RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.ReadOnly = True
-        RichTextBox1.Size = New Size(528, 445)
+        RichTextBox1.Size = New Size(608, 473)
         RichTextBox1.TabIndex = 1
         RichTextBox1.Text = ""
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(611, 463)
+        Button1.Location = New Point(696, 491)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 2
@@ -66,7 +65,7 @@ Partial Class FormLicense
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(716, 492)
+        ClientSize = New Size(794, 522)
         Controls.Add(Button1)
         Controls.Add(RichTextBox1)
         Controls.Add(PictureBox1)
