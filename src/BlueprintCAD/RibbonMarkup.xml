@@ -161,6 +161,14 @@
       </Command.LargeImages>
     </Command>
     <Command Name="cmdGroupOthers" Id="35" LabelTitle="Mics" />
+    <Command Name="cmdButtonMenuLicense" Id="36" LabelTitle="License" LabelDescription="Software license information">
+      <Command.SmallImages>
+        <Image MinDPI="192">Resources/icons8-information-96.png</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image MinDPI="192">Resources/icons8-information-96.png</Image>
+      </Command.LargeImages>
+    </Command>
   </Application.Commands>
   <Application.Views>
     <Ribbon Name="Sophia VirtualCell Workshop">
@@ -174,6 +182,7 @@
             <Button CommandName="cmdButtonOpenVirtualCellPackFile" />
           </MenuGroup>
           <MenuGroup>
+            <Button CommandName="cmdButtonMenuLicense" />
             <Button CommandName="cmdMenuAbout" />
           </MenuGroup>
           <MenuGroup>

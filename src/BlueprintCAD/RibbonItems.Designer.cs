@@ -21,6 +21,7 @@ namespace RibbonLib.Controls
             public const uint cmdListRecentItems = 22;
             public const uint cmdButtonRun = 21;
             public const uint cmdButtonOpenVirtualCellPackFile = 3;
+            public const uint cmdButtonMenuLicense = 36;
             public const uint cmdMenuAbout = 34;
             public const uint cmdButtonExit = 4;
             public const uint cmdButtonSaveMenu = 30;
@@ -69,6 +70,7 @@ namespace RibbonLib.Controls
         /// Open VirtualCell Pack File
         /// </summary>
         public RibbonButton ButtonOpenVirtualCellPackFile { get; private set; }
+        public RibbonButton ButtonMenuLicense { get; private set; }
         public RibbonButton MenuAbout { get; private set; }
         /// <summary>
         /// Exit
@@ -163,6 +165,7 @@ namespace RibbonLib.Controls
             ListRecentItems = new RibbonRecentItems(ribbon, Cmd.cmdListRecentItems);
             ButtonRun = new RibbonButton(ribbon, Cmd.cmdButtonRun);
             ButtonOpenVirtualCellPackFile = new RibbonButton(ribbon, Cmd.cmdButtonOpenVirtualCellPackFile);
+            ButtonMenuLicense = new RibbonButton(ribbon, Cmd.cmdButtonMenuLicense);
             MenuAbout = new RibbonButton(ribbon, Cmd.cmdMenuAbout);
             ButtonExit = new RibbonButton(ribbon, Cmd.cmdButtonExit);
             ButtonSaveMenu = new RibbonButton(ribbon, Cmd.cmdButtonSaveMenu);

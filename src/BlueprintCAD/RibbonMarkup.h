@@ -172,4 +172,9 @@
 #define cmdMenuAbout_LargeImages_192__RESID 60132
 #define cmdGroupOthers 35 
 #define cmdGroupOthers_LabelTitle_RESID 60133
-#define InternalCmd2_LabelTitle_RESID 60134
+#define cmdButtonMenuLicense 36 
+#define cmdButtonMenuLicense_LabelTitle_RESID 60134
+#define cmdButtonMenuLicense_LabelDescription_RESID 60135
+#define cmdButtonMenuLicense_SmallImages_192__RESID 60136
+#define cmdButtonMenuLicense_LargeImages_192__RESID 60137
+#define InternalCmd2_LabelTitle_RESID 60138

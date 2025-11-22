@@ -1,4 +1,6 @@
-﻿Public Class FormSplashScreen
+﻿Imports Galaxy.Workbench
+
+Public Class FormSplashScreen
 
     Private Sub FormSplashScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -25,5 +27,9 @@
 
     Private Sub PictureBox1_LostFocus(sender As Object, e As EventArgs) Handles PictureBox1.LostFocus
         Close()
+    End Sub
+
+    Private Async Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Await Task.Run(Sub() Tools.OpenUrlWithDefaultBrowser("https://gcmodeller.org/"))
     End Sub
 End Class

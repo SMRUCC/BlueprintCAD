@@ -45,8 +45,13 @@ Namespace My
             AddHandler ribbon.ButtonSaveMenu.ExecuteEvent, AddressOf SaveCurrentDocument
             AddHandler ribbon.ButtonOpenMenu.ExecuteEvent, AddressOf FileHandler.GlobalOpenFile
             AddHandler ribbon.MenuAbout.ExecuteEvent, Sub() Call New FormSplashScreen().Show()
+            AddHandler ribbon.ButtonMenuLicense.ExecuteEvent, AddressOf ShowLicense
 
             ribbon.MenuWorkbench.ContextAvailable = ContextAvailability.Available
+        End Sub
+
+        Public Shared Sub ShowLicense(sender As Object, e As ExecuteEventArgs)
+            Call InputDialog.Input(Of FormLicense)(Sub() App.DoNothing())
         End Sub
 
         Public Shared Sub SaveCurrentDocument(sender As Object, e As ExecuteEventArgs)

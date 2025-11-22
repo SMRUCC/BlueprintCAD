@@ -18,6 +18,7 @@ Namespace RibbonLib.Controls
             Public Const cmdListRecentItems As UInteger = 22
             Public Const cmdButtonRun As UInteger = 21
             Public Const cmdButtonOpenVirtualCellPackFile As UInteger = 3
+            Public Const cmdButtonMenuLicense As UInteger = 36
             Public Const cmdMenuAbout As UInteger = 34
             Public Const cmdButtonExit As UInteger = 4
             Public Const cmdButtonSaveMenu As UInteger = 30
@@ -84,6 +85,12 @@ Namespace RibbonLib.Controls
         Public ReadOnly Property ButtonOpenVirtualCellPackFile As RibbonButton
             Get
                 Return _ButtonOpenVirtualCellPackFile
+            End Get
+        End Property
+        Private _ButtonMenuLicense As RibbonButton
+        Public ReadOnly Property ButtonMenuLicense As RibbonButton
+            Get
+                Return _ButtonMenuLicense
             End Get
         End Property
         Private _MenuAbout As RibbonButton
@@ -335,6 +342,7 @@ Namespace RibbonLib.Controls
             _ListRecentItems = New RibbonRecentItems(_ribbon, Cmd.cmdListRecentItems)
             _ButtonRun = New RibbonButton(_ribbon, Cmd.cmdButtonRun)
             _ButtonOpenVirtualCellPackFile = New RibbonButton(_ribbon, Cmd.cmdButtonOpenVirtualCellPackFile)
+            _ButtonMenuLicense = New RibbonButton(_ribbon, Cmd.cmdButtonMenuLicense)
             _MenuAbout = New RibbonButton(_ribbon, Cmd.cmdMenuAbout)
             _ButtonExit = New RibbonButton(_ribbon, Cmd.cmdButtonExit)
             _ButtonSaveMenu = New RibbonButton(_ribbon, Cmd.cmdButtonSaveMenu)

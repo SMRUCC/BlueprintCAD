@@ -24,13 +24,13 @@ Partial Class FormSplashScreen
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSplashScreen))
         Panel1 = New Panel()
-        Label2 = New Label()
+        Label5 = New Label()
         PictureBox1 = New PictureBox()
         Label1 = New Label()
         Panel2 = New Panel()
         Label4 = New Label()
         Label3 = New Label()
-        Label5 = New Label()
+        LinkLabel1 = New LinkLabel()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -40,8 +40,8 @@ Partial Class FormSplashScreen
         ' 
         Panel1.BackColor = Color.White
         Panel1.BackgroundImageLayout = ImageLayout.Zoom
+        Panel1.Controls.Add(LinkLabel1)
         Panel1.Controls.Add(Label5)
-        Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(Panel2)
@@ -51,14 +51,14 @@ Partial Class FormSplashScreen
         Panel1.Size = New Size(671, 428)
         Panel1.TabIndex = 0
         ' 
-        ' Label2
+        ' Label5
         ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(483, 402)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(172, 15)
-        Label2.TabIndex = 2
-        Label2.Text = "https://gcmodeller.org/  ·  2025"
+        Label5.AutoSize = True
+        Label5.Location = New Point(9, 404)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(163, 15)
+        Label5.TabIndex = 5
+        Label5.Text = "重庆正雅生物科技有限公司"
         ' 
         ' PictureBox1
         ' 
@@ -112,14 +112,15 @@ Partial Class FormSplashScreen
         Label3.TabIndex = 3
         Label3.Text = "Sophia"
         ' 
-        ' Label5
+        ' LinkLabel1
         ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(9, 404)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(163, 15)
-        Label5.TabIndex = 5
-        Label5.Text = "重庆正雅生物科技有限公司"
+        LinkLabel1.AutoSize = True
+        LinkLabel1.Location = New Point(496, 404)
+        LinkLabel1.Name = "LinkLabel1"
+        LinkLabel1.Size = New Size(161, 15)
+        LinkLabel1.TabIndex = 6
+        LinkLabel1.TabStop = True
+        LinkLabel1.Text = "https://gcmodeller.org · 2026"
         ' 
         ' FormSplashScreen
         ' 
@@ -139,11 +140,11 @@ Partial Class FormSplashScreen
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class
