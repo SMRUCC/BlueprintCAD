@@ -1,7 +1,6 @@
 ﻿Imports BlueprintCAD.RibbonLib.Controls
 Imports CADRegistry
 Imports Galaxy.Workbench
-Imports Galaxy.Workbench.DockDocument.Presets
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualStudio.WinForms.Docking
 
@@ -20,10 +19,7 @@ Public Module Workbench
     End Property
 
     Public ReadOnly Property Settings As Settings
-
-    Public ReadOnly Property properties As New PropertyWindow
     Public ReadOnly Property chartPad As New FormChartPad
-
     Public ReadOnly Property ServerConnection As Boolean
 
     Public ReadOnly Property CADRegistry As RegistryUrl
@@ -61,12 +57,12 @@ Public Module Workbench
     End Sub
 
     Public Sub InitializeWindows()
-        Call Workbench.properties.Show(AppHost.DockPanel)
+        Call CommonRuntime.RegisterOutputWindow()
+        Call CommonRuntime.RegisterPropertyWindow()
         Call Workbench.chartPad.Show(AppHost.DockPanel, dockState:=DockState.Document)
 
         Workbench.chartPad.Hide()
 
-        Call CommonRuntime.RegisterToolWindow(properties)
         Call CommonRuntime.ShowDocument(Of FormStartupPage)()
     End Sub
 End Module

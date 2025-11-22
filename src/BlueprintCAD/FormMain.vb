@@ -86,6 +86,7 @@ Public Class FormMain : Implements AppHost
         Call MyApplication.SetRibbonEvents()
         Call Timer1.Start()
         Call Workbench.InitializeWindows()
+        Call CommonRuntime.GetOutputWindow.AddLog(Now, "workbench startup", "ready!")
     End Sub
 
     Public Function GetDesktopLocation() As Point Implements AppHost.GetDesktopLocation

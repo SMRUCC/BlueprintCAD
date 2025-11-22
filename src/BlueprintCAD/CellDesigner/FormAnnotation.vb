@@ -67,7 +67,7 @@ Public Class FormAnnotation
                                     End Sub, info:="Load annotation table data into workspace viewer...")
 
         metadata = New GenbankProperties(proj)
-        Workbench.properties.SetObject(metadata)
+        CommonRuntime.GetPropertyWindow.SetObject(metadata)
 
         Return Me
     End Function
