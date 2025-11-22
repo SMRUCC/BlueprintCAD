@@ -2,6 +2,7 @@
 Imports Galaxy.Workbench
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports RibbonLib.Controls.Events
 Imports RibbonLib.Interop
@@ -149,7 +150,12 @@ Namespace My
                     ' --convert --data <result.vcelldata> [--output <output.vcellPack>]
                     args = $"--convert --data {tempfile.CLIPath} --output {saveResult.CLIPath} /@set tqdm=false"
 
-                    Call proc.NextCommand(vc, args)
+                    Call proc _
+                        .NextCommand(vc, args) _
+                        .Final(Sub()
+                                   Call CommonRuntime.GetOutputWindow.AddLog(Now, "run virtualcell", "run virtual cell simulation task finished!", MSG_TYPES.INF)
+                                   Call CommonRuntime.StatusMessage("run virtual cell simulation task finished!")
+                               End Sub)
                 End If
             End Using
         End Sub

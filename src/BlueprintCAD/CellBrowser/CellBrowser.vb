@@ -3,6 +3,7 @@ Imports Galaxy.Data.JSON
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports ggplot
+Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
@@ -87,6 +88,8 @@ Public Class CellBrowser
         For Each item In vcellPack.fluxSet
             Call ToolStripComboBox1.Items.Add(item)
         Next
+
+        Call CommonRuntime.GetOutputWindow.AddLog(Now, "open virtualcell result", "open virtualcell simulation result data pack file success!", MSG_TYPES.FINEST)
     End Sub
 
     Private Function toId(node As TreeNode) As String

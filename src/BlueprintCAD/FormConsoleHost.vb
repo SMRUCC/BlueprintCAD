@@ -4,6 +4,7 @@ Public Class FormConsoleHost
 
     Dim WithEvents console As New ConsoleControl
     Dim commandQueue As New Queue(Of (cmdl$, args$))
+    Dim final_cmd As Action
 
     Private Sub FormConsoleHost_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Controls.Add(console)
@@ -23,8 +24,14 @@ Public Class FormConsoleHost
                 Call console.StartProcess(.cmdl, .args)
             End With
         Else
-
+            If final_cmd IsNot Nothing Then
+                Call final_cmd()
+            End If
         End If
+    End Sub
+
+    Public Sub Final(act As Action)
+        final_cmd = act
     End Sub
 
     Public Sub LogText(text As String, color As Color)

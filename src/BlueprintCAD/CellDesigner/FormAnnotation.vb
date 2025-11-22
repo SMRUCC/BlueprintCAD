@@ -4,6 +4,7 @@ Imports CADRegistry
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ApplicationServices
+Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.Ranges.Model
 Imports Microsoft.VisualBasic.ComponentModel.Ranges.Unit
@@ -68,6 +69,7 @@ Public Class FormAnnotation
 
         metadata = New GenbankProperties(proj)
         CommonRuntime.GetPropertyWindow.SetObject(metadata)
+        CommonRuntime.GetOutputWindow.AddLog(Now, "open annotation project", "open gcmodeller virtualcell annotation project file success!", MSG_TYPES.INF)
 
         Return Me
     End Function
@@ -162,6 +164,7 @@ Public Class FormAnnotation
                 Call proc.Run(gcc, args)
 
                 If saveResult.FileLength > ByteSize.KB Then
+                    Call CommonRuntime.GetOutputWindow.AddLog(Now, "compile virtualcell", "build virtualcell model file success!", MSG_TYPES.FINEST)
                     Call MessageBox.Show("Build Virtual Cell Model Success!", "Build Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End If
