@@ -39,7 +39,7 @@ Partial Class FormCellCopyNumber
         ListBox1.ItemHeight = 15
         ListBox1.Location = New Point(12, 22)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(256, 274)
+        ListBox1.Size = New Size(256, 439)
         ListBox1.TabIndex = 3
         ' 
         ' Label2
@@ -67,7 +67,7 @@ Partial Class FormCellCopyNumber
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Location = New Point(12, 12)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(430, 347)
+        GroupBox1.Size = New Size(430, 478)
         GroupBox1.TabIndex = 6
         GroupBox1.TabStop = False
         GroupBox1.Text = "Cell Colony"
@@ -79,7 +79,7 @@ Partial Class FormCellCopyNumber
         RichTextBox1.Location = New Point(448, 21)
         RichTextBox1.Name = "RichTextBox1"
         RichTextBox1.ReadOnly = True
-        RichTextBox1.Size = New Size(237, 338)
+        RichTextBox1.Size = New Size(288, 469)
         RichTextBox1.TabIndex = 7
         RichTextBox1.Text = ""
         ' 
@@ -88,7 +88,7 @@ Partial Class FormCellCopyNumber
         Controls.Add(RichTextBox1)
         Controls.Add(GroupBox1)
         Name = "FormCellCopyNumber"
-        Size = New Size(701, 374)
+        Size = New Size(747, 502)
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()

@@ -16,6 +16,10 @@ Public Class Wizard
         Call config.GetJson.SaveTo(configFile)
     End Sub
 
+    ''' <summary>
+    ''' load model files
+    ''' </summary>
+    ''' <param name="files"></param>
     Public Sub SetModelFiles(files As IEnumerable(Of String))
         For Each file As String In files
             Dim model As VirtualCell = file.LoadXml(Of VirtualCell)

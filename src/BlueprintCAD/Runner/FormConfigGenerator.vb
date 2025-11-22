@@ -27,8 +27,17 @@ Public Class FormConfigGenerator : Implements IDataContainer, IWizardUI
         }
             If file.ShowDialog = DialogResult.OK Then
                 wizardConfig.SetModelFiles(file.FileNames)
-                ListBox1.Items.Clear()
-                ListBox1.Items.AddRange(file.FileNames)
+                DataGridView1.Rows.Clear()
+
+                For Each model In wizardConfig.models.Values
+                    Dim tax = model.model.taxonomy
+
+                    Call DataGridView1.Rows.Add(If(tax?.scientificName, "no name"),
+                                                model.model.cellular_id,
+                                                model.filepath)
+                Next
+
+                Call DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
             End If
         End Using
     End Sub
@@ -42,7 +51,9 @@ Public Class FormConfigGenerator : Implements IDataContainer, IWizardUI
                     .tqdm_progress = True,
                     .iterations = NumericUpDown1.Value,
                     .resolution = NumericUpDown2.Value,
-                    .kinetics = New FluxBaseline
+                    .kinetics = New FluxBaseline With {
+                        .boost = NumericUpDown3.Value
+                    }
                 }
 
                 wizardConfig.configFile = file.FileName

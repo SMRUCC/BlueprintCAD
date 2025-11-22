@@ -29,7 +29,7 @@ Partial Class FormSetupKinetics
         ' FormSetupKinetics
         ' 
         Name = "FormSetupKinetics"
-        Size = New Size(612, 458)
+        Size = New Size(747, 502)
         ResumeLayout(False)
     End Sub
 End Class

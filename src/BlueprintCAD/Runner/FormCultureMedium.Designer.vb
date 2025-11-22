@@ -63,7 +63,7 @@ Partial Class FormCultureMedium
         ListBox1.ItemHeight = 15
         ListBox1.Location = New Point(9, 43)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(283, 259)
+        ListBox1.Size = New Size(203, 244)
         ListBox1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -90,7 +90,7 @@ Partial Class FormCultureMedium
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(335, 21)
+        Label2.Location = New Point(255, 21)
         Label2.Name = "Label2"
         Label2.Size = New Size(97, 15)
         Label2.TabIndex = 3
@@ -101,9 +101,9 @@ Partial Class FormCultureMedium
         ListBox2.ContextMenuStrip = ContextMenuStrip2
         ListBox2.FormattingEnabled = True
         ListBox2.ItemHeight = 15
-        ListBox2.Location = New Point(335, 43)
+        ListBox2.Location = New Point(255, 43)
         ListBox2.Name = "ListBox2"
-        ListBox2.Size = New Size(332, 259)
+        ListBox2.Size = New Size(212, 244)
         ListBox2.TabIndex = 4
         ' 
         ' ContextMenuStrip2
@@ -127,7 +127,7 @@ Partial Class FormCultureMedium
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(446, 315)
+        Label3.Location = New Point(255, 295)
         Label3.Name = "Label3"
         Label3.Size = New Size(80, 15)
         Label3.TabIndex = 5
@@ -136,7 +136,7 @@ Partial Class FormCultureMedium
         ' NumericUpDown1
         ' 
         NumericUpDown1.Increment = New Decimal(New Integer() {100, 0, 0, 0})
-        NumericUpDown1.Location = New Point(543, 311)
+        NumericUpDown1.Location = New Point(343, 293)
         NumericUpDown1.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         NumericUpDown1.Name = "NumericUpDown1"
         NumericUpDown1.Size = New Size(124, 23)
@@ -154,9 +154,9 @@ Partial Class FormCultureMedium
         GroupBox1.Controls.Add(ListBox2)
         GroupBox1.Controls.Add(NumericUpDown1)
         GroupBox1.Controls.Add(Label3)
-        GroupBox1.Location = New Point(12, 12)
+        GroupBox1.Location = New Point(4, 3)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(681, 587)
+        GroupBox1.Size = New Size(473, 499)
         GroupBox1.TabIndex = 9
         GroupBox1.TabStop = False
         GroupBox1.Text = "Add Compound To Culture Medium"
@@ -164,9 +164,9 @@ Partial Class FormCultureMedium
         ' GroupBox2
         ' 
         GroupBox2.Controls.Add(DataGridView1)
-        GroupBox2.Location = New Point(9, 340)
+        GroupBox2.Location = New Point(9, 322)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(658, 241)
+        GroupBox2.Size = New Size(458, 171)
         GroupBox2.TabIndex = 10
         GroupBox2.TabStop = False
         GroupBox2.Text = "Associated Membrane Transportation"
@@ -186,7 +186,7 @@ Partial Class FormCultureMedium
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(3, 19)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(652, 219)
+        DataGridView1.Size = New Size(452, 149)
         DataGridView1.TabIndex = 0
         ' 
         ' Column1
@@ -216,24 +216,24 @@ Partial Class FormCultureMedium
         ' 
         ' Button3
         ' 
-        Button3.Location = New Point(217, 311)
+        Button3.Location = New Point(141, 293)
         Button3.Name = "Button3"
-        Button3.Size = New Size(75, 23)
+        Button3.Size = New Size(71, 23)
         Button3.TabIndex = 9
         Button3.Text = "Search"
         Button3.UseVisualStyleBackColor = True
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(9, 311)
+        TextBox1.Location = New Point(9, 293)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(203, 23)
+        TextBox1.Size = New Size(126, 23)
         TextBox1.TabIndex = 8
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(298, 168)
+        Label4.Location = New Point(218, 161)
         Label4.Name = "Label4"
         Label4.Size = New Size(31, 15)
         Label4.TabIndex = 7
@@ -243,9 +243,9 @@ Partial Class FormCultureMedium
         ' 
         RichTextBox1.BackColor = Color.WhiteSmoke
         RichTextBox1.BorderStyle = BorderStyle.None
-        RichTextBox1.Location = New Point(702, 21)
+        RichTextBox1.Location = New Point(483, 5)
         RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(354, 576)
+        RichTextBox1.Size = New Size(260, 494)
         RichTextBox1.TabIndex = 10
         RichTextBox1.Text = ""
         ' 
@@ -254,7 +254,7 @@ Partial Class FormCultureMedium
         Controls.Add(RichTextBox1)
         Controls.Add(GroupBox1)
         Name = "FormCultureMedium"
-        Size = New Size(1065, 611)
+        Size = New Size(747, 502)
         ContextMenuStrip1.ResumeLayout(False)
         ContextMenuStrip2.ResumeLayout(False)
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
