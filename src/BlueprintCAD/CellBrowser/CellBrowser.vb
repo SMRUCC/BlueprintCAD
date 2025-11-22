@@ -724,6 +724,24 @@ Public Class CellBrowser
     End Sub
 
     Private Sub CellBrowser_Load(sender As Object, e As EventArgs) Handles Me.Load
+        PlotView1 = New ggviewer.PlotView()
+
+        ' PlotView1
+        ' 
+        PlotView1.BackColor = Color.SkyBlue
+        PlotView1.BackgroundImageLayout = ImageLayout.Zoom
+        PlotView1.Debug = True
+        PlotView1.Dock = DockStyle.Fill
+        PlotView1.Dpi = 120
+        PlotView1.ggplot = Nothing
+        PlotView1.Location = New Point(0, 0)
+        PlotView1.Name = "PlotView1"
+        PlotView1.ScaleFactor = 1.25F
+        PlotView1.Size = New Size(1167, 572)
+        PlotView1.TabIndex = 1
+
+        SplitContainer3.Panel2.Controls.Add(PlotView1)
+
         dataTable = New GridLoaderHandler(DataGridView1, ToolStrip1)
 
         Call CellBrowser_Activated(sender, e)
