@@ -32,12 +32,12 @@ Partial Class FormConfigGenerator
         NumericUpDown2 = New NumericUpDown()
         GroupBox1 = New GroupBox()
         DataGridView1 = New DataGridView()
-        GroupBox2 = New GroupBox()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
         Column3 = New DataGridViewTextBoxColumn()
-        Label4 = New Label()
+        GroupBox2 = New GroupBox()
         NumericUpDown3 = New NumericUpDown()
+        Label4 = New Label()
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
         CType(NumericUpDown2, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
@@ -131,17 +131,6 @@ Partial Class FormConfigGenerator
         DataGridView1.Size = New Size(622, 192)
         DataGridView1.TabIndex = 9
         ' 
-        ' GroupBox2
-        ' 
-        GroupBox2.Controls.Add(NumericUpDown3)
-        GroupBox2.Controls.Add(Label4)
-        GroupBox2.Location = New Point(9, 335)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(727, 164)
-        GroupBox2.TabIndex = 10
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "Basic Dynamics Parameters"
-        ' 
         ' Column1
         ' 
         Column1.HeaderText = "organism name"
@@ -161,14 +150,16 @@ Partial Class FormConfigGenerator
         Column3.Name = "Column3"
         Column3.ReadOnly = True
         ' 
-        ' Label4
+        ' GroupBox2
         ' 
-        Label4.AutoSize = True
-        Label4.Location = New Point(28, 29)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(76, 15)
-        Label4.TabIndex = 0
-        Label4.Text = "Boost Factor:"
+        GroupBox2.Controls.Add(NumericUpDown3)
+        GroupBox2.Controls.Add(Label4)
+        GroupBox2.Location = New Point(9, 335)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(727, 93)
+        GroupBox2.TabIndex = 10
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Basic Dynamics Parameters"
         ' 
         ' NumericUpDown3
         ' 
@@ -180,6 +171,15 @@ Partial Class FormConfigGenerator
         NumericUpDown3.Size = New Size(120, 23)
         NumericUpDown3.TabIndex = 1
         NumericUpDown3.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(28, 29)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(76, 15)
+        Label4.TabIndex = 0
+        Label4.Text = "Boost Factor:"
         ' 
         ' FormConfigGenerator
         ' 
