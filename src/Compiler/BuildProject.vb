@@ -3,7 +3,6 @@ Imports CADRegistry
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
-Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
@@ -18,8 +17,8 @@ Module BuildProject
         Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
         Dim localblast As New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
         Dim enzyme_db As String = $"{settings.blastdb}/ec_numbers.fasta"
-        Dim transporter_db As String = $"{App.HOME}/data/Membrane.fasta"
-        Dim tf_db As String = $"{App.HOME}/data/TF.fasta"
+        Dim transporter_db As String = $"{settings.blastdb}/Membrane.fasta"
+        Dim tf_db As String = $"{settings.blastdb}/TF.fasta"
 
         ' ------- TFBS sites --------
         Dim motif_db As String = $"{settings.blastdb}/RegPrecise.dat"
@@ -30,7 +29,12 @@ Module BuildProject
             .ToArray
 
         If Not skipTRN Then
-            proj.tfbs_hits = ScannerTask.ScanSites(tss, motif_db, n_threads:=blast_threads)
+            proj.tfbs_hits = ScannerTask.ScanSites(tss, motif_db, n_threads:=blast_threads) _
+                .GroupBy(Function(a) a.title) _
+                .ToDictionary(Function(a) a.Key,
+                              Function(a)
+                                  Return a.ToArray
+                              End Function)
         End If
 
         ' ----- enzyme hits ------
