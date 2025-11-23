@@ -32,7 +32,9 @@ Module BuildProject
         If Not skipTRN Then
             proj.tfbs_hits = CADRegistry.MotifDatabase _
                 .OpenReadOnly(motif_db.OpenReadonly) _
-                .ScanSites(tss, n_threads:=blast_threads)
+                .ScanSites(tss,
+                           n_threads:=blast_threads,
+                           workflowMode:=True)
         End If
 
         ' ----- enzyme hits ------
