@@ -17,9 +17,12 @@
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="installer.exe" Type="8"/>
+    <ROW Property="ARPURLINFOABOUT" Value="http://zhengyabio.com/"/>
     <ROW Property="AiEmbeddedUI" Value="1"/>
     <ROW Property="AiWinUI" Value="1"/>
-    <ROW Property="Manufacturer" Value="SMRUCC Genomics Institute"/>
+    <ROW Property="Manufacturer" Value="zhengyabio.com"/>
+    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp"/>
     <ROW Property="ProductCode" Value="1033:{22246839-7CCD-4F30-9B49-700BBDBF844D} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Sophia VirtualCell Workshop"/>
@@ -43,7 +46,10 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="Zhengyabio_Dir" Directory_Parent="ProgramMenuFolder" DefaultDir="ZHENGY~1|Zhengyabio"/>
     <ROW Directory="bin_Dir" Directory_Parent="rstudio_Dir" DefaultDir="bin"/>
     <ROW Directory="browser_Dir" Directory_Parent="runtimes_1_Dir" DefaultDir="browser"/>
     <ROW Directory="data_Dir" Directory_Parent="APPDIR" DefaultDir="data"/>
@@ -224,6 +230,7 @@
     <ROW Component="Rserve.dll" ComponentId="{BD677CAA-667C-4A2F-9F3B-2746EBEA8A5D}" Directory_="bin_Dir" Attributes="256" KeyPath="Rserve.dll"/>
     <ROW Component="Rserve.exe" ComponentId="{944D8E60-7A18-4C06-8C78-363A827BCE01}" Directory_="bin_Dir" Attributes="256" KeyPath="Rserve.exe"/>
     <ROW Component="Rserver.dll" ComponentId="{15E2695B-0422-4B53-86CA-6434421E79EA}" Directory_="bin_Dir" Attributes="256" KeyPath="Rserver.dll"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{7C6ACE99-CCCD-4E5D-9DBA-FC609897CAB2}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="SMRUCC.genomics.Analysis.HTS.DataFrame.dll" ComponentId="{D4305A0B-EF03-45D6-8EAB-9355828A6CCD}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.HTS.DataFrame.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.HTS.GSEA.Fisher.Core.dll" ComponentId="{9BAC271F-AC13-4379-9FD0-FF3EE0E2CE7E}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.HTS.GSEA.Fisher.Core.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.SequenceAlignment.dll" ComponentId="{9C7E4FB2-F6B1-49FA-AEB9-4AD31C83BAE1}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.SequenceAlignment.dll"/>
@@ -316,6 +323,7 @@
     <ROW Component="WebView2Loader.dll" ComponentId="{63248E5F-5515-436F-AC21-5F19904EC97F}" Directory_="native_26_Dir" Attributes="256" KeyPath="WebView2Loader.dll"/>
     <ROW Component="WebView2Loader.dll_3" ComponentId="{680AB993-D088-41AE-A534-42D99710D50D}" Directory_="native_27_Dir" Attributes="256" KeyPath="WebView2Loader.dll_3"/>
     <ROW Component="WebView2Loader.dll_4" ComponentId="{5241F038-B7CF-4D1F-AE8D-1DD3B0A7752B}" Directory_="native_28_Dir" Attributes="0" KeyPath="WebView2Loader.dll_4"/>
+    <ROW Component="Zhengyabio" ComponentId="{BE6C9AFF-9C94-425A-A6E8-554A3B5C42B4}" Directory_="Zhengyabio_Dir" Attributes="0"/>
     <ROW Component="all_operons.json" ComponentId="{D84F37C4-2A1E-48D1-BAF7-C2357F5C0FC8}" Directory_="local_Dir" Attributes="0" KeyPath="all_operons.json" Type="0"/>
     <ROW Component="batch.dll" ComponentId="{20B4A663-43BA-4A89-8C36-A7A666C992D4}" Directory_="APPDIR" Attributes="256" KeyPath="batch.dll"/>
     <ROW Component="batch.exe" ComponentId="{240BDDE9-BB6C-4B9E-8BF5-AFBABAB02988}" Directory_="APPDIR" Attributes="256" KeyPath="batch.exe"/>
@@ -867,6 +875,10 @@
     <ROW File="TRNScanner.deps.json" Component_="CADRegistry.xml" FileName="TRNSCA~1.JSO|TRNScanner.deps.json" Attributes="0" SourcePath="..\App\net8.0-windows\TRNScanner.deps.json" SelfReg="false"/>
     <ROW File="TRNScanner.xml" Component_="CADRegistry.xml" FileName="TRNSCA~1.XML|TRNScanner.xml" Attributes="0" SourcePath="..\App\net8.0-windows\TRNScanner.xml" SelfReg="false"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
+    <ROW MsiShortcutProperty="Sophia0" Shortcut_="Sophia" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
+    <ROW MsiShortcutProperty="SophiaWorkshop20260" Shortcut_="SophiaWorkshop2026" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" GeneralOptions="o" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="18"/>
   </COMPONENT>
@@ -882,11 +894,14 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" SummInfoMetadata="Page Count:450" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="sophia_setup" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" ExeIconPath="installer.ico" SummInfoMetadata="Page Count:450" ExtUI="true" UseLargeSchema="true" ExeName="setup" MsiPackageType="x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
+    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1" Subject="CN=zhengyabio_2025-11-23_23-11-3" Store="Machine\MY"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
@@ -983,6 +998,8 @@
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
     <ROW Directory_="resources_Dir" Component_="resources" ManualDelete="false"/>
     <ROW Directory_="logs_Dir" Component_="logs" ManualDelete="false"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+    <ROW Directory_="Zhengyabio_Dir" Component_="Zhengyabio" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
@@ -1014,7 +1031,7 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="AI_VerifyPrePrereq" Type="1" Source="Prereq.dll" Target="VerifyPrePrereq"/>
     <ROW Action="AI_VerifyPrereq" Type="1" Source="Prereq.dll" Target="VerifyPrereq"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]\SophiaWorkshop"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
@@ -1248,6 +1265,11 @@
     <ROW Feature_="MainFeature" Component_="System.Text.Encodings.Web.dll_2"/>
     <ROW Feature_="MainFeature" Component_="System.Windows.Extensions.dll_2"/>
     <ROW Feature_="MainFeature" Component_="SMRUCC.genomics.Interops.NBCR.MEME_Suite.Documents.dll"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="Zhengyabio"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="installer.exe" SourcePath="installer.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -1321,6 +1343,10 @@
     <ROW Registry="ProductVersion_1" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="\"/>
     <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Sophia" Directory_="SHORTCUTDIR" Name="SOPHIA~1|Sophia Workshop" Component_="Sophia.exe" Target="[#Sophia.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="SophiaWorkshop2026" Directory_="Zhengyabio_Dir" Name="SOPHIA~1|Sophia Workshop 2026" Component_="Sophia.exe" Target="[#Sophia.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
     <ROW TextStyle="Setup" FaceName="Tahoma" Size="18" Color="16766625" MultiBuildColor="DefaultBuild:16775620" StyleBits="0" MsiKey="Setup"/>
