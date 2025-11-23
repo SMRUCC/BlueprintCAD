@@ -841,7 +841,8 @@
     <BuildType Solution="CFD_win32|*" Project="Release" />
     <BuildType Solution="Desktop|*" Project="Release" />
     <BuildType Solution="Docker|*" Project="Release" />
-    <BuildType Solution="gcmodeller_desktop|*" Project="Release" />
+    <BuildType Solution="gcmodeller_desktop|Any CPU" Project="Release" />
+    <BuildType Solution="gcmodeller_desktop|x86" Project="Release" />
     <BuildType Solution="LipidSearch|*" Project="Debug" />
     <BuildType Solution="mzkit_win32|*" Project="Release" />
     <BuildType Solution="mzkit|*" Project="Debug" />
