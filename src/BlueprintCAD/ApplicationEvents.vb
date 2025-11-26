@@ -118,6 +118,7 @@ Namespace My
             Dim step1 As IWizardUI = New FormConfigGenerator
             Dim step2 As IWizardUI = New FormCultureMedium
             Dim step3 As IWizardUI = New FormCellCopyNumber
+            Dim step4 As IWizardUI = New FormSetupCellularContents
 
             'Call InputDialog.OpenDialog(Of FormConfigGenerator)(wizardConfig) _
             '    .ThenDialog(Of FormCultureMedium)(wizardConfig) _
@@ -129,7 +130,7 @@ Namespace My
             step1.SetData(wizardConfig)
 
             Call TaskWizard _
-                .ShowWizard("Run VirtualCell", step1, step2, step3) _
+                .ShowWizard("Run VirtualCell", step1, step2, step3, step4) _
                 .Finally(Sub()
                              Call RunVirtualCell(wizardConfig)
                          End Sub)
