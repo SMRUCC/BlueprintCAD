@@ -128,6 +128,7 @@ Partial Class FormConfigGenerator
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3})
         DataGridView1.Location = New Point(9, 45)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(622, 192)
         DataGridView1.TabIndex = 9
         ' 
