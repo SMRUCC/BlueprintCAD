@@ -14,10 +14,14 @@ Public Class FormCellCopyNumber : Implements IDataContainer, IWizardUI
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         wizardConfig = DirectCast(data, Wizard)
+        ListBox1.Items.Clear()
 
         For Each model As String In wizardConfig.models.Keys
             Call ListBox1.Items.Add(model)
-            Call copyNum.Add(model, 1000)
+
+            If Not copyNum.ContainsKey(model) Then
+                Call copyNum.Add(model, 1000)
+            End If
         Next
     End Sub
 

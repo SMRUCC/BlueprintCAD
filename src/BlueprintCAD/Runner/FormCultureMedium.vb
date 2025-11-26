@@ -35,13 +35,16 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
 
         wizardConfig = DirectCast(data, Wizard)
         search = New CompoundSearchIndex(FilterMembraneTransportMetabolites(allCompounds).OrderBy(Function(c) c.name), 3)
+        ListBox1.Items.Clear()
 
         For Each compound As Compound In search.AsEnumerable
             Call compounds_id.Add(compound.ID)
             Call ListBox1.Items.Add(New IDDisplay With {.id = compound.ID, .name = compound.name})
         Next
 
-        wizardConfig.config.mapping = Definition.MetaCyc((From c As Compound In allCompounds Select c.ID), Double.NaN)
+        If wizardConfig.config.mapping Is Nothing Then
+            wizardConfig.config.mapping = Definition.MetaCyc((From c As Compound In allCompounds Select c.ID), Double.NaN)
+        End If
     End Sub
 
     Private Iterator Function FilterMembraneTransportMetabolites(allCompounds As Compound()) As IEnumerable(Of Compound)

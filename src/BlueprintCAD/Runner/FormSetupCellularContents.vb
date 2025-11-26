@@ -20,21 +20,26 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         wizard = DirectCast(data, Wizard)
+        ListBox1.Items.Clear()
 
         For Each model_id As String In wizard.models.Keys
             Dim copyNumber As Double = wizard.config.copy_number(model_id)
             Dim model = wizard.models(model_id).model
-            Dim compounds As CompoundContentData() = model.metabolismStructure.compounds _
-                .Select(Function(a)
-                            Return New CompoundContentData With {
-                                .content = copyNumber,
-                                .id = a.ID,
-                                .name = a.name
-                            }
-                        End Function) _
-                .ToArray
 
-            Call Me.data.Add(model_id, compounds)
+            If Not Me.data.ContainsKey(model_id) Then
+                Dim compounds As CompoundContentData() = model.metabolismStructure.compounds _
+                    .Select(Function(a)
+                                Return New CompoundContentData With {
+                                    .content = copyNumber,
+                                    .id = a.ID,
+                                    .name = a.name
+                                }
+                            End Function) _
+                    .ToArray
+
+                Call Me.data.Add(model_id, compounds)
+            End If
+
             Call ListBox1.Items.Add(model_id)
         Next
     End Sub
