@@ -12,7 +12,6 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Drawing
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Driver
-Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
@@ -294,7 +293,7 @@ Public Class FormAnnotation
             Call proj.DumpProteinFasta(s)
         End Using
 
-        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 12}
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
         Dim tf_db As String = $"{App.HOME}/data/TF.fasta"
 
         ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
@@ -365,7 +364,7 @@ Public Class FormAnnotation
             Call proj.DumpProteinFasta(s)
         End Using
 
-        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 12}
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
         Dim enzyme_db As String = $"{App.HOME}/data/ec_numbers.fasta"
 
         ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
@@ -575,7 +574,7 @@ Public Class FormAnnotation
             Call proj.DumpGeneFasta(s)
         End Using
 
-        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = 12}
+        Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
         Dim operon_db As String = $"{App.HOME}/data/operon.fasta"
         Dim knownOperons = Await Task.Run(Function() Workbench.CADRegistry.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id))
 
