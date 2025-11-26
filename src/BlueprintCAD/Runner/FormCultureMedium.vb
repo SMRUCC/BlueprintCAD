@@ -129,29 +129,38 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         If TextBox1.Text.StringEmpty Then
+            Call reloadAll()
+        End If
+    End Sub
+
+    Private Sub reloadAll()
+        Call ListBox1.Items.Clear()
+
+        For Each item In search.AsEnumerable
+            Call ListBox1.Items.Add(New IDDisplay With {
+                .id = item.ID,
+                .name = item.name
+            })
+        Next
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim text As String = Strings.Trim(TextBox1.Text)
+
+        If text = "" Then
+            Call reloadAll()
+        Else
+            Dim find = search.Search(text).ToArray
+
             Call ListBox1.Items.Clear()
 
-            For Each item In search.AsEnumerable
+            For Each item In find.OrderBy(Function(a) a.name)
                 Call ListBox1.Items.Add(New IDDisplay With {
                     .id = item.ID,
                     .name = item.name
                 })
             Next
         End If
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim text As String = Strings.Trim(TextBox1.Text)
-        Dim find = search.Search(text).ToArray
-
-        Call ListBox1.Items.Clear()
-
-        For Each item In find.OrderBy(Function(a) a.name)
-            Call ListBox1.Items.Add(New IDDisplay With {
-                .id = item.ID,
-                .name = item.name
-            })
-        Next
     End Sub
 
     Private Sub FormCultureMedium_Load(sender As Object, e As EventArgs) Handles Me.Load
