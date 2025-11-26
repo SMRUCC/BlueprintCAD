@@ -25,12 +25,12 @@ Partial Class FormSetupCellularContents
         GroupBox1 = New GroupBox()
         ListBox1 = New ListBox()
         GroupBox2 = New GroupBox()
-        ListView1 = New ListView()
-        Label1 = New Label()
-        TextBox1 = New TextBox()
-        Button1 = New Button()
-        Label2 = New Label()
+        ListBox2 = New ListBox()
         TextBox2 = New TextBox()
+        Label2 = New Label()
+        Button1 = New Button()
+        TextBox1 = New TextBox()
+        Label1 = New Label()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
         SuspendLayout()
@@ -57,12 +57,12 @@ Partial Class FormSetupCellularContents
         ' 
         ' GroupBox2
         ' 
+        GroupBox2.Controls.Add(ListBox2)
         GroupBox2.Controls.Add(TextBox2)
         GroupBox2.Controls.Add(Label2)
         GroupBox2.Controls.Add(Button1)
         GroupBox2.Controls.Add(TextBox1)
         GroupBox2.Controls.Add(Label1)
-        GroupBox2.Controls.Add(ListView1)
         GroupBox2.Location = New Point(183, 3)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Size = New Size(561, 493)
@@ -70,38 +70,21 @@ Partial Class FormSetupCellularContents
         GroupBox2.TabStop = False
         GroupBox2.Text = "Set Content Data"
         ' 
-        ' ListView1
+        ' ListBox2
         ' 
-        ListView1.Location = New Point(6, 22)
-        ListView1.Name = "ListView1"
-        ListView1.Size = New Size(549, 435)
-        ListView1.TabIndex = 0
-        ListView1.UseCompatibleStateImageBehavior = False
+        ListBox2.FormattingEnabled = True
+        ListBox2.ItemHeight = 15
+        ListBox2.Location = New Point(6, 27)
+        ListBox2.Name = "ListBox2"
+        ListBox2.Size = New Size(549, 424)
+        ListBox2.TabIndex = 6
         ' 
-        ' Label1
+        ' TextBox2
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(6, 466)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(45, 15)
-        Label1.TabIndex = 1
-        Label1.Text = "Search:"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(57, 463)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(213, 23)
-        TextBox1.TabIndex = 2
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(276, 462)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(75, 23)
-        Button1.TabIndex = 3
-        Button1.Text = "Search"
-        Button1.UseVisualStyleBackColor = True
+        TextBox2.Location = New Point(436, 463)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(119, 23)
+        TextBox2.TabIndex = 5
         ' 
         ' Label2
         ' 
@@ -112,12 +95,30 @@ Partial Class FormSetupCellularContents
         Label2.TabIndex = 4
         Label2.Text = "Content:"
         ' 
-        ' TextBox2
+        ' Button1
         ' 
-        TextBox2.Location = New Point(436, 463)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(119, 23)
-        TextBox2.TabIndex = 5
+        Button1.Location = New Point(276, 462)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(75, 23)
+        Button1.TabIndex = 3
+        Button1.Text = "Search"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(57, 463)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(213, 23)
+        TextBox1.TabIndex = 2
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(6, 466)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(45, 15)
+        Label1.TabIndex = 1
+        Label1.Text = "Search:"
         ' 
         ' FormSetupCellularContents
         ' 
@@ -141,6 +142,6 @@ Partial Class FormSetupCellularContents
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ListBox2 As ListBox
 
 End Class
