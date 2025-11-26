@@ -26,20 +26,24 @@ Public Class FormCultureMediumLibrary
     End Sub
 
     Private Sub FormCultureMediumLibrary_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim files As String() = Repo.ListFiles("*.csv").Select(Function(path) path.BaseName).ToArray
-
-        For Each name As String In files
+        For Each name As String In LoadProfileList()
             ToolStripComboBox1.Items.Add(name)
         Next
 
         Call ApplyVsTheme(ToolStrip2)
     End Sub
 
-    Protected Overrides Sub SaveDocument()
-        Dim compounds As FormulaCompound() = ExportTable.ToArray
-        Dim savefile As String = $"{Repo}/{edit.NormalizePathString(False, replacement:="-")}.csv"
+    Public Shared Function LoadProfileList() As String()
+        Return Repo.ListFiles("*.csv").Select(Function(path) path.BaseName).ToArray
+    End Function
 
+    Public Shared Sub Save(compounds As IEnumerable(Of FormulaCompound), edit As String)
+        Dim savefile As String = $"{Repo}/{edit.NormalizePathString(False, replacement:="-")}.csv"
         Call compounds.SaveTo(savefile)
+    End Sub
+
+    Protected Overrides Sub SaveDocument()
+        Call Save(ExportTable.ToArray, edit)
     End Sub
 
     Public Iterator Function ExportTable() As IEnumerable(Of FormulaCompound)
@@ -59,6 +63,11 @@ Public Class FormCultureMediumLibrary
         Next
     End Function
 
+    Public Shared Function LoadProfile(name As String) As IEnumerable(Of FormulaCompound)
+        Dim savefile As String = $"{Repo}/{name.NormalizePathString(False, replacement:="-")}.csv"
+        Return savefile.LoadCsv(Of FormulaCompound)()
+    End Function
+
     Private Sub ToolStripComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ToolStripComboBox1.SelectedIndexChanged
         If ToolStripComboBox1.SelectedIndex < 0 Then
             Return
@@ -67,8 +76,7 @@ Public Class FormCultureMediumLibrary
         End If
 
         Dim name As String = ToolStripComboBox1.SelectedItem.ToString
-        Dim savefile As String = $"{Repo}/{name.NormalizePathString(False, replacement:="-")}.csv"
-        Dim data As FormulaCompound() = savefile.LoadCsv(Of FormulaCompound)().ToArray
+        Dim data = LoadProfile(name).ToArray
 
         edit = name
         ImportsTable(data)

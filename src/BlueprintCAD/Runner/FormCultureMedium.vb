@@ -1,5 +1,6 @@
 ﻿Imports System.Text
 Imports BlueprintCAD.UIData
+Imports CADRegistry
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
@@ -168,6 +169,10 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
 
     Private Sub FormCultureMedium_Load(sender As Object, e As EventArgs) Handles Me.Load
         RichTextBox1.Rtf = Encoding.UTF8.GetString(My.Resources.HelpDocs.SetupCultureMedium)
+
+        For Each name As String In FormCultureMediumLibrary.LoadProfileList
+            Call ComboBox1.Items.Add(name)
+        Next
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
@@ -203,5 +208,47 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
 
         Return True
     End Function
+
+    Dim profileName As String
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If profileName.StringEmpty Then
+            profileName = InputBox("Enter the culture medium name for save current formula:", "Save Culture Medium Name")
+        End If
+        If profileName.StringEmpty Then
+            Return
+        End If
+
+        Dim profile As New List(Of FormulaCompound)
+
+        For Each compound As CompoundContentData In ListBox2.Items
+            Call profile.Add(New FormulaCompound With {
+                .registry_id = compound.id,
+                .name = compound.name,
+                .value = compound.content
+            })
+        Next
+
+        Call FormCultureMediumLibrary.Save(profile, profileName)
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.SelectedIndex < 0 Then
+            Return
+        End If
+
+        Dim name As String = CStr(ComboBox1.SelectedItem)
+        Dim list As FormulaCompound() = FormCultureMediumLibrary.LoadProfile(name).ToArray
+
+        Call ListBox2.Items.Clear()
+
+        For Each cpd As FormulaCompound In list
+            Call ListBox2.Items.Add(New CompoundContentData With {
+                .content = cpd.value,
+                .id = cpd.registry_id,
+                .name = cpd.name
+            })
+        Next
+    End Sub
 End Class
 

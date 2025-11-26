@@ -25,7 +25,8 @@ Partial Class FormCultureMedium
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCultureMedium))
         ListBox1 = New ListBox()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddToDCultureMediumToolStripMenuItem = New ToolStripMenuItem()
@@ -47,6 +48,9 @@ Partial Class FormCultureMedium
         RichTextBox1 = New RichTextBox()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        Label5 = New Label()
+        ComboBox1 = New ComboBox()
+        PictureBox1 = New PictureBox()
         TabPage2 = New TabPage()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
@@ -55,6 +59,7 @@ Partial Class FormCultureMedium
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
         SuspendLayout()
         ' 
@@ -159,14 +164,14 @@ Partial Class FormCultureMedium
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column2, Column4})
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = SystemColors.Window
-        DataGridViewCellStyle2.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
-        DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.Window
+        DataGridViewCellStyle1.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(3, 19)
         DataGridView1.Name = "DataGridView1"
@@ -237,6 +242,9 @@ Partial Class FormCultureMedium
         ' 
         ' TabPage1
         ' 
+        TabPage1.Controls.Add(Label5)
+        TabPage1.Controls.Add(ComboBox1)
+        TabPage1.Controls.Add(PictureBox1)
         TabPage1.Controls.Add(GroupBox2)
         TabPage1.Controls.Add(ListBox1)
         TabPage1.Controls.Add(Button3)
@@ -254,6 +262,35 @@ Partial Class FormCultureMedium
         TabPage1.TabIndex = 0
         TabPage1.Text = "Set Culture Medium"
         TabPage1.UseVisualStyleBackColor = True
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(535, 7)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(36, 15)
+        Label5.TabIndex = 13
+        Label5.Text = "Load:"
+        ' 
+        ' ComboBox1
+        ' 
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
+        ComboBox1.FormattingEnabled = True
+        ComboBox1.Location = New Point(577, 4)
+        ComboBox1.Name = "ComboBox1"
+        ComboBox1.Size = New Size(153, 23)
+        ComboBox1.TabIndex = 12
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
+        PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox1.Cursor = Cursors.Hand
+        PictureBox1.Location = New Point(499, 6)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(16, 16)
+        PictureBox1.TabIndex = 11
+        PictureBox1.TabStop = False
         ' 
         ' TabPage2
         ' 
@@ -279,6 +316,7 @@ Partial Class FormCultureMedium
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)
         TabPage1.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
@@ -305,4 +343,7 @@ Partial Class FormCultureMedium
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
