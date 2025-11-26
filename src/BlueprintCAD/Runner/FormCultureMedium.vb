@@ -1,4 +1,5 @@
 ﻿Imports System.Text
+Imports BlueprintCAD.UIData
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
@@ -81,7 +82,7 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
         End If
 
         Dim id As IDDisplay = DirectCast(ListBox1.SelectedItem, IDDisplay)
-        Dim data As New CultureMediumCompound With {
+        Dim data As New CompoundContentData With {
             .id = id.id,
             .content = 1,
             .name = id.name
@@ -90,7 +91,7 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
         Call ListBox2.Items.Add(data)
     End Sub
 
-    Dim compound As CultureMediumCompound
+    Dim compound As CompoundContentData
     Public ReadOnly Property Title As String Implements IWizardUI.Title
         Get
             Return "Culture Medium Compounds"
@@ -181,7 +182,7 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
     Public Function OK() As Boolean Implements IWizardUI.OK
         Dim data As New Dictionary(Of String, Double)
 
-        For Each compound As CultureMediumCompound In ListBox2.Items
+        For Each compound As CompoundContentData In ListBox2.Items
             data(compound.id) = compound.content
         Next
 
@@ -191,14 +192,3 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
     End Function
 End Class
 
-Public Class CultureMediumCompound
-
-    Public Property id As String
-    Public Property content As Double
-    Public Property name As String
-
-    Public Overrides Function ToString() As String
-        Return $"{If(name, id)} ({content} mg/ml)"
-    End Function
-
-End Class

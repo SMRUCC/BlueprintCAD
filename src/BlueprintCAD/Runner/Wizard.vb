@@ -3,6 +3,9 @@ Imports Microsoft.VisualBasic.MIME.application.json
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 Imports VirtualCellHost
 
+''' <summary>
+''' the wizard data
+''' </summary>
 Public Class Wizard
 
     Public Property models As New Dictionary(Of String, ModelFile)
