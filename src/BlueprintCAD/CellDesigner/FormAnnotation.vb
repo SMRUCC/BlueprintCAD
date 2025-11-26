@@ -161,11 +161,12 @@ Public Class FormAnnotation
                 Call proc.LogText("run virtualcell compiler " & args, Color.Red)
                 Call CommonRuntime.StatusMessage("run virtualcell compiler " & args)
                 Call proc.Run(gcc, args)
-
-                If saveResult.FileLength > ByteSize.KB Then
-                    Call CommonRuntime.GetOutputWindow.AddLog(Now, "compile virtualcell", "build virtualcell model file success!", MSG_TYPES.FINEST)
-                    Call MessageBox.Show("Build Virtual Cell Model Success!", "Build Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
+                Call proc.Final(Sub()
+                                    If saveResult.FileLength > ByteSize.KB Then
+                                        Call CommonRuntime.GetOutputWindow.AddLog(Now, "compile virtualcell", "build virtualcell model file success!", MSG_TYPES.FINEST)
+                                        Call MessageBox.Show("Build Virtual Cell Model Success!", "Build Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    End If
+                                End Sub)
             End If
         End Using
     End Sub
