@@ -216,7 +216,10 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 Continue Do
             End If
 
-            Dim expansions As Dictionary(Of String, WebJSON.Reaction) = registry.ExpandNetworkByCompound(mol_id)
+            Dim expansions As Dictionary(Of String, WebJSON.Reaction) = If(
+                registry.ExpandNetworkByCompound(mol_id),
+                New Dictionary(Of String, WebJSON.Reaction)
+            )
 
             Call cache.Add(mol_id, expansions.Values.ToArray)
 
