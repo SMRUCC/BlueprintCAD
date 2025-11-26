@@ -13,7 +13,8 @@ Public Class Wizard
     ''' save config data to config file location
     ''' </summary>
     Public Sub Save()
-        Call config.GetJson.SaveTo(configFile)
+        config.mapping.status(config.mapping.CultureMedium) = config.cultureMedium
+        config.GetJson.SaveTo(configFile)
     End Sub
 
     ''' <summary>
