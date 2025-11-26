@@ -53,6 +53,7 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
         Dim transportReactions = transports _
             .Where(Function(id) allReactions.ContainsKey(id)) _
             .Select(Function(id) allReactions(id)) _
+            .JoinIterates(allReactions.Values.Where(Function(r) r.CheckTransportation)) _
             .ToArray
         Dim compoundSet As Dictionary(Of String, String()) = transportReactions _
             .Select(Function(r) r.substrate.JoinIterates(r.product).Select(Function(c) (c.compound, r.ID))) _
