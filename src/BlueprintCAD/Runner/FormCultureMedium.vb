@@ -173,7 +173,7 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
                 If allReactions.ContainsKey(rid) Then
                     Dim model As Reaction = allReactions(rid)
 
-                    Call DataGridView1.Rows.Add(model.ID, model.name, model.equation, model.ec_number.JoinBy(", "))
+                    Call DataGridView1.Rows.Add(model.name, model.ec_number.JoinBy(", "))
                 End If
             Next
         End If
