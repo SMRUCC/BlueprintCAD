@@ -39,6 +39,8 @@ Partial Class FormCultureMedium
         NumericUpDown1 = New NumericUpDown()
         GroupBox2 = New GroupBox()
         DataGridView1 = New DataGridView()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
         Button3 = New Button()
         TextBox1 = New TextBox()
         Label4 = New Label()
@@ -46,8 +48,6 @@ Partial Class FormCultureMedium
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
         TabPage2 = New TabPage()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
@@ -137,7 +137,7 @@ Partial Class FormCultureMedium
         ' 
         ' NumericUpDown1
         ' 
-        NumericUpDown1.Increment = New Decimal(New Integer() {100, 0, 0, 0})
+        NumericUpDown1.Increment = New Decimal(New Integer() {10, 0, 0, 0})
         NumericUpDown1.Location = New Point(606, 275)
         NumericUpDown1.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         NumericUpDown1.Name = "NumericUpDown1"
@@ -156,6 +156,7 @@ Partial Class FormCultureMedium
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column2, Column4})
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
@@ -169,8 +170,23 @@ Partial Class FormCultureMedium
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(3, 19)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(721, 142)
         DataGridView1.TabIndex = 0
+        ' 
+        ' Column2
+        ' 
+        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column2.HeaderText = "name"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "ec_number"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
         ' 
         ' Button3
         ' 
@@ -249,19 +265,6 @@ Partial Class FormCultureMedium
         TabPage2.TabIndex = 1
         TabPage2.Text = "Help"
         TabPage2.UseVisualStyleBackColor = True
-        ' 
-        ' Column2
-        ' 
-        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        Column2.HeaderText = "name"
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "ec_number"
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
         ' 
         ' FormCultureMedium
         ' 
