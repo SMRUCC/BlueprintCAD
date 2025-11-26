@@ -68,6 +68,9 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                         Return CreateMetabolismNetwork(list)
                     End Function)
 
+        Call "link the cellular component success!".info
+        Call "compile virtual cell model job done!".info
+
         Return 0
     End Function
 
@@ -293,6 +296,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     .ToArray
             }
         Next
+
+        Call "create the enzymatic network success".info
     End Function
 
     Private Iterator Function CreateCompoundModel(network As Dictionary(Of String, WebJSON.Reaction), none_enzymatic As Reaction()) As IEnumerable(Of Compound)
