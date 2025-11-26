@@ -559,7 +559,11 @@ Public Class FormAnnotation
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
 
         If Not Workbench.ServerConnection Then
-            MessageBox.Show("Sorry, no server connection for request operon dataset.", "No Server Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Sorry, no server connection for request operon dataset.",
+                            "No Server Connection",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning)
+            Return
         End If
 
         If OperonAnnotationCmd.Running Then
