@@ -559,6 +559,10 @@ Public Class FormAnnotation
         Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", sessionID:=App.PID, prefix:="operon_blast")
         Dim tempOutfile As String = tempfile.ChangeSuffix("txt")
 
+        If Not Workbench.ServerConnection Then
+            MessageBox.Show("Sorry, no server connection for request operon dataset.", "No Server Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+
         If OperonAnnotationCmd.Running Then
             Return
         Else
