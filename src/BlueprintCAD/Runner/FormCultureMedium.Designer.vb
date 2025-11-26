@@ -25,7 +25,7 @@ Partial Class FormCultureMedium
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         ListBox1 = New ListBox()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddToDCultureMediumToolStripMenuItem = New ToolStripMenuItem()
@@ -37,23 +37,25 @@ Partial Class FormCultureMedium
         ClearToolStripMenuItem = New ToolStripMenuItem()
         Label3 = New Label()
         NumericUpDown1 = New NumericUpDown()
-        GroupBox1 = New GroupBox()
         GroupBox2 = New GroupBox()
         DataGridView1 = New DataGridView()
-        Column1 = New DataGridViewTextBoxColumn()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
         Button3 = New Button()
         TextBox1 = New TextBox()
         Label4 = New Label()
         RichTextBox1 = New RichTextBox()
+        TabControl1 = New TabControl()
+        TabPage1 = New TabPage()
+        TabPage2 = New TabPage()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
-        GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        TabControl1.SuspendLayout()
+        TabPage1.SuspendLayout()
+        TabPage2.SuspendLayout()
         SuspendLayout()
         ' 
         ' ListBox1
@@ -61,9 +63,9 @@ Partial Class FormCultureMedium
         ListBox1.ContextMenuStrip = ContextMenuStrip1
         ListBox1.FormattingEnabled = True
         ListBox1.ItemHeight = 15
-        ListBox1.Location = New Point(9, 43)
+        ListBox1.Location = New Point(6, 25)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(203, 244)
+        ListBox1.Size = New Size(347, 244)
         ListBox1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -81,7 +83,7 @@ Partial Class FormCultureMedium
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(6, 21)
+        Label1.Location = New Point(3, 3)
         Label1.Name = "Label1"
         Label1.Size = New Size(149, 15)
         Label1.TabIndex = 1
@@ -90,7 +92,7 @@ Partial Class FormCultureMedium
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(255, 21)
+        Label2.Location = New Point(396, 7)
         Label2.Name = "Label2"
         Label2.Size = New Size(97, 15)
         Label2.TabIndex = 3
@@ -101,9 +103,9 @@ Partial Class FormCultureMedium
         ListBox2.ContextMenuStrip = ContextMenuStrip2
         ListBox2.FormattingEnabled = True
         ListBox2.ItemHeight = 15
-        ListBox2.Location = New Point(255, 43)
+        ListBox2.Location = New Point(396, 25)
         ListBox2.Name = "ListBox2"
-        ListBox2.Size = New Size(212, 244)
+        ListBox2.Size = New Size(334, 244)
         ListBox2.TabIndex = 4
         ' 
         ' ContextMenuStrip2
@@ -127,7 +129,7 @@ Partial Class FormCultureMedium
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(255, 295)
+        Label3.Location = New Point(520, 279)
         Label3.Name = "Label3"
         Label3.Size = New Size(80, 15)
         Label3.TabIndex = 5
@@ -136,37 +138,18 @@ Partial Class FormCultureMedium
         ' NumericUpDown1
         ' 
         NumericUpDown1.Increment = New Decimal(New Integer() {100, 0, 0, 0})
-        NumericUpDown1.Location = New Point(343, 293)
+        NumericUpDown1.Location = New Point(606, 275)
         NumericUpDown1.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         NumericUpDown1.Name = "NumericUpDown1"
         NumericUpDown1.Size = New Size(124, 23)
         NumericUpDown1.TabIndex = 6
         ' 
-        ' GroupBox1
-        ' 
-        GroupBox1.Controls.Add(GroupBox2)
-        GroupBox1.Controls.Add(Button3)
-        GroupBox1.Controls.Add(TextBox1)
-        GroupBox1.Controls.Add(Label4)
-        GroupBox1.Controls.Add(Label1)
-        GroupBox1.Controls.Add(ListBox1)
-        GroupBox1.Controls.Add(Label2)
-        GroupBox1.Controls.Add(ListBox2)
-        GroupBox1.Controls.Add(NumericUpDown1)
-        GroupBox1.Controls.Add(Label3)
-        GroupBox1.Location = New Point(4, 3)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(473, 499)
-        GroupBox1.TabIndex = 9
-        GroupBox1.TabStop = False
-        GroupBox1.Text = "Add Compound To Culture Medium"
-        ' 
         ' GroupBox2
         ' 
         GroupBox2.Controls.Add(DataGridView1)
-        GroupBox2.Location = New Point(9, 322)
+        GroupBox2.Location = New Point(6, 304)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(458, 171)
+        GroupBox2.Size = New Size(727, 164)
         GroupBox2.TabIndex = 10
         GroupBox2.TabStop = False
         GroupBox2.Text = "Associated Membrane Transportation"
@@ -174,49 +157,24 @@ Partial Class FormCultureMedium
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4})
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = SystemColors.Window
-        DataGridViewCellStyle1.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
-        DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column2, Column4})
+        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = SystemColors.Window
+        DataGridViewCellStyle2.Font = New Font("Cambria", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle2.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(3, 19)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(452, 149)
+        DataGridView1.Size = New Size(721, 142)
         DataGridView1.TabIndex = 0
-        ' 
-        ' Column1
-        ' 
-        Column1.HeaderText = "ID"
-        Column1.Name = "Column1"
-        Column1.ReadOnly = True
-        ' 
-        ' Column2
-        ' 
-        Column2.HeaderText = "name"
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        ' 
-        ' Column3
-        ' 
-        Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        Column3.HeaderText = "equation"
-        Column3.Name = "Column3"
-        Column3.ReadOnly = True
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "ec_number"
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
         ' 
         ' Button3
         ' 
-        Button3.Location = New Point(141, 293)
+        Button3.Location = New Point(282, 275)
         Button3.Name = "Button3"
         Button3.Size = New Size(71, 23)
         Button3.TabIndex = 9
@@ -225,15 +183,15 @@ Partial Class FormCultureMedium
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(9, 293)
+        TextBox1.Location = New Point(6, 275)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(126, 23)
+        TextBox1.Size = New Size(270, 23)
         TextBox1.TabIndex = 8
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(218, 161)
+        Label4.Location = New Point(359, 143)
         Label4.Name = "Label4"
         Label4.Size = New Size(31, 15)
         Label4.TabIndex = 7
@@ -243,25 +201,82 @@ Partial Class FormCultureMedium
         ' 
         RichTextBox1.BackColor = Color.WhiteSmoke
         RichTextBox1.BorderStyle = BorderStyle.None
-        RichTextBox1.Location = New Point(483, 5)
+        RichTextBox1.Dock = DockStyle.Fill
+        RichTextBox1.Location = New Point(3, 3)
         RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(260, 494)
+        RichTextBox1.Size = New Size(733, 468)
         RichTextBox1.TabIndex = 10
         RichTextBox1.Text = ""
         ' 
+        ' TabControl1
+        ' 
+        TabControl1.Controls.Add(TabPage1)
+        TabControl1.Controls.Add(TabPage2)
+        TabControl1.Dock = DockStyle.Fill
+        TabControl1.Location = New Point(0, 0)
+        TabControl1.Name = "TabControl1"
+        TabControl1.SelectedIndex = 0
+        TabControl1.Size = New Size(747, 502)
+        TabControl1.TabIndex = 11
+        ' 
+        ' TabPage1
+        ' 
+        TabPage1.Controls.Add(GroupBox2)
+        TabPage1.Controls.Add(ListBox1)
+        TabPage1.Controls.Add(Button3)
+        TabPage1.Controls.Add(Label3)
+        TabPage1.Controls.Add(TextBox1)
+        TabPage1.Controls.Add(NumericUpDown1)
+        TabPage1.Controls.Add(Label4)
+        TabPage1.Controls.Add(ListBox2)
+        TabPage1.Controls.Add(Label1)
+        TabPage1.Controls.Add(Label2)
+        TabPage1.Location = New Point(4, 24)
+        TabPage1.Name = "TabPage1"
+        TabPage1.Padding = New Padding(3)
+        TabPage1.Size = New Size(739, 474)
+        TabPage1.TabIndex = 0
+        TabPage1.Text = "Set Culture Medium"
+        TabPage1.UseVisualStyleBackColor = True
+        ' 
+        ' TabPage2
+        ' 
+        TabPage2.Controls.Add(RichTextBox1)
+        TabPage2.Location = New Point(4, 24)
+        TabPage2.Name = "TabPage2"
+        TabPage2.Padding = New Padding(3)
+        TabPage2.Size = New Size(739, 474)
+        TabPage2.TabIndex = 1
+        TabPage2.Text = "Help"
+        TabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' Column2
+        ' 
+        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column2.HeaderText = "name"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "ec_number"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        ' 
         ' FormCultureMedium
         ' 
-        Controls.Add(RichTextBox1)
-        Controls.Add(GroupBox1)
+        Controls.Add(TabControl1)
         Name = "FormCultureMedium"
         Size = New Size(747, 502)
         ContextMenuStrip1.ResumeLayout(False)
         ContextMenuStrip2.ResumeLayout(False)
         CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
-        GroupBox1.ResumeLayout(False)
-        GroupBox1.PerformLayout()
         GroupBox2.ResumeLayout(False)
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        TabControl1.ResumeLayout(False)
+        TabPage1.ResumeLayout(False)
+        TabPage1.PerformLayout()
+        TabPage2.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -276,15 +291,15 @@ Partial Class FormCultureMedium
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents RemovesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class
