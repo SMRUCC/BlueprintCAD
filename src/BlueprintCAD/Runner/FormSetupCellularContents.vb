@@ -14,7 +14,7 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
 
     Dim wizard As Wizard
     Dim sel As CompoundContentData
-    Dim data As Dictionary(Of String, CompoundContentData())
+    Dim data As New Dictionary(Of String, CompoundContentData())
     Dim selCellKey As String
     Dim search As QGramIndex
 
