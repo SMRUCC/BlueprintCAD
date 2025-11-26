@@ -22,6 +22,7 @@ Partial Class FormSetupCellularContents
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         GroupBox1 = New GroupBox()
         ListBox1 = New ListBox()
         GroupBox2 = New GroupBox()
@@ -31,8 +32,11 @@ Partial Class FormSetupCellularContents
         Button1 = New Button()
         TextBox1 = New TextBox()
         Label1 = New Label()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        MakeRandomToolStripMenuItem = New ToolStripMenuItem()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
+        ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' GroupBox1
@@ -47,6 +51,7 @@ Partial Class FormSetupCellularContents
         ' 
         ' ListBox1
         ' 
+        ListBox1.ContextMenuStrip = ContextMenuStrip1
         ListBox1.Dock = DockStyle.Fill
         ListBox1.FormattingEnabled = True
         ListBox1.ItemHeight = 15
@@ -120,6 +125,18 @@ Partial Class FormSetupCellularContents
         Label1.TabIndex = 1
         Label1.Text = "Search:"
         ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {MakeRandomToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(152, 26)
+        ' 
+        ' MakeRandomToolStripMenuItem
+        ' 
+        MakeRandomToolStripMenuItem.Name = "MakeRandomToolStripMenuItem"
+        MakeRandomToolStripMenuItem.Size = New Size(151, 22)
+        MakeRandomToolStripMenuItem.Text = "Make Random"
+        ' 
         ' FormSetupCellularContents
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -131,6 +148,7 @@ Partial Class FormSetupCellularContents
         GroupBox1.ResumeLayout(False)
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
+        ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -143,5 +161,7 @@ Partial Class FormSetupCellularContents
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents MakeRandomToolStripMenuItem As ToolStripMenuItem
 
 End Class

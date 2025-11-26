@@ -2,7 +2,7 @@
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
-Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
+Imports randf = Microsoft.VisualBasic.Math.RandomExtensions
 
 Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
 
@@ -21,8 +21,21 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
         wizard = DirectCast(data, Wizard)
 
-        For Each model As String In wizard.models.Keys
-            Call ListBox1.Items.Add(model)
+        For Each model_id As String In wizard.models.Keys
+            Dim copyNumber As Double = wizard.config.copy_number(model_id)
+            Dim model = wizard.models(model_id).model
+            Dim compounds As CompoundContentData() = model.metabolismStructure.compounds _
+                .Select(Function(a)
+                            Return New CompoundContentData With {
+                                .content = copyNumber,
+                                .id = a.ID,
+                                .name = a.name
+                            }
+                        End Function) _
+                .ToArray
+
+            Call Me.data.Add(model_id, compounds)
+            Call ListBox1.Items.Add(model_id)
         Next
     End Sub
 
@@ -31,7 +44,11 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
     End Function
 
     Public Function OK() As Boolean Implements IWizardUI.OK
+        For Each name As String In wizard.models.Keys
+            wizard.config.mapping.status(name) = data(name).ToDictionary(Function(c) c.id, Function(c) c.content)
+        Next
 
+        Return True
     End Function
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
@@ -46,19 +63,7 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
     End Sub
 
     Private Sub refreshCompoundList(key As String)
-        Dim model As VirtualCell = wizard.models(key).model
-        Dim compounds As CompoundContentData() = data.ComputeIfAbsent(
-            key, lazyValue:=Function(id)
-                                Return model.metabolismStructure.compounds _
-                                    .Select(Function(a)
-                                                Return New CompoundContentData With {
-                                                    .content = 0,
-                                                    .id = a.ID,
-                                                    .name = a.name
-                                                }
-                                            End Function) _
-                                    .ToArray
-                            End Function)
+        Dim compounds = data(key)
 
         Call ListBox2.Items.Clear()
 
@@ -107,5 +112,19 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
         Else
             sel.content = Val(Strings.Trim(TextBox2.Text))
         End If
+    End Sub
+
+    Private Sub MakeRandomToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MakeRandomToolStripMenuItem.Click
+        If ListBox1.SelectedIndex < 0 Then
+            Return
+        End If
+
+        Dim cell_id As String = ListBox1.SelectedItem.ToString
+        Dim list = data(cell_id)
+        Dim upper As Double = wizard.config.copy_number(cell_id)
+
+        For Each item As CompoundContentData In list
+            item.content = randf.NextDouble * upper
+        Next
     End Sub
 End Class
