@@ -75,8 +75,8 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
             Return
         End If
 
-        Dim data As CompoundContentData = ListBox2.SelectedItem
-        TextBox2.Text = data.content
+        sel = ListBox2.SelectedItem
+        TextBox2.Text = sel.content
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
@@ -99,5 +99,13 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
         For Each hit As FindResult In find
             Call ListBox2.Items.Add(data(hit.index))
         Next
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        If sel Is Nothing Then
+            Return
+        Else
+            sel.content = Val(Strings.Trim(TextBox2.Text))
+        End If
     End Sub
 End Class
