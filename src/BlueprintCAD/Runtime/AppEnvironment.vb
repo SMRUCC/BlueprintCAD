@@ -8,7 +8,7 @@ Module AppEnvironment
     Public ReadOnly Property WebRoot As String
         Get
             Dim dev As String = $"{App.HOME}/../../pages/index.html"
-            Dim prod As String = $"{App.HOME}/pages/index.html"
+            Dim prod As String = $"{App.HOME}/resources/web/index.html"
 
             If prod.FileExists Then
                 Return prod.ParentPath
