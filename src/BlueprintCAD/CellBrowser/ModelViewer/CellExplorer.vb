@@ -16,10 +16,10 @@ Public Class CellExplorer
     End Sub
 
     Private Sub LoadCellComponents()
-        Dim tree As New JsonObjectTree("", model.cellular_id)
+        Dim tree As New JsonObject With {.Id = model.cellular_id}
 
         viewer.Tag = model.cellular_id
-        viewer.Render(tree)
+        viewer.Render(New JsonObjectTree(tree))
     End Sub
 
     Private Sub CellExplorer_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
