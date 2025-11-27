@@ -24,15 +24,62 @@ Partial Class CellExplorer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CellExplorer))
+        ToolStrip1 = New ToolStrip()
+        ToolStripLabel1 = New ToolStripLabel()
+        ToolStripSpringTextBox1 = New Galaxy.CommonControls.ToolStripSpringTextBox()
+        ToolStripButton1 = New ToolStripButton()
+        ToolStrip1.SuspendLayout()
         SuspendLayout()
+        ' 
+        ' ToolStrip1
+        ' 
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripSpringTextBox1, ToolStripButton1})
+        ToolStrip1.Location = New Point(0, 0)
+        ToolStrip1.Name = "ToolStrip1"
+        ToolStrip1.Size = New Size(366, 25)
+        ToolStrip1.TabIndex = 0
+        ToolStrip1.Text = "ToolStrip1"
+        ' 
+        ' ToolStripLabel1
+        ' 
+        ToolStripLabel1.Name = "ToolStripLabel1"
+        ToolStripLabel1.Size = New Size(45, 22)
+        ToolStripLabel1.Text = "Search:"
+        ' 
+        ' ToolStripSpringTextBox1
+        ' 
+        ToolStripSpringTextBox1.Name = "ToolStripSpringTextBox1"
+        ToolStripSpringTextBox1.Size = New Size(255, 25)
+        ' 
+        ' ToolStripButton1
+        ' 
+        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
+        ToolStripButton1.ImageTransparentColor = Color.Magenta
+        ToolStripButton1.Name = "ToolStripButton1"
+        ToolStripButton1.Size = New Size(23, 22)
+        ToolStripButton1.Text = "ToolStripButton1"
         ' 
         ' CellExplorer
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(366, 683)
+        Controls.Add(ToolStrip1)
+        DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
+        DoubleBuffered = True
         Name = "CellExplorer"
-        Text = "Form1"
+        ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
+        ToolStrip1.ResumeLayout(False)
+        ToolStrip1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
+
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents ToolStripSpringTextBox1 As Galaxy.CommonControls.ToolStripSpringTextBox
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class
