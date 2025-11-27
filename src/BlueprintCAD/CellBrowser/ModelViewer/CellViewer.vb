@@ -1,4 +1,5 @@
 ﻿Imports Galaxy.Workbench
+Imports Microsoft.Web.WebView2.Core
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Public Class CellViewer
@@ -33,4 +34,7 @@ Public Class CellViewer
         Return Me
     End Function
 
+    Private Sub WebView21_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs)
+        WebView21.CoreWebView2.Navigate($"http://localhost:{WebPort}/cell_graph.html")
+    End Sub
 End Class

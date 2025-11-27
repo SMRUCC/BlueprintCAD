@@ -23,26 +23,9 @@ Partial Class CellViewer : Inherits DocumentWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        SplitContainer1 = New SplitContainer()
         WebView21 = New Microsoft.Web.WebView2.WinForms.WebView2()
-        CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
-        SplitContainer1.Panel2.SuspendLayout()
-        SplitContainer1.SuspendLayout()
         CType(WebView21, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' SplitContainer1
-        ' 
-        SplitContainer1.Dock = DockStyle.Fill
-        SplitContainer1.Location = New Point(0, 0)
-        SplitContainer1.Name = "SplitContainer1"
-        ' 
-        ' SplitContainer1.Panel2
-        ' 
-        SplitContainer1.Panel2.Controls.Add(WebView21)
-        SplitContainer1.Size = New Size(1532, 884)
-        SplitContainer1.SplitterDistance = 510
-        SplitContainer1.TabIndex = 1
         ' 
         ' WebView21
         ' 
@@ -52,8 +35,8 @@ Partial Class CellViewer : Inherits DocumentWindow
         WebView21.Dock = DockStyle.Fill
         WebView21.Location = New Point(0, 0)
         WebView21.Name = "WebView21"
-        WebView21.Size = New Size(1018, 884)
-        WebView21.TabIndex = 0
+        WebView21.Size = New Size(1532, 884)
+        WebView21.TabIndex = 1
         WebView21.ZoomFactor = 1R
         ' 
         ' CellViewer
@@ -61,18 +44,16 @@ Partial Class CellViewer : Inherits DocumentWindow
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1532, 884)
-        Controls.Add(SplitContainer1)
+        Controls.Add(WebView21)
+        DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
         DoubleBuffered = True
         Name = "CellViewer"
+        ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
         TabPageContextMenuStrip = DockContextMenuStrip1
         Text = "Virtual Cell Model Viewer"
-        SplitContainer1.Panel2.ResumeLayout(False)
-        CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
-        SplitContainer1.ResumeLayout(False)
         CType(WebView21, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents WebView21 As Microsoft.Web.WebView2.WinForms.WebView2
 End Class
