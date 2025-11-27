@@ -10,6 +10,7 @@ Public Class CellExplorer
 
     Dim model As VirtualCell
     Dim WithEvents viewer As JsonViewer
+    Dim edges
 
     Public Sub LoadModel(model As VirtualCell)
         Me.model = model
@@ -59,5 +60,10 @@ Public Class CellExplorer
         Panel1.Controls.Add(viewer)
 
         ApplyVsTheme(ToolStrip1, viewer.GetContextMenu)
+    End Sub
+
+    Private Sub viewer_FindAction(node As JsonViewerTreeNode, text As String) Handles viewer.FindAction
+        Dim val As Object = DirectCast(node.Tag, JsonObject).Value
+
     End Sub
 End Class
