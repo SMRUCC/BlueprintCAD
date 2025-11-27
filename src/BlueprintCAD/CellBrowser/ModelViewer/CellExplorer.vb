@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports Galaxy.Data.JSON
+Imports Galaxy.Data.JSON.Models
 Imports Galaxy.Workbench
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -11,11 +12,14 @@ Public Class CellExplorer
 
     Public Sub LoadModel(model As VirtualCell)
         Me.model = model
-        ProgressSpinner.DoLoading(Sub() Call LoadCellComponents())
+        ProgressSpinner.DoLoading(Sub() Call LoadCellComponents(), host:=Me)
     End Sub
 
     Private Sub LoadCellComponents()
+        Dim tree As New JsonObjectTree("", model.cellular_id)
 
+        viewer.Tag = model.cellular_id
+        viewer.Render(tree)
     End Sub
 
     Private Sub CellExplorer_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
