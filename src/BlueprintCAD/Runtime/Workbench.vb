@@ -50,6 +50,8 @@ Public Module Workbench
 
     Public Sub SetHost(appHost As FormMain)
         CommonRuntime.Hook(appHost)
+        AppEnvironment.Init()
+
         ' debug used
         ' App.SetSystemTemp("G:\BlueprintCAD\demo\tmp")
 
