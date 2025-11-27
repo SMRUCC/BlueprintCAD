@@ -1,4 +1,5 @@
 ﻿Imports Galaxy.Workbench
+Imports Microsoft.VisualStudio.WinForms.Docking
 Imports Microsoft.Web.WebView2.Core
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
@@ -6,9 +7,13 @@ Public Class CellViewer
 
     Dim cell As VirtualCell
     Dim filepath As String
+    Dim explorer As CellExplorer
 
     Private Async Sub CellViewer_Load(sender As Object, e As EventArgs) Handles Me.Load
         Await WebViewLoader.Init(WebView21)
+
+        explorer = New CellExplorer
+        explorer.Show(Workbench.AppHost.GetDockPanel, dockState:=DockState.DockLeft)
     End Sub
 
     Private Sub CellViewer_Activated(sender As Object, e As EventArgs) Handles Me.Activated
@@ -27,8 +32,9 @@ Public Class CellViewer
 
     Public Function LoadModel(file As String) As CellViewer
         filepath = file
-        cell = file.LoadXml(Of VirtualCell)
 
+        Call ProgressSpinner.DoLoading(Sub() cell = file.LoadXml(Of VirtualCell))
+        Call explorer.LoadModel(cell)
         Call CellViewer_Activated(Nothing, Nothing)
 
         Return Me
