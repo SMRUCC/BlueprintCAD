@@ -1,6 +1,7 @@
 ﻿Imports System.Windows.Controls
 Imports BlueprintCAD.UIData
 Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
 Imports Microsoft.VisualBasic.Data.GraphTheory
 Imports Microsoft.VisualBasic.Data.GraphTheory.Analysis.Dijkstra
@@ -20,10 +21,11 @@ Public Class FormPhenotypePath
 
     Public Function LoadNetwork(network As Dictionary(Of String, FluxEdge),
                                 symbols As Dictionary(Of String, CompoundInfo),
+                                ignores As Index(Of String),
                                 ByRef g As NetworkGraph) As FormPhenotypePath
         If g Is Nothing Then
             g = TaskProgress.LoadData(streamLoad:=Function(bar As ITaskProgress)
-                                                      Return CreateNetwork(network, symbols, bar)
+                                                      Return CreateNetwork(network, symbols, ignores, bar)
                                                   End Function,
                                       title:="Initialize Data",
                                       info:="Build cellular network graph...",
@@ -47,7 +49,10 @@ Public Class FormPhenotypePath
         Return Me
     End Function
 
-    Private Shared Function CreateNetwork(network As Dictionary(Of String, FluxEdge), symbols As Dictionary(Of String, CompoundInfo), bar As ITaskProgress) As NetworkGraph
+    Private Shared Function CreateNetwork(network As Dictionary(Of String, FluxEdge),
+                                          symbols As Dictionary(Of String, CompoundInfo),
+                                          ignores As Index(Of String),
+                                          bar As ITaskProgress) As NetworkGraph
         Dim g As New NetworkGraph
         Dim n As Integer = network.Values.Count
         Dim d As Integer = n / 80
@@ -75,6 +80,10 @@ Public Class FormPhenotypePath
             For Each left As VariableFactor In rxn.left
                 Dim v As Microsoft.VisualBasic.Data.visualize.Network.Graph.Node = g.GetElementByID(left.id)
 
+                If left.mass_id Like ignores Then
+                    Continue For
+                End If
+
                 If v Is Nothing Then
                     Dim info As CompoundInfo = symbols.TryGetValue(left.mass_id)
                     Dim loc As String = If(left.compartment_id, "Unknown")
@@ -100,6 +109,10 @@ Public Class FormPhenotypePath
             Next
             For Each right As VariableFactor In rxn.right
                 Dim u As Microsoft.VisualBasic.Data.visualize.Network.Graph.Node = g.GetElementByID(right.id)
+
+                If right.mass_id Like ignores Then
+                    Continue For
+                End If
 
                 If u Is Nothing Then
                     Dim info As CompoundInfo = symbols.TryGetValue(right.mass_id)
