@@ -76,7 +76,7 @@ Public Class FormPhenotypePath
                 Dim v As Microsoft.VisualBasic.Data.visualize.Network.Graph.Node = g.GetElementByID(left.id)
 
                 If v Is Nothing Then
-                    Dim info As CompoundInfo = symbols.TryGetValue(left.id)
+                    Dim info As CompoundInfo = symbols.TryGetValue(left.mass_id)
                     Dim loc As String = If(left.compartment_id, "Unknown")
 
                     g.CreateNode(left.id, New NodeData With {
@@ -102,7 +102,7 @@ Public Class FormPhenotypePath
                 Dim u As Microsoft.VisualBasic.Data.visualize.Network.Graph.Node = g.GetElementByID(right.id)
 
                 If u Is Nothing Then
-                    Dim info As CompoundInfo = symbols.TryGetValue(right.id)
+                    Dim info As CompoundInfo = symbols.TryGetValue(right.mass_id)
                     Dim loc As String = If(right.compartment_id, "Unknown")
 
                     g.CreateNode(right.id, New NodeData With {
