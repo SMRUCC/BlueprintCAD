@@ -43,6 +43,8 @@ Partial Class FormPhenotypePath
         Button3 = New Button()
         ToolStrip1 = New ToolStrip()
         ToolStripLabel1 = New ToolStripLabel()
+        ToolStripSeparator1 = New ToolStripSeparator()
+        ToolStripButton1 = New ToolStripButton()
         GroupBox1 = New GroupBox()
         Label7 = New Label()
         Label6 = New Label()
@@ -51,10 +53,11 @@ Partial Class FormPhenotypePath
         GroupBox2 = New GroupBox()
         SplitContainer1 = New SplitContainer()
         Column1 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
         Column3 = New DataGridViewTextBoxColumn()
-        ToolStripSeparator1 = New ToolStripSeparator()
-        ToolStripButton1 = New ToolStripButton()
+        Label8 = New Label()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -123,7 +126,7 @@ Partial Class FormPhenotypePath
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3})
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column4, Column2, Column5, Column3})
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(3, 19)
         DataGridView1.Name = "DataGridView1"
@@ -206,8 +209,23 @@ Partial Class FormPhenotypePath
         ToolStripLabel1.Size = New Size(234, 22)
         ToolStripLabel1.Text = "Find Pathway From Node To Another Node"
         ' 
+        ' ToolStripSeparator1
+        ' 
+        ToolStripSeparator1.Name = "ToolStripSeparator1"
+        ToolStripSeparator1.Size = New Size(6, 25)
+        ' 
+        ' ToolStripButton1
+        ' 
+        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
+        ToolStripButton1.ImageTransparentColor = Color.Magenta
+        ToolStripButton1.Name = "ToolStripButton1"
+        ToolStripButton1.Size = New Size(23, 22)
+        ToolStripButton1.Text = "Export Pathway Table"
+        ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(Label8)
         GroupBox1.Controls.Add(Label7)
         GroupBox1.Controls.Add(Label6)
         GroupBox1.Controls.Add(Label3)
@@ -233,7 +251,7 @@ Partial Class FormPhenotypePath
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(94, 359)
+        Label7.Location = New Point(187, 359)
         Label7.Name = "Label7"
         Label7.Size = New Size(74, 15)
         Label7.TabIndex = 16
@@ -242,7 +260,7 @@ Partial Class FormPhenotypePath
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(33, 359)
+        Label6.Location = New Point(126, 359)
         Label6.Name = "Label6"
         Label6.Size = New Size(55, 15)
         Label6.TabIndex = 15
@@ -251,7 +269,7 @@ Partial Class FormPhenotypePath
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(78, 337)
+        Label3.Location = New Point(187, 338)
         Label3.Name = "Label3"
         Label3.Size = New Size(74, 15)
         Label3.TabIndex = 14
@@ -260,7 +278,7 @@ Partial Class FormPhenotypePath
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(34, 337)
+        Label2.Location = New Point(143, 338)
         Label2.Name = "Label2"
         Label2.Size = New Size(38, 15)
         Label2.TabIndex = 13
@@ -300,12 +318,27 @@ Partial Class FormPhenotypePath
         Column1.HeaderText = "FromNode"
         Column1.Name = "Column1"
         Column1.ReadOnly = True
+        Column1.Width = 300
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "FromNode Type"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        Column4.Width = 150
         ' 
         ' Column2
         ' 
         Column2.HeaderText = "ToNode"
         Column2.Name = "Column2"
         Column2.ReadOnly = True
+        Column2.Width = 300
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "ToNode Type"
+        Column5.Name = "Column5"
+        Column5.ReadOnly = True
         ' 
         ' Column3
         ' 
@@ -313,19 +346,14 @@ Partial Class FormPhenotypePath
         Column3.Name = "Column3"
         Column3.ReadOnly = True
         ' 
-        ' ToolStripSeparator1
+        ' Label8
         ' 
-        ToolStripSeparator1.Name = "ToolStripSeparator1"
-        ToolStripSeparator1.Size = New Size(6, 25)
-        ' 
-        ' ToolStripButton1
-        ' 
-        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
-        ToolStripButton1.ImageTransparentColor = Color.Magenta
-        ToolStripButton1.Name = "ToolStripButton1"
-        ToolStripButton1.Size = New Size(23, 22)
-        ToolStripButton1.Text = "Export Pathway Table"
+        Label8.AutoSize = True
+        Label8.Location = New Point(126, 388)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(156, 15)
+        Label8.TabIndex = 17
+        Label8.Text = "<No Pathway Route Result>"
         ' 
         ' FormPhenotypePath
         ' 
@@ -376,9 +404,12 @@ Partial Class FormPhenotypePath
     Friend WithEvents SetAsFromNodeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents SetAsTargetNodeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Label8 As Label
 End Class

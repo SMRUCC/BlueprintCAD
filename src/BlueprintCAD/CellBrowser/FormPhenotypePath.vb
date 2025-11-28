@@ -241,8 +241,18 @@ Public Class FormPhenotypePath
             For Each link As VertexEdge In pathway.AsEnumerable
                 Dim edge As Edge = g.GetEdgeByID(link.ID)
 
-                Call DataGridView1.Rows.Add(edge.U.data.label, edge.V.data.label, edge.data(NamesOf.REFLECTION_ID_MAPPING_INTERACTION_TYPE))
+                Call DataGridView1.Rows.Add(edge.U.data.label, edge.U.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE),
+                                            edge.V.data.label, edge.V.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE),
+                                            edge.data(NamesOf.REFLECTION_ID_MAPPING_INTERACTION_TYPE))
             Next
+
+            If pathway.Count = 0 Then
+                Label8.Text = "<No Pathway Route Result>"
+            Else
+                Label8.Text = $"Found a shortest pathway route with {pathway.Count} steps!"
+            End If
+        Else
+            Label8.Text = "<No Pathway Route Result>"
         End If
     End Sub
 
