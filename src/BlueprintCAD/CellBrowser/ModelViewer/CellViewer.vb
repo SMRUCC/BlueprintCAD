@@ -1,4 +1,5 @@
 ﻿Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.Data.visualize.Network
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports Microsoft.Web.WebView2.Core
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -34,7 +35,7 @@ Public Class CellViewer
         filepath = file
 
         Call ProgressSpinner.DoLoading(Sub() cell = file.LoadXml(Of VirtualCell))
-        Call explorer.LoadModel(cell)
+        Call explorer.LoadModel(cell, Me)
         Call CellViewer_Activated(Nothing, Nothing)
 
         Return Me
@@ -42,5 +43,9 @@ Public Class CellViewer
 
     Private Sub WebView21_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs)
         WebView21.CoreWebView2.Navigate($"http://localhost:{WebPort}/cell_graph.html")
+    End Sub
+
+    Public Sub ViewGraph(g As graphology.graph)
+
     End Sub
 End Class

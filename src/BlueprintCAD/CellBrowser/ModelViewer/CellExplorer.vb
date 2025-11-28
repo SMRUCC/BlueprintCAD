@@ -18,9 +18,12 @@ Public Class CellExplorer
     Dim edges
     Dim links As New Dictionary(Of String, List(Of Reaction))
     Dim compounds As New Dictionary(Of String, Compound)
+    Dim web As CellViewer
 
-    Public Sub LoadModel(model As VirtualCell)
+    Public Sub LoadModel(model As VirtualCell, web As CellViewer)
         Me.model = model
+        Me.web = web
+
         ProgressSpinner.DoLoading(Sub() Call LoadCellComponents(), host:=Me)
     End Sub
 
@@ -111,7 +114,7 @@ Public Class CellExplorer
     ''' view graph
     ''' </summary>
     ''' <param name="node"></param>
-    Private Sub viewer_ViewAction(node As JsonViewerTreeNode) Handles viewer.ViewAction
+    Private Async Sub viewer_ViewAction(node As JsonViewerTreeNode) Handles viewer.ViewAction
         Dim json As JsonObject = TryCast(node.Tag, JsonObject)
 
         If json Is Nothing Then
@@ -123,51 +126,57 @@ Public Class CellExplorer
 
             If links.ContainsKey(meta.ID) Then
                 Dim links = Me.links(meta.ID)
-                Dim g As New NetworkGraph
-                Dim class_metab As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Red
-                Dim class_rxn As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Blue
+                Dim sigma = Await Task.Run(Function() BuildGraph(links))
 
-                For Each rxn As Reaction In links
-                    If g.GetElementByID(rxn.ID) Is Nothing Then
-                        Call g.CreateNode(rxn.ID, New NodeData With {
-                            .label = rxn.name,
-                            .color = class_rxn
-                        })
-                    End If
-
-                    Dim rxnNode = g.GetElementByID(rxn.ID)
-
-                    For Each left As CompoundFactor In rxn.substrate
-                        If g.GetElementByID(left.compound) Is Nothing Then
-                            Dim metadata = compounds.TryGetValue(left.compound)
-
-                            Call g.CreateNode(left.compound, New NodeData With {
-                                .label = If(metadata Is Nothing, left.compound, metadata.name),
-                                .color = class_metab
-                            })
-                        End If
-
-                        Call g.CreateEdge(g.GetElementByID(left.compound), rxnNode, left.factor)
-                    Next
-                    For Each right As CompoundFactor In rxn.product
-                        If g.GetElementByID(right.compound) Is Nothing Then
-                            Dim metadata = compounds.TryGetValue(right.compound)
-
-                            Call g.CreateNode(right.compound, New NodeData With {
-                                .label = If(metadata Is Nothing, right.compound, metadata.name),
-                                .color = class_metab
-                            })
-                        End If
-
-                        Call g.CreateEdge(rxnNode, g.GetElementByID(right.compound), right.factor)
-                    Next
-                Next
-
-                Call g.ApplyAnalysis
-                Call g.doRandomLayout
-
-                Dim sigma = g.AsGraphology
+                Call web.ViewGraph(sigma)
             End If
         End If
     End Sub
+
+    Private Function BuildGraph(links As IEnumerable(Of Reaction)) As graphology.graph
+        Dim g As New NetworkGraph
+        Dim class_metab As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Red
+        Dim class_rxn As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Blue
+
+        For Each rxn As Reaction In links
+            If g.GetElementByID(rxn.ID) Is Nothing Then
+                Call g.CreateNode(rxn.ID, New NodeData With {
+                    .label = rxn.name,
+                    .color = class_rxn
+                })
+            End If
+
+            Dim rxnNode = g.GetElementByID(rxn.ID)
+
+            For Each left As CompoundFactor In rxn.substrate
+                If g.GetElementByID(left.compound) Is Nothing Then
+                    Dim metadata = compounds.TryGetValue(left.compound)
+
+                    Call g.CreateNode(left.compound, New NodeData With {
+                        .label = If(metadata Is Nothing, left.compound, metadata.name),
+                        .color = class_metab
+                    })
+                End If
+
+                Call g.CreateEdge(g.GetElementByID(left.compound), rxnNode, left.factor)
+            Next
+            For Each right As CompoundFactor In rxn.product
+                If g.GetElementByID(right.compound) Is Nothing Then
+                    Dim metadata = compounds.TryGetValue(right.compound)
+
+                    Call g.CreateNode(right.compound, New NodeData With {
+                        .label = If(metadata Is Nothing, right.compound, metadata.name),
+                        .color = class_metab
+                    })
+                End If
+
+                Call g.CreateEdge(rxnNode, g.GetElementByID(right.compound), right.factor)
+            Next
+        Next
+
+        Call g.ApplyAnalysis
+        Call g.doRandomLayout
+
+        Return g.AsGraphology
+    End Function
 End Class
