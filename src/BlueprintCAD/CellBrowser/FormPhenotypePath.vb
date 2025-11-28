@@ -1,5 +1,7 @@
-﻿Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
+﻿Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
+Imports Microsoft.VisualBasic.Language
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 
 Public Class FormPhenotypePath
@@ -8,8 +10,44 @@ Public Class FormPhenotypePath
     Dim vertex As Node()
     Dim qgram As QGramIndex
 
-    Public Function LoadNetwork(network As Dictionary(Of String, FluxEdge)) As FormPhenotypePath
-        g = New NetworkGraph
+    Public Function LoadNetwork(network As Dictionary(Of String, FluxEdge), ByRef g As NetworkGraph) As FormPhenotypePath
+        Dim offset As Integer
+
+        If g Is Nothing Then
+            g = TaskProgress.LoadData(streamLoad:=Function(bar As ITaskProgress)
+                                                      Return CreateNetwork(network, bar)
+                                                  End Function,
+                                      title:="Initialize Data",
+                                      info:="Build cellular network graph...",
+                                      canbeCancel:=True)
+        End If
+
+        Me.g = g
+        Me.qgram = New QGramIndex(6)
+        Me.vertex = g.vertex.ToArray
+
+        For Each v As Node In vertex
+            Call ListBox1.Items.Add(v.label)
+            Call ListBox2.Items.Add(v.label)
+            Call qgram.AddString(v.label, offset)
+
+            offset += 1
+        Next
+
+        Return Me
+    End Function
+
+    Private Shared Function CreateNetwork(network As Dictionary(Of String, FluxEdge), bar As ITaskProgress) As NetworkGraph
+        Dim g As New NetworkGraph
+        Dim n As Integer = network.Values.Count
+        Dim d As Integer = n / 80
+        Dim tick As i32 = 0
+
+        If d < 1 Then
+            d = 1
+        End If
+
+        Call bar.SetProgressMode()
 
         For Each rxn As FluxEdge In network.Values
             Dim rxnNode As Node = g.GetElementByID(rxn.id)
@@ -45,21 +83,12 @@ Public Class FormPhenotypePath
                     g.CreateEdge(rxnNode, u)
                 End If
             Next
+
+            If (++tick) Mod d = 0 Then
+                Call bar.SetProgress(CInt(tick / n * 100), $"Build cellular network graph... {rxn.id}")
+            End If
         Next
 
-        Dim offset As Integer
-
-        qgram = New QGramIndex(6)
-        vertex = g.vertex.ToArray
-
-        For Each v As Node In vertex
-            Call ListBox1.Items.Add(v.label)
-            Call ListBox2.Items.Add(v.label)
-            Call qgram.AddString(v.label, offset)
-
-            offset += 1
-        Next
-
-        Return Me
+        Return g
     End Function
 End Class

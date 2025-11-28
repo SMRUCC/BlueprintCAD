@@ -9,6 +9,7 @@ Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Data.Framework
 Imports Microsoft.VisualBasic.Data.Framework.IO
+Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Scripting.Runtime
@@ -708,8 +709,10 @@ Public Class CellBrowser
         End If
     End Sub
 
+    Dim cache_graph As NetworkGraph = Nothing
+
     Private Sub OpenPhenotypeTool()
-        Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network))
+        Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network, cache_graph))
     End Sub
 
     Private Sub CheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckAllToolStripMenuItem.Click
