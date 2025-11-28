@@ -1,6 +1,8 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FormPhenotypeDialog
-    Inherits System.Windows.Forms.Form
+﻿Imports Galaxy.Workbench.CommonDialogs
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FormPhenotypePath
+    Inherits InputDialog
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -22,9 +24,15 @@ Partial Class FormPhenotypeDialog
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form1"
+        SuspendLayout()
+        ' 
+        ' FormPhenotypePath
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(1294, 767)
+        Name = "FormPhenotypePath"
+        Text = "Phenotype Pathway"
+        ResumeLayout(False)
     End Sub
 End Class
