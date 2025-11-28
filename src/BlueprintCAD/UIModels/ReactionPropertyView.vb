@@ -10,8 +10,9 @@ Namespace UIData
         Public ReadOnly Property is_enzymatic As Boolean
         Public ReadOnly Property ec_number As String()
         Public ReadOnly Property compartment As String()
-        Public Property substrate As String()
-        Public Property product As String()
+        Public ReadOnly Property substrate As String()
+        Public ReadOnly Property product As String()
+        Public ReadOnly Property equation As String
 
         Sub New()
         End Sub
@@ -28,7 +29,7 @@ Namespace UIData
                             If list.ContainsKey(c.compound) Then
                                 Return list(c.compound).name
                             Else
-                                Return c
+                                Return c.compound
                             End If
                         End Function) _
                 .ToArray
@@ -37,10 +38,32 @@ Namespace UIData
                             If list.ContainsKey(c.compound) Then
                                 Return list(c.compound).name
                             Else
-                                Return c
+                                Return c.compound
                             End If
                         End Function) _
                 .ToArray
+
+            equation = rxn.substrate.Select(Function(c)
+                                                Dim name As String
+
+                                                If list.ContainsKey(c.compound) Then
+                                                    name = list(c.compound).name
+                                                Else
+                                                    name = c.compound
+                                                End If
+
+                                                Return If(c.factor = 1, name, $"{c.factor} {name}")
+                                            End Function).JoinBy(" + ") & " == " & rxn.product.Select(Function(c)
+                                                                                                          Dim name As String
+
+                                                                                                          If list.ContainsKey(c.compound) Then
+                                                                                                              name = list(c.compound).name
+                                                                                                          Else
+                                                                                                              name = c.compound
+                                                                                                          End If
+
+                                                                                                          Return If(c.factor = 1, name, $"{c.factor} {name}")
+                                                                                                      End Function).JoinBy(" + ")
         End Sub
 
     End Class
