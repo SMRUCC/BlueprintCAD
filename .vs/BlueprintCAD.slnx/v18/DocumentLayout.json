@@ -3,11 +3,14 @@
   "WorkspaceRootPath": "G:\\BlueprintCAD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB7C7275-7DBE-4B2E-1F73-206107C44FCF}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\graph-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data_science\\graph\\analysis\\dijkstra\\dijkstra.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{CB7C7275-7DBE-4B2E-1F73-206107C44FCF}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\graph-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data_science\\graph\\analysis\\dijkstra\\route.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\cellbrowser\\formphenotypepath.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|solutionrelative:src\\blueprintcad\\cellbrowser\\formphenotypepath.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB7C7275-7DBE-4B2E-1F73-206107C44FCF}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\graph-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data_science\\graph\\analysis\\dijkstra\\dijkstra.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB7C7275-7DBE-4B2E-1F73-206107C44FCF}|..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\graph-netcore5.vbproj|g:\\gcmodeller\\src\\runtime\\scibasic#\\data_science\\graph\\analysis\\dijkstra\\linkcalculator.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
@@ -30,9 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|g:\\blueprintcad\\src\\blueprintcad\\uimodels\\compoundcontentdata.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{7D529383-2DE8-8D98-580D-BB8E135A47C6}|src\\BlueprintCAD\\BlueprintCAD.vbproj|solutionrelative:src\\blueprintcad\\uimodels\\compoundcontentdata.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A0E3F21-4B58-BD89-477D-901180C22B71}|..\\GCModeller\\src\\GCModeller\\engine\\Dynamics\\Dynamics.NET5.vbproj|g:\\gcmodeller\\src\\gcmodeller\\engine\\dynamics\\core\\flux\\json.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -67,32 +67,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Route.vb",
+              "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\Route.vb",
+              "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\Route.vb",
+              "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\Route.vb",
+              "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\Route.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-11-28T10:06:36.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Dijkstra.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\Dijkstra.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\Dijkstra.vb",
               "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\Dijkstra.vb",
               "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\Dijkstra.vb",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAUwNUAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAmwM4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-11-28T09:56:00.146Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LinkCalculator.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\LinkCalculator.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\LinkCalculator.vb",
               "ToolTip": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\LinkCalculator.vb",
               "RelativeToolTip": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Data_science\\Graph\\Analysis\\Dijkstra\\LinkCalculator.vb",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAgwFkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAowIAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-11-28T09:55:42.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Kosaraju.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\Datavisualization.Network\\Analysis\\Kosaraju.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\gr\\network-visualization\\Datavisualization.Network\\Analysis\\Kosaraju.vb",
@@ -105,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CompoundContentData.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\UIModels\\CompoundContentData.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\UIModels\\CompoundContentData.vb",
@@ -118,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "NodeView.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\UIModels\\NodeView.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\UIModels\\NodeView.vb",
@@ -131,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CellBrowser.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\CellBrowser\\CellBrowser.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\CellBrowser\\CellBrowser.vb",
@@ -150,14 +163,14 @@
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\CellBrowser\\FormPhenotypePath.vb",
               "ToolTip": "G:\\BlueprintCAD\\src\\BlueprintCAD\\CellBrowser\\FormPhenotypePath.vb",
               "RelativeToolTip": "src\\BlueprintCAD\\CellBrowser\\FormPhenotypePath.vb",
-              "ViewState": "AgIAALgAAAAAAAAAAAAYwOMAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAALgAAAAAAAAAAAAYwOYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-11-28T08:57:26.945Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FormPhenotypePath.vb [Design]",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\CellBrowser\\FormPhenotypePath.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\CellBrowser\\FormPhenotypePath.vb",
@@ -176,40 +189,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "1e76b1a8-1455-4af9-9b40-17ba2c8bc32e",
-        "Display": 1,
-        "X": 804,
-        "Y": 76,
-        "Width": 1712,
-        "Height": 1326,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "JSON.vb",
-              "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\engine\\Dynamics\\Core\\Flux\\JSON.vb",
-              "RelativeDocumentMoniker": "..\\GCModeller\\src\\GCModeller\\engine\\Dynamics\\Core\\Flux\\JSON.vb",
-              "ToolTip": "G:\\GCModeller\\src\\GCModeller\\engine\\Dynamics\\Core\\Flux\\JSON.vb",
-              "RelativeToolTip": "..\\GCModeller\\src\\GCModeller\\engine\\Dynamics\\Core\\Flux\\JSON.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-11-28T08:57:52.949Z",
-              "EditorCaption": ""
             }
           ]
         }

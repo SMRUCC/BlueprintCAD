@@ -12,7 +12,6 @@ Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
 Public Class FormPhenotypePath
 
     Dim g As NetworkGraph
-    Dim vertex As Node()
     Dim qgram As QGramIndex
     Dim view As NodeView()
 
@@ -29,8 +28,8 @@ Public Class FormPhenotypePath
         End If
 
         Me.g = g
-        Me.vertex = g.vertex.ToArray
-        Me.view = vertex.AsParallel _
+        Me.view = g.vertex _
+            .AsParallel _
             .Where(Function(v) v.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE) <> "BiologicalProcess") _
             .Select(Function(v)
                         Return New NodeView With {
@@ -58,7 +57,7 @@ Public Class FormPhenotypePath
         Call bar.SetProgressMode()
 
         For Each rxn As FluxEdge In network.Values
-            Dim rxnNode As Node = g.GetElementByID(rxn.id)
+            Dim rxnNode As Microsoft.VisualBasic.Data.visualize.Network.Graph.Node = g.GetElementByID(rxn.id)
 
             If rxnNode Is Nothing Then
                 g.CreateNode(rxn.id, New NodeData With {
@@ -71,7 +70,7 @@ Public Class FormPhenotypePath
             End If
 
             For Each left As VariableFactor In rxn.left
-                Dim v As Node = g.GetElementByID(left.id)
+                Dim v As Microsoft.VisualBasic.Data.visualize.Network.Graph.Node = g.GetElementByID(left.id)
 
                 If v Is Nothing Then
                     Dim info As CompoundInfo = symbols.TryGetValue(left.id)
@@ -97,7 +96,7 @@ Public Class FormPhenotypePath
                 End If
             Next
             For Each right As VariableFactor In rxn.right
-                Dim u As Node = g.GetElementByID(right.id)
+                Dim u As Microsoft.VisualBasic.Data.visualize.Network.Graph.Node = g.GetElementByID(right.id)
 
                 If u Is Nothing Then
                     Dim info As CompoundInfo = symbols.TryGetValue(right.id)
@@ -225,7 +224,7 @@ Public Class FormPhenotypePath
             Return
         End If
 
-        Dim router As New DijkstraRouter(g, undirected:=False)
+        Dim router As DijkstraRouter = DijkstraRouter.FromNetwork(g, undirected:=False)
         Dim u = router.GetLocation(from.id)
         Dim v = router.GetLocation(target.id)
         Dim pathway As Route = router.CalculateMinCost(u, v)
