@@ -9,9 +9,11 @@ Namespace UIData
         Public ReadOnly Property id As String
         Public ReadOnly Property name As String
 
+        <Category("Cross Reference")>
         <TypeConverter(GetType(DefaultExpandedArray)), DesignerSerializationVisibility(DesignerSerializationVisibility.Content)>
         Public ReadOnly Property referenceID As String()
 
+        <Category("Cross Reference")>
         <TypeConverter(GetType(DefaultExpandedArray)), DesignerSerializationVisibility(DesignerSerializationVisibility.Content)>
         Public ReadOnly Property db_xrefs As String()
 
