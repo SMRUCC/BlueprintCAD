@@ -2,6 +2,7 @@
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports Microsoft.VisualStudio.WinForms.Docking
 
 Public Class FormEditor
 
@@ -12,7 +13,7 @@ Public Class FormEditor
     Private Async Sub FormEditor_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim nav As New FormNavigator
 
-        Call nav.Show()
+        Call nav.Show(Workbench.AppHost.GetDockPanel, DockState.DockLeft)
 
         GraphPad1.BackColor = Color.AliceBlue
         GraphPad1.Canvas = New Size(5000, 5000)

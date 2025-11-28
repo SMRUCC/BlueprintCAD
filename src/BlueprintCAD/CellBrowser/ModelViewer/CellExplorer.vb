@@ -68,7 +68,12 @@ Public Class CellExplorer
 
     End Sub
 
-    Private Sub viewer_MenuAction(sender As ToolStripMenuItem, node As Object) Handles viewer.MenuAction
+    Private Sub viewer_MenuAction(sender As ToolStripMenuItem, node As JsonObject) Handles viewer.MenuAction
+        Dim compound As Compound = TryCast(node.Value, Compound)
 
+        If compound IsNot Nothing Then
+            Dim url = $"http://biocad.innovation.ac.cn/molecule/{compound.ID}/"
+            Call Tools.OpenUrlWithDefaultBrowser(url)
+        End If
     End Sub
 End Class
