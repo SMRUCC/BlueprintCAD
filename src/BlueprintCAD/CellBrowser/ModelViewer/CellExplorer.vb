@@ -3,7 +3,11 @@ Imports BlueprintCAD.UIData
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.JSON.Models
 Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.Data.visualize.Network
+Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
+Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
 Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
@@ -12,6 +16,8 @@ Public Class CellExplorer
     Dim model As VirtualCell
     Dim WithEvents viewer As JsonViewer
     Dim edges
+    Dim links As New Dictionary(Of String, List(Of Reaction))
+    Dim compounds As New Dictionary(Of String, Compound)
 
     Public Sub LoadModel(model As VirtualCell)
         Me.model = model
@@ -37,9 +43,20 @@ Public Class CellExplorer
                     .Value = meta
                 }
 
-                Call metabolites.Fields.Add(obj)
+                compounds(meta.ID) = meta
+                metabolites.Fields.Add(obj)
             Next
         End If
+
+        For Each rxn As Reaction In model.metabolismStructure.reactions.AsEnumerable
+            For Each cpd As CompoundFactor In rxn.substrate.JoinIterates(rxn.product)
+                If Not links.ContainsKey(cpd.compound) Then
+                    Call links.Add(cpd.compound, New List(Of Reaction))
+                End If
+
+                Call links(cpd.compound).Add(rxn)
+            Next
+        Next
 
         Call tree.Fields.Add(metabolites)
 
@@ -95,6 +112,62 @@ Public Class CellExplorer
     ''' </summary>
     ''' <param name="node"></param>
     Private Sub viewer_ViewAction(node As JsonViewerTreeNode) Handles viewer.ViewAction
+        Dim json As JsonObject = TryCast(node.Tag, JsonObject)
 
+        If json Is Nothing Then
+            Return
+        End If
+
+        If TypeOf json.Value Is Compound Then
+            Dim meta As Compound = DirectCast(json.Value, Compound)
+
+            If links.ContainsKey(meta.ID) Then
+                Dim links = Me.links(meta.ID)
+                Dim g As New NetworkGraph
+                Dim class_metab As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Red
+                Dim class_rxn As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Blue
+
+                For Each rxn As Reaction In links
+                    If g.GetElementByID(rxn.ID) Is Nothing Then
+                        Call g.CreateNode(rxn.ID, New NodeData With {
+                            .label = rxn.name,
+                            .color = class_rxn
+                        })
+                    End If
+
+                    Dim rxnNode = g.GetElementByID(rxn.ID)
+
+                    For Each left As CompoundFactor In rxn.substrate
+                        If g.GetElementByID(left.compound) Is Nothing Then
+                            Dim metadata = compounds.TryGetValue(left.compound)
+
+                            Call g.CreateNode(left.compound, New NodeData With {
+                                .label = If(metadata Is Nothing, left.compound, metadata.name),
+                                .color = class_metab
+                            })
+                        End If
+
+                        Call g.CreateEdge(g.GetElementByID(left.compound), rxnNode, left.factor)
+                    Next
+                    For Each right As CompoundFactor In rxn.product
+                        If g.GetElementByID(right.compound) Is Nothing Then
+                            Dim metadata = compounds.TryGetValue(right.compound)
+
+                            Call g.CreateNode(right.compound, New NodeData With {
+                                .label = If(metadata Is Nothing, right.compound, metadata.name),
+                                .color = class_metab
+                            })
+                        End If
+
+                        Call g.CreateEdge(rxnNode, g.GetElementByID(right.compound), right.factor)
+                    Next
+                Next
+
+                Call g.ApplyAnalysis
+                Call g.doRandomLayout
+
+                Dim sigma = g.AsGraphology
+            End If
+        End If
     End Sub
 End Class
