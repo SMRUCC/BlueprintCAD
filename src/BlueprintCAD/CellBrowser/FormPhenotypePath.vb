@@ -233,8 +233,13 @@ Public Class FormPhenotypePath
 
         If Not pathway Is Nothing Then
             For Each link As VertexEdge In pathway.AsEnumerable
-                Dim edge As Edge = g.GetEdge(link.ID)
+                Dim edge As Edge = g.GetEdgeByID(link.ID)
+
             Next
         End If
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+
     End Sub
 End Class
