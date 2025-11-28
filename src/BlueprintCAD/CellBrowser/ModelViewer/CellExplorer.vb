@@ -89,4 +89,12 @@ Public Class CellExplorer
             Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(json.Value), NameOf(CompoundPropertyView.db_xrefs), NameOf(CompoundPropertyView.referenceID))
         End If
     End Sub
+
+    ''' <summary>
+    ''' view graph
+    ''' </summary>
+    ''' <param name="node"></param>
+    Private Sub viewer_ViewAction(node As JsonViewerTreeNode) Handles viewer.ViewAction
+
+    End Sub
 End Class
