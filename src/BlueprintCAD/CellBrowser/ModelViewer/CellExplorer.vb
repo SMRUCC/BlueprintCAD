@@ -114,14 +114,13 @@ Public Class CellExplorer
         End If
 
         If TypeOf json.Value Is Compound Then
-            Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(json.Value), NameOf(CompoundPropertyView.db_xrefs), NameOf(CompoundPropertyView.referenceID))
+            Call ShowNode(DirectCast(json.Value, Compound).ID)
         End If
     End Sub
 
     Public Sub ShowNode(id As String)
         If compounds.ContainsKey(id) Then
             Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(compounds(id)), NameOf(CompoundPropertyView.db_xrefs), NameOf(CompoundPropertyView.referenceID))
-            Call New HyperlinkSimulator(CommonRuntime.GetPropertyWindow.GetPropertyGrid).AddLink(NameOf(CompoundPropertyView.ShowNetwork), Async Sub() Await viewGraph(id))
         ElseIf rxnList.ContainsKey(id) Then
             Call CommonRuntime.GetPropertyWindow.SetObject(New ReactionPropertyView(rxnList(id), compounds))
         End If

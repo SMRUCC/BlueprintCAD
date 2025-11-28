@@ -17,9 +17,6 @@ Namespace UIData
         <TypeConverter(GetType(DefaultExpandedArray)), DesignerSerializationVisibility(DesignerSerializationVisibility.Content)>
         Public ReadOnly Property db_xrefs As String()
 
-        <Category("Click")>
-        Public ReadOnly Property ShowNetwork As String = "[click to show network]"
-
         Sub New()
         End Sub
 
