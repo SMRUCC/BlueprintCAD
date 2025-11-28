@@ -2,6 +2,7 @@
 Imports BlueprintCAD.UIData
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
+Imports Microsoft.VisualBasic.Data.GraphTheory.Analysis.Dijkstra
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Generic
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Language
@@ -146,8 +147,8 @@ Public Class FormPhenotypePath
             End Sub, host:=Me)
     End Sub
 
-    Dim from As NodeView
-    Dim target As NodeView
+    Dim from As NodeView = Nothing
+    Dim target As NodeView = Nothing
 
     Private Sub SetAsFromNodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetAsFromNodeToolStripMenuItem.Click
         If ListBox1.SelectedIndex < 0 Then
@@ -213,5 +214,18 @@ Public Class FormPhenotypePath
         For Each item In find
             Call ListBox2.Items.Add(view(item.index))
         Next
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If from Is Nothing OrElse target Is Nothing Then
+            Call MessageBox.Show("Missing the from node to target node to find the phenotype pathway!",
+                                 "Invalid Config",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning)
+            Return
+        End If
+
+        Dim router As New DijkstraRouter(g, undirected:=False)
+
     End Sub
 End Class
