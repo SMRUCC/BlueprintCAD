@@ -1,4 +1,5 @@
-﻿Imports BlueprintCAD.UIData
+﻿Imports System.Windows.Controls
+Imports BlueprintCAD.UIData
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Generic
@@ -164,5 +165,53 @@ Public Class FormPhenotypePath
 
         target = ListBox2.SelectedItem
         Label7.Text = target.ToString
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        If TextBox1.Text.StringEmpty Then
+            Call ListBox1.Items.Clear()
+
+            For Each item In view
+                Call ListBox1.Items.Add(item)
+            Next
+        End If
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        If TextBox2.Text.StringEmpty Then
+            Call ListBox2.Items.Clear()
+
+            For Each item In view
+                Call ListBox2.Items.Add(item)
+            Next
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If TextBox1.Text.StringEmpty Then
+            Return
+        End If
+
+        Dim find = qgram.FindSimilar(TextBox1.Text).OrderByDescending(Function(a) a.similarity).Take(30).ToArray
+
+        Call ListBox1.Items.Clear()
+
+        For Each item In find
+            Call ListBox2.Items.Add(view(item.index))
+        Next
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If TextBox2.Text.StringEmpty Then
+            Return
+        End If
+
+        Dim find = qgram.FindSimilar(TextBox2.Text).OrderByDescending(Function(a) a.similarity).Take(30).ToArray
+
+        Call ListBox2.Items.Clear()
+
+        For Each item In find
+            Call ListBox2.Items.Add(view(item.index))
+        Next
     End Sub
 End Class
