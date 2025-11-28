@@ -10,6 +10,7 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MIME.Office.Excel.XLSX.Writer
+Imports Microsoft.VisualBasic.MIME.Office.Excel.XLSX.XML.xl
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
 
@@ -317,5 +318,22 @@ Public Class FormPhenotypePath
                 Call wb.SaveAs(file.FileName)
             End If
         End Using
+    End Sub
+
+    Public ReadOnly Property PlotNodes As NodeView()
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Dim viewIndex = view.ToDictionary(Function(v) v.id)
+        Dim nodes As New Dictionary(Of String, NodeView)
+
+        For Each link As VertexEdge In pathway.AsEnumerable
+            Dim edge As Edge = g.GetEdge(link.U, link.V)
+
+            nodes(edge.U.label) = viewIndex(edge.U.label)
+            nodes(edge.V.label) = viewIndex(edge.V.label)
+        Next
+
+        Me._PlotNodes = nodes.Values.ToArray
+        Me.DialogResult = DialogResult.OK
     End Sub
 End Class

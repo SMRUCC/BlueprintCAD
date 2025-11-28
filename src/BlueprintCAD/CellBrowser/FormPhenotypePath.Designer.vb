@@ -50,6 +50,7 @@ Partial Class FormPhenotypePath
         ToolStripLabel1 = New ToolStripLabel()
         ToolStripSeparator1 = New ToolStripSeparator()
         ToolStripButton1 = New ToolStripButton()
+        ToolStripButton2 = New ToolStripButton()
         GroupBox1 = New GroupBox()
         Label8 = New Label()
         Label7 = New Label()
@@ -58,7 +59,6 @@ Partial Class FormPhenotypePath
         Label2 = New Label()
         GroupBox2 = New GroupBox()
         SplitContainer1 = New SplitContainer()
-        ToolStripButton2 = New ToolStripButton()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -259,6 +259,15 @@ Partial Class FormPhenotypePath
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Export Pathway Table"
         ' 
+        ' ToolStripButton2
+        ' 
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "View Expression Data"
+        ' 
         ' GroupBox1
         ' 
         GroupBox1.Controls.Add(Label8)
@@ -357,15 +366,6 @@ Partial Class FormPhenotypePath
         SplitContainer1.Size = New Size(1043, 680)
         SplitContainer1.SplitterDistance = 419
         SplitContainer1.TabIndex = 16
-        ' 
-        ' ToolStripButton2
-        ' 
-        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
-        ToolStripButton2.ImageTransparentColor = Color.Magenta
-        ToolStripButton2.Name = "ToolStripButton2"
-        ToolStripButton2.Size = New Size(23, 22)
-        ToolStripButton2.Text = "View Expression Data"
         ' 
         ' FormPhenotypePath
         ' 
