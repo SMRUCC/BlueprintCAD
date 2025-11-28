@@ -74,7 +74,7 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
 
         search = New QGramIndex(q:=3)
 
-        For Each item As CompoundContentData In compounds
+        For Each item As CompoundContentData In compounds.OrderBy(Function(a) a.name)
             Call search.AddString(item.name)
             Call ListBox2.Items.Add(item)
         Next
@@ -130,6 +130,14 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
 
         For Each item As CompoundContentData In list
             item.content = randf.NextDouble * upper
+        Next
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim data As Double = Val(Strings.Trim(TextBox2.Text))
+
+        For Each item As CompoundContentData In ListBox2.Items
+            item.content = data
         Next
     End Sub
 End Class

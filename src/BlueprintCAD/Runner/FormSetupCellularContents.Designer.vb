@@ -29,12 +29,13 @@ Partial Class FormSetupCellularContents
         MakeRandomToolStripMenuItem = New ToolStripMenuItem()
         GroupBox2 = New GroupBox()
         ListBox2 = New ListBox()
+        Panel1 = New Panel()
+        Button2 = New Button()
         TextBox2 = New TextBox()
+        Label1 = New Label()
+        TextBox1 = New TextBox()
         Label2 = New Label()
         Button1 = New Button()
-        TextBox1 = New TextBox()
-        Label1 = New Label()
-        Panel1 = New Panel()
         GroupBox1.SuspendLayout()
         ContextMenuStrip1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -47,7 +48,7 @@ Partial Class FormSetupCellularContents
         GroupBox1.Dock = DockStyle.Left
         GroupBox1.Location = New Point(0, 0)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(174, 502)
+        GroupBox1.Size = New Size(168, 502)
         GroupBox1.TabIndex = 0
         GroupBox1.TabStop = False
         GroupBox1.Text = "Cell Colony"
@@ -60,7 +61,7 @@ Partial Class FormSetupCellularContents
         ListBox1.ItemHeight = 15
         ListBox1.Location = New Point(3, 19)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(168, 480)
+        ListBox1.Size = New Size(162, 480)
         ListBox1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -80,9 +81,9 @@ Partial Class FormSetupCellularContents
         GroupBox2.Controls.Add(ListBox2)
         GroupBox2.Controls.Add(Panel1)
         GroupBox2.Dock = DockStyle.Fill
-        GroupBox2.Location = New Point(174, 0)
+        GroupBox2.Location = New Point(168, 0)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(573, 502)
+        GroupBox2.Size = New Size(579, 502)
         GroupBox2.TabIndex = 1
         GroupBox2.TabStop = False
         GroupBox2.Text = "Set Content Data"
@@ -94,40 +95,38 @@ Partial Class FormSetupCellularContents
         ListBox2.ItemHeight = 15
         ListBox2.Location = New Point(3, 19)
         ListBox2.Name = "ListBox2"
-        ListBox2.Size = New Size(567, 443)
+        ListBox2.Size = New Size(573, 443)
         ListBox2.TabIndex = 6
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(Button2)
+        Panel1.Controls.Add(TextBox2)
+        Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(TextBox1)
+        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(Button1)
+        Panel1.Dock = DockStyle.Bottom
+        Panel1.Location = New Point(3, 462)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(573, 37)
+        Panel1.TabIndex = 7
+        ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(479, 5)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(75, 23)
+        Button2.TabIndex = 6
+        Button2.Text = "Apply To All"
+        Button2.UseVisualStyleBackColor = True
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(435, 6)
+        TextBox2.Location = New Point(399, 6)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(119, 23)
+        TextBox2.Size = New Size(74, 23)
         TextBox2.TabIndex = 5
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(376, 9)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(53, 15)
-        Label2.TabIndex = 4
-        Label2.Text = "Content:"
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(275, 5)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(75, 23)
-        Button1.TabIndex = 3
-        Button1.Text = "Search"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(56, 6)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(213, 23)
-        TextBox1.TabIndex = 2
         ' 
         ' Label1
         ' 
@@ -138,18 +137,30 @@ Partial Class FormSetupCellularContents
         Label1.TabIndex = 1
         Label1.Text = "Search:"
         ' 
-        ' Panel1
+        ' TextBox1
         ' 
-        Panel1.Controls.Add(TextBox2)
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(TextBox1)
-        Panel1.Controls.Add(Label2)
-        Panel1.Controls.Add(Button1)
-        Panel1.Dock = DockStyle.Bottom
-        Panel1.Location = New Point(3, 462)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(567, 37)
-        Panel1.TabIndex = 7
+        TextBox1.Location = New Point(56, 6)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(146, 23)
+        TextBox1.TabIndex = 2
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(340, 9)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(53, 15)
+        Label2.TabIndex = 4
+        Label2.Text = "Content:"
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(208, 5)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(75, 23)
+        Button1.TabIndex = 3
+        Button1.Text = "Search"
+        Button1.UseVisualStyleBackColor = True
         ' 
         ' FormSetupCellularContents
         ' 
@@ -179,5 +190,6 @@ Partial Class FormSetupCellularContents
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents MakeRandomToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button2 As Button
 
 End Class
