@@ -72,7 +72,7 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
 
         Call ListBox2.Items.Clear()
 
-        search = New QGramIndex(q:=3)
+        search = New QGramIndex(q:=6)
 
         For Each item As CompoundContentData In compounds.OrderBy(Function(a) a.name)
             Call search.AddString(item.name)
