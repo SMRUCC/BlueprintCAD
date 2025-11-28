@@ -254,6 +254,11 @@ Public Class FormPhenotypePath
         Else
             Label8.Text = "<No Pathway Route Result>"
         End If
+
+        Call MessageBox.Show($"Search pathway route from {from} to {target} done!" &
+                             vbCrLf &
+                             vbCrLf &
+                             Label8.Text, "Job Done", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
