@@ -3,7 +3,9 @@ Imports BlueprintCAD.UIData
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.JSON.Models
 Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.ComponentModel.Ranges.Model
 Imports Microsoft.VisualBasic.Data.visualize.Network
+Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
 Imports Microsoft.VisualBasic.Language
@@ -176,6 +178,7 @@ Public Class CellExplorer
 
         Call g.ApplyAnalysis
         Call g.doRandomLayout
+        Call g.UsingDegreeAsRadius(computeDegree:=False).ScaleRadius(New DoubleRange(5, 20))
 
         Return g.AsGraphology
     End Function

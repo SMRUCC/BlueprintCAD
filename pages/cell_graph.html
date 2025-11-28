@@ -6,6 +6,7 @@
     <title>Quick Sigma.js Example</title>
     <script src="./js/sigma.min.js"></script>
     <script src="./js/graphology.umd.min.js"></script>
+    <script src="./js/graphology-library.min.js"></script>
 </head>
 
 <body style="background: lightgrey">
@@ -13,23 +14,28 @@
     <script>
         // 这是处理数据的JS函数
         function processLargeData(data) {
+            // Create a graphology graph
+            const graph = new graphology.Graph();
+
             console.log("成功接收到数据:", data);
             console.log("成功接收 " + data.length + " 条数据!");
 
+            for (let node of data.nodes) {
+                graph.addNode(node.id, node);
+            }
+            for (let edge of data.edges) {
+                graph.addEdge(edge.source, edge.target, edge);
+            }
+
             // Instantiate sigma.js and render the graph
-            const sigma_graph = new Sigma({
-                graph: data,
-                container: "container"
+            const sigma_graph = new Sigma(graph, document.getElementById("container"));
+            // Graphology provides a easy to use implementation of Force Atlas 2 in a web worker
+            const sensibleSettings = graphologyLibrary.layoutForceAtlas2.inferSettings(graph);
+            const fa2Layout = new graphologyLibrary.FA2Layout(graph, {
+                settings: sensibleSettings,
             });
 
-            sigma_graph.startForceAtlas2({
-                barnesHutOptimize: true,
-                outboundAtttCompensation: false,
-                interations: 1000,
-                slowDown: 1,
-                linLogMode: false,
-                edgeWeightInfluence: 0.1
-            });
+            fa2Layout.start();
         }
 
         // 关键步骤：添加消息事件监听器
