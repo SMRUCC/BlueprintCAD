@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports BlueprintCAD.UIData
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.JSON.Models
 Imports Galaxy.Workbench
@@ -85,7 +86,7 @@ Public Class CellExplorer
         End If
 
         If TypeOf json.Value Is Compound Then
-            Call CommonRuntime.GetPropertyWindow.SetObject(json.Value)
+            Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(json.Value))
         End If
     End Sub
 End Class
