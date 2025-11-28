@@ -35,6 +35,7 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
                                     .name = a.name
                                 }
                             End Function) _
+                    .OrderBy(Function(a) a.name) _
                     .ToArray
 
                 Call Me.data.Add(model_id, compounds)
@@ -74,7 +75,7 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
 
         search = New QGramIndex(q:=6)
 
-        For Each item As CompoundContentData In compounds.OrderBy(Function(a) a.name)
+        For Each item As CompoundContentData In compounds
             Call search.AddString(item.name)
             Call ListBox2.Items.Add(item)
         Next
@@ -101,7 +102,7 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
         End If
 
         Dim str As String = Strings.Trim(TextBox1.Text)
-        Dim find = search.FindSimilar(str, 0.3).OrderByDescending(Function(a) a.similarity).Take(30).ToArray
+        Dim find = search.FindSimilar(str, 0).OrderByDescending(Function(a) a.similarity).Take(30).ToArray
         Dim data = Me.data(selCellKey)
 
         Call ListBox2.Items.Clear()
