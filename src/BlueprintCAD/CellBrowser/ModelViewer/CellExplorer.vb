@@ -142,7 +142,7 @@ Public Class CellExplorer
         End If
     End Sub
 
-    Private Async Function viewGraph(metaID As String) As Task
+    Public Async Function viewGraph(metaID As String) As Task
         If links.ContainsKey(metaID) Then
             Dim links = Me.links(metaID)
             Dim sigma = Await Task.Run(Function() BuildGraph(links))

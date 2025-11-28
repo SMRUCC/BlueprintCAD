@@ -10,6 +10,7 @@ Public Class CellViewer
     Dim cell As VirtualCell
     Dim filepath As String
     Dim explorer As CellExplorer
+    Dim nodeId As String
 
     Private Async Sub CellViewer_Load(sender As Object, e As EventArgs) Handles Me.Load
         Await WebViewLoader.Init(WebView21)
@@ -63,10 +64,12 @@ Public Class CellViewer
 
             ' 检查消息类型
             If messageObject("type") = "nodeClicked" Then
-                Dim nodeId As String = messageObject.TryGetValue("nodeId")
+                nodeId = messageObject.TryGetValue("nodeId")
 
                 If nodeId Is Nothing Then
                     Return
+                Else
+                    ToolStripStatusLabel3.Text = nodeId
                 End If
 
                 Call explorer.ShowNode(nodeId)
@@ -75,5 +78,11 @@ Public Class CellViewer
             ' 处理 JSON 解析或其他错误
             Call CommonRuntime.Warning($"处理Web消息时出错: {ex.Message}")
         End Try
+    End Sub
+
+    Private Async Sub ToolStripStatusLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripStatusLabel2.Click
+        If Not nodeId Is Nothing Then
+            Await explorer.viewGraph(nodeId)
+        End If
     End Sub
 End Class
