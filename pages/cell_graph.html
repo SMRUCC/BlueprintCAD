@@ -7,11 +7,24 @@
     <script src="./js/sigma.min.js"></script>
     <script src="./js/graphology.umd.min.js"></script>
     <script src="./js/graphology-library.min.js"></script>
+
+    <style>
+        /* 移除body的默认外边距，让div可以真正占满整个屏幕 */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* 防止因内容超出而出现滚动条 */
+        }
+    </style>
 </head>
 
 <body style="background: lightgrey">
-    <div id="container" style="width: 1600px; height: 1200px; background: white"></div>
+    <div id="container" style="width: 100vw; height: 100vh; background: white"></div>
     <script>
+        // 在全局作用域声明变量
+        let currentSigmaInstance = null;
+
         // 这是处理数据的JS函数
         function processLargeData(data) {
             // Create a graphology graph
@@ -19,6 +32,13 @@
 
             console.log("成功接收到数据:", data);
             console.log("成功接收 " + data.length + " 条数据!");
+
+            if (currentSigmaInstance) {
+                console.log("正在清除旧的图实例...");
+
+                currentSigmaInstance.kill(); // kill() 方法会清理所有相关资源
+                currentSigmaInstance = null; // 清除引用，帮助垃圾回收
+            }
 
             for (let node of data.nodes) {
                 graph.addNode(node.id, node);
@@ -35,6 +55,7 @@
                 settings: sensibleSettings,
             });
 
+            currentSigmaInstance = sigma_graph;
             fa2Layout.start();
         }
 

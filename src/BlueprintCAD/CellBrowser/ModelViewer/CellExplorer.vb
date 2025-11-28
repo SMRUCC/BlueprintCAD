@@ -178,7 +178,7 @@ Public Class CellExplorer
 
         Call g.ApplyAnalysis
         Call g.doRandomLayout
-        Call g.UsingDegreeAsRadius(computeDegree:=False).ScaleRadius(New DoubleRange(5, 20))
+        Call g.UsingDegreeAsRadius(computeDegree:=False).ScaleRadius(New DoubleRange(9, 20))
 
         Return g.AsGraphology
     End Function
