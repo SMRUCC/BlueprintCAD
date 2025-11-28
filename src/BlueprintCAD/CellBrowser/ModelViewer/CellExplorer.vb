@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports BlueprintCAD.UIData
+Imports Galaxy.Data
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.JSON.Models
 Imports Galaxy.Workbench
@@ -11,6 +12,7 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
 Imports Microsoft.VisualBasic.Imaging.SVG.PathHelper
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.MIME.Html.HTML.Head
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
@@ -119,6 +121,7 @@ Public Class CellExplorer
     Public Sub ShowNode(id As String)
         If compounds.ContainsKey(id) Then
             Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(compounds(id)), NameOf(CompoundPropertyView.db_xrefs), NameOf(CompoundPropertyView.referenceID))
+            Call New HyperlinkSimulator(CommonRuntime.GetPropertyWindow.GetPropertyGrid).AddLink(NameOf(CompoundPropertyView.ShowNetwork), Async Sub() Await viewGraph(id))
         ElseIf rxnList.ContainsKey(id) Then
             Call CommonRuntime.GetPropertyWindow.SetObject(New ReactionPropertyView(rxnList(id), compounds))
         End If
@@ -136,16 +139,18 @@ Public Class CellExplorer
         End If
 
         If TypeOf json.Value Is Compound Then
-            Dim meta As Compound = DirectCast(json.Value, Compound)
-
-            If links.ContainsKey(meta.ID) Then
-                Dim links = Me.links(meta.ID)
-                Dim sigma = Await Task.Run(Function() BuildGraph(links))
-
-                Call web.ViewGraph(sigma)
-            End If
+            Await viewGraph(DirectCast(json.Value, Compound).ID)
         End If
     End Sub
+
+    Private Async Function viewGraph(metaID As String) As Task
+        If links.ContainsKey(metaID) Then
+            Dim links = Me.links(metaID)
+            Dim sigma = Await Task.Run(Function() BuildGraph(links))
+
+            Call web.ViewGraph(sigma)
+        End If
+    End Function
 
     Private Function BuildGraph(links As IEnumerable(Of Reaction)) As graphology.graph
         Dim g As New NetworkGraph
