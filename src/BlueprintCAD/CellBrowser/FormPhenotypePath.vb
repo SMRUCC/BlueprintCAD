@@ -6,6 +6,7 @@ Imports Microsoft.VisualBasic.Data.GraphTheory.Analysis.Dijkstra
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Generic
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
 
@@ -230,7 +231,7 @@ Public Class FormPhenotypePath
         Dim pathway As Route = router.CalculateMinCost(u, v)
 
         If Not pathway Is Nothing Then
-            For Each link In pathway
+            For Each link In pathway.AsEnumerable
 
             Next
         End If
