@@ -21,6 +21,7 @@ Public Class CellExplorer
     Dim edges
     Dim links As New Dictionary(Of String, List(Of Reaction))
     Dim compounds As New Dictionary(Of String, Compound)
+    Dim rxnList As New Dictionary(Of String, Reaction)
     Dim web As CellViewer
 
     Public Sub LoadModel(model As VirtualCell, web As CellViewer)
@@ -62,6 +63,8 @@ Public Class CellExplorer
 
                 Call links(cpd.compound).Add(rxn)
             Next
+
+            rxnList(rxn.ID) = rxn
         Next
 
         Call tree.Fields.Add(metabolites)
@@ -116,6 +119,8 @@ Public Class CellExplorer
     Public Sub ShowNode(id As String)
         If compounds.ContainsKey(id) Then
             Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(compounds(id)), NameOf(CompoundPropertyView.db_xrefs), NameOf(CompoundPropertyView.referenceID))
+        ElseIf rxnList.ContainsKey(id) Then
+            Call CommonRuntime.GetPropertyWindow.SetObject(New ReactionPropertyView(rxnList(id), compounds))
         End If
     End Sub
 
@@ -146,6 +151,7 @@ Public Class CellExplorer
         Dim g As New NetworkGraph
         Dim class_metab As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Red
         Dim class_rxn As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Blue
+        Dim line As New Microsoft.VisualBasic.Imaging.Pen(Color.LightGray, 3)
 
         For Each rxn As Reaction In links
             If g.GetElementByID(rxn.ID) Is Nothing Then
@@ -170,7 +176,7 @@ Public Class CellExplorer
                 Dim v = g.GetElementByID(left.compound)
 
                 If Not (g.ExistEdge(v.label, rxnNode.label) OrElse g.ExistEdge(rxnNode.label, v.label)) Then
-                    Call g.CreateEdge(v, rxnNode, left.factor)
+                    Call g.CreateEdge(v, rxnNode, left.factor, New EdgeData With {.style = line})
                 End If
             Next
             For Each right As CompoundFactor In rxn.product
@@ -186,7 +192,7 @@ Public Class CellExplorer
                 Dim u = g.GetElementByID(right.compound)
 
                 If Not (g.ExistEdge(u.label, rxnNode.label) OrElse g.ExistEdge(rxnNode.label, u.label)) Then
-                    Call g.CreateEdge(rxnNode, u, right.factor)
+                    Call g.CreateEdge(rxnNode, u, right.factor, New EdgeData With {.style = line})
                 End If
             Next
         Next
