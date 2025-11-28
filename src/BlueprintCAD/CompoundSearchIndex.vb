@@ -33,7 +33,7 @@ Public Class CompoundSearchIndex : Implements Enumeration(Of Compound)
     End Sub
 
     Public Iterator Function Search(text As String, Optional top As Integer = 30) As IEnumerable(Of Compound)
-        Dim index = qgram.FindSimilar(text, 0.3) _
+        Dim index = qgram.FindSimilar(text, 0) _
             .OrderByDescending(Function(a) a.similarity) _
             .ToArray
         Dim hits = index.Select(Function(i) (i.similarity, i.index, compounds(i.index))) _
