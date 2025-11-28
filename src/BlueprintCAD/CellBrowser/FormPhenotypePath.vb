@@ -2,6 +2,7 @@
 Imports BlueprintCAD.UIData
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
+Imports Microsoft.VisualBasic.Data.GraphTheory
 Imports Microsoft.VisualBasic.Data.GraphTheory.Analysis.Dijkstra
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Generic
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
@@ -231,8 +232,8 @@ Public Class FormPhenotypePath
         Dim pathway As Route = router.CalculateMinCost(u, v)
 
         If Not pathway Is Nothing Then
-            For Each link In pathway.AsEnumerable
-
+            For Each link As VertexEdge In pathway.AsEnumerable
+                Dim edge As Edge = g.GetEdge(link.ID)
             Next
         End If
     End Sub
