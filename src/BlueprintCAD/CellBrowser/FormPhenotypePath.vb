@@ -1,5 +1,4 @@
-﻿Imports System.Windows.Controls
-Imports BlueprintCAD.UIData
+﻿Imports BlueprintCAD.UIData
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
@@ -10,7 +9,6 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MIME.Office.Excel.XLSX.Writer
-Imports Microsoft.VisualBasic.MIME.Office.Excel.XLSX.XML.xl
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
 
@@ -275,8 +273,8 @@ Public Class FormPhenotypePath
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-        If pathway Is Nothing Then
-            Call MessageBox.Show("No pathway router, please make the pathway search at first!",
+        If Not pathway.AsEnumerable.Any Then
+            Call MessageBox.Show("No available pathway router, please make the pathway search at first!",
                                  "No data",
                                  MessageBoxButtons.OK,
                                  MessageBoxIcon.Warning)
@@ -323,6 +321,14 @@ Public Class FormPhenotypePath
     Public ReadOnly Property PlotNodes As NodeView()
 
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        If Not pathway.AsEnumerable.Any Then
+            Call MessageBox.Show("No available pathway router, please make the pathway search at first!",
+                                 "No data",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning)
+            Return
+        End If
+
         Dim viewIndex = view.ToDictionary(Function(v) v.id)
         Dim nodes As New Dictionary(Of String, NodeView)
 
