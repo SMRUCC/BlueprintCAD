@@ -2,9 +2,12 @@
 <DOCUMENT Type="Advanced Installer" CreateVersion="22.2" version="22.2" PreviousModules="professional" Modules="enterprise" RootPath="." Language="en" Id="{7FF7F030-A801-4B93-AF04-34859574F531}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="ActSyncAppComponent;CPLAppletComponent;AutorunComponent;GameUxComponent;SilverlightSlnComponent;SharePointSlnComponent"/>
+    <ROW Name="TilesAssetGenDestFolderPath" Value="Generated Tiles" ValueType="1"/>
+    <ROW Name="TilesAssetGenScales" Value="Scale 80, Scale 200, Scale 100, Scale 125, Scale 140, Scale 150, Scale 180, Scale 400"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_FrameColor" Value="powderblue" MultiBuildValue="DefaultBuild:darkolivegreen" MsiKey="AI_FrameColor"/>
     <ROW Property="AI_ImagesColor" Value="powderblue" MultiBuildValue="DefaultBuild:chrome" MsiKey="AI_ImagesColor"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_SCREEN_RESOLUTION_X;AI_DETECTED_SCREEN_RESOLUTION_Y;AI_DETECTED_PHYSICAL_MEMORY"/>
@@ -18,19 +21,24 @@
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPHELPLINK" Value="http://zhengyabio.com/"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="installer.exe" Type="8"/>
     <ROW Property="ARPURLINFOABOUT" Value="http://zhengyabio.com/"/>
     <ROW Property="ARPURLUPDATEINFO" Value="http://zhengyabio.com/"/>
     <ROW Property="AiEmbeddedUI" Value="1"/>
     <ROW Property="AiWinUI" Value="1"/>
+    <ROW Property="CompanyLogo" Value="blue.jpg" MultiBuildValue="DefaultBuild:LOGO.bmp" Type="1" MsiKey="CompanyLogo"/>
+    <ROW Property="GCML_CHECKBOX" Value="1" Type="4"/>
+    <ROW Property="GCPROJ_CHECKBOX" Value="1" Type="4"/>
     <ROW Property="Manufacturer" Value="zhengyabio.com"/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp"/>
     <ROW Property="ProductCode" Value="1033:{7538FEE9-50D1-4A51-9944-A8D2D99D752F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Sophia VirtualCell Workshop"/>
     <ROW Property="ProductVersion" Value="1.1.1128" Options="32"/>
-    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{CF9117C0-DB88-45A1-BD8A-DCB5CF39DF2E}"/>
+    <ROW Property="VCELLPACK_CHECKBOX" Value="1" Type="4"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" ValueLocId="-"/>
@@ -270,6 +278,7 @@
     <ROW Component="SkiaSharp.Extended.dll_1" ComponentId="{59C20DE9-98DF-4BC9-B371-753176555938}" Directory_="bin_Dir" Attributes="0" KeyPath="SkiaSharp.Extended.dll_1"/>
     <ROW Component="SkiaSharp.dll" ComponentId="{AA864214-CA01-4AC1-A9D8-6BCF3FDDE29C}" Directory_="APPDIR" Attributes="0" KeyPath="SkiaSharp.dll"/>
     <ROW Component="SkiaSharp.dll_1" ComponentId="{0706D2B9-7D94-4D98-A0A0-3679DBD64E31}" Directory_="bin_Dir" Attributes="0" KeyPath="SkiaSharp.dll_1"/>
+    <ROW Component="Sophia.VisualElementsManifest.xml" ComponentId="{A7042C9E-AA92-4BF0-8336-9972116F4987}" Directory_="APPDIR" Attributes="0" KeyPath="Sophia.VisualElementsManifest.xml"/>
     <ROW Component="Sophia.dll" ComponentId="{34BDD9FA-C7E8-4D65-B062-CA62A510F3E8}" Directory_="APPDIR" Attributes="256" KeyPath="Sophia.dll"/>
     <ROW Component="Sophia.exe" ComponentId="{FD7CB5F9-31DA-4A92-940C-D92539F6EA2F}" Directory_="APPDIR" Attributes="256" KeyPath="Sophia.exe"/>
     <ROW Component="System.Collections.Immutable.dll" ComponentId="{37A6EE3D-0852-4145-B449-6093C4CFD321}" Directory_="APPDIR" Attributes="0" KeyPath="System.Collections.Immutable.dll"/>
@@ -379,7 +388,12 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="A0BFC224E0E9125ADE0B2DBF343" Title=".NET Desktop Runtime 8.0.10 x64" Description=".NET Desktop Runtime 8.0.10 x64" Display="3" Level="1" Attributes="0"/>
     <ROW Feature="BF57E49C4E0C98AF391A28FF818B" Title=".NET Runtime 8.0.10 x64" Description=".NET Runtime 8.0.10 x64" Display="5" Level="1" Attributes="0"/>
+    <ROW Feature="FileTypeAssociations" Feature_Parent="MainFeature" Title="File Type Associations" Description="Description" Display="7" Level="1" Directory_="APPDIR" Attributes="0" Options="13"/>
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ROW Feature="TileAssets_DefaultBuild" Title="TileAssets_DefaultBuild" Description="Description" Display="0" Level="1" Directory_="APPDIR" Attributes="0" Options="271" Builds="DefaultBuild"/>
+    <ROW Feature="gcml" Feature_Parent="FileTypeAssociations" Title=".gcml" Description="Description" Display="9" Level="1" Directory_="APPDIR" Attributes="0" Options="27"/>
+    <ROW Feature="gcproj" Feature_Parent="FileTypeAssociations" Title=".gcproj" Description="Description" Display="11" Level="1" Directory_="APPDIR" Attributes="0" Options="27"/>
+    <ROW Feature="vcellpack" Feature_Parent="FileTypeAssociations" Title=".vcellpack" Description="Description" Display="13" Level="1" Directory_="APPDIR" Attributes="0" Options="27"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
@@ -901,6 +915,7 @@
     <ROW File="System.Windows.Extensions.dll_3" Component_="System.Windows.Extensions.dll_3" FileName="SYSTEM~4.DLL|System.Windows.Extensions.dll" Attributes="0" SourcePath="..\App\net8.0-windows\runtimes\win\lib\net8.0\System.Windows.Extensions.dll" SelfReg="false"/>
     <ROW File="Galaxy.ExcelPad.resources.dll" Component_="Galaxy.ExcelPad.resources.dll" FileName="GALAXY~3.DLL|Galaxy.ExcelPad.resources.dll" Attributes="0" SourcePath="..\App\net8.0-windows\zh-CN\Galaxy.ExcelPad.resources.dll" SelfReg="false"/>
     <ROW File="Galaxy.ExcelPad.resources.dll_1" Component_="Galaxy.ExcelPad.resources.dll_1" FileName="GALAXY~2.DLL|Galaxy.ExcelPad.resources.dll" Attributes="0" SourcePath="..\App\net8.0-windows\zh-Hans\Galaxy.ExcelPad.resources.dll" SelfReg="false"/>
+    <ROW File="Sophia.VisualElementsManifest.xml" Component_="Sophia.VisualElementsManifest.xml" FileName="SOPHIA~1.XML|Sophia.VisualElementsManifest.xml" Attributes="0" SourcePath="&lt;AI_RES&gt;app.VisualElementsManifest.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
     <ROW MsiShortcutProperty="Sophia0" Shortcut_="Sophia" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
@@ -921,7 +936,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="sophia_setup" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" ExeIconPath="installer.ico" SummInfoMetadata="Page Count:450" ExtUI="true" UseLargeSchema="true" ExeName="setup" MsiPackageType="x64"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" PackageFileName="sophia_setup" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="installer.ico" SummInfoMetadata="Page Count:450" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="setup" MsiPackageType="x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -932,6 +947,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FileAssociationsDlg.aip" Path="&lt;AI_THEMES&gt;modern\fragments\FileAssociationsDlg.aip"/>
     <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;modern\fragments\LicenseAgreementDlg.aip"/>
     <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;modern\fragments\MaintenanceTypeDlg.aip"/>
     <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;modern\fragments\MaintenanceWelcomeDlg.aip"/>
@@ -950,9 +966,27 @@
     <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;modern\fragments\WelcomeDlg.aip"/>
     <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;modern\fragments\WelcomePrereqDlg.aip"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlAttributeComponent">
+    <ROW XmlAttribute="BackgroundColor" XmlElement="VisualElements" Name="BackgroundColor" Flags="0" Order="0" Value="blue"/>
+    <ROW XmlAttribute="Executable" XmlElement="VisualElements" Name="Executable" Flags="0" Order="0" FileId="Sophia.exe"/>
+    <ROW XmlAttribute="ForegroundText" XmlElement="VisualElements" Name="ForegroundText" Flags="0" Order="0" Value="light"/>
+    <ROW XmlAttribute="ShowNameOnSquare150x150Logo" XmlElement="VisualElements" Name="ShowNameOnSquare150x150Logo" Flags="0" Order="0" Value="on"/>
+    <ROW XmlAttribute="xmlnsxsi" XmlElement="Application" Name="xmlns:xsi" Flags="0" Order="0" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlElementComponent">
+    <ROW XmlElement="Application" Name="Application" Order="0" Flags="0" Type="53"/>
+    <ROW XmlElement="VisualElements" ParentElement="Application" Name="VisualElements" Order="1" Flags="0" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.GenericXmlFileComponent">
+    <ROW XmlFile="Sophia.VisualElementsManifest.xml" FileName="Sophia.VisualElementsManifest.xml" RootElement="Application" Flags="89" Version="1.0" Encoding="UTF-8" IndentUnits="2"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
     <ROW Action="AI_ConfigureChainer" Description="Configuring prerequisites launcher" DescriptionLocId="ActionText.Description.AI_ConfigureChainer" Template="Configure Launcher" TemplateLocId="ActionText.Template.AI_ConfigureChainer"/>
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_DownloadPrereq" Description="Downloading prerequisite software" DescriptionLocId="ActionText.Description.AI_DownloadPrereq" Template="[1]" TemplateLocId="ActionText.Template.AI_DownloadPrereq"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
     <ROW Action="AI_ExtractPrereq" Description="Extracting prerequisite software" DescriptionLocId="ActionText.Description.AI_ExtractPrereq" Template="[1]" TemplateLocId="ActionText.Template.AI_ExtractPrereq"/>
     <ROW Action="AI_InstallPostPrerequisite" Description="Configuring prerequisite software" DescriptionLocId="ActionText.Description.AI_InstallPrerequisite" Template="[1]" TemplateLocId="ActionText.Template.AI_InstallPrerequisite"/>
     <ROW Action="AI_InstallPrePrerequisite" Description="Configuring prerequisite software" DescriptionLocId="ActionText.Description.AI_InstallPrerequisite" Template="[1]" TemplateLocId="ActionText.Template.AI_InstallPrerequisite"/>
@@ -971,25 +1005,41 @@
     <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="LOGO.bmp" SourcePath="LOGO.bmp"/>
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="ShortcutFlags.dll" SourcePath="&lt;AI_CUSTACTS&gt;ShortcutFlags.dll"/>
     <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="aipackagechainer.exe" SourcePath="&lt;AI_CUSTACTS&gt;aipackagechainer.exe" DigSign="true"/>
     <ROW Name="file_deleter.ps1" SourcePath="&lt;AI_SCRIPTS&gt;file_deleter.ps1"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
     <ROW Name="xmlCfg.dll" SourcePath="&lt;AI_CUSTACTS&gt;xmlCfg.dll"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCheckBoxComponent">
+    <ROW Property="GCML_CHECKBOX" Value="1"/>
+    <ROW Property="GCPROJ_CHECKBOX" Value="1"/>
+    <ROW Property="VCELLPACK_CHECKBOX" Value="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiConditionComponent">
+    <ROW Feature_="TileAssets_DefaultBuild" Level="4" Condition="VersionNT &lt; 603"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="FileAssociationsDlg" Control="FileAssociationsDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="FileAssociationsDlg" Control="CheckBox_1" Type="CheckBox" X="310" Y="125" Width="55" Height="11" Attributes="3" Property="GCML_CHECKBOX" Text=".gcml" Order="1500"/>
+    <ROW Dialog_="FileAssociationsDlg" Control="CheckBox_2" Type="CheckBox" X="310" Y="147" Width="55" Height="11" Attributes="3" Property="GCPROJ_CHECKBOX" Text=".gcproj" Order="1600"/>
+    <ROW Dialog_="FileAssociationsDlg" Control="CheckBox_3" Type="CheckBox" X="310" Y="169" Width="55" Height="11" Attributes="3" Property="VCELLPACK_CHECKBOX" Text=".vcellpack" Order="1700"/>
     <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="9" Y="90" Width="546" Height="218" Attributes="7" Text="..\src\BlueprintCAD\HelpDocs\License.rtf" Order="400" TextLocId="Control.Text.LicenseAgreementDlg#AgreementText" MsiKey="LicenseAgreementDlg#AgreementText"/>
     <ROW Dialog_="LicenseAgreementDlg" Control="Buttons" Type="RadioButtonGroup" X="275" Y="330" Width="281" Height="40" Attributes="3" Property="IAgree" Order="500" MsiKey="LicenseAgreementDlg#Buttons"/>
     <ROW Dialog_="LicenseAgreementDlg" Control="AgreementLabel" Type="Text" X="12" Y="68" Width="540" Height="32" Attributes="196611" Text="Be sure to carefully read and understand all the rights and restrictions described in the license terms. You must accept the license terms before you can install the software." Order="1100" TextLocId="Modern.Control.Text.LicenseAgreementDlg#AgreementLabel" MsiKey="LicenseAgreementDlg#AgreementLabel"/>
     <ROW Dialog_="LicenseAgreementDlg" Control="ButtonsLabel" Type="Text" X="275" Y="314" Width="278" Height="11" Attributes="196611" Text="Press the Page Down key to see more text." Order="1200" TextLocId="Modern.Control.Text.LicenseAgreementDlg#ButtonLabel" MsiKey="LicenseAgreementDlg#ButtonsLabel"/>
     <ROW Dialog_="LicenseAgreementDlg" Control="PrintButton" Type="PushButton" X="12" Y="353" Width="56" Height="17" Attributes="3" Text="Print" Order="1300" TextLocId="Modern.Control.Text.LicenseAgreementDlg#PrintButton" MsiKey="LicenseAgreementDlg#PrintButton" AssociatedCtrl="AgreementText"/>
+    <ROW Dialog_="PreparePrereqDlg" Control="CompanyLogo" Type="Bitmap" X="287" Y="85" Width="265" Height="265" Attributes="1" Text="[CompanyLogo]" Order="1400" MsiKey="PreparePrereqDlg#CompanyLogo"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
-    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FileAssociationsDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="201"/>
     <ROW Dialog_="SetupTypeDlg" Control_="TypicalInstallButton" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="401"/>
@@ -1026,7 +1076,34 @@
     <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_CleanPrePrereq" Condition="1" Ordering="105"/>
     <ROW Dialog_="UserExit" Control_="Finish" Event="DoAction" Argument="AI_CleanPrePrereq" Condition="1" Ordering="102"/>
     <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="FileAssociationsDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="Next" Event="AddLocal" Argument="gcml" Condition="GCML_CHECKBOX" Ordering="2"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="Next" Event="Remove" Argument="gcml" Condition="NOT (GCML_CHECKBOX)" Ordering="3"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[GCML_CHECKBOX]" Argument="1" Condition="AI_INSTALL AND ( &amp;gcml = 3 )" Ordering="0"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[GCML_CHECKBOX]" Argument="{}" Condition="AI_INSTALL AND ( &amp;gcml &lt;&gt; 3 )" Ordering="1"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="SelectAll" Event="[GCML_CHECKBOX]" Argument="1" Condition="AI_INSTALL" Ordering="4"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="UnselectAll" Event="[GCML_CHECKBOX]" Argument="{}" Condition="AI_INSTALL" Ordering="4"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[GCML_CHECKBOX]" Argument="1" Condition="AI_MAINT AND ( ( ( !gcml = 3 ) AND NOT (AI_EXT_SELECTED) ) OR ( ( &amp;gcml = 3 ) AND AI_EXT_SELECTED ) )" Ordering="2"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[GCML_CHECKBOX]" Argument="{}" Condition="AI_MAINT AND ( ( ( !gcml &lt;&gt; 3 ) AND NOT (AI_EXT_SELECTED) ) OR ( ( &amp;gcml &lt;&gt; 3 ) AND AI_EXT_SELECTED ) )" Ordering="3"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="Next" Event="AddLocal" Argument="gcproj" Condition="GCPROJ_CHECKBOX" Ordering="4"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="Next" Event="Remove" Argument="gcproj" Condition="NOT (GCPROJ_CHECKBOX)" Ordering="5"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[GCPROJ_CHECKBOX]" Argument="1" Condition="AI_INSTALL AND ( &amp;gcproj = 3 )" Ordering="4"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[GCPROJ_CHECKBOX]" Argument="{}" Condition="AI_INSTALL AND ( &amp;gcproj &lt;&gt; 3 )" Ordering="5"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="SelectAll" Event="[GCPROJ_CHECKBOX]" Argument="1" Condition="AI_INSTALL" Ordering="6"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="UnselectAll" Event="[GCPROJ_CHECKBOX]" Argument="{}" Condition="AI_INSTALL" Ordering="6"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[GCPROJ_CHECKBOX]" Argument="1" Condition="AI_MAINT AND ( ( ( !gcproj = 3 ) AND NOT (AI_EXT_SELECTED) ) OR ( ( &amp;gcproj = 3 ) AND AI_EXT_SELECTED ) )" Ordering="6"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[GCPROJ_CHECKBOX]" Argument="{}" Condition="AI_MAINT AND ( ( ( !gcproj &lt;&gt; 3 ) AND NOT (AI_EXT_SELECTED) ) OR ( ( &amp;gcproj &lt;&gt; 3 ) AND AI_EXT_SELECTED ) )" Ordering="7"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="Next" Event="AddLocal" Argument="vcellpack" Condition="VCELLPACK_CHECKBOX" Ordering="6"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="Next" Event="Remove" Argument="vcellpack" Condition="NOT (VCELLPACK_CHECKBOX)" Ordering="7"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[VCELLPACK_CHECKBOX]" Argument="1" Condition="AI_INSTALL AND ( &amp;vcellpack = 3 )" Ordering="8"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[VCELLPACK_CHECKBOX]" Argument="{}" Condition="AI_INSTALL AND ( &amp;vcellpack &lt;&gt; 3 )" Ordering="9"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="SelectAll" Event="[VCELLPACK_CHECKBOX]" Argument="1" Condition="AI_INSTALL" Ordering="8"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="UnselectAll" Event="[VCELLPACK_CHECKBOX]" Argument="{}" Condition="AI_INSTALL" Ordering="8"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[VCELLPACK_CHECKBOX]" Argument="1" Condition="AI_MAINT AND ( ( ( !vcellpack = 3 ) AND NOT (AI_EXT_SELECTED) ) OR ( ( &amp;vcellpack = 3 ) AND AI_EXT_SELECTED ) )" Ordering="10"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[VCELLPACK_CHECKBOX]" Argument="{}" Condition="AI_MAINT AND ( ( ( !vcellpack &lt;&gt; 3 ) AND NOT (AI_EXT_SELECTED) ) OR ( ( &amp;vcellpack &lt;&gt; 3 ) AND AI_EXT_SELECTED ) )" Ordering="11"/>
+    <ROW Dialog_="FileAssociationsDlg" Control_="FileAssociationsDlgDialogInitializer" Event="[AI_EXT_SELECTED]" Argument="1" Condition="AI_MAINT AND NOT (AI_EXT_SELECTED)" Ordering="12"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
@@ -1037,18 +1114,28 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_ApplyShortcutFlags" Type="3073" Source="ShortcutFlags.dll" Target="UpdateShortcutFlags" WithoutSeq="true"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_CleanPrePrereq" Type="65" Source="Prereq.dll" Target="CleanPrereq" WithoutSeq="true"/>
     <ROW Action="AI_CleanPrereq" Type="65" Source="Prereq.dll" Target="CleanPrereq" WithoutSeq="true"/>
     <ROW Action="AI_ConfigureChainer" Type="1" Source="Prereq.dll" Target="ConfigurePrereqLauncher"/>
     <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[~]"/>
     <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="[~]"/>
+    <ROW Action="AI_DATA_SETTER_2" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
     <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
     <ROW Action="AI_DownloadPrereq" Type="1" Source="Prereq.dll" Target="DownloadPrereq"/>
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
     <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER_2"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
     <ROW Action="AI_ExtractPrereq" Type="65" Source="Prereq.dll" Target="ExtractPrereq"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_InstallPostPrerequisite" Type="1" Source="Prereq.dll" Target="InstallPostPrereq"/>
     <ROW Action="AI_InstallPrePrerequisite" Type="65" Source="Prereq.dll" Target="InstallPrePrereq"/>
@@ -1057,6 +1144,10 @@
     <ROW Action="AI_MigrateInstallerProps" Type="1" Source="aicustact.dll" Target="MigrateInstallerProps"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_PinShortcuts" Type="1" Source="ShortcutFlags.dll" Target="PinShortcuts"/>
+    <ROW Action="AI_PinToStartScreen" Type="1025" Source="ShortcutFlags.dll" Target="PinToStartScreen" WithoutSeq="true"/>
+    <ROW Action="AI_PinToTaskbar" Type="1025" Source="ShortcutFlags.dll" Target="PinToTaskbar" WithoutSeq="true"/>
+    <ROW Action="AI_PrepareShortcutFlags" Type="1" Source="ShortcutFlags.dll" Target="PrepareActionData"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
@@ -1065,6 +1156,9 @@
     <ROW Action="AI_RollbackPrereq" Type="65" Source="Prereq.dll" Target="RollbackPrereq" WithoutSeq="true"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="AI_UnpinFromStartScreen" Type="1025" Source="ShortcutFlags.dll" Target="UnpinFromStartScreen" WithoutSeq="true"/>
+    <ROW Action="AI_UnpinFromTaskbar" Type="1025" Source="ShortcutFlags.dll" Target="UnpinFromTaskbar" WithoutSeq="true"/>
+    <ROW Action="AI_UnpinShortcuts" Type="1" Source="ShortcutFlags.dll" Target="UnpinShortcuts"/>
     <ROW Action="AI_VerifyPrePrereq" Type="1" Source="Prereq.dll" Target="VerifyPrePrereq"/>
     <ROW Action="AI_VerifyPrereq" Type="1" Source="Prereq.dll" Target="VerifyPrereq"/>
     <ROW Action="AI_XmlCommit" Type="11777" Source="xmlCfg.dll" Target="OnXmlCommit" WithoutSeq="true"/>
@@ -1078,9 +1172,9 @@
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiExtComponent">
-    <ROW Extension="vcellpack" Component_="Sophia.exe" ProgId_="[|Manufacturer].[|ProductName]" MIME_="GCModeller VirtualCell Data Pack" Feature_="MainFeature" Options="32"/>
-    <ROW Extension="gcproj" Component_="Sophia.exe" ProgId_="[|Manufacturer].[|ProductName]" MIME_="GCModeller VirtualCell Annotation Project" Feature_="MainFeature" Options="32"/>
-    <ROW Extension="gcml" Component_="Sophia.exe" ProgId_="[|Manufacturer].[|ProductName]" MIME_="GCModeller VirtualCell Model File" Feature_="MainFeature" Options="32"/>
+    <ROW Extension="vcellpack" Component_="Sophia.exe" ProgId_="[|Manufacturer].[|ProductName]" MIME_="GCModeller VirtualCell Data Pack" Feature_="vcellpack" Options="39"/>
+    <ROW Extension="gcproj" Component_="Sophia.exe" ProgId_="[|Manufacturer].[|ProductName]" MIME_="GCModeller VirtualCell Annotation Project" Feature_="gcproj" Options="39"/>
+    <ROW Extension="gcml" Component_="Sophia.exe" ProgId_="[|Manufacturer].[|ProductName]" MIME_="GCModeller VirtualCell Model File" Feature_="gcml" Options="39"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
@@ -1308,8 +1402,15 @@
     <ROW Feature_="MainFeature" Component_="Galaxy.ExcelPad.resources.dll_1"/>
     <ROW Feature_="MainFeature" Component_="logs"/>
     <ROW Feature_="MainFeature" Component_="regid.zhengyabio.com.xieguigang"/>
+    <ROW Feature_="TileAssets_DefaultBuild" Component_="Sophia.VisualElementsManifest.xml"/>
+    <ROW Feature_="gcml" Component_="Sophia.exe"/>
+    <ROW Feature_="gcproj" Component_="Sophia.exe"/>
+    <ROW Feature_="vcellpack" Component_="Sophia.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="ext.exe" SourcePath="..\src\VirtualCell.ico" Index="0"/>
+    <ROW Name="ext_1.exe" SourcePath="..\src\GCProject.ico" Index="0"/>
+    <ROW Name="ext_2.exe" SourcePath="..\src\ResultData.ico" Index="0"/>
     <ROW Name="installer.exe" SourcePath="installer.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
@@ -1319,16 +1420,30 @@
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1397"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
-    <ROW Action="AI_MigrateInstallerProps" Condition="SETUPEXEDIR AND ((UILevel = 2) OR (UILevel = 3))" Sequence="6597"/>
+    <ROW Action="AI_MigrateInstallerProps" Condition="SETUPEXEDIR AND ((UILevel = 2) OR (UILevel = 3))" Sequence="6596"/>
     <ROW Action="AI_VerifyPrereq" Sequence="1101"/>
-    <ROW Action="AI_AppSearchEx" Sequence="102"/>
-    <ROW Action="AI_DetectSoftware" Sequence="101"/>
-    <ROW Action="AI_ConfigureChainer" Condition="(NOT SETUPEXEDIR) AND ((UILevel = 2) OR (UILevel = 3)) AND (NOT UPGRADINGPRODUCTCODE)" Sequence="6598"/>
-    <ROW Action="AI_LaunchChainer" Condition="AI_PREREQ_CHAINER AND (NOT UPGRADINGPRODUCTCODE)" Sequence="6599"/>
+    <ROW Action="AI_AppSearchEx" Sequence="103"/>
+    <ROW Action="AI_DetectSoftware" Sequence="102"/>
+    <ROW Action="AI_ConfigureChainer" Condition="(NOT SETUPEXEDIR) AND ((UILevel = 2) OR (UILevel = 3)) AND (NOT UPGRADINGPRODUCTCODE)" Sequence="6597"/>
+    <ROW Action="AI_LaunchChainer" Condition="AI_PREREQ_CHAINER AND (NOT UPGRADINGPRODUCTCODE)" Sequence="6598"/>
     <ROW Action="AI_XmlInstall" Condition="(REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5102"/>
     <ROW Action="AI_DATA_SETTER" Condition="(REMOVE &lt;&gt; &quot;ALL&quot;)" Sequence="5101"/>
     <ROW Action="AI_XmlUninstall" Condition="(REMOVE)" Sequence="3102"/>
     <ROW Action="AI_DATA_SETTER_1" Condition="(REMOVE)" Sequence="3101"/>
+    <ROW Action="AI_PrepareShortcutFlags" Condition="(VersionNT &gt; 501) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="4501"/>
+    <ROW Action="AI_PinShortcuts" Condition="(VersionNT &gt; 600) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="6499"/>
+    <ROW Action="AI_UnpinShortcuts" Condition="(VersionNT &gt; 600) AND (REMOVE = &quot;ALL&quot;)" Sequence="3199"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="1399" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER_2" Sequence="1398"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
@@ -1390,7 +1505,7 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="Sophia" Directory_="SHORTCUTDIR" Name="SOPHIA~1|Sophia Workshop" Component_="Sophia.exe" Target="[#Sophia.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="Sophia" Directory_="SHORTCUTDIR" Name="SOPHIA~1|Sophia Workshop" Component_="Sophia.exe" Target="[#Sophia.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR" CustomFlags="4"/>
     <ROW Shortcut="SophiaWorkshop2026" Directory_="Zhengyabio_Dir" Name="SOPHIA~1|Sophia Workshop 2026" Component_="Sophia.exe" Target="[#Sophia.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
@@ -1404,23 +1519,23 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="255.255.6555.6555" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiVerbComponent">
-    <ROW Extension_="vcellpack" Component_="Sophia.exe" Verb="open" Sequence="0" Command="&amp;Open" Argument="&quot;%1&quot;"/>
-    <ROW Extension_="gcproj" Component_="Sophia.exe" Verb="open" Sequence="0" Command="&amp;Open" Argument="&quot;%1&quot;"/>
-    <ROW Extension_="gcml" Component_="Sophia.exe" Verb="open" Sequence="0" Command="&amp;Open" Argument="&quot;%1&quot;"/>
+    <ROW Extension_="vcellpack" Component_="Sophia.exe" Verb="open" Sequence="0" Command="&amp;Open" Argument="&quot;%1&quot;" Icon_="ext_2.exe"/>
+    <ROW Extension_="gcproj" Component_="Sophia.exe" Verb="open" Sequence="0" Command="&amp;Open" Argument="&quot;%1&quot;" Icon_="ext_1.exe"/>
+    <ROW Extension_="gcml" Component_="Sophia.exe" Verb="open" Sequence="0" Command="&amp;Open" Argument="&quot;%1&quot;" Icon_="ext.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
     <ROW PrereqKey="A0BFC224E0E9125ADE0B2DBF343" DisplayName=".NET Desktop Runtime 8.0.10 x64" VersionMin="8.0" SetupFileUrl="Prerequisites\.NET 8.0\windowsdesktop-runtime-8.0.10-win-x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" WinNT64Versions="Windows 7 RTM x64, Windows 8 x64, Windows Server 2012 x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64" Operator="1" NoUiComLine="/q /norestart" Options="fx" TargetName=".NET 8.0\windowsdesktop-runtime-8.0.10-win-x64.exe" Feature="A0BFC224E0E9125ADE0B2DBF343"/>
     <ROW PrereqKey="B96F93FA27E74B02866727AAE83982D0" DisplayName=".NET Framework 4.8" SetupFileUrl="Prerequisites\.NET Framework 4.8\ndp48-x86-x64-allos-enu.exe" Location="0" ExactSize="0" WinNTVersions="Windows 7 RTM x86, Windows 8 x86, Windows 10 version 1507 x86, Windows 10 version 1511 x86, Windows 10 version 1903 x86, Windows 10 version 1909 x86, Windows 10 version 2004 x86, Windows 10 version 20H2 x86, Windows 10 version 21H1 x86, Windows 10 version 21H2 x86, Windows 10 version 22H2 x86" WinNT64Versions="Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 8 x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64, Windows 10 version 1903 x64, Windows 10 version 1909 x64, Windows 10 version 2004 x64, Windows 10 version 20H2 x64, Windows 10 version 21H1 x64, Windows 10 version 21H2 x64, Windows 10 version 22H2 x64, Windows Server 2022 x64, Windows 11 x64" Operator="1" NoUiComLine="/q /norestart" Options="xk" TargetName=".NET Framework 4.8\ndp48-x86-x64-allos-enu.exe"/>
     <ROW PrereqKey="BF57E49C4E0C98AF391A28FF818B" DisplayName=".NET Runtime 8.0.10 x64" VersionMin="8.0" SetupFileUrl="Prerequisites\.NET 8.0\dotnet-runtime-8.0.10-win-x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" WinNT64Versions="Windows 8 x64, Windows Server 2012 x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64" Operator="1" NoUiComLine="/q /norestart" Options="f" TargetName=".NET 8.0\dotnet-runtime-8.0.10-win-x64.exe" Feature="BF57E49C4E0C98AF391A28FF818B"/>
     <ROW PrereqKey="D09784F374E3A9F5FB0AFDC657291" DisplayName="Microsoft Edge WebView2 Runtime (web installer)" VersionMin="128.0" SetupFileUrl="Prerequisites\WebView2\MicrosoftEdgeWebview2Setup.exe" Location="0" ExactSize="0" WinNTVersions="Windows 8 x86" WinNT64Versions="Windows 8 x64" Operator="1" NoUiComLine="/silent /install" Options="yx" TargetName="WebView2\MicrosoftEdgeWebview2Setup.exe"/>
-    <ATTRIBUTE name="PrereqsOrder" value="D09784F374E3A9F5FB0AFDC657291 B96F93FA27E74B02866727AAE83982D0 A0BFC224E0E9125ADE0B2DBF343 BF57E49C4E0C98AF391A28FF818B"/>
+    <ATTRIBUTE name="PrereqsOrder" value="B96F93FA27E74B02866727AAE83982D0 D09784F374E3A9F5FB0AFDC657291 A0BFC224E0E9125ADE0B2DBF343 BF57E49C4E0C98AF391A28FF818B"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
-    <ROW SearchKey="A0BFC224E0E9125ADE0B2DBF343SystemFo" Prereq="A0BFC224E0E9125ADE0B2DBF343" SearchType="14" SearchString="[ProgramFiles64Folder]dotnet\shared\Microsoft.WindowsDesktop.App" VerMin="8.0.10" Order="1" Property="PreReqSearch_A0BFC224E0E9125ADE0B2D"/>
+    <ROW SearchKey="A0BFC224E0E9125ADE0B2DBF343SystemFo" Prereq="A0BFC224E0E9125ADE0B2DBF343" SearchType="14" SearchString="[ProgramFiles64Folder]dotnet\shared\Microsoft.WindowsDesktop.App" VerMin="8.0.10" Order="1" Property="PreReqSearch_A0BFC224E0E9125ADE0B2D" Platform="1"/>
     <ROW SearchKey="B96F93FA27E74B02866727AAE83982D0Rel" Prereq="B96F93FA27E74B02866727AAE83982D0" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G528048" Order="1" Property="PreReqSearch_B96F93FA27E74B02866727"/>
     <ROW SearchKey="BF57E49C4E0C98AF391A28FF818BSystemF" Prereq="BF57E49C4E0C98AF391A28FF818B" SearchType="12" SearchString="HKLM\SOFTWARE\dotnet\Setup\InstalledVersions\x64\sharedfx\Microsoft.NETCore.App" VerMin="8.0.10" Order="1" Property="PreReqSearch_BF57E49C4E0C98AF391A28"/>
-    <ROW SearchKey="D09784F374E3A9F5FB0AFDC657291p_1" Prereq="D09784F374E3A9F5FB0AFDC657291" SearchType="7" SearchString="HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\pv" Order="2" Property="PreReqSearch_D09784F374E3A9F5FB0AFD"/>
-    <ROW SearchKey="D09784F374E3A9F5FB0AFDC657291pv" Prereq="D09784F374E3A9F5FB0AFDC657291" SearchType="7" SearchString="HKCU\Software\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\pv" Order="1" Property="PreReqSearch_AF4EF7137AE24E488A4E12"/>
+    <ROW SearchKey="D09784F374E3A9F5FB0AFDC657291p_1" Prereq="D09784F374E3A9F5FB0AFDC657291" SearchType="7" SearchString="HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\pv" Order="2" Property="PreReqSearch_D09784F374E3A9F5FB0AFD" Platform="1"/>
+    <ROW SearchKey="D09784F374E3A9F5FB0AFDC657291pv" Prereq="D09784F374E3A9F5FB0AFDC657291" SearchType="7" SearchString="HKCU\Software\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}\pv" Order="1" Property="PreReqSearch_AF4EF7137AE24E488A4E12" Platform="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SoftwareIdentificationComponent">
     <ATTRIBUTE name="LocalFile" value="regid.199509.com.example_ProductNam"/>
