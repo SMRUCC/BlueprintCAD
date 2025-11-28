@@ -8,6 +8,7 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Generic
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.MIME.Office.Excel.XLSX.Writer
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
 
@@ -217,6 +218,8 @@ Public Class FormPhenotypePath
         Next
     End Sub
 
+    Dim pathway As Route
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If from Is Nothing OrElse target Is Nothing Then
             Call MessageBox.Show("Missing the from node to target node to find the phenotype pathway!",
@@ -229,17 +232,63 @@ Public Class FormPhenotypePath
         Dim router As DijkstraRouter = DijkstraRouter.FromNetwork(g, undirected:=False)
         Dim u = router.GetLocation(from.id)
         Dim v = router.GetLocation(target.id)
-        Dim pathway As Route = router.CalculateMinCost(u, v)
+
+        pathway = router.CalculateMinCost(u, v)
+
+        Call DataGridView1.Rows.Clear()
 
         If Not pathway Is Nothing Then
             For Each link As VertexEdge In pathway.AsEnumerable
                 Dim edge As Edge = g.GetEdgeByID(link.ID)
 
+                Call DataGridView1.Rows.Add(edge.U.data.label, edge.V.data.label, edge.data(NamesOf.REFLECTION_ID_MAPPING_INTERACTION_TYPE))
             Next
         End If
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        If pathway Is Nothing Then
+            Call MessageBox.Show("No pathway router, please make the pathway search at first!",
+                                 "No data",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning)
+            Return
+        End If
 
+        Using file As New SaveFileDialog With {.Filter = "Excel Table(*.xlsx)|*.xlsx"}
+            If file.ShowDialog = DialogResult.OK Then
+                Dim wb As New Workbook("Pathway")
+                Dim sheet = wb.CurrentWorksheet
+                Dim nodes As New Dictionary(Of String, NodeView)
+                Dim viewIndex = view.ToDictionary(Function(v) v.id)
+
+                Call sheet.AddDataRow("fromNode", "toNode", "edgeType")
+
+                For Each link As VertexEdge In pathway.AsEnumerable
+                    Dim edge As Edge = g.GetEdgeByID(link.ID)
+
+                    nodes(edge.U.label) = viewIndex(edge.U.label)
+                    nodes(edge.V.label) = viewIndex(edge.V.label)
+
+                    Call sheet.AddDataRow(edge.U.data.label,
+                                          edge.V.data.label,
+                                          edge.data(NamesOf.REFLECTION_ID_MAPPING_INTERACTION_TYPE))
+                Next
+
+                Call wb.AddWorksheet("Molecule Information")
+
+                sheet = wb.CurrentWorksheet
+                sheet.AddDataRow("ID", "Name", "Type", "Location")
+
+                For Each vertex As NodeView In nodes.Values
+                    Call sheet.AddDataRow(vertex.id,
+                                          vertex.name,
+                                          vertex.type,
+                                          vertex.compartment)
+                Next
+
+                Call wb.SaveAs(file.FileName)
+            End If
+        End Using
     End Sub
 End Class
