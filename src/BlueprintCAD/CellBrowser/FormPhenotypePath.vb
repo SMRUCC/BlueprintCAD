@@ -230,7 +230,9 @@ Public Class FormPhenotypePath
         Dim pathway As Route = router.CalculateMinCost(u, v)
 
         If Not pathway Is Nothing Then
+            For Each link In pathway
 
+            Next
         End If
     End Sub
 End Class
