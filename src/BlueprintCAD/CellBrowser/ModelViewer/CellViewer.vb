@@ -1,5 +1,6 @@
 ﻿Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Data.visualize.Network
+Imports Microsoft.VisualBasic.Serialization.JSON
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports Microsoft.Web.WebView2.Core
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -46,6 +47,6 @@ Public Class CellViewer
     End Sub
 
     Public Sub ViewGraph(g As graphology.graph)
-
+        Call WebView21.CoreWebView2.PostWebMessageAsJson(g.GetJson(simpleDict:=True))
     End Sub
 End Class
