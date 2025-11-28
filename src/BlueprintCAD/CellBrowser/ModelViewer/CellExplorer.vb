@@ -76,4 +76,16 @@ Public Class CellExplorer
             Call Tools.OpenUrlWithDefaultBrowser(url)
         End If
     End Sub
+
+    Private Sub viewer_Visit(node As JsonViewerTreeNode) Handles viewer.Visit
+        Dim json As JsonObject = TryCast(node.Tag, JsonObject)
+
+        If json Is Nothing Then
+            Return
+        End If
+
+        If TypeOf json.Value Is Compound Then
+            Call CommonRuntime.GetPropertyWindow.SetObject(json.Value)
+        End If
+    End Sub
 End Class
