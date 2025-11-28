@@ -16,7 +16,7 @@ Public Class CompoundSearchIndex : Implements Enumeration(Of Compound)
             .SafeQuery _
             .ToArray
 
-        For Each compound As Compound In compounds
+        For Each compound As Compound In Me.compounds
             Call Me.qgram.AddString(compound.name, offset)
 
             For Each id As String In compound.db_xrefs.SafeQuery
