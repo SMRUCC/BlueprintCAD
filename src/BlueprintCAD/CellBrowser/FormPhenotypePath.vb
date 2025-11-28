@@ -200,7 +200,7 @@ Public Class FormPhenotypePath
         Call ListBox1.Items.Clear()
 
         For Each item In find
-            Call ListBox2.Items.Add(view(item.index))
+            Call ListBox1.Items.Add(view(item.index))
         Next
     End Sub
 
@@ -239,7 +239,7 @@ Public Class FormPhenotypePath
 
         If Not pathway Is Nothing Then
             For Each link As VertexEdge In pathway.AsEnumerable
-                Dim edge As Edge = g.GetEdgeByID(link.ID)
+                Dim edge As Edge = g.GetEdge(link.U, link.V)
 
                 Call DataGridView1.Rows.Add(edge.U.data.label, edge.U.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE),
                                             edge.V.data.label, edge.V.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE),
@@ -275,7 +275,7 @@ Public Class FormPhenotypePath
                 Call sheet.AddDataRow("fromNode", "toNode", "edgeType")
 
                 For Each link As VertexEdge In pathway.AsEnumerable
-                    Dim edge As Edge = g.GetEdgeByID(link.ID)
+                    Dim edge As Edge = g.GetEdge(link.U, link.V)
 
                     nodes(edge.U.label) = viewIndex(edge.U.label)
                     nodes(edge.V.label) = viewIndex(edge.V.label)
