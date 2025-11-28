@@ -112,6 +112,12 @@ Public Class CellExplorer
         End If
     End Sub
 
+    Public Sub ShowNode(id As String)
+        If compounds.ContainsKey(id) Then
+            Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(compounds(id)), NameOf(CompoundPropertyView.db_xrefs), NameOf(CompoundPropertyView.referenceID))
+        End If
+    End Sub
+
     ''' <summary>
     ''' view graph
     ''' </summary>

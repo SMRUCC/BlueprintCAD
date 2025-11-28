@@ -56,6 +56,14 @@
             });
 
             currentSigmaInstance = sigma_graph;
+            currentSigmaInstance.on('clickNode', node => {
+                const nodeId = node.node;
+
+                console.log(`节点被点击了！ID: ${nodeId}`);
+                // 将节点信息以对象形式发送回宿主程序
+                window.chrome.webview.postMessage({ type: 'nodeClicked', nodeId: nodeId });
+            });
+
             fa2Layout.start();
         }
 
