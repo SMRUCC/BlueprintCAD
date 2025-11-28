@@ -86,7 +86,7 @@ Public Class CellExplorer
         End If
 
         If TypeOf json.Value Is Compound Then
-            Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(json.Value))
+            Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(json.Value), NameOf(CompoundPropertyView.db_xrefs), NameOf(CompoundPropertyView.referenceID))
         End If
     End Sub
 End Class
