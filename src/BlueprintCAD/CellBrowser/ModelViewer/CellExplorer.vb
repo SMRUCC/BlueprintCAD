@@ -56,6 +56,7 @@ Public Class CellExplorer
 
         viewer = New JsonViewer
         viewer.Dock = DockStyle.Fill
+        viewer.AddContextMenuItem("View In Registry", "view_registry")
 
         Panel1.Controls.Add(viewer)
 
@@ -64,6 +65,10 @@ Public Class CellExplorer
 
     Private Sub viewer_FindAction(node As JsonViewerTreeNode, text As String) Handles viewer.FindAction
         Dim val As Object = DirectCast(node.Tag, JsonObject).Value
+
+    End Sub
+
+    Private Sub viewer_MenuAction(sender As ToolStripMenuItem, node As Object) Handles viewer.MenuAction
 
     End Sub
 End Class
