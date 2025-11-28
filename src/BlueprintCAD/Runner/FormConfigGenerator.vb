@@ -43,6 +43,14 @@ Public Class FormConfigGenerator : Implements IDataContainer, IWizardUI
     End Sub
 
     Public Function OK() As Boolean Implements IWizardUI.OK
+        If Not wizardConfig.GetModelFiles.Any Then
+            Call MessageBox.Show("No virtual cell model was selected, select one or more virtual cell model from file selection.",
+                                 "No model data",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning)
+            Return False
+        End If
+
         Using file As New SaveFileDialog With {.Filter = "Config JSON File(*.json)|*.json"}
             If file.ShowDialog = DialogResult.OK Then
                 Dim config As New Config With {
