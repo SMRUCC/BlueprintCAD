@@ -34,6 +34,11 @@ Partial Class FormPhenotypePath
         SetAsTargetNodeToolStripMenuItem = New ToolStripMenuItem()
         Label1 = New Label()
         DataGridView1 = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
         Label4 = New Label()
         TextBox1 = New TextBox()
         Button1 = New Button()
@@ -46,18 +51,14 @@ Partial Class FormPhenotypePath
         ToolStripSeparator1 = New ToolStripSeparator()
         ToolStripButton1 = New ToolStripButton()
         GroupBox1 = New GroupBox()
+        Label8 = New Label()
         Label7 = New Label()
         Label6 = New Label()
         Label3 = New Label()
         Label2 = New Label()
         GroupBox2 = New GroupBox()
         SplitContainer1 = New SplitContainer()
-        Column1 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column5 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
-        Label8 = New Label()
+        ToolStripButton2 = New ToolStripButton()
         ContextMenuStrip1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -125,13 +126,48 @@ Partial Class FormPhenotypePath
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column4, Column2, Column5, Column3})
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(3, 19)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(1037, 235)
         DataGridView1.TabIndex = 4
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "FromNode"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        Column1.Width = 300
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "FromNode Type"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        Column4.Width = 150
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "ToNode"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        Column2.Width = 300
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "ToNode Type"
+        Column5.Name = "Column5"
+        Column5.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Type"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
         ' 
         ' Label4
         ' 
@@ -194,7 +230,7 @@ Partial Class FormPhenotypePath
         ' 
         ' ToolStrip1
         ' 
-        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripSeparator1, ToolStripButton1})
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripSeparator1, ToolStripButton1, ToolStripButton2})
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.RenderMode = ToolStripRenderMode.System
@@ -247,6 +283,15 @@ Partial Class FormPhenotypePath
         GroupBox1.TabIndex = 14
         GroupBox1.TabStop = False
         GroupBox1.Text = "Set Targets"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(126, 388)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(156, 15)
+        Label8.TabIndex = 17
+        Label8.Text = "<No Pathway Route Result>"
         ' 
         ' Label7
         ' 
@@ -313,47 +358,14 @@ Partial Class FormPhenotypePath
         SplitContainer1.SplitterDistance = 419
         SplitContainer1.TabIndex = 16
         ' 
-        ' Column1
+        ' ToolStripButton2
         ' 
-        Column1.HeaderText = "FromNode"
-        Column1.Name = "Column1"
-        Column1.ReadOnly = True
-        Column1.Width = 300
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "FromNode Type"
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
-        Column4.Width = 150
-        ' 
-        ' Column2
-        ' 
-        Column2.HeaderText = "ToNode"
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        Column2.Width = 300
-        ' 
-        ' Column5
-        ' 
-        Column5.HeaderText = "ToNode Type"
-        Column5.Name = "Column5"
-        Column5.ReadOnly = True
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Type"
-        Column3.Name = "Column3"
-        Column3.ReadOnly = True
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(126, 388)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(156, 15)
-        Label8.TabIndex = 17
-        Label8.Text = "<No Pathway Route Result>"
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "View Expression Data"
         ' 
         ' FormPhenotypePath
         ' 
@@ -412,4 +424,5 @@ Partial Class FormPhenotypePath
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Label8 As Label
+    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class
