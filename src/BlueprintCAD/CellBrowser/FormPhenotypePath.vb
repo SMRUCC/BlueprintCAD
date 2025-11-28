@@ -233,8 +233,7 @@ Public Class FormPhenotypePath
         Dim u = router.GetLocation(from.id)
         Dim v = router.GetLocation(target.id)
 
-        pathway = router.CalculateMinCost(u, v)
-
+        Call ProgressSpinner.DoLoading(Sub() pathway = router.CalculateMinCost(u, v))
         Call DataGridView1.Rows.Clear()
 
         If Not pathway Is Nothing Then
