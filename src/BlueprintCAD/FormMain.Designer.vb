@@ -60,7 +60,7 @@ Partial Class FormMain
         ' ToolStripStatusLabel3
         ' 
         ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        ToolStripStatusLabel3.Size = New Size(1025, 17)
+        ToolStripStatusLabel3.Size = New Size(1056, 17)
         ToolStripStatusLabel3.Spring = True
         ' 
         ' ToolStripStatusLabel2
@@ -83,6 +83,7 @@ Partial Class FormMain
         ClientSize = New Size(1260, 713)
         Controls.Add(PanelBase)
         Controls.Add(StatusStrip1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "FormMain"
         Text = "Sophia VirtualCell Workshop"
         StatusStrip1.ResumeLayout(False)
