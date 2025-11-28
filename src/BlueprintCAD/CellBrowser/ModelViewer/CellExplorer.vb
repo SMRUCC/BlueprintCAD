@@ -118,6 +118,16 @@ Public Class CellExplorer
         End If
     End Sub
 
+    Public Function GetNodeName(id As String) As (type$, name$)
+        If compounds.ContainsKey(id) Then
+            Return ("Metabolite", compounds(id).name)
+        ElseIf rxnList.ContainsKey(id) Then
+            Return ("Metabolic Reaction", rxnList(id).name)
+        Else
+            Return Nothing
+        End If
+    End Function
+
     Public Sub ShowNode(id As String)
         If compounds.ContainsKey(id) Then
             Call CommonRuntime.GetPropertyWindow.SetObject(New CompoundPropertyView(compounds(id)), NameOf(CompoundPropertyView.db_xrefs), NameOf(CompoundPropertyView.referenceID))

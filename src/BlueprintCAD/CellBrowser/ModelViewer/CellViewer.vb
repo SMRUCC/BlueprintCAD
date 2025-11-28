@@ -69,10 +69,17 @@ Public Class CellViewer
                 If nodeId Is Nothing Then
                     Return
                 Else
-                    ToolStripStatusLabel3.Text = nodeId
-                End If
+                    Dim target = explorer.GetNodeName(nodeId)
 
-                Call explorer.ShowNode(nodeId)
+                    Call explorer.ShowNode(nodeId)
+
+                    If target.type Is Nothing Then
+                        ToolStripStatusLabel3.Text = "<Nothing>"
+                        nodeId = Nothing
+                    Else
+                        ToolStripStatusLabel3.Text = $"<{target.type}> {target.name}"
+                    End If
+                End If
             End If
         Catch ex As Exception
             ' 处理 JSON 解析或其他错误
