@@ -8,6 +8,7 @@ Imports Microsoft.VisualBasic.Data.visualize.Network
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
+Imports Microsoft.VisualBasic.Imaging.SVG.PathHelper
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
@@ -166,7 +167,11 @@ Public Class CellExplorer
                     })
                 End If
 
-                Call g.CreateEdge(g.GetElementByID(left.compound), rxnNode, left.factor)
+                Dim v = g.GetElementByID(left.compound)
+
+                If Not (g.ExistEdge(v.label, rxnNode.label) OrElse g.ExistEdge(rxnNode.label, v.label)) Then
+                    Call g.CreateEdge(v, rxnNode, left.factor)
+                End If
             Next
             For Each right As CompoundFactor In rxn.product
                 If g.GetElementByID(right.compound) Is Nothing Then
@@ -178,7 +183,11 @@ Public Class CellExplorer
                     })
                 End If
 
-                Call g.CreateEdge(rxnNode, g.GetElementByID(right.compound), right.factor)
+                Dim u = g.GetElementByID(right.compound)
+
+                If Not (g.ExistEdge(u.label, rxnNode.label) OrElse g.ExistEdge(rxnNode.label, u.label)) Then
+                    Call g.CreateEdge(rxnNode, u, right.factor)
+                End If
             Next
         Next
 
