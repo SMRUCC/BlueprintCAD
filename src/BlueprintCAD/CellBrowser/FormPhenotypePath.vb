@@ -226,6 +226,12 @@ Public Class FormPhenotypePath
         End If
 
         Dim router As New DijkstraRouter(g, undirected:=False)
+        Dim u = router.GetLocation(from.id)
+        Dim v = router.GetLocation(target.id)
+        Dim pathway As Route = router.CalculateMinCost(u, v)
 
+        If Not pathway Is Nothing Then
+
+        End If
     End Sub
 End Class
