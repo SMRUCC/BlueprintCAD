@@ -2,6 +2,7 @@
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
+Imports Galaxy.Workbench.CommonDialogs
 Imports ggplot
 Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
 Imports Microsoft.VisualBasic.ComponentModel.Collection
@@ -707,8 +708,8 @@ Public Class CellBrowser
         End If
     End Sub
 
-    Private Shared Sub OpenPhenotypeTool()
-
+    Private Sub OpenPhenotypeTool()
+        Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network))
     End Sub
 
     Private Sub CheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckAllToolStripMenuItem.Click
