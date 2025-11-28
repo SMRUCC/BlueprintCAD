@@ -9,24 +9,34 @@
 </head>
 
 <body style="background: lightgrey">
-    <div id="container" style="width: 800px; height: 600px; background: white"></div>
+    <div id="container" style="width: 1600px; height: 1200px; background: white"></div>
     <script>
-        // Create a graphology graph
-        const graph = new graphology.Graph();
-        graph.addNode("1", { label: "Node 1", x: 0, y: 0, size: 10, color: "blue" });
-        graph.addNode("2", { label: "Node 2", x: 1, y: 1, size: 20, color: "red" });
-        graph.addEdge("1", "2", { size: 5, color: "purple" });
+        // 这是处理数据的JS函数
+        function processLargeData(data) {
+            console.log("成功接收到数据:", data);
+            console.log("成功接收 " + data.length + " 条数据!");
 
-        // Instantiate sigma.js and render the graph
-        const sigma_graph = new Sigma(graph, document.getElementById("container"));
+            // Instantiate sigma.js and render the graph
+            const sigma_graph = new Sigma(data, document.getElementById("container"));
 
-        sigma_graph.startForceAtlas2({
-            barnesHutOptimize: true,
-            outboundAtttCompensation: false,
-            interations: 1000,
-            slowDown: 1,
-            linLogMode: false,
-            edgeWeightInfluence: 0.1
+            sigma_graph.startForceAtlas2({
+                barnesHutOptimize: true,
+                outboundAtttCompensation: false,
+                interations: 1000,
+                slowDown: 1,
+                linLogMode: false,
+                edgeWeightInfluence: 0.1
+            });
+        }
+
+        // 关键步骤：添加消息事件监听器
+        window.addEventListener('DOMContentLoaded', () => {
+            // 'message' 事件是 WebView2 通信的核心
+            window.chrome.webview.addEventListener('message', event => {
+                // event.data 就是 VB.NET 发送过来的、已经反序列化好的 JavaScript 对象
+                console.log("收到 message 事件:", event);
+                processLargeData(event.data);
+            });
         });
     </script>
 </body>

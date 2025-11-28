@@ -42,11 +42,11 @@ Public Class CellViewer
         Return Me
     End Function
 
-    Private Sub WebView21_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs)
-        WebView21.CoreWebView2.Navigate($"http://localhost:{WebPort}/cell_graph.html")
-    End Sub
-
     Public Sub ViewGraph(g As graphology.graph)
         Call WebView21.CoreWebView2.PostWebMessageAsJson(g.GetJson(simpleDict:=True))
+    End Sub
+
+    Private Sub WebView21_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs) Handles WebView21.CoreWebView2InitializationCompleted
+        Call WebView21.CoreWebView2.Navigate($"http://localhost:{WebPort}/cell_graph.html")
     End Sub
 End Class
