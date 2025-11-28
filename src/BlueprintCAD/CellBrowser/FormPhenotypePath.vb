@@ -145,7 +145,24 @@ Public Class FormPhenotypePath
             End Sub, host:=Me)
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+    Dim from As NodeView
+    Dim target As NodeView
 
+    Private Sub SetAsFromNodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetAsFromNodeToolStripMenuItem.Click
+        If ListBox1.SelectedIndex < 0 Then
+            Return
+        End If
+
+        from = ListBox1.SelectedItem
+        Label3.Text = from.ToString
+    End Sub
+
+    Private Sub SetAsTargetNodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetAsTargetNodeToolStripMenuItem.Click
+        If ListBox2.SelectedIndex < 0 Then
+            Return
+        End If
+
+        target = ListBox2.SelectedItem
+        Label7.Text = target.ToString
     End Sub
 End Class

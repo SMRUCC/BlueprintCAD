@@ -24,6 +24,7 @@ Partial Class FormPhenotypePath
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         ListBox1 = New ListBox()
         ListBox2 = New ListBox()
         Label1 = New Label()
@@ -44,6 +45,10 @@ Partial Class FormPhenotypePath
         Label3 = New Label()
         Label6 = New Label()
         Label7 = New Label()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        ContextMenuStrip2 = New ContextMenuStrip(components)
+        SetAsFromNodeToolStripMenuItem = New ToolStripMenuItem()
+        SetAsTargetNodeToolStripMenuItem = New ToolStripMenuItem()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         ToolStrip1.SuspendLayout()
         GroupBox1.SuspendLayout()
@@ -52,30 +57,34 @@ Partial Class FormPhenotypePath
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        ContextMenuStrip1.SuspendLayout()
+        ContextMenuStrip2.SuspendLayout()
         SuspendLayout()
         ' 
         ' ListBox1
         ' 
+        ListBox1.ContextMenuStrip = ContextMenuStrip1
         ListBox1.FormattingEnabled = True
         ListBox1.ItemHeight = 15
-        ListBox1.Location = New Point(12, 54)
+        ListBox1.Location = New Point(6, 53)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(465, 274)
+        ListBox1.Size = New Size(485, 274)
         ListBox1.TabIndex = 0
         ' 
         ' ListBox2
         ' 
+        ListBox2.ContextMenuStrip = ContextMenuStrip2
         ListBox2.FormattingEnabled = True
         ListBox2.ItemHeight = 15
-        ListBox2.Location = New Point(538, 54)
+        ListBox2.Location = New Point(523, 54)
         ListBox2.Name = "ListBox2"
-        ListBox2.Size = New Size(499, 274)
+        ListBox2.Size = New Size(514, 274)
         ListBox2.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(497, 145)
+        Label1.Location = New Point(497, 189)
         Label1.Name = "Label1"
         Label1.Size = New Size(20, 15)
         Label1.TabIndex = 2
@@ -95,24 +104,24 @@ Partial Class FormPhenotypePath
         Label4.AutoSize = True
         Label4.Location = New Point(12, 29)
         Label4.Name = "Label4"
-        Label4.Size = New Size(45, 15)
+        Label4.Size = New Size(70, 15)
         Label4.TabIndex = 6
-        Label4.Text = "Search:"
+        Label4.Text = "From Node:"
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(63, 25)
+        TextBox1.Location = New Point(88, 26)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(333, 23)
+        TextBox1.Size = New Size(322, 23)
         TextBox1.TabIndex = 7
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(402, 24)
+        Button1.Location = New Point(416, 26)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 8
-        Button1.Text = "Match"
+        Button1.Text = "Search"
         Button1.UseVisualStyleBackColor = True
         ' 
         ' Button2
@@ -121,24 +130,24 @@ Partial Class FormPhenotypePath
         Button2.Name = "Button2"
         Button2.Size = New Size(75, 23)
         Button2.TabIndex = 11
-        Button2.Text = "Match"
+        Button2.Text = "Search"
         Button2.UseVisualStyleBackColor = True
         ' 
         ' TextBox2
         ' 
-        TextBox2.Location = New Point(589, 26)
+        TextBox2.Location = New Point(603, 26)
         TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(367, 23)
+        TextBox2.Size = New Size(353, 23)
         TextBox2.TabIndex = 10
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(538, 32)
+        Label5.Location = New Point(523, 30)
         Label5.Name = "Label5"
-        Label5.Size = New Size(45, 15)
+        Label5.Size = New Size(74, 15)
         Label5.TabIndex = 9
-        Label5.Text = "Search:"
+        Label5.Text = "Target Node:"
         ' 
         ' Button3
         ' 
@@ -255,6 +264,30 @@ Partial Class FormPhenotypePath
         Label7.TabIndex = 16
         Label7.Text = "Not Selected"
         ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {SetAsFromNodeToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(170, 26)
+        ' 
+        ' ContextMenuStrip2
+        ' 
+        ContextMenuStrip2.Items.AddRange(New ToolStripItem() {SetAsTargetNodeToolStripMenuItem})
+        ContextMenuStrip2.Name = "ContextMenuStrip2"
+        ContextMenuStrip2.Size = New Size(174, 26)
+        ' 
+        ' SetAsFromNodeToolStripMenuItem
+        ' 
+        SetAsFromNodeToolStripMenuItem.Name = "SetAsFromNodeToolStripMenuItem"
+        SetAsFromNodeToolStripMenuItem.Size = New Size(180, 22)
+        SetAsFromNodeToolStripMenuItem.Text = "Set As From Node"
+        ' 
+        ' SetAsTargetNodeToolStripMenuItem
+        ' 
+        SetAsTargetNodeToolStripMenuItem.Name = "SetAsTargetNodeToolStripMenuItem"
+        SetAsTargetNodeToolStripMenuItem.Size = New Size(180, 22)
+        SetAsTargetNodeToolStripMenuItem.Text = "Set As Target Node"
+        ' 
         ' FormPhenotypePath
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -274,6 +307,8 @@ Partial Class FormPhenotypePath
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        ContextMenuStrip1.ResumeLayout(False)
+        ContextMenuStrip2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -298,4 +333,8 @@ Partial Class FormPhenotypePath
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents SetAsFromNodeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents SetAsTargetNodeToolStripMenuItem As ToolStripMenuItem
 End Class
