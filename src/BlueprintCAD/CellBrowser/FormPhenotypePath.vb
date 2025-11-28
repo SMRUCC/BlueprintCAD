@@ -17,8 +17,6 @@ Public Class FormPhenotypePath
     Public Function LoadNetwork(network As Dictionary(Of String, FluxEdge),
                                 symbols As Dictionary(Of String, CompoundInfo),
                                 ByRef g As NetworkGraph) As FormPhenotypePath
-        Dim offset As Integer
-
         If g Is Nothing Then
             g = TaskProgress.LoadData(streamLoad:=Function(bar As ITaskProgress)
                                                       Return CreateNetwork(network, symbols, bar)
@@ -29,24 +27,18 @@ Public Class FormPhenotypePath
         End If
 
         Me.g = g
-        Me.qgram = New QGramIndex(6)
         Me.vertex = g.vertex.ToArray
-        Me.view = New NodeView(vertex.Length - 1) {}
-
-        For Each v As Node In vertex
-            view(offset) = New NodeView With {
-                .id = v.label,
-                .name = v.data.label,
-                .type = v.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE),
-                .compartment = v.data("location")
-            }
-
-            Call ListBox1.Items.Add(view(offset))
-            Call ListBox2.Items.Add(view(offset))
-            Call qgram.AddString(view(offset).name, offset)
-
-            offset += 1
-        Next
+        Me.view = vertex.AsParallel _
+            .Where(Function(v) v.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE) <> "BiologicalProcess") _
+            .Select(Function(v)
+                        Return New NodeView With {
+                            .id = v.label,
+                            .name = v.data.label,
+                            .type = v.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE),
+                            .compartment = v.data("location")
+                        }
+                    End Function) _
+            .ToArray
 
         Return Me
     End Function
@@ -139,4 +131,17 @@ Public Class FormPhenotypePath
 
         Return g
     End Function
+
+    Private Sub FormPhenotypePath_Load(sender As Object, e As EventArgs) Handles Me.Load
+        qgram = New QGramIndex(6)
+
+        Call ProgressSpinner.DoLoading(
+            Sub()
+                For Each v As NodeView In view
+                    Call ListBox1.Items.Add(v)
+                    Call ListBox2.Items.Add(v)
+                    Call qgram.AddString(v.name)
+                Next
+            End Sub, host:=Me)
+    End Sub
 End Class
