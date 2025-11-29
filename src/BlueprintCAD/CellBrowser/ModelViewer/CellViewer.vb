@@ -1,9 +1,15 @@
 ﻿Imports Galaxy.Workbench
+Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.Data.visualize.Network
+Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
+Imports Microsoft.VisualBasic.MIME.application.xml.MathML
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports Microsoft.Web.WebView2.Core
+Imports RibbonLib.Interop
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
+Imports SMRUCC.genomics.GCModeller.ModellingEngine.Dynamics.Core
+Imports SMRUCC.genomics.GCModeller.ModellingEngine.IO
 
 Public Class CellViewer
 
@@ -12,19 +18,34 @@ Public Class CellViewer
     Dim explorer As CellExplorer
     Dim nodeId As String
 
+    Shared ReadOnly inspector As New RibbonEventBinding(Ribbon.ButtonPathwayRouter)
+
+    Dim network As Dictionary(Of String, FluxEdge)
+    Dim symbols As Dictionary(Of String, CompoundInfo)
+    Dim cache_graph As NetworkGraph
+
+    Private Sub OpenRouter()
+        Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network, symbols, {"WATER", "CO2"}, cache_graph))
+    End Sub
+
     Private Async Sub CellViewer_Load(sender As Object, e As EventArgs) Handles Me.Load
         Await WebViewLoader.Init(WebView21)
 
         explorer = New CellExplorer
         explorer.Show(Workbench.AppHost.GetDockPanel, dockState:=DockState.DockLeft)
+
+        Ribbon.GroupModelInspecter.ContextAvailable = ContextAvailability.Active
     End Sub
 
     Private Sub CellViewer_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-
+        Ribbon.GroupModelInspecter.ContextAvailable = ContextAvailability.Active
+        inspector.evt = AddressOf OpenRouter
     End Sub
 
     Private Sub CellViewer_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
         Workbench.RestoreFormTitle()
+        Ribbon.GroupModelInspecter.ContextAvailable = ContextAvailability.NotAvailable
+        inspector.ClearHook()
     End Sub
 
     Private Sub CellViewer_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
