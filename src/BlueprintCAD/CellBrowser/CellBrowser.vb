@@ -24,7 +24,14 @@ Imports std = System.Math
 Public Class CellBrowser
 
     Dim vcellPack As VCellMatrixReader
+    ''' <summary>
+    ''' index the network by id
+    ''' </summary>
     Dim network As Dictionary(Of String, FluxEdge)
+    Dim networkName2ID As Dictionary(Of String, String)
+    ''' <summary>
+    ''' network graph indexed by the metabolite id
+    ''' </summary>
     Dim nodeLinks As Dictionary(Of String, FluxEdge())
     Dim timePoints As Double()
     Dim moleculeSet As (compartment_id As String, modules As NamedCollection(Of String)())()
@@ -50,6 +57,9 @@ Public Class CellBrowser
 
     Shared ReadOnly plotMatrixExportButton As New RibbonEventBinding(Workbench.Ribbon.ButtonExportPlotMatrix)
 
+    ''' <summary>
+    ''' hook of the <see cref="DataGridView1"/>
+    ''' </summary>
     Dim dataTable As GridLoaderHandler
 
     Public Sub OpenVirtualCellDataFile(filepath As String)
@@ -141,12 +151,24 @@ Public Class CellBrowser
         Next
     End Sub
 
+    ''' <summary>
+    ''' load network indexed by name
+    ''' </summary>
+    ''' <param name="println"></param>
+    ''' <returns></returns>
     Private Function LoadNetwork(println As Action(Of String)) As Dictionary(Of String, FluxEdge)
         Dim index As Dictionary(Of String, FluxEdge) = vcellPack.network
 
         Call println("Loading network from the virtual cell data pack.")
         Call println("Loading flux data into table UI...")
-        Call Me.Invoke(Sub() LoadUI(index.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value))))
+        Call Me.Invoke(Sub() LoadUI(index.Values))
+
+        networkName2ID = index.Values _
+            .GroupBy(Function(r) If(r.name, r.id)) _
+            .ToDictionary(Function(r) r.Key,
+                          Function(r)
+                              Return r.First.id
+                          End Function)
 
         Return index
     End Function
@@ -156,10 +178,10 @@ Public Class CellBrowser
             Return
         End If
 
-        Call LoadUI(network.Select(Function(a) New NamedValue(Of FluxEdge)(a.Key, a.Value)))
+        Call LoadUI(network.Values)
     End Sub
 
-    Private Sub LoadUI(network As IEnumerable(Of NamedValue(Of FluxEdge)))
+    Private Sub LoadUI(network As IEnumerable(Of FluxEdge))
         Call dataTable.LoadTable(
             Sub(tbl)
                 tbl.Columns.Add("ID", GetType(String))
@@ -167,11 +189,10 @@ Public Class CellBrowser
                 tbl.Columns.Add("Forward", GetType(String))
                 tbl.Columns.Add("Reverse", GetType(String))
 
-                For Each edge As NamedValue(Of FluxEdge) In network
-                    Dim flux As FluxEdge = edge.Value
+                For Each flux As FluxEdge In network
                     Dim forward As VariableFactor() = flux.regulation.Where(Function(m) m.factor > 0).ToArray
                     Dim reverse As VariableFactor() = flux.regulation.Where(Function(m) m.factor < 0).ToArray
-                    Dim row = tbl.Rows.Add(flux.id,
+                    Dim row = tbl.Rows.Add(If(flux.name, flux.id),
                                            flux.MakeToString(symbols),
                                            forward.Select(Function(v) symbols.GetNameText(v.mass_id)).JoinBy("; "),
                                            reverse.Select(Function(v) symbols.GetNameText(v.mass_id)).JoinBy("; "))
@@ -195,7 +216,9 @@ Public Class CellBrowser
         End If
 
         Dim row = DataGridView1.SelectedRows(0)
-        Dim edge As FluxEdge = network(row.Cells(0).Value)
+        Dim name As String = CStr(row.Cells(0).Value)
+        Dim name2Id As String = networkName2ID(name)
+        Dim edge As FluxEdge = network(name2Id)
         Dim displayTree As New FluxEdge With {
             .id = edge.id,
             .left = edge.left.Select(Function(a) New VariableFactor With {.compartment_id = a.compartment_id, .factor = a.factor, .id = symbols.GetNameText(a.id.GetTagValue("@").Name)}).ToArray,
@@ -213,7 +236,7 @@ Public Class CellBrowser
         }
 
         TextBox1.Json = "{}"
-        TextBox1.RootTag = "Tree Of '" & edge.id & "'"
+        TextBox1.RootTag = "Tree Of '" & If(edge.name, edge.id) & "'"
         TextBox1.Json = displayTree.GetJson
 
         Await RefreshPlot(edge.FactorIds.Distinct)
@@ -392,7 +415,7 @@ Public Class CellBrowser
 
         Call TaskProgress.RunAction(
             Sub(println)
-                Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+                Call Me.Invoke(Sub() Call LoadUI(edges))
             End Sub)
     End Sub
 
@@ -414,7 +437,7 @@ Public Class CellBrowser
 
         Call TaskProgress.RunAction(
             Sub(println)
-                Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+                Call Me.Invoke(Sub() Call LoadUI(edges))
             End Sub)
     End Sub
 
@@ -437,7 +460,7 @@ Public Class CellBrowser
 
         Call TaskProgress.RunAction(
             Sub(println)
-                Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+                Call Me.Invoke(Sub() Call LoadUI(edges))
             End Sub)
     End Sub
 
@@ -457,7 +480,7 @@ Public Class CellBrowser
 
         Call TaskProgress.RunAction(
             Sub(println)
-                Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+                Call Me.Invoke(Sub() Call LoadUI(edges))
             End Sub)
     End Sub
 
@@ -477,7 +500,7 @@ Public Class CellBrowser
 
             Call TaskProgress.RunAction(
                 Sub(println)
-                    Call Me.Invoke(Sub() Call LoadUI(edges.Select(Function(a) New NamedValue(Of FluxEdge)(a.id, a))))
+                    Call Me.Invoke(Sub() Call LoadUI(edges))
                 End Sub)
         End If
     End Sub
@@ -582,7 +605,7 @@ Public Class CellBrowser
                             .Select(Function(flux_id)
                                         If vcellPack.FluxExpressionExists(flux_id) Then
                                             Return New DataFrameRow With {
-                                                .geneID = flux_id,
+                                                .geneID = If(network(flux_id).name, flux_id),
                                                 .experiments = vcellPack.GetFluxExpression(flux_id)
                                             }
                                         Else

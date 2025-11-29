@@ -71,7 +71,8 @@ Public Class FormPhenotypePath
                     .Properties = New Dictionary(Of String, String) From {
                         {NamesOf.REFLECTION_ID_MAPPING_NODETYPE, "BiologicalProcess"},
                         {"location", "?"}
-                    }
+                    },
+                    .label = If(rxn.name, rxn.id)
                 })
                 rxnNode = g.GetElementByID(rxn.id)
             End If
@@ -139,7 +140,7 @@ Public Class FormPhenotypePath
 
             If (++tick) Mod d = 0 Then
                 Call bar.SetProgress(CInt(tick / n * 100))
-                Call bar.SetInfo($"Build cellular network graph... {rxn.id}")
+                Call bar.SetInfo($"Build cellular network graph... {If(rxn.name, rxn.id)}")
             End If
         Next
 
