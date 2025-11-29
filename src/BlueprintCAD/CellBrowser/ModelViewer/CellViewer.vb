@@ -42,9 +42,9 @@ Public Class CellViewer
                                .Select(Function(n) n.id) _
                                .ToArray
 
-                           Call explorer.viewGraph(nodeId).Wait()
+                           Call explorer.viewGraph(nodeId)
                        End Sub,
-            config:=New FormPhenotypePath().LoadNetwork(network, symbols, {"WATER", "CO2"}, cache_graph))
+            config:=New FormPhenotypePath().LoadNetwork(network, symbols, FormPhenotypePath.ignores, cache_graph))
     End Sub
 
     Private Sub CacheCellNetwork()

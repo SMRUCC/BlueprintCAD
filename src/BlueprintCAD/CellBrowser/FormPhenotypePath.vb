@@ -18,6 +18,16 @@ Public Class FormPhenotypePath
     Dim qgram As QGramIndex
     Dim view As NodeView()
 
+    Public Shared ReadOnly ignores As String() = {
+        "BioCAD00001853702", ' H+
+        "BioCAD00000244943", ' Water
+        "BioCAD00018534519",' Fe2+
+        "BioCAD00018439229",' CO
+        "BioCAD00018439154",' CO2
+        "BioCAD00018492418",' CCl4
+        ""
+    }
+
     Public Function LoadNetwork(network As Dictionary(Of String, FluxEdge),
                                 symbols As Dictionary(Of String, CompoundInfo),
                                 ignores As Index(Of String),
