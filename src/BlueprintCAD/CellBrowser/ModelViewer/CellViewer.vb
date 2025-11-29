@@ -1,4 +1,5 @@
-﻿Imports Galaxy.Workbench
+﻿Imports BlueprintCAD.UIData
+Imports Galaxy.Workbench
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.Data.visualize.Network
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
@@ -34,7 +35,16 @@ Public Class CellViewer
             Call ProgressSpinner.DoLoading(Sub() Call CacheCellNetwork(), host:=Me)
         End If
 
-        Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network, symbols, {"WATER", "CO2"}, cache_graph))
+        Call InputDialog.Input(
+            setConfig:=Sub(router)
+                           Dim plotNodes As NodeView() = router.PlotNodes
+                           Dim nodeId As String() = plotNodes _
+                               .Select(Function(n) n.id) _
+                               .ToArray
+
+                           Call explorer.viewGraph(nodeId).Wait()
+                       End Sub,
+            config:=New FormPhenotypePath().LoadNetwork(network, symbols, {"WATER", "CO2"}, cache_graph))
     End Sub
 
     Private Sub CacheCellNetwork()

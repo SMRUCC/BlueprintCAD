@@ -149,6 +149,18 @@ Public Class CellExplorer
         End If
     End Sub
 
+    Public Async Function viewGraph(metaID As String()) As Task
+        Dim links As New List(Of Reaction)
+
+        For Each id As String In metaID
+            If Me.links.ContainsKey(id) Then
+                Call links.AddRange(Me.links(id))
+            End If
+        Next
+
+        Call web.ViewGraph(Await Task.Run(Function() BuildGraph(links)))
+    End Function
+
     Public Async Function viewGraph(metaID As String) As Task
         If links.ContainsKey(metaID) Then
             Dim links = Me.links(metaID)

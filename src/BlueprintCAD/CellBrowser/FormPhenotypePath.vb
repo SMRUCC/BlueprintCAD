@@ -330,14 +330,15 @@ Public Class FormPhenotypePath
             Return
         End If
 
+        ' view removes biological process nodes
         Dim viewIndex = view.ToDictionary(Function(v) v.id)
         Dim nodes As New Dictionary(Of String, NodeView)
 
         For Each link As VertexEdge In pathway.AsEnumerable
             Dim edge As Edge = g.GetEdge(link.U, link.V)
 
-            nodes(edge.U.label) = viewIndex(edge.U.label)
-            nodes(edge.V.label) = viewIndex(edge.V.label)
+            If viewIndex.ContainsKey(edge.U.label) Then nodes(edge.U.label) = viewIndex(edge.U.label)
+            If viewIndex.ContainsKey(edge.V.label) Then nodes(edge.V.label) = viewIndex(edge.V.label)
         Next
 
         Me._PlotNodes = nodes.Values.ToArray
