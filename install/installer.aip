@@ -381,7 +381,7 @@
     <ROW Component="libSkiaSharp.so_7" ComponentId="{F59D9C62-445B-4A64-B2FC-CB64A8340217}" Directory_="native_7_Dir" Attributes="0" KeyPath="libSkiaSharp.so_7" Type="0"/>
     <ROW Component="libSkiaSharp.so_8" ComponentId="{C14B185F-0865-4323-B737-CECE411440E7}" Directory_="native_8_Dir" Attributes="0" KeyPath="libSkiaSharp.so_8" Type="0"/>
     <ROW Component="libSkiaSharp.so_9" ComponentId="{77942149-2850-4014-9181-3BB239429F59}" Directory_="native_9_Dir" Attributes="0" KeyPath="libSkiaSharp.so_9" Type="0"/>
-    <ROW Component="logs" ComponentId="{01BB4103-4C96-48D0-9A86-0DAF228BCEBE}" Directory_="logs_Dir" Attributes="0"/>
+    <ROW Component="logs" ComponentId="{E9A4F304-05AE-4A14-832F-6A903449518D}" Directory_="logs_Dir" Attributes="0"/>
     <ROW Component="regid.zhengyabio.com.xieguigang" ComponentId="{CDF8BCD2-A2CA-4942-B44E-2F3E803661A9}" Directory_="regid.zhengyabio.com.xieguigang_Dir" Attributes="0"/>
     <ROW Component="settings.json" ComponentId="{AE75A348-E9F1-4059-8939-D4474E517243}" Directory_="vscode_Dir" Attributes="0" KeyPath="settings.json" Type="0"/>
   </COMPONENT>
@@ -916,6 +916,7 @@
     <ROW File="Galaxy.ExcelPad.resources.dll" Component_="Galaxy.ExcelPad.resources.dll" FileName="GALAXY~3.DLL|Galaxy.ExcelPad.resources.dll" Attributes="0" SourcePath="..\App\net8.0-windows\zh-CN\Galaxy.ExcelPad.resources.dll" SelfReg="false"/>
     <ROW File="Galaxy.ExcelPad.resources.dll_1" Component_="Galaxy.ExcelPad.resources.dll_1" FileName="GALAXY~2.DLL|Galaxy.ExcelPad.resources.dll" Attributes="0" SourcePath="..\App\net8.0-windows\zh-Hans\Galaxy.ExcelPad.resources.dll" SelfReg="false"/>
     <ROW File="Sophia.VisualElementsManifest.xml" Component_="Sophia.VisualElementsManifest.xml" FileName="SOPHIA~1.XML|Sophia.VisualElementsManifest.xml" Attributes="0" SourcePath="&lt;AI_RES&gt;app.VisualElementsManifest.xml" SelfReg="false"/>
+    <ROW File="graphologylibrary.min.js" Component_="graphology.umd.min.js" FileName="GRAPHO~2.JS|graphology-library.min.js" Attributes="0" SourcePath="..\pages\js\graphology-library.min.js" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
     <ROW MsiShortcutProperty="Sophia0" Shortcut_="Sophia" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
@@ -1109,8 +1110,8 @@
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
     <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
     <ROW Directory_="Zhengyabio_Dir" Component_="Zhengyabio" ManualDelete="false"/>
-    <ROW Directory_="logs_Dir" Component_="logs" ManualDelete="false"/>
     <ROW Directory_="regid.zhengyabio.com.xieguigang_Dir" Component_="regid.zhengyabio.com.xieguigang" ManualDelete="false"/>
+    <ROW Directory_="logs_Dir" Component_="logs" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
@@ -1400,12 +1401,12 @@
     <ROW Feature_="MainFeature" Component_="System.Windows.Extensions.dll_3"/>
     <ROW Feature_="MainFeature" Component_="Galaxy.ExcelPad.resources.dll"/>
     <ROW Feature_="MainFeature" Component_="Galaxy.ExcelPad.resources.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="logs"/>
     <ROW Feature_="MainFeature" Component_="regid.zhengyabio.com.xieguigang"/>
     <ROW Feature_="TileAssets_DefaultBuild" Component_="Sophia.VisualElementsManifest.xml"/>
     <ROW Feature_="gcml" Component_="Sophia.exe"/>
     <ROW Feature_="gcproj" Component_="Sophia.exe"/>
     <ROW Feature_="vcellpack" Component_="Sophia.exe"/>
+    <ROW Feature_="MainFeature" Component_="logs"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="ext.exe" SourcePath="..\src\VirtualCell.ico" Index="0"/>
