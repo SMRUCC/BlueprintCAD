@@ -32,12 +32,13 @@ Partial Class CellExplorer
         ToolStripSpringTextBox1 = New Galaxy.CommonControls.ToolStripSpringTextBox()
         ToolStripButton1 = New ToolStripButton()
         Panel1 = New Panel()
+        ToolStripButton2 = New ToolStripButton()
         ToolStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' ToolStrip1
         ' 
-        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripSpringTextBox1, ToolStripButton1})
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripSpringTextBox1, ToolStripButton1, ToolStripButton2})
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.Size = New Size(366, 25)
@@ -53,7 +54,7 @@ Partial Class CellExplorer
         ' ToolStripSpringTextBox1
         ' 
         ToolStripSpringTextBox1.Name = "ToolStripSpringTextBox1"
-        ToolStripSpringTextBox1.Size = New Size(255, 25)
+        ToolStripSpringTextBox1.Size = New Size(232, 25)
         ' 
         ' ToolStripButton1
         ' 
@@ -72,9 +73,18 @@ Partial Class CellExplorer
         Panel1.Size = New Size(366, 658)
         Panel1.TabIndex = 1
         ' 
+        ' ToolStripButton2
+        ' 
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "Pathway Router"
+        ' 
         ' CellExplorer
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(366, 683)
         Controls.Add(Panel1)
@@ -95,4 +105,5 @@ Partial Class CellExplorer
     Friend WithEvents ToolStripSpringTextBox1 As Galaxy.CommonControls.ToolStripSpringTextBox
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class

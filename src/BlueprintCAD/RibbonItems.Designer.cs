@@ -50,6 +50,10 @@ namespace RibbonLib.Controls
             public const uint cmdButtonEditCultureMedium = 24;
             public const uint cmdGroupModelling = 25;
             public const uint cmdButtonIDAnnotation = 26;
+            public const uint cmdGroupModelInspecter = 38;
+            public const uint cmdTabModelInspecter = 39;
+            public const uint cmdMenuInspector = 40;
+            public const uint cmdButtonPathwayRouter = 37;
             public const uint cmdGroupMainMenu = 31;
             public const uint cmdTabMainMenu = 32;
             public const uint cmdGroupOthers = 35;
@@ -153,6 +157,10 @@ namespace RibbonLib.Controls
         /// Make cell component id annotation via blastp alignment with the local database.
         /// </summary>
         public RibbonButton ButtonIDAnnotation { get; private set; }
+        public RibbonTabGroup GroupModelInspecter { get; private set; }
+        public RibbonTab TabModelInspecter { get; private set; }
+        public RibbonGroup MenuInspector { get; private set; }
+        public RibbonButton ButtonPathwayRouter { get; private set; }
         public RibbonTab GroupMainMenu { get; private set; }
         public RibbonGroup TabMainMenu { get; private set; }
         public RibbonGroup GroupOthers { get; private set; }
@@ -194,6 +202,10 @@ namespace RibbonLib.Controls
             ButtonEditCultureMedium = new RibbonButton(ribbon, Cmd.cmdButtonEditCultureMedium);
             GroupModelling = new RibbonGroup(ribbon, Cmd.cmdGroupModelling);
             ButtonIDAnnotation = new RibbonButton(ribbon, Cmd.cmdButtonIDAnnotation);
+            GroupModelInspecter = new RibbonTabGroup(ribbon, Cmd.cmdGroupModelInspecter);
+            TabModelInspecter = new RibbonTab(ribbon, Cmd.cmdTabModelInspecter);
+            MenuInspector = new RibbonGroup(ribbon, Cmd.cmdMenuInspector);
+            ButtonPathwayRouter = new RibbonButton(ribbon, Cmd.cmdButtonPathwayRouter);
             GroupMainMenu = new RibbonTab(ribbon, Cmd.cmdGroupMainMenu);
             TabMainMenu = new RibbonGroup(ribbon, Cmd.cmdTabMainMenu);
             GroupOthers = new RibbonGroup(ribbon, Cmd.cmdGroupOthers);

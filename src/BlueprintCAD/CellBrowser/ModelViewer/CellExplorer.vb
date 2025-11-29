@@ -1,6 +1,5 @@
 ﻿Imports System.ComponentModel
 Imports BlueprintCAD.UIData
-Imports Galaxy.Data
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.JSON.Models
 Imports Galaxy.Workbench
@@ -9,10 +8,8 @@ Imports Microsoft.VisualBasic.Data.visualize.Network
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
-Imports Microsoft.VisualBasic.Imaging.SVG.PathHelper
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
-Imports Microsoft.VisualBasic.MIME.Html.HTML.Head
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 

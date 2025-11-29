@@ -177,4 +177,15 @@
 #define cmdButtonMenuLicense_LabelDescription_RESID 60135
 #define cmdButtonMenuLicense_SmallImages_192__RESID 60136
 #define cmdButtonMenuLicense_LargeImages_192__RESID 60137
-#define InternalCmd2_LabelTitle_RESID 60138
+#define cmdButtonPathwayRouter 37 
+#define cmdButtonPathwayRouter_LabelTitle_RESID 60138
+#define cmdButtonPathwayRouter_LabelDescription_RESID 60139
+#define cmdButtonPathwayRouter_SmallImages_192__RESID 60140
+#define cmdButtonPathwayRouter_LargeImages_192__RESID 60141
+#define cmdGroupModelInspecter 38 
+#define cmdGroupModelInspecter_LabelTitle_RESID 60142
+#define cmdTabModelInspecter 39 
+#define cmdTabModelInspecter_LabelTitle_RESID 60143
+#define cmdMenuInspector 40 
+#define cmdMenuInspector_LabelTitle_RESID 60144
+#define InternalCmd2_LabelTitle_RESID 60145

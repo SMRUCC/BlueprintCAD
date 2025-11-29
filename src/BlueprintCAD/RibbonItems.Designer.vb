@@ -47,6 +47,10 @@ Namespace RibbonLib.Controls
             Public Const cmdButtonEditCultureMedium As UInteger = 24
             Public Const cmdGroupModelling As UInteger = 25
             Public Const cmdButtonIDAnnotation As UInteger = 26
+            Public Const cmdGroupModelInspecter As UInteger = 38
+            Public Const cmdTabModelInspecter As UInteger = 39
+            Public Const cmdMenuInspector As UInteger = 40
+            Public Const cmdButtonPathwayRouter As UInteger = 37
             Public Const cmdGroupMainMenu As UInteger = 31
             Public Const cmdTabMainMenu As UInteger = 32
             Public Const cmdGroupOthers As UInteger = 35
@@ -315,6 +319,30 @@ Namespace RibbonLib.Controls
                 Return _ButtonIDAnnotation
             End Get
         End Property
+        Private _GroupModelInspecter As RibbonTabGroup
+        Public ReadOnly Property GroupModelInspecter As RibbonTabGroup
+            Get
+                Return _GroupModelInspecter
+            End Get
+        End Property
+        Private _TabModelInspecter As RibbonTab
+        Public ReadOnly Property TabModelInspecter As RibbonTab
+            Get
+                Return _TabModelInspecter
+            End Get
+        End Property
+        Private _MenuInspector As RibbonGroup
+        Public ReadOnly Property MenuInspector As RibbonGroup
+            Get
+                Return _MenuInspector
+            End Get
+        End Property
+        Private _ButtonPathwayRouter As RibbonButton
+        Public ReadOnly Property ButtonPathwayRouter As RibbonButton
+            Get
+                Return _ButtonPathwayRouter
+            End Get
+        End Property
         Private _GroupMainMenu As RibbonTab
         Public ReadOnly Property GroupMainMenu As RibbonTab
             Get
@@ -371,6 +399,10 @@ Namespace RibbonLib.Controls
             _ButtonEditCultureMedium = New RibbonButton(_ribbon, Cmd.cmdButtonEditCultureMedium)
             _GroupModelling = New RibbonGroup(_ribbon, Cmd.cmdGroupModelling)
             _ButtonIDAnnotation = New RibbonButton(_ribbon, Cmd.cmdButtonIDAnnotation)
+            _GroupModelInspecter = New RibbonTabGroup(_ribbon, Cmd.cmdGroupModelInspecter)
+            _TabModelInspecter = New RibbonTab(_ribbon, Cmd.cmdTabModelInspecter)
+            _MenuInspector = New RibbonGroup(_ribbon, Cmd.cmdMenuInspector)
+            _ButtonPathwayRouter = New RibbonButton(_ribbon, Cmd.cmdButtonPathwayRouter)
             _GroupMainMenu = New RibbonTab(_ribbon, Cmd.cmdGroupMainMenu)
             _TabMainMenu = New RibbonGroup(_ribbon, Cmd.cmdTabMainMenu)
             _GroupOthers = New RibbonGroup(_ribbon, Cmd.cmdGroupOthers)
