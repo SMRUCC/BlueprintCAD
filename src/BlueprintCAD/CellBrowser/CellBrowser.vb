@@ -208,7 +208,8 @@ Public Class CellBrowser
                                 .id = symbols.GetNameText(a.id.GetTagValue("@").Name)
                             }
                         End Function) _
-                .ToArray
+                .ToArray,
+            .name = edge.name
         }
 
         TextBox1.Json = "{}"
