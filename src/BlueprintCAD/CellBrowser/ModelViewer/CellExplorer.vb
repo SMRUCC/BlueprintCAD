@@ -226,4 +226,8 @@ Public Class CellExplorer
 
         Return g.AsGraphology
     End Function
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Call web.OpenRouter()
+    End Sub
 End Class

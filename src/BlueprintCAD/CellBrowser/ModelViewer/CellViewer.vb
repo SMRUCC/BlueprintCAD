@@ -25,7 +25,7 @@ Public Class CellViewer
     Dim symbols As Dictionary(Of String, CompoundInfo)
     Dim cache_graph As NetworkGraph
 
-    Private Sub OpenRouter()
+    Friend Sub OpenRouter()
         If cell Is Nothing Then
             Return
         End If

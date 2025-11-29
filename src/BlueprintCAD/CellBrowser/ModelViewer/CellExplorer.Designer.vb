@@ -31,8 +31,8 @@ Partial Class CellExplorer
         ToolStripLabel1 = New ToolStripLabel()
         ToolStripSpringTextBox1 = New Galaxy.CommonControls.ToolStripSpringTextBox()
         ToolStripButton1 = New ToolStripButton()
-        Panel1 = New Panel()
         ToolStripButton2 = New ToolStripButton()
+        Panel1 = New Panel()
         ToolStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -65,14 +65,6 @@ Partial Class CellExplorer
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "ToolStripButton1"
         ' 
-        ' Panel1
-        ' 
-        Panel1.Dock = DockStyle.Fill
-        Panel1.Location = New Point(0, 25)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(366, 658)
-        Panel1.TabIndex = 1
-        ' 
         ' ToolStripButton2
         ' 
         ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
@@ -81,6 +73,14 @@ Partial Class CellExplorer
         ToolStripButton2.Name = "ToolStripButton2"
         ToolStripButton2.Size = New Size(23, 22)
         ToolStripButton2.Text = "Pathway Router"
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Dock = DockStyle.Fill
+        Panel1.Location = New Point(0, 25)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(366, 658)
+        Panel1.TabIndex = 1
         ' 
         ' CellExplorer
         ' 
