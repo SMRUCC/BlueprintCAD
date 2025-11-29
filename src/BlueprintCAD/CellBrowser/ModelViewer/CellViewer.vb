@@ -2,7 +2,7 @@
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.Data.visualize.Network
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
-Imports Microsoft.VisualBasic.MIME.application.xml.MathML
+Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports Microsoft.Web.WebView2.Core
@@ -25,7 +25,60 @@ Public Class CellViewer
     Dim cache_graph As NetworkGraph
 
     Private Sub OpenRouter()
+        If cell Is Nothing Then
+            Return
+        End If
+
+        If network Is Nothing Then
+            ' make cache
+            Call ProgressSpinner.DoLoading(Sub() Call CacheCellNetwork(), host:=Me)
+        End If
+
         Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network, symbols, {"WATER", "CO2"}, cache_graph))
+    End Sub
+
+    Private Sub CacheCellNetwork()
+        symbols = New Dictionary(Of String, CompoundInfo)
+        network = New Dictionary(Of String, FluxEdge)
+
+        For Each meta In cell.metabolismStructure.compounds
+            symbols(meta.ID) = New CompoundInfo With {
+                .id = meta.ID,
+                .name = meta.name,
+                .db_xrefs = meta.db_xrefs
+            }
+        Next
+        For Each gene In cell.genome.GetAllGenes
+            symbols(gene.locus_tag) = New CompoundInfo With {
+                .id = gene.locus_tag,
+                .name = gene.product
+            }
+        Next
+
+        For Each rxn In cell.metabolismStructure.reactions.AsEnumerable
+            network(rxn.ID) = New FluxEdge With {
+                .id = rxn.ID,
+                .name = rxn.name,
+                .left = rxn.substrate _
+                    .Select(Function(a)
+                                Return New VariableFactor With {
+                                    .id = a.compound,
+                                    .factor = a.factor,
+                                    .compartment_id = a.compartment
+                                }
+                            End Function) _
+                    .ToArray,
+                .right = rxn.product _
+                    .Select(Function(a)
+                                Return New VariableFactor With {
+                                    .id = a.compound,
+                                    .factor = a.factor,
+                                    .compartment_id = a.compartment
+                                }
+                            End Function) _
+                    .ToArray
+            }
+        Next
     End Sub
 
     Private Async Sub CellViewer_Load(sender As Object, e As EventArgs) Handles Me.Load
