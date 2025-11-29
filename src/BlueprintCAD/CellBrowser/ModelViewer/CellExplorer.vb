@@ -3,6 +3,7 @@ Imports BlueprintCAD.UIData
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.JSON.Models
 Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.Ranges.Model
 Imports Microsoft.VisualBasic.Data.visualize.Network
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
@@ -175,6 +176,7 @@ Public Class CellExplorer
         Dim class_metab As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Red
         Dim class_rxn As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Blue
         Dim line As New Microsoft.VisualBasic.Imaging.Pen(Color.LightGray, 3)
+        Dim ignores As Index(Of String) = FormPhenotypePath.ignores
 
         For Each rxn As Reaction In links
             If g.GetElementByID(rxn.ID) Is Nothing Then
@@ -187,6 +189,10 @@ Public Class CellExplorer
             Dim rxnNode = g.GetElementByID(rxn.ID)
 
             For Each left As CompoundFactor In rxn.substrate
+                If left.compound Like ignores Then
+                    Continue For
+                End If
+
                 If g.GetElementByID(left.compound) Is Nothing Then
                     Dim metadata = compounds.TryGetValue(left.compound)
 
@@ -203,6 +209,10 @@ Public Class CellExplorer
                 End If
             Next
             For Each right As CompoundFactor In rxn.product
+                If right.compound Like ignores Then
+                    Continue For
+                End If
+
                 If g.GetElementByID(right.compound) Is Nothing Then
                     Dim metadata = compounds.TryGetValue(right.compound)
 
