@@ -25,7 +25,7 @@ Public Class FormPhenotypePath
         "BioCAD00018439229",' CO
         "BioCAD00018439154",' CO2
         "BioCAD00018492418",' CCl4
-        ""
+        "BioCAD00018480327" ' O2
     }
 
     Public Function LoadNetwork(network As Dictionary(Of String, FluxEdge),
