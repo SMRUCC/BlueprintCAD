@@ -144,7 +144,7 @@ Namespace My
                     ' run the virtual cell simulation
                     Dim saveResult As String = file.FileName
                     Dim vc As String = $"{App.HOME}/VirtualCell.exe"
-                    Dim tempfile As String = $"{wizardConfig.configFile.ParentPath}/run.vcelldata"
+                    Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".vcelldata", App.PID, prefix:="vc_datastore_")
                     Dim args As String = $"--run {wizardConfig.configFile.CLIPath} --output {tempfile.CLIPath} /@set tqdm=false"
                     Dim proc As FormConsoleHost = CommonRuntime.ShowDocument(Of FormConsoleHost)(DockState.Document, "Run Virtual Cell Experiment")
 
