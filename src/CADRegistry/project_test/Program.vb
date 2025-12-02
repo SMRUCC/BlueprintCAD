@@ -11,7 +11,7 @@ Module Program
     End Sub
 
     Sub testCreateProject()
-        Dim proj = ProjectCreator.FromGenBank(GBFF.File.Load("G:\BlueprintCAD\demo\Escherichia coli str. K-12 substr. MG1655.gbff"))
+        Dim proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase("G:\BlueprintCAD\demo\Escherichia coli str. K-12 substr. MG1655.gbff"))
         Dim server As New RegistryUrl()
         Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
 

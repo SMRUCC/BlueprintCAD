@@ -74,7 +74,7 @@ Public Class FormAnnotation
     End Function
 
     Public Function LoadModel(filepath As String) As FormAnnotation
-        Call ProgressSpinner.DoLoading(Sub() Me.proj = ProjectCreator.FromGenBank(GBFF.File.Load(filepath)))
+        Call ProgressSpinner.DoLoading(Sub() Me.proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(filepath)))
 
         Me.filepath = Nothing
 

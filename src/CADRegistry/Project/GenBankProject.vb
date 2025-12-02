@@ -11,7 +11,7 @@ Imports SMRUCC.genomics.SequenceModel
 Public Class GenBankProject
 
     Public Property taxonomy As Taxonomy
-    Public Property nt As String
+    Public Property nt As Dictionary(Of String, Integer)
     Public Property genes As Dictionary(Of String, String)
     Public Property proteins As Dictionary(Of String, String)
     Public Property tss_upstream As Dictionary(Of String, String)

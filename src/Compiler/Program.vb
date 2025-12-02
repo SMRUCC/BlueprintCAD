@@ -80,7 +80,7 @@ Module Program
 
     ' ./target.gbff --out gcmodeller.gcproj --config settings.json --num_threads 8 --skip-TRN --workdir workspace_dir
     Public Function CompileGenbankFile(file As String, args As CommandLine) As Integer
-        Dim proj = ProjectCreator.FromGenBank(GBFF.File.Load(file))
+        Dim proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(file))
         Dim settings As Settings = Settings.Load(args.Required("--config", "Missing the required configuration file, `--config` argument must be specificed!"))
         Dim outproj As String = args("--out")
         Dim n_threads = args("--num_threads") Or -1
