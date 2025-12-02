@@ -44,7 +44,7 @@ Public Module ProjectIO
     Public Function Load(s As Stream) As GenBankProject
         Using zip As New ZipStream(s, is_readonly:=True)
             Dim source_json As String = zip.ReadAllText("/source.json")
-            Dim source_nt As String = zip.ReadAllText("/source.txt")
+            Dim source_nt As Dictionary(Of String, Integer) = zip.ReadAllText("/source.txt").LoadJSON(Of Dictionary(Of String, Integer))
             Dim nucl_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/genes.txt")).ToArray
             Dim prot_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/proteins.txt")).ToArray
             Dim tss_fasta As FastaSeq() = FastaFile.DocParser(zip.ReadLines("/tss_upstream.txt")).ToArray
@@ -120,7 +120,7 @@ Public Module ProjectIO
     Public Sub SaveZip(proj As GenBankProject, filepath As String)
         Using zip As New ZipStream(filepath.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False))
             Call zip.WriteText(proj.taxonomy.GetJson, "/source.json")
-            Call zip.WriteText(proj.nt, "/source.txt")
+            Call zip.WriteText(proj.nt.GetJson, "/source.txt")
 
             Call proj.DumpGeneFasta(zip.OpenFile("/genes.txt", access:=FileAccess.Write))
             Call proj.DumpProteinFasta(zip.OpenFile("/proteins.txt", access:=FileAccess.Write))

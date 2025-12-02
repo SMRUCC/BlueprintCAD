@@ -1,7 +1,7 @@
 ﻿Public Class GenbankProperties
 
     Public Property organism_name As String = "unknown"
-    Public Property size As String
+    Public Property size As Dictionary(Of String, String)
     Public Property genes As Integer
     Public Property proteins As Integer
     Public Property enzymes As Integer
@@ -19,7 +19,6 @@
                 organism_name = proj.taxonomy.scientificName
             End If
 
-            size = StringFormats.Lanudry(proj.nt.Length)
             genes = proj.gene_table.TryCount
             proteins = proj.proteins.TryCount
             operons = proj.operons.TryCount
@@ -27,6 +26,11 @@
             enzymes = proj.ec_numbers.TryCount
             tfbs = proj.tfbs_hits.TryCount
             transporter = proj.transporter.TryCount
+            size = proj.nt _
+                .ToDictionary(Function(a) a.Key,
+                              Function(a)
+                                  Return StringFormats.Lanudry(a.Value)
+                              End Function)
         End If
     End Sub
 
