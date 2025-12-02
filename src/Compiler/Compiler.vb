@@ -345,7 +345,14 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Next
     End Function
 
-    Private Iterator Function GeneObjects(rnas As List(Of RNA), proteins As List(Of protein), regulations As List(Of transcription)) As IEnumerable(Of gene)
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="rnas">其他的RNA列表</param>
+    ''' <param name="proteins"></param>
+    ''' <param name="regulations"></param>
+    ''' <returns></returns>
+    Private Iterator Function GeneObjects(rnas As List(Of (rid$, RNA)), proteins As List(Of protein), regulations As List(Of transcription)) As IEnumerable(Of (rid$, gene))
         Dim nt As Dictionary(Of String, String) = proj.genes
         Dim RNA As RNA
         Dim tfs As Dictionary(Of String, BestHit()) = proj.transcript_factors _
@@ -409,7 +416,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                             .type = gene_type,
                             .val = rRNA
                         }
-                        rnas.Add(RNA)
+                        rnas.Add((gene.replicon_accessionID, RNA))
                     Case "tRNA"
                         gene_type = RNATypes.tRNA
                         RNA = New RNA With {
@@ -419,7 +426,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                             .type = gene_type,
                             .val = gene.commonName.Split("-"c).Last
                         }
-                        rnas.Add(RNA)
+                        rnas.Add((gene.replicon_accessionID, RNA))
                     Case Else
                         gene_type = RNATypes.micsRNA
                         RNA = New RNA With {
@@ -429,7 +436,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                             .type = gene_type,
                             .val = ""
                         }
-                        rnas.Add(RNA)
+                        rnas.Add((gene.replicon_accessionID, RNA))
 
                         If isTF Then
                             Call regulations.AddRange(RegulationNetwork(RNA.id, gene.locus_id, annotation:=tfs(gene.locus_id)))
@@ -437,7 +444,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 End Select
             End If
 
-            Yield New gene With {
+            Dim model As New gene With {
                 .locus_tag = gene.locus_id,
                 .left = gene.left,
                 .right = gene.right,
@@ -448,59 +455,79 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 .nucleotide_base = bases,
                 .protein_id = If(residues Is Nothing, Nothing, {residues.name})
             }
+
+            Yield (gene.replicon_accessionID, model)
         Next
 
         Call $"found {rnas.Count} RNA models!".debug
     End Function
 
     Private Function BuildGenome() As Genome
-        Dim RNAs As New List(Of RNA)
+        Dim RNAs As New List(Of (rid$, RNA))
         Dim proteins As New List(Of protein)
         Dim regulationNetwork As New List(Of transcription)
-        Dim geneSet As Dictionary(Of String, gene) = GeneObjects(RNAs, proteins, regulationNetwork) _
-            .GroupBy(Function(a) a.locus_tag) _
-            .ToDictionary(Function(a) a.Key,
-                          Function(a)
-                              Return a.First
-                          End Function)
-        Dim operons As List(Of TranscriptUnit) = proj.operons _
-            .SafeQuery _
-            .Select(Function(op)
-                        Return New TranscriptUnit With {
-                            .id = op.OperonID,
-                            .name = op.name,
-                            .note = op.Type.Description,
-                            .genes = op.Genes _
-                                .Select(Function(gene_id)
-                                            Return geneSet(gene_id)
-                                        End Function) _
-                                .ToArray
-                        }
-                    End Function) _
-            .AsList
-        Dim operon_genes As Index(Of String) = operons _
-            .Select(Function(op) op.genes) _
-            .IteratesALL _
-            .Select(Function(gene) gene.locus_tag) _
-            .Indexing
+        Dim replicons As New List(Of replicon)
 
-        Call $"get {operons.Count} operons was annotated in this genome model!".info
+        For Each replicon_group As (rid As String, genes As gene()) In GeneObjects(RNAs, proteins, regulationNetwork) _
+            .GroupBy(Function(a) a.rid) _
+            .Select(Function(g)
+                        Return (rid:=g.Key, genes:=g.Select(Function(a) a.Item2).ToArray)
+                    End Function)
 
-        For Each gene As gene In geneSet.Values
-            If Not gene.locus_tag Like operon_genes Then
-                Call operons.Add(New TranscriptUnit(gene))
-            End If
+            Dim geneSet As Dictionary(Of String, gene) = replicon_group.genes _
+                .GroupBy(Function(a) a.locus_tag) _
+                .ToDictionary(Function(a) a.Key,
+                              Function(a)
+                                  Return a.First
+                              End Function)
+            Dim operons As New List(Of TranscriptUnit)
+
+            For Each op As AnnotatedOperon In proj.operons.SafeQuery
+                Dim geneList = op.Genes _
+                    .Where(Function(gene_id) geneSet.ContainsKey(gene_id)) _
+                    .Select(Function(gene_id)
+                                Return geneSet(gene_id)
+                            End Function) _
+                    .ToArray
+
+                If geneList.Any Then
+                    Call operons.Add(New TranscriptUnit With {
+                        .id = op.OperonID,
+                        .name = op.name,
+                        .note = op.Type.Description,
+                        .genes = geneList.ToArray
+                    })
+                End If
+            Next
+
+            Call $"get {operons.Count} operons was annotated in genome replicon model(id={replicon_group.rid})!".info
+
+            Dim operon_genes As Index(Of String) = operons _
+                .Select(Function(op) op.genes) _
+                .IteratesALL _
+                .Select(Function(gene) gene.locus_tag) _
+                .Indexing
+
+            For Each gene As gene In geneSet.Values
+                If Not gene.locus_tag Like operon_genes Then
+                    Call operons.Add(New TranscriptUnit(gene))
+                End If
+            Next
+
+            Dim genomics As New replicon With {
+                .genomeName = replicon_group.rid,
+                .isPlasmid = False,
+                .operons = operons.ToArray,
+                .RNAs = RNAs.Where(Function(a) a.rid = .genomeName) _
+                    .Select(Function(r) r.Item2) _
+                    .ToArray
+            }
+
+            Call replicons.Add(genomics)
         Next
 
-        Dim genomics As New replicon With {
-            .genomeName = proj.taxonomy.scientificName,
-            .isPlasmid = False,
-            .operons = operons.ToArray,
-            .RNAs = RNAs.ToArray
-        }
-
         Return New Genome With {
-            .replicons = {genomics},
+            .replicons = replicons.ToArray,
             .proteins = proteins.ToArray,
             .regulations = regulationNetwork.ToArray
         }
