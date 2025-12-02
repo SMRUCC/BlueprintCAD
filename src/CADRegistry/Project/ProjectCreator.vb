@@ -28,7 +28,7 @@ Public Module ProjectCreator
                               Function(a)
                                   Return a.First.Item2.SequenceData
                               End Function) _
-                .DoCall(Sub(list) tss.AddRange(list))
+                .DoCall(Sub(list) tss.AddRange(list, replaceDuplicated:=True))
 
             If tax Is Nothing Then
                 tax = replicon.Source.GetTaxonomy
