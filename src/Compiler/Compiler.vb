@@ -366,8 +366,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Dim translate_id As String = If(gene.ProteinId, gene.locus_id & "_translate")
             Dim isTF As Boolean = tfs.ContainsKey(gene.locus_id)
 
-            If Not gene.Translation.StringEmpty Then
-                residues = ProteinComposition.FromRefSeq(gene.Translation, translate_id).CreateVector
+            If Not gene.translation.StringEmpty Then
+                residues = ProteinComposition.FromRefSeq(gene.translation, translate_id).CreateVector
                 gene_type = RNATypes.mRNA
                 protein_id = "Protein[" & translate_id & "]"
 
