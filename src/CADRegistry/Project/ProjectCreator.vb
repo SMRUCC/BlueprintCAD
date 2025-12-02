@@ -1,7 +1,9 @@
-﻿Imports SMRUCC.genomics.Assembly.NCBI.GenBank
+﻿Imports Microsoft.VisualBasic.Linq
+Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank.GBFF.Keywords.FEATURES
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.ContextModel.Promoter
+Imports SMRUCC.genomics.Metagenomics
 Imports SMRUCC.genomics.SequenceModel.FASTA
 
 Public Module ProjectCreator
@@ -10,24 +12,14 @@ Public Module ProjectCreator
         Dim nucl As New Dictionary(Of String, String)
         Dim prot As New Dictionary(Of String, String)
         Dim genes As New List(Of GeneTable)
+        Dim size As New Dictionary(Of String, Integer)
+        Dim tax As Taxonomy = Nothing
+        Dim tss As New Dictionary(Of String, String)
 
         For Each replicon As GBFF.File In replicons
-            Dim nucl As Dictionary(Of String, String) = replicon _
-                .EnumerateGeneFeatures(ORF:=False) _
-                .GroupBy(Function(a) a.Query(FeatureQualifiers.locus_tag)) _
-                .ToDictionary(Function(a) a.Key,
-                              Function(a)
-                                  Return a.First.SequenceData
-                              End Function)
-            Dim prot As Dictionary(Of String, String) = replicon _
-                .ExportProteins_Short(True) _
-                .ToDictionary(Function(a) a.Title,
-                              Function(a)
-                                  Return a.SequenceData
-                              End Function)
-            Dim genes As GeneTable() = replicon.EnumerateGeneFeatures(ORF:=False).ExportTable().ToArray
             Dim nt As New FastaSeq({"nt"}, replicon.Origin.SequenceData)
-            Dim tss As Dictionary(Of String, String) = genes _
+
+            Call genes _
                 .Select(Function(gene)
                             Return (gene.locus_id, gene.GetUpstreamSeq(nt, 150))
                         End Function) _
@@ -35,15 +27,41 @@ Public Module ProjectCreator
                 .ToDictionary(Function(a) a.Key,
                               Function(a)
                                   Return a.First.Item2.SequenceData
-                              End Function)
+                              End Function) _
+                .DoCall(Sub(list) tss.AddRange(list))
+
+            If tax Is Nothing Then
+                tax = replicon.Source.GetTaxonomy
+            End If
+
+            Call replicon _
+                .EnumerateGeneFeatures(ORF:=False) _
+                .GroupBy(Function(a) a.Query(FeatureQualifiers.locus_tag)) _
+                .ToDictionary(Function(a) a.Key,
+                              Function(a)
+                                  Return a.First.SequenceData
+                              End Function) _
+                .DoCall(Sub(list) Call nucl.AddRange(list, replaceDuplicated:=True))
+
+            Call replicon _
+                .ExportProteins_Short(True) _
+                .ToDictionary(Function(a) a.Title,
+                              Function(a)
+                                  Return a.SequenceData
+                              End Function) _
+                .DoCall(Sub(list) Call prot.AddRange(list, replaceDuplicated:=True))
+
+            Call genes.AddRange(replicon.EnumerateGeneFeatures(ORF:=False).ExportTable)
+            Call size.Add(replicon.Locus.AccessionID,
+                          replicon.Origin.SequenceData.Length)
         Next
 
         Dim proj As New GenBankProject With {
-            .taxonomy = genbank.Source.GetTaxonomy,
-            .nt = nt.SequenceData,
+            .taxonomy = tax,
+            .nt = size,
             .genes = nucl,
             .proteins = prot,
-            .gene_table = genes,
+            .gene_table = genes.ToArray,
             .tss_upstream = tss
         }
 
