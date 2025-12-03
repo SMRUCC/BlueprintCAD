@@ -25,6 +25,7 @@ Partial Class FormFBATool
         components = New ComponentModel.Container()
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
+        Button2 = New Button()
         ListBox2 = New ListBox()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         RemoveToolStripMenuItem = New ToolStripMenuItem()
@@ -38,10 +39,15 @@ Partial Class FormFBATool
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddToObjectiveListToolStripMenuItem = New ToolStripMenuItem()
         TabPage2 = New TabPage()
+        Label4 = New Label()
+        TextBox2 = New TextBox()
+        Label5 = New Label()
+        ListBox3 = New ListBox()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
         ContextMenuStrip1.SuspendLayout()
+        TabPage2.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -52,11 +58,12 @@ Partial Class FormFBATool
         TabControl1.Location = New Point(0, 0)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(800, 646)
+        TabControl1.Size = New Size(938, 659)
         TabControl1.TabIndex = 0
         ' 
         ' TabPage1
         ' 
+        TabPage1.Controls.Add(Button2)
         TabPage1.Controls.Add(ListBox2)
         TabPage1.Controls.Add(ComboBox1)
         TabPage1.Controls.Add(Label3)
@@ -72,6 +79,15 @@ Partial Class FormFBATool
         TabPage1.TabIndex = 0
         TabPage1.Text = "FBA Setup"
         TabPage1.UseVisualStyleBackColor = True
+        ' 
+        ' Button2
+        ' 
+        Button2.Location = New Point(53, 427)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(75, 23)
+        Button2.TabIndex = 8
+        Button2.Text = "Start"
+        Button2.UseVisualStyleBackColor = True
         ' 
         ' ListBox2
         ' 
@@ -172,19 +188,58 @@ Partial Class FormFBATool
         ' 
         ' TabPage2
         ' 
+        TabPage2.Controls.Add(ListBox3)
+        TabPage2.Controls.Add(Label5)
+        TabPage2.Controls.Add(TextBox2)
+        TabPage2.Controls.Add(Label4)
         TabPage2.Location = New Point(4, 24)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(792, 422)
+        TabPage2.Size = New Size(930, 631)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Result"
         TabPage2.UseVisualStyleBackColor = True
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(26, 30)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(90, 15)
+        Label4.TabIndex = 0
+        Label4.Text = "Objective Mass:"
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(133, 27)
+        TextBox2.Name = "TextBox2"
+        TextBox2.ReadOnly = True
+        TextBox2.Size = New Size(130, 23)
+        TextBox2.TabIndex = 1
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(26, 89)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(110, 15)
+        Label5.TabIndex = 2
+        Label5.Text = "Metabolic Solution:"
+        ' 
+        ' ListBox3
+        ' 
+        ListBox3.FormattingEnabled = True
+        ListBox3.ItemHeight = 15
+        ListBox3.Location = New Point(161, 89)
+        ListBox3.Name = "ListBox3"
+        ListBox3.Size = New Size(252, 349)
+        ListBox3.TabIndex = 3
         ' 
         ' FormFBATool
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 646)
+        ClientSize = New Size(938, 659)
         Controls.Add(TabControl1)
         Name = "FormFBATool"
         Text = "FBA Analysis Tool"
@@ -193,6 +248,8 @@ Partial Class FormFBATool
         TabPage1.PerformLayout()
         ContextMenuStrip2.ResumeLayout(False)
         ContextMenuStrip1.ResumeLayout(False)
+        TabPage2.ResumeLayout(False)
+        TabPage2.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -211,4 +268,9 @@ Partial Class FormFBATool
     Friend WithEvents RemoveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents AddToObjectiveListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button2 As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents Label5 As Label
 End Class

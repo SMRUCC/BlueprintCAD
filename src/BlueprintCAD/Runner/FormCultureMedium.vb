@@ -15,7 +15,6 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
     Dim allReactions As Dictionary(Of String, Reaction)
 
     Public Sub SetData(data As Object) Implements IDataContainer.SetData
-        Dim compounds_id As New List(Of String)
         Dim compoundSet = DirectCast(data, Wizard).models.Values _
             .Select(Function(c) c.model.metabolismStructure.compounds) _
             .ToArray
@@ -39,7 +38,6 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
         ListBox1.Items.Clear()
 
         For Each compound As Compound In search.AsEnumerable
-            Call compounds_id.Add(compound.ID)
             Call ListBox1.Items.Add(New IDDisplay With {.id = compound.ID, .name = compound.name})
         Next
 
