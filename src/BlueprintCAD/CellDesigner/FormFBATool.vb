@@ -1,4 +1,5 @@
 ﻿Imports BlueprintCAD.UIData
+Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Math.LinearAlgebra.LinearProgramming
@@ -12,8 +13,8 @@ Public Class FormFBATool
     Dim search As CompoundSearchIndex
 
     Public Function LoadModel(cell As VirtualCell) As FormFBATool
-        model = cell.CreateModel
         search = New CompoundSearchIndex(cell.metabolismStructure.compounds.OrderBy(Function(c) c.name), 6)
+        model = ProgressSpinner.LoadData(Function() cell.CreateModel)
 
         Return Me
     End Function
@@ -32,13 +33,13 @@ Public Class FormFBATool
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Async Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim text As String = Strings.Trim(TextBox1.Text)
 
         If text = "" Then
             Call refreshList()
         Else
-            Dim find = search.Search(text).ToArray
+            Dim find = Await Task.Run(Function() search.Search(text).ToArray)
 
             Call ListBox1.Items.Clear()
 
@@ -77,7 +78,7 @@ Public Class FormFBATool
 
     Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim engine As New LinearProgrammingEngine()
-        Dim matrix As Matrix = engine.CreateMatrix(model, getTargets.ToArray)
+        Dim matrix As Matrix = Await Task.Run(Function() engine.CreateMatrix(model, getTargets.ToArray))
         Dim result As LPPSolution = Await Task.Run(Function() engine.Run(matrix))
 
         TextBox2.Text = result.ObjectiveFunctionValue
@@ -89,5 +90,9 @@ Public Class FormFBATool
                 .id = compound.Name
             })
         Next
+
+        MessageBox.Show("Run FBA task finished!", "Task Finished", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        TabControl1.SelectedTab = TabPage2
     End Sub
 End Class
