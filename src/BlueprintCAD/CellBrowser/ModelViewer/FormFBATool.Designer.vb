@@ -1,6 +1,7 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormFBATool
-    Inherits System.Windows.Forms.Form
+﻿Imports Galaxy.Workbench.DockDocument
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FormFBATool : Inherits DocumentWindow
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _

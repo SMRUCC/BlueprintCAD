@@ -20,6 +20,7 @@ Public Class CellViewer
     Dim nodeId As String
 
     Shared ReadOnly inspector As New RibbonEventBinding(Ribbon.ButtonPathwayRouter)
+    Shared ReadOnly fba As New RibbonEventBinding(Ribbon.ButtonFBATool)
 
     Dim network As Dictionary(Of String, FluxEdge)
     Dim symbols As Dictionary(Of String, CompoundInfo)
@@ -45,6 +46,14 @@ Public Class CellViewer
                            Call explorer.viewGraph(nodeId)
                        End Sub,
             config:=New FormPhenotypePath().LoadNetwork(network, symbols, FormPhenotypePath.ignores, cache_graph))
+    End Sub
+
+    Friend Sub OpenFBA()
+        If cell Is Nothing Then
+            Return
+        End If
+
+        Call CommonRuntime.ShowDocument(Of FormFBATool)().LoadModel(cell)
     End Sub
 
     Private Sub CacheCellNetwork()
@@ -103,12 +112,14 @@ Public Class CellViewer
     Private Sub CellViewer_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         Ribbon.GroupModelInspecter.ContextAvailable = ContextAvailability.Active
         inspector.evt = AddressOf OpenRouter
+        fba.evt = AddressOf OpenFBA
     End Sub
 
     Private Sub CellViewer_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
         Workbench.RestoreFormTitle()
         Ribbon.GroupModelInspecter.ContextAvailable = ContextAvailability.NotAvailable
         inspector.ClearHook()
+        fba.ClearHook()
     End Sub
 
     Private Sub CellViewer_GotFocus(sender As Object, e As EventArgs) Handles Me.GotFocus
