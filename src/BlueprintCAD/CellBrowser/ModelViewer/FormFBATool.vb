@@ -95,4 +95,12 @@ Public Class FormFBATool
 
         MessageBox.Show("Run FBA task finished!", "Task Finished", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+
+    Private Sub AddAllOfThemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddAllOfThemToolStripMenuItem.Click
+        Call ListBox2.Items.Clear()
+
+        For Each item In ListBox1.Items
+            Call ListBox2.Items.Add(item)
+        Next
+    End Sub
 End Class

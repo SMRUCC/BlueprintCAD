@@ -42,12 +42,13 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ToolStripSeparator1 = New ToolStripSeparator()
         ToolStripLabel1 = New ToolStripLabel()
         ToolStripTextBox1 = New ToolStripTextBox()
+        ToolStripButton2 = New ToolStripButton()
         Panel1 = New Panel()
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
         Panel2 = New Panel()
-        ToolStripButton2 = New ToolStripButton()
+        AddAllOfThemToolStripMenuItem = New ToolStripMenuItem()
         ContextMenuStrip2.SuspendLayout()
         ContextMenuStrip1.SuspendLayout()
         ToolStrip1.SuspendLayout()
@@ -143,9 +144,9 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ' 
         ' ContextMenuStrip1
         ' 
-        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {AddToObjectiveListToolStripMenuItem})
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {AddToObjectiveListToolStripMenuItem, AddAllOfThemToolStripMenuItem})
         ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(186, 26)
+        ContextMenuStrip1.Size = New Size(186, 70)
         ' 
         ' AddToObjectiveListToolStripMenuItem
         ' 
@@ -187,6 +188,15 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ToolStripTextBox1.Name = "ToolStripTextBox1"
         ToolStripTextBox1.ReadOnly = True
         ToolStripTextBox1.Size = New Size(125, 25)
+        ' 
+        ' ToolStripButton2
+        ' 
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "Export FBA Flux Table"
         ' 
         ' Panel1
         ' 
@@ -239,14 +249,11 @@ Partial Class FormFBATool : Inherits DocumentWindow
         Panel2.Size = New Size(1075, 405)
         Panel2.TabIndex = 9
         ' 
-        ' ToolStripButton2
+        ' AddAllOfThemToolStripMenuItem
         ' 
-        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
-        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
-        ToolStripButton2.ImageTransparentColor = Color.Magenta
-        ToolStripButton2.Name = "ToolStripButton2"
-        ToolStripButton2.Size = New Size(23, 22)
-        ToolStripButton2.Text = "Export FBA Flux Table"
+        AddAllOfThemToolStripMenuItem.Name = "AddAllOfThemToolStripMenuItem"
+        AddAllOfThemToolStripMenuItem.Size = New Size(185, 22)
+        AddAllOfThemToolStripMenuItem.Text = "Add All of Them"
         ' 
         ' FormFBATool
         ' 
@@ -296,4 +303,5 @@ Partial Class FormFBATool : Inherits DocumentWindow
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
     Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents AddAllOfThemToolStripMenuItem As ToolStripMenuItem
 End Class
