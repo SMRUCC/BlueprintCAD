@@ -79,24 +79,20 @@ Public Class FormFBATool
         Next
     End Function
 
-    Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim engine As New LinearProgrammingEngine()
-        Dim matrix As Matrix = Await Task.Run(Function() engine.CreateMatrix(model, getTargets.ToArray))
-        Dim opt As OptimizationType = CType(ComboBox1.SelectedIndex, OptimizationType)
-        Dim result As LPPSolution = Await Task.Run(Function() engine.Run(matrix, opt))
+    Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Dim engine As New LinearProgrammingEngine
+        Dim matrix = Await Task.Run(Function() engine.CreateMatrix(model, getTargets.ToArray))
+        Dim opt As OptimizationType = ComboBox1.SelectedIndex
+        Dim result = Await Task.Run(Function() engine.Run(matrix, opt))
+        Dim index = model.Phenotype.GetReactionIndex
 
-        TextBox2.Text = result.ObjectiveFunctionValue
-        ListBox3.Items.Clear()
+        ToolStripTextBox1.Text = result.ObjectiveFunctionValue
+        DataGridView1.Rows.Clear()
 
-        For Each compound As NamedValue(Of Double) In result.GetSolution()
-            Call ListBox3.Items.Add(New CompoundContentData With {
-                .content = compound.Value,
-                .id = compound.Name
-            })
+        For Each flux As NamedValue(Of Double) In result.GetSolution
+            Call DataGridView1.Rows.Add(index(flux.Name).name, flux.Value)
         Next
 
         MessageBox.Show("Run FBA task finished!", "Task Finished", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        TabControl1.SelectedTab = TabPage2
     End Sub
 End Class

@@ -24,9 +24,7 @@ Partial Class FormFBATool : Inherits DocumentWindow
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        TabControl1 = New TabControl()
-        TabPage1 = New TabPage()
-        Button2 = New Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormFBATool))
         ListBox2 = New ListBox()
         ContextMenuStrip2 = New ContextMenuStrip(components)
         RemoveToolStripMenuItem = New ToolStripMenuItem()
@@ -39,65 +37,33 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ListBox1 = New ListBox()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddToObjectiveListToolStripMenuItem = New ToolStripMenuItem()
-        TabPage2 = New TabPage()
-        ListBox3 = New ListBox()
-        Label5 = New Label()
-        TextBox2 = New TextBox()
-        Label4 = New Label()
-        TabControl1.SuspendLayout()
-        TabPage1.SuspendLayout()
+        ToolStrip1 = New ToolStrip()
+        ToolStripButton1 = New ToolStripButton()
+        ToolStripSeparator1 = New ToolStripSeparator()
+        ToolStripLabel1 = New ToolStripLabel()
+        ToolStripTextBox1 = New ToolStripTextBox()
+        Panel1 = New Panel()
+        DataGridView1 = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Panel2 = New Panel()
+        ToolStripButton2 = New ToolStripButton()
         ContextMenuStrip2.SuspendLayout()
         ContextMenuStrip1.SuspendLayout()
-        TabPage2.SuspendLayout()
+        ToolStrip1.SuspendLayout()
+        Panel1.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel2.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' TabControl1
-        ' 
-        TabControl1.Controls.Add(TabPage1)
-        TabControl1.Controls.Add(TabPage2)
-        TabControl1.Dock = DockStyle.Fill
-        TabControl1.Location = New Point(0, 0)
-        TabControl1.Name = "TabControl1"
-        TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(938, 659)
-        TabControl1.TabIndex = 0
-        ' 
-        ' TabPage1
-        ' 
-        TabPage1.Controls.Add(Button2)
-        TabPage1.Controls.Add(ListBox2)
-        TabPage1.Controls.Add(ComboBox1)
-        TabPage1.Controls.Add(Label3)
-        TabPage1.Controls.Add(Label2)
-        TabPage1.Controls.Add(Button1)
-        TabPage1.Controls.Add(TextBox1)
-        TabPage1.Controls.Add(Label1)
-        TabPage1.Controls.Add(ListBox1)
-        TabPage1.Location = New Point(4, 24)
-        TabPage1.Name = "TabPage1"
-        TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(930, 631)
-        TabPage1.TabIndex = 0
-        TabPage1.Text = "FBA Setup"
-        TabPage1.UseVisualStyleBackColor = True
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(53, 427)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(75, 23)
-        Button2.TabIndex = 8
-        Button2.Text = "Start"
-        Button2.UseVisualStyleBackColor = True
         ' 
         ' ListBox2
         ' 
         ListBox2.ContextMenuStrip = ContextMenuStrip2
         ListBox2.FormattingEnabled = True
         ListBox2.ItemHeight = 15
-        ListBox2.Location = New Point(440, 84)
+        ListBox2.Location = New Point(564, 68)
         ListBox2.Name = "ListBox2"
-        ListBox2.Size = New Size(264, 289)
+        ListBox2.Size = New Size(499, 319)
         ListBox2.TabIndex = 7
         ' 
         ' ContextMenuStrip2
@@ -117,15 +83,15 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox1.FormattingEnabled = True
         ComboBox1.Items.AddRange(New Object() {"Maximize", "Minimize"})
-        ComboBox1.Location = New Point(541, 49)
+        ComboBox1.Location = New Point(649, 42)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(107, 23)
+        ComboBox1.Size = New Size(161, 23)
         ComboBox1.TabIndex = 6
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(440, 52)
+        Label3.Location = New Point(564, 46)
         Label3.Name = "Label3"
         Label3.Size = New Size(79, 15)
         Label3.TabIndex = 5
@@ -134,7 +100,7 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(447, 21)
+        Label2.Location = New Point(564, 15)
         Label2.Name = "Label2"
         Label2.Size = New Size(81, 15)
         Label2.TabIndex = 4
@@ -142,7 +108,7 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(208, 54)
+        Button1.Location = New Point(200, 38)
         Button1.Name = "Button1"
         Button1.Size = New Size(75, 23)
         Button1.TabIndex = 3
@@ -151,7 +117,7 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(27, 55)
+        TextBox1.Location = New Point(19, 39)
         TextBox1.Name = "TextBox1"
         TextBox1.Size = New Size(175, 23)
         TextBox1.TabIndex = 2
@@ -159,7 +125,7 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(27, 21)
+        Label1.Location = New Point(19, 15)
         Label1.Name = "Label1"
         Label1.Size = New Size(141, 15)
         Label1.TabIndex = 1
@@ -170,9 +136,9 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ListBox1.ContextMenuStrip = ContextMenuStrip1
         ListBox1.FormattingEnabled = True
         ListBox1.ItemHeight = 15
-        ListBox1.Location = New Point(27, 84)
+        ListBox1.Location = New Point(19, 68)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(256, 304)
+        ListBox1.Size = New Size(503, 319)
         ListBox1.TabIndex = 0
         ' 
         ' ContextMenuStrip1
@@ -187,80 +153,126 @@ Partial Class FormFBATool : Inherits DocumentWindow
         AddToObjectiveListToolStripMenuItem.Size = New Size(185, 22)
         AddToObjectiveListToolStripMenuItem.Text = "Add To Objective List"
         ' 
-        ' TabPage2
+        ' ToolStrip1
         ' 
-        TabPage2.Controls.Add(ListBox3)
-        TabPage2.Controls.Add(Label5)
-        TabPage2.Controls.Add(TextBox2)
-        TabPage2.Controls.Add(Label4)
-        TabPage2.Location = New Point(4, 24)
-        TabPage2.Name = "TabPage2"
-        TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(930, 631)
-        TabPage2.TabIndex = 1
-        TabPage2.Text = "Result"
-        TabPage2.UseVisualStyleBackColor = True
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripButton1, ToolStripSeparator1, ToolStripLabel1, ToolStripTextBox1, ToolStripButton2})
+        ToolStrip1.Location = New Point(0, 0)
+        ToolStrip1.Name = "ToolStrip1"
+        ToolStrip1.Size = New Size(1075, 25)
+        ToolStrip1.TabIndex = 3
+        ToolStrip1.Text = "ToolStrip1"
         ' 
-        ' ListBox3
+        ' ToolStripButton1
         ' 
-        ListBox3.FormattingEnabled = True
-        ListBox3.ItemHeight = 15
-        ListBox3.Location = New Point(161, 89)
-        ListBox3.Name = "ListBox3"
-        ListBox3.Size = New Size(252, 349)
-        ListBox3.TabIndex = 3
+        ToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), Image)
+        ToolStripButton1.ImageTransparentColor = Color.Magenta
+        ToolStripButton1.Name = "ToolStripButton1"
+        ToolStripButton1.Size = New Size(23, 22)
+        ToolStripButton1.Text = "ToolStripButton1"
         ' 
-        ' Label5
+        ' ToolStripSeparator1
         ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(26, 89)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(110, 15)
-        Label5.TabIndex = 2
-        Label5.Text = "Metabolic Solution:"
+        ToolStripSeparator1.Name = "ToolStripSeparator1"
+        ToolStripSeparator1.Size = New Size(6, 25)
         ' 
-        ' TextBox2
+        ' ToolStripLabel1
         ' 
-        TextBox2.Location = New Point(133, 27)
-        TextBox2.Name = "TextBox2"
-        TextBox2.ReadOnly = True
-        TextBox2.Size = New Size(130, 23)
-        TextBox2.TabIndex = 1
+        ToolStripLabel1.Name = "ToolStripLabel1"
+        ToolStripLabel1.Size = New Size(160, 22)
+        ToolStripLabel1.Text = "FBA Output(Objective Mass):"
         ' 
-        ' Label4
+        ' ToolStripTextBox1
         ' 
-        Label4.AutoSize = True
-        Label4.Location = New Point(26, 30)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(90, 15)
-        Label4.TabIndex = 0
-        Label4.Text = "Objective Mass:"
+        ToolStripTextBox1.Name = "ToolStripTextBox1"
+        ToolStripTextBox1.ReadOnly = True
+        ToolStripTextBox1.Size = New Size(125, 25)
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(DataGridView1)
+        Panel1.Dock = DockStyle.Fill
+        Panel1.Location = New Point(0, 430)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(1075, 468)
+        Panel1.TabIndex = 8
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.BackgroundColor = Color.WhiteSmoke
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2})
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.Location = New Point(0, 0)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
+        DataGridView1.Size = New Size(1075, 468)
+        DataGridView1.TabIndex = 3
+        ' 
+        ' Column1
+        ' 
+        Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column1.HeaderText = "Metabolic Reaction"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Flux"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Controls.Add(Label1)
+        Panel2.Controls.Add(ListBox1)
+        Panel2.Controls.Add(ListBox2)
+        Panel2.Controls.Add(TextBox1)
+        Panel2.Controls.Add(ComboBox1)
+        Panel2.Controls.Add(Button1)
+        Panel2.Controls.Add(Label3)
+        Panel2.Controls.Add(Label2)
+        Panel2.Dock = DockStyle.Top
+        Panel2.Location = New Point(0, 25)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(1075, 405)
+        Panel2.TabIndex = 9
+        ' 
+        ' ToolStripButton2
+        ' 
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "Export FBA Flux Table"
         ' 
         ' FormFBATool
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(938, 659)
-        Controls.Add(TabControl1)
+        ClientSize = New Size(1075, 898)
+        Controls.Add(Panel1)
+        Controls.Add(Panel2)
+        Controls.Add(ToolStrip1)
         DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
         DoubleBuffered = True
         Name = "FormFBATool"
         ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
         TabPageContextMenuStrip = DockContextMenuStrip1
         Text = "FBA Analysis Tool"
-        TabControl1.ResumeLayout(False)
-        TabPage1.ResumeLayout(False)
-        TabPage1.PerformLayout()
         ContextMenuStrip2.ResumeLayout(False)
         ContextMenuStrip1.ResumeLayout(False)
-        TabPage2.ResumeLayout(False)
-        TabPage2.PerformLayout()
+        ToolStrip1.ResumeLayout(False)
+        ToolStrip1.PerformLayout()
+        Panel1.ResumeLayout(False)
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
-
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
@@ -273,9 +285,15 @@ Partial Class FormFBATool : Inherits DocumentWindow
     Friend WithEvents RemoveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents AddToObjectiveListToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents ListBox3 As ListBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents ToolStripButton2 As ToolStripButton
 End Class
