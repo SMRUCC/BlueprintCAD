@@ -188,4 +188,8 @@
 #define cmdTabModelInspecter_LabelTitle_RESID 60143
 #define cmdMenuInspector 40 
 #define cmdMenuInspector_LabelTitle_RESID 60144
-#define InternalCmd2_LabelTitle_RESID 60145
+#define cmdButtonFBATool 41 
+#define cmdButtonFBATool_LabelTitle_RESID 60145
+#define cmdButtonFBATool_SmallImages_192__RESID 60146
+#define cmdButtonFBATool_LargeImages_192__RESID 60147
+#define InternalCmd2_LabelTitle_RESID 60148

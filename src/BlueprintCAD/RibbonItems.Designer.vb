@@ -51,6 +51,7 @@ Namespace RibbonLib.Controls
             Public Const cmdTabModelInspecter As UInteger = 39
             Public Const cmdMenuInspector As UInteger = 40
             Public Const cmdButtonPathwayRouter As UInteger = 37
+            Public Const cmdButtonFBATool As UInteger = 41
             Public Const cmdGroupMainMenu As UInteger = 31
             Public Const cmdTabMainMenu As UInteger = 32
             Public Const cmdGroupOthers As UInteger = 35
@@ -343,6 +344,12 @@ Namespace RibbonLib.Controls
                 Return _ButtonPathwayRouter
             End Get
         End Property
+        Private _ButtonFBATool As RibbonButton
+        Public ReadOnly Property ButtonFBATool As RibbonButton
+            Get
+                Return _ButtonFBATool
+            End Get
+        End Property
         Private _GroupMainMenu As RibbonTab
         Public ReadOnly Property GroupMainMenu As RibbonTab
             Get
@@ -403,6 +410,7 @@ Namespace RibbonLib.Controls
             _TabModelInspecter = New RibbonTab(_ribbon, Cmd.cmdTabModelInspecter)
             _MenuInspector = New RibbonGroup(_ribbon, Cmd.cmdMenuInspector)
             _ButtonPathwayRouter = New RibbonButton(_ribbon, Cmd.cmdButtonPathwayRouter)
+            _ButtonFBATool = New RibbonButton(_ribbon, Cmd.cmdButtonFBATool)
             _GroupMainMenu = New RibbonTab(_ribbon, Cmd.cmdGroupMainMenu)
             _TabMainMenu = New RibbonGroup(_ribbon, Cmd.cmdTabMainMenu)
             _GroupOthers = New RibbonGroup(_ribbon, Cmd.cmdGroupOthers)

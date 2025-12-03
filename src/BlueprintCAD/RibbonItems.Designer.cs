@@ -54,6 +54,7 @@ namespace RibbonLib.Controls
             public const uint cmdTabModelInspecter = 39;
             public const uint cmdMenuInspector = 40;
             public const uint cmdButtonPathwayRouter = 37;
+            public const uint cmdButtonFBATool = 41;
             public const uint cmdGroupMainMenu = 31;
             public const uint cmdTabMainMenu = 32;
             public const uint cmdGroupOthers = 35;
@@ -161,6 +162,7 @@ namespace RibbonLib.Controls
         public RibbonTab TabModelInspecter { get; private set; }
         public RibbonGroup MenuInspector { get; private set; }
         public RibbonButton ButtonPathwayRouter { get; private set; }
+        public RibbonButton ButtonFBATool { get; private set; }
         public RibbonTab GroupMainMenu { get; private set; }
         public RibbonGroup TabMainMenu { get; private set; }
         public RibbonGroup GroupOthers { get; private set; }
@@ -206,6 +208,7 @@ namespace RibbonLib.Controls
             TabModelInspecter = new RibbonTab(ribbon, Cmd.cmdTabModelInspecter);
             MenuInspector = new RibbonGroup(ribbon, Cmd.cmdMenuInspector);
             ButtonPathwayRouter = new RibbonButton(ribbon, Cmd.cmdButtonPathwayRouter);
+            ButtonFBATool = new RibbonButton(ribbon, Cmd.cmdButtonFBATool);
             GroupMainMenu = new RibbonTab(ribbon, Cmd.cmdGroupMainMenu);
             TabMainMenu = new RibbonGroup(ribbon, Cmd.cmdTabMainMenu);
             GroupOthers = new RibbonGroup(ribbon, Cmd.cmdGroupOthers);

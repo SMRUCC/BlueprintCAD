@@ -180,6 +180,14 @@
     <Command Name="cmdGroupModelInspecter" Id="38" LabelTitle="Model Inspecter" />
     <Command Name="cmdTabModelInspecter" Id="39" LabelTitle="Model Inspecter" />
     <Command Name="cmdMenuInspector" Id="40" LabelTitle="Inspector" />
+    <Command Name="cmdButtonFBATool" Id="41" LabelTitle="FBA Toolbox">
+      <Command.SmallImages>
+        <Image MinDPI="192">Resources/icons8-unicast-96.png</Image>
+      </Command.SmallImages>
+      <Command.LargeImages>
+        <Image MinDPI="192">Resources/icons8-unicast-96.png</Image>
+      </Command.LargeImages>
+    </Command>
   </Application.Commands>
   <Application.Views>
     <Ribbon Name="Sophia VirtualCell Workshop">
@@ -250,8 +258,9 @@
         </TabGroup>
         <TabGroup CommandName="cmdGroupModelInspecter">
           <Tab CommandName="cmdTabModelInspecter">
-            <Group CommandName="cmdMenuInspector" SizeDefinition="OneButton">
+            <Group CommandName="cmdMenuInspector" SizeDefinition="TwoButtons">
               <Button CommandName="cmdButtonPathwayRouter" />
+              <Button CommandName="cmdButtonFBATool" />
             </Group>
           </Tab>
         </TabGroup>
