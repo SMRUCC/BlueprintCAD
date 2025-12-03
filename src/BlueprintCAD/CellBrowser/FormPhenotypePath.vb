@@ -53,6 +53,7 @@ Public Class FormPhenotypePath
                             .compartment = v.data("location")
                         }
                     End Function) _
+            .OrderBy(Function(a) a.name) _
             .ToArray
 
         Return Me
