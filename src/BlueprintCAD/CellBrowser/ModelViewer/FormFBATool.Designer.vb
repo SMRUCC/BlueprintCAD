@@ -40,10 +40,10 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ContextMenuStrip1 = New ContextMenuStrip(components)
         AddToObjectiveListToolStripMenuItem = New ToolStripMenuItem()
         TabPage2 = New TabPage()
-        Label4 = New Label()
-        TextBox2 = New TextBox()
-        Label5 = New Label()
         ListBox3 = New ListBox()
+        Label5 = New Label()
+        TextBox2 = New TextBox()
+        Label4 = New Label()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         ContextMenuStrip2.SuspendLayout()
@@ -76,7 +76,7 @@ Partial Class FormFBATool : Inherits DocumentWindow
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(792, 618)
+        TabPage1.Size = New Size(930, 631)
         TabPage1.TabIndex = 0
         TabPage1.Text = "FBA Setup"
         TabPage1.UseVisualStyleBackColor = True
@@ -116,7 +116,7 @@ Partial Class FormFBATool : Inherits DocumentWindow
         ' 
         ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"Minimize", "Maximum"})
+        ComboBox1.Items.AddRange(New Object() {"Maximize", "Minimize"})
         ComboBox1.Location = New Point(541, 49)
         ComboBox1.Name = "ComboBox1"
         ComboBox1.Size = New Size(107, 23)
@@ -201,22 +201,14 @@ Partial Class FormFBATool : Inherits DocumentWindow
         TabPage2.Text = "Result"
         TabPage2.UseVisualStyleBackColor = True
         ' 
-        ' Label4
+        ' ListBox3
         ' 
-        Label4.AutoSize = True
-        Label4.Location = New Point(26, 30)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(90, 15)
-        Label4.TabIndex = 0
-        Label4.Text = "Objective Mass:"
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(133, 27)
-        TextBox2.Name = "TextBox2"
-        TextBox2.ReadOnly = True
-        TextBox2.Size = New Size(130, 23)
-        TextBox2.TabIndex = 1
+        ListBox3.FormattingEnabled = True
+        ListBox3.ItemHeight = 15
+        ListBox3.Location = New Point(161, 89)
+        ListBox3.Name = "ListBox3"
+        ListBox3.Size = New Size(252, 349)
+        ListBox3.TabIndex = 3
         ' 
         ' Label5
         ' 
@@ -227,14 +219,22 @@ Partial Class FormFBATool : Inherits DocumentWindow
         Label5.TabIndex = 2
         Label5.Text = "Metabolic Solution:"
         ' 
-        ' ListBox3
+        ' TextBox2
         ' 
-        ListBox3.FormattingEnabled = True
-        ListBox3.ItemHeight = 15
-        ListBox3.Location = New Point(161, 89)
-        ListBox3.Name = "ListBox3"
-        ListBox3.Size = New Size(252, 349)
-        ListBox3.TabIndex = 3
+        TextBox2.Location = New Point(133, 27)
+        TextBox2.Name = "TextBox2"
+        TextBox2.ReadOnly = True
+        TextBox2.Size = New Size(130, 23)
+        TextBox2.TabIndex = 1
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(26, 30)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(90, 15)
+        Label4.TabIndex = 0
+        Label4.Text = "Objective Mass:"
         ' 
         ' FormFBATool
         ' 
@@ -242,7 +242,11 @@ Partial Class FormFBATool : Inherits DocumentWindow
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(938, 659)
         Controls.Add(TabControl1)
+        DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
+        DoubleBuffered = True
         Name = "FormFBATool"
+        ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
+        TabPageContextMenuStrip = DockContextMenuStrip1
         Text = "FBA Analysis Tool"
         TabControl1.ResumeLayout(False)
         TabPage1.ResumeLayout(False)

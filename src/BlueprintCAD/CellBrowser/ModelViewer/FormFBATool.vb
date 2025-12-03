@@ -15,6 +15,9 @@ Public Class FormFBATool
     Public Function LoadModel(cell As VirtualCell) As FormFBATool
         search = New CompoundSearchIndex(cell.metabolismStructure.compounds.OrderBy(Function(c) c.name), 6)
         model = ProgressSpinner.LoadData(Function() cell.CreateModel)
+        ComboBox1.SelectedIndex = 0
+
+        Call refreshList()
 
         Return Me
     End Function
@@ -79,7 +82,8 @@ Public Class FormFBATool
     Private Async Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim engine As New LinearProgrammingEngine()
         Dim matrix As Matrix = Await Task.Run(Function() engine.CreateMatrix(model, getTargets.ToArray))
-        Dim result As LPPSolution = Await Task.Run(Function() engine.Run(matrix))
+        Dim opt As OptimizationType = CType(ComboBox1.SelectedIndex, OptimizationType)
+        Dim result As LPPSolution = Await Task.Run(Function() engine.Run(matrix, opt))
 
         TextBox2.Text = result.ObjectiveFunctionValue
         ListBox3.Items.Clear()
