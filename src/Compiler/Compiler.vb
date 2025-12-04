@@ -406,7 +406,12 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                             .protein_id = protein_id
                         })
                     Case "rRNA"
-                        Dim rRNA = gene.commonName.Split(" "c, "-"c).First.ToLower
+                        Dim rRNA = gene.commonName _
+                            .Replace("ribosomal RNA", "") _
+                            .Trim _
+                            .Split(" "c, "-"c) _
+                            .First _
+                            .ToLower
 
                         gene_type = RNATypes.ribosomalRNA
                         RNA = New RNA With {
