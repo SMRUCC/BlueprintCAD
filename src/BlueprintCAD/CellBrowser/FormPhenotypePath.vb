@@ -314,14 +314,15 @@ Public Class FormPhenotypePath
                 Dim sheet = wb.CurrentWorksheet
                 Dim nodes As New Dictionary(Of String, NodeView)
                 Dim viewIndex = view.ToDictionary(Function(v) v.id)
+                Dim reactionIndex = reactionView.ToDictionary(Function(v) v.id)
 
                 Call sheet.AddDataRow("fromNode", "toNode", "edgeType")
 
                 For Each link As VertexEdge In pathway.AsEnumerable
                     Dim edge As Edge = g.GetEdge(link.U, link.V)
 
-                    nodes(edge.U.label) = viewIndex(edge.U.label)
-                    nodes(edge.V.label) = viewIndex(edge.V.label)
+                    nodes(edge.U.label) = If(viewIndex.ContainsKey(edge.U.label), viewIndex(edge.U.label), reactionIndex(edge.U.label))
+                    nodes(edge.V.label) = If(viewIndex.ContainsKey(edge.V.label), viewIndex(edge.V.label), reactionIndex(edge.V.label))
 
                     Call sheet.AddDataRow(edge.U.data.label,
                                           edge.V.data.label,
