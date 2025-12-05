@@ -165,10 +165,16 @@ Public Class FormPhenotypePath
 
         Call ProgressSpinner.DoLoading(
             Sub()
+                Dim i As Integer = 0
+
                 For Each v As NodeView In view
                     Call ListBox1.Items.Add(v)
                     Call ListBox2.Items.Add(v)
-                    Call qgram.AddString(v.name)
+                    ' 20251205
+                    ' skip of some empty name for deal with the unexpected offset error
+                    Call qgram.AddString(v.name, index:=i)
+
+                    i += 1
                 Next
             End Sub, host:=Me)
     End Sub
