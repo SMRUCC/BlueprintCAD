@@ -738,7 +738,7 @@ Public Class CellBrowser
     Dim cache_graph As NetworkGraph = Nothing
 
     Private Sub OpenPhenotypeTool()
-        Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network, symbols, {"WATER", "CO2"}, cache_graph))
+        Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network, symbols, FormPhenotypePath.ignores, cache_graph))
     End Sub
 
     Private Sub CheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckAllToolStripMenuItem.Click
