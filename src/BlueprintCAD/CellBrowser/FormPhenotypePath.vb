@@ -17,6 +17,7 @@ Public Class FormPhenotypePath
     Dim g As NetworkGraph
     Dim qgram As QGramIndex
     Dim view As NodeView()
+    Dim reactionView As NodeView()
 
     Public Shared ReadOnly ignores As String() = {
         "BioCAD00001853702", ' H+
@@ -45,18 +46,26 @@ Public Class FormPhenotypePath
         Me.view = g.vertex _
             .AsParallel _
             .Where(Function(v) v.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE) <> "BiologicalProcess") _
-            .Select(Function(v)
-                        Return New NodeView With {
-                            .id = v.label,
-                            .name = v.data.label,
-                            .type = v.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE),
-                            .compartment = v.data("location")
-                        }
-                    End Function) _
+            .Select(Function(v) buildNodeView(v)) _
+            .OrderBy(Function(a) a.name) _
+            .ToArray
+        Me.reactionView = g.vertex _
+            .AsParallel _
+            .Where(Function(v) v.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE) = "BiologicalProcess") _
+            .Select(Function(v) buildNodeView(v)) _
             .OrderBy(Function(a) a.name) _
             .ToArray
 
         Return Me
+    End Function
+
+    Private Shared Function buildNodeView(v As Microsoft.VisualBasic.Data.visualize.Network.Graph.Node) As NodeView
+        Return New NodeView With {
+            .id = v.label,
+            .name = v.data.label,
+            .type = v.data(NamesOf.REFLECTION_ID_MAPPING_NODETYPE),
+            .compartment = v.data("location")
+        }
     End Function
 
     Private Shared Function CreateNetwork(network As Dictionary(Of String, FluxEdge),

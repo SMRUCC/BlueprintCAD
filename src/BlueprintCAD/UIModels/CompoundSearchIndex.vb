@@ -34,7 +34,7 @@ Namespace UIData
             Call Me.New(cell.metabolismStructure.compounds)
         End Sub
 
-        Public Iterator Function Search(text As String, Optional top As Integer = 30) As IEnumerable(Of Compound)
+        Public Iterator Function Search(text As String, Optional top As Integer = 50) As IEnumerable(Of Compound)
             Dim index As FindResult() = qgram.FindSimilar(text, 0).ToArray
             Dim hits = index.Select(Function(i) (i.similarity, i.index, compounds(i.index))) _
                 .GroupBy(Function(a) a.index) _
