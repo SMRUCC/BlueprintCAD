@@ -738,7 +738,13 @@ Public Class CellBrowser
     Dim cache_graph As NetworkGraph = Nothing
 
     Private Sub OpenPhenotypeTool()
-        Call InputDialog.Input(config:=New FormPhenotypePath().LoadNetwork(network, symbols, FormPhenotypePath.ignores, cache_graph))
+        Call InputDialog.Input(
+            Sub(tool)
+                Dim nodeSet = tool.PlotNodes
+                Dim idset As String() = nodeSet.Select(Function(a) a.id).ToArray
+
+                Call RefreshPlot(idset)
+            End Sub, config:=New FormPhenotypePath().LoadNetwork(network, symbols, FormPhenotypePath.ignores, cache_graph))
     End Sub
 
     Private Sub CheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckAllToolStripMenuItem.Click
