@@ -10,10 +10,10 @@ Namespace UIData
         ReadOnly compounds As Compound()
         ReadOnly qgram As QGramIndex
 
-        Sub New(compounds As IEnumerable(Of Compound), qgram As Integer)
+        Sub New(compounds As IEnumerable(Of Compound))
             Dim offset As Integer = 0
 
-            Me.qgram = New QGramIndex(qgram)
+            Me.qgram = New QGramIndex(q:=3)
             Me.compounds = compounds _
                 .SafeQuery _
                 .ToArray
@@ -30,14 +30,12 @@ Namespace UIData
         End Sub
 
         <MethodImpl(MethodImplOptions.AggressiveInlining)>
-        Sub New(cell As VirtualCell, qgram As Integer)
-            Call Me.New(cell.metabolismStructure.compounds, qgram)
+        Sub New(cell As VirtualCell)
+            Call Me.New(cell.metabolismStructure.compounds)
         End Sub
 
         Public Iterator Function Search(text As String, Optional top As Integer = 30) As IEnumerable(Of Compound)
-            Dim index = qgram.FindSimilar(text, 0) _
-                .OrderByDescending(Function(a) a.similarity) _
-                .ToArray
+            Dim index As FindResult() = qgram.FindSimilar(text, 0).ToArray
             Dim hits = index.Select(Function(i) (i.similarity, i.index, compounds(i.index))) _
                 .GroupBy(Function(a) a.index) _
                 .OrderByDescending(Function(a) a.Max(Function(c) c.similarity)) _

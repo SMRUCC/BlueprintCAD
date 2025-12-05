@@ -13,7 +13,7 @@ Public Class FormFBATool
     Dim search As CompoundSearchIndex
 
     Public Function LoadModel(cell As VirtualCell) As FormFBATool
-        search = New CompoundSearchIndex(cell.metabolismStructure.compounds.OrderBy(Function(c) c.name), 6)
+        search = New CompoundSearchIndex(cell.metabolismStructure.compounds.OrderBy(Function(c) c.name))
         model = ProgressSpinner.LoadData(Function() cell.CreateModel)
         ComboBox1.SelectedIndex = 0
 

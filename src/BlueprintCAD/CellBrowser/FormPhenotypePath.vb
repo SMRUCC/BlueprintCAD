@@ -161,7 +161,7 @@ Public Class FormPhenotypePath
     End Function
 
     Private Sub FormPhenotypePath_Load(sender As Object, e As EventArgs) Handles Me.Load
-        qgram = New QGramIndex(6)
+        qgram = New QGramIndex(3)
 
         Call ProgressSpinner.DoLoading(
             Sub()

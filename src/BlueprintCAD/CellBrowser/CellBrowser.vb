@@ -82,7 +82,7 @@ Public Class CellBrowser
         network = TaskProgress.LoadData(Function(println As Action(Of String)) LoadNetwork(println))
         timePoints = Enumerable.Range(0, vcellPack.totalPoints).AsDouble
         moleculeSet = vcellPack.GetCellularMolecules.ToArray
-        search = New CompoundSearchIndex(symbols.Values.Select(Function(c) New Compound With {.ID = c.id, .name = c.name, .db_xrefs = c.db_xrefs}), 6)
+        search = New CompoundSearchIndex(symbols.Values.Select(Function(c) New Compound With {.ID = c.id, .name = c.name, .db_xrefs = c.db_xrefs}))
 
         Call TaskProgress.RunAction(
             Sub(echo)

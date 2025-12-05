@@ -34,7 +34,7 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
                           End Function)
 
         wizardConfig = DirectCast(data, Wizard)
-        search = New CompoundSearchIndex(FilterMembraneTransportMetabolites(allCompounds).OrderBy(Function(c) c.name), 6)
+        search = New CompoundSearchIndex(FilterMembraneTransportMetabolites(allCompounds).OrderBy(Function(c) c.name))
         ListBox1.Items.Clear()
 
         For Each compound As Compound In search.AsEnumerable

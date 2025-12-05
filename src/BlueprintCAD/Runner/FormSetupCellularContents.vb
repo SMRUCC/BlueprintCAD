@@ -2,6 +2,7 @@
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
+Imports Microsoft.VisualBasic.Language
 Imports randf = Microsoft.VisualBasic.Math.RandomExtensions
 
 Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
@@ -70,13 +71,14 @@ Public Class FormSetupCellularContents : Implements IDataContainer, IWizardUI
 
     Private Sub refreshCompoundList(key As String)
         Dim compounds = data(key)
+        Dim i As i32 = 0
 
         Call ListBox2.Items.Clear()
 
-        search = New QGramIndex(q:=6)
+        search = New QGramIndex(q:=3)
 
         For Each item As CompoundContentData In compounds
-            Call search.AddString(item.name)
+            Call search.AddString(item.name, ++i)
             Call ListBox2.Items.Add(item)
         Next
     End Sub
