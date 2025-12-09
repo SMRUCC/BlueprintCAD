@@ -29,11 +29,14 @@ Public Class FormCellCopyNumber : Implements IDataContainer, IWizardUI
         Return wizardConfig
     End Function
 
+    Dim offset As Integer
+
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         If ListBox1.SelectedIndex < 0 Then
             Return
         Else
             model = CStr(ListBox1.SelectedItem)
+            offset = ListBox1.SelectedIndex
         End If
 
         NumericUpDown1.Value = copyNum(model)

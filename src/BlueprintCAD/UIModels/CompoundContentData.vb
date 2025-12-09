@@ -7,7 +7,7 @@
         Public Property name As String
 
         Public Overrides Function ToString() As String
-            Return $"{If(name, id)} ({content} g/L)"
+            Return $"{If(name, id)} ({content.ToString("G3")} g/L)"
         End Function
 
     End Class

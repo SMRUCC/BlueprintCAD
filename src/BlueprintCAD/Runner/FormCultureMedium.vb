@@ -100,11 +100,15 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
             Return "Culture Medium Compounds"
         End Get
     End Property
+
+    Dim offset As Integer
+
     Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
         If ListBox2.SelectedIndex < 0 Then
             Return
         End If
 
+        offset = ListBox2.SelectedIndex
         compound = ListBox2.SelectedItem
         NumericUpDown1.Value = compound.content
 
@@ -114,6 +118,10 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
         If Not compound Is Nothing Then
             compound.content = NumericUpDown1.Value
+
+            If offset > -1 Then
+                ListBox2.Invalidate(offset)
+            End If
         End If
     End Sub
 
