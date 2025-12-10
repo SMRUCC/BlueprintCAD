@@ -51,7 +51,7 @@ Public Class FormCultureMediumLibrary
             Dim row As DataGridViewRow = DataGridView1.Rows(i)
             Dim met As New FormulaCompound With {
                 .registry_id = CStr(row.HeaderCell.Value),
-                .Name = CStr(row.Cells(0).Value),
+                .name = CStr(row.Cells(0).Value),
                 .formula = CStr(row.Cells(1).Value),
                 .cas_id = CStr(row.Cells(2).Value),
                 .kegg_id = CStr(row.Cells(3).Value),
@@ -142,5 +142,17 @@ Public Class FormCultureMediumLibrary
                 End If
             End If
         End Using
+    End Sub
+
+    Private Sub ToolStripButton5_Click(sender As Object, e As EventArgs) Handles ToolStripButton5.Click
+        If Not Workbench.ServerConnection Then
+            MessageBox.Show("Sorry, no server connection to the registry server: http://biocad.innovation.ac.cn/. Can not add standard compound term into current culture medium formula.", "No Server Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        Call InputDialog.Input(Of FormSearchRegistry)(
+            Sub(search)
+
+            End Sub)
     End Sub
 End Class
