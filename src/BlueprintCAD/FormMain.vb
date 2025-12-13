@@ -17,8 +17,6 @@ Public Class FormMain : Implements AppHost
     Dim vS2015LightTheme1 As New VS2015LightTheme
     Dim vsToolStripExtender1 As New VisualStudioToolStripExtender
 
-    ReadOnly _toolStripProfessionalRenderer As New ToolStripProfessionalRenderer()
-
     Public Event ResizeForm As AppHost.ResizeFormEventHandler Implements AppHost.ResizeForm
     Public Event CloseWorkbench As AppHost.CloseWorkbenchEventHandler Implements AppHost.CloseWorkbench
 
