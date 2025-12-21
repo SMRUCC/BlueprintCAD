@@ -71,17 +71,21 @@ Partial Class FormAnnotation
         AdvancedDataGridViewSearchToolBar1 = New AdvancedDataGridViewSearchToolBar()
         PictureBox1 = New PictureBox()
         TabPage2 = New TabPage()
+        RichTextBox1 = New RichTextBox()
+        Panel1 = New Panel()
+        GroupBox2 = New GroupBox()
+        GroupBox1 = New GroupBox()
+        TextBox1 = New TextBox()
         TextBox2 = New TextBox()
+        Label1 = New Label()
         Label2 = New Label()
         Button1 = New Button()
-        TextBox1 = New TextBox()
-        Label1 = New Label()
         ToolStrip1 = New ToolStrip()
         ToolStripButton1 = New ToolStripButton()
-        GroupBox1 = New GroupBox()
-        GroupBox2 = New GroupBox()
-        Panel1 = New Panel()
-        RichTextBox1 = New RichTextBox()
+        ToolStripSeparator1 = New ToolStripSeparator()
+        ToolStripButton2 = New ToolStripButton()
+        ToolStripButton3 = New ToolStripButton()
+        ToolStripButton4 = New ToolStripButton()
         TabControl1.SuspendLayout()
         TabPage1.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
@@ -110,9 +114,9 @@ Partial Class FormAnnotation
         ContextMenuStrip2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         TabPage2.SuspendLayout()
-        ToolStrip1.SuspendLayout()
-        GroupBox1.SuspendLayout()
         Panel1.SuspendLayout()
+        GroupBox1.SuspendLayout()
+        ToolStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -620,12 +624,71 @@ Partial Class FormAnnotation
         TabPage2.Text = "Settings"
         TabPage2.UseVisualStyleBackColor = True
         ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.BorderStyle = BorderStyle.None
+        RichTextBox1.Dock = DockStyle.Fill
+        RichTextBox1.Location = New Point(806, 3)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(611, 848)
+        RichTextBox1.TabIndex = 8
+        RichTextBox1.Text = ""
+        ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(GroupBox2)
+        Panel1.Controls.Add(GroupBox1)
+        Panel1.Dock = DockStyle.Left
+        Panel1.Location = New Point(3, 3)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(803, 848)
+        Panel1.TabIndex = 7
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Location = New Point(13, 14)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(774, 236)
+        GroupBox2.TabIndex = 6
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Edit Model Metadata"
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(TextBox1)
+        GroupBox1.Controls.Add(TextBox2)
+        GroupBox1.Controls.Add(Label1)
+        GroupBox1.Controls.Add(Label2)
+        GroupBox1.Controls.Add(Button1)
+        GroupBox1.Location = New Point(13, 268)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(774, 474)
+        GroupBox1.TabIndex = 5
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Cellular Component Annotation Search"
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(15, 63)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(660, 23)
+        TextBox1.TabIndex = 1
+        ' 
         ' TextBox2
         ' 
         TextBox2.Location = New Point(15, 116)
         TextBox2.Name = "TextBox2"
         TextBox2.Size = New Size(660, 23)
         TextBox2.TabIndex = 4
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(15, 41)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(92, 15)
+        Label1.TabIndex = 0
+        Label1.Text = "Set NCBI Blast+:"
         ' 
         ' Label2
         ' 
@@ -645,25 +708,9 @@ Partial Class FormAnnotation
         Button1.Text = "..."
         Button1.UseVisualStyleBackColor = True
         ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(15, 63)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(660, 23)
-        TextBox1.TabIndex = 1
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(15, 41)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(92, 15)
-        Label1.TabIndex = 0
-        Label1.Text = "Set NCBI Blast+:"
-        ' 
         ' ToolStrip1
         ' 
-        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripButton1})
+        ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripButton1, ToolStripSeparator1, ToolStripButton2, ToolStripButton3, ToolStripButton4})
         ToolStrip1.Location = New Point(0, 0)
         ToolStrip1.Name = "ToolStrip1"
         ToolStrip1.Size = New Size(1428, 25)
@@ -679,48 +726,37 @@ Partial Class FormAnnotation
         ToolStripButton1.Size = New Size(23, 22)
         ToolStripButton1.Text = "Build Model"
         ' 
-        ' GroupBox1
+        ' ToolStripSeparator1
         ' 
-        GroupBox1.Controls.Add(TextBox1)
-        GroupBox1.Controls.Add(TextBox2)
-        GroupBox1.Controls.Add(Label1)
-        GroupBox1.Controls.Add(Label2)
-        GroupBox1.Controls.Add(Button1)
-        GroupBox1.Location = New Point(13, 268)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(774, 474)
-        GroupBox1.TabIndex = 5
-        GroupBox1.TabStop = False
-        GroupBox1.Text = "Cellular Component Annotation Search"
+        ToolStripSeparator1.Name = "ToolStripSeparator1"
+        ToolStripSeparator1.Size = New Size(6, 25)
         ' 
-        ' GroupBox2
+        ' ToolStripButton2
         ' 
-        GroupBox2.Location = New Point(13, 14)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(774, 236)
-        GroupBox2.TabIndex = 6
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "Edit Model Metadata"
+        ToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), Image)
+        ToolStripButton2.ImageTransparentColor = Color.Magenta
+        ToolStripButton2.Name = "ToolStripButton2"
+        ToolStripButton2.Size = New Size(23, 22)
+        ToolStripButton2.Text = "Export Protein Sequence"
         ' 
-        ' Panel1
+        ' ToolStripButton3
         ' 
-        Panel1.Controls.Add(GroupBox2)
-        Panel1.Controls.Add(GroupBox1)
-        Panel1.Dock = DockStyle.Left
-        Panel1.Location = New Point(3, 3)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(803, 848)
-        Panel1.TabIndex = 7
+        ToolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), Image)
+        ToolStripButton3.ImageTransparentColor = Color.Magenta
+        ToolStripButton3.Name = "ToolStripButton3"
+        ToolStripButton3.Size = New Size(23, 22)
+        ToolStripButton3.Text = "Export Gene Sequence"
         ' 
-        ' RichTextBox1
+        ' ToolStripButton4
         ' 
-        RichTextBox1.BorderStyle = BorderStyle.None
-        RichTextBox1.Dock = DockStyle.Fill
-        RichTextBox1.Location = New Point(806, 3)
-        RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(611, 848)
-        RichTextBox1.TabIndex = 8
-        RichTextBox1.Text = ""
+        ToolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Image
+        ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), Image)
+        ToolStripButton4.ImageTransparentColor = Color.Magenta
+        ToolStripButton4.Name = "ToolStripButton4"
+        ToolStripButton4.Size = New Size(23, 22)
+        ToolStripButton4.Text = "Export TSS Upstream Region"
         ' 
         ' FormAnnotation
         ' 
@@ -768,11 +804,11 @@ Partial Class FormAnnotation
         ContextMenuStrip2.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         TabPage2.ResumeLayout(False)
-        ToolStrip1.ResumeLayout(False)
-        ToolStrip1.PerformLayout()
+        Panel1.ResumeLayout(False)
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
-        Panel1.ResumeLayout(False)
+        ToolStrip1.ResumeLayout(False)
+        ToolStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -826,4 +862,8 @@ Partial Class FormAnnotation
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents ToolStripButton3 As ToolStripButton
+    Friend WithEvents ToolStripButton4 As ToolStripButton
 End Class

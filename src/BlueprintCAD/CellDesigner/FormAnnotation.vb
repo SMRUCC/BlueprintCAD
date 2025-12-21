@@ -16,6 +16,7 @@ Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.SequenceLogo
+Imports SMRUCC.genomics.Assembly.NCBI.CDD
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
@@ -877,5 +878,39 @@ Public Class FormAnnotation
             .CTypeGdiImage
 
         PictureBox1.BackgroundImage = draw
+    End Sub
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Using file As New SaveFileDialog With {.Filter = "Protein Fasta Sequence File(*.fasta)|*.fasta"}
+            If file.ShowDialog = DialogResult.OK Then
+                Using s As Stream = file.FileName.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
+                    Call proj.DumpProteinFasta(s)
+                End Using
+            End If
+        End Using
+    End Sub
+
+    Private Sub ToolStripButton3_Click(sender As Object, e As EventArgs) Handles ToolStripButton3.Click
+        Using file As New SaveFileDialog With {.Filter = "Gene Fasta Sequence File(*.fasta)|*.fasta"}
+            If file.ShowDialog = DialogResult.OK Then
+                Using s As Stream = file.FileName.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
+                    Call proj.DumpGeneFasta(s)
+                End Using
+            End If
+        End Using
+    End Sub
+
+    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
+        Using file As New SaveFileDialog With {.Filter = "TSS Upstream Sequence File(*.fasta)|*.fasta"}
+            If file.ShowDialog = DialogResult.OK Then
+                Dim tss = proj.tss_upstream _
+                   .Select(Function(seq)
+                               Return New FastaSeq({seq.Key}, seq.Value)
+                           End Function) _
+                   .ToArray
+
+                Call New FastaFile(tss).Save(-1, file.FileName, " "c, Encoding.ASCII)
+            End If
+        End Using
     End Sub
 End Class
