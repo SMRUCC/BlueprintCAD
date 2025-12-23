@@ -19,17 +19,6 @@ Public Module ProjectCreator
         For Each replicon As GBFF.File In replicons
             Dim nt As New FastaSeq({"nt"}, replicon.Origin.SequenceData)
 
-            Call genes _
-                .Select(Function(gene)
-                            Return (gene.locus_id, gene.GetUpstreamSeq(nt, 150))
-                        End Function) _
-                .GroupBy(Function(a) a.locus_id) _
-                .ToDictionary(Function(a) a.Key,
-                              Function(a)
-                                  Return a.First.Item2.SequenceData
-                              End Function) _
-                .DoCall(Sub(list) tss.AddRange(list, replaceDuplicated:=True))
-
             If tax Is Nothing Then
                 tax = replicon.Source.GetTaxonomy
             End If
@@ -51,9 +40,30 @@ Public Module ProjectCreator
                               End Function) _
                 .DoCall(Sub(list) Call prot.AddRange(list, replaceDuplicated:=True))
 
-            Call genes.AddRange(replicon.EnumerateGeneFeatures(ORF:=False).ExportTable)
+            Dim geneSet As GeneTable() = replicon _
+                .EnumerateGeneFeatures(ORF:=False) _
+                .ExportTable _
+                .ToArray
+
+            Call genes.AddRange(geneSet)
             Call size.Add(replicon.Locus.AccessionID,
                           replicon.Origin.SequenceData.Length)
+
+            Dim gene_upstreamSet = geneSet _
+                .Select(Function(gene)
+                            Return (gene.locus_id, gene.GetUpstreamSeq(nt, 150))
+                        End Function) _
+                .ToArray
+
+            Call gene_upstreamSet _
+                .GroupBy(Function(a) a.locus_id) _
+                .ToDictionary(Function(a) a.Key,
+                              Function(a)
+                                  Return Strings.UCase(a.First.Item2.SequenceData)
+                              End Function) _
+                .DoCall(Sub(list)
+                            Call tss.AddRange(list, replaceDuplicated:=True)
+                        End Sub)
         Next
 
         Dim proj As New GenBankProject With {
