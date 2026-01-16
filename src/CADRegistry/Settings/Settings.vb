@@ -37,11 +37,18 @@ Public Class Settings
     End Function
 
     Public Sub Save()
+        Call Save(defaultConfig)
+    End Sub
+
+    Public Function Save(file As String) As Boolean
         Try
-            Call Me.GetJson.SaveTo(defaultConfig)
+            Call Me.GetJson.SaveTo(file)
         Catch ex As Exception
             Call App.LogException(ex)
+            Return False
         End Try
-    End Sub
+
+        Return True
+    End Function
 
 End Class

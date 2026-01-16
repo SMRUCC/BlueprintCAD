@@ -1,5 +1,6 @@
 Imports CADRegistry
 Imports Microsoft.VisualBasic.CommandLine
+Imports Microsoft.VisualBasic.CommandLine.Reflection
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -63,7 +64,6 @@ Module Program
 
     ' ./target.gcproj --out model.xml --server "http://biocad.innovation.ac.cn" --name XXXX 
     Public Function CompileProjectFile(file As String, args As CommandLine) As Integer
-
         Call Banner.Print(App.StdOut)
 
         Dim proj As GenBankProject = ProjectIO.Load(file)
@@ -97,5 +97,29 @@ Module Program
         Call BuildProject.CreateModelProject(proj, settings, skipTRN, outproj)
 
         Return 0
+    End Function
+
+    <ExportAPI("--config")>
+    <Usage("--config --ini <settings.json> [--ncbi_blast <blastn_bin directory> 
+                                            --server <server url> 
+                                            --cache_dir <localdb cache_dir> 
+                                            --n_threads <number_parallel_threads> 
+                                            --blastdb <directory_of_fasta>]")>
+    Public Function MakeConfig(args As CommandLine) As Integer
+        Dim inifile As String = args.Required("--ini", "Missing the required configuration file, `--ini` argument must be specificed!")
+        Dim settings As Settings = Settings.Load(inifile)
+        Dim ncbi_blast As String = args("--ncbi_blast")
+        Dim server_url As String = args("--server")
+        Dim cache_dir As String = args("--cache_dir")
+        Dim num_threads As Integer = args("--n_threads")
+        Dim blastdb As String = args("--blastdb")
+
+        If ncbi_blast <> "" Then settings.ncbi_blast = ncbi_blast
+        If server_url <> "" Then settings.registry_server = server_url
+        If cache_dir <> "" Then settings.cache_dir = cache_dir
+        If blastdb <> "" Then settings.blastdb = blastdb
+        If num_threads > 0 Then settings.n_threads = num_threads
+
+        Return settings.Save(inifile).CLICode
     End Function
 End Module
