@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Runtime.CompilerServices
+Imports Microsoft.VisualBasic.ApplicationServices.Terminal.ProgressBar.Tqdm
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.ComponentModel.Annotation
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
@@ -55,5 +56,25 @@ Public Class GenBankProject
     Public Sub DumpTSSUpstreamFasta(s As Stream)
         Call FASTA.StreamWriter.WriteList(tss_upstream, s)
     End Sub
+
+    Public Function ComputeHashCode() As String
+        Dim hashcode As String = ""
+
+        hashcode = SequenceHashcode(genes) & SequenceHashcode(proteins)
+        hashcode = hashcode.MD5
+
+        Return hashcode
+    End Function
+
+    Private Shared Function SequenceHashcode(seqSet As Dictionary(Of String, String)) As String
+        Dim sort = seqSet.OrderBy(Function(s) s.Key).ToArray
+        Dim hashcode As String = ""
+
+        For Each term In TqdmWrapper.Wrap(sort)
+            hashcode = (hashcode & term.Key & term.Value).MD5
+        Next
+
+        Return hashcode
+    End Function
 
 End Class

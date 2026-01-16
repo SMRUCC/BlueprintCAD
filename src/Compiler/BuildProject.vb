@@ -19,17 +19,21 @@ Public Class BuildProject
 
     ReadOnly gene_data As String
     ReadOnly prot_data As String
+    ReadOnly enableBlastCache As Boolean = False
+    ReadOnly session_hashcode As String
 
-    Sub New(proj As GenBankProject, settings As Settings)
+    Sub New(proj As GenBankProject, settings As Settings, Optional enableBlastCache As Boolean = False)
         Dim blast_threads As Integer = settings.n_threads
 
+        Me.enableBlastCache = enableBlastCache
         Me.proj = proj
         Me.settings = settings
         Me.localblast = New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
         Me.server = New RegistryUrl(settings.registry_server, cache_dir:=settings.cache_dir)
+        Me.session_hashcode = proj.ComputeHashCode
 
-        prot_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"prot_{App.PID}")
-        gene_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"nucl_{App.PID}")
+        prot_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"prot_{session_hashcode}")
+        gene_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"nucl_{session_hashcode}")
 
         Using s As Stream = prot_data.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
             Call proj.DumpProteinFasta(s)
@@ -44,9 +48,17 @@ Public Class BuildProject
 
     Public Sub LocationAnnotation()
         Dim transporter_db As String = $"{settings.blastdb}/subcellular.fasta"
-        Dim tempOutfile = TempFileSystem.GetAppSysTempFile(".txt", sessionID:=App.PID, prefix:=$"subcellular_{App.PID}")
+        Dim tempOutfile = TempFileSystem.GetAppSysTempFile(".txt", sessionID:=session_hashcode, prefix:=$"subcellular_")
 
-        Call localblast.Blastp(prot_data, transporter_db, tempOutfile, e:="1e-5").Run()
+        If enableBlastCache Then
+            tempOutfile = App.SysTemp & $"/{session_hashcode}/subcellular_blastp.txt"
+        End If
+        If tempOutfile.FileExists AndAlso enableBlastCache Then
+            ' do nothing
+        Else
+            ' run blast search
+            Call localblast.Blastp(prot_data, transporter_db, tempOutfile, e:="1e-5").Run()
+        End If
 
         proj.transporter = BlastpOutputReader _
             .RunParser(tempOutfile) _
@@ -59,10 +71,18 @@ Public Class BuildProject
     End Sub
 
     Public Sub EnzymeAnnotation()
-        Dim tempOutfile As String = TempFileSystem.GetAppSysTempFile(".txt", prefix:=$"ec_number_{App.PID}")
+        Dim tempOutfile As String = TempFileSystem.GetAppSysTempFile(".txt", prefix:=$"ec_number_{session_hashcode}")
         Dim enzyme_db As String = $"{settings.blastdb}/ec_numbers.fasta"
 
-        Call localblast.Blastp(prot_data, enzyme_db, tempOutfile, e:="1e-5").Run()
+        If enableBlastCache Then
+            tempOutfile = App.SysTemp & $"/{session_hashcode}/ec_numbers_blastp.txt"
+        End If
+        If tempOutfile.FileExists AndAlso enableBlastCache Then
+            ' do nothing
+        Else
+            ' run blast search
+            Call localblast.Blastp(prot_data, enzyme_db, tempOutfile, e:="1e-5").Run()
+        End If
 
         proj.enzyme_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
@@ -80,7 +100,15 @@ Public Class BuildProject
         Dim tempOutfile = TempFileSystem.GetAppSysTempFile(".txt", sessionID:=App.PID, prefix:=$"tf_blast_{App.PID}")
         Dim tf_db As String = $"{settings.blastdb}/TF.fasta"
 
-        localblast.Blastp(prot_data, tf_db, tempOutfile, e:="1e-5").Run()
+        If enableBlastCache Then
+            tempOutfile = App.SysTemp & $"/{session_hashcode}/TF_blastp.txt"
+        End If
+        If tempOutfile.FileExists AndAlso enableBlastCache Then
+            ' do nothing
+        Else
+            ' run blast search
+            Call localblast.Blastp(prot_data, tf_db, tempOutfile, e:="1e-5").Run()
+        End If
 
         proj.tf_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
@@ -116,14 +144,22 @@ Public Class BuildProject
         Dim tempOutfile = TempFileSystem.GetAppSysTempFile(".txt", prefix:=$"operon_{App.PID}")
         Dim operon_db As String = $"{settings.blastdb}/operon.fasta"
 
-        Call localblast.Blastn(gene_data, operon_db, tempOutfile, e:="1e-5").Run()
+        If enableBlastCache Then
+            tempOutfile = App.SysTemp & $"/{session_hashcode}/operon_blastn.txt"
+        End If
+        If tempOutfile.FileExists AndAlso enableBlastCache Then
+            ' do nothing
+        Else
+            ' run blast search
+            Call localblast.Blastn(gene_data, operon_db, tempOutfile, e:="1e-5").Run()
+        End If
 
         proj.operon_hits = OperonAnnotator.ParseBlastn(tempOutfile).ToArray
         proj.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, proj.operon_hits, knownOperons).ToArray
     End Sub
 
     Public Shared Sub CreateModelProject(proj As GenBankProject, settings As Settings, skipTRN As Boolean, outproj As String, Optional enableBlastCache As Boolean = False)
-        Dim worker As New BuildProject(proj, settings)
+        Dim worker As New BuildProject(proj, settings, enableBlastCache)
 
         ' ------- TFBS sites --------
         If Not skipTRN Then
