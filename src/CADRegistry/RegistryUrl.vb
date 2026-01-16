@@ -36,7 +36,16 @@ Public Class RegistryUrl
                               Function(r)
                                   Return r.Select(Function(i) i.r).ToArray
                               End Function)
-            cachedExpansion = (From rxn In network Where rxn.law.IsNullOrEmpty).ToDictionary(Function(m) m.guid, Function(m) {m})
+            cachedExpansion = (From rxn In network Where rxn.law.IsNullOrEmpty) _
+                .Select(Function(r)
+                            Return r.left.JoinIterates(r.right).Select(Function(c) (c.molecule_id, r))
+                        End Function) _
+                .IteratesALL _
+                .GroupBy(Function(c) c.molecule_id) _
+                .ToDictionary(Function(c) c.Key.ToString,
+                              Function(c)
+                                  Return c.Select(Function(i) i.r).GroupBy(Function(r) r.guid).Select(Function(r) r.First).ToArray
+                              End Function)
 
             If cachedOperon Is Nothing Then cachedOperon = {}
 
