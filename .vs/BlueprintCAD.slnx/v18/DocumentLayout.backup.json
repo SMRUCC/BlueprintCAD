@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "G:\\BlueprintCAD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{492075EF-5496-AC9A-F222-47A3F168DBEC}|src\\Compiler\\Compiler.vbproj|g:\\blueprintcad\\src\\compiler\\buildproject.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{492075EF-5496-AC9A-F222-47A3F168DBEC}|src\\Compiler\\Compiler.vbproj|solutionrelative:src\\compiler\\buildproject.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{492075EF-5496-AC9A-F222-47A3F168DBEC}|src\\Compiler\\Compiler.vbproj|g:\\blueprintcad\\src\\compiler\\compiler.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{492075EF-5496-AC9A-F222-47A3F168DBEC}|src\\Compiler\\Compiler.vbproj|solutionrelative:src\\compiler\\compiler.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{492075EF-5496-AC9A-F222-47A3F168DBEC}|src\\Compiler\\Compiler.vbproj|g:\\blueprintcad\\src\\compiler\\program.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{492075EF-5496-AC9A-F222-47A3F168DBEC}|src\\Compiler\\Compiler.vbproj|solutionrelative:src\\compiler\\program.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{492075EF-5496-AC9A-F222-47A3F168DBEC}|src\\Compiler\\Compiler.vbproj|g:\\blueprintcad\\src\\compiler\\buildproject.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{492075EF-5496-AC9A-F222-47A3F168DBEC}|src\\Compiler\\Compiler.vbproj|solutionrelative:src\\compiler\\buildproject.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4615D605-2F4A-BBB5-0B85-89EF1262AB1E}|src\\CADRegistry\\CADRegistry.vbproj|g:\\blueprintcad\\src\\cadregistry\\project\\genbankproject.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -56,21 +60,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 152,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GenBankProject.vb",
-              "DocumentMoniker": "G:\\BlueprintCAD\\src\\CADRegistry\\Project\\GenBankProject.vb",
-              "RelativeDocumentMoniker": "src\\CADRegistry\\Project\\GenBankProject.vb",
-              "ToolTip": "G:\\BlueprintCAD\\src\\CADRegistry\\Project\\GenBankProject.vb",
-              "RelativeToolTip": "src\\CADRegistry\\Project\\GenBankProject.vb",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAswDsAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-01-16T18:28:17.389Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -89,33 +80,58 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Compiler",
+              "DocumentMoniker": "G:\\BlueprintCAD\\src\\Compiler\\Compiler.vbproj",
+              "RelativeDocumentMoniker": "src\\Compiler\\Compiler.vbproj",
+              "ToolTip": "G:\\BlueprintCAD\\src\\Compiler\\Compiler.vbproj",
+              "RelativeToolTip": "src\\Compiler\\Compiler.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
+              "WhenOpened": "2026-01-16T19:31:16.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GenBankProject.vb",
+              "DocumentMoniker": "G:\\BlueprintCAD\\src\\CADRegistry\\Project\\GenBankProject.vb",
+              "RelativeDocumentMoniker": "src\\CADRegistry\\Project\\GenBankProject.vb",
+              "ToolTip": "G:\\BlueprintCAD\\src\\CADRegistry\\Project\\GenBankProject.vb",
+              "RelativeToolTip": "src\\CADRegistry\\Project\\GenBankProject.vb",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAswDsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-01-16T18:28:17.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\Compiler\\Program.vb",
               "RelativeDocumentMoniker": "src\\Compiler\\Program.vb",
               "ToolTip": "G:\\BlueprintCAD\\src\\Compiler\\Program.vb",
               "RelativeToolTip": "src\\Compiler\\Program.vb",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAuwGMAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAiwFIAAACRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-01-16T13:56:06.953Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BuildProject.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\Compiler\\BuildProject.vb",
               "RelativeDocumentMoniker": "src\\Compiler\\BuildProject.vb",
               "ToolTip": "G:\\BlueprintCAD\\src\\Compiler\\BuildProject.vb",
               "RelativeToolTip": "src\\Compiler\\BuildProject.vb",
-              "ViewState": "AgIAAH8AAAAAAAAAAAA2wJwAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-01-16T09:37:27.57Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "StringHelpers.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Language\\StringHelpers.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Language\\StringHelpers.vb",
@@ -127,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "JsonSerialization.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Serialization\\JSON\\JsonSerialization.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\runtime\\sciBASIC#\\Microsoft.VisualBasic.Core\\src\\Serialization\\JSON\\JsonSerialization.vb",
@@ -139,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "FormAnnotation.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\BlueprintCAD\\CellDesigner\\FormAnnotation.vb",
               "RelativeDocumentMoniker": "src\\BlueprintCAD\\CellDesigner\\FormAnnotation.vb",
@@ -151,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Compiler.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\Compiler\\Compiler.vb",
               "RelativeDocumentMoniker": "src\\Compiler\\Compiler.vb",
@@ -163,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "OperonAnnotator.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\CADRegistry\\Project\\OperonAnnotator.vb",
               "RelativeDocumentMoniker": "src\\CADRegistry\\Project\\OperonAnnotator.vb",
@@ -175,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RegistryUrl.vb",
               "DocumentMoniker": "G:\\BlueprintCAD\\src\\CADRegistry\\RegistryUrl.vb",
               "RelativeDocumentMoniker": "src\\CADRegistry\\RegistryUrl.vb",
@@ -187,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Reaction.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\engine\\Model\\LocalRepository\\Reaction.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\GCModeller\\engine\\Model\\LocalRepository\\Reaction.vb",
@@ -199,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Operon.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\engine\\Model\\LocalRepository\\Operon.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\GCModeller\\engine\\Model\\LocalRepository\\Operon.vb",
@@ -211,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Molecule.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\engine\\Model\\LocalRepository\\Molecule.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\GCModeller\\engine\\Model\\LocalRepository\\Molecule.vb",
@@ -223,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MetabolismNetworkLoader.vb",
               "DocumentMoniker": "G:\\GCModeller\\src\\GCModeller\\engine\\BootstrapLoader\\BootLoader\\MetabolismNetworkLoader.vb",
               "RelativeDocumentMoniker": "..\\GCModeller\\src\\GCModeller\\engine\\BootstrapLoader\\BootLoader\\MetabolismNetworkLoader.vb",
