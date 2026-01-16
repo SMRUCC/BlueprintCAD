@@ -18,7 +18,7 @@ Module BuildProject
         Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
         Dim localblast As New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
         Dim enzyme_db As String = $"{settings.blastdb}/ec_numbers.fasta"
-        Dim transporter_db As String = $"{settings.blastdb}/Membrane.fasta"
+        Dim transporter_db As String = $"{settings.blastdb}/subcellular.fasta"
         Dim tf_db As String = $"{settings.blastdb}/TF.fasta"
 
         ' ------- TFBS sites --------

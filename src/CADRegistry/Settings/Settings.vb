@@ -30,7 +30,7 @@ Public Class Settings
             config.registry_server = RegistryUrl.defaultServer
         End If
         If config.blastdb.StringEmpty(, True) Then
-            config.blastdb = $"{App.HOME}/data"
+            config.blastdb = $"{App.HOME}/data/blastdb/"
         End If
 
         Return config
