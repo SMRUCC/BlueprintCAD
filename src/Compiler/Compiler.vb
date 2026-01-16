@@ -133,6 +133,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                               Return a.First
                           End Function)
         Dim transporter As Index(Of String) = proj.membrane_proteins _
+            .Where(Function(p) p.source.Any(Function(name) InStr(name, "membrane", CompareMethod.Text))) _
             .Select(Function(t) t.queryName) _
             .Indexing
         Dim membraneTransport As New Index(Of String)

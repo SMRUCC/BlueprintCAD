@@ -71,10 +71,7 @@ Public Class BuildProject
 
         proj.transporter = BlastpOutputReader _
             .RunParser(tempOutfile) _
-            .ExportHitsResult(grepName:=Function(name)
-                                            Dim kv = name.GetTagValue(" ")
-                                            Return New NamedValue(Of String)(kv.Value, kv.Name)
-                                        End Function) _
+            .ExportHitsResult(grepName:=Function(name) name.GetTagValue(" ")) _
             .ToArray
         proj.membrane_proteins = proj.transporter _
             .Select(Function(hits) RankTerm.RankTopTerm(hits)) _
