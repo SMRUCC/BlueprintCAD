@@ -32,6 +32,8 @@ Public Class BuildProject
         Me.server = New RegistryUrl(settings.registry_server, cache_dir:=settings.cache_dir)
         Me.session_hashcode = proj.ComputeHashCode
 
+        Call $"hashcode of this genomics data is {session_hashcode}".debug
+
         prot_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"prot_{session_hashcode}")
         gene_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"nucl_{session_hashcode}")
 
@@ -55,6 +57,7 @@ Public Class BuildProject
         End If
         If tempOutfile.FileExists AndAlso enableBlastCache Then
             ' do nothing
+            Call $"use the cached [{tempOutfile}] result file for sub-cellular location annotation.".info
         Else
             ' run blast search
             Call localblast.Blastp(prot_data, transporter_db, tempOutfile, e:="1e-5").Run()
@@ -79,6 +82,7 @@ Public Class BuildProject
         End If
         If tempOutfile.FileExists AndAlso enableBlastCache Then
             ' do nothing
+            Call $"use the cached [{tempOutfile}] result file for enzyme EC_number annotation.".info
         Else
             ' run blast search
             Call localblast.Blastp(prot_data, enzyme_db, tempOutfile, e:="1e-5").Run()
@@ -105,6 +109,7 @@ Public Class BuildProject
         End If
         If tempOutfile.FileExists AndAlso enableBlastCache Then
             ' do nothing
+            Call $"use the cached [{tempOutfile}] result file for transcript factors annotation.".info
         Else
             ' run blast search
             Call localblast.Blastp(prot_data, tf_db, tempOutfile, e:="1e-5").Run()
@@ -149,6 +154,7 @@ Public Class BuildProject
         End If
         If tempOutfile.FileExists AndAlso enableBlastCache Then
             ' do nothing
+            Call $"use the cached [{tempOutfile}] result file for gene operon clusters annotation.".info
         Else
             ' run blast search
             Call localblast.Blastn(gene_data, operon_db, tempOutfile, e:="1e-5").Run()
