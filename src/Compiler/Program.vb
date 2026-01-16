@@ -64,7 +64,7 @@ Module Program
         End If
     End Function
 
-    ' ./target.gcproj --out model.xml --server "http://biocad.innovation.ac.cn" --name XXXX 
+    <Usage("./target.gcproj --out model.xml --server "http://biocad.innovation.ac.cn" --name XXXX ")>
     Public Function CompileProjectFile(file As String, args As CommandLine) As Integer
         Call Banner.Print(App.StdOut)
 
@@ -80,7 +80,7 @@ Module Program
             .CLICode
     End Function
 
-    ' ./target.gbff --out gcmodeller.gcproj --config settings.json --num_threads 8 --skip-TRN --workdir workspace_dir
+    <Usage("./target.gbff --out gcmodeller.gcproj --config settings.json --num_threads 8 --skip-TRN --workdir workspace_dir")>
     Public Function CompileGenbankFile(file As String, args As CommandLine) As Integer
         Dim proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(file))
         Dim settings As Settings = Settings.Load(args.Required("--config", "Missing the required configuration file, `--config` argument must be specificed!"))
