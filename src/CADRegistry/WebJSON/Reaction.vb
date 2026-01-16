@@ -16,8 +16,10 @@ Namespace WebJSON
     End Class
 
     Public Class Substrate
+
         Public Property molecule_id As UInteger
         Public Property factor As Double
+        Public Property location As UInteger
 
         Public Overrides Function ToString() As String
             Return $"{{{factor}}} {molecule_id}"
