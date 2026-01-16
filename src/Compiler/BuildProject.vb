@@ -34,6 +34,10 @@ Public Class BuildProject
 
         Call $"hashcode of this genomics data is {session_hashcode}".debug
 
+        If Me.enableBlastCache Then
+            Call "blast search result cache will be enabled for run debug!".info
+        End If
+
         prot_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"prot_{session_hashcode}")
         gene_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"nucl_{session_hashcode}")
 
