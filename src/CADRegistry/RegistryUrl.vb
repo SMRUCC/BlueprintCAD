@@ -1,4 +1,5 @@
 Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.MIME.application.json.Javascript
 Imports Microsoft.VisualBasic.Serialization.JSON
@@ -27,7 +28,14 @@ Public Class RegistryUrl
 
             cachedOperon = $"{cache_dir}/all_operons.json".LoadJsonFile(Of WebJSON.Operon())(throwEx:=False)
             cachedMolecules = $"{cache_dir}/molecules.jsonl".LoadJSONL(Of WebJSON.Molecule).ToDictionary(Function(m) m.id)
-            cachedReactions = (From rxn In network Where Not rxn.law.IsNullOrEmpty).ToDictionary(Function(m) m.guid, Function(m) {m})
+            cachedReactions = (From rxn In network Where Not rxn.law.IsNullOrEmpty) _
+                .Select(Function(r) r.law.Select(Function(ec) (ec.ec_number, r))) _
+                .IteratesALL _
+                .GroupBy(Function(r) r.ec_number) _
+                .ToDictionary(Function(r) r.Key,
+                              Function(r)
+                                  Return r.Select(Function(i) i.r).ToArray
+                              End Function)
             cachedExpansion = (From rxn In network Where rxn.law.IsNullOrEmpty).ToDictionary(Function(m) m.guid, Function(m) {m})
 
             If cachedOperon Is Nothing Then cachedOperon = {}
