@@ -91,7 +91,7 @@ Public Class RegistryUrl
 
             Return cache.ComputeIfAbsent(key, Function() GetMoleculeData(url))
         Else
-            Return cachedMolecules.TryGetValue(id.ToString)
+            Return cachedMolecules.TryGetValue(id.ToString, [default]:=cachedMolecules.TryGetValue("BioCAD" & id.ToString.PadLeft(11, "0"c)))
         End If
     End Function
 

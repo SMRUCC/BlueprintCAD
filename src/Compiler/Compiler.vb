@@ -337,7 +337,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     .Select(Function(a) a.xref_id) _
                     .Distinct _
                     .ToArray,
-                .ID = FormatCompoundId(c.id),
+                .ID = If(c.id.IsPattern("\d+"), FormatCompoundId(c.id), c.id),
                 .name = c.name,
                 .referenceIds = biocyc_id _
                     .Select(Function(xi) xi.xref_id) _
