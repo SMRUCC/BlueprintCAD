@@ -2,7 +2,9 @@
 Imports CADRegistry
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.MIME.Office.Excel.XLSX.XML.xl.worksheets
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
@@ -69,7 +71,10 @@ Public Class BuildProject
 
         proj.transporter = BlastpOutputReader _
             .RunParser(tempOutfile) _
-            .ExportHitsResult(grepName:=Function(name) name.GetTagValue("|")) _
+            .ExportHitsResult(grepName:=Function(name)
+                                            Dim kv = name.GetTagValue(" ")
+                                            Return New NamedValue(Of String)(kv.Value, kv.Name)
+                                        End Function) _
             .ToArray
         proj.membrane_proteins = proj.transporter _
             .Select(Function(hits) RankTerm.RankTopTerm(hits)) _
@@ -94,7 +99,10 @@ Public Class BuildProject
 
         proj.enzyme_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
-            .ExportHitsResult _
+            .ExportHitsResult(Function(name)
+                                  Dim kv = name.GetTagValue(" ")
+                                  Return New NamedValue(Of String)(kv.Value, kv.Name)
+                              End Function) _
             .ToArray
         proj.ec_numbers = proj.enzyme_hits _
             .Select(Function(hits) hits.AssignECNumber()) _

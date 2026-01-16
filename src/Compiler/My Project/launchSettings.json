@@ -2,7 +2,7 @@
   "profiles": {
     "Compiler": {
       "commandName": "Project",
-      "commandLineArgs": " \"G:\\BlueprintCAD\\demo\\Escherichia coli str. K-12 substr. MG1655.gbff\" --config \"G:\\BlueprintCAD\\demo\\compiler.json\" --out \"G:\\BlueprintCAD\\demo\\ECOLI.gcproj\" --num_threads 12 --enable-blast-cache"
+      "commandLineArgs": "\"G:\\BlueprintCAD\\demo\\ECOLI.gcproj\" --out \"G:\\BlueprintCAD\\demo\\ECOLI.xml\" --server \"G:\\BlueprintCAD\\App\\net8.0-windows\\data\\local\" --name ECOLI"
     },
     "create_project": {
       "commandName": "Project",

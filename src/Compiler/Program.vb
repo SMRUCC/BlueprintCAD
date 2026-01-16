@@ -64,7 +64,7 @@ Module Program
         End If
     End Function
 
-    <Usage("./target.gcproj --out model.xml --server ""http://biocad.innovation.ac.cn"" --name XXXX ")>
+    <Usage("./target.gcproj --out model.xml --server ""http://biocad.innovation.ac.cn"" --name XXXX")>
     Public Function CompileProjectFile(file As String, args As CommandLine) As Integer
         Call Banner.Print(App.StdOut)
 
