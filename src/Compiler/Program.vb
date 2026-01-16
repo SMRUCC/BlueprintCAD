@@ -1,3 +1,4 @@
+Imports System.ComponentModel
 Imports CADRegistry
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
@@ -105,6 +106,13 @@ Module Program
                                             --cache_dir <localdb cache_dir> 
                                             --n_threads <number_parallel_threads> 
                                             --blastdb <directory_of_fasta>]")>
+    <Description("Make configuration settings.json file")>
+    <Argument("--ini", False, CLITypes.File, Description:="The settings json file path.")>
+    <Argument("--ncbi_blast", True, CLITypes.File, Description:="A directory path to the ncbi localblast bin directory, this directory path should contains the blastp/blastn program files.")>
+    <Argument("--server", True, CLITypes.String, Description:="A url to the registry server, usually be the 'http://biocad.innovation.ac.cn'")>
+    <Argument("--cache_dir", True, CLITypes.File, Description:="A local directory path that contains the registry database cached json data files.")>
+    <Argument("--n_threads", True, CLITypes.Integer, Description:="Number of the parallel threads for run the localblast search and motif finding workflow.")>
+    <Argument("--blastdb", True, CLITypes.File, Description:="A directory path to the localblast database fasta files.")>
     Public Function MakeConfig(args As CommandLine) As Integer
         Dim inifile As String = args.Required("--ini", "Missing the required configuration file, `--ini` argument must be specificed!")
         Dim settings As Settings = Settings.Load(inifile)
