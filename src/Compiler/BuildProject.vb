@@ -4,19 +4,59 @@ Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
+Imports SMRUCC.genomics.Assembly.NCBI.CDD
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 Imports SMRUCC.genomics.SequenceModel.FASTA
 Imports TRNScanner
 
-Module BuildProject
+Public Class BuildProject
+
+    ReadOnly proj As GenBankProject
+    ReadOnly settings As Settings
+    ReadOnly localblast As BLASTPlus
+    ReadOnly server As RegistryUrl
+
+    ReadOnly gene_data As String
+    ReadOnly prot_data As String
+
+    Sub New(proj As GenBankProject, settings As Settings)
+        Dim blast_threads As Integer = settings.n_threads
+
+        Me.proj = proj
+        Me.settings = settings
+        Me.localblast = New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
+        Me.server = New RegistryUrl(settings.registry_server, cache_dir:=settings.cache_dir)
+
+        prot_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"prot_{App.PID}")
+        gene_data = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"nucl_{App.PID}")
+
+        Using s As Stream = prot_data.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
+            Call proj.DumpProteinFasta(s)
+        End Using
+        Using s As Stream = gene_data.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
+            Call proj.DumpGeneFasta(s)
+        End Using
+
+        Call localblast.FormatDb(prot_data, dbType:="prot")
+        Call localblast.FormatDb(gene_data, dbType:="nucl")
+    End Sub
+
+    Public Sub EnzymeAnnotation()
+
+    End Sub
+
+    Public Sub BuildTRN()
+
+    End Sub
+
+    Public Sub BuildOperonClusters()
+        Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
+    End Sub
 
     Public Sub CreateModelProject(proj As GenBankProject, settings As Settings, skipTRN As Boolean, outproj As String)
-        Dim server As New RegistryUrl(settings.registry_server, cache_dir:=settings.cache_dir)
-        Dim blast_threads As Integer = settings.n_threads
-        Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
-        Dim localblast As New BLASTPlus(settings.ncbi_blast) With {.NumThreads = blast_threads}
+
         Dim enzyme_db As String = $"{settings.blastdb}/ec_numbers.fasta"
         Dim transporter_db As String = $"{settings.blastdb}/subcellular.fasta"
         Dim tf_db As String = $"{settings.blastdb}/TF.fasta"
@@ -38,12 +78,10 @@ Module BuildProject
         End If
 
         ' ----- enzyme hits ------
-        Dim tempfile As String = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"enzyme_number_{App.PID}")
+
         Dim tempOutfile As String = tempfile.ChangeSuffix(".txt")
 
-        Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
-            Call proj.DumpProteinFasta(s)
-        End Using
+
 
         localblast.Blastp(tempfile, enzyme_db, tempOutfile, e:=0.01).Run()
 
@@ -87,12 +125,10 @@ Module BuildProject
             .ToArray
 
         ' ------ operon, conserved gene clusters -------
-        tempfile = TempFileSystem.GetAppSysTempFile(".fasta", prefix:=$"operon_{App.PID}")
+
         tempOutfile = tempfile.ChangeSuffix(".txt")
 
-        Using s As Stream = tempfile.Open(FileMode.OpenOrCreate, doClear:=True, [readOnly]:=False)
-            Call proj.DumpGeneFasta(s)
-        End Using
+
 
         Dim operon_db As String = $"{settings.blastdb}/operon.fasta"
 
@@ -103,4 +139,4 @@ Module BuildProject
 
         Call proj.SaveZip(outproj)
     End Sub
-End Module
+End Class
