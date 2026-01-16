@@ -24,7 +24,7 @@ Module Program
         Call Console.WriteLine("")
         Call Console.WriteLine("step 1: build annotation project from genbank file")
         Call Console.WriteLine("--------------------------------------------------")
-        Call Console.WriteLine("target.gbff --config settings.json [--out annotation.gcproj] [--skip-TRN] [--num_threads 8] [--workdir workspace_dir]")
+        Call Console.WriteLine("target.gbff --config settings.json [--out annotation.gcproj] [--skip-TRN] [--num_threads 8] [--workdir workspace_dir] [--enable-blast-cache]")
         Call Console.WriteLine()
         Call Console.WriteLine("input file:      genbank database file of a specific bacterial genome, this genbank file should")
         Call Console.WriteLine("                 contains the features of gene, CDS, tRNA, rRNA and whole genomics sequence.")
@@ -64,7 +64,7 @@ Module Program
         End If
     End Function
 
-    <Usage("./target.gcproj --out model.xml --server "http://biocad.innovation.ac.cn" --name XXXX ")>
+    <Usage("./target.gcproj --out model.xml --server ""http://biocad.innovation.ac.cn"" --name XXXX ")>
     Public Function CompileProjectFile(file As String, args As CommandLine) As Integer
         Call Banner.Print(App.StdOut)
 
@@ -80,7 +80,7 @@ Module Program
             .CLICode
     End Function
 
-    <Usage("./target.gbff --out gcmodeller.gcproj --config settings.json --num_threads 8 --skip-TRN --workdir workspace_dir")>
+    <Usage("./target.gbff --out gcmodeller.gcproj --config settings.json [--num_threads 8 --skip-TRN --workdir workspace_dir --enable-blast-cache]")>
     Public Function CompileGenbankFile(file As String, args As CommandLine) As Integer
         Dim proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(file))
         Dim settings As Settings = Settings.Load(args.Required("--config", "Missing the required configuration file, `--config` argument must be specificed!"))
@@ -88,6 +88,7 @@ Module Program
         Dim n_threads = args("--num_threads") Or -1
         Dim workdir As String = args("--workdir")
         Dim skipTRN As Boolean = args("--skip-TRN")
+        Dim enableBlastCache As Boolean = args("--enable-blast-cache")
 
         If n_threads > 0 Then
             settings.n_threads = n_threads
@@ -96,7 +97,10 @@ Module Program
             Call App.SetSystemTemp(workdir)
         End If
 
-        Call BuildProject.CreateModelProject(proj, settings, skipTRN, outproj)
+        Call BuildProject.CreateModelProject(
+            proj, settings, skipTRN,
+            outproj:=outproj,
+            enableBlastCache:=enableBlastCache)
 
         Return 0
     End Function

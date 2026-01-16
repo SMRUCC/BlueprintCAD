@@ -122,7 +122,7 @@ Public Class BuildProject
         proj.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, proj.operon_hits, knownOperons).ToArray
     End Sub
 
-    Public Shared Sub CreateModelProject(proj As GenBankProject, settings As Settings, skipTRN As Boolean, outproj As String)
+    Public Shared Sub CreateModelProject(proj As GenBankProject, settings As Settings, skipTRN As Boolean, outproj As String, Optional enableBlastCache As Boolean = False)
         Dim worker As New BuildProject(proj, settings)
 
         ' ------- TFBS sites --------
