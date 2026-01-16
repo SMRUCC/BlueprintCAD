@@ -2,6 +2,7 @@ Imports System.ComponentModel
 Imports CADRegistry
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
+Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
@@ -127,6 +128,8 @@ Module Program
         If cache_dir <> "" Then settings.cache_dir = cache_dir
         If blastdb <> "" Then settings.blastdb = blastdb
         If num_threads > 0 Then settings.n_threads = num_threads
+
+        Call Console.WriteLine(settings.GetJson(indent:=True))
 
         Return settings.Save(inifile).CLICode
     End Function
