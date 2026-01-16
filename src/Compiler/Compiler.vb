@@ -322,13 +322,14 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .Select(Function(id) registry.GetMoleculeDataById(id)) _
             .Where(Function(c) Not c Is Nothing) _
             .ToArray
+        Dim refs As Index(Of String) = {"BioCyc", "MetaCyc", "KEGG"}
 
         Call $"found {compounds_id.Length} associated metabolites!".debug
 
         For Each c As WebJSON.Molecule In metadata
             Dim biocyc_id As WebJSON.DBXref() = c.db_xrefs _
                 .SafeQuery _
-                .Where(Function(r) r.dbname = "MetaCyc") _
+                .Where(Function(r) r.dbname Like refs) _
                 .ToArray
 
             Yield New v2.Compound With {
