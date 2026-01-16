@@ -23,10 +23,14 @@ Public Class RegistryUrl
         If Not cache_dir.StringEmpty() Then
             Call "start to load local cahced database files".info
 
-            cachedOperon = $"{cache_dir}/all_operons.json".LoadJsonFile(Of WebJSON.Operon())
-            cachedMolecules = $"{cache_dir}/molecules.json".LoadJsonFile(Of WebJSON.Molecule()).ToDictionary(Function(m) m.id)
-            cachedReactions = $"{cache_dir}/enzyme_reactions.json".LoadJsonFile(Of Dictionary(Of String, WebJSON.Reaction()))
-            cachedExpansion = $"{cache_dir}/network_expansions.json".LoadJsonFile(Of Dictionary(Of String, WebJSON.Reaction()))(throwEx:=False)
+            Dim network = $"{cache_dir}/metabolic_network.jsonl".LoadJSONL(Of WebJSON.Reaction).ToArray
+
+            cachedOperon = $"{cache_dir}/all_operons.json".LoadJsonFile(Of WebJSON.Operon())(throwEx:=False)
+            cachedMolecules = $"{cache_dir}/molecules.jsonl".LoadJSONL(Of WebJSON.Molecule).ToDictionary(Function(m) m.id)
+            cachedReactions = (From rxn In network Where Not rxn.law.IsNullOrEmpty).ToDictionary(Function(m) m.guid, Function(m) {m})
+            cachedExpansion = (From rxn In network Where rxn.law.IsNullOrEmpty).ToDictionary(Function(m) m.guid, Function(m) {m})
+
+            If cachedOperon Is Nothing Then cachedOperon = {}
 
             Call "load cached database from a given cache dir:".info
             Call $" * {cachedOperon.Length} known operons".info
