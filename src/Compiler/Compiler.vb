@@ -283,7 +283,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     .Select(Function(c)
                                 Return New CompoundFactor With {
                                     .factor = c.factor,
-                                    .compound = FormatCompoundId(c.molecule_id)
+                                    .compound = FormatCompoundId(c.molecule_id),
+                                    .cid = c.molecule_id
                                 }
                             End Function) _
                     .ToArray,
@@ -291,7 +292,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     .Select(Function(c)
                                 Return New CompoundFactor With {
                                     .factor = c.factor,
-                                    .compound = FormatCompoundId(c.molecule_id)
+                                    .compound = FormatCompoundId(c.molecule_id),
+                                    .cid = c.molecule_id
                                 }
                             End Function) _
                     .ToArray
@@ -313,7 +315,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                         Return r.substrate.JoinIterates(r.product)
                     End Function) _
             .IteratesALL _
-            .Select(Function(f) UInteger.Parse(f.compound.Match("\d+"))) _
+            .Select(Function(f) f.cid) _
             .JoinIterates(compounds_id) _
             .Distinct _
             .ToArray
