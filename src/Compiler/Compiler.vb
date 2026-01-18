@@ -338,7 +338,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                     .Select(Function(a) a.xref_id) _
                     .Distinct _
                     .ToArray,
-                .ID = If(c.id.IsPattern("\d+"), FormatCompoundId(c.id), c.id),
+                .ID = FormatCompoundId(UInteger.Parse(c.id.Match("\d+"))),
                 .name = c.name,
                 .referenceIds = biocyc_id _
                     .Select(Function(xi) xi.xref_id) _
@@ -563,6 +563,9 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     End Function
 
     Private Function FormatCompoundId(id As UInteger) As String
-        Return "BioCAD" & id.ToString.PadLeft(11, "0"c)
+        Dim fullid As String = "BioCAD" & id.ToString.PadLeft(11, "0"c)
+        Dim model As WebJSON.Molecule = registry.GetMoleculeDataById(id)
+
+        Return If(model.symbol.StringEmpty, fullid, model.symbol)
     End Function
 End Class
