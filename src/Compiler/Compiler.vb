@@ -111,6 +111,16 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 .isModifier = False,
                 .target = modelProteinId
             }
+        ElseIf a.Value.IsPattern("BioCAD\d+") Then
+            Dim m As String = FormatCompoundId(UInteger.Parse(a.Value.Match("\d+")))
+            Dim k As New KineticsParameter With {
+                .name = a.Key,
+                .value = 0,
+                .isModifier = False,
+                .target = m
+            }
+
+            Return k
         Else
             Return New KineticsParameter With {
                 .name = a.Key,
