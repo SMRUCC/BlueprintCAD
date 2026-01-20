@@ -106,6 +106,29 @@ Module Program
         Return 0
     End Function
 
+    <ExportAPI("--batch-build")>
+    <Usage("--batch-build --dir <project_dir> [--server ""http://biocad.innovation.ac.cn"" --outdir <output_models_dir>]")>
+    Public Function BatchBuild(args As CommandLine) As Integer
+        Dim dir As String = args.Required("--dir", "a directory path that contains the genbank assembly for the genome for make virtual cell model is required!")
+        Dim serverUrl As String = args("--server") Or RegistryUrl.defaultServer
+        Dim outdir As String = args("--outdir") Or dir & "/models"
+
+        For Each projFile As String In dir.ListFiles("*.gcproj")
+            Dim outModel As String = $"{outdir}/{projFile.BaseName}.xml"
+
+            Try
+                Call New Compiler(ProjectIO.Load(projFile), serverUrl) _
+                    .Compile(args) _
+                    .GetXml _
+                    .SaveTo(outModel)
+            Catch ex As Exception
+                Call App.LogException(ex)
+            End Try
+        Next
+
+        Return 0
+    End Function
+
     <ExportAPI("--batch-make")>
     <Usage("--batch-make --dir <genbank_gbff_dir> --config <settings.json> [--num_threads <8> --skip-TRN --workdir <workspace_dir> --enable-blast-cache --server ""http://biocad.innovation.ac.cn"" --outdir <output_models_dir>]")>
     Public Function BatchMake(args As CommandLine) As Integer
