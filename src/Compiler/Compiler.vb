@@ -51,7 +51,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             If proj.taxonomy Is Nothing Then
                 name = Now.ToString.MD5
             Else
-                name = proj.taxonomy.scientificName.Replace(" "c, "_")
+                name = proj.taxonomy.scientificName.Replace(" "c, "_").StringReplace("[-\._]{2,}", "_")
             End If
         End If
 
