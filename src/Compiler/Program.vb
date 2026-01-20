@@ -105,6 +105,53 @@ Module Program
         Return 0
     End Function
 
+    <ExportAPI("--batch-make")>
+    <Usage("--batch-make --dir <genbank_gbff_dir> --config <settings.json> [--num_threads <8> --skip-TRN --workdir <workspace_dir> --enable-blast-cache --server ""http://biocad.innovation.ac.cn"" --outdir <output_models_dir>]")>
+    Public Function BatchMake(args As CommandLine) As Integer
+        Dim dir As String = args.Required("--dir", "a directory path that contains the genbank assembly for the genome for make virtual cell model is required!")
+        Dim config As String = args.Required("--config", "the configuration json file path for config the compiler is required!")
+        Dim n_threads As Integer = args("--num_threads") Or -1
+        Dim workdir As String = args("--workdir")
+        Dim skipTRN As Boolean = args("--skip-TRN")
+        Dim enableBlastCache As Boolean = args("--enable-blast-cache")
+        Dim serverUrl As String = args("--server") Or RegistryUrl.defaultServer
+        Dim outdir As String = args("--outdir") Or dir & "/models"
+        Dim settings As Settings = Settings.Load(config)
+        Dim gbffs As String() = dir.ListFiles("*.gbff").ToArray
+
+        If n_threads > 0 Then
+            settings.n_threads = n_threads
+        End If
+        If Not workdir.StringEmpty(, True) Then
+            Call App.SetSystemTemp(workdir)
+        End If
+
+        For Each asm As String In gbffs
+            Dim proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(asm))
+            Dim asm_name As String = asm.BaseName
+            Dim outProj As String = $"{outdir}/{asm_name}.gcproj"
+            Dim outModel As String = $"{outdir}/{asm_name}.xml"
+
+            Try
+                Call BuildProject.CreateModelProject(
+                    proj, settings, skipTRN,
+                    outproj:=outProj,
+                    enableBlastCache:=enableBlastCache)
+            Catch ex As Exception
+                Call App.LogException(ex)
+            End Try
+
+            If outProj.FileExists Then
+                Dim compiler As New Compiler(ProjectIO.Load(outProj), serverUrl)
+                Dim model As VirtualCell = compiler.Compile(args)
+
+                Call model.GetXml.SaveTo(outModel)
+            End If
+        Next
+
+        Return 0
+    End Function
+
     <ExportAPI("--config")>
     <Usage("--config --ini <settings.json> [--ncbi_blast <blastn_bin directory> 
                                             --server <server url> 
