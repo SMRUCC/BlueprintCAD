@@ -127,10 +127,17 @@ Module Program
         End If
 
         For Each asm As String In gbffs
-            Dim proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(asm))
+            Dim proj As GenBankProject
             Dim asm_name As String = asm.BaseName
             Dim outProj As String = $"{outdir}/{asm_name}.gcproj"
             Dim outModel As String = $"{outdir}/{asm_name}.xml"
+
+            Try
+                proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(asm))
+            Catch ex As Exception
+                Call App.LogException(ex)
+                Continue For
+            End Try
 
             Try
                 Call BuildProject.CreateModelProject(
@@ -142,10 +149,14 @@ Module Program
             End Try
 
             If outProj.FileExists Then
-                Dim compiler As New Compiler(ProjectIO.Load(outProj), serverUrl)
-                Dim model As VirtualCell = compiler.Compile(args)
+                Try
+                    Dim compiler As New Compiler(ProjectIO.Load(outProj), serverUrl)
+                    Dim model As VirtualCell = compiler.Compile(args)
 
-                Call model.GetXml.SaveTo(outModel)
+                    Call model.GetXml.SaveTo(outModel)
+                Catch ex As Exception
+                    Call App.LogException(ex)
+                End Try
             End If
         Next
 
