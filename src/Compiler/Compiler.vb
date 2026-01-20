@@ -354,7 +354,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 .name = c.name,
                 .referenceIds = biocyc_id _
                     .Select(Function(xi) xi.xref_id) _
-                    .ToArray
+                    .ToArray,
+                .formula = c.formula
             }
         Next
     End Function
