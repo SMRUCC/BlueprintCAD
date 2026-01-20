@@ -68,10 +68,11 @@ Module Program
     Public Function CompileProjectFile(file As String, args As CommandLine) As Integer
         Call Banner.Print(App.StdOut)
 
+        Dim name As String = args("--name") Or file.BaseName
         Dim proj As GenBankProject = ProjectIO.Load(file)
         Dim serverUrl As String = args("--server") Or RegistryUrl.defaultServer
         Dim savefile As String = args("--out") Or file.ChangeSuffix("xml")
-        Dim compiler As New Compiler(proj, serverUrl)
+        Dim compiler As New Compiler(proj, serverUrl, name)
         Dim model As VirtualCell = compiler.Compile(args)
 
         Return model _

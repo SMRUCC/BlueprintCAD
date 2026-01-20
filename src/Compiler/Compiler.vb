@@ -22,8 +22,11 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     ReadOnly proj As GenBankProject
     ReadOnly registry As RegistryUrl
     ReadOnly motifSites As Dictionary(Of String, MotifMatch())
+    ReadOnly defaultName As String
 
-    Sub New(proj As GenBankProject, Optional serverUrl As String = RegistryUrl.defaultServer)
+    Sub New(proj As GenBankProject, Optional serverUrl As String = RegistryUrl.defaultServer, Optional defaultName As String = Nothing)
+        Me.defaultName = defaultName
+
         If serverUrl.ToLower.StartsWith("http://") OrElse serverUrl.ToLower.StartsWith("https://") Then
             Me.registry = New RegistryUrl(serverUrl)
         Else
@@ -42,10 +45,20 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     End Sub
 
     Protected Overrides Function PreCompile(args As CommandLine) As Integer
+        Dim name As String = args("--name") Or defaultName
+
+        If name.StringEmpty Then
+            If proj.taxonomy Is Nothing Then
+                name = Now.ToString.MD5
+            Else
+                name = proj.taxonomy.scientificName.Replace(" "c, "_")
+            End If
+        End If
+
         m_compiledModel = New VirtualCell With {
             .taxonomy = proj.taxonomy,
             .properties = New SMRUCC.genomics.GCModeller.CompilerServices.[Property],
-            .cellular_id = args("--name") Or ("cell" & Now.ToShortDateString)
+            .cellular_id = name
         }
 
         Call $"target genome taxonomy information: {proj.taxonomy.GetJson}".info
