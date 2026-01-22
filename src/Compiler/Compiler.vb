@@ -155,8 +155,11 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                           Function(a)
                               Return a.First
                           End Function)
+
+        Static membranes As Index(Of String) = {"Membrane", "Cell_inner_membrane", "Cell_membrane", "Cell_outer_membrane"}
+
         Dim transporter As Index(Of String) = proj.membrane_proteins _
-            .Where(Function(p) InStr(p.term, "membrane", CompareMethod.Text)) _
+            .Where(Function(p) p.term Like membranes) _
             .Select(Function(t) t.queryName) _
             .Indexing
         Dim membraneTransport As New Index(Of String)
