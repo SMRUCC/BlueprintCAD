@@ -107,6 +107,7 @@ Module Program
     End Function
 
     <ExportAPI("--batch-build")>
+    <Description("compile the GCModeller virtual cell model file from annotation project file in batch mode")>
     <Usage("--batch-build --dir <project_dir> [--server ""http://biocad.innovation.ac.cn"" --outdir <output_models_dir>]")>
     Public Function BatchBuild(args As CommandLine) As Integer
         Dim dir As String = args.Required("--dir", "a directory path that contains the genbank assembly for the genome for make virtual cell model is required!")
@@ -130,6 +131,7 @@ Module Program
     End Function
 
     <ExportAPI("--batch-make")>
+    <Description("compile the GCModeller virtual cell model file from genbank assembly file in batch mode")>
     <Usage("--batch-make --dir <genbank_gbff_dir> --config <settings.json> [--num_threads <8> --skip-TRN --workdir <workspace_dir> --enable-blast-cache --server ""http://biocad.innovation.ac.cn"" --outdir <output_models_dir>]")>
     Public Function BatchMake(args As CommandLine) As Integer
         Dim dir As String = args.Required("--dir", "a directory path that contains the genbank assembly for the genome for make virtual cell model is required!")
