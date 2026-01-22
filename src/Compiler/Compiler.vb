@@ -487,7 +487,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                             .id = gene.commonName,
                             .note = gene.commonName,
                             .type = gene_type,
-                            .val = gene.commonName.Split("-"c).Last
+                            .val = Strings.Trim(gene.commonName).Split("-"c).Last
                         }
                         rnas.Add((gene.replicon_accessionID, RNA))
                     Case Else
