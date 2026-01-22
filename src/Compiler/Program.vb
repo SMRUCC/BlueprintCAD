@@ -124,14 +124,14 @@ Module Program
                 outModel = $"{outdir}/{proj.taxonomy.scientificName.NormalizePathString(alphabetOnly:=False)}.xml"
             End If
 
-            Try
-                Call New Compiler(proj, serverUrl) _
-                    .Compile(args) _
-                    .GetXml _
-                    .SaveTo(outModel)
-            Catch ex As Exception
-                Call App.LogException(ex)
-            End Try
+            ' Try
+            Call New Compiler(proj, serverUrl) _
+                .Compile(args) _
+                .GetXml _
+                .SaveTo(outModel)
+            ' Catch ex As Exception
+            '    Call App.LogException(ex)
+            ' End Try
         Next
 
         Return 0

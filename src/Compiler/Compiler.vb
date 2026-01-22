@@ -159,12 +159,12 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
         Static membranes As Index(Of String) = {"Membrane", "Cell_inner_membrane", "Cell_membrane", "Cell_outer_membrane"}
 
-        Dim transporter As Dictionary(Of String, RankTerm) = proj.membrane_proteins _
-            .Where(Function(p) p.term Like membranes) _
-            .ToDictionary(Function(t)
-                              Return t.queryName
-                          End Function)
         Dim membraneTransport As New List(Of (ECNumberAnnotation, String, String()))
+        Dim transporter As Dictionary(Of String, RankTerm) = ProteinLocations(
+            From prot As RankTerm
+            In proj.membrane_proteins
+            Where prot.term Like membranes
+        )
 
         Call $"processing of {enzymes.Count} enzyme annotations".debug
 
@@ -389,6 +389,17 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Next
     End Function
 
+    Private Shared Function ProteinLocations(list As IEnumerable(Of RankTerm)) As Dictionary(Of String, RankTerm)
+        Return list _
+            .GroupBy(Function(a) a.queryName) _
+            .Select(Function(a)
+                        Return a.OrderByDescending(Function(i) i.score).First
+                    End Function) _
+            .ToDictionary(Function(t)
+                              Return t.queryName
+                          End Function)
+    End Function
+
     ''' <summary>
     ''' 
     ''' </summary>
@@ -406,10 +417,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                               Return t.ToArray
                           End Function)
         Dim protein_id As String
-        Dim transporter As Dictionary(Of String, RankTerm) = proj.membrane_proteins _
-            .ToDictionary(Function(t)
-                              Return t.queryName
-                          End Function)
+        Dim transporter As Dictionary(Of String, RankTerm) = ProteinLocations(proj.membrane_proteins)
 
         Call $"processing compile of {nt.Count} genes!".debug
 
