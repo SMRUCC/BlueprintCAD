@@ -108,17 +108,24 @@ Module Program
 
     <ExportAPI("--batch-build")>
     <Description("compile the GCModeller virtual cell model file from annotation project file in batch mode")>
-    <Usage("--batch-build --dir <project_dir> [--server ""http://biocad.innovation.ac.cn"" --outdir <output_models_dir>]")>
+    <Usage("--batch-build --dir <project_dir> [--server ""http://biocad.innovation.ac.cn"" --taxonomy_name --outdir <output_models_dir>]")>
+    <Argument("--taxonomy_name", True, CLITypes.Boolean, Description:="Save the model with file name use the taxonomy name as file basename?")>
     Public Function BatchBuild(args As CommandLine) As Integer
         Dim dir As String = args.Required("--dir", "a directory path that contains the genbank assembly for the genome for make virtual cell model is required!")
         Dim serverUrl As String = args("--server") Or RegistryUrl.defaultServer
         Dim outdir As String = args("--outdir") Or dir & "/models"
+        Dim taxonomy_name As Boolean = args("--taxonomy_name")
 
         For Each projFile As String In dir.ListFiles("*.gcproj")
             Dim outModel As String = $"{outdir}/{projFile.BaseName}.xml"
+            Dim proj As GenBankProject = ProjectIO.Load(projFile)
+
+            If taxonomy_name Then
+                outModel = $"{outdir}/{proj.taxonomy.scientificName.NormalizePathString(alphabetOnly:=False)}.xml"
+            End If
 
             Try
-                Call New Compiler(ProjectIO.Load(projFile), serverUrl) _
+                Call New Compiler(proj, serverUrl) _
                     .Compile(args) _
                     .GetXml _
                     .SaveTo(outModel)
