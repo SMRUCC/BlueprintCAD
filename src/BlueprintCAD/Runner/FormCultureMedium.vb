@@ -48,7 +48,7 @@ Public Class FormCultureMedium : Implements IDataContainer, IWizardUI
 
     Private Iterator Function FilterMembraneTransportMetabolites(allCompounds As Compound()) As IEnumerable(Of Compound)
         Dim transports As String() = wizardConfig.models.Values _
-            .Select(Function(c) c.model.metabolismStructure.reactions.transportation) _
+            .Select(Function(c) c.model.metabolismStructure.reactions.transportation.Keys) _
             .IteratesALL _
             .Distinct _
             .ToArray
