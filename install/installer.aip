@@ -21,12 +21,12 @@
     <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:marin-black" MsiKey="AI_ThemeStyle"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
-    <ROW Property="ARPHELPLINK" Value="http://zhengyabio.com/"/>
+    <ROW Property="ARPHELPLINK" Value="https://zhengyabio.com/"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="installer.exe" Type="8"/>
-    <ROW Property="ARPURLINFOABOUT" Value="http://zhengyabio.com/"/>
-    <ROW Property="ARPURLUPDATEINFO" Value="http://zhengyabio.com/"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://zhengyabio.com/"/>
+    <ROW Property="ARPURLUPDATEINFO" Value="https://zhengyabio.com/"/>
     <ROW Property="AiEmbeddedUI" Value="1"/>
     <ROW Property="AiWinUI" Value="1"/>
     <ROW Property="CTRLS" Value="3"/>
@@ -35,10 +35,10 @@
     <ROW Property="GCPROJ_CHECKBOX" Value="1" Type="4"/>
     <ROW Property="Manufacturer" Value="zhengyabio.com"/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp"/>
-    <ROW Property="ProductCode" Value="1033:{5A41667C-8453-4B3C-92E9-E2BA4BC7EADB} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{D03BD0C2-FFF8-4C13-BE28-83B14E905402} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Sophia VirtualCell Workshop"/>
-    <ROW Property="ProductVersion" Value="1.7.1205" Options="32"/>
+    <ROW Property="ProductVersion" Value="1.8.2026.0122" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{CF9117C0-DB88-45A1-BD8A-DCB5CF39DF2E}"/>
     <ROW Property="VCELLPACK_CHECKBOX" Value="1" Type="4"/>
@@ -66,6 +66,7 @@
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="Zhengyabio_Dir" Directory_Parent="ProgramMenuFolder" DefaultDir="ZHENGY~1|Zhengyabio"/>
     <ROW Directory="bin_Dir" Directory_Parent="rstudio_Dir" DefaultDir="bin"/>
+    <ROW Directory="blastdb_Dir" Directory_Parent="data_Dir" DefaultDir="blastdb"/>
     <ROW Directory="bootstrap_Dir" Directory_Parent="pages_Dir" DefaultDir="BOOTST~1|bootstrap"/>
     <ROW Directory="browser_1_Dir" Directory_Parent="runtimes_Dir" DefaultDir="browser"/>
     <ROW Directory="browser_Dir" Directory_Parent="runtimes_1_Dir" DefaultDir="browser"/>
@@ -348,14 +349,13 @@
     <ROW Component="WebView2Loader.dll_3" ComponentId="{680AB993-D088-41AE-A534-42D99710D50D}" Directory_="native_27_Dir" Attributes="256" KeyPath="WebView2Loader.dll_3"/>
     <ROW Component="WebView2Loader.dll_4" ComponentId="{5241F038-B7CF-4D1F-AE8D-1DD3B0A7752B}" Directory_="native_28_Dir" Attributes="0" KeyPath="WebView2Loader.dll_4"/>
     <ROW Component="Zhengyabio" ComponentId="{BE6C9AFF-9C94-425A-A6E8-554A3B5C42B4}" Directory_="Zhengyabio_Dir" Attributes="0"/>
-    <ROW Component="all_operons.json" ComponentId="{D84F37C4-2A1E-48D1-BAF7-C2357F5C0FC8}" Directory_="local_Dir" Attributes="0" KeyPath="all_operons.json" Type="0"/>
+    <ROW Component="all_operons.json" ComponentId="{D84F37C4-2A1E-48D1-BAF7-C2357F5C0FC8}" Directory_="local_Dir" Attributes="0" KeyPath="metabolic_network.jsonl" Type="0"/>
     <ROW Component="batch.dll" ComponentId="{20B4A663-43BA-4A89-8C36-A7A666C992D4}" Directory_="APPDIR" Attributes="256" KeyPath="batch.dll"/>
     <ROW Component="batch.exe" ComponentId="{240BDDE9-BB6C-4B9E-8BF5-AFBABAB02988}" Directory_="APPDIR" Attributes="256" KeyPath="batch.exe"/>
     <ROW Component="bootstrap.bundle.js" ComponentId="{A365CED1-F2CC-4538-B30C-C2A52E2A3257}" Directory_="js_1_Dir" Attributes="0" KeyPath="bootstrap.bundle.js" Type="0"/>
     <ROW Component="bootstrapgrid.css" ComponentId="{ED87EDA7-B7B0-4EBC-B7BC-D37EEB6ED3F8}" Directory_="css_Dir" Attributes="0" KeyPath="bootstrapgrid.css" Type="0"/>
     <ROW Component="cell_graph.html" ComponentId="{BA0BDCD2-CBB3-4403-BA84-3598CD510FCB}" Directory_="pages_Dir" Attributes="0" KeyPath="cell_graph.html" Type="0"/>
-    <ROW Component="ec_numbers.fasta" ComponentId="{12671DD7-972F-4343-84B6-0C7EE39C5ACF}" Directory_="data_Dir" Attributes="0" KeyPath="ec_numbers.fasta" Type="0"/>
-    <ROW Component="ec_numbers.fasta.pdb" ComponentId="{7EF142C4-1B05-4D12-B26F-D8C1B7BD2B99}" Directory_="data_Dir" Attributes="0" KeyPath="ec_numbers.fasta.pdb" Type="4"/>
+    <ROW Component="ec_numbers.fasta_1" ComponentId="{50ACE437-1E48-40BF-9EB4-24EEA3EB607E}" Directory_="blastdb_Dir" Attributes="0" KeyPath="ec_numbers.fasta_1" Type="0"/>
     <ROW Component="ggplot.dll" ComponentId="{C7991442-8423-40DF-8557-243ECDB4C20E}" Directory_="APPDIR" Attributes="256" KeyPath="ggplot.dll"/>
     <ROW Component="ggviewer.dll" ComponentId="{38D05C2F-CBDC-4D28-A10C-2BA6D6FB8E57}" Directory_="APPDIR" Attributes="256" KeyPath="ggviewer.dll"/>
     <ROW Component="graphology.umd.min.js" ComponentId="{400A0C97-A75F-4F4A-A93D-4190538B120E}" Directory_="js_Dir" Attributes="0" KeyPath="graphology.umd.min.js" Type="0"/>
@@ -391,7 +391,7 @@
     <ROW Component="libSkiaSharp.so_7" ComponentId="{F59D9C62-445B-4A64-B2FC-CB64A8340217}" Directory_="native_7_Dir" Attributes="0" KeyPath="libSkiaSharp.so_7" Type="0"/>
     <ROW Component="libSkiaSharp.so_8" ComponentId="{C14B185F-0865-4323-B737-CECE411440E7}" Directory_="native_8_Dir" Attributes="0" KeyPath="libSkiaSharp.so_8" Type="0"/>
     <ROW Component="libSkiaSharp.so_9" ComponentId="{77942149-2850-4014-9181-3BB239429F59}" Directory_="native_9_Dir" Attributes="0" KeyPath="libSkiaSharp.so_9" Type="0"/>
-    <ROW Component="logs" ComponentId="{A4A1E8DC-41F0-4901-ADFC-20F9B4ECC6F2}" Directory_="logs_Dir" Attributes="0"/>
+    <ROW Component="logs" ComponentId="{26F7ACCE-43E8-45BB-A244-E4DE1E5D40D8}" Directory_="logs_Dir" Attributes="0"/>
     <ROW Component="regid.zhengyabio.com.xieguigang" ComponentId="{CDF8BCD2-A2CA-4942-B44E-2F3E803661A9}" Directory_="regid.zhengyabio.com.xieguigang_Dir" Attributes="0"/>
     <ROW Component="settings.json" ComponentId="{AE75A348-E9F1-4059-8939-D4474E517243}" Directory_="vscode_Dir" Attributes="0" KeyPath="settings.json" Type="0"/>
   </COMPONENT>
@@ -619,8 +619,6 @@
     <ROW File="VirtualCell.pdb" Component_="VirtualCell.exe" FileName="VIRTUA~1.PDB|VirtualCell.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\VirtualCell.pdb" SelfReg="false"/>
     <ROW File="VirtualCell.runtimeconfig.json" Component_="CADRegistry.xml" FileName="VIRTUA~2.JSO|VirtualCell.runtimeconfig.json" Attributes="0" SourcePath="..\App\net8.0-windows\VirtualCell.runtimeconfig.json" SelfReg="false"/>
     <ROW File="VirtualCell.xml" Component_="CADRegistry.xml" FileName="VIRTUA~1.XML|VirtualCell.xml" Attributes="0" SourcePath="..\App\net8.0-windows\VirtualCell.xml" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta" Component_="ec_numbers.fasta" FileName="EC_NUM~1.FAS|ec_numbers.fasta" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta" SelfReg="false"/>
-    <ROW File="operon.fasta" Component_="ec_numbers.fasta" FileName="OPERON~1.FAS|operon.fasta" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta" SelfReg="false"/>
     <ROW File="Galaxy.Workbench.resources.dll" Component_="Galaxy.Workbench.resources.dll" FileName="GALAXY~1.DLL|Galaxy.Workbench.resources.dll" Attributes="0" SourcePath="..\App\net8.0-windows\en-US\Galaxy.Workbench.resources.dll" SelfReg="false"/>
     <ROW File="libSkiaSharp.so" Component_="libSkiaSharp.so" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net8.0-windows\runtimes\linux-arm\native\libSkiaSharp.so" SelfReg="false"/>
     <ROW File="libSkiaSharp.so_11" Component_="libSkiaSharp.so_11" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net8.0-windows\runtimes\linux-arm64\native\libSkiaSharp.so" SelfReg="false"/>
@@ -730,45 +728,6 @@
     <ROW File="System.Windows.Extensions.dll" Component_="System.Windows.Extensions.dll" FileName="SYSTE~23.DLL|System.Windows.Extensions.dll" Attributes="0" SourcePath="..\App\net8.0-windows\System.Windows.Extensions.dll" SelfReg="false"/>
     <ROW File="TRNScanner.dll" Component_="TRNScanner.dll" FileName="TRNSCA~1.DLL|TRNScanner.dll" Attributes="0" SourcePath="..\App\net8.0-windows\TRNScanner.dll" SelfReg="false"/>
     <ROW File="TRNScanner.pdb" Component_="TRNScanner.dll" FileName="TRNSCA~1.PDB|TRNScanner.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\TRNScanner.pdb" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta.pdb" Component_="ec_numbers.fasta.pdb" FileName="EC_NUM~1.PDB|ec_numbers.fasta.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta.pdb" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta.phr" Component_="ec_numbers.fasta" FileName="EC_NUM~1.PHR|ec_numbers.fasta.phr" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta.phr" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta.pin" Component_="ec_numbers.fasta" FileName="EC_NUM~1.PIN|ec_numbers.fasta.pin" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta.pin" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta.pjs" Component_="ec_numbers.fasta" FileName="EC_NUM~1.PJS|ec_numbers.fasta.pjs" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta.pjs" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta.pot" Component_="ec_numbers.fasta" FileName="EC_NUM~1.POT|ec_numbers.fasta.pot" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta.pot" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta.psq" Component_="ec_numbers.fasta" FileName="EC_NUM~1.PSQ|ec_numbers.fasta.psq" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta.psq" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta.ptf" Component_="ec_numbers.fasta" FileName="EC_NUM~1.PTF|ec_numbers.fasta.ptf" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta.ptf" SelfReg="false"/>
-    <ROW File="ec_numbers.fasta.pto" Component_="ec_numbers.fasta" FileName="EC_NUM~1.PTO|ec_numbers.fasta.pto" Attributes="0" SourcePath="..\App\net8.0-windows\data\ec_numbers.fasta.pto" SelfReg="false"/>
-    <ROW File="all_operons.json" Component_="all_operons.json" FileName="ALL_OP~1.JSO|all_operons.json" Attributes="0" SourcePath="..\App\net8.0-windows\data\local\all_operons.json" SelfReg="false"/>
-    <ROW File="enzyme_reactions.json" Component_="all_operons.json" FileName="ENZYME~1.JSO|enzyme_reactions.json" Attributes="0" SourcePath="..\App\net8.0-windows\data\local\enzyme_reactions.json" SelfReg="false"/>
-    <ROW File="molecules.json" Component_="all_operons.json" FileName="MOLECU~1.JSO|molecules.json" Attributes="0" SourcePath="..\App\net8.0-windows\data\local\molecules.json" SelfReg="false"/>
-    <ROW File="network_expansions.json" Component_="all_operons.json" FileName="NETWOR~1.JSO|network_expansions.json" Attributes="0" SourcePath="..\App\net8.0-windows\data\local\network_expansions.json" SelfReg="false"/>
-    <ROW File="Membrane.fasta" Component_="ec_numbers.fasta" FileName="MEMBRA~1.FAS|Membrane.fasta" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta" SelfReg="false"/>
-    <ROW File="Membrane.fasta.pdb" Component_="ec_numbers.fasta.pdb" FileName="MEMBRA~1.PDB|Membrane.fasta.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta.pdb" SelfReg="false"/>
-    <ROW File="Membrane.fasta.phr" Component_="ec_numbers.fasta" FileName="MEMBRA~1.PHR|Membrane.fasta.phr" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta.phr" SelfReg="false"/>
-    <ROW File="Membrane.fasta.pin" Component_="ec_numbers.fasta" FileName="MEMBRA~1.PIN|Membrane.fasta.pin" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta.pin" SelfReg="false"/>
-    <ROW File="Membrane.fasta.pjs" Component_="ec_numbers.fasta" FileName="MEMBRA~1.PJS|Membrane.fasta.pjs" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta.pjs" SelfReg="false"/>
-    <ROW File="Membrane.fasta.pot" Component_="ec_numbers.fasta" FileName="MEMBRA~1.POT|Membrane.fasta.pot" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta.pot" SelfReg="false"/>
-    <ROW File="Membrane.fasta.psq" Component_="ec_numbers.fasta" FileName="MEMBRA~1.PSQ|Membrane.fasta.psq" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta.psq" SelfReg="false"/>
-    <ROW File="Membrane.fasta.ptf" Component_="ec_numbers.fasta" FileName="MEMBRA~1.PTF|Membrane.fasta.ptf" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta.ptf" SelfReg="false"/>
-    <ROW File="Membrane.fasta.pto" Component_="ec_numbers.fasta" FileName="MEMBRA~1.PTO|Membrane.fasta.pto" Attributes="0" SourcePath="..\App\net8.0-windows\data\Membrane.fasta.pto" SelfReg="false"/>
-    <ROW File="operon.fasta.ndb" Component_="ec_numbers.fasta" FileName="OPERON~1.NDB|operon.fasta.ndb" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta.ndb" SelfReg="false"/>
-    <ROW File="operon.fasta.nhr" Component_="ec_numbers.fasta" FileName="OPERON~1.NHR|operon.fasta.nhr" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta.nhr" SelfReg="false"/>
-    <ROW File="operon.fasta.nin" Component_="ec_numbers.fasta" FileName="OPERON~1.NIN|operon.fasta.nin" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta.nin" SelfReg="false"/>
-    <ROW File="operon.fasta.njs" Component_="ec_numbers.fasta" FileName="OPERON~1.NJS|operon.fasta.njs" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta.njs" SelfReg="false"/>
-    <ROW File="operon.fasta.not" Component_="ec_numbers.fasta" FileName="OPERON~1.NOT|operon.fasta.not" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta.not" SelfReg="false"/>
-    <ROW File="operon.fasta.nsq" Component_="ec_numbers.fasta" FileName="OPERON~1.NSQ|operon.fasta.nsq" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta.nsq" SelfReg="false"/>
-    <ROW File="operon.fasta.ntf" Component_="ec_numbers.fasta" FileName="OPERON~1.NTF|operon.fasta.ntf" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta.ntf" SelfReg="false"/>
-    <ROW File="operon.fasta.nto" Component_="ec_numbers.fasta" FileName="OPERON~1.NTO|operon.fasta.nto" Attributes="0" SourcePath="..\App\net8.0-windows\data\operon.fasta.nto" SelfReg="false"/>
-    <ROW File="RegPrecise.dat" Component_="ec_numbers.fasta" FileName="REGPRE~1.DAT|RegPrecise.dat" Attributes="0" SourcePath="..\App\net8.0-windows\data\RegPrecise.dat" SelfReg="false"/>
-    <ROW File="TF.fasta" Component_="ec_numbers.fasta" FileName="TF~1.FAS|TF.fasta" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta" SelfReg="false"/>
-    <ROW File="TF.fasta.pdb" Component_="ec_numbers.fasta.pdb" FileName="TFFAST~1.PDB|TF.fasta.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta.pdb" SelfReg="false"/>
-    <ROW File="TF.fasta.phr" Component_="ec_numbers.fasta" FileName="TFFAST~1.PHR|TF.fasta.phr" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta.phr" SelfReg="false"/>
-    <ROW File="TF.fasta.pin" Component_="ec_numbers.fasta" FileName="TFFAST~1.PIN|TF.fasta.pin" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta.pin" SelfReg="false"/>
-    <ROW File="TF.fasta.pjs" Component_="ec_numbers.fasta" FileName="TFFAST~1.PJS|TF.fasta.pjs" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta.pjs" SelfReg="false"/>
-    <ROW File="TF.fasta.pot" Component_="ec_numbers.fasta" FileName="TFFAST~1.POT|TF.fasta.pot" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta.pot" SelfReg="false"/>
-    <ROW File="TF.fasta.psq" Component_="ec_numbers.fasta" FileName="TFFAST~1.PSQ|TF.fasta.psq" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta.psq" SelfReg="false"/>
-    <ROW File="TF.fasta.ptf" Component_="ec_numbers.fasta" FileName="TFFAST~1.PTF|TF.fasta.ptf" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta.ptf" SelfReg="false"/>
-    <ROW File="TF.fasta.pto" Component_="ec_numbers.fasta" FileName="TFFAST~1.PTO|TF.fasta.pto" Attributes="0" SourcePath="..\App\net8.0-windows\data\TF.fasta.pto" SelfReg="false"/>
     <ROW File="settings.json" Component_="settings.json" FileName="SETTIN~1.JSO|settings.json" Attributes="0" SourcePath="..\pages\.vscode\settings.json" SelfReg="false"/>
     <ROW File="cell_graph.html" Component_="cell_graph.html" FileName="CELL_G~1.HTM|cell_graph.html" Attributes="0" SourcePath="..\pages\cell_graph.html" SelfReg="false"/>
     <ROW File="index.html" Component_="cell_graph.html" FileName="INDEX~1.HTM|index.html" Attributes="0" SourcePath="..\pages\index.html" SelfReg="false"/>
@@ -938,6 +897,20 @@
     <ROW File="index.css" Component_="index.css" FileName="index.css" Attributes="0" SourcePath="..\pages\bootstrap\index.css" SelfReg="false"/>
     <ROW File="icons8bacteria96.png" Component_="icons8bacteria96.png" FileName="ICONS8~1.PNG|icons8-bacteria-96.png" Attributes="0" SourcePath="..\pages\images\icons8-bacteria-96.png" SelfReg="false"/>
     <ROW File="LOGO.png" Component_="icons8bacteria96.png" FileName="LOGO.png" Attributes="0" SourcePath="..\pages\images\LOGO.png" SelfReg="false"/>
+    <ROW File="ec_numbers.fasta_1" Component_="ec_numbers.fasta_1" FileName="EC_NUM~1.FAS|ec_numbers.fasta" Attributes="0" SourcePath="..\App\net8.0-windows\data\blastdb\ec_numbers.fasta" SelfReg="false"/>
+    <ROW File="subcellular.fasta" Component_="ec_numbers.fasta_1" FileName="SUBCEL~1.FAS|subcellular.fasta" Attributes="0" SourcePath="..\App\net8.0-windows\data\blastdb\subcellular.fasta" SelfReg="false"/>
+    <ROW File="metabolic_network.jsonl" Component_="all_operons.json" FileName="METABO~1.JSO|metabolic_network.jsonl" Attributes="0" SourcePath="..\App\net8.0-windows\data\local\metabolic_network.jsonl" SelfReg="false"/>
+    <ROW File="molecules.jsonl" Component_="all_operons.json" FileName="MOLECU~2.JSO|molecules.jsonl" Attributes="0" SourcePath="..\App\net8.0-windows\data\local\molecules.jsonl" SelfReg="false"/>
+    <ROW File="subcellular.json" Component_="all_operons.json" FileName="SUBCEL~1.JSO|subcellular.json" Attributes="0" SourcePath="..\App\net8.0-windows\data\local\subcellular.json" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.BinaryData.xml" Component_="CADRegistry.xml" FileName="MICRO~38.XML|Microsoft.VisualBasic.Data.BinaryData.xml" Attributes="0" SourcePath="..\App\net8.0-windows\Microsoft.VisualBasic.Data.BinaryData.xml" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.IO.MessagePack.xml" Component_="CADRegistry.xml" FileName="MICRO~39.XML|Microsoft.VisualBasic.Data.IO.MessagePack.xml" Attributes="0" SourcePath="..\App\net8.0-windows\Microsoft.VisualBasic.Data.IO.MessagePack.xml" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb" Component_="libSkiaSharp.dll_1" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\rstudio\bin\runtimes\win-arm64\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb_1" Component_="libSkiaSharp.dll_2" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\rstudio\bin\runtimes\win-x64\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb_2" Component_="libSkiaSharp.dll_5" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\rstudio\bin\runtimes\win-x86\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb_3" Component_="libSkiaSharp.dll" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb_4" Component_="libSkiaSharp.dll_3" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb_5" Component_="libSkiaSharp.dll_4" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Model.SBML_v1.0_2.0.22.0__a8b9cc5dce5d8b0cc9.xml" Component_="CADRegistry.xml" FileName="SMRUC~15.XML|SMRUCC.genomics.Model.SBML_v1.0_2.0.22.0__a8b9cc5dce5d8b0cc9.xml" Attributes="0" SourcePath="..\App\net8.0-windows\SMRUCC.genomics.Model.SBML_v1.0_2.0.22.0__a8b9cc5dce5d8b0cc9.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
     <ROW MsiShortcutProperty="Sophia0" Shortcut_="Sophia" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
@@ -1308,7 +1281,6 @@
     <ROW Feature_="MainFeature" Component_="ThemeVS2015.dll"/>
     <ROW Feature_="MainFeature" Component_="VirtualCell.dll"/>
     <ROW Feature_="MainFeature" Component_="VirtualCell.exe"/>
-    <ROW Feature_="MainFeature" Component_="ec_numbers.fasta"/>
     <ROW Feature_="MainFeature" Component_="Galaxy.Workbench.resources.dll"/>
     <ROW Feature_="MainFeature" Component_="libSkiaSharp.so"/>
     <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_11"/>
@@ -1370,7 +1342,6 @@
     <ROW Feature_="MainFeature" Component_="System.Text.Encodings.Web.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Windows.Extensions.dll"/>
     <ROW Feature_="MainFeature" Component_="TRNScanner.dll"/>
-    <ROW Feature_="MainFeature" Component_="ec_numbers.fasta.pdb"/>
     <ROW Feature_="MainFeature" Component_="all_operons.json"/>
     <ROW Feature_="MainFeature" Component_="settings.json"/>
     <ROW Feature_="MainFeature" Component_="cell_graph.html"/>
@@ -1457,9 +1428,10 @@
     <ROW Feature_="vcellpack" Component_="Sophia.exe"/>
     <ROW Feature_="MainFeature" Component_="ECOLI.gcproj"/>
     <ROW Feature_="MainFeature" Component_="SMRUCC.genomics.Analysis.FBA.Core.dll"/>
-    <ROW Feature_="MainFeature" Component_="logs"/>
     <ROW Feature_="MainFeature" Component_="index.css"/>
     <ROW Feature_="MainFeature" Component_="icons8bacteria96.png"/>
+    <ROW Feature_="MainFeature" Component_="ec_numbers.fasta_1"/>
+    <ROW Feature_="MainFeature" Component_="logs"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="ext.exe" SourcePath="..\src\VirtualCell.ico" Index="0"/>
@@ -1599,7 +1571,7 @@
     <ROW Directory_="data_Dir" SourcePath="..\App\net8.0-windows\data" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
     <ROW Directory_="pages_Dir" SourcePath="..\pages" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store|*.log" ExcludeFlags="6" FileAddOptions="4"/>
     <ROW Directory_="bin_Dir" SourcePath="..\App\net8.0-windows\rstudio\bin" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
-    <ROW Directory_="APPDIR" SourcePath="..\App\net8.0-windows" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
+    <ROW Directory_="APPDIR" SourcePath="..\App\net8.0-windows" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store|\logs|\.vscode" ExcludeFlags="6" FileAddOptions="4"/>
     <ROW Directory_="js_Dir" SourcePath="..\pages\js" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.XmlAttributeComponent">
@@ -1609,10 +1581,10 @@
     <ROW XmlAttribute="xsischemaLocation" XmlElement="swidsoftware_identification_tag" Name="xsi:schemaLocation" Flags="14" Order="3" Value="http://standards.iso.org/iso/19770/-2/2008/schema.xsd software_identification_tag.xsd"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.XmlElementComponent">
-    <ROW XmlElement="swidbuild" ParentElement="swidnumeric" Name="swid:build" Condition="1" Order="2" Flags="14" Text="1205" UpdateIndexInParent="0"/>
+    <ROW XmlElement="swidbuild" ParentElement="swidnumeric" Name="swid:build" Condition="1" Order="2" Flags="14" Text="2026" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidentitlement_required_indicator" ParentElement="swidsoftware_identification_tag" Name="swid:entitlement_required_indicator" Condition="1" Order="0" Flags="14" Text="false" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidmajor" ParentElement="swidnumeric" Name="swid:major" Condition="1" Order="0" Flags="14" Text="1" UpdateIndexInParent="0"/>
-    <ROW XmlElement="swidminor" ParentElement="swidnumeric" Name="swid:minor" Condition="1" Order="1" Flags="14" Text="7" UpdateIndexInParent="0"/>
+    <ROW XmlElement="swidminor" ParentElement="swidnumeric" Name="swid:minor" Condition="1" Order="1" Flags="14" Text="8" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidname" ParentElement="swidproduct_version" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[ProductVersion]" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidname_1" ParentElement="swidsoftware_creator" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[Manufacturer]" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidname_2" ParentElement="swidsoftware_licensor" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[Manufacturer]" UpdateIndexInParent="0"/>
@@ -1623,7 +1595,7 @@
     <ROW XmlElement="swidregid" ParentElement="swidsoftware_creator" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.zhengyabio.com.xieguigang" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidregid_1" ParentElement="swidsoftware_licensor" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.zhengyabio.com.xieguigang" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidregid_2" ParentElement="swidtag_creator" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.zhengyabio.com.xieguigang" UpdateIndexInParent="0"/>
-    <ROW XmlElement="swidreview" ParentElement="swidnumeric" Name="swid:review" Condition="1" Order="3" Flags="14" Text="0" UpdateIndexInParent="0"/>
+    <ROW XmlElement="swidreview" ParentElement="swidnumeric" Name="swid:review" Condition="1" Order="3" Flags="14" Text="122" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidsoftware_creator" ParentElement="swidsoftware_identification_tag" Name="swid:software_creator" Condition="1" Order="3" Flags="14" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidsoftware_id" ParentElement="swidsoftware_identification_tag" Name="swid:software_id" Condition="1" Order="5" Flags="14" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidsoftware_identification_tag" Name="swid:software_identification_tag" Condition="1" Order="0" Flags="14" UpdateIndexInParent="0"/>
