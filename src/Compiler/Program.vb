@@ -121,7 +121,7 @@ Module Program
             Dim proj As GenBankProject = ProjectIO.Load(projFile)
 
             If taxonomy_name Then
-                outModel = $"{outdir}/{proj.taxonomy.scientificName.NormalizePathString(alphabetOnly:=False)}.xml"
+                outModel = $"{outdir}/{proj.taxonomy.scientificName.NormalizePathString(alphabetOnly:=False)}.{proj.nt.Keys.JoinBy("+").MD5}.xml"
             End If
 
             ' Try
