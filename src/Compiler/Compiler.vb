@@ -406,6 +406,10 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                               Return t.ToArray
                           End Function)
         Dim protein_id As String
+        Dim transporter As Dictionary(Of String, RankTerm) = proj.membrane_proteins _
+            .ToDictionary(Function(t)
+                              Return t.queryName
+                          End Function)
 
         Call $"processing compile of {nt.Count} genes!".debug
 
@@ -429,7 +433,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                 Call proteins.Add(New protein With {
                     .name = protein_id,
                     .peptide_chains = {translate_id},
-                    .protein_id = protein_id
+                    .protein_id = protein_id,
+                    .cellular_location = If(transporter.ContainsKey(gene.locus_id), transporter(gene.locus_id).term, "Cytoplasm")
                 })
             Else
                 Select Case gene.type
@@ -447,7 +452,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                         Call proteins.Add(New protein With {
                             .name = protein_id,
                             .peptide_chains = {translate_id},
-                            .protein_id = protein_id
+                            .protein_id = protein_id,
+                            .cellular_location = If(transporter.ContainsKey(gene.locus_id), transporter(gene.locus_id).term, "Cytoplasm")
                         })
                     Case "rRNA"
                         Dim rRNA = gene.commonName _
