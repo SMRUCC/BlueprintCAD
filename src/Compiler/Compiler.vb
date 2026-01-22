@@ -15,6 +15,7 @@ Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model.Cellular
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model.Cellular.Vector
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
+Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 Imports SMRUCC.genomics.SequenceModel.NucleotideModels.Translation
 
 Public Class Compiler : Inherits Compiler(Of VirtualCell)
@@ -158,11 +159,12 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
         Static membranes As Index(Of String) = {"Membrane", "Cell_inner_membrane", "Cell_membrane", "Cell_outer_membrane"}
 
-        Dim transporter As Index(Of String) = proj.membrane_proteins _
+        Dim transporter As Dictionary(Of String, RankTerm) = proj.membrane_proteins _
             .Where(Function(p) p.term Like membranes) _
-            .Select(Function(t) t.queryName) _
-            .Indexing
-        Dim membraneTransport As New Index(Of String)
+            .ToDictionary(Function(t)
+                              Return t.queryName
+                          End Function)
+        Dim membraneTransport As New List(Of (ECNumberAnnotation, String, String()))
 
         Call $"processing of {enzymes.Count} enzyme annotations".debug
 
@@ -188,10 +190,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                          .ToArray
                 }
 
-                If gene.locus_id Like transporter Then
-                    For Each id As String In list.Keys
-                        Call membraneTransport.Add(id)
-                    Next
+                If transporter.ContainsKey(gene.locus_id) Then
+                    Call membraneTransport.Add((enzyme, transporter(gene.locus_id).term, list.Keys.ToArray))
                 End If
 
                 Call enzymeModels.Add(model)
@@ -221,7 +221,20 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             .compounds = metabolites,
             .reactions = New ReactionGroup With {
                 .enzymatic = CreateEnzymaticNetwork(network, ec_numbers).ToArray,
-                .transportation = membraneTransport.Objects,
+                .transportation = membraneTransport _
+                    .Select(Function(a)
+                                Return a.Item3.Select(Function(rxn_id) (rxn_id, a.Item1.gene_id, cc:=a.Item2))
+                            End Function) _
+                    .IteratesALL _
+                    .GroupBy(Function(a) a.rxn_id) _
+                    .Select(Function(a)
+                                Return New Transportation With {
+                                    .guid = a.Key,
+                                    .enzymes = a.Select(Function(i) i.gene_id).Distinct.ToArray,
+                                    .membrane = a.Select(Function(i) i.cc).Distinct.ToArray
+                                }
+                            End Function) _
+                    .ToArray,
                 .none_enzymatic = none_enzymatic
             },
             .enzymes = enzymeModels.ToArray
