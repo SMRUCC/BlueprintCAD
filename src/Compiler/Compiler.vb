@@ -464,27 +464,27 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                             .cellular_location = If(transporter.ContainsKey(gene.locus_id), transporter(gene.locus_id).term, "Cytoplasm")
                         })
                     Case "rRNA"
-                        Dim rRNA = gene.commonName _
+                        Dim rRNA = Strings.Trim(gene.commonName) _
                             .Replace("ribosomal RNA", "") _
                             .Trim _
                             .Split(" "c, "-"c) _
-                            .First _
-                            .ToLower
+                            .FirstOrDefault
 
-                        gene_type = RNATypes.ribosomalRNA
+                        rRNA = Strings.Trim(rRNA).ToLower
+                        gene_type = If(rRNA = "", RNATypes.micsRNA, RNATypes.ribosomalRNA)
                         RNA = New RNA With {
                             .gene = gene.locus_id,
-                            .id = gene.commonName,
+                            .id = If(gene.commonName, gene.locus_id & "-micsRNA"),
                             .note = gene.commonName,
                             .type = gene_type,
                             .val = rRNA
                         }
                         rnas.Add((gene.replicon_accessionID, RNA))
                     Case "tRNA"
-                        gene_type = RNATypes.tRNA
+                        gene_type = If(gene.commonName.StringEmpty, RNATypes.micsRNA, RNATypes.tRNA)
                         RNA = New RNA With {
                             .gene = gene.locus_id,
-                            .id = gene.commonName,
+                            .id = If(gene.commonName, gene.locus_id & "-micsRNA"),
                             .note = gene.commonName,
                             .type = gene_type,
                             .val = Strings.Trim(gene.commonName).Split("-"c).Last
