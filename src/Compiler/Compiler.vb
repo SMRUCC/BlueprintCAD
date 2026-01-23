@@ -215,7 +215,9 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Call $"load {network.Count} enzymatic reactions!".debug
 
         Dim none_enzymatic = ExpandNetwork(network).ToArray
-        Dim metabolites As Compound() = CreateCompoundModel(network, none_enzymatic).ToArray
+        Dim metabolites As Compound() = CreateCompoundModel(network, none_enzymatic) _
+            .OrderBy(Function(c) c.ID) _
+            .ToArray
 
         Return New MetabolismStructure With {
             .compounds = metabolites,
