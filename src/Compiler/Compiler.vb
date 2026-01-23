@@ -25,6 +25,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     ReadOnly motifSites As Dictionary(Of String, MotifMatch())
     ReadOnly defaultName As String
 
+    Public Property enzyme_cutoff As Double = 450
+
     Sub New(proj As GenBankProject, Optional serverUrl As String = RegistryUrl.defaultServer, Optional defaultName As String = Nothing)
         Me.defaultName = defaultName
 
@@ -157,7 +159,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                               Return a.First
                           End Function)
 
-        Static membranes As Index(Of String) = {"Membrane", "Cell_inner_membrane", "Cell_membrane", "Cell_outer_membrane"}
+        Static membranes As Index(Of String) = {"Cell_inner_membrane", "Cell_membrane", "Cell_outer_membrane"}
 
         Dim membraneTransport As New List(Of (ECNumberAnnotation, String, String()))
         Dim transporter As Dictionary(Of String, RankTerm) = ProteinLocations(
@@ -168,7 +170,9 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
         Call $"processing of {enzymes.Count} enzyme annotations".debug
 
-        For Each enzyme As ECNumberAnnotation In enzymes.Values
+        For Each enzyme As ECNumberAnnotation In From e As ECNumberAnnotation
+                                                 In enzymes.Values
+                                                 Where e.Score > enzyme_cutoff
             Dim ec_number As String = enzyme.EC
             Dim list = registry.GetAssociatedReactions(enzyme.EC, simple:=False)
 
