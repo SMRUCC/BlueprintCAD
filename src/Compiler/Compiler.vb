@@ -335,23 +335,25 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Call "create the enzymatic network success".info
     End Function
 
-    Private Iterator Function CreateCompoundModel(network As Dictionary(Of String, WebJSON.Reaction), none_enzymatic As Reaction()) As IEnumerable(Of Compound)
-        Dim compounds_id As UInteger() = network.Values _
+    Private Function ExtractCompoundModelId(network As Dictionary(Of String, WebJSON.Reaction), none_enzymatic As Reaction()) As IEnumerable(Of UInteger)
+        Dim cset1 As UInteger() = network.Values _
             .Select(Function(r) r.left.JoinIterates(r.right)) _
             .IteratesALL _
             .GroupBy(Function(a) a.molecule_id) _
             .Keys
-
-        compounds_id = none_enzymatic _
+        Dim cset2 As UInteger() = none_enzymatic _
             .Select(Function(r)
                         Return r.substrate.JoinIterates(r.product)
                     End Function) _
             .IteratesALL _
             .Select(Function(f) f.cid) _
-            .JoinIterates(compounds_id) _
-            .Distinct _
             .ToArray
 
+        Return cset1.JoinIterates(cset2).Distinct
+    End Function
+
+    Private Iterator Function CreateCompoundModel(network As Dictionary(Of String, WebJSON.Reaction), none_enzymatic As Reaction()) As IEnumerable(Of Compound)
+        Dim compounds_id As UInteger() = ExtractCompoundModelId(network, none_enzymatic).ToArray
         Dim metadata As WebJSON.Molecule() = compounds_id _
             .Select(Function(id) registry.GetMoleculeDataById(id)) _
             .Where(Function(c) Not c Is Nothing) _

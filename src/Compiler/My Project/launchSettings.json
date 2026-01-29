@@ -2,7 +2,8 @@
   "profiles": {
     "Compiler": {
       "commandName": "Project",
-      "commandLineArgs": "--batch-build --dir F:\\datapool\\16s\\community\\models --server \"C:\\Program Files\\SophiaWorkshop\\data\\local\" --taxonomy_name --outdir F:\\datapool\\16s\\community\\models"
+      "commandLineArgs": "--batch-build --dir ./ --server \"G:\\BlueprintCAD\\App\\net8.0-windows\\data\\local\" --taxonomy_name --outdir ./",
+      "workingDirectory": "F:\\datapool\\16s\\20260129\\models"
     },
     "create_project": {
       "commandName": "Project",
