@@ -285,63 +285,50 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
 
         For Each groupdata In cache.Values.IteratesALL.GroupBy(Function(a) a.guid)
             Dim reaction As WebJSON.Reaction = groupdata.First
+            Dim hash_id As String = reaction.guid
+            Dim left = MakeSubstrates(reaction.left).ToArray
+            Dim right = MakeSubstrates(reaction.right).ToArray
             Dim model As New Reaction With {
                 .bounds = {5, 5},
                 .compartment = Nothing,
                 .ec_number = Nothing,
-                .ID = reaction.guid,
+                .ID = hash_id,
                 .is_enzymatic = False,
                 .name = reaction.name,
                 .note = reaction.reaction,
-                .substrate = reaction.left _
-                    .Select(Function(c)
-                                Return New CompoundFactor With {
-                                    .factor = c.factor,
-                                    .compound = FormatCompoundId(c.molecule_id)
-                                }
-                            End Function) _
-                    .ToArray,
-                .product = reaction.right _
-                    .Select(Function(c)
-                                Return New CompoundFactor With {
-                                    .factor = c.factor,
-                                    .compound = FormatCompoundId(c.molecule_id)
-                                }
-                            End Function) _
-                    .ToArray
+                .substrate = left,
+                .product = right
             }
 
             Yield model
         Next
     End Function
 
+    Private Iterator Function MakeSubstrates(list As IEnumerable(Of WebJSON.Substrate)) As IEnumerable(Of CompoundFactor)
+        For Each c As WebJSON.Substrate In list
+            Yield New CompoundFactor With {
+                .factor = c.factor,
+                .compound = FormatCompoundId(c.molecule_id),
+                .cid = c.molecule_id
+            }
+        Next
+    End Function
+
     Private Iterator Function CreateEnzymaticNetwork(network As Dictionary(Of String, WebJSON.Reaction), ec_numbers As Dictionary(Of String, List(Of String))) As IEnumerable(Of Reaction)
         For Each a As WebJSON.Reaction In network.Values
+            Dim hash_id As String = a.guid
+            Dim left = MakeSubstrates(a.left).ToArray
+            Dim right = MakeSubstrates(a.right).ToArray
+
             Yield New Reaction With {
-                .ID = a.guid,
+                .ID = hash_id,
                 .ec_number = ec_numbers(a.guid).Distinct.ToArray,
                 .bounds = {5, 5},
                 .is_enzymatic = True,
                 .name = a.name,
                 .note = a.reaction,
-                .substrate = a.left _
-                    .Select(Function(c)
-                                Return New CompoundFactor With {
-                                    .factor = c.factor,
-                                    .compound = FormatCompoundId(c.molecule_id),
-                                    .cid = c.molecule_id
-                                }
-                            End Function) _
-                    .ToArray,
-                .product = a.right _
-                    .Select(Function(c)
-                                Return New CompoundFactor With {
-                                    .factor = c.factor,
-                                    .compound = FormatCompoundId(c.molecule_id),
-                                    .cid = c.molecule_id
-                                }
-                            End Function) _
-                    .ToArray
+                .substrate = left,
+                .product = right
             }
         Next
 
