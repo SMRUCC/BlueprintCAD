@@ -11,7 +11,6 @@ Imports ThemeVS2015
 Public Class FormMain : Implements AppHost
 
     Friend WithEvents m_dockPanel As New DockPanel
-    Friend WithEvents m_ribbon As New Ribbon
     Friend WithEvents m_ribbonItems As RibbonItems
 
     Dim vS2015LightTheme1 As New VS2015LightTheme
@@ -74,12 +73,8 @@ Public Class FormMain : Implements AppHost
     Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call Workbench.SetHost(appHost:=Me)
 
-        m_ribbon.Height = 60
-        m_ribbon.Dock = DockStyle.Top
-        m_ribbon.ResourceName = "BlueprintCAD.RibbonMarkup.ribbon"
-        m_ribbonItems = New RibbonItems(m_ribbon)
+        m_ribbonItems = New RibbonItems(Ribbon1)
 
-        Call Controls.Add(m_ribbon)
         Call PanelBase.Controls.Add(Me.m_dockPanel)
         Call initializeVSPanel()
         Call MyApplication.SetRibbonEvents()
