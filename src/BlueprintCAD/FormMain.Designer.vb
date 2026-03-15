@@ -1,4 +1,6 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports RibbonLib
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormMain
     Inherits System.Windows.Forms.Form
 
@@ -30,7 +32,7 @@ Partial Class FormMain
         ToolStripStatusLabel3 = New ToolStripStatusLabel()
         ToolStripStatusLabel2 = New ToolStripStatusLabel()
         Timer1 = New Timer(components)
-        Ribbon1 = New RibbonLib.Ribbon()
+        Ribbon1 = New Ribbon()
         StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -110,5 +112,5 @@ Partial Class FormMain
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Ribbon1 As RibbonLib.Ribbon
+    Friend WithEvents Ribbon1 As Ribbon
 End Class
