@@ -24,13 +24,13 @@ Partial Class FormSplashScreen
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSplashScreen))
         Panel1 = New Panel()
+        LinkLabel1 = New LinkLabel()
         Label5 = New Label()
         PictureBox1 = New PictureBox()
         Label1 = New Label()
         Panel2 = New Panel()
         Label4 = New Label()
         Label3 = New Label()
-        LinkLabel1 = New LinkLabel()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -48,15 +48,25 @@ Partial Class FormSplashScreen
         Panel1.Dock = DockStyle.Fill
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(671, 428)
+        Panel1.Size = New Size(671, 430)
         Panel1.TabIndex = 0
+        ' 
+        ' LinkLabel1
+        ' 
+        LinkLabel1.AutoSize = True
+        LinkLabel1.Location = New Point(480, 408)
+        LinkLabel1.Name = "LinkLabel1"
+        LinkLabel1.Size = New Size(179, 17)
+        LinkLabel1.TabIndex = 6
+        LinkLabel1.TabStop = True
+        LinkLabel1.Text = "https://gcmodeller.org · 2026"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(9, 404)
+        Label5.Location = New Point(12, 408)
         Label5.Name = "Label5"
-        Label5.Size = New Size(163, 15)
+        Label5.Size = New Size(152, 17)
         Label5.TabIndex = 5
         Label5.Text = "重庆正雅生物科技有限公司"
         ' 
@@ -65,18 +75,18 @@ Partial Class FormSplashScreen
         PictureBox1.BackColor = Color.Transparent
         PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
         PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
-        PictureBox1.Location = New Point(496, 206)
+        PictureBox1.Location = New Point(510, 219)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(149, 190)
+        PictureBox1.Size = New Size(149, 176)
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(322, 206)
+        Label1.Location = New Point(318, 219)
         Label1.Name = "Label1"
-        Label1.Size = New Size(168, 15)
+        Label1.Size = New Size(186, 17)
         Label1.TabIndex = 0
         Label1.Text = "Virtual Cell Engine Powered By"
         ' 
@@ -88,14 +98,14 @@ Partial Class FormSplashScreen
         Panel2.Dock = DockStyle.Top
         Panel2.Location = New Point(0, 0)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(671, 200)
+        Panel2.Size = New Size(671, 205)
         Panel2.TabIndex = 4
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(108, 145)
+        Label4.Location = New Point(128, 132)
         Label4.Name = "Label4"
         Label4.Size = New Size(237, 32)
         Label4.TabIndex = 4
@@ -106,27 +116,17 @@ Partial Class FormSplashScreen
         Label3.AutoSize = True
         Label3.Font = New Font("Cambria", 72F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.White
-        Label3.Location = New Point(23, 9)
+        Label3.Location = New Point(23, 10)
         Label3.Name = "Label3"
         Label3.Size = New Size(342, 112)
         Label3.TabIndex = 3
         Label3.Text = "Sophia"
         ' 
-        ' LinkLabel1
-        ' 
-        LinkLabel1.AutoSize = True
-        LinkLabel1.Location = New Point(496, 404)
-        LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(161, 15)
-        LinkLabel1.TabIndex = 6
-        LinkLabel1.TabStop = True
-        LinkLabel1.Text = "https://gcmodeller.org · 2026"
-        ' 
         ' FormSplashScreen
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(671, 428)
+        ClientSize = New Size(671, 430)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "FormSplashScreen"
