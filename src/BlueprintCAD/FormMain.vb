@@ -5,7 +5,6 @@ Imports CADRegistry
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ApplicationServices.Debugging.Logging
 Imports Microsoft.VisualStudio.WinForms.Docking
-Imports RibbonLib
 Imports ThemeVS2015
 
 Public Class FormMain : Implements AppHost
