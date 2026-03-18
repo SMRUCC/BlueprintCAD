@@ -42,7 +42,7 @@ Partial Class FormStartupPage
         ' 
         ' FormStartupPage
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1254, 806)
         Controls.Add(WebView21)
