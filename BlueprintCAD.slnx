@@ -1,5 +1,6 @@
 <Solution>
   <Configurations>
+    <BuildType Name="CellaLAB-Desktop" />
     <BuildType Name="CFD_win32" />
     <BuildType Name="Debug" />
     <BuildType Name="Desktop" />
@@ -195,6 +196,7 @@
       <BuildType Solution="NPSearch|*" Project="Rsharp_app_release" />
       <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
       <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="CellaLAB-Desktop|Any CPU" Project="ARM32" />
     </Project>
     <Project Path="../GCModeller/src/runtime/httpd/src/WebCloud/Flute.SessionManager/Flute.SessionManager.vbproj">
       <BuildType Solution="CFD_win32|*" Project="MEMI-Desktop" />
@@ -501,7 +503,33 @@
       <BuildType Solution="nuget_release|*" Project="Release" />
       <BuildType Solution="PlantMAT|*" Project="Release" />
       <BuildType Solution="Rsharp_app_release|*" Project="Release" />
-      <Platform Project="x64" />
+      <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="CFD_win32|Any CPU" Project="x64" />
+      <Platform Solution="CFD_win32|x86" Project="x64" />
+      <Platform Solution="Debug|Any CPU" Project="x64" />
+      <Platform Solution="Debug|x86" Project="x64" />
+      <Platform Solution="Desktop|Any CPU" Project="x64" />
+      <Platform Solution="Desktop|x86" Project="x64" />
+      <Platform Solution="Docker|Any CPU" Project="x64" />
+      <Platform Solution="Docker|x86" Project="x64" />
+      <Platform Solution="gcmodeller_desktop|Any CPU" Project="x64" />
+      <Platform Solution="gcmodeller_desktop|x86" Project="x64" />
+      <Platform Solution="LipidSearch|Any CPU" Project="x64" />
+      <Platform Solution="LipidSearch|x86" Project="x64" />
+      <Platform Solution="mzkit_win32|Any CPU" Project="x64" />
+      <Platform Solution="mzkit_win32|x86" Project="x64" />
+      <Platform Solution="mzkit|Any CPU" Project="x64" />
+      <Platform Solution="mzkit|x86" Project="x64" />
+      <Platform Solution="NPSearch|Any CPU" Project="x64" />
+      <Platform Solution="NPSearch|x86" Project="x64" />
+      <Platform Solution="nuget_release|Any CPU" Project="x64" />
+      <Platform Solution="nuget_release|x86" Project="x64" />
+      <Platform Solution="PlantMAT|Any CPU" Project="x64" />
+      <Platform Solution="PlantMAT|x86" Project="x64" />
+      <Platform Solution="Release|Any CPU" Project="x64" />
+      <Platform Solution="Release|x86" Project="x64" />
+      <Platform Solution="Rsharp_app_release|Any CPU" Project="x64" />
+      <Platform Solution="Rsharp_app_release|x86" Project="x64" />
     </Project>
     <Project Path="../galaxy/src/dockpanelsuite/VSDockPanel/VSDockPanel.vbproj">
       <BuildType Solution="CFD_win32|*" Project="Release" />
@@ -599,9 +627,22 @@
       <BuildType Solution="nuget_release|*" Project="Release" />
       <BuildType Solution="PlantMAT|*" Project="Release" />
       <BuildType Solution="Rsharp_app_release|*" Project="Release" />
-      <Platform Solution="*|x86" Project="x86" />
+      <Platform Solution="CellaLAB-Desktop|x64" Project="x64" />
+      <Platform Solution="CFD_win32|x86" Project="x86" />
       <Platform Solution="Debug|x64" Project="x64" />
+      <Platform Solution="Debug|x86" Project="x86" />
+      <Platform Solution="Desktop|x86" Project="x86" />
+      <Platform Solution="Docker|x86" Project="x86" />
       <Platform Solution="gcmodeller_desktop|x64" Project="x64" />
+      <Platform Solution="gcmodeller_desktop|x86" Project="x86" />
+      <Platform Solution="LipidSearch|x86" Project="x86" />
+      <Platform Solution="mzkit_win32|x86" Project="x86" />
+      <Platform Solution="mzkit|x86" Project="x86" />
+      <Platform Solution="NPSearch|x86" Project="x86" />
+      <Platform Solution="nuget_release|x86" Project="x86" />
+      <Platform Solution="PlantMAT|x86" Project="x86" />
+      <Platform Solution="Release|x86" Project="x86" />
+      <Platform Solution="Rsharp_app_release|x86" Project="x86" />
     </Project>
     <Project Path="../galaxy/src/RibbonEventBinding/RibbonEventBinding.shproj" />
     <Project Path="../mini-R/src/console/console/console.NET5.vbproj">
@@ -733,6 +774,7 @@
       <BuildType Solution="NPSearch|*" Project="Rsharp_app_release" />
       <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
       <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="CellaLAB-Desktop|Any CPU" Project="ARM32" />
     </Project>
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Visualization/Plots/plots-netcore5.vbproj">
       <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
@@ -954,6 +996,7 @@
     <BuildType Solution="nuget_release|*" Project="Release" />
     <BuildType Solution="PlantMAT|*" Project="Release" />
     <BuildType Solution="Rsharp_app_release|*" Project="Release" />
+    <Platform Solution="CellaLAB-Desktop|x64" Project="x64" />
     <Platform Solution="Debug|x64" Project="x64" />
     <Platform Solution="gcmodeller_desktop|x64" Project="x64" />
   </Project>
@@ -969,6 +1012,7 @@
     <BuildType Solution="nuget_release|*" Project="Release" />
     <BuildType Solution="PlantMAT|*" Project="Release" />
     <BuildType Solution="Rsharp_app_release|*" Project="Release" />
+    <Platform Solution="CellaLAB-Desktop|x64" Project="x64" />
     <Platform Solution="Debug|x64" Project="x64" />
     <Platform Solution="gcmodeller_desktop|x64" Project="x64" />
   </Project>
@@ -1014,6 +1058,7 @@
     <BuildType Solution="nuget_release|*" Project="Release" />
     <BuildType Solution="PlantMAT|*" Project="Release" />
     <BuildType Solution="Rsharp_app_release|*" Project="Release" />
+    <Platform Solution="CellaLAB-Desktop|x64" Project="x64" />
     <Platform Solution="Debug|x64" Project="x64" />
     <Platform Solution="gcmodeller_desktop|x64" Project="x64" />
   </Project>
@@ -1029,6 +1074,7 @@
     <BuildType Solution="nuget_release|*" Project="Release" />
     <BuildType Solution="PlantMAT|*" Project="Release" />
     <BuildType Solution="Rsharp_app_release|*" Project="Release" />
+    <Platform Solution="CellaLAB-Desktop|x64" Project="x64" />
     <Platform Solution="Debug|x64" Project="x64" />
     <Platform Solution="gcmodeller_desktop|x64" Project="x64" />
   </Project>
