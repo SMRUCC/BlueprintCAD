@@ -3,9 +3,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFrameworks>net10.0-windows</TargetFrameworks>
-    <StartupObject>BlueprintCAD.AppEnvironment</StartupObject>
+    <StartupObject>BlueprintCAD.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
-    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <MyType>WindowsForms</MyType>
     <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Platforms>AnyCPU;x64</Platforms>
