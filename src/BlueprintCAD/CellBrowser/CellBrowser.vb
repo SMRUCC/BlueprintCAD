@@ -147,7 +147,7 @@ Public Class CellBrowser
                 Call root.Nodes.Add(id)
             Next
 
-            Call Application.DoEvents()
+            Call System.Windows.Forms.Application.DoEvents()
             Call println($"loading molecule list ui... [metabolite tree -> {molSet.Key}]")
         Next
     End Sub

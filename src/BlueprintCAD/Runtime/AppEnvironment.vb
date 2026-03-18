@@ -20,6 +20,12 @@ Module AppEnvironment
 
     Public ReadOnly Property WebPort As Integer
 
+    Sub Main()
+        Call New FormMain().ShowDialog()
+        Call http.Kill()
+        Call http.Dispose()
+    End Sub
+
     Public Sub Init()
         _WebPort = TCPExtensions.GetFirstAvailablePort(-1)
         http = Process.Start(New ProcessStartInfo With {
