@@ -1,4 +1,5 @@
 ﻿Imports System.Runtime.CompilerServices
+Imports CellBuilder
 Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
@@ -62,7 +63,7 @@ Public Module Annotation
             Return enzyme_scores(0)
         Else
             Return enzyme_scores _
-                .OrderByDescending(Function(a) a.Score) _
+                .OrderByDescending(Function(a) a.score) _
                 .First
         End If
     End Function
