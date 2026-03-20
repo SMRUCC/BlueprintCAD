@@ -84,7 +84,7 @@ Module Program
 
     <Usage("./target.gbff --out gcmodeller.gcproj --config settings.json [--num_threads 8 --skip-TRN --workdir workspace_dir --enable-blast-cache]")>
     Public Function CompileGenbankFile(file As String, args As CommandLine) As Integer
-        Dim proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(file))
+        Dim proj = New ProjectCreator().FromGenBank(GBFF.File.LoadDatabase(file))
         Dim settings As Settings = Settings.Load(args.Required("--config", "Missing the required configuration file, `--config` argument must be specificed!"))
         Dim outproj As String = args("--out")
         Dim n_threads = args("--num_threads") Or -1
@@ -167,7 +167,7 @@ Module Program
             Dim outModel As String = $"{outdir}/{asm_name}.xml"
 
             Try
-                proj = ProjectCreator.FromGenBank(GBFF.File.LoadDatabase(asm))
+                proj = New ProjectCreator().FromGenBank(GBFF.File.LoadDatabase(asm))
             Catch ex As Exception
                 Call App.LogException(ex)
                 Continue For
