@@ -17,17 +17,19 @@ Public Class GenbankProperties
 
     Sub New(proj As GenBankProject)
         If proj IsNot Nothing Then
+            Dim annoSet As AnnotationSet = proj.annotations
+
             If Not proj.taxonomy Is Nothing Then
                 organism_name = proj.taxonomy.scientificName
             End If
 
             genes = proj.gene_table.TryCount
             proteins = proj.proteins.TryCount
-            operons = proj.operons.TryCount
-            transcript_factors = proj.transcript_factors.TryCount
-            enzymes = proj.ec_numbers.TryCount
-            tfbs = proj.tfbs_hits.TryCount
-            transporter = proj.transporter.TryCount
+            operons = annoSet.operons.TryCount
+            transcript_factors = annoSet.transcript_factors.TryCount
+            enzymes = annoSet.ec_numbers.TryCount
+            tfbs = annoSet.tfbs_hits.TryCount
+            transporter = annoSet.transporter.TryCount
             size = proj.nt _
                 .ToDictionary(Function(a) a.Key,
                               Function(a)

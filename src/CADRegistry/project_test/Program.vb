@@ -15,15 +15,16 @@ Module Program
         Dim proj = New ProjectCreator().FromGenBank(GBFF.File.LoadDatabase("G:\BlueprintCAD\demo\Escherichia coli str. K-12 substr. MG1655.gbff"))
         Dim server As New RegistryUrl()
         Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
+        Dim annoSet As AnnotationSet = proj.annotations
 
-        proj.operon_hits = OperonAnnotator.ParseBlastn("G:\BlueprintCAD\demo\tmp\Sophia\41948\operon_blast869219.txt").ToArray
-        proj.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, proj.operon_hits, knownOperons).ToArray
+        annoSet.operon_hits = OperonAnnotator.ParseBlastn("G:\BlueprintCAD\demo\tmp\Sophia\41948\operon_blast869219.txt").ToArray
+        annoSet.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, annoSet.operon_hits, knownOperons).ToArray
 
-        proj.enzyme_hits = BlastpOutputReader _
+        annoSet.enzyme_hits = BlastpOutputReader _
             .RunParser("G:\BlueprintCAD\demo\tmp\Sophia\19032\enzyme_blast650548.txt") _
             .ExportHitsResult _
             .ToArray
-        proj.ec_numbers = proj.enzyme_hits _
+        annoSet.ec_numbers = annoSet.enzyme_hits _
             .Select(Function(hits) hits.AssignECNumber()) _
             .Where(Function(ec) Not ec Is Nothing) _
             .ToDictionary(Function(a) a.gene_id)

@@ -29,6 +29,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     Public Property enzyme_cutoff As Double = 450
 
     Sub New(proj As GenBankProject, Optional serverUrl As String = RegistryUrl.defaultServer, Optional defaultName As String = Nothing)
+        Dim annoSet As AnnotationSet = proj.annotations
+
         Me.defaultName = defaultName
 
         If serverUrl.ToLower.StartsWith("http://") OrElse serverUrl.ToLower.StartsWith("https://") Then
@@ -37,7 +39,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
             Me.registry = New RegistryUrl(RegistryUrl.defaultServer, serverUrl)
         End If
 
-        Me.motifSites = proj.tfbs_hits.Values _
+        Me.motifSites = annoSet.tfbs_hits.Values _
             .IteratesALL _
             .Where(Function(a) a.identities > 0.97) _
             .GroupBy(Function(a) a.seeds(0)) _
@@ -149,7 +151,8 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     End Function
 
     Private Function CreateMetabolismNetwork(genes As Dictionary(Of String, gene)) As MetabolismStructure
-        Dim enzymes As Dictionary(Of String, ECNumberAnnotation) = proj.ec_numbers
+        Dim annoSet As AnnotationSet = proj.annotations
+        Dim enzymes As Dictionary(Of String, ECNumberAnnotation) = annoSet.ec_numbers
         Dim network As New Dictionary(Of String, WebJSON.Reaction)
         Dim ec_numbers As New Dictionary(Of String, List(Of String))
         Dim enzymeModels As New List(Of Enzyme)
@@ -165,7 +168,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Dim membraneTransport As New List(Of (ECNumberAnnotation, String, String()))
         Dim transporter As Dictionary(Of String, RankTerm) = ProteinLocations(
             From prot As RankTerm
-            In proj.membrane_proteins
+            In annoSet.membrane_proteins
             Where prot.term Like membranes
         )
 
@@ -406,14 +409,15 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
     Private Iterator Function GeneObjects(rnas As List(Of (rid$, RNA)), proteins As List(Of protein), regulations As List(Of transcription)) As IEnumerable(Of (rid$, gene))
         Dim nt As Dictionary(Of String, String) = proj.genes
         Dim RNA As RNA
-        Dim tfs As Dictionary(Of String, BestHit()) = proj.transcript_factors _
+        Dim annoSet As AnnotationSet = proj.annotations
+        Dim tfs As Dictionary(Of String, BestHit()) = annoSet.transcript_factors _
             .GroupBy(Function(tf) tf.QueryName) _
             .ToDictionary(Function(t) t.Key,
                           Function(t)
                               Return t.ToArray
                           End Function)
         Dim protein_id As String
-        Dim transporter As Dictionary(Of String, RankTerm) = ProteinLocations(proj.membrane_proteins)
+        Dim transporter As Dictionary(Of String, RankTerm) = ProteinLocations(annoSet.membrane_proteins)
 
         Call $"processing compile of {nt.Count} genes!".debug
 
@@ -526,6 +530,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
         Dim proteins As New List(Of protein)
         Dim regulationNetwork As New List(Of transcription)
         Dim replicons As New List(Of replicon)
+        Dim annoSet As AnnotationSet = proj.annotations
 
         For Each replicon_group As (rid As String, genes As gene()) In GeneObjects(RNAs, proteins, regulationNetwork) _
             .GroupBy(Function(a) a.rid) _
@@ -541,7 +546,7 @@ Public Class Compiler : Inherits Compiler(Of VirtualCell)
                               End Function)
             Dim operons As New List(Of TranscriptUnit)
 
-            For Each op As AnnotatedOperon In proj.operons.SafeQuery
+            For Each op As AnnotatedOperon In annoSet.operons.SafeQuery
                 Dim geneList = op.Genes _
                     .Where(Function(gene_id) geneSet.ContainsKey(gene_id)) _
                     .Select(Function(gene_id)

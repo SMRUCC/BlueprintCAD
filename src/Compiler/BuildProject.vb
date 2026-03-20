@@ -69,11 +69,13 @@ Public Class BuildProject
             Call localblast.Blastp(prot_data, transporter_db, tempOutfile, e:="1e-5").Run()
         End If
 
-        proj.transporter = BlastpOutputReader _
+        Dim annoSet As AnnotationSet = proj.annotations
+
+        annoSet.transporter = BlastpOutputReader _
             .RunParser(tempOutfile) _
             .ExportHitsResult(grepName:=Function(name) name.GetTagValue(" ")) _
             .ToArray
-        proj.membrane_proteins = proj.transporter _
+        annoSet.membrane_proteins = annoSet.transporter _
             .Select(Function(hits) RankTerm.RankTopTerm(hits)) _
             .IteratesALL _
             .ToArray
@@ -82,6 +84,7 @@ Public Class BuildProject
     Public Sub EnzymeAnnotation()
         Dim tempOutfile As String = TempFileSystem.GetAppSysTempFile(".txt", prefix:=$"ec_number_{session_hashcode}")
         Dim enzyme_db As String = $"{settings.blastdb}/ec_numbers.fasta"
+        Dim annoSet As AnnotationSet = proj.annotations
 
         If enableBlastCache Then
             tempOutfile = App.SysTemp & $"/{session_hashcode}/ec_numbers_blastp.txt"
@@ -94,14 +97,14 @@ Public Class BuildProject
             Call localblast.Blastp(prot_data, enzyme_db, tempOutfile, e:="1e-5").Run()
         End If
 
-        proj.enzyme_hits = BlastpOutputReader _
+        annoSet.enzyme_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
             .ExportHitsResult(Function(name)
                                   Dim kv = name.GetTagValue(" ")
                                   Return New NamedValue(Of String)(kv.Value, kv.Name)
                               End Function) _
             .ToArray
-        proj.ec_numbers = proj.enzyme_hits _
+        annoSet.ec_numbers = annoSet.enzyme_hits _
             .Select(Function(hits) hits.AssignECNumber()) _
             .Where(Function(ec) Not ec Is Nothing) _
             .ToDictionary(Function(a)
@@ -124,11 +127,13 @@ Public Class BuildProject
             Call localblast.Blastp(prot_data, tf_db, tempOutfile, e:="1e-5").Run()
         End If
 
-        proj.tf_hits = BlastpOutputReader _
+        Dim annoSet As AnnotationSet = proj.annotations
+
+        annoSet.tf_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
             .ExportHitsResult _
             .ToArray
-        proj.transcript_factors = proj.tf_hits _
+        annoSet.transcript_factors = annoSet.tf_hits _
             .Select(Function(hits) hits.AssignTFFamilyHit()) _
             .Where(Function(ec) Not ec Is Nothing) _
             .ToArray
@@ -141,15 +146,16 @@ Public Class BuildProject
                         Return New FastaSeq({seq.Key}, seq.Value)
                     End Function) _
             .ToArray
+        Dim annoSet As AnnotationSet = proj.annotations
 
         If motif_db.FileExists Then
-            proj.tfbs_hits = CellBuilder.MotifDatabase _
+            annoSet.tfbs_hits = CellBuilder.MotifDatabase _
                 .OpenReadOnly(motif_db.OpenReadonly) _
                 .ScanSites(tss,
                            n_threads:=settings.n_threads,
                            workflowMode:=True)
         Else
-            proj.tfbs_hits = New Dictionary(Of String, MotifMatch())
+            annoSet.tfbs_hits = New Dictionary(Of String, MotifMatch())
         End If
     End Sub
 
@@ -169,8 +175,10 @@ Public Class BuildProject
             Call localblast.Blastn(gene_data, operon_db, tempOutfile, e:="1e-5").Run()
         End If
 
-        proj.operon_hits = OperonAnnotator.ParseBlastn(tempOutfile).ToArray
-        proj.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, proj.operon_hits, knownOperons).ToArray
+        Dim annoSet As AnnotationSet = proj.annotations
+
+        annoSet.operon_hits = OperonAnnotator.ParseBlastn(tempOutfile).ToArray
+        annoSet.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, annoSet.operon_hits, knownOperons).ToArray
     End Sub
 
     Public Shared Sub CreateModelProject(proj As GenBankProject, settings As Settings, skipTRN As Boolean, outproj As String, Optional enableBlastCache As Boolean = False)
