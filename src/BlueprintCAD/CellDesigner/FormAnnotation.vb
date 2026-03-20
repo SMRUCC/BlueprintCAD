@@ -205,14 +205,16 @@ Public Class FormAnnotation
             Return
         End If
 
-        For Each enzyme As HitCollection In proj.enzyme_hits.SafeQuery
+        Dim annoSet = proj.annotations
+
+        For Each enzyme As HitCollection In annoSet.enzyme_hits.SafeQuery
             Dim supports As Integer = 0
             Dim annotation As String = "-"
             Dim score As Double = 0
             Dim source_id As String = "-"
 
-            If proj.ec_numbers.ContainsKey(enzyme.QueryName) Then
-                Dim result As ECNumberAnnotation = proj.ec_numbers(enzyme.QueryName)
+            If annoSet.ec_numbers.ContainsKey(enzyme.QueryName) Then
+                Dim result As ECNumberAnnotation = annoSet.ec_numbers(enzyme.QueryName)
 
                 supports = result.SourceIDs.Length
                 annotation = result.EC
@@ -230,14 +232,14 @@ Public Class FormAnnotation
         Next
 
         If Not metadata Is Nothing Then
-            metadata.enzymes = proj.ec_numbers.Count
+            metadata.enzymes = annoSet.ec_numbers.Count
         End If
 
         EnzymeAnnotationCmd.Running = False
 
-        If Not proj.enzyme_hits.IsNullOrEmpty Then
+        If Not annoSet.enzyme_hits.IsNullOrEmpty Then
             Call EnzymeAnnotationCmd.SetStatusIcon(SuccessIcon)
-            Call EnzymeAnnotationCmd.SetStatusText($"Found {proj.enzyme_hits.Length} enzyme number hits.")
+            Call EnzymeAnnotationCmd.SetStatusText($"Found {annoSet.enzyme_hits.Length} enzyme number hits.")
         End If
     End Sub
 
@@ -257,7 +259,9 @@ Public Class FormAnnotation
             Return
         End If
 
-        For Each operon As AnnotatedOperon In proj.operons
+        Dim annoSet As AnnotationSet = proj.annotations
+
+        For Each operon As AnnotatedOperon In annoSet.operons
             Call tbl.Rows.Add(operon.OperonID,
                               operon.name,
                               operon.Type.ToString,
@@ -269,14 +273,14 @@ Public Class FormAnnotation
         Next
 
         If Not metadata Is Nothing Then
-            metadata.operons = proj.operons.Length
+            metadata.operons = annoSet.operons.Length
         End If
 
         OperonAnnotationCmd.Running = False
 
-        If Not proj.enzyme_hits.IsNullOrEmpty Then
+        If Not annoSet.enzyme_hits.IsNullOrEmpty Then
             Call OperonAnnotationCmd.SetStatusIcon(SuccessIcon)
-            Call OperonAnnotationCmd.SetStatusText($"{proj.operons.Length} operons was annotated.")
+            Call OperonAnnotationCmd.SetStatusText($"{ annoSet.operons.Length} operons was annotated.")
         End If
     End Sub
 
@@ -298,15 +302,16 @@ Public Class FormAnnotation
 
         Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
         Dim tf_db As String = $"{App.HOME}/data/TF.fasta"
+        Dim annoSet As AnnotationSet = proj.annotations
 
         ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
         Await Task.Run(Sub() blastp.Blastp(tempfile, tf_db, tempOutfile, e:=0.01).Run())
 
-        proj.tf_hits = BlastpOutputReader _
+        annoSet.tf_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
             .ExportHitsResult _
             .ToArray
-        proj.transcript_factors = proj.tf_hits _
+        annoSet.transcript_factors = annoSet.tf_hits _
             .Select(Function(hits) hits.AssignTFFamilyHit()) _
             .Where(Function(ec) Not ec Is Nothing) _
             .ToArray
@@ -315,6 +320,8 @@ Public Class FormAnnotation
     End Sub
 
     Private Sub LoadTFHits(tbl As DataTable)
+        Dim annoSet As AnnotationSet = proj.annotations
+
         Call tbl.Columns.Add("gene_id", GetType(String))
         Call tbl.Columns.Add("tf family", GetType(String))
         Call tbl.Columns.Add("hit", GetType(String))
@@ -328,7 +335,7 @@ Public Class FormAnnotation
             Return
         End If
 
-        For Each tf As BestHit In proj.transcript_factors
+        For Each tf As BestHit In annoSet.transcript_factors
             Call tbl.Rows.Add(tf.QueryName,
                               tf.HitName,
                               tf.description,
@@ -340,14 +347,14 @@ Public Class FormAnnotation
         Next
 
         If Not metadata Is Nothing Then
-            metadata.transcript_factors = proj.transcript_factors.Length
+            metadata.transcript_factors = annoSet.transcript_factors.Length
         End If
 
         TFAnnotationCmd.Running = False
 
-        If Not proj.transcript_factors.IsNullOrEmpty Then
+        If Not annoSet.transcript_factors.IsNullOrEmpty Then
             Call TFAnnotationCmd.SetStatusIcon(SuccessIcon)
-            Call TFAnnotationCmd.SetStatusText($"{proj.transcript_factors.Length} transcript factors was annotated.")
+            Call TFAnnotationCmd.SetStatusText($"{annoSet.transcript_factors.Length} transcript factors was annotated.")
         End If
     End Sub
 
@@ -369,15 +376,16 @@ Public Class FormAnnotation
 
         Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
         Dim enzyme_db As String = $"{App.HOME}/data/ec_numbers.fasta"
+        Dim annoSet As AnnotationSet = proj.annotations
 
         ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
         Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=0.01).Run())
 
-        proj.enzyme_hits = BlastpOutputReader _
+        annoSet.enzyme_hits = BlastpOutputReader _
             .RunParser(tempOutfile) _
             .ExportHitsResult _
             .ToArray
-        proj.ec_numbers = proj.enzyme_hits _
+        annoSet.ec_numbers = annoSet.enzyme_hits _
             .Select(Function(hits) hits.AssignECNumber()) _
             .Where(Function(ec) Not ec Is Nothing) _
             .ToDictionary(Function(a) a.gene_id)
@@ -403,15 +411,16 @@ Public Class FormAnnotation
 
         Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
         Dim enzyme_db As String = $"{App.HOME}/data/Membrane.fasta"
+        Dim annoSet As AnnotationSet = proj.annotations
 
         ' Await Task.Run(Sub() blastp.FormatDb(enzyme_db, dbType:=blastp.MolTypeProtein).Run())
         Await Task.Run(Sub() blastp.Blastp(tempfile, enzyme_db, tempOutfile, e:=0.01).Run())
 
-        proj.transporter = BlastpOutputReader _
+        annoSet.transporter = BlastpOutputReader _
             .RunParser(tempOutfile) _
             .ExportHitsResult(grepName:=Function(name) name.GetTagValue("|")) _
             .ToArray
-        proj.membrane_proteins = proj.transporter _
+        annoSet.membrane_proteins = annoSet.transporter _
             .Select(Function(hits) RankTerm.RankTopTerm(hits)) _
             .IteratesALL _
             .ToArray
@@ -420,7 +429,8 @@ Public Class FormAnnotation
     End Sub
 
     Private Sub loadTransporter(tbl As DataTable)
-        Dim transporters As IGrouping(Of String, RankTerm)() = proj.membrane_proteins _
+        Dim annoSet As AnnotationSet = proj.annotations
+        Dim transporters As IGrouping(Of String, RankTerm)() = annoSet.membrane_proteins _
             .SafeQuery _
             .GroupBy(Function(a) a.queryName) _
             .ToArray
@@ -445,7 +455,7 @@ Public Class FormAnnotation
 
         TransporterAnnotationCmd.Running = False
 
-        If Not proj.membrane_proteins.IsNullOrEmpty Then
+        If Not annoSet.membrane_proteins.IsNullOrEmpty Then
             Call TransporterAnnotationCmd.SetStatusIcon(SuccessIcon)
             Call TransporterAnnotationCmd.SetStatusText($"{n} membrane transporter was annotated.")
         End If
@@ -456,9 +466,10 @@ Public Class FormAnnotation
             Return
         End If
 
+        Dim annoSet As AnnotationSet = proj.annotations
         Dim row = DataGridView1.SelectedRows(0)
         Dim gene_id = CStr(row.Cells(0).Value)
-        Dim hits = proj.enzyme_hits.KeyItem(gene_id)
+        Dim hits = annoSet.enzyme_hits.KeyItem(gene_id)
 
         viewDetails = Nothing
 
@@ -584,12 +595,13 @@ Public Class FormAnnotation
         Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
         Dim operon_db As String = $"{App.HOME}/data/operon.fasta"
         Dim knownOperons = Await Task.Run(Function() Workbench.CADRegistry.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id))
+        Dim annoSet As AnnotationSet = proj.annotations
 
         Await Task.Run(Sub() blastp.FormatDb(operon_db, dbType:=blastp.MolTypeNucleotide).Run())
         Await Task.Run(Sub() blastp.Blastn(tempfile, operon_db, tempOutfile, e:=0.01).Run())
 
-        proj.operon_hits = Await Task.Run(Function() OperonAnnotator.ParseBlastn(tempOutfile).ToArray)
-        proj.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, proj.operon_hits, knownOperons).ToArray
+        annoSet.operon_hits = Await Task.Run(Function() OperonAnnotator.ParseBlastn(tempOutfile).ToArray)
+        annoSet.operons = OperonAnnotator.AnnotateOperons(proj.gene_table, annoSet.operon_hits, knownOperons).ToArray
 
         Call operonLoader.LoadTable(AddressOf LoadOperonHits)
     End Sub
@@ -618,7 +630,7 @@ Public Class FormAnnotation
                                           progress:=AddressOf TFBSAnnotationCmd.SetStatusText)
                        End Sub)
 
-        proj.tfbs_hits = tfbsList
+        proj.annotations.tfbs_hits = tfbsList
 
         tfbsLoader.LoadTable(AddressOf LoadTFBSList)
     End Sub
@@ -627,6 +639,7 @@ Public Class FormAnnotation
 
     Private Sub LoadTFBSList(tbl As DataTable)
         Dim hits As Integer = 0
+        Dim annoSet As AnnotationSet = proj.annotations
 
         Call tbl.Columns.Add("gene_id", GetType(String))
         Call tbl.Columns.Add("tfbs number", GetType(Integer))
@@ -637,7 +650,7 @@ Public Class FormAnnotation
             Return
         End If
 
-        For Each site As KeyValuePair(Of String, MotifMatch()) In proj.tfbs_hits
+        For Each site As KeyValuePair(Of String, MotifMatch()) In annoSet.tfbs_hits
             Dim familyList = site.Value _
                 .Where(Function(a) a.identities > motif_identities_filter) _
                 .GroupBy(Function(a) a.seeds(0)) _
@@ -650,7 +663,7 @@ Public Class FormAnnotation
                               If(topFamily Is Nothing, "-", topFamily.Key))
         Next
 
-        Dim nsites As Integer = proj.tfbs_hits.Values.Sum(Function(a) a.Length)
+        Dim nsites As Integer = annoSet.tfbs_hits.Values.Sum(Function(a) a.Length)
 
         If Not metadata Is Nothing Then
             metadata.tfbs = nsites
@@ -658,7 +671,7 @@ Public Class FormAnnotation
 
         TFBSAnnotationCmd.Running = False
 
-        If Not proj.tfbs_hits.IsNullOrEmpty Then
+        If Not annoSet.tfbs_hits.IsNullOrEmpty Then
             Call TFBSAnnotationCmd.SetStatusIcon(SuccessIcon)
             Call TFBSAnnotationCmd.SetStatusText($"{nsites} motif site was found.")
         End If
@@ -758,7 +771,7 @@ Public Class FormAnnotation
 
         Dim row As DataGridViewRow = AdvancedDataGridView3.SelectedRows(0)
         Dim gene_id = CStr(row.Cells(0).Value)
-        Dim hits As MotifMatch() = proj.tfbs_hits.TryGetValue(gene_id)
+        Dim hits As MotifMatch() = proj.annotations.tfbs_hits.TryGetValue(gene_id)
 
         viewDetails = AddressOf viewMotifSite
 
@@ -793,7 +806,7 @@ Public Class FormAnnotation
 
         Dim row As DataGridViewRow = AdvancedDataGridView4.SelectedRows(0)
         Dim gene_id = CStr(row.Cells(0).Value)
-        Dim hits As HitCollection = proj.tf_hits.KeyItem(gene_id)
+        Dim hits As HitCollection = proj.annotations.tf_hits.KeyItem(gene_id)
 
         viewDetails = Nothing
 
