@@ -112,6 +112,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\cell-render\src\CellBuilder\CellBuilder.vbproj" />
     <ProjectReference Include="..\..\..\galaxy\src\GalaxyChartLibs\GalaxyChartLibs.vbproj" />
     <ProjectReference Include="..\..\..\galaxy\src\GalaxyData\GalaxyData.vbproj" />
     <ProjectReference Include="..\..\..\galaxy\src\GalaxyExcelPad\GalaxyExcelPad.vbproj" />

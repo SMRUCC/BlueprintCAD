@@ -1,4 +1,6 @@
-﻿Public Class GenbankProperties
+﻿Imports CellBuilder
+
+Public Class GenbankProperties
 
     Public Property organism_name As String = "unknown"
     Public Property size As Dictionary(Of String, String)

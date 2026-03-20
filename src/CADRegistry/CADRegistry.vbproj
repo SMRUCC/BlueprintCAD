@@ -49,6 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\cell-render\src\CellBuilder\CellBuilder.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\MotifScanner\MotifScanner.NET5.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\SequenceAlignment\SequenceAlignment.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\SequencePatterns.Abstract\SequencePatterns.Abstract.NET5.vbproj" />
