@@ -1,4 +1,5 @@
 ﻿Imports CADRegistry
+Imports CellBuilder
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Language

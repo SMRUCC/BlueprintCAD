@@ -1,5 +1,6 @@
 Imports System.ComponentModel
 Imports CADRegistry
+Imports CellBuilder
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
 Imports Microsoft.VisualBasic.Serialization.JSON

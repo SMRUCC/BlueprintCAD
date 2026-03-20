@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Text
 Imports CADRegistry
+Imports CellBuilder
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ApplicationServices

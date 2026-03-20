@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports CADRegistry
+Imports CellBuilder
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
@@ -142,7 +143,7 @@ Public Class BuildProject
             .ToArray
 
         If motif_db.FileExists Then
-            proj.tfbs_hits = CADRegistry.MotifDatabase _
+            proj.tfbs_hits = CellBuilder.MotifDatabase _
                 .OpenReadOnly(motif_db.OpenReadonly) _
                 .ScanSites(tss,
                            n_threads:=settings.n_threads,
