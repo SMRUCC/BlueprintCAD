@@ -1,3 +1,4 @@
+Imports CellBuilder
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MIME.application.json
@@ -8,13 +9,7 @@ Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model
 Public Class RegistryUrl
 
     ReadOnly server As String
-
-#Region "in-memory cache data"
-    ReadOnly cachedOperon As WebJSON.Operon()
-    ReadOnly cachedReactions As Dictionary(Of String, WebJSON.Reaction())
-    ReadOnly cachedMolecules As Dictionary(Of String, WebJSON.Molecule)
-    ReadOnly cachedExpansion As Dictionary(Of String, WebJSON.Reaction())
-#End Region
+    ReadOnly cache As New DataRepository
 
     Public Const defaultServer As String = "http://biocad.innovation.ac.cn"
 
@@ -22,43 +17,12 @@ Public Class RegistryUrl
         Me.server = Strings.Trim(server).TrimEnd("/"c)
 
         If Not cache_dir.StringEmpty() Then
-            Call "start to load local cahced database files".info
-
-            Dim network = $"{cache_dir}/metabolic_network.jsonl".LoadJSONL(Of WebJSON.Reaction).ToArray
-
-            cachedOperon = $"{cache_dir}/all_operons.json".LoadJsonFile(Of WebJSON.Operon())(throwEx:=False)
-            cachedMolecules = $"{cache_dir}/molecules.jsonl".LoadJSONL(Of WebJSON.Molecule).ToDictionary(Function(m) m.id)
-            cachedReactions = (From rxn In network Where Not rxn.law.IsNullOrEmpty) _
-                .Select(Function(r) r.law.Select(Function(ec) (ec.ec_number, r))) _
-                .IteratesALL _
-                .GroupBy(Function(r) r.ec_number) _
-                .ToDictionary(Function(r) r.Key,
-                              Function(r)
-                                  Return r.Select(Function(i) i.r).ToArray
-                              End Function)
-            cachedExpansion = (From rxn In network Where rxn.law.IsNullOrEmpty) _
-                .Select(Function(r)
-                            Return r.left.JoinIterates(r.right).Select(Function(c) (c.molecule_id, r))
-                        End Function) _
-                .IteratesALL _
-                .GroupBy(Function(c) c.molecule_id) _
-                .ToDictionary(Function(c) c.Key.ToString,
-                              Function(c)
-                                  Return c.Select(Function(i) i.r).GroupBy(Function(r) r.guid).Select(Function(r) r.First).ToArray
-                              End Function)
-
-            If cachedOperon Is Nothing Then cachedOperon = {}
-
-            Call "load cached database from a given cache dir:".info
-            Call $" * {cachedOperon.Length} known operons".info
-            Call $" * {cachedReactions.Count} known enzyme reaction network".info
-            Call $" * {cachedExpansion.Count} reaction network expansions".info
-            Call $" * {cachedMolecules.Count} associated metabolites".info
+            cache = New DataRepository(cache_dir)
         End If
     End Sub
 
     Public Function GetAllKnownOperons() As WebJSON.Operon()
-        If cachedOperon Is Nothing Then
+        If Not cache.HasOperonDataCache Then
             Dim url As String = $"{server}/registry/known_operons/"
             Dim json_str As String = url.GET
             Dim json As JsonObject = JsonParser.Parse(json_str)
@@ -70,9 +34,7 @@ Public Class RegistryUrl
                 Return json!info.CreateObject(Of WebJSON.Operon())
             End If
         Else
-            ' just read cache data for local test
-            ' not used cache dir for save web request data
-            Return cachedOperon.ToArray
+            Return cache.GetAllKnownOperons
         End If
     End Function
 
@@ -83,7 +45,7 @@ Public Class RegistryUrl
     End Function
 
     Public Function GetMoleculeDataById(id As UInteger) As WebJSON.Molecule
-        If cachedMolecules Is Nothing Then
+        If Not cache.HasMoleculeDataCache Then
             Dim url As String = $"{server}/registry/molecule/?id={id}"
             Dim key As String = $"+{id}"
 
@@ -91,7 +53,7 @@ Public Class RegistryUrl
 
             Return cache.ComputeIfAbsent(key, Function() GetMoleculeData(url))
         Else
-            Return cachedMolecules.TryGetValue(id.ToString, [default]:=cachedMolecules.TryGetValue("BioCAD" & id.ToString.PadLeft(11, "0"c)))
+            Return cache.GetMoleculeDataByID(id)
         End If
     End Function
 
