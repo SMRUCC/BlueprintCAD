@@ -3,6 +3,7 @@ Imports CellBuilder
 Imports SMRUCC.genomics.Assembly.NCBI.GenBank
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
+Imports SMRUCC.genomics.Model.OperonMapper
 
 Module Program
 
@@ -14,7 +15,7 @@ Module Program
     Sub testCreateProject()
         Dim proj = New ProjectCreator().FromGenBank(GBFF.File.LoadDatabase("G:\BlueprintCAD\demo\Escherichia coli str. K-12 substr. MG1655.gbff"))
         Dim server As New RegistryUrl()
-        Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
+        Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id, Function(a) New ODBOperon(a.cluster_id, a.name, a.members))
         Dim annoSet As AnnotationSet = proj.annotations
 
         annoSet.operon_hits = OperonAnnotator.ParseBlastn("G:\BlueprintCAD\demo\tmp\Sophia\41948\operon_blast869219.txt").ToArray

@@ -9,6 +9,7 @@ Imports SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlus
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
+Imports SMRUCC.genomics.Model.OperonMapper
 Imports SMRUCC.genomics.SequenceModel.FASTA
 Imports TRNScanner
 
@@ -160,7 +161,7 @@ Public Class BuildProject
     End Sub
 
     Public Sub BuildOperonClusters()
-        Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id)
+        Dim knownOperons = server.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id, Function(a) New ODBOperon(a.cluster_id, a.name, a.members))
         Dim tempOutfile = TempFileSystem.GetAppSysTempFile(".txt", prefix:=$"operon_{App.PID}")
         Dim operon_db As String = $"{settings.blastdb}/operon.fasta"
 

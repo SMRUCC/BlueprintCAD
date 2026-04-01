@@ -24,6 +24,7 @@ Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.BLASTOutput.BlastPlu
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Programs
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Tasks.Models
+Imports SMRUCC.genomics.Model.OperonMapper
 Imports SMRUCC.genomics.SequenceModel.FASTA
 Imports SMRUCC.genomics.Visualize.ChromosomeMap
 Imports SMRUCC.genomics.Visualize.ChromosomeMap.Configuration
@@ -594,7 +595,15 @@ Public Class FormAnnotation
 
         Dim blastp As New BLASTPlus(Workbench.Settings.ncbi_blast) With {.NumThreads = Workbench.Settings.n_threads}
         Dim operon_db As String = $"{App.HOME}/data/operon.fasta"
-        Dim knownOperons = Await Task.Run(Function() Workbench.CADRegistry.GetAllKnownOperons.ToDictionary(Function(a) a.cluster_id))
+        Dim knownOperons = Await Task _
+            .Run(Function()
+                     Return Workbench.CADRegistry _
+                        .GetAllKnownOperons _
+                        .ToDictionary(Function(a) a.cluster_id,
+                                      Function(a)
+                                          Return New ODBOperon(a.cluster_id, a.name, a.members)
+                                      End Function)
+                 End Function)
         Dim annoSet As AnnotationSet = proj.annotations
 
         Await Task.Run(Sub() blastp.FormatDb(operon_db, dbType:=blastp.MolTypeNucleotide).Run())

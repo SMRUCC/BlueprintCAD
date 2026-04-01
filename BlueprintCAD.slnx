@@ -347,6 +347,12 @@
     </Project>
   </Folder>
   <Folder Name="/framework/math/">
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data/word2vec/word2vec.vbproj">
+      <BuildType Solution="CellaLAB-Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Desktop|*" Project="Rsharp_app_release" />
+      <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="*|x86" Project="x86" />
+    </Project>
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/DataMining/BinaryTree/btree-netcore5.vbproj">
       <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
       <BuildType Solution="Desktop|*" Project="LipidSearch" />
@@ -372,6 +378,38 @@
       <BuildType Solution="mzkit|*" Project="Debug" />
       <BuildType Solution="NPSearch|*" Project="Rsharp_app_release" />
       <BuildType Solution="PlantMAT|*" Project="Rsharp_app_release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/MachineLearning/Bootstrapping/Bootstrapping.vbproj">
+      <BuildType Solution="CellaLAB-Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="CFD_win32|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Docker|*" Project="Release" />
+      <BuildType Solution="gcmodeller_desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="LipidSearch|*" Project="Rsharp_app_release" />
+      <BuildType Solution="mzkit_win32|*" Project="Rsharp_app_release" />
+      <BuildType Solution="mzkit|*" Project="Debug" />
+      <BuildType Solution="NPSearch|*" Project="Rsharp_app_release" />
+      <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
+      <BuildType Solution="PlantMAT|*" Project="Rsharp_app_release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/MachineLearning/DeepLearning/DeepLearning.NET6.vbproj">
+      <BuildType Solution="CellaLAB-Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
+      <BuildType Solution="Desktop|*" Project="LipidSearch" />
+      <BuildType Solution="Docker|*" Project="Release" />
+      <BuildType Solution="NPSearch|*" Project="LipidSearch" />
+      <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/MachineLearning/TensorFlow/TensorFlow.vbproj">
+      <BuildType Solution="CellaLAB-Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="CFD_win32|*" Project="LipidSearch" />
+      <BuildType Solution="Desktop|*" Project="LipidSearch" />
+      <BuildType Solution="Docker|*" Project="Release" />
+      <BuildType Solution="NPSearch|*" Project="LipidSearch" />
+      <BuildType Solution="PlantMAT|*" Project="LipidSearch" />
       <Platform Solution="*|x64" Project="x64" />
     </Project>
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Mathematica/Math/ANOVA/ANOVA.vbproj">
@@ -426,6 +464,18 @@
       <BuildType Solution="Docker|*" Project="Release" />
       <BuildType Solution="gcmodeller_desktop|*" Project="nuget_release" />
       <BuildType Solution="mzkit_win32|*" Project="Rsharp_app_release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/NLP/NLP.NET.vbproj">
+      <BuildType Solution="CellaLAB-Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="CFD_win32|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Docker|*" Project="Release" />
+      <BuildType Solution="gcmodeller_desktop|*" Project="nuget_release" />
+      <BuildType Solution="LipidSearch|*" Project="nuget_release" />
+      <BuildType Solution="mzkit|*" Project="Debug" />
+      <BuildType Solution="NPSearch|*" Project="Rsharp_app_release" />
+      <BuildType Solution="PlantMAT|*" Project="Rsharp_app_release" />
       <Platform Solution="*|x64" Project="x64" />
     </Project>
   </Folder>
@@ -683,6 +733,20 @@
       <Platform Solution="*|x64" Project="x64" />
     </Project>
     <Project Path="../GCModeller/src/GCModeller/analysis/OperonMapper/OperonMapper.vbproj">
+      <BuildType Solution="CellaLAB-Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="CFD_win32|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="Docker|*" Project="Release" />
+      <BuildType Solution="gcmodeller_desktop|*" Project="Rsharp_app_release" />
+      <BuildType Solution="LipidSearch|*" Project="Rsharp_app_release" />
+      <BuildType Solution="mzkit_win32|*" Project="Rsharp_app_release" />
+      <BuildType Solution="mzkit|*" Project="Debug" />
+      <BuildType Solution="NPSearch|*" Project="Rsharp_app_release" />
+      <BuildType Solution="nuget_release|*" Project="Rsharp_app_release" />
+      <BuildType Solution="PlantMAT|*" Project="Rsharp_app_release" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/GCModeller/analysis/ProteinTools/ProteinMatrix/ProteinMatrix.vbproj">
       <BuildType Solution="CellaLAB-Desktop|*" Project="Rsharp_app_release" />
       <BuildType Solution="CFD_win32|*" Project="Rsharp_app_release" />
       <BuildType Solution="Desktop|*" Project="Rsharp_app_release" />
