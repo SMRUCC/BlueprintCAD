@@ -73,7 +73,7 @@ Module Program
         Dim proj As GenBankProject = ProjectIO.Load(file)
         Dim serverUrl As String = args("--server") Or RegistryUrl.defaultServer
         Dim savefile As String = args("--out") Or file.ChangeSuffix("xml")
-        Dim compiler As New Compiler(proj, serverUrl, name)
+        Dim compiler As New CellBuilder.Compiler(proj, serverUrl, name)
         Dim model As VirtualCell = compiler.Compile(args)
 
         Return model _
@@ -126,7 +126,7 @@ Module Program
             End If
 
             ' Try
-            Call New Compiler(proj, serverUrl) _
+            Call New CellBuilder.Compiler(proj, serverUrl) _
                 .Compile(args) _
                 .GetXml _
                 .SaveTo(outModel)
@@ -184,7 +184,7 @@ Module Program
 
             If outProj.FileExists Then
                 Try
-                    Dim compiler As New Compiler(ProjectIO.Load(outProj), serverUrl)
+                    Dim compiler As New CellBuilder.Compiler(ProjectIO.Load(outProj), serverUrl)
                     Dim model As VirtualCell = compiler.Compile(args)
 
                     Call model.GetXml.SaveTo(outModel)

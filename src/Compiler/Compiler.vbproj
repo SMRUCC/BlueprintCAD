@@ -56,6 +56,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\cell-render\src\CellBuilder\CellBuilder.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\HTS_matrix\HTS_matrix-netcore5.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\OperonMapper\OperonMapper.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\MotifScanner\MotifScanner.NET5.vbproj" />
