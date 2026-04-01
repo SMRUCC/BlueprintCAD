@@ -1062,7 +1062,9 @@
     <Platform Solution="*|x64" Project="x64" />
   </Project>
   <Project Path="../cell-render/src/CellBuilder/CellBuilder.vbproj">
-    <BuildType Solution="CellaLAB-Desktop|*" Project="Debug" />
+    <BuildType Solution="CellaLAB-Desktop|Any CPU" Project="Debug" />
+    <BuildType Solution="CellaLAB-Desktop|x64" Project="Release" />
+    <BuildType Solution="CellaLAB-Desktop|x86" Project="Debug" />
     <BuildType Solution="CFD_win32|*" Project="Release" />
     <BuildType Solution="Desktop|*" Project="Release" />
     <BuildType Solution="Docker|*" Project="Release" />
@@ -1074,6 +1076,7 @@
     <BuildType Solution="nuget_release|*" Project="Release" />
     <BuildType Solution="PlantMAT|*" Project="Release" />
     <BuildType Solution="Rsharp_app_release|*" Project="Release" />
+    <Platform Solution="CellaLAB-Desktop|x64" Project="x64" />
   </Project>
   <Project Path="../GCModeller/src/GCModeller/analysis/SequenceToolkit/TRNScanner/TRNScanner.vbproj" Id="dee19060-feac-46ab-84c4-805330a5e624">
     <BuildType Solution="CFD_win32|*" Project="Release" />
