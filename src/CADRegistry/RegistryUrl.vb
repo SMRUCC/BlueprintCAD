@@ -4,7 +4,7 @@ Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.MIME.application.json.Javascript
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model
 
-Public Class RegistryUrl
+Public Class RegistryUrl : Implements IDataRegistry
 
     ReadOnly server As String
     ReadOnly cache As New DataRepository
@@ -42,7 +42,7 @@ Public Class RegistryUrl
         Return Not test Is Nothing
     End Function
 
-    Public Function GetMoleculeDataById(id As UInteger) As WebJSON.Molecule
+    Public Function GetMoleculeDataById(id As UInteger) As WebJSON.Molecule Implements IDataRegistry.GetMoleculeDataByID
         If Not cache.HasMoleculeDataCache Then
             Dim url As String = $"{server}/registry/molecule/?id={id}"
             Dim key As String = $"+{id}"
@@ -67,7 +67,7 @@ Public Class RegistryUrl
         End If
     End Function
 
-    Public Function GetAssociatedReactions(ec_number As String, Optional simple As Boolean = False) As Dictionary(Of String, WebJSON.Reaction)
+    Public Function GetAssociatedReactions(ec_number As String, Optional simple As Boolean = False) As Dictionary(Of String, WebJSON.Reaction) Implements IDataRegistry.GetAssociatedReactions
         If Not cache.HasReactionDataCache Then
             Dim url As String = $"{server}/registry/reaction_network/?ec_number={ec_number}&simple={simple.ToString.ToLower}"
             Dim key As String = $"{ec_number}:{simple.ToString.ToLower}"
@@ -85,7 +85,7 @@ Public Class RegistryUrl
     ''' </summary>
     ''' <param name="registry_id">id of the molecule</param>
     ''' <returns></returns>
-    Public Function ExpandNetworkByCompound(registry_id As String) As Dictionary(Of String, WebJSON.Reaction)
+    Public Function ExpandNetworkByCompound(registry_id As String) As Dictionary(Of String, WebJSON.Reaction) Implements IDataRegistry.ExpandNetworkByCompound
         If Not cache.HasExpansionNetworkDataCache Then
             Dim url As String = $"{server}/registry/expand_network/?cid={registry_id}"
             Dim key As String = registry_id
