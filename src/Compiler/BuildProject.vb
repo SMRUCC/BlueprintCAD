@@ -105,9 +105,8 @@ Public Class BuildProject
                                   Return New NamedValue(Of String)(kv.Value, kv.Name)
                               End Function) _
             .ToArray
-        annoSet.ec_numbers = annoSet.enzyme_hits _
-            .Select(Function(hits) hits.AssignECNumber()) _
-            .Where(Function(ec) Not ec Is Nothing) _
+        annoSet.ec_numbers = ECNumberAnnotation _
+            .MakeEnzymeTerms(annoSet.enzyme_hits) _
             .ToDictionary(Function(a)
                               Return a.gene_id
                           End Function)
