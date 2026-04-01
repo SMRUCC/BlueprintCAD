@@ -1,9 +1,7 @@
 Imports CellBuilder
 Imports Microsoft.VisualBasic.ComponentModel.Collection
-Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.MIME.application.json.Javascript
-Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model
 
 Public Class RegistryUrl
@@ -70,7 +68,7 @@ Public Class RegistryUrl
     End Function
 
     Public Function GetAssociatedReactions(ec_number As String, Optional simple As Boolean = False) As Dictionary(Of String, WebJSON.Reaction)
-        If cachedReactions Is Nothing Then
+        If Not cache.HasReactionDataCache Then
             Dim url As String = $"{server}/registry/reaction_network/?ec_number={ec_number}&simple={simple.ToString.ToLower}"
             Dim key As String = $"{ec_number}:{simple.ToString.ToLower}"
 
@@ -78,13 +76,7 @@ Public Class RegistryUrl
 
             Return cache.ComputeIfAbsent(key, Function() GetReactionList(url))
         Else
-            Dim list = cachedReactions.TryGetValue(ec_number)
-
-            If Not list Is Nothing Then
-                Return list.ToDictionary(Function(r) r.guid)
-            Else
-                Return Nothing
-            End If
+            Return cache.GetAssociatedReactions(ec_number, simple)
         End If
     End Function
 
@@ -94,7 +86,7 @@ Public Class RegistryUrl
     ''' <param name="registry_id">id of the molecule</param>
     ''' <returns></returns>
     Public Function ExpandNetworkByCompound(registry_id As String) As Dictionary(Of String, WebJSON.Reaction)
-        If cachedExpansion Is Nothing Then
+        If Not cache.HasExpansionNetworkDataCache Then
             Dim url As String = $"{server}/registry/expand_network/?cid={registry_id}"
             Dim key As String = registry_id
 
@@ -102,13 +94,7 @@ Public Class RegistryUrl
 
             Return cache.ComputeIfAbsent(key, Function() GetReactionList(url))
         Else
-            Dim list = cachedExpansion.TryGetValue(registry_id)
-
-            If Not list Is Nothing Then
-                Return list.ToDictionary(Function(r) r.guid)
-            Else
-                Return Nothing
-            End If
+            Return cache.ExpandNetworkByCompound(registry_id)
         End If
     End Function
 
