@@ -17,6 +17,7 @@ Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model.Cellular
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model.Cellular.Vector
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.LocalBLAST.Application.BBH
 Imports SMRUCC.genomics.Interops.NCBI.Extensions.Pipeline
+Imports SMRUCC.genomics.Model.OperonMapper
 Imports SMRUCC.genomics.SequenceModel.NucleotideModels.Translation
 
 Public Class Compiler : Inherits Compiler(Of VirtualCell)

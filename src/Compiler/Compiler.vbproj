@@ -57,6 +57,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\HTS_matrix\HTS_matrix-netcore5.vbproj" />
+    <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\OperonMapper\OperonMapper.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\MotifScanner\MotifScanner.NET5.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\SequenceAlignment\SequenceAlignment.vbproj" />
     <ProjectReference Include="..\..\..\GCModeller\src\GCModeller\analysis\SequenceToolkit\SequencePatterns.Abstract\SequencePatterns.Abstract.NET5.vbproj" />
