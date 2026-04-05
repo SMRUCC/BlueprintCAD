@@ -1,6 +1,7 @@
 ﻿Imports Galaxy.ExcelPad
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.Data.Framework.IO
+Imports Microsoft.VisualBasic.Data.Framework.StorageProvider
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualStudio.WinForms.Docking
