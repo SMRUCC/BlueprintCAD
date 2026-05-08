@@ -2,6 +2,8 @@ Imports CellBuilder
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.MIME.application.json
 Imports Microsoft.VisualBasic.MIME.application.json.Javascript
+Imports SMRUCC.genomics.ComponentModel.Annotation
+Imports SMRUCC.genomics.GCModeller.CompilerServices.GPRLink
 Imports SMRUCC.genomics.GCModeller.ModellingEngine.Model
 
 Public Class RegistryUrl : Implements IDataRegistry
@@ -67,7 +69,9 @@ Public Class RegistryUrl : Implements IDataRegistry
         End If
     End Function
 
-    Public Function GetAssociatedReactions(ec_number As String, Optional simple As Boolean = False) As Dictionary(Of String, WebJSON.Reaction) Implements IDataRegistry.GetAssociatedReactions
+    Public Function GetAssociatedReactions(enzyme As IEnzymeObject, Optional simple As Boolean = False) As Dictionary(Of String, WebJSON.Reaction) Implements IDataRegistry.GetAssociatedReactions
+        Dim ec_number As String = enzyme.ECNumber
+
         If Not cache.HasReactionDataCache Then
             Dim url As String = $"{server}/registry/reaction_network/?ec_number={ec_number}&simple={simple.ToString.ToLower}"
             Dim key As String = $"{ec_number}:{simple.ToString.ToLower}"
@@ -76,7 +80,7 @@ Public Class RegistryUrl : Implements IDataRegistry
 
             Return cache.ComputeIfAbsent(key, Function() GetReactionList(url))
         Else
-            Return cache.GetAssociatedReactions(ec_number, simple)
+            Return cache.GetAssociatedReactions(enzyme, simple)
         End If
     End Function
 
@@ -115,4 +119,11 @@ Public Class RegistryUrl : Implements IDataRegistry
         End If
     End Function
 
+    Public Function SetOptions(opt As QueryOptions) As IDataRegistry Implements IDataRegistry.SetOptions
+        Return Me
+    End Function
+
+    Public Iterator Function GetPathways() As IEnumerable(Of Pathway) Implements IDataRegistry.GetPathways
+
+    End Function
 End Class
