@@ -35,10 +35,10 @@
     <ROW Property="GCPROJ_CHECKBOX" Value="1" Type="4"/>
     <ROW Property="Manufacturer" Value="zhengyabio.com"/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp"/>
-    <ROW Property="ProductCode" Value="1033:{D03BD0C2-FFF8-4C13-BE28-83B14E905402} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{4BF97F49-2C12-4567-BA40-A4A6C5E1886C} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Sophia VirtualCell Workshop"/>
-    <ROW Property="ProductVersion" Value="1.8.2026.0122" Options="32"/>
+    <ROW Property="ProductVersion" Value="1.9.2026.0520" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{CF9117C0-DB88-45A1-BD8A-DCB5CF39DF2E}"/>
     <ROW Property="VCELLPACK_CHECKBOX" Value="1" Type="4"/>
@@ -65,7 +65,7 @@
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="Zhengyabio_Dir" Directory_Parent="ProgramMenuFolder" DefaultDir="ZHENGY~1|Zhengyabio"/>
-    <ROW Directory="bin_1_Dir" Directory_Parent="bin_Dir" DefaultDir="bin"/>
+    <ROW Directory="bin_2_Dir" Directory_Parent="bin_Dir" DefaultDir="bin"/>
     <ROW Directory="bin_Dir" Directory_Parent="rstudio_Dir" DefaultDir="bin"/>
     <ROW Directory="blastdb_Dir" Directory_Parent="data_Dir" DefaultDir="blastdb"/>
     <ROW Directory="bootstrap_Dir" Directory_Parent="pages_Dir" DefaultDir="BOOTST~1|bootstrap"/>
@@ -76,43 +76,44 @@
     <ROW Directory="images_Dir" Directory_Parent="pages_Dir" DefaultDir="images"/>
     <ROW Directory="js_1_Dir" Directory_Parent="bootstrap_Dir" DefaultDir="js"/>
     <ROW Directory="js_Dir" Directory_Parent="pages_Dir" DefaultDir="js"/>
-    <ROW Directory="lib_4_Dir" Directory_Parent="win_2_Dir" DefaultDir="lib"/>
     <ROW Directory="lib_5_Dir" Directory_Parent="win_3_Dir" DefaultDir="lib"/>
+    <ROW Directory="lib_6_Dir" Directory_Parent="win_4_Dir" DefaultDir="lib"/>
     <ROW Directory="lib_Dir" Directory_Parent="win_Dir" DefaultDir="lib"/>
-    <ROW Directory="linuxarm64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~2|linux-arm64"/>
     <ROW Directory="linuxarm64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~2|linux-arm64"/>
+    <ROW Directory="linuxarm64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~2|linux-arm64"/>
     <ROW Directory="linuxarm64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~2|linux-arm64"/>
-    <ROW Directory="linuxarm_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~1|linux-arm"/>
     <ROW Directory="linuxarm_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~1|linux-arm"/>
+    <ROW Directory="linuxarm_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~1|linux-arm"/>
     <ROW Directory="linuxarm_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~1|linux-arm"/>
-    <ROW Directory="linuxloongarch64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~3|linux-loongarch64"/>
     <ROW Directory="linuxloongarch64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~3|linux-loongarch64"/>
+    <ROW Directory="linuxloongarch64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~3|linux-loongarch64"/>
     <ROW Directory="linuxloongarch64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~3|linux-loongarch64"/>
-    <ROW Directory="linuxmuslarm64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~5|linux-musl-arm64"/>
     <ROW Directory="linuxmuslarm64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~5|linux-musl-arm64"/>
+    <ROW Directory="linuxmuslarm64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~5|linux-musl-arm64"/>
     <ROW Directory="linuxmuslarm64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~5|linux-musl-arm64"/>
-    <ROW Directory="linuxmuslarm_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~4|linux-musl-arm"/>
     <ROW Directory="linuxmuslarm_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~4|linux-musl-arm"/>
+    <ROW Directory="linuxmuslarm_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~4|linux-musl-arm"/>
     <ROW Directory="linuxmuslarm_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~4|linux-musl-arm"/>
-    <ROW Directory="linuxmuslloongarch64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~6|linux-musl-loongarch64"/>
     <ROW Directory="linuxmuslloongarch64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~6|linux-musl-loongarch64"/>
+    <ROW Directory="linuxmuslloongarch64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~6|linux-musl-loongarch64"/>
     <ROW Directory="linuxmuslloongarch64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~6|linux-musl-loongarch64"/>
-    <ROW Directory="linuxmuslriscv64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~7|linux-musl-riscv64"/>
     <ROW Directory="linuxmuslriscv64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~7|linux-musl-riscv64"/>
+    <ROW Directory="linuxmuslriscv64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~7|linux-musl-riscv64"/>
     <ROW Directory="linuxmuslriscv64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~7|linux-musl-riscv64"/>
-    <ROW Directory="linuxmuslx64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~8|linux-musl-x64"/>
     <ROW Directory="linuxmuslx64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~8|linux-musl-x64"/>
+    <ROW Directory="linuxmuslx64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~8|linux-musl-x64"/>
     <ROW Directory="linuxmuslx64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~8|linux-musl-x64"/>
-    <ROW Directory="linuxriscv64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX-~9|linux-riscv64"/>
     <ROW Directory="linuxriscv64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~9|linux-riscv64"/>
+    <ROW Directory="linuxriscv64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~9|linux-riscv64"/>
     <ROW Directory="linuxriscv64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~9|linux-riscv64"/>
-    <ROW Directory="linuxx64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX~10|linux-x64"/>
     <ROW Directory="linuxx64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX~10|linux-x64"/>
+    <ROW Directory="linuxx64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX~10|linux-x64"/>
     <ROW Directory="linuxx64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX~10|linux-x64"/>
-    <ROW Directory="linuxx86_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="LINUX~11|linux-x86"/>
     <ROW Directory="linuxx86_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX~11|linux-x86"/>
+    <ROW Directory="linuxx86_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX~11|linux-x86"/>
     <ROW Directory="linuxx86_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX~11|linux-x86"/>
     <ROW Directory="local_Dir" Directory_Parent="data_Dir" DefaultDir="local"/>
+    <ROW Directory="logs_Dir" Directory_Parent="pages_Dir" DefaultDir="logs"/>
     <ROW Directory="native_15_Dir" Directory_Parent="linuxarm64_Dir" DefaultDir="native"/>
     <ROW Directory="native_16_Dir" Directory_Parent="linuxloongarch64_Dir" DefaultDir="native"/>
     <ROW Directory="native_17_Dir" Directory_Parent="linuxmuslarm_Dir" DefaultDir="native"/>
@@ -127,21 +128,6 @@
     <ROW Directory="native_26_Dir" Directory_Parent="winarm64_Dir" DefaultDir="native"/>
     <ROW Directory="native_27_Dir" Directory_Parent="winx64_Dir" DefaultDir="native"/>
     <ROW Directory="native_28_Dir" Directory_Parent="winx86_Dir" DefaultDir="native"/>
-    <ROW Directory="native_30_Dir" Directory_Parent="linuxarm_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_31_Dir" Directory_Parent="linuxarm64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_32_Dir" Directory_Parent="linuxloongarch64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_33_Dir" Directory_Parent="linuxmuslarm_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_34_Dir" Directory_Parent="linuxmuslarm64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_35_Dir" Directory_Parent="linuxmuslloongarch64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_36_Dir" Directory_Parent="linuxmuslriscv64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_37_Dir" Directory_Parent="linuxmuslx64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_38_Dir" Directory_Parent="linuxriscv64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_39_Dir" Directory_Parent="linuxx64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_40_Dir" Directory_Parent="linuxx86_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_41_Dir" Directory_Parent="osx_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_42_Dir" Directory_Parent="winarm64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_43_Dir" Directory_Parent="winx64_2_Dir" DefaultDir="native"/>
-    <ROW Directory="native_44_Dir" Directory_Parent="winx86_2_Dir" DefaultDir="native"/>
     <ROW Directory="native_45_Dir" Directory_Parent="linuxarm_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_46_Dir" Directory_Parent="linuxarm64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_47_Dir" Directory_Parent="linuxloongarch64_3_Dir" DefaultDir="native"/>
@@ -157,32 +143,47 @@
     <ROW Directory="native_57_Dir" Directory_Parent="winarm64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_58_Dir" Directory_Parent="winx64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_59_Dir" Directory_Parent="winx86_3_Dir" DefaultDir="native"/>
+    <ROW Directory="native_60_Dir" Directory_Parent="linuxarm_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_61_Dir" Directory_Parent="linuxarm64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_62_Dir" Directory_Parent="linuxloongarch64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_63_Dir" Directory_Parent="linuxmuslarm_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_64_Dir" Directory_Parent="linuxmuslarm64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_65_Dir" Directory_Parent="linuxmuslloongarch64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_66_Dir" Directory_Parent="linuxmuslriscv64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_67_Dir" Directory_Parent="linuxmuslx64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_68_Dir" Directory_Parent="linuxriscv64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_69_Dir" Directory_Parent="linuxx64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_70_Dir" Directory_Parent="linuxx86_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_71_Dir" Directory_Parent="osx_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_72_Dir" Directory_Parent="winarm64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_73_Dir" Directory_Parent="winx64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_74_Dir" Directory_Parent="winx86_4_Dir" DefaultDir="native"/>
     <ROW Directory="native_Dir" Directory_Parent="linuxarm_Dir" DefaultDir="native"/>
     <ROW Directory="net10.0_1_Dir" Directory_Parent="lib_5_Dir" DefaultDir="net10.0"/>
     <ROW Directory="net10.0_2_Dir" Directory_Parent="lib_Dir" DefaultDir="net10.0"/>
-    <ROW Directory="net10.0_Dir" Directory_Parent="lib_4_Dir" DefaultDir="net10.0"/>
-    <ROW Directory="osx_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="osx"/>
+    <ROW Directory="net10.0_Dir" Directory_Parent="lib_6_Dir" DefaultDir="net10.0"/>
     <ROW Directory="osx_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="osx"/>
+    <ROW Directory="osx_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="osx"/>
     <ROW Directory="osx_Dir" Directory_Parent="runtimes_Dir" DefaultDir="osx"/>
     <ROW Directory="pages_Dir" Directory_Parent="resources_Dir" DefaultDir="web"/>
     <ROW Directory="regid.zhengyabio.com.xieguigang_Dir" Directory_Parent="CommonAppDataFolder" DefaultDir="REGIDZ~1.XIE|regid.zhengyabio.com.xieguigang"/>
     <ROW Directory="resources_Dir" Directory_Parent="APPDIR" DefaultDir="RESOUR~1|resources"/>
     <ROW Directory="rstudio_Dir" Directory_Parent="APPDIR" DefaultDir="rstudio"/>
-    <ROW Directory="runtimes_2_Dir" Directory_Parent="bin_1_Dir" DefaultDir="runtimes"/>
     <ROW Directory="runtimes_3_Dir" Directory_Parent="bin_Dir" DefaultDir="runtimes"/>
+    <ROW Directory="runtimes_4_Dir" Directory_Parent="bin_2_Dir" DefaultDir="runtimes"/>
     <ROW Directory="runtimes_Dir" Directory_Parent="APPDIR" DefaultDir="runtimes"/>
     <ROW Directory="vscode_Dir" Directory_Parent="pages_Dir" DefaultDir="VSCODE~1|.vscode"/>
-    <ROW Directory="win_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="win"/>
     <ROW Directory="win_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="win"/>
+    <ROW Directory="win_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="win"/>
     <ROW Directory="win_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win"/>
-    <ROW Directory="winarm64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="WIN-AR~1|win-arm64"/>
     <ROW Directory="winarm64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="WIN-AR~1|win-arm64"/>
+    <ROW Directory="winarm64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="WIN-AR~1|win-arm64"/>
     <ROW Directory="winarm64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="WIN-AR~1|win-arm64"/>
-    <ROW Directory="winx64_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="win-x64"/>
     <ROW Directory="winx64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="win-x64"/>
+    <ROW Directory="winx64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="win-x64"/>
     <ROW Directory="winx64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x64"/>
-    <ROW Directory="winx86_2_Dir" Directory_Parent="runtimes_2_Dir" DefaultDir="win-x86"/>
     <ROW Directory="winx86_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="win-x86"/>
+    <ROW Directory="winx86_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="win-x86"/>
     <ROW Directory="winx86_Dir" Directory_Parent="runtimes_Dir" DefaultDir="win-x86"/>
     <ROW Directory="zhCN_Dir" Directory_Parent="APPDIR" DefaultDir="zh-CN"/>
     <ROW Directory="zhHK_Dir" Directory_Parent="APPDIR" DefaultDir="zh-HK"/>
@@ -202,23 +203,23 @@
     <ROW Component="CellBuilder.dll" ComponentId="{1EA717DB-7EE4-47EA-8DEB-39761155A00E}" Directory_="APPDIR" Attributes="256" KeyPath="CellBuilder.dll"/>
     <ROW Component="CellFarm.dll" ComponentId="{0E71B52E-317E-489A-90C5-0076AF5A8F99}" Directory_="APPDIR" Attributes="0" KeyPath="CellFarm.dll"/>
     <ROW Component="Centos.dll" ComponentId="{7B594B98-0E50-48E4-870A-F35C1C3A08DF}" Directory_="APPDIR" Attributes="256" KeyPath="Centos.dll"/>
-    <ROW Component="Centos.dll_2" ComponentId="{7FD5427C-21C7-4E21-89DB-85D879E888F2}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Centos.dll_2"/>
     <ROW Component="Centos.dll_3" ComponentId="{8116DB01-CCE4-4527-B00A-CA45A1B16B42}" Directory_="bin_Dir" Attributes="256" KeyPath="Centos.dll_3"/>
+    <ROW Component="Centos.dll_4" ComponentId="{1AA05D1D-D7A4-428D-9C31-68A4288E7C5C}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Centos.dll_4"/>
     <ROW Component="Centos.xml" ComponentId="{D7E7F935-3D97-46E7-866E-31D7D50F7EB8}" Directory_="bin_Dir" Attributes="0" KeyPath="Centos.xml_3" Type="0"/>
-    <ROW Component="Centos.xml_1" ComponentId="{6A432E73-4C98-4476-A6E5-65207CFCDD86}" Directory_="bin_1_Dir" Attributes="0" KeyPath="Centos.xml_2" Type="0"/>
+    <ROW Component="Centos.xml_2" ComponentId="{DA376974-7FD1-4AF7-822E-FB2899CC6575}" Directory_="bin_2_Dir" Attributes="0" KeyPath="Centos.xml_4" Type="0"/>
     <ROW Component="Compiler.dll" ComponentId="{B8F5D0E3-9C27-43D0-94A9-8FAFEFA72657}" Directory_="APPDIR" Attributes="256" KeyPath="Compiler.dll"/>
     <ROW Component="Compiler.exe" ComponentId="{D24EACC6-915D-474D-944C-F76D78434324}" Directory_="APPDIR" Attributes="256" KeyPath="Compiler.exe"/>
     <ROW Component="Darwinism.HPC.Parallel.dll" ComponentId="{ACDF8846-4DB9-4258-BC14-5D979A16DDE6}" Directory_="APPDIR" Attributes="256" KeyPath="Darwinism.HPC.Parallel.dll"/>
-    <ROW Component="Darwinism.HPC.Parallel.dll_2" ComponentId="{21B10786-E061-41B9-82A9-1CA6B1266446}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Darwinism.HPC.Parallel.dll_2"/>
     <ROW Component="Darwinism.HPC.Parallel.dll_3" ComponentId="{2E6E7EA5-6BCA-41E2-B11F-E15D7580987F}" Directory_="bin_Dir" Attributes="256" KeyPath="Darwinism.HPC.Parallel.dll_3"/>
+    <ROW Component="Darwinism.HPC.Parallel.dll_4" ComponentId="{3AC3D55D-84F3-4DAB-AEDF-77383F353E87}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Darwinism.HPC.Parallel.dll_4"/>
     <ROW Component="Darwinism.IPC.Networking.dll" ComponentId="{B2A11AED-3FBF-483B-B677-330E46B0CD72}" Directory_="APPDIR" Attributes="256" KeyPath="Darwinism.IPC.Networking.dll"/>
-    <ROW Component="Darwinism.IPC.Networking.dll_2" ComponentId="{966831BE-BB90-40DA-9577-939120F98328}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Darwinism.IPC.Networking.dll_2"/>
     <ROW Component="Darwinism.IPC.Networking.dll_3" ComponentId="{6FC1A779-EF71-4267-933C-2CCD6C82D63A}" Directory_="bin_Dir" Attributes="256" KeyPath="Darwinism.IPC.Networking.dll_3"/>
+    <ROW Component="Darwinism.IPC.Networking.dll_4" ComponentId="{99672778-DD2D-429D-A5EA-1D2ACA6F8BF2}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Darwinism.IPC.Networking.dll_4"/>
     <ROW Component="ECOLI.gcproj" ComponentId="{BCBA5DDC-B86D-4E04-B27A-38C0A429E67E}" Directory_="demo_Dir" Attributes="0" KeyPath="ECOLI.gcproj" Type="0"/>
     <ROW Component="Flute.Http.dll" ComponentId="{3A8E4D28-59D0-4854-BEFF-4203693A9F2D}" Directory_="bin_Dir" Attributes="256" KeyPath="Flute.Http.dll"/>
-    <ROW Component="Flute.Http.dll_1" ComponentId="{A41675E1-1E74-46B0-997C-3F9C32CFD5C9}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Flute.Http.dll_1"/>
+    <ROW Component="Flute.Http.dll_2" ComponentId="{BCD329F2-67BC-4138-BF58-8F1B99F9B86F}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Flute.Http.dll_2"/>
     <ROW Component="Flute.SessionManager.dll" ComponentId="{3DFE22A1-5C28-4407-B9C4-FAD9E6441D29}" Directory_="bin_Dir" Attributes="256" KeyPath="Flute.SessionManager.dll"/>
-    <ROW Component="Flute.SessionManager.dll_1" ComponentId="{87957357-40C7-4E95-8718-0AC1ED1244DE}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Flute.SessionManager.dll_1"/>
+    <ROW Component="Flute.SessionManager.dll_2" ComponentId="{D9AEE53B-A317-487F-971A-4F7987C16365}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Flute.SessionManager.dll_2"/>
     <ROW Component="Galaxy.CommonControls.dll" ComponentId="{1D1196CB-0763-4A30-B6EF-015FAFCAFD06}" Directory_="APPDIR" Attributes="256" KeyPath="Galaxy.CommonControls.dll"/>
     <ROW Component="Galaxy.Data.Visualization.dll" ComponentId="{0045C6CD-22E8-4613-87E3-E224216532D8}" Directory_="APPDIR" Attributes="256" KeyPath="Galaxy.Data.Visualization.dll"/>
     <ROW Component="Galaxy.Data.Visualization.resources.dll" ComponentId="{EAA71267-6623-45B9-959C-FD9B9F26C95C}" Directory_="zhCN_Dir" Attributes="256" KeyPath="Galaxy.Data.Visualization.resources.dll"/>
@@ -232,19 +233,19 @@
     <ROW Component="Galaxy.Workbench.resources.dll" ComponentId="{F50F9E36-7D3A-4B5A-800C-BACF61B3B2D2}" Directory_="enUS_Dir" Attributes="256" KeyPath="Galaxy.Workbench.resources.dll"/>
     <ROW Component="Galaxy.Workbench.resources.dll_3" ComponentId="{CBC630A0-4EF1-4F65-9E6B-B26E88CB750B}" Directory_="zhHans_Dir" Attributes="256" KeyPath="Galaxy.Workbench.resources.dll_3"/>
     <ROW Component="Galaxy.Workbench.resources.dll_4" ComponentId="{2059BEB0-BECF-4AFB-B472-F6FB8E07BF19}" Directory_="zhHK_Dir" Attributes="256" KeyPath="Galaxy.Workbench.resources.dll_4"/>
-    <ROW Component="Microsoft.VisualBasic.Data.BinaryD_2_ata.dll" ComponentId="{533677E6-CEE7-493B-A6E6-6CFD0ECC7094}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.BinaryD_2_ata.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.BinaryD_3_ata.dll" ComponentId="{89964899-82C4-4B02-AEAE-E31C645C070C}" Directory_="bin_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.BinaryD_3_ata.dll"/>
+    <ROW Component="Microsoft.VisualBasic.Data.BinaryD_4_ata.dll" ComponentId="{F63747C2-7634-48AE-9633-D5599F88FC5A}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.BinaryD_4_ata.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.BinaryData.dll" ComponentId="{3CF5554F-BCC5-4371-8500-3F1B91C98247}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.BinaryData.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.Bootstrapping.Fittings.dll" ComponentId="{78897BAE-AB86-4C08-84CC-30F29D85E71B}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.Bootstrapping.Fittings.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.ChartPlots.dll" ComponentId="{723922BF-AE2B-479C-9744-327C257BC411}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.ChartPlots.dll"/>
-    <ROW Component="Microsoft.VisualBasic.Data.Framewo_2_rk.dll" ComponentId="{6D7384C7-8F30-4788-8899-B598C638EAD6}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.Framewo_2_rk.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.Framewo_3_rk.dll" ComponentId="{93079D76-163D-429B-B62B-F65BFF1371BE}" Directory_="bin_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.Framewo_3_rk.dll"/>
+    <ROW Component="Microsoft.VisualBasic.Data.Framewo_4_rk.dll" ComponentId="{AF8EF45F-A779-4D5E-B593-1C4CFA103526}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.Framewo_4_rk.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.Framework.Extensions.dll" ComponentId="{233F6FB3-F84C-4CDC-AC76-F11FE541CEF0}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.Framework.Extensions.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.Framework.dll" ComponentId="{E1BA6CA3-27F7-455C-A8BF-BA4FBCEE2771}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.Framework.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.GraphTheory.dll" ComponentId="{B3524288-4D96-458A-B097-8DF4F5F63DCF}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.GraphTheory.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.IO.HDF5.dll" ComponentId="{D7045CE7-4070-48E2-A014-9901BDB85307}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.IO.HDF5.dll"/>
-    <ROW Component="Microsoft.VisualBasic.Data.IO.Mess_2_agePack.dll" ComponentId="{3394171C-7EC2-47B8-BE03-4FAD47D9CFAD}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.IO.Mess_2_agePack.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.IO.Mess_3_agePack.dll" ComponentId="{9DF2BA76-7651-4A2A-9B42-B8AC1DFF7D5C}" Directory_="bin_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.IO.Mess_3_agePack.dll"/>
+    <ROW Component="Microsoft.VisualBasic.Data.IO.Mess_4_agePack.dll" ComponentId="{3E23492F-0FD2-409B-8B39-E155FE17E3E4}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.IO.Mess_4_agePack.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.IO.MessagePack.dll" ComponentId="{6C627CFB-17D0-4214-BFB8-53779B5B7F77}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.IO.MessagePack.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.NLP.Word2Vec.dll" ComponentId="{6CEDFE60-7B73-4FDA-821F-21624BB5E547}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.NLP.Word2Vec.dll"/>
     <ROW Component="Microsoft.VisualBasic.Data.NLP.dll" ComponentId="{D3EAB4C3-61AC-40BB-9D5F-52BD90C034C5}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Data.NLP.dll"/>
@@ -261,8 +262,8 @@
     <ROW Component="Microsoft.VisualBasic.DataMining.HiddenMarkovChain.dll" ComponentId="{CDC2D896-0684-4A3F-83EC-379B553DDF93}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.VisualBasic.DataMining.HiddenMarkovChain.dll"/>
     <ROW Component="Microsoft.VisualBasic.DataMining.HierarchicalClustering.dll" ComponentId="{E4C906BD-93D0-41EA-BD74-5DFC31E620D0}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.DataMining.HierarchicalClustering.dll"/>
     <ROW Component="Microsoft.VisualBasic.DataStorage.HDSPack.dll" ComponentId="{5D722590-AAF1-48F5-BB7A-496A28621BD8}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.DataStorage.HDSPack.dll"/>
-    <ROW Component="Microsoft.VisualBasic.DataStorage._2_HDSPack.dll" ComponentId="{4F4BF6DE-5380-4DEF-AE8C-EB1A674C655D}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.DataStorage._2_HDSPack.dll"/>
     <ROW Component="Microsoft.VisualBasic.DataStorage._3_HDSPack.dll" ComponentId="{92F59C53-1C87-4484-9769-7ECB5F06C4DC}" Directory_="bin_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.DataStorage._3_HDSPack.dll"/>
+    <ROW Component="Microsoft.VisualBasic.DataStorage._4_HDSPack.dll" ComponentId="{65C946FB-FD13-41BF-BFE8-EA60C79F53EC}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.DataStorage._4_HDSPack.dll"/>
     <ROW Component="Microsoft.VisualBasic.DataStorage.netCDF.dll" ComponentId="{8CBCEEFF-889B-4E37-945A-965AAD08CAE8}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.DataStorage.netCDF.dll"/>
     <ROW Component="Microsoft.VisualBasic.DeepLearning.dll" ComponentId="{20369EF3-9BC1-49FD-8841-D7CAC67BB9CE}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.DeepLearning.dll"/>
     <ROW Component="Microsoft.VisualBasic.Drawing.Windows.dll" ComponentId="{B02228B2-0FB7-4331-BC4F-AFC30440F04E}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Drawing.Windows.dll"/>
@@ -274,8 +275,8 @@
     <ROW Component="Microsoft.VisualBasic.MIME.Office.Excel.dll" ComponentId="{81165C87-EA30-41AD-BAE6-190B84D827D3}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.MIME.Office.Excel.dll"/>
     <ROW Component="Microsoft.VisualBasic.MIME.applica_2_tion.rdf_xml.dll" ComponentId="{6A47426C-06A3-475E-AAC5-03002BD4EADC}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.MIME.application.rdf_xml.dll"/>
     <ROW Component="Microsoft.VisualBasic.MIME.applica_3_tion.xml.dll" ComponentId="{FE11B2D1-701D-463B-8C45-D0658920B1C4}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.MIME.application.xml.dll"/>
-    <ROW Component="Microsoft.VisualBasic.MIME.applica_4_tion.json.dll" ComponentId="{6FEDF344-FDE8-467F-8B94-5A5B4F8BBFBF}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.MIME.applica_2_tion.json.dll"/>
     <ROW Component="Microsoft.VisualBasic.MIME.applica_5_tion.json.dll" ComponentId="{38C15DA2-32E1-4B2D-B4BB-3E84221D246B}" Directory_="bin_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.MIME.applica_3_tion.json.dll"/>
+    <ROW Component="Microsoft.VisualBasic.MIME.applica_6_tion.json.dll" ComponentId="{58BBF53B-1D75-475E-AFD4-897A2F3E87D0}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.MIME.applica_4_tion.json.dll"/>
     <ROW Component="Microsoft.VisualBasic.MIME.application.json.dll" ComponentId="{22258862-15F0-44E8-97B4-EE310D4F0B20}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.MIME.application.json.dll"/>
     <ROW Component="Microsoft.VisualBasic.MachineLearning.Bootstrapping.dll" ComponentId="{F336328E-C7CA-44CE-86F8-1B46C0EEAEEB}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.MachineLearning.Bootstrapping.dll"/>
     <ROW Component="Microsoft.VisualBasic.MachineLearning.TensorFlow.dll" ComponentId="{B963D361-66E8-48BA-8967-F1A1CFCF3272}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.MachineLearning.TensorFlow.dll"/>
@@ -286,8 +287,8 @@
     <ROW Component="Microsoft.VisualBasic.Math.Statistics.ANOVA.dll" ComponentId="{C3ECBFEA-0A29-493B-8DC2-51F2C14EABD3}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Math.Statistics.ANOVA.dll"/>
     <ROW Component="Microsoft.VisualBasic.Math.Statistics.dll" ComponentId="{BD0853CC-5A83-4F09-913C-5320C88F98AD}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Math.Statistics.dll"/>
     <ROW Component="Microsoft.VisualBasic.Runtime.dll" ComponentId="{CD6DB597-1075-4C4B-B31A-22644F69B803}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Runtime.dll"/>
-    <ROW Component="Microsoft.VisualBasic.Runtime.dll_2" ComponentId="{3FAD1F31-7944-4D2D-95CB-AFBB3597A8AD}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Runtime.dll_2"/>
     <ROW Component="Microsoft.VisualBasic.Runtime.dll_3" ComponentId="{422D0918-C7AD-4C24-8E4F-6A7BD068A071}" Directory_="bin_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Runtime.dll_3"/>
+    <ROW Component="Microsoft.VisualBasic.Runtime.dll_4" ComponentId="{75707CB5-0567-4E61-A8F3-E200ACB0AC05}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Microsoft.VisualBasic.Runtime.dll_4"/>
     <ROW Component="Microsoft.VisualBasic.Windows.Forms.Console.dll" ComponentId="{026CE6B1-DBC3-4336-B65F-047EAE5D3D35}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualBasic.Windows.Forms.Console.dll"/>
     <ROW Component="Microsoft.VisualStudio.Windows.Form.dll" ComponentId="{002BE5D6-A506-4D4A-959A-EB4207E16F25}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.VisualStudio.Windows.Form.dll"/>
     <ROW Component="Microsoft.Web.WebView2.Core.dll" ComponentId="{8CF40604-CBDA-4E91-9035-2B2891609E26}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Core.dll"/>
@@ -297,19 +298,19 @@
     <ROW Component="Microsoft.Windows.Ribbon.dll" ComponentId="{7EC1C82D-573D-45EC-A767-24B1EA98751D}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.Ribbon.dll"/>
     <ROW Component="ProductInformation" ComponentId="{4E02C4EE-813B-4457-827A-7B789E9639D5}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="R.dll" ComponentId="{5E7BD0EF-5D00-412B-A1C7-D1EC20D1D00D}" Directory_="bin_Dir" Attributes="256" KeyPath="R.dll"/>
-    <ROW Component="R.dll_1" ComponentId="{911AD7D4-64F8-4599-8AAD-C5391661C703}" Directory_="bin_1_Dir" Attributes="256" KeyPath="R.dll_1"/>
+    <ROW Component="R.dll_2" ComponentId="{DE1BE833-C6D3-4B17-A0E3-B80394B6918D}" Directory_="bin_2_Dir" Attributes="256" KeyPath="R.dll_2"/>
     <ROW Component="R.exe" ComponentId="{764B5D29-565A-400D-937E-3EF1D50E40B4}" Directory_="bin_Dir" Attributes="256" KeyPath="R.exe"/>
-    <ROW Component="R.exe_1" ComponentId="{5E7BA101-6D8F-41D1-A9A3-CF09B35DE3EF}" Directory_="bin_1_Dir" Attributes="256" KeyPath="R.exe_1"/>
+    <ROW Component="R.exe_2" ComponentId="{D67BA9C4-3795-4779-BEFB-0F8EAC81AAF1}" Directory_="bin_2_Dir" Attributes="256" KeyPath="R.exe_2"/>
     <ROW Component="REnv.dll" ComponentId="{4BEDAE1E-753A-42B0-BBA6-16F70F56A85C}" Directory_="APPDIR" Attributes="256" KeyPath="REnv.dll"/>
-    <ROW Component="REnv.dll_2" ComponentId="{6586EB61-4403-481B-8D7E-9357888449CA}" Directory_="bin_1_Dir" Attributes="256" KeyPath="REnv.dll_2"/>
     <ROW Component="REnv.dll_3" ComponentId="{A0F59103-0709-4861-9A8B-35711BFBE8BD}" Directory_="bin_Dir" Attributes="256" KeyPath="REnv.dll_3"/>
+    <ROW Component="REnv.dll_4" ComponentId="{D05FC1CD-6ED1-4590-8D2C-4F362542692D}" Directory_="bin_2_Dir" Attributes="256" KeyPath="REnv.dll_4"/>
     <ROW Component="R_graphics.Common.Runtime.dll" ComponentId="{74010D91-14E9-4D2A-997A-9D9251812E6D}" Directory_="APPDIR" Attributes="256" KeyPath="R_graphics.Common.Runtime.dll"/>
     <ROW Component="Rserve.dll" ComponentId="{DCDF4E73-F2D9-428C-B578-3A9ABA974AD7}" Directory_="bin_Dir" Attributes="256" KeyPath="Rserve.dll"/>
-    <ROW Component="Rserve.dll_1" ComponentId="{3C638FBE-AB14-46ED-A2C7-6ABDFEFF725C}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Rserve.dll_1"/>
+    <ROW Component="Rserve.dll_2" ComponentId="{C57A2407-6417-4574-ABFD-2000CA2319FA}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Rserve.dll_2"/>
     <ROW Component="Rserve.exe" ComponentId="{3C1A4746-137E-4B1B-9EFC-96679728ECEE}" Directory_="bin_Dir" Attributes="256" KeyPath="Rserve.exe"/>
-    <ROW Component="Rserve.exe_1" ComponentId="{8FD9D70F-DAC9-4C91-957C-9D038128F376}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Rserve.exe_1"/>
+    <ROW Component="Rserve.exe_2" ComponentId="{E448B3A9-F263-4449-B319-CBB33841B71F}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Rserve.exe_2"/>
     <ROW Component="Rserver.dll" ComponentId="{BBE132F3-13AA-4B63-90B3-8DAEA374C9B4}" Directory_="bin_Dir" Attributes="256" KeyPath="Rserver.dll"/>
-    <ROW Component="Rserver.dll_1" ComponentId="{44F90072-111C-4C31-80AB-BA85F13FFA16}" Directory_="bin_1_Dir" Attributes="256" KeyPath="Rserver.dll_1"/>
+    <ROW Component="Rserver.dll_2" ComponentId="{775F920B-F723-4B4A-A1A7-1A173C7C83F4}" Directory_="bin_2_Dir" Attributes="256" KeyPath="Rserver.dll_2"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{7C6ACE99-CCCD-4E5D-9DBA-FC609897CAB2}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="SMRUCC.genomics.Analysis.FBA.Core.dll" ComponentId="{1D548782-BD6D-4818-B4D8-9A6689FA9DD8}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.FBA.Core.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.HTS.DataFrame.dll" ComponentId="{D4305A0B-EF03-45D6-8EAB-9355828A6CCD}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.HTS.DataFrame.dll"/>
@@ -345,65 +346,65 @@
     <ROW Component="SMRUCC.genomics.foundation.BIOM.dll" ComponentId="{578838E6-5959-4F7E-B6A1-28303F7D4D67}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.foundation.BIOM.dll"/>
     <ROW Component="SMRUCC.genomics.foundation.OBO_Foundry.dll" ComponentId="{407D0282-90CC-4531-86F9-0BBBDF66301F}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.foundation.OBO_Foundry.dll"/>
     <ROW Component="SkiaSharp.Extended.Svg.dll" ComponentId="{450F93F1-62D6-4FD5-A75B-06E05563249E}" Directory_="APPDIR" Attributes="0" KeyPath="SkiaSharp.Extended.Svg.dll"/>
-    <ROW Component="SkiaSharp.Extended.Svg.dll_2" ComponentId="{CC1AA7D5-92AF-4EDD-ABFF-A54926955975}" Directory_="bin_1_Dir" Attributes="0" KeyPath="SkiaSharp.Extended.Svg.dll_2"/>
     <ROW Component="SkiaSharp.Extended.Svg.dll_3" ComponentId="{C212BE78-2785-4951-A5DA-08FBEA3BD0BE}" Directory_="bin_Dir" Attributes="0" KeyPath="SkiaSharp.Extended.Svg.dll_3"/>
+    <ROW Component="SkiaSharp.Extended.Svg.dll_4" ComponentId="{C4D785AD-4D59-4385-B75F-53EA1AFE4943}" Directory_="bin_2_Dir" Attributes="0" KeyPath="SkiaSharp.Extended.Svg.dll_4"/>
     <ROW Component="SkiaSharp.Extended.dll" ComponentId="{7FB4BD51-5187-48CC-AD2F-67577DB35E66}" Directory_="APPDIR" Attributes="0" KeyPath="SkiaSharp.Extended.dll"/>
-    <ROW Component="SkiaSharp.Extended.dll_2" ComponentId="{4FF7E296-C04A-49D1-93A3-B166E35DEA2F}" Directory_="bin_1_Dir" Attributes="0" KeyPath="SkiaSharp.Extended.dll_2"/>
     <ROW Component="SkiaSharp.Extended.dll_3" ComponentId="{F23FCEBF-D1D5-4001-9766-493EA7CF98A4}" Directory_="bin_Dir" Attributes="0" KeyPath="SkiaSharp.Extended.dll_3"/>
+    <ROW Component="SkiaSharp.Extended.dll_4" ComponentId="{4D514EA3-A08C-4472-BDC1-C509361561E7}" Directory_="bin_2_Dir" Attributes="0" KeyPath="SkiaSharp.Extended.dll_4"/>
     <ROW Component="SkiaSharp.dll" ComponentId="{AA864214-CA01-4AC1-A9D8-6BCF3FDDE29C}" Directory_="APPDIR" Attributes="0" KeyPath="SkiaSharp.dll"/>
-    <ROW Component="SkiaSharp.dll_2" ComponentId="{812C248F-4790-4BDF-91AC-D13F20D20B11}" Directory_="bin_1_Dir" Attributes="0" KeyPath="SkiaSharp.dll_2"/>
     <ROW Component="SkiaSharp.dll_3" ComponentId="{16607A34-868B-452E-9F48-64124439F264}" Directory_="bin_Dir" Attributes="0" KeyPath="SkiaSharp.dll_3"/>
+    <ROW Component="SkiaSharp.dll_4" ComponentId="{EF98C3E8-C552-4BC9-ADE8-EC8BCB128F99}" Directory_="bin_2_Dir" Attributes="0" KeyPath="SkiaSharp.dll_4"/>
     <ROW Component="Sophia.VisualElementsManifest.xml" ComponentId="{A7042C9E-AA92-4BF0-8336-9972116F4987}" Directory_="APPDIR" Attributes="0" KeyPath="Sophia.VisualElementsManifest.xml"/>
     <ROW Component="Sophia.dll" ComponentId="{34BDD9FA-C7E8-4D65-B062-CA62A510F3E8}" Directory_="APPDIR" Attributes="256" KeyPath="Sophia.dll"/>
     <ROW Component="Sophia.exe" ComponentId="{FD7CB5F9-31DA-4A92-940C-D92539F6EA2F}" Directory_="APPDIR" Attributes="256" KeyPath="Sophia.exe"/>
     <ROW Component="System.Composition.AttributedModel.dll" ComponentId="{C5F14136-5C22-4A0A-B34B-A7E0836DC289}" Directory_="APPDIR" Attributes="0" KeyPath="System.Composition.AttributedModel.dll"/>
-    <ROW Component="System.Composition.AttributedModel_10_.dll" ComponentId="{1EA56E3E-2058-4398-BEF4-17A2192EE934}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Composition.AttributedModel.dll_2"/>
     <ROW Component="System.Composition.AttributedModel_11_.dll" ComponentId="{6A2B2276-3B5D-4AEA-AF52-2EABE612F304}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Composition.AttributedModel.dll_3"/>
+    <ROW Component="System.Composition.AttributedModel_12_.dll" ComponentId="{902E477A-D0CA-4FA2-AAE5-1827A4025BCC}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Composition.AttributedModel.dll_4"/>
     <ROW Component="System.Composition.Convention.dll" ComponentId="{6D238128-3932-44D8-AB5B-DDB37451824D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Composition.Convention.dll"/>
-    <ROW Component="System.Composition.Convention.dll_2" ComponentId="{37ECCAD4-5F57-4F92-BF73-193EE99FD5BA}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Composition.Convention.dll_2"/>
     <ROW Component="System.Composition.Convention.dll_3" ComponentId="{790D5D32-BA91-4719-A421-EE09EB73D0EA}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Composition.Convention.dll_3"/>
+    <ROW Component="System.Composition.Convention.dll_4" ComponentId="{A6603482-E61A-45F1-958D-DD973E18386E}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Composition.Convention.dll_4"/>
     <ROW Component="System.Composition.Hosting.dll" ComponentId="{C2F39548-E6B7-4518-9A9A-CBCA1D14CC39}" Directory_="APPDIR" Attributes="0" KeyPath="System.Composition.Hosting.dll"/>
-    <ROW Component="System.Composition.Hosting.dll_2" ComponentId="{18668D73-678B-430A-BC2B-37B88B789F42}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Composition.Hosting.dll_2"/>
     <ROW Component="System.Composition.Hosting.dll_3" ComponentId="{100C5AB1-BA6C-415B-AAA5-7C0E85641E70}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Composition.Hosting.dll_3"/>
+    <ROW Component="System.Composition.Hosting.dll_4" ComponentId="{AAAB61B7-9072-484F-999F-D73320601F5C}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Composition.Hosting.dll_4"/>
     <ROW Component="System.Composition.Runtime.dll" ComponentId="{140A329D-D918-403E-8D32-A422CC845D6D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Composition.Runtime.dll"/>
-    <ROW Component="System.Composition.Runtime.dll_2" ComponentId="{35919541-4BBB-47FF-BF79-8D157166C71E}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Composition.Runtime.dll_2"/>
     <ROW Component="System.Composition.Runtime.dll_3" ComponentId="{8D101FA3-B2BC-4921-95E9-C3B7B51F6CB4}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Composition.Runtime.dll_3"/>
+    <ROW Component="System.Composition.Runtime.dll_4" ComponentId="{E77D131B-2F9D-4BCA-B063-71501E408F70}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Composition.Runtime.dll_4"/>
     <ROW Component="System.Composition.TypedParts.dll" ComponentId="{8192CF34-D8C7-4EFB-A6F4-5280F0EC75E9}" Directory_="APPDIR" Attributes="0" KeyPath="System.Composition.TypedParts.dll"/>
-    <ROW Component="System.Composition.TypedParts.dll_2" ComponentId="{781AC81A-4A31-4C76-A6D8-037387310FA9}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Composition.TypedParts.dll_2"/>
     <ROW Component="System.Composition.TypedParts.dll_3" ComponentId="{CEBCB4B6-C25C-4C9F-9F41-B9654EF16F08}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Composition.TypedParts.dll_3"/>
+    <ROW Component="System.Composition.TypedParts.dll_4" ComponentId="{E4550356-513E-495B-8362-4695413C84C5}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Composition.TypedParts.dll_4"/>
     <ROW Component="System.Configuration.ConfigurationManager.dll" ComponentId="{C5ABB42D-A6D2-4095-B8A7-71308A21BE4F}" Directory_="APPDIR" Attributes="0" KeyPath="System.Configuration.ConfigurationManager.dll"/>
-    <ROW Component="System.Configuration.Configuration_2_Manager.dll" ComponentId="{8E7434B6-E26D-4DE4-B24C-FF003BD1D709}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Configuration.Configuration_2_Manager.dll"/>
     <ROW Component="System.Configuration.Configuration_3_Manager.dll" ComponentId="{E636254E-5C3D-4F2B-B6DD-DC1EF8D5A0D7}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Configuration.Configuration_3_Manager.dll"/>
-    <ROW Component="System.Diagnostics.EventLog.Messag_2_es.dll" ComponentId="{833C0351-682D-45EE-B747-34BBA058CE56}" Directory_="net10.0_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.Messag_2_es.dll"/>
+    <ROW Component="System.Configuration.Configuration_4_Manager.dll" ComponentId="{FCE1C082-CE52-4E33-A161-5F3DAAE4C4E1}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Configuration.Configuration_4_Manager.dll"/>
     <ROW Component="System.Diagnostics.EventLog.Messag_3_es.dll" ComponentId="{7050BC6B-C9D4-4B8B-9227-3E55800F276F}" Directory_="net10.0_2_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.Messag_3_es.dll"/>
+    <ROW Component="System.Diagnostics.EventLog.Messag_4_es.dll" ComponentId="{C63B55F5-69FA-4787-B8E4-1E166C31C48C}" Directory_="net10.0_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.Messag_4_es.dll"/>
     <ROW Component="System.Diagnostics.EventLog.Messages.dll" ComponentId="{889FBFF0-7A2E-434C-8562-E38AE3886754}" Directory_="net10.0_1_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.Messages.dll"/>
     <ROW Component="System.Diagnostics.EventLog.dll" ComponentId="{98440FEB-D5DE-46B7-A69A-0CEDEF60F36F}" Directory_="APPDIR" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll"/>
-    <ROW Component="System.Diagnostics.EventLog.dll_4" ComponentId="{402E8992-1785-43BF-953A-8CAC179E6CDC}" Directory_="net10.0_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_4"/>
-    <ROW Component="System.Diagnostics.EventLog.dll_5" ComponentId="{61B72DAA-7A01-4D04-A170-2672AF618824}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_5"/>
+    <ROW Component="System.Diagnostics.EventLog.dll_10" ComponentId="{4F0C93A9-047E-4DC4-8B16-17B7DD2D46AE}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_10"/>
     <ROW Component="System.Diagnostics.EventLog.dll_6" ComponentId="{CB85A1D1-FF07-434D-B778-0CB1502C7B4D}" Directory_="net10.0_1_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_6"/>
     <ROW Component="System.Diagnostics.EventLog.dll_7" ComponentId="{6E66FDD1-DEA5-4217-83A8-9D8140427292}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_7"/>
     <ROW Component="System.Diagnostics.EventLog.dll_8" ComponentId="{ACE888D7-8FC3-496C-B24F-F1ADB2BA4C85}" Directory_="net10.0_2_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_8"/>
+    <ROW Component="System.Diagnostics.EventLog.dll_9" ComponentId="{17608C98-ED53-4442-B38E-3347A0A05944}" Directory_="net10.0_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_9"/>
     <ROW Component="System.Formats.Nrbf.dll" ComponentId="{8CB9C97C-A2A7-4255-A07B-C96F6E27E46A}" Directory_="APPDIR" Attributes="0" KeyPath="System.Formats.Nrbf.dll"/>
-    <ROW Component="System.Formats.Nrbf.dll_2" ComponentId="{31EDD325-B875-4BAE-8811-31E58519026D}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Formats.Nrbf.dll_2"/>
     <ROW Component="System.Formats.Nrbf.dll_3" ComponentId="{C886BC07-AF17-4F81-A78E-6A28DC7230FA}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Formats.Nrbf.dll_3"/>
+    <ROW Component="System.Formats.Nrbf.dll_4" ComponentId="{0D0D7EE1-3BC1-46F8-B417-867DE33D0EB5}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Formats.Nrbf.dll_4"/>
     <ROW Component="System.IO.Packaging.dll" ComponentId="{476EA1B9-6FCB-4A11-AC63-E18151A74095}" Directory_="APPDIR" Attributes="0" KeyPath="System.IO.Packaging.dll"/>
-    <ROW Component="System.IO.Packaging.dll_2" ComponentId="{7414E49C-287B-482C-BC96-47AB913736F1}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.IO.Packaging.dll_2"/>
     <ROW Component="System.IO.Packaging.dll_3" ComponentId="{FCC42939-95E1-4237-BAE0-5F9A233D63C1}" Directory_="bin_Dir" Attributes="0" KeyPath="System.IO.Packaging.dll_3"/>
+    <ROW Component="System.IO.Packaging.dll_4" ComponentId="{D3F68E39-2088-499D-B0D6-8F4BB051A705}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.IO.Packaging.dll_4"/>
     <ROW Component="System.Resources.Extensions.dll" ComponentId="{CE0FD71B-F748-4EF7-AACA-08A942CA8576}" Directory_="APPDIR" Attributes="0" KeyPath="System.Resources.Extensions.dll"/>
-    <ROW Component="System.Resources.Extensions.dll_2" ComponentId="{C8541A6A-982C-43E5-A187-FDB1B730266C}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Resources.Extensions.dll_2"/>
     <ROW Component="System.Resources.Extensions.dll_3" ComponentId="{44E5C921-72E1-4BEE-83F7-261D7E9EC23B}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Resources.Extensions.dll_3"/>
-    <ROW Component="System.Security.Cryptography.Prote_2_ctedData.dll" ComponentId="{D568DA20-5341-4085-955E-A71071B7D610}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Prote_2_ctedData.dll"/>
+    <ROW Component="System.Resources.Extensions.dll_4" ComponentId="{AEE7C4F9-5B25-4B63-93E6-9EBF8E993368}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Resources.Extensions.dll_4"/>
     <ROW Component="System.Security.Cryptography.Prote_3_ctedData.dll" ComponentId="{518F3594-580F-49E0-ACC3-44F7CFF1FE7D}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Prote_3_ctedData.dll"/>
+    <ROW Component="System.Security.Cryptography.Prote_4_ctedData.dll" ComponentId="{ABDBD1DF-0602-4E60-82A8-CB8BE1EF97EF}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Prote_4_ctedData.dll"/>
     <ROW Component="System.Security.Cryptography.ProtectedData.dll" ComponentId="{BA593940-90BF-4C58-9206-EB7BDC630BBD}" Directory_="APPDIR" Attributes="0" KeyPath="System.Security.Cryptography.ProtectedData.dll"/>
     <ROW Component="System.Security.Permissions.dll" ComponentId="{2A74EEF1-F675-4BA4-B36F-33FC4894C950}" Directory_="APPDIR" Attributes="0" KeyPath="System.Security.Permissions.dll"/>
-    <ROW Component="System.Security.Permissions.dll_2" ComponentId="{DF11D67E-C855-4FC9-9B9C-5B37589CF17A}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Security.Permissions.dll_2"/>
     <ROW Component="System.Security.Permissions.dll_3" ComponentId="{7A7FE0AC-1796-49AA-9AA1-BCF135CF65A9}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Security.Permissions.dll_3"/>
+    <ROW Component="System.Security.Permissions.dll_4" ComponentId="{9CCB0308-B853-485E-B174-BD47A33C2115}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Security.Permissions.dll_4"/>
     <ROW Component="System.Windows.Extensions.dll" ComponentId="{E74F1FD3-4ED7-43BE-869A-06601A6FAC3F}" Directory_="APPDIR" Attributes="0" KeyPath="System.Windows.Extensions.dll"/>
-    <ROW Component="System.Windows.Extensions.dll_4" ComponentId="{A9740F76-07B9-46B7-B245-310F53A323FB}" Directory_="net10.0_Dir" Attributes="0" KeyPath="System.Windows.Extensions.dll_4"/>
-    <ROW Component="System.Windows.Extensions.dll_5" ComponentId="{10345483-C877-45B6-A97B-1B3A3973C7C2}" Directory_="bin_1_Dir" Attributes="0" KeyPath="System.Windows.Extensions.dll_5"/>
+    <ROW Component="System.Windows.Extensions.dll_10" ComponentId="{89D2CF64-9DB0-4995-AD3E-F5F1A6B09D21}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Windows.Extensions.dll_10"/>
     <ROW Component="System.Windows.Extensions.dll_6" ComponentId="{1E704DDC-BAAB-4A29-BD32-AD0EE28BB831}" Directory_="net10.0_1_Dir" Attributes="0" KeyPath="System.Windows.Extensions.dll_6"/>
     <ROW Component="System.Windows.Extensions.dll_7" ComponentId="{A5122384-7D24-49C9-9C3D-5F7D16BE4B50}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Windows.Extensions.dll_7"/>
     <ROW Component="System.Windows.Extensions.dll_8" ComponentId="{6859BC76-1617-4C32-8A1F-EED9001D30B3}" Directory_="net10.0_2_Dir" Attributes="0" KeyPath="System.Windows.Extensions.dll_8"/>
+    <ROW Component="System.Windows.Extensions.dll_9" ComponentId="{54C57071-A249-4A92-949B-3361C76B1FFE}" Directory_="net10.0_Dir" Attributes="0" KeyPath="System.Windows.Extensions.dll_9"/>
     <ROW Component="TRNScanner.dll" ComponentId="{9081FCD6-BD54-47CF-89DF-BC60E10B5D17}" Directory_="APPDIR" Attributes="256" KeyPath="TRNScanner.dll"/>
     <ROW Component="ThemeVS2015.dll" ComponentId="{14092F41-4DBA-4C63-8FC3-2625D60A4B01}" Directory_="APPDIR" Attributes="0" KeyPath="ThemeVS2015.dll"/>
     <ROW Component="VirtualCell.dll" ComponentId="{23EEB3A7-1C96-4B82-A369-D7351EC8978E}" Directory_="APPDIR" Attributes="256" KeyPath="VirtualCell.dll"/>
@@ -426,15 +427,15 @@
     <ROW Component="libSkiaSharp.dll" ComponentId="{94A49B94-7AB5-44F4-B9E3-3724439B9955}" Directory_="native_26_Dir" Attributes="256" KeyPath="libSkiaSharp.dll"/>
     <ROW Component="libSkiaSharp.dll_10" ComponentId="{2738CE80-3EE1-481F-AFAD-96653E62EFDD}" Directory_="native_58_Dir" Attributes="256" KeyPath="libSkiaSharp.dll_10"/>
     <ROW Component="libSkiaSharp.dll_11" ComponentId="{D23A40A5-C7F7-46D7-9EC2-FA17D53F7E65}" Directory_="native_59_Dir" Attributes="0" KeyPath="libSkiaSharp.dll_11"/>
+    <ROW Component="libSkiaSharp.dll_12" ComponentId="{36282E53-4C36-4025-9AC1-6820A6EB965C}" Directory_="native_72_Dir" Attributes="256" KeyPath="libSkiaSharp.dll_12"/>
+    <ROW Component="libSkiaSharp.dll_13" ComponentId="{C69C00D6-BF70-40C3-83F6-53EA598837CA}" Directory_="native_73_Dir" Attributes="256" KeyPath="libSkiaSharp.dll_13"/>
+    <ROW Component="libSkiaSharp.dll_14" ComponentId="{F7F7A0DC-E6BC-41DF-A693-B81631992338}" Directory_="native_74_Dir" Attributes="0" KeyPath="libSkiaSharp.dll_14"/>
     <ROW Component="libSkiaSharp.dll_3" ComponentId="{3E3F3E8F-750B-439C-897F-A41248CAD2A7}" Directory_="native_27_Dir" Attributes="256" KeyPath="libSkiaSharp.dll_3"/>
     <ROW Component="libSkiaSharp.dll_4" ComponentId="{BF48D2C7-76F4-4924-AEF3-0ADBC11AAC04}" Directory_="native_28_Dir" Attributes="0" KeyPath="libSkiaSharp.dll_4"/>
-    <ROW Component="libSkiaSharp.dll_6" ComponentId="{6BCA0B2F-C767-4C32-8011-8F58C6463CF8}" Directory_="native_42_Dir" Attributes="256" KeyPath="libSkiaSharp.dll_6"/>
-    <ROW Component="libSkiaSharp.dll_7" ComponentId="{44D8A00F-1465-48EA-8CB5-C702ECA68A37}" Directory_="native_43_Dir" Attributes="256" KeyPath="libSkiaSharp.dll_7"/>
-    <ROW Component="libSkiaSharp.dll_8" ComponentId="{DE0656A6-B441-43DC-B3B3-BA4E62D1A7F1}" Directory_="native_44_Dir" Attributes="0" KeyPath="libSkiaSharp.dll_8"/>
     <ROW Component="libSkiaSharp.dll_9" ComponentId="{865EDB14-1C23-4183-AF87-FD1C878C0AB2}" Directory_="native_57_Dir" Attributes="256" KeyPath="libSkiaSharp.dll_9"/>
     <ROW Component="libSkiaSharp.dylib" ComponentId="{69344CD3-4FD7-418A-BC7D-639252005911}" Directory_="native_25_Dir" Attributes="0" KeyPath="libSkiaSharp.dylib" Type="0"/>
-    <ROW Component="libSkiaSharp.dylib_2" ComponentId="{46D6C1AC-2679-4CE9-89D3-C94472426D67}" Directory_="native_41_Dir" Attributes="0" KeyPath="libSkiaSharp.dylib_2" Type="0"/>
     <ROW Component="libSkiaSharp.dylib_3" ComponentId="{2B9005BF-B0B1-459D-A570-3459E1CC9BF1}" Directory_="native_56_Dir" Attributes="0" KeyPath="libSkiaSharp.dylib_3" Type="0"/>
+    <ROW Component="libSkiaSharp.dylib_4" ComponentId="{8DF9E22F-6361-49CF-B0BC-4D3ACCCFBF57}" Directory_="native_71_Dir" Attributes="0" KeyPath="libSkiaSharp.dylib_4" Type="0"/>
     <ROW Component="libSkiaSharp.so" ComponentId="{D13FA7E8-0CBA-4C15-8C23-9EC23754AA60}" Directory_="native_Dir" Attributes="0" KeyPath="libSkiaSharp.so" Type="0"/>
     <ROW Component="libSkiaSharp.so_11" ComponentId="{1336FE4F-9F53-48C9-90F3-6D5BFB7BD564}" Directory_="native_15_Dir" Attributes="0" KeyPath="libSkiaSharp.so_11" Type="0"/>
     <ROW Component="libSkiaSharp.so_12" ComponentId="{5E358B52-797F-4A61-B961-483726B8B579}" Directory_="native_16_Dir" Attributes="0" KeyPath="libSkiaSharp.so_12" Type="0"/>
@@ -446,17 +447,6 @@
     <ROW Component="libSkiaSharp.so_18" ComponentId="{E9D994CD-03E4-4942-AF45-5F8A6AE82A78}" Directory_="native_22_Dir" Attributes="0" KeyPath="libSkiaSharp.so_18" Type="0"/>
     <ROW Component="libSkiaSharp.so_19" ComponentId="{FB30936B-7B82-4F46-B686-F5F9BE7D4A11}" Directory_="native_23_Dir" Attributes="0" KeyPath="libSkiaSharp.so_19" Type="0"/>
     <ROW Component="libSkiaSharp.so_20" ComponentId="{AF4D180E-06EA-4772-87D5-D7F390A6003D}" Directory_="native_24_Dir" Attributes="0" KeyPath="libSkiaSharp.so_20" Type="0"/>
-    <ROW Component="libSkiaSharp.so_22" ComponentId="{29C9DD4D-72F8-46AD-B61C-57096A626F87}" Directory_="native_30_Dir" Attributes="0" KeyPath="libSkiaSharp.so_22" Type="0"/>
-    <ROW Component="libSkiaSharp.so_23" ComponentId="{1226CB5B-3C9B-4C47-B0D8-72DEDDA4965A}" Directory_="native_31_Dir" Attributes="0" KeyPath="libSkiaSharp.so_23" Type="0"/>
-    <ROW Component="libSkiaSharp.so_24" ComponentId="{68EE0EA5-CCA3-4110-8B4F-3AFC42405800}" Directory_="native_32_Dir" Attributes="0" KeyPath="libSkiaSharp.so_24" Type="0"/>
-    <ROW Component="libSkiaSharp.so_25" ComponentId="{CABFF1D8-D0FB-450F-9A45-21A9136E3D6B}" Directory_="native_33_Dir" Attributes="0" KeyPath="libSkiaSharp.so_25" Type="0"/>
-    <ROW Component="libSkiaSharp.so_26" ComponentId="{CB76D0FA-0840-47F3-9732-A7AD73F3251B}" Directory_="native_34_Dir" Attributes="0" KeyPath="libSkiaSharp.so_26" Type="0"/>
-    <ROW Component="libSkiaSharp.so_27" ComponentId="{7AC4AE43-32C5-4289-A6F7-024EDD19C30B}" Directory_="native_35_Dir" Attributes="0" KeyPath="libSkiaSharp.so_27" Type="0"/>
-    <ROW Component="libSkiaSharp.so_28" ComponentId="{8B798B8B-09F5-4FB1-B747-70B502A2ED07}" Directory_="native_36_Dir" Attributes="0" KeyPath="libSkiaSharp.so_28" Type="0"/>
-    <ROW Component="libSkiaSharp.so_29" ComponentId="{DA12B935-EB07-4E1B-B868-A1C8558679F7}" Directory_="native_37_Dir" Attributes="0" KeyPath="libSkiaSharp.so_29" Type="0"/>
-    <ROW Component="libSkiaSharp.so_30" ComponentId="{CD527238-758B-410A-8E4A-1C199E303AC3}" Directory_="native_38_Dir" Attributes="0" KeyPath="libSkiaSharp.so_30" Type="0"/>
-    <ROW Component="libSkiaSharp.so_31" ComponentId="{CAC7FF8B-C969-4083-9DFE-14A2D0EA5C39}" Directory_="native_39_Dir" Attributes="0" KeyPath="libSkiaSharp.so_31" Type="0"/>
-    <ROW Component="libSkiaSharp.so_32" ComponentId="{B69C97E6-E9CE-4FFC-B9DE-D06AE6349662}" Directory_="native_40_Dir" Attributes="0" KeyPath="libSkiaSharp.so_32" Type="0"/>
     <ROW Component="libSkiaSharp.so_33" ComponentId="{EFE8FC60-5531-455D-9122-0EE65E7006D0}" Directory_="native_45_Dir" Attributes="0" KeyPath="libSkiaSharp.so_33" Type="0"/>
     <ROW Component="libSkiaSharp.so_34" ComponentId="{8714C86A-019A-4356-95A4-790C1F196FB7}" Directory_="native_46_Dir" Attributes="0" KeyPath="libSkiaSharp.so_34" Type="0"/>
     <ROW Component="libSkiaSharp.so_35" ComponentId="{196F66AC-8D2A-49D4-9CDF-9EC90E9A3799}" Directory_="native_47_Dir" Attributes="0" KeyPath="libSkiaSharp.so_35" Type="0"/>
@@ -468,7 +458,19 @@
     <ROW Component="libSkiaSharp.so_41" ComponentId="{05A24D20-9618-47E9-964A-BA35AD14836E}" Directory_="native_53_Dir" Attributes="0" KeyPath="libSkiaSharp.so_41" Type="0"/>
     <ROW Component="libSkiaSharp.so_42" ComponentId="{03E1334A-F7FF-4549-BF20-6C0DAA632F0C}" Directory_="native_54_Dir" Attributes="0" KeyPath="libSkiaSharp.so_42" Type="0"/>
     <ROW Component="libSkiaSharp.so_43" ComponentId="{015DB5BC-9204-4917-B7AA-5F67E101B310}" Directory_="native_55_Dir" Attributes="0" KeyPath="libSkiaSharp.so_43" Type="0"/>
+    <ROW Component="libSkiaSharp.so_44" ComponentId="{A29B6A3A-BB61-46E1-882B-0688051EF85D}" Directory_="native_60_Dir" Attributes="0" KeyPath="libSkiaSharp.so_44" Type="0"/>
+    <ROW Component="libSkiaSharp.so_45" ComponentId="{DACF0A35-10E7-459B-9134-BA2AFBDBE426}" Directory_="native_61_Dir" Attributes="0" KeyPath="libSkiaSharp.so_45" Type="0"/>
+    <ROW Component="libSkiaSharp.so_46" ComponentId="{D9AAF77B-1936-44AB-A125-633D98FE4E1B}" Directory_="native_62_Dir" Attributes="0" KeyPath="libSkiaSharp.so_46" Type="0"/>
+    <ROW Component="libSkiaSharp.so_47" ComponentId="{33A545AA-D1BE-4D5D-BF1E-1E9F94362DE6}" Directory_="native_63_Dir" Attributes="0" KeyPath="libSkiaSharp.so_47" Type="0"/>
+    <ROW Component="libSkiaSharp.so_48" ComponentId="{5AF99F9D-FF9E-4C03-A56B-223F77A3EDBD}" Directory_="native_64_Dir" Attributes="0" KeyPath="libSkiaSharp.so_48" Type="0"/>
+    <ROW Component="libSkiaSharp.so_49" ComponentId="{0000E8A2-336C-4865-898A-3316EE068327}" Directory_="native_65_Dir" Attributes="0" KeyPath="libSkiaSharp.so_49" Type="0"/>
+    <ROW Component="libSkiaSharp.so_50" ComponentId="{20BC00F1-70D2-430C-B3D5-81CF02725375}" Directory_="native_66_Dir" Attributes="0" KeyPath="libSkiaSharp.so_50" Type="0"/>
+    <ROW Component="libSkiaSharp.so_51" ComponentId="{7119E9F2-28E9-4625-9A6A-FEAABB8A219D}" Directory_="native_67_Dir" Attributes="0" KeyPath="libSkiaSharp.so_51" Type="0"/>
+    <ROW Component="libSkiaSharp.so_52" ComponentId="{F587EE9D-29EB-4F4C-A23E-EB2CCD282A79}" Directory_="native_68_Dir" Attributes="0" KeyPath="libSkiaSharp.so_52" Type="0"/>
+    <ROW Component="libSkiaSharp.so_53" ComponentId="{9D1DCDD2-3678-45A6-B021-C3916A966D4D}" Directory_="native_69_Dir" Attributes="0" KeyPath="libSkiaSharp.so_53" Type="0"/>
+    <ROW Component="libSkiaSharp.so_54" ComponentId="{0E292D7D-4778-45BA-AF3D-8C19DEA69812}" Directory_="native_70_Dir" Attributes="0" KeyPath="libSkiaSharp.so_54" Type="0"/>
     <ROW Component="local" ComponentId="{4B5CEC13-48A1-49FD-8A18-66ADA11308B2}" Directory_="local_Dir" Attributes="0"/>
+    <ROW Component="logs" ComponentId="{203A72A2-B0F4-4CDF-88B1-4600787FE14B}" Directory_="logs_Dir" Attributes="0"/>
     <ROW Component="regid.zhengyabio.com.xieguigang" ComponentId="{CDF8BCD2-A2CA-4942-B44E-2F3E803661A9}" Directory_="regid.zhengyabio.com.xieguigang_Dir" Attributes="0"/>
     <ROW Component="settings.json" ComponentId="{AE75A348-E9F1-4059-8939-D4474E517243}" Directory_="vscode_Dir" Attributes="0" KeyPath="settings.json" Type="0"/>
   </COMPONENT>
@@ -863,94 +865,6 @@
     <ROW File="libSkiaSharp.pdb_4" Component_="libSkiaSharp.dll_3" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\runtimes\win-x64\native\libSkiaSharp.pdb" SelfReg="false"/>
     <ROW File="libSkiaSharp.pdb_5" Component_="libSkiaSharp.dll_4" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\runtimes\win-x86\native\libSkiaSharp.pdb" SelfReg="false"/>
     <ROW File="TF.fasta" Component_="ec_numbers.fasta_1" FileName="TF~1.FAS|TF.fasta" Attributes="0" SourcePath="..\App\net10.0-windows\data\blastdb\TF.fasta" SelfReg="false"/>
-    <ROW File="Centos.dll_2" Component_="Centos.dll_2" FileName="Centos.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Centos.dll" SelfReg="false"/>
-    <ROW File="Centos.pdb_2" Component_="Centos.dll_2" FileName="Centos.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Centos.pdb" SelfReg="false"/>
-    <ROW File="Centos.xml_2" Component_="Centos.xml_1" FileName="Centos.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Centos.xml" SelfReg="false"/>
-    <ROW File="Darwinism.HPC.Parallel.dll_2" Component_="Darwinism.HPC.Parallel.dll_2" FileName="DARWIN~1.DLL|Darwinism.HPC.Parallel.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Darwinism.HPC.Parallel.dll" SelfReg="false"/>
-    <ROW File="Darwinism.HPC.Parallel.pdb_2" Component_="Darwinism.HPC.Parallel.dll_2" FileName="DARWIN~1.PDB|Darwinism.HPC.Parallel.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Darwinism.HPC.Parallel.pdb" SelfReg="false"/>
-    <ROW File="Darwinism.IPC.Networking.dll_2" Component_="Darwinism.IPC.Networking.dll_2" FileName="DARWIN~2.DLL|Darwinism.IPC.Networking.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Darwinism.IPC.Networking.dll" SelfReg="false"/>
-    <ROW File="Darwinism.IPC.Networking.pdb_2" Component_="Darwinism.IPC.Networking.dll_2" FileName="DARWIN~2.PDB|Darwinism.IPC.Networking.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Darwinism.IPC.Networking.pdb" SelfReg="false"/>
-    <ROW File="Flute.Http.dll_1" Component_="Flute.Http.dll_1" FileName="FLUTEH~1.DLL|Flute.Http.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.Http.dll" SelfReg="false"/>
-    <ROW File="Flute.Http.pdb_1" Component_="Flute.Http.dll_1" FileName="FLUTEH~1.PDB|Flute.Http.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.Http.pdb" SelfReg="false"/>
-    <ROW File="Flute.Http.xml_1" Component_="Centos.xml_1" FileName="FLUTEH~1.XML|Flute.Http.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.Http.xml" SelfReg="false"/>
-    <ROW File="Flute.SessionManager.dll_1" Component_="Flute.SessionManager.dll_1" FileName="FLUTES~1.DLL|Flute.SessionManager.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.SessionManager.dll" SelfReg="false"/>
-    <ROW File="Flute.SessionManager.pdb_1" Component_="Flute.SessionManager.dll_1" FileName="FLUTES~1.PDB|Flute.SessionManager.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.SessionManager.pdb" SelfReg="false"/>
-    <ROW File="Flute.SessionManager.xml_1" Component_="Centos.xml_1" FileName="FLUTES~1.XML|Flute.SessionManager.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.SessionManager.xml" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Data.BinaryD_2_ata.dll" Component_="Microsoft.VisualBasic.Data.BinaryD_2_ata.dll" FileName="MICROS~1.DLL|Microsoft.VisualBasic.Data.BinaryData.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.BinaryData.dll" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Data.BinaryD_2_ata.pdb" Component_="Microsoft.VisualBasic.Data.BinaryD_2_ata.dll" FileName="MICROS~1.PDB|Microsoft.VisualBasic.Data.BinaryData.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.BinaryData.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Data.Framewo_2_rk.dll" Component_="Microsoft.VisualBasic.Data.Framewo_2_rk.dll" FileName="MICROS~2.DLL|Microsoft.VisualBasic.Data.Framework.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.Framework.dll" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Data.Framewo_2_rk.pdb" Component_="Microsoft.VisualBasic.Data.Framewo_2_rk.dll" FileName="MICROS~2.PDB|Microsoft.VisualBasic.Data.Framework.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.Framework.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Data.Framewo_2_rk.xml" Component_="Centos.xml_1" FileName="MICROS~1.XML|Microsoft.VisualBasic.Data.Framework.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.Framework.xml" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Data.IO.Mess_2_agePack.dll" Component_="Microsoft.VisualBasic.Data.IO.Mess_2_agePack.dll" FileName="MICROS~3.DLL|Microsoft.VisualBasic.Data.IO.MessagePack.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.IO.MessagePack.dll" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Data.IO.Mess_2_agePack.pdb" Component_="Microsoft.VisualBasic.Data.IO.Mess_2_agePack.dll" FileName="MICROS~3.PDB|Microsoft.VisualBasic.Data.IO.MessagePack.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.IO.MessagePack.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.DataStorage._2_HDSPack.dll" Component_="Microsoft.VisualBasic.DataStorage._2_HDSPack.dll" FileName="MICROS~4.DLL|Microsoft.VisualBasic.DataStorage.HDSPack.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.DataStorage.HDSPack.dll" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.DataStorage._2_HDSPack.pdb" Component_="Microsoft.VisualBasic.DataStorage._2_HDSPack.dll" FileName="MICROS~4.PDB|Microsoft.VisualBasic.DataStorage.HDSPack.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.DataStorage.HDSPack.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.DataStorage._2_HDSPack.xml" Component_="Centos.xml_1" FileName="MICROS~2.XML|Microsoft.VisualBasic.DataStorage.HDSPack.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.DataStorage.HDSPack.xml" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.MIME.applica_2_tion.json.dll" Component_="Microsoft.VisualBasic.MIME.applica_4_tion.json.dll" FileName="MICROS~5.DLL|Microsoft.VisualBasic.MIME.application.json.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.MIME.application.json.dll" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.MIME.applica_2_tion.json.pdb" Component_="Microsoft.VisualBasic.MIME.applica_4_tion.json.dll" FileName="MICROS~5.PDB|Microsoft.VisualBasic.MIME.application.json.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.MIME.application.json.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.MIME.applica_2_tion.json.xml" Component_="Centos.xml_1" FileName="MICROS~3.XML|Microsoft.VisualBasic.MIME.application.json.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.MIME.application.json.xml" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Network.xml_1" Component_="Centos.xml_1" FileName="MICROS~4.XML|Microsoft.VisualBasic.Network.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Network.xml" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Runtime.dll_2" Component_="Microsoft.VisualBasic.Runtime.dll_2" FileName="MICROS~6.DLL|Microsoft.VisualBasic.Runtime.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Runtime.dll" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Runtime.dll._2_config" Component_="Centos.xml_1" FileName="MICROS~1.CON|Microsoft.VisualBasic.Runtime.dll.config" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Runtime.dll.config" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Runtime.pdb_2" Component_="Microsoft.VisualBasic.Runtime.dll_2" FileName="MICROS~6.PDB|Microsoft.VisualBasic.Runtime.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Runtime.pdb" SelfReg="false"/>
-    <ROW File="Microsoft.VisualBasic.Runtime.xml_2" Component_="Centos.xml_1" FileName="MICROS~5.XML|Microsoft.VisualBasic.Runtime.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Runtime.xml" SelfReg="false"/>
-    <ROW File="R.deps.json_1" Component_="Centos.xml_1" FileName="R#DEPS~1.JSO|R#.deps.json" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.deps.json" SelfReg="false"/>
-    <ROW File="R.dll_1" Component_="R.dll_1" FileName="R#.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.dll" SelfReg="false"/>
-    <ROW File="R.dll.config_1" Component_="Centos.xml_1" FileName="R#DLL~1.CON|R#.dll.config" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.dll.config" SelfReg="false"/>
-    <ROW File="R.exe_1" Component_="R.exe_1" FileName="R#.exe" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="R.pdb_1" Component_="R.exe_1" FileName="R#.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.pdb" SelfReg="false"/>
-    <ROW File="R.runtimeconfig.json_1" Component_="Centos.xml_1" FileName="R#RUNT~1.JSO|R#.runtimeconfig.json" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.runtimeconfig.json" SelfReg="false"/>
-    <ROW File="R.xml_1" Component_="Centos.xml_1" FileName="R#.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.xml" SelfReg="false"/>
-    <ROW File="REnv.dll_2" Component_="REnv.dll_2" FileName="REnv.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\REnv.dll" SelfReg="false"/>
-    <ROW File="REnv.dll.config_2" Component_="Centos.xml_1" FileName="RENVDL~1.CON|REnv.dll.config" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\REnv.dll.config" SelfReg="false"/>
-    <ROW File="REnv.pdb_2" Component_="REnv.dll_2" FileName="REnv.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\REnv.pdb" SelfReg="false"/>
-    <ROW File="REnv.xml_2" Component_="Centos.xml_1" FileName="REnv.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\REnv.xml" SelfReg="false"/>
-    <ROW File="Rserve.deps.json_1" Component_="Centos.xml_1" FileName="RSERVE~1.JSO|Rserve.deps.json" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.deps.json" SelfReg="false"/>
-    <ROW File="Rserve.dll_1" Component_="Rserve.dll_1" FileName="Rserve.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.dll" SelfReg="false"/>
-    <ROW File="Rserve.dll.config_1" Component_="Centos.xml_1" FileName="RSERVE~1.CON|Rserve.dll.config" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.dll.config" SelfReg="false"/>
-    <ROW File="Rserve.exe_1" Component_="Rserve.exe_1" FileName="Rserve.exe" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="Rserve.pdb_1" Component_="Rserve.exe_1" FileName="Rserve.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.pdb" SelfReg="false"/>
-    <ROW File="Rserve.runtimeconfig.json_1" Component_="Centos.xml_1" FileName="RSERVE~2.JSO|Rserve.runtimeconfig.json" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.runtimeconfig.json" SelfReg="false"/>
-    <ROW File="Rserve.xml_1" Component_="Centos.xml_1" FileName="Rserve.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.xml" SelfReg="false"/>
-    <ROW File="Rserver.dll_1" Component_="Rserver.dll_1" FileName="Rserver.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserver.dll" SelfReg="false"/>
-    <ROW File="Rserver.pdb_1" Component_="Rserver.dll_1" FileName="Rserver.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserver.pdb" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_22" Component_="libSkiaSharp.so_22" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-arm\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_23" Component_="libSkiaSharp.so_23" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-arm64\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_24" Component_="libSkiaSharp.so_24" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-loongarch64\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_25" Component_="libSkiaSharp.so_25" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-arm\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_26" Component_="libSkiaSharp.so_26" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-arm64\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_27" Component_="libSkiaSharp.so_27" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-loongarch64\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_28" Component_="libSkiaSharp.so_28" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-riscv64\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_29" Component_="libSkiaSharp.so_29" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-x64\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_30" Component_="libSkiaSharp.so_30" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-riscv64\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_31" Component_="libSkiaSharp.so_31" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-x64\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.so_32" Component_="libSkiaSharp.so_32" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-x86\native\libSkiaSharp.so" SelfReg="false"/>
-    <ROW File="libSkiaSharp.dylib_2" Component_="libSkiaSharp.dylib_2" FileName="LIBSKI~1.DYL|libSkiaSharp.dylib" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\osx\native\libSkiaSharp.dylib" SelfReg="false"/>
-    <ROW File="System.Diagnostics.EventLog.dll_4" Component_="System.Diagnostics.EventLog.dll_4" FileName="SYSTEM~1.DLL|System.Diagnostics.EventLog.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win\lib\net10.0\System.Diagnostics.EventLog.dll" SelfReg="false"/>
-    <ROW File="System.Diagnostics.EventLog.Messag_2_es.dll" Component_="System.Diagnostics.EventLog.Messag_2_es.dll" FileName="SYSTEM~2.DLL|System.Diagnostics.EventLog.Messages.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win\lib\net10.0\System.Diagnostics.EventLog.Messages.dll" SelfReg="false"/>
-    <ROW File="System.Windows.Extensions.dll_4" Component_="System.Windows.Extensions.dll_4" FileName="SYSTEM~3.DLL|System.Windows.Extensions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win\lib\net10.0\System.Windows.Extensions.dll" SelfReg="false"/>
-    <ROW File="libSkiaSharp.dll_6" Component_="libSkiaSharp.dll_6" FileName="LIBSKI~1.DLL|libSkiaSharp.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-arm64\native\libSkiaSharp.dll" SelfReg="false"/>
-    <ROW File="libSkiaSharp.pdb_6" Component_="libSkiaSharp.dll_6" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-arm64\native\libSkiaSharp.pdb" SelfReg="false"/>
-    <ROW File="libSkiaSharp.dll_7" Component_="libSkiaSharp.dll_7" FileName="LIBSKI~1.DLL|libSkiaSharp.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-x64\native\libSkiaSharp.dll" SelfReg="false"/>
-    <ROW File="libSkiaSharp.pdb_7" Component_="libSkiaSharp.dll_7" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-x64\native\libSkiaSharp.pdb" SelfReg="false"/>
-    <ROW File="libSkiaSharp.dll_8" Component_="libSkiaSharp.dll_8" FileName="LIBSKI~1.DLL|libSkiaSharp.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-x86\native\libSkiaSharp.dll" SelfReg="false"/>
-    <ROW File="libSkiaSharp.pdb_8" Component_="libSkiaSharp.dll_8" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-x86\native\libSkiaSharp.pdb" SelfReg="false"/>
-    <ROW File="SkiaSharp.dll_2" Component_="SkiaSharp.dll_2" FileName="SKIASH~1.DLL|SkiaSharp.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\SkiaSharp.dll" SelfReg="false"/>
-    <ROW File="SkiaSharp.Extended.dll_2" Component_="SkiaSharp.Extended.dll_2" FileName="SKIASH~2.DLL|SkiaSharp.Extended.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\SkiaSharp.Extended.dll" SelfReg="false"/>
-    <ROW File="SkiaSharp.Extended.Svg.dll_2" Component_="SkiaSharp.Extended.Svg.dll_2" FileName="SKIASH~3.DLL|SkiaSharp.Extended.Svg.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\SkiaSharp.Extended.Svg.dll" SelfReg="false"/>
-    <ROW File="System.Composition.AttributedModel.dll_2" Component_="System.Composition.AttributedModel_10_.dll" FileName="SYSTEM~1.DLL|System.Composition.AttributedModel.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.AttributedModel.dll" SelfReg="false"/>
-    <ROW File="System.Composition.Convention.dll_2" Component_="System.Composition.Convention.dll_2" FileName="SYSTEM~2.DLL|System.Composition.Convention.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.Convention.dll" SelfReg="false"/>
-    <ROW File="System.Composition.Hosting.dll_2" Component_="System.Composition.Hosting.dll_2" FileName="SYSTEM~3.DLL|System.Composition.Hosting.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.Hosting.dll" SelfReg="false"/>
-    <ROW File="System.Composition.Runtime.dll_2" Component_="System.Composition.Runtime.dll_2" FileName="SYSTEM~4.DLL|System.Composition.Runtime.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.Runtime.dll" SelfReg="false"/>
-    <ROW File="System.Composition.TypedParts.dll_2" Component_="System.Composition.TypedParts.dll_2" FileName="SYSTEM~5.DLL|System.Composition.TypedParts.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.TypedParts.dll" SelfReg="false"/>
-    <ROW File="System.Configuration.Configuration_2_Manager.dll" Component_="System.Configuration.Configuration_2_Manager.dll" FileName="SYSTEM~6.DLL|System.Configuration.ConfigurationManager.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Configuration.ConfigurationManager.dll" SelfReg="false"/>
-    <ROW File="System.Diagnostics.EventLog.dll_5" Component_="System.Diagnostics.EventLog.dll_5" FileName="SYSTEM~7.DLL|System.Diagnostics.EventLog.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Diagnostics.EventLog.dll" SelfReg="false"/>
-    <ROW File="System.Formats.Nrbf.dll_2" Component_="System.Formats.Nrbf.dll_2" FileName="SYSTEM~8.DLL|System.Formats.Nrbf.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Formats.Nrbf.dll" SelfReg="false"/>
-    <ROW File="System.IO.Packaging.dll_2" Component_="System.IO.Packaging.dll_2" FileName="SYSTEM~9.DLL|System.IO.Packaging.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.IO.Packaging.dll" SelfReg="false"/>
-    <ROW File="System.Resources.Extensions.dll_2" Component_="System.Resources.Extensions.dll_2" FileName="SYSTE~10.DLL|System.Resources.Extensions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Resources.Extensions.dll" SelfReg="false"/>
-    <ROW File="System.Security.Cryptography.Prote_2_ctedData.dll" Component_="System.Security.Cryptography.Prote_2_ctedData.dll" FileName="SYSTE~11.DLL|System.Security.Cryptography.ProtectedData.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Security.Cryptography.ProtectedData.dll" SelfReg="false"/>
-    <ROW File="System.Security.Permissions.dll_2" Component_="System.Security.Permissions.dll_2" FileName="SYSTE~12.DLL|System.Security.Permissions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Security.Permissions.dll" SelfReg="false"/>
-    <ROW File="System.Windows.Extensions.dll_5" Component_="System.Windows.Extensions.dll_5" FileName="SYSTE~13.DLL|System.Windows.Extensions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Windows.Extensions.dll" SelfReg="false"/>
     <ROW File="CellBuilder.dll" Component_="CellBuilder.dll" FileName="CELLBU~1.DLL|CellBuilder.dll" Attributes="0" SourcePath="..\App\net10.0-windows\CellBuilder.dll" SelfReg="false"/>
     <ROW File="CellBuilder.pdb" Component_="CellBuilder.dll" FileName="CELLBU~1.PDB|CellBuilder.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\CellBuilder.pdb" SelfReg="false"/>
     <ROW File="CellBuilder.xml" Component_="CADRegistry.xml" FileName="CELLBU~1.XML|CellBuilder.xml" Attributes="0" SourcePath="..\App\net10.0-windows\CellBuilder.xml" SelfReg="false"/>
@@ -1107,6 +1021,94 @@
     <ROW File="SMRUCC.genomics.SequenceModel.RNAseq.Data.dll" Component_="SMRUCC.genomics.SequenceModel.RNAseq.Data.dll" FileName="SMRUC~33.DLL|SMRUCC.genomics.SequenceModel.RNA-seq.Data.dll" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.SequenceModel.RNA-seq.Data.dll" SelfReg="false"/>
     <ROW File="SMRUCC.genomics.SequenceModel.RNAseq.Data.pdb" Component_="SMRUCC.genomics.SequenceModel.RNAseq.Data.dll" FileName="SMRUC~33.PDB|SMRUCC.genomics.SequenceModel.RNA-seq.Data.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.SequenceModel.RNA-seq.Data.pdb" SelfReg="false"/>
     <ROW File="SMRUCC.genomics.SequenceModel.RNAseq.Data.xml" Component_="CADRegistry.xml" FileName="SMRUC~33.XML|SMRUCC.genomics.SequenceModel.RNA-seq.Data.xml" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.SequenceModel.RNA-seq.Data.xml" SelfReg="false"/>
+    <ROW File="Centos.dll_4" Component_="Centos.dll_4" FileName="Centos.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Centos.dll" SelfReg="false"/>
+    <ROW File="Centos.pdb_4" Component_="Centos.dll_4" FileName="Centos.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Centos.pdb" SelfReg="false"/>
+    <ROW File="Centos.xml_4" Component_="Centos.xml_2" FileName="Centos.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Centos.xml" SelfReg="false"/>
+    <ROW File="Darwinism.HPC.Parallel.dll_4" Component_="Darwinism.HPC.Parallel.dll_4" FileName="DARWIN~1.DLL|Darwinism.HPC.Parallel.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Darwinism.HPC.Parallel.dll" SelfReg="false"/>
+    <ROW File="Darwinism.HPC.Parallel.pdb_4" Component_="Darwinism.HPC.Parallel.dll_4" FileName="DARWIN~1.PDB|Darwinism.HPC.Parallel.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Darwinism.HPC.Parallel.pdb" SelfReg="false"/>
+    <ROW File="Darwinism.IPC.Networking.dll_4" Component_="Darwinism.IPC.Networking.dll_4" FileName="DARWIN~2.DLL|Darwinism.IPC.Networking.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Darwinism.IPC.Networking.dll" SelfReg="false"/>
+    <ROW File="Darwinism.IPC.Networking.pdb_4" Component_="Darwinism.IPC.Networking.dll_4" FileName="DARWIN~2.PDB|Darwinism.IPC.Networking.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Darwinism.IPC.Networking.pdb" SelfReg="false"/>
+    <ROW File="Flute.Http.dll_2" Component_="Flute.Http.dll_2" FileName="FLUTEH~1.DLL|Flute.Http.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.Http.dll" SelfReg="false"/>
+    <ROW File="Flute.Http.pdb_2" Component_="Flute.Http.dll_2" FileName="FLUTEH~1.PDB|Flute.Http.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.Http.pdb" SelfReg="false"/>
+    <ROW File="Flute.Http.xml_2" Component_="Centos.xml_2" FileName="FLUTEH~1.XML|Flute.Http.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.Http.xml" SelfReg="false"/>
+    <ROW File="Flute.SessionManager.dll_2" Component_="Flute.SessionManager.dll_2" FileName="FLUTES~1.DLL|Flute.SessionManager.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.SessionManager.dll" SelfReg="false"/>
+    <ROW File="Flute.SessionManager.pdb_2" Component_="Flute.SessionManager.dll_2" FileName="FLUTES~1.PDB|Flute.SessionManager.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.SessionManager.pdb" SelfReg="false"/>
+    <ROW File="Flute.SessionManager.xml_2" Component_="Centos.xml_2" FileName="FLUTES~1.XML|Flute.SessionManager.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Flute.SessionManager.xml" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.BinaryD_4_ata.dll" Component_="Microsoft.VisualBasic.Data.BinaryD_4_ata.dll" FileName="MICROS~1.DLL|Microsoft.VisualBasic.Data.BinaryData.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.BinaryData.dll" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.BinaryD_4_ata.pdb" Component_="Microsoft.VisualBasic.Data.BinaryD_4_ata.dll" FileName="MICROS~1.PDB|Microsoft.VisualBasic.Data.BinaryData.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.BinaryData.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.Framewo_4_rk.dll" Component_="Microsoft.VisualBasic.Data.Framewo_4_rk.dll" FileName="MICROS~2.DLL|Microsoft.VisualBasic.Data.Framework.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.Framework.dll" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.Framewo_4_rk.pdb" Component_="Microsoft.VisualBasic.Data.Framewo_4_rk.dll" FileName="MICROS~2.PDB|Microsoft.VisualBasic.Data.Framework.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.Framework.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.Framewo_4_rk.xml" Component_="Centos.xml_2" FileName="MICROS~1.XML|Microsoft.VisualBasic.Data.Framework.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.Framework.xml" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.IO.Mess_4_agePack.dll" Component_="Microsoft.VisualBasic.Data.IO.Mess_4_agePack.dll" FileName="MICROS~3.DLL|Microsoft.VisualBasic.Data.IO.MessagePack.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.IO.MessagePack.dll" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Data.IO.Mess_4_agePack.pdb" Component_="Microsoft.VisualBasic.Data.IO.Mess_4_agePack.dll" FileName="MICROS~3.PDB|Microsoft.VisualBasic.Data.IO.MessagePack.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Data.IO.MessagePack.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.DataStorage._4_HDSPack.dll" Component_="Microsoft.VisualBasic.DataStorage._4_HDSPack.dll" FileName="MICROS~4.DLL|Microsoft.VisualBasic.DataStorage.HDSPack.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.DataStorage.HDSPack.dll" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.DataStorage._4_HDSPack.pdb" Component_="Microsoft.VisualBasic.DataStorage._4_HDSPack.dll" FileName="MICROS~4.PDB|Microsoft.VisualBasic.DataStorage.HDSPack.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.DataStorage.HDSPack.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.DataStorage._4_HDSPack.xml" Component_="Centos.xml_2" FileName="MICROS~2.XML|Microsoft.VisualBasic.DataStorage.HDSPack.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.DataStorage.HDSPack.xml" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.MIME.applica_4_tion.json.dll" Component_="Microsoft.VisualBasic.MIME.applica_6_tion.json.dll" FileName="MICROS~5.DLL|Microsoft.VisualBasic.MIME.application.json.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.MIME.application.json.dll" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.MIME.applica_4_tion.json.pdb" Component_="Microsoft.VisualBasic.MIME.applica_6_tion.json.dll" FileName="MICROS~5.PDB|Microsoft.VisualBasic.MIME.application.json.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.MIME.application.json.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.MIME.applica_4_tion.json.xml" Component_="Centos.xml_2" FileName="MICROS~3.XML|Microsoft.VisualBasic.MIME.application.json.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.MIME.application.json.xml" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Network.xml_3" Component_="Centos.xml_2" FileName="MICROS~4.XML|Microsoft.VisualBasic.Network.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Network.xml" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Runtime.dll_4" Component_="Microsoft.VisualBasic.Runtime.dll_4" FileName="MICROS~6.DLL|Microsoft.VisualBasic.Runtime.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Runtime.dll" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Runtime.dll._4_config" Component_="Centos.xml_2" FileName="MICROS~1.CON|Microsoft.VisualBasic.Runtime.dll.config" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Runtime.dll.config" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Runtime.pdb_4" Component_="Microsoft.VisualBasic.Runtime.dll_4" FileName="MICROS~6.PDB|Microsoft.VisualBasic.Runtime.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Runtime.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.VisualBasic.Runtime.xml_4" Component_="Centos.xml_2" FileName="MICROS~5.XML|Microsoft.VisualBasic.Runtime.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Microsoft.VisualBasic.Runtime.xml" SelfReg="false"/>
+    <ROW File="R.deps.json_2" Component_="Centos.xml_2" FileName="R#DEPS~1.JSO|R#.deps.json" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.deps.json" SelfReg="false"/>
+    <ROW File="R.dll_2" Component_="R.dll_2" FileName="R#.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.dll" SelfReg="false"/>
+    <ROW File="R.dll.config_2" Component_="Centos.xml_2" FileName="R#DLL~1.CON|R#.dll.config" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.dll.config" SelfReg="false"/>
+    <ROW File="R.exe_2" Component_="R.exe_2" FileName="R#.exe" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="R.pdb_2" Component_="R.exe_2" FileName="R#.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.pdb" SelfReg="false"/>
+    <ROW File="R.runtimeconfig.json_2" Component_="Centos.xml_2" FileName="R#RUNT~1.JSO|R#.runtimeconfig.json" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.runtimeconfig.json" SelfReg="false"/>
+    <ROW File="R.xml_2" Component_="Centos.xml_2" FileName="R#.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\R#.xml" SelfReg="false"/>
+    <ROW File="REnv.dll_4" Component_="REnv.dll_4" FileName="REnv.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\REnv.dll" SelfReg="false"/>
+    <ROW File="REnv.dll.config_4" Component_="Centos.xml_2" FileName="RENVDL~1.CON|REnv.dll.config" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\REnv.dll.config" SelfReg="false"/>
+    <ROW File="REnv.pdb_4" Component_="REnv.dll_4" FileName="REnv.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\REnv.pdb" SelfReg="false"/>
+    <ROW File="REnv.xml_4" Component_="Centos.xml_2" FileName="REnv.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\REnv.xml" SelfReg="false"/>
+    <ROW File="Rserve.deps.json_2" Component_="Centos.xml_2" FileName="RSERVE~1.JSO|Rserve.deps.json" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.deps.json" SelfReg="false"/>
+    <ROW File="Rserve.dll_2" Component_="Rserve.dll_2" FileName="Rserve.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.dll" SelfReg="false"/>
+    <ROW File="Rserve.dll.config_2" Component_="Centos.xml_2" FileName="RSERVE~1.CON|Rserve.dll.config" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.dll.config" SelfReg="false"/>
+    <ROW File="Rserve.exe_2" Component_="Rserve.exe_2" FileName="Rserve.exe" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="Rserve.pdb_2" Component_="Rserve.exe_2" FileName="Rserve.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.pdb" SelfReg="false"/>
+    <ROW File="Rserve.runtimeconfig.json_2" Component_="Centos.xml_2" FileName="RSERVE~2.JSO|Rserve.runtimeconfig.json" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.runtimeconfig.json" SelfReg="false"/>
+    <ROW File="Rserve.xml_2" Component_="Centos.xml_2" FileName="Rserve.xml" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserve.xml" SelfReg="false"/>
+    <ROW File="Rserver.dll_2" Component_="Rserver.dll_2" FileName="Rserver.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserver.dll" SelfReg="false"/>
+    <ROW File="Rserver.pdb_2" Component_="Rserver.dll_2" FileName="Rserver.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\Rserver.pdb" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_44" Component_="libSkiaSharp.so_44" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-arm\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_45" Component_="libSkiaSharp.so_45" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-arm64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_46" Component_="libSkiaSharp.so_46" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-loongarch64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_47" Component_="libSkiaSharp.so_47" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-arm\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_48" Component_="libSkiaSharp.so_48" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-arm64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_49" Component_="libSkiaSharp.so_49" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-loongarch64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_50" Component_="libSkiaSharp.so_50" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-riscv64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_51" Component_="libSkiaSharp.so_51" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-musl-x64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_52" Component_="libSkiaSharp.so_52" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-riscv64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_53" Component_="libSkiaSharp.so_53" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-x64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_54" Component_="libSkiaSharp.so_54" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-x86\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.dylib_4" Component_="libSkiaSharp.dylib_4" FileName="LIBSKI~1.DYL|libSkiaSharp.dylib" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\osx\native\libSkiaSharp.dylib" SelfReg="false"/>
+    <ROW File="System.Diagnostics.EventLog.dll_9" Component_="System.Diagnostics.EventLog.dll_9" FileName="SYSTEM~1.DLL|System.Diagnostics.EventLog.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win\lib\net10.0\System.Diagnostics.EventLog.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.EventLog.Messag_4_es.dll" Component_="System.Diagnostics.EventLog.Messag_4_es.dll" FileName="SYSTEM~2.DLL|System.Diagnostics.EventLog.Messages.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win\lib\net10.0\System.Diagnostics.EventLog.Messages.dll" SelfReg="false"/>
+    <ROW File="System.Windows.Extensions.dll_9" Component_="System.Windows.Extensions.dll_9" FileName="SYSTEM~3.DLL|System.Windows.Extensions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win\lib\net10.0\System.Windows.Extensions.dll" SelfReg="false"/>
+    <ROW File="libSkiaSharp.dll_12" Component_="libSkiaSharp.dll_12" FileName="LIBSKI~1.DLL|libSkiaSharp.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-arm64\native\libSkiaSharp.dll" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb_11" Component_="libSkiaSharp.dll_12" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-arm64\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="libSkiaSharp.dll_13" Component_="libSkiaSharp.dll_13" FileName="LIBSKI~1.DLL|libSkiaSharp.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-x64\native\libSkiaSharp.dll" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb_12" Component_="libSkiaSharp.dll_13" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-x64\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="libSkiaSharp.dll_14" Component_="libSkiaSharp.dll_14" FileName="LIBSKI~1.DLL|libSkiaSharp.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-x86\native\libSkiaSharp.dll" SelfReg="false"/>
+    <ROW File="libSkiaSharp.pdb_13" Component_="libSkiaSharp.dll_14" FileName="LIBSKI~1.PDB|libSkiaSharp.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\win-x86\native\libSkiaSharp.pdb" SelfReg="false"/>
+    <ROW File="SkiaSharp.dll_4" Component_="SkiaSharp.dll_4" FileName="SKIASH~1.DLL|SkiaSharp.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\SkiaSharp.dll" SelfReg="false"/>
+    <ROW File="SkiaSharp.Extended.dll_4" Component_="SkiaSharp.Extended.dll_4" FileName="SKIASH~2.DLL|SkiaSharp.Extended.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\SkiaSharp.Extended.dll" SelfReg="false"/>
+    <ROW File="SkiaSharp.Extended.Svg.dll_4" Component_="SkiaSharp.Extended.Svg.dll_4" FileName="SKIASH~3.DLL|SkiaSharp.Extended.Svg.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\SkiaSharp.Extended.Svg.dll" SelfReg="false"/>
+    <ROW File="System.Composition.AttributedModel.dll_4" Component_="System.Composition.AttributedModel_12_.dll" FileName="SYSTEM~1.DLL|System.Composition.AttributedModel.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.AttributedModel.dll" SelfReg="false"/>
+    <ROW File="System.Composition.Convention.dll_4" Component_="System.Composition.Convention.dll_4" FileName="SYSTEM~2.DLL|System.Composition.Convention.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.Convention.dll" SelfReg="false"/>
+    <ROW File="System.Composition.Hosting.dll_4" Component_="System.Composition.Hosting.dll_4" FileName="SYSTEM~3.DLL|System.Composition.Hosting.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.Hosting.dll" SelfReg="false"/>
+    <ROW File="System.Composition.Runtime.dll_4" Component_="System.Composition.Runtime.dll_4" FileName="SYSTEM~4.DLL|System.Composition.Runtime.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.Runtime.dll" SelfReg="false"/>
+    <ROW File="System.Composition.TypedParts.dll_4" Component_="System.Composition.TypedParts.dll_4" FileName="SYSTEM~5.DLL|System.Composition.TypedParts.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Composition.TypedParts.dll" SelfReg="false"/>
+    <ROW File="System.Configuration.Configuration_4_Manager.dll" Component_="System.Configuration.Configuration_4_Manager.dll" FileName="SYSTEM~6.DLL|System.Configuration.ConfigurationManager.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Configuration.ConfigurationManager.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.EventLog.dll_10" Component_="System.Diagnostics.EventLog.dll_10" FileName="SYSTEM~7.DLL|System.Diagnostics.EventLog.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Diagnostics.EventLog.dll" SelfReg="false"/>
+    <ROW File="System.Formats.Nrbf.dll_4" Component_="System.Formats.Nrbf.dll_4" FileName="SYSTEM~8.DLL|System.Formats.Nrbf.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Formats.Nrbf.dll" SelfReg="false"/>
+    <ROW File="System.IO.Packaging.dll_4" Component_="System.IO.Packaging.dll_4" FileName="SYSTEM~9.DLL|System.IO.Packaging.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.IO.Packaging.dll" SelfReg="false"/>
+    <ROW File="System.Resources.Extensions.dll_4" Component_="System.Resources.Extensions.dll_4" FileName="SYSTE~10.DLL|System.Resources.Extensions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Resources.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Security.Cryptography.Prote_4_ctedData.dll" Component_="System.Security.Cryptography.Prote_4_ctedData.dll" FileName="SYSTE~11.DLL|System.Security.Cryptography.ProtectedData.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Security.Cryptography.ProtectedData.dll" SelfReg="false"/>
+    <ROW File="System.Security.Permissions.dll_4" Component_="System.Security.Permissions.dll_4" FileName="SYSTE~12.DLL|System.Security.Permissions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Security.Permissions.dll" SelfReg="false"/>
+    <ROW File="System.Windows.Extensions.dll_10" Component_="System.Windows.Extensions.dll_10" FileName="SYSTE~13.DLL|System.Windows.Extensions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Windows.Extensions.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
     <ROW MsiShortcutProperty="Sophia0" Shortcut_="Sophia" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
@@ -1325,6 +1327,7 @@
     <ROW Directory_="Zhengyabio_Dir" Component_="Zhengyabio" ManualDelete="false"/>
     <ROW Directory_="regid.zhengyabio.com.xieguigang_Dir" Component_="regid.zhengyabio.com.xieguigang" ManualDelete="false"/>
     <ROW Directory_="local_Dir" Component_="local" ManualDelete="false"/>
+    <ROW Directory_="logs_Dir" Component_="logs" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
@@ -1548,59 +1551,60 @@
     <ROW Feature_="MainFeature" Component_="index.css"/>
     <ROW Feature_="MainFeature" Component_="icons8bacteria96.png"/>
     <ROW Feature_="MainFeature" Component_="ec_numbers.fasta_1"/>
+    <ROW Feature_="MainFeature" Component_="logs"/>
     <ROW Feature_="MainFeature" Component_="local"/>
-    <ROW Feature_="MainFeature" Component_="Centos.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Centos.xml_1"/>
-    <ROW Feature_="MainFeature" Component_="Darwinism.HPC.Parallel.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Darwinism.IPC.Networking.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Flute.Http.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Flute.SessionManager.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Data.BinaryD_2_ata.dll"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Data.Framewo_2_rk.dll"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Data.IO.Mess_2_agePack.dll"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.DataStorage._2_HDSPack.dll"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.MIME.applica_4_tion.json.dll"/>
-    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Runtime.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="R.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="R.exe_1"/>
-    <ROW Feature_="MainFeature" Component_="REnv.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Rserve.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="Rserve.exe_1"/>
-    <ROW Feature_="MainFeature" Component_="Rserver.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_22"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_23"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_24"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_25"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_26"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_27"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_28"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_29"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_30"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_31"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_32"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.dylib_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Diagnostics.EventLog.dll_4"/>
-    <ROW Feature_="MainFeature" Component_="System.Diagnostics.EventLog.Messag_2_es.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Windows.Extensions.dll_4"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="libSkiaSharp.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="SkiaSharp.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="SkiaSharp.Extended.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="SkiaSharp.Extended.Svg.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Composition.AttributedModel_10_.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Composition.Convention.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Composition.Hosting.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Composition.Runtime.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Composition.TypedParts.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Configuration.Configuration_2_Manager.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Diagnostics.EventLog.dll_5"/>
-    <ROW Feature_="MainFeature" Component_="System.Formats.Nrbf.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.IO.Packaging.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Resources.Extensions.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Security.Cryptography.Prote_2_ctedData.dll"/>
-    <ROW Feature_="MainFeature" Component_="System.Security.Permissions.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="System.Windows.Extensions.dll_5"/>
+    <ROW Feature_="MainFeature" Component_="Centos.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Centos.xml_2"/>
+    <ROW Feature_="MainFeature" Component_="Darwinism.HPC.Parallel.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Darwinism.IPC.Networking.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Flute.Http.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Flute.SessionManager.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Data.BinaryD_4_ata.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Data.Framewo_4_rk.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Data.IO.Mess_4_agePack.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.DataStorage._4_HDSPack.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.MIME.applica_6_tion.json.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Runtime.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="R.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="R.exe_2"/>
+    <ROW Feature_="MainFeature" Component_="REnv.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Rserve.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Rserve.exe_2"/>
+    <ROW Feature_="MainFeature" Component_="Rserver.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_44"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_45"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_46"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_47"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_48"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_49"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_50"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_51"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_52"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_53"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_54"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.dylib_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.EventLog.dll_9"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.EventLog.Messag_4_es.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Windows.Extensions.dll_9"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.dll_12"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.dll_13"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.dll_14"/>
+    <ROW Feature_="MainFeature" Component_="SkiaSharp.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="SkiaSharp.Extended.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="SkiaSharp.Extended.Svg.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Composition.AttributedModel_12_.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Composition.Convention.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Composition.Hosting.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Composition.Runtime.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Composition.TypedParts.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Configuration.Configuration_4_Manager.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.EventLog.dll_10"/>
+    <ROW Feature_="MainFeature" Component_="System.Formats.Nrbf.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.Packaging.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Resources.Extensions.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Cryptography.Prote_4_ctedData.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Permissions.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="System.Windows.Extensions.dll_10"/>
     <ROW Feature_="MainFeature" Component_="CellBuilder.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Data.IO.HDF5.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.VisualBasic.Data.NLP.dll"/>
@@ -1829,7 +1833,7 @@
     <ROW XmlElement="swidbuild" ParentElement="swidnumeric" Name="swid:build" Condition="1" Order="2" Flags="14" Text="2026" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidentitlement_required_indicator" ParentElement="swidsoftware_identification_tag" Name="swid:entitlement_required_indicator" Condition="1" Order="0" Flags="14" Text="false" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidmajor" ParentElement="swidnumeric" Name="swid:major" Condition="1" Order="0" Flags="14" Text="1" UpdateIndexInParent="0"/>
-    <ROW XmlElement="swidminor" ParentElement="swidnumeric" Name="swid:minor" Condition="1" Order="1" Flags="14" Text="8" UpdateIndexInParent="0"/>
+    <ROW XmlElement="swidminor" ParentElement="swidnumeric" Name="swid:minor" Condition="1" Order="1" Flags="14" Text="9" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidname" ParentElement="swidproduct_version" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[ProductVersion]" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidname_1" ParentElement="swidsoftware_creator" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[Manufacturer]" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidname_2" ParentElement="swidsoftware_licensor" Name="swid:name" Condition="1" Order="0" Flags="14" Text="[Manufacturer]" UpdateIndexInParent="0"/>
@@ -1840,7 +1844,7 @@
     <ROW XmlElement="swidregid" ParentElement="swidsoftware_creator" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.zhengyabio.com.xieguigang" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidregid_1" ParentElement="swidsoftware_licensor" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.zhengyabio.com.xieguigang" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidregid_2" ParentElement="swidtag_creator" Name="swid:regid" Condition="1" Order="1" Flags="14" Text="regid.zhengyabio.com.xieguigang" UpdateIndexInParent="0"/>
-    <ROW XmlElement="swidreview" ParentElement="swidnumeric" Name="swid:review" Condition="1" Order="3" Flags="14" Text="122" UpdateIndexInParent="0"/>
+    <ROW XmlElement="swidreview" ParentElement="swidnumeric" Name="swid:review" Condition="1" Order="3" Flags="14" Text="520" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidsoftware_creator" ParentElement="swidsoftware_identification_tag" Name="swid:software_creator" Condition="1" Order="3" Flags="14" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidsoftware_id" ParentElement="swidsoftware_identification_tag" Name="swid:software_id" Condition="1" Order="5" Flags="14" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidsoftware_identification_tag" Name="swid:software_identification_tag" Condition="1" Order="0" Flags="14" UpdateIndexInParent="0"/>
