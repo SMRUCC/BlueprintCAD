@@ -761,7 +761,9 @@
       <Platform Solution="*|x64" Project="x64" />
     </Project>
     <Project Path="../GCModeller/src/GCModeller/annotations/GPR/GPR.vbproj">
-      <BuildType Solution="CellaLAB-Desktop|*" Project="Debug" />
+      <BuildType Solution="CellaLAB-Desktop|Any CPU" Project="Debug" />
+      <BuildType Solution="CellaLAB-Desktop|x64" Project="Release" />
+      <BuildType Solution="CellaLAB-Desktop|x86" Project="Debug" />
       <BuildType Solution="CFD_win32|*" Project="Release" />
       <BuildType Solution="Desktop|*" Project="Release" />
       <BuildType Solution="Docker|*" Project="Release" />
