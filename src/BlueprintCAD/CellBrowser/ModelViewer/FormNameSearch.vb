@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.CompilerServices
 Imports Galaxy.Data.TableSheet
+Imports Galaxy.Workbench
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Public Class FormNameSearch
@@ -36,10 +37,23 @@ Public Class FormNameSearch
 
         If id Is Nothing OrElse web Is Nothing Then
             Return
+        Else
+            Call CommonRuntime.StatusMessage($"view data of {id}")
         End If
 
         Dim links = web.GetReactions(id)
 
         Call ShowReactionTable(links)
+    End Sub
+
+    Private Sub CopyIDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyIDToolStripMenuItem.Click
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim id As String = CStr(row.Cells(0).Value)
+
+        Call Clipboard.SetText(id)
     End Sub
 End Class

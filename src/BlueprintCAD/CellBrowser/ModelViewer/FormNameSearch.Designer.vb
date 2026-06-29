@@ -24,6 +24,7 @@ Partial Class FormNameSearch
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         SplitContainer1 = New SplitContainer()
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewTextBoxColumn()
@@ -32,12 +33,15 @@ Partial Class FormNameSearch
         Column6 = New DataGridViewTextBoxColumn()
         AdvancedDataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
         AdvancedDataGridViewSearchToolBar1 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        CopyIDToolStripMenuItem = New ToolStripMenuItem()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' SplitContainer1
@@ -61,8 +65,10 @@ Partial Class FormNameSearch
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column4, Column6})
+        DataGridView1.ContextMenuStrip = ContextMenuStrip1
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(0, 0)
         DataGridView1.Name = "DataGridView1"
@@ -124,6 +130,18 @@ Partial Class FormNameSearch
         AdvancedDataGridViewSearchToolBar1.TabIndex = 0
         AdvancedDataGridViewSearchToolBar1.Text = "AdvancedDataGridViewSearchToolBar1"
         ' 
+        ' ContextMenuStrip1
+        ' 
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {CopyIDToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(181, 48)
+        ' 
+        ' CopyIDToolStripMenuItem
+        ' 
+        CopyIDToolStripMenuItem.Name = "CopyIDToolStripMenuItem"
+        CopyIDToolStripMenuItem.Size = New Size(180, 22)
+        CopyIDToolStripMenuItem.Text = "Copy ID"
+        ' 
         ' FormNameSearch
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
@@ -142,6 +160,7 @@ Partial Class FormNameSearch
         SplitContainer1.ResumeLayout(False)
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -153,4 +172,6 @@ Partial Class FormNameSearch
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents CopyIDToolStripMenuItem As ToolStripMenuItem
 End Class
