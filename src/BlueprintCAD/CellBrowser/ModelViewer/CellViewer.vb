@@ -1,4 +1,6 @@
-﻿Imports BlueprintCAD.UIData
+﻿Imports System.Runtime.CompilerServices
+Imports BlueprintCAD.UIData
+Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports Galaxy.Workbench.CommonDialogs
 Imports Microsoft.VisualBasic.Data.visualize.Network
@@ -100,9 +102,29 @@ Public Class CellViewer
         Next
     End Sub
 
+    Dim loader As GridLoaderHandler
+
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
+    Public Sub ShowReactionTable(links As IEnumerable(Of Reaction))
+        Call loader.LoadTable(Sub(tbl) Call ShowReactionTable(tbl, links))
+    End Sub
+
+    Private Sub ShowReactionTable(tbl As DataTable, links As IEnumerable(Of Reaction))
+        Call tbl.Columns.Add("id", GetType(String))
+        Call tbl.Columns.Add("name", GetType(String))
+        Call tbl.Columns.Add("ec_number", GetType(String))
+        Call tbl.Columns.Add("equation", GetType(String))
+        Call tbl.Columns.Add("note", GetType(String))
+
+        For Each rxn As Reaction In links
+            Call tbl.Rows.Add(rxn.ID, rxn.name, rxn.ec_number.JoinBy(" / "), rxn.equation, rxn.note)
+        Next
+    End Sub
+
     Private Async Sub CellViewer_Load(sender As Object, e As EventArgs) Handles Me.Load
         Await WebViewLoader.Init(WebView21)
 
+        loader = New GridLoaderHandler(AdvancedDataGridView1, AdvancedDataGridViewSearchToolBar1)
         explorer = New CellExplorer
         explorer.Show(Workbench.AppHost.GetDockPanel, dockState:=DockState.DockLeft)
 

@@ -84,7 +84,6 @@ Public Class CellExplorer
     Private Sub CellExplorer_Load(sender As Object, e As EventArgs) Handles Me.Load
         TabText = "Cell Explorer"
 
-        loader = New GridLoaderHandler(web.AdvancedDataGridView1, web.AdvancedDataGridViewSearchToolBar1)
         viewer = New JsonViewer
         viewer.Dock = DockStyle.Fill
         viewer.AddContextMenuItem("View In Registry", "view_registry")
@@ -187,7 +186,7 @@ Public Class CellExplorer
         Next
 
         Call web.ViewGraph(Await Task.Run(Function() BuildGraph(links)))
-        Call ShowReactionTable(links)
+        Call web.ShowReactionTable(links)
     End Function
 
     Public Async Function viewGraph(metaID As String) As Task
@@ -195,29 +194,10 @@ Public Class CellExplorer
             Dim links = Me.links(metaID)
             Dim sigma = Await Task.Run(Function() BuildGraph(links))
 
-            Call ShowReactionTable(links)
+            Call web.ShowReactionTable(links)
             Call web.ViewGraph(sigma)
         End If
     End Function
-
-    Dim loader As GridLoaderHandler
-
-    <MethodImpl(MethodImplOptions.AggressiveInlining)>
-    Private Sub ShowReactionTable(links As IEnumerable(Of Reaction))
-        Call loader.LoadTable(Sub(tbl) Call ShowReactionTable(tbl, links))
-    End Sub
-
-    Private Sub ShowReactionTable(tbl As DataTable, links As IEnumerable(Of Reaction))
-        Call tbl.Columns.Add("id", GetType(String))
-        Call tbl.Columns.Add("name", GetType(String))
-        Call tbl.Columns.Add("ec_number", GetType(String))
-        Call tbl.Columns.Add("equation", GetType(String))
-        Call tbl.Columns.Add("note", GetType(String))
-
-        For Each rxn As Reaction In links
-            Call tbl.Rows.Add(rxn.ID, rxn.name, rxn.ec_number.JoinBy(" / "), rxn.equation, rxn.note)
-        Next
-    End Sub
 
     Private Function BuildGraph(links As IEnumerable(Of Reaction)) As graphology.graph
         Dim g As New NetworkGraph
