@@ -168,6 +168,10 @@ Public Class CellViewer
         Return Me
     End Function
 
+    Public Async Function ViewGraph(metaID As String) As Task
+        Await explorer.viewGraph(metaID)
+    End Function
+
     Public Sub ViewGraph(g As graphology.graph)
         Call WebView21.CoreWebView2.PostWebMessageAsJson(g.GetJson(simpleDict:=True))
     End Sub

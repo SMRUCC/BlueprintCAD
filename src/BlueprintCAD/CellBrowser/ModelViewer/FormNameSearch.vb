@@ -56,4 +56,21 @@ Public Class FormNameSearch
 
         Call Clipboard.SetText(id)
     End Sub
+
+    Private Async Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem.Click
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
+
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim id As String = CStr(row.Cells(0).Value)
+
+        If id Is Nothing OrElse web Is Nothing Then
+            Return
+        Else
+            Call CommonRuntime.StatusMessage($"view metabolic graph of {id}")
+        End If
+
+        Await web.ViewGraph(id)
+    End Sub
 End Class
