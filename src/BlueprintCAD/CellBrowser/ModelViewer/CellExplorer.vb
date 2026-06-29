@@ -84,13 +84,11 @@ Public Class CellExplorer
     Private Sub CellExplorer_Load(sender As Object, e As EventArgs) Handles Me.Load
         TabText = "Cell Explorer"
 
+        loader = New GridLoaderHandler(web.AdvancedDataGridView1, web.AdvancedDataGridViewSearchToolBar1)
         viewer = New JsonViewer
         viewer.Dock = DockStyle.Fill
         viewer.AddContextMenuItem("View In Registry", "view_registry")
         viewer.AddContextMenuItem("Add Ignores", "add_ignores")
-
-        loader = New GridLoaderHandler(Table, ToolBar)
-        search = New GridSearchHandler(Table)
 
         Call Panel1.Controls.Add(viewer)
 
@@ -203,7 +201,6 @@ Public Class CellExplorer
     End Function
 
     Dim loader As GridLoaderHandler
-    Dim search As GridSearchHandler
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>
     Private Sub ShowReactionTable(links As IEnumerable(Of Reaction))
