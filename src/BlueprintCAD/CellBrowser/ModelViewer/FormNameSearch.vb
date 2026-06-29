@@ -33,6 +33,11 @@ Public Class FormNameSearch
 
         Dim row = DataGridView1.SelectedRows(0)
         Dim id As String = CStr(row.Cells(0).Value)
+
+        If id Is Nothing OrElse web Is Nothing Then
+            Return
+        End If
+
         Dim links = web.GetReactions(id)
 
         Call ShowReactionTable(links)
