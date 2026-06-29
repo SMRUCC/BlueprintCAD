@@ -45,7 +45,7 @@ Public Class CellViewer
 
                            Call explorer.viewGraph(nodeId)
                        End Sub,
-            config:=New FormPhenotypePath().LoadNetwork(network, symbols, FormPhenotypePath.ignores, cache_graph))
+            config:=New FormPhenotypePath().LoadNetwork(network, symbols, Workbench.Settings.ignores, cache_graph))
     End Sub
 
     Friend Sub OpenFBA()

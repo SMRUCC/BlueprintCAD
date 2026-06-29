@@ -197,7 +197,7 @@ Public Class CellExplorer
         Dim class_metab As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Red
         Dim class_rxn As Microsoft.VisualBasic.Imaging.SolidBrush = Microsoft.VisualBasic.Imaging.Brushes.Blue
         Dim line As New Microsoft.VisualBasic.Imaging.Pen(Color.LightGray, 3)
-        Dim ignores As Index(Of String) = FormPhenotypePath.ignores
+        Dim ignores As Index(Of String) = Workbench.Settings.ignores.Indexing
 
         For Each rxn As Reaction In links
             If g.GetElementByID(rxn.ID) Is Nothing Then

@@ -744,7 +744,7 @@ Public Class CellBrowser
                 Dim idset As String() = nodeSet.Select(Function(a) a.id).ToArray
 
                 Call RefreshPlot(idset)
-            End Sub, config:=New FormPhenotypePath().LoadNetwork(network, symbols, FormPhenotypePath.ignores, cache_graph))
+            End Sub, config:=New FormPhenotypePath().LoadNetwork(network, symbols, Workbench.Settings.ignores, cache_graph))
     End Sub
 
     Private Sub CheckAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckAllToolStripMenuItem.Click
