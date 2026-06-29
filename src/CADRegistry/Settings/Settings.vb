@@ -13,6 +13,8 @@ Public Class Settings
     ''' <returns></returns>
     Public Property blastdb As String
 
+    Public Property ignores As String()
+
     Shared ReadOnly defaultConfig As String = App.ProductProgramData & "/settings.json"
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>

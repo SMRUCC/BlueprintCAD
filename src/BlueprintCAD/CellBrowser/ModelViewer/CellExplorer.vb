@@ -84,6 +84,7 @@ Public Class CellExplorer
         viewer = New JsonViewer
         viewer.Dock = DockStyle.Fill
         viewer.AddContextMenuItem("View In Registry", "view_registry")
+        viewer.AddContextMenuItem("Add Ignores", "add_ignores")
 
         Panel1.Controls.Add(viewer)
 
@@ -95,12 +96,32 @@ Public Class CellExplorer
 
     End Sub
 
+    ''' <summary>
+    ''' Click on the custom menu item of the json viewer
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="node"></param>
     Private Sub viewer_MenuAction(sender As ToolStripMenuItem, node As JsonObject) Handles viewer.MenuAction
         Dim compound As Compound = TryCast(node.Value, Compound)
 
         If compound IsNot Nothing Then
-            Dim url = $"http://biocad.innovation.ac.cn/molecule/{compound.ID}/"
-            Call Tools.OpenUrlWithDefaultBrowser(url)
+            Select Case sender.Name
+                Case "view_registry"
+                    Call Tools.OpenUrlWithDefaultBrowser($"http://biocad.innovation.ac.cn/molecule/{compound.ID}/")
+                Case "add_ignores"
+                    If MessageBox.Show($"Make general compound ignores of this metabolite({compound}) used in network graph view and path finding?",
+                                       "Make General Compound Ignores",
+                                       MessageBoxButtons.OKCancel,
+                                       MessageBoxIcon.Warning) = DialogResult.OK Then
+
+                        Workbench.Settings.ignores = Workbench.Settings.ignores _
+                            .JoinIterates({compound.ID}) _
+                            .Where(Function(str) str.StringEmpty(, True)) _
+                            .Distinct _
+                            .ToArray
+                        Workbench.Settings.Save()
+                    End If
+            End Select
         End If
     End Sub
 

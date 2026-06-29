@@ -23,6 +23,7 @@ Partial Class FormEditor : Inherits DocumentWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim Stroke1 As Microsoft.VisualBasic.MIME.Html.CSS.Stroke = New MIME.Html.CSS.Stroke()
         GraphPad1 = New GraphPad()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
@@ -40,18 +41,22 @@ Partial Class FormEditor : Inherits DocumentWindow
         ' 
         GraphPad1.Canvas = New Size(0, 0)
         GraphPad1.Dock = DockStyle.Fill
+        Stroke1.dash = Imaging.DashStyle.Solid
+        Stroke1.fill = "#D3D3D3"
+        Stroke1.width = "2"
+        GraphPad1.EdgeStroke = Stroke1
         GraphPad1.Location = New Point(0, 24)
         GraphPad1.Name = "GraphPad1"
-        GraphPad1.Size = New Size(800, 404)
+        GraphPad1.Size = New Size(512, 728)
         GraphPad1.TabIndex = 0
         GraphPad1.ViewPosition = New Point(0, 0)
         ' 
         ' StatusStrip1
         ' 
         StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1})
-        StatusStrip1.Location = New Point(0, 428)
+        StatusStrip1.Location = New Point(0, 752)
         StatusStrip1.Name = "StatusStrip1"
-        StatusStrip1.Size = New Size(800, 22)
+        StatusStrip1.Size = New Size(512, 22)
         StatusStrip1.TabIndex = 1
         StatusStrip1.Text = "StatusStrip1"
         ' 
@@ -66,7 +71,7 @@ Partial Class FormEditor : Inherits DocumentWindow
         MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(800, 24)
+        MenuStrip1.Size = New Size(512, 24)
         MenuStrip1.TabIndex = 2
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -80,37 +85,40 @@ Partial Class FormEditor : Inherits DocumentWindow
         ' LoadModelToolStripMenuItem
         ' 
         LoadModelToolStripMenuItem.Name = "LoadModelToolStripMenuItem"
-        LoadModelToolStripMenuItem.Size = New Size(180, 22)
+        LoadModelToolStripMenuItem.Size = New Size(137, 22)
         LoadModelToolStripMenuItem.Text = "Load Model"
         ' 
         ' SaveModelToolStripMenuItem
         ' 
         SaveModelToolStripMenuItem.Name = "SaveModelToolStripMenuItem"
-        SaveModelToolStripMenuItem.Size = New Size(180, 22)
+        SaveModelToolStripMenuItem.Size = New Size(137, 22)
         SaveModelToolStripMenuItem.Text = "Save Model"
         ' 
         ' ToolStripMenuItem1
         ' 
         ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        ToolStripMenuItem1.Size = New Size(177, 6)
+        ToolStripMenuItem1.Size = New Size(134, 6)
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(180, 22)
+        ExitToolStripMenuItem.Size = New Size(137, 22)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' FormEditor
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(512, 774)
         Controls.Add(GraphPad1)
         Controls.Add(StatusStrip1)
         Controls.Add(MenuStrip1)
+        DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
+        DoubleBuffered = True
         MainMenuStrip = MenuStrip1
         Name = "FormEditor"
-        Text = "Form1"
+        ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
+        TabPageContextMenuStrip = DockContextMenuStrip1
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()
         MenuStrip1.ResumeLayout(False)
