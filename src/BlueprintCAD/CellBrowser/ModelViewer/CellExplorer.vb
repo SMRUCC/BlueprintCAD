@@ -1,17 +1,16 @@
 ﻿Imports System.ComponentModel
-Imports System.Runtime.CompilerServices
 Imports BlueprintCAD.UIData
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.JSON.Models
-Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
 Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository
 Imports Microsoft.VisualBasic.ComponentModel.Ranges.Model
-Imports Microsoft.VisualBasic.Data.Framework.IO
 Imports Microsoft.VisualBasic.Data.visualize.Network
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
+Imports Microsoft.VisualBasic.Imaging.SVG.PathHelper
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
@@ -21,15 +20,17 @@ Public Class CellExplorer
 
     Dim model As VirtualCell
     Dim WithEvents viewer As JsonViewer
-    Dim edges
+    Dim compoundIndex As New List(Of Compound)
     Dim links As New Dictionary(Of String, List(Of Reaction))
     Dim compounds As New Dictionary(Of String, Compound)
     Dim rxnList As New Dictionary(Of String, Reaction)
     Dim web As CellViewer
+    Dim qgram As QGramIndex
 
     Public Sub LoadModel(model As VirtualCell, web As CellViewer)
         Me.model = model
         Me.web = web
+        Me.qgram = New QGramIndex(3)
 
         ProgressSpinner.DoLoading(Sub() Call LoadCellComponents(), host:=Me)
     End Sub
@@ -52,9 +53,19 @@ Public Class CellExplorer
                     .Parent = metabolites,
                     .Value = meta
                 }
+                Dim index As Integer = CInt(offset) - 2
 
-                compounds(meta.ID) = meta
                 metabolites.Fields.Add(obj)
+                compounds(meta.ID) = meta
+                compoundIndex.Add(meta)
+
+                Call qgram.AddString(meta.ID, index:=index)
+                Call qgram.AddString(meta.name, index:=index)
+                Call qgram.AddString(meta.formula, index:=index)
+
+                For Each id As String In meta.db_xrefs.SafeQuery
+                    Call qgram.AddString(id, index:=index)
+                Next
             Next
         End If
 
@@ -275,6 +286,21 @@ Public Class CellExplorer
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        If ToolStripSpringTextBox1.Text.StringEmpty(, True) Then
+            Return
+        End If
 
+        Dim find As Compound() = qgram _
+            .FindSimilar(ToolStripSpringTextBox1.Text) _
+            .OrderByDescending(Function(a) a.similarity) _
+            .Select(Function(r) compoundIndex(r.index)) _
+            .GroupBy(Function(a) a.ID) _
+            .Select(Function(g) g.First) _
+            .Take(30) _
+            .ToArray
+
+        Call CommonRuntime.ShowDocument(Of FormNameSearch)(
+            status:=DockState.Document,
+            title:=$"Search Metabolites of {ToolStripSpringTextBox1.Text}").SetData(web, find)
     End Sub
 End Class

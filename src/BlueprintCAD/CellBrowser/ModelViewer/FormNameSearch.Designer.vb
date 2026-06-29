@@ -26,14 +26,12 @@ Partial Class FormNameSearch
     Private Sub InitializeComponent()
         SplitContainer1 = New SplitContainer()
         DataGridView1 = New DataGridView()
-        AdvancedDataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
-        AdvancedDataGridViewSearchToolBar1 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
         Column4 = New DataGridViewTextBoxColumn()
-        Column5 = New DataGridViewTextBoxColumn()
         Column6 = New DataGridViewTextBoxColumn()
+        AdvancedDataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
+        AdvancedDataGridViewSearchToolBar1 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
@@ -64,12 +62,40 @@ Partial Class FormNameSearch
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6})
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column4, Column6})
         DataGridView1.Dock = DockStyle.Fill
         DataGridView1.Location = New Point(0, 0)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(859, 286)
         DataGridView1.TabIndex = 0
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "ID"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Name"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        Column2.Width = 300
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Formula"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        ' 
+        ' Column6
+        ' 
+        Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column6.HeaderText = "Db_Xrefs"
+        Column6.Name = "Column6"
+        Column6.ReadOnly = True
         ' 
         ' AdvancedDataGridView1
         ' 
@@ -98,43 +124,6 @@ Partial Class FormNameSearch
         AdvancedDataGridViewSearchToolBar1.TabIndex = 0
         AdvancedDataGridViewSearchToolBar1.Text = "AdvancedDataGridViewSearchToolBar1"
         ' 
-        ' Column1
-        ' 
-        Column1.HeaderText = "ID"
-        Column1.Name = "Column1"
-        Column1.ReadOnly = True
-        ' 
-        ' Column2
-        ' 
-        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        Column2.HeaderText = "Name"
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Symbol_ID"
-        Column3.Name = "Column3"
-        Column3.ReadOnly = True
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "Formula"
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
-        ' 
-        ' Column5
-        ' 
-        Column5.HeaderText = "Exact Mass"
-        Column5.Name = "Column5"
-        Column5.ReadOnly = True
-        ' 
-        ' Column6
-        ' 
-        Column6.HeaderText = "Db_Xrefs"
-        Column6.Name = "Column6"
-        Column6.ReadOnly = True
-        ' 
         ' FormNameSearch
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
@@ -162,8 +151,6 @@ Partial Class FormNameSearch
     Friend WithEvents AdvancedDataGridViewSearchToolBar1 As Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class
