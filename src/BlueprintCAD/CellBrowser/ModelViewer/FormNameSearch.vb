@@ -27,6 +27,14 @@ Public Class FormNameSearch
     End Sub
 
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
+        If DataGridView1.SelectedRows.Count = 0 Then
+            Return
+        End If
 
+        Dim row = DataGridView1.SelectedRows(0)
+        Dim id As String = CStr(row.Cells(0).Value)
+        Dim links = web.GetReactions(id)
+
+        Call ShowReactionTable(links)
     End Sub
 End Class

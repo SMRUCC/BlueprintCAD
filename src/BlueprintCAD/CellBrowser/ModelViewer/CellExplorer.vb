@@ -10,7 +10,6 @@ Imports Microsoft.VisualBasic.Data.visualize.Network
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream
 Imports Microsoft.VisualBasic.Data.visualize.Network.Graph
 Imports Microsoft.VisualBasic.Data.visualize.Network.Layouts
-Imports Microsoft.VisualBasic.Imaging.SVG.PathHelper
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualStudio.WinForms.Docking
@@ -21,7 +20,7 @@ Public Class CellExplorer
     Dim model As VirtualCell
     Dim WithEvents viewer As JsonViewer
     Dim compoundIndex As New List(Of Compound)
-    Dim links As New Dictionary(Of String, List(Of Reaction))
+    Friend ReadOnly links As New Dictionary(Of String, List(Of Reaction))
     Dim compounds As New Dictionary(Of String, Compound)
     Dim rxnList As New Dictionary(Of String, Reaction)
     Dim web As CellViewer

@@ -28,6 +28,14 @@ Public Class CellViewer
     Dim symbols As Dictionary(Of String, CompoundInfo)
     Dim cache_graph As NetworkGraph
 
+    Public Function GetReactions(metaID As String) As IEnumerable(Of Reaction)
+        If explorer.links.ContainsKey(metaID) Then
+            Return explorer.links(metaID)
+        Else
+            Return New Reaction() {}
+        End If
+    End Function
+
     Friend Sub OpenRouter()
         If cell Is Nothing Then
             Return
