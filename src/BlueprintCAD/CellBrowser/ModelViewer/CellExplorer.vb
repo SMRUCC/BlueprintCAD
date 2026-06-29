@@ -116,7 +116,9 @@ Public Class CellExplorer
 
                         Workbench.Settings.ignores = Workbench.Settings.ignores _
                             .JoinIterates({compound.ID}) _
-                            .Where(Function(str) str.StringEmpty(, True)) _
+                            .Where(Function(str)
+                                       Return Not str.StringEmpty(, True)
+                                   End Function) _
                             .Distinct _
                             .ToArray
                         Workbench.Settings.Save()
