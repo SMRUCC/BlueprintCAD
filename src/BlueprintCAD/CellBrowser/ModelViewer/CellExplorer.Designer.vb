@@ -63,7 +63,7 @@ Partial Class CellExplorer
         ToolStripButton1.ImageTransparentColor = Color.Magenta
         ToolStripButton1.Name = "ToolStripButton1"
         ToolStripButton1.Size = New Size(23, 22)
-        ToolStripButton1.Text = "ToolStripButton1"
+        ToolStripButton1.Text = "Search"
         ' 
         ' ToolStripButton2
         ' 

@@ -268,4 +268,13 @@ Public Class CellExplorer
     Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
         Call web.OpenRouter()
     End Sub
+
+    ''' <summary>
+    ''' Search name
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+
+    End Sub
 End Class

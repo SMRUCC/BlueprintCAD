@@ -1,0 +1,169 @@
+﻿Imports Galaxy.Workbench.DockDocument
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FormNameSearch
+    Inherits DocumentWindow
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        SplitContainer1 = New SplitContainer()
+        DataGridView1 = New DataGridView()
+        AdvancedDataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
+        AdvancedDataGridViewSearchToolBar1 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
+        Column6 = New DataGridViewTextBoxColumn()
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
+        SplitContainer1.Panel1.SuspendLayout()
+        SplitContainer1.Panel2.SuspendLayout()
+        SplitContainer1.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' SplitContainer1
+        ' 
+        SplitContainer1.Dock = DockStyle.Fill
+        SplitContainer1.Location = New Point(0, 0)
+        SplitContainer1.Name = "SplitContainer1"
+        SplitContainer1.Orientation = Orientation.Horizontal
+        ' 
+        ' SplitContainer1.Panel1
+        ' 
+        SplitContainer1.Panel1.Controls.Add(DataGridView1)
+        ' 
+        ' SplitContainer1.Panel2
+        ' 
+        SplitContainer1.Panel2.Controls.Add(AdvancedDataGridView1)
+        SplitContainer1.Panel2.Controls.Add(AdvancedDataGridViewSearchToolBar1)
+        SplitContainer1.Size = New Size(859, 620)
+        SplitContainer1.SplitterDistance = 286
+        SplitContainer1.TabIndex = 1
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6})
+        DataGridView1.Dock = DockStyle.Fill
+        DataGridView1.Location = New Point(0, 0)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.Size = New Size(859, 286)
+        DataGridView1.TabIndex = 0
+        ' 
+        ' AdvancedDataGridView1
+        ' 
+        AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        AdvancedDataGridView1.Dock = DockStyle.Fill
+        AdvancedDataGridView1.FilterAndSortEnabled = True
+        AdvancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView1.Location = New Point(0, 27)
+        AdvancedDataGridView1.MaxFilterButtonImageHeight = 23
+        AdvancedDataGridView1.Name = "AdvancedDataGridView1"
+        AdvancedDataGridView1.RightToLeft = RightToLeft.No
+        AdvancedDataGridView1.Size = New Size(859, 303)
+        AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView1.TabIndex = 1
+        ' 
+        ' AdvancedDataGridViewSearchToolBar1
+        ' 
+        AdvancedDataGridViewSearchToolBar1.AllowMerge = False
+        AdvancedDataGridViewSearchToolBar1.GripStyle = ToolStripGripStyle.Hidden
+        AdvancedDataGridViewSearchToolBar1.Location = New Point(0, 0)
+        AdvancedDataGridViewSearchToolBar1.MaximumSize = New Size(0, 27)
+        AdvancedDataGridViewSearchToolBar1.MinimumSize = New Size(0, 27)
+        AdvancedDataGridViewSearchToolBar1.Name = "AdvancedDataGridViewSearchToolBar1"
+        AdvancedDataGridViewSearchToolBar1.RenderMode = ToolStripRenderMode.Professional
+        AdvancedDataGridViewSearchToolBar1.Size = New Size(859, 27)
+        AdvancedDataGridViewSearchToolBar1.TabIndex = 0
+        AdvancedDataGridViewSearchToolBar1.Text = "AdvancedDataGridViewSearchToolBar1"
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "ID"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' Column2
+        ' 
+        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Column2.HeaderText = "Name"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Symbol_ID"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Formula"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "Exact Mass"
+        Column5.Name = "Column5"
+        Column5.ReadOnly = True
+        ' 
+        ' Column6
+        ' 
+        Column6.HeaderText = "Db_Xrefs"
+        Column6.Name = "Column6"
+        Column6.ReadOnly = True
+        ' 
+        ' FormNameSearch
+        ' 
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(859, 620)
+        Controls.Add(SplitContainer1)
+        DockAreas = Microsoft.VisualStudio.WinForms.Docking.DockAreas.Float Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockLeft Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockRight Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockTop Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.DockBottom Or Microsoft.VisualStudio.WinForms.Docking.DockAreas.Document
+        DoubleBuffered = True
+        Name = "FormNameSearch"
+        ShowHint = Microsoft.VisualStudio.WinForms.Docking.DockState.Unknown
+        TabPageContextMenuStrip = DockContextMenuStrip1
+        SplitContainer1.Panel1.ResumeLayout(False)
+        SplitContainer1.Panel2.ResumeLayout(False)
+        SplitContainer1.Panel2.PerformLayout()
+        CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
+        SplitContainer1.ResumeLayout(False)
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+    End Sub
+
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents AdvancedDataGridView1 As Galaxy.Data.TableSheet.AdvancedDataGridView
+    Friend WithEvents AdvancedDataGridViewSearchToolBar1 As Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+End Class

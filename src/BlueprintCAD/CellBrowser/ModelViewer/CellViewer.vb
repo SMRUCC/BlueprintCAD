@@ -109,7 +109,7 @@ Public Class CellViewer
         Call loader.LoadTable(Sub(tbl) Call ShowReactionTable(tbl, links))
     End Sub
 
-    Private Sub ShowReactionTable(tbl As DataTable, links As IEnumerable(Of Reaction))
+    Friend Shared Sub ShowReactionTable(tbl As DataTable, links As IEnumerable(Of Reaction))
         Call tbl.Columns.Add("id", GetType(String))
         Call tbl.Columns.Add("name", GetType(String))
         Call tbl.Columns.Add("ec_number", GetType(String))
