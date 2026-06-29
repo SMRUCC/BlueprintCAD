@@ -72,5 +72,7 @@ Public Class FormNameSearch
         End If
 
         Await web.ViewGraph(id)
+        web.BringToFront()
+        web.Activate()
     End Sub
 End Class
