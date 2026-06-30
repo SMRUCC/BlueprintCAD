@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports BlueprintCAD.UIData
+Imports CADRegistry
 Imports Galaxy.Data.JSON
 Imports Galaxy.Data.JSON.Models
 Imports Galaxy.Workbench
@@ -149,6 +150,10 @@ Public Class CellExplorer
 
         If TypeOf json.Value Is Compound Then
             Call ShowNode(DirectCast(json.Value, Compound).ID)
+        ElseIf json.Parent Is Nothing Then
+            ' is root node
+            ' virtual cell node, view virtual cell model properties
+            Call CommonRuntime.GetPropertyWindow.SetObject(New CellData(model))
         End If
     End Sub
 
@@ -183,6 +188,18 @@ Public Class CellExplorer
 
         If TypeOf json.Value Is Compound Then
             Await viewGraph(DirectCast(json.Value, Compound).ID)
+        ElseIf json.Parent Is Nothing Then
+            ' is root node
+            ' virtual cell node, view virtual cell model properties
+            Call CommonRuntime.ShowDocument(Of CellProperties)(
+                status:=DockState.Document,
+                title:=model.cellular_id).ShowModelProperties(model)
+        ElseIf json.Text = "metabolites" Then
+            ' is metabolites node
+            ' view all metabolites in table view
+            Call CommonRuntime.ShowDocument(Of FormNameSearch)(
+                status:=DockState.Document,
+                title:=$"View Metabolites of Cell {model.cellular_id}").SetData(web, model.metabolismStructure?.compounds)
         End If
     End Sub
 

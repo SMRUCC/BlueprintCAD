@@ -1,6 +1,7 @@
 ﻿Imports System.Runtime.CompilerServices
 Imports Galaxy.Data.TableSheet
 Imports Galaxy.Workbench
+Imports Microsoft.VisualBasic.Linq
 Imports SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.v2
 
 Public Class FormNameSearch
@@ -15,7 +16,7 @@ Public Class FormNameSearch
 
     Public Sub SetData(web As CellViewer, compounds As IEnumerable(Of Compound))
         Me.web = web
-        Me.compounds = compounds.ToArray
+        Me.compounds = compounds.SafeQuery.ToArray
 
         For Each meta As Compound In Me.compounds
             Call DataGridView1.Rows.Add(meta.ID, meta.name, meta.formula, meta.db_xrefs.JoinBy("; "))
