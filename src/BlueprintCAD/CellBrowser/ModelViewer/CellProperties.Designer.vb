@@ -24,13 +24,17 @@ Partial Class CellProperties
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         GroupBox1 = New GroupBox()
         GroupBox2 = New GroupBox()
+        ListBox1 = New ListBox()
         GroupBox3 = New GroupBox()
         AdvancedDataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
         AdvancedDataGridViewSearchToolBar1 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
         SplitContainer1 = New SplitContainer()
-        ListBox1 = New ListBox()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        CopyIDToolStripMenuItem = New ToolStripMenuItem()
+        ViewToolStripMenuItem = New ToolStripMenuItem()
         GroupBox2.SuspendLayout()
         GroupBox3.SuspendLayout()
         CType(AdvancedDataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -38,6 +42,7 @@ Partial Class CellProperties
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
         SplitContainer1.SuspendLayout()
+        ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' GroupBox1
@@ -61,6 +66,15 @@ Partial Class CellProperties
         GroupBox2.TabStop = False
         GroupBox2.Text = "Cell Phenotype Traits"
         ' 
+        ' ListBox1
+        ' 
+        ListBox1.Dock = DockStyle.Fill
+        ListBox1.FormattingEnabled = True
+        ListBox1.Location = New Point(3, 19)
+        ListBox1.Name = "ListBox1"
+        ListBox1.Size = New Size(482, 373)
+        ListBox1.TabIndex = 0
+        ' 
         ' GroupBox3
         ' 
         GroupBox3.Controls.Add(AdvancedDataGridView1)
@@ -75,14 +89,18 @@ Partial Class CellProperties
         ' 
         ' AdvancedDataGridView1
         ' 
+        AdvancedDataGridView1.AllowUserToAddRows = False
         AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        AdvancedDataGridView1.ContextMenuStrip = ContextMenuStrip1
         AdvancedDataGridView1.Dock = DockStyle.Fill
         AdvancedDataGridView1.FilterAndSortEnabled = True
         AdvancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
         AdvancedDataGridView1.Location = New Point(3, 46)
         AdvancedDataGridView1.MaxFilterButtonImageHeight = 23
         AdvancedDataGridView1.Name = "AdvancedDataGridView1"
+        AdvancedDataGridView1.ReadOnly = True
         AdvancedDataGridView1.RightToLeft = RightToLeft.No
+        AdvancedDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         AdvancedDataGridView1.Size = New Size(894, 343)
         AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         AdvancedDataGridView1.TabIndex = 1
@@ -119,14 +137,23 @@ Partial Class CellProperties
         SplitContainer1.SplitterDistance = 395
         SplitContainer1.TabIndex = 4
         ' 
-        ' ListBox1
+        ' ContextMenuStrip1
         ' 
-        ListBox1.Dock = DockStyle.Fill
-        ListBox1.FormattingEnabled = True
-        ListBox1.Location = New Point(3, 19)
-        ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(482, 373)
-        ListBox1.TabIndex = 0
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {CopyIDToolStripMenuItem, ViewToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(181, 70)
+        ' 
+        ' CopyIDToolStripMenuItem
+        ' 
+        CopyIDToolStripMenuItem.Name = "CopyIDToolStripMenuItem"
+        CopyIDToolStripMenuItem.Size = New Size(180, 22)
+        CopyIDToolStripMenuItem.Text = "Copy ID"
+        ' 
+        ' ViewToolStripMenuItem
+        ' 
+        ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        ViewToolStripMenuItem.Size = New Size(180, 22)
+        ViewToolStripMenuItem.Text = "View"
         ' 
         ' CellProperties
         ' 
@@ -147,6 +174,7 @@ Partial Class CellProperties
         SplitContainer1.Panel2.ResumeLayout(False)
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
+        ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -157,4 +185,7 @@ Partial Class CellProperties
     Friend WithEvents AdvancedDataGridView1 As Galaxy.Data.TableSheet.AdvancedDataGridView
     Friend WithEvents AdvancedDataGridViewSearchToolBar1 As Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents CopyIDToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
 End Class

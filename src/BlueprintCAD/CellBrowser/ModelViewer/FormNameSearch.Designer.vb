@@ -33,9 +33,9 @@ Partial Class FormNameSearch
         Column6 = New DataGridViewTextBoxColumn()
         ContextMenuStrip1 = New ContextMenuStrip(components)
         CopyIDToolStripMenuItem = New ToolStripMenuItem()
+        ViewToolStripMenuItem = New ToolStripMenuItem()
         AdvancedDataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
         AdvancedDataGridViewSearchToolBar1 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
-        ViewToolStripMenuItem = New ToolStripMenuItem()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
@@ -108,16 +108,23 @@ Partial Class FormNameSearch
         ' 
         ContextMenuStrip1.Items.AddRange(New ToolStripItem() {CopyIDToolStripMenuItem, ViewToolStripMenuItem})
         ContextMenuStrip1.Name = "ContextMenuStrip1"
-        ContextMenuStrip1.Size = New Size(181, 70)
+        ContextMenuStrip1.Size = New Size(117, 48)
         ' 
         ' CopyIDToolStripMenuItem
         ' 
         CopyIDToolStripMenuItem.Name = "CopyIDToolStripMenuItem"
-        CopyIDToolStripMenuItem.Size = New Size(180, 22)
+        CopyIDToolStripMenuItem.Size = New Size(116, 22)
         CopyIDToolStripMenuItem.Text = "Copy ID"
+        ' 
+        ' ViewToolStripMenuItem
+        ' 
+        ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        ViewToolStripMenuItem.Size = New Size(116, 22)
+        ViewToolStripMenuItem.Text = "View"
         ' 
         ' AdvancedDataGridView1
         ' 
+        AdvancedDataGridView1.AllowUserToAddRows = False
         AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         AdvancedDataGridView1.Dock = DockStyle.Fill
         AdvancedDataGridView1.FilterAndSortEnabled = True
@@ -125,7 +132,9 @@ Partial Class FormNameSearch
         AdvancedDataGridView1.Location = New Point(0, 27)
         AdvancedDataGridView1.MaxFilterButtonImageHeight = 23
         AdvancedDataGridView1.Name = "AdvancedDataGridView1"
+        AdvancedDataGridView1.ReadOnly = True
         AdvancedDataGridView1.RightToLeft = RightToLeft.No
+        AdvancedDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         AdvancedDataGridView1.Size = New Size(859, 303)
         AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
         AdvancedDataGridView1.TabIndex = 1
@@ -142,12 +151,6 @@ Partial Class FormNameSearch
         AdvancedDataGridViewSearchToolBar1.Size = New Size(859, 27)
         AdvancedDataGridViewSearchToolBar1.TabIndex = 0
         AdvancedDataGridViewSearchToolBar1.Text = "AdvancedDataGridViewSearchToolBar1"
-        ' 
-        ' ViewToolStripMenuItem
-        ' 
-        ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        ViewToolStripMenuItem.Size = New Size(180, 22)
-        ViewToolStripMenuItem.Text = "View"
         ' 
         ' FormNameSearch
         ' 

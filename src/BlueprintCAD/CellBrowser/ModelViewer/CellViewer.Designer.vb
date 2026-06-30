@@ -31,8 +31,8 @@ Partial Class CellViewer : Inherits DocumentWindow
         TabControl1 = New TabControl()
         TabPage1 = New TabPage()
         TabPage2 = New TabPage()
-        AdvancedDataGridViewSearchToolBar1 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
         AdvancedDataGridView1 = New Galaxy.Data.TableSheet.AdvancedDataGridView()
+        AdvancedDataGridViewSearchToolBar1 = New Galaxy.Data.TableSheet.AdvancedDataGridViewSearchToolBar()
         CType(WebView21, ComponentModel.ISupportInitialize).BeginInit()
         StatusStrip1.SuspendLayout()
         TabControl1.SuspendLayout()
@@ -116,6 +116,23 @@ Partial Class CellViewer : Inherits DocumentWindow
         TabPage2.Text = "Reaction Table"
         TabPage2.UseVisualStyleBackColor = True
         ' 
+        ' AdvancedDataGridView1
+        ' 
+        AdvancedDataGridView1.AllowUserToAddRows = False
+        AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        AdvancedDataGridView1.Dock = DockStyle.Fill
+        AdvancedDataGridView1.FilterAndSortEnabled = True
+        AdvancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView1.Location = New Point(3, 30)
+        AdvancedDataGridView1.MaxFilterButtonImageHeight = 23
+        AdvancedDataGridView1.Name = "AdvancedDataGridView1"
+        AdvancedDataGridView1.ReadOnly = True
+        AdvancedDataGridView1.RightToLeft = RightToLeft.No
+        AdvancedDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        AdvancedDataGridView1.Size = New Size(1518, 823)
+        AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
+        AdvancedDataGridView1.TabIndex = 1
+        ' 
         ' AdvancedDataGridViewSearchToolBar1
         ' 
         AdvancedDataGridViewSearchToolBar1.AllowMerge = False
@@ -128,20 +145,6 @@ Partial Class CellViewer : Inherits DocumentWindow
         AdvancedDataGridViewSearchToolBar1.Size = New Size(1518, 27)
         AdvancedDataGridViewSearchToolBar1.TabIndex = 0
         AdvancedDataGridViewSearchToolBar1.Text = "AdvancedDataGridViewSearchToolBar1"
-        ' 
-        ' AdvancedDataGridView1
-        ' 
-        AdvancedDataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        AdvancedDataGridView1.Dock = DockStyle.Fill
-        AdvancedDataGridView1.FilterAndSortEnabled = True
-        AdvancedDataGridView1.FilterStringChangedInvokeBeforeDatasourceUpdate = True
-        AdvancedDataGridView1.Location = New Point(3, 30)
-        AdvancedDataGridView1.MaxFilterButtonImageHeight = 23
-        AdvancedDataGridView1.Name = "AdvancedDataGridView1"
-        AdvancedDataGridView1.RightToLeft = RightToLeft.No
-        AdvancedDataGridView1.Size = New Size(1518, 823)
-        AdvancedDataGridView1.SortStringChangedInvokeBeforeDatasourceUpdate = True
-        AdvancedDataGridView1.TabIndex = 1
         ' 
         ' CellViewer
         ' 

@@ -193,7 +193,7 @@ Public Class CellExplorer
             ' virtual cell node, view virtual cell model properties
             Call CommonRuntime.ShowDocument(Of CellProperties)(
                 status:=DockState.Document,
-                title:=model.cellular_id).ShowModelProperties(model)
+                title:=model.cellular_id).ShowModelProperties(model, web)
         ElseIf json.Text = "metabolites" Then
             ' is metabolites node
             ' view all metabolites in table view
