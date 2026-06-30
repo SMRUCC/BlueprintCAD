@@ -43,16 +43,18 @@ Public Class CellData
     End Sub
 
     Sub New(cell As VirtualCell)
-        CellModelId = cell.cellular_id
-        kingdom = cell.taxonomy?.kingdom
-        phylum = cell.taxonomy?.phylum
-        [class] = cell.taxonomy?.class
-        order = cell.taxonomy?.order
-        family = cell.taxonomy?.family
-        genus = cell.taxonomy?.genus
-        species = cell.taxonomy?.species
-        ncbi_taxid = cell.taxonomy?.ncbi_taxid
-        traits = cell.traits?.phenotype
+        If Not cell Is Nothing Then
+            CellModelId = cell.cellular_id
+            kingdom = cell.taxonomy?.kingdom
+            phylum = cell.taxonomy?.phylum
+            [class] = cell.taxonomy?.class
+            order = cell.taxonomy?.order
+            family = cell.taxonomy?.family
+            genus = cell.taxonomy?.genus
+            species = cell.taxonomy?.species
+            ncbi_taxid = cell.taxonomy?.ncbi_taxid
+            traits = cell.traits?.phenotype
+        End If
     End Sub
 
 End Class
