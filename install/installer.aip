@@ -85,6 +85,12 @@
     <ROW Directory="linuxarm_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~1|linux-arm"/>
     <ROW Directory="linuxarm_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~1|linux-arm"/>
     <ROW Directory="linuxarm_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~1|linux-arm"/>
+    <ROW Directory="linuxbionicarm64_1_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX~12|linux-bionic-arm64"/>
+    <ROW Directory="linuxbionicarm64_2_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX~12|linux-bionic-arm64"/>
+    <ROW Directory="linuxbionicarm64_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX~12|linux-bionic-arm64"/>
+    <ROW Directory="linuxbionicx64_1_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX~13|linux-bionic-x64"/>
+    <ROW Directory="linuxbionicx64_2_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX~13|linux-bionic-x64"/>
+    <ROW Directory="linuxbionicx64_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX~13|linux-bionic-x64"/>
     <ROW Directory="linuxloongarch64_3_Dir" Directory_Parent="runtimes_3_Dir" DefaultDir="LINUX-~3|linux-loongarch64"/>
     <ROW Directory="linuxloongarch64_4_Dir" Directory_Parent="runtimes_4_Dir" DefaultDir="LINUX-~3|linux-loongarch64"/>
     <ROW Directory="linuxloongarch64_Dir" Directory_Parent="runtimes_Dir" DefaultDir="LINUX-~3|linux-loongarch64"/>
@@ -119,6 +125,7 @@
     <ROW Directory="native_17_Dir" Directory_Parent="linuxmuslarm_Dir" DefaultDir="native"/>
     <ROW Directory="native_18_Dir" Directory_Parent="linuxmuslarm64_Dir" DefaultDir="native"/>
     <ROW Directory="native_19_Dir" Directory_Parent="linuxmuslloongarch64_Dir" DefaultDir="native"/>
+    <ROW Directory="native_1_Dir" Directory_Parent="linuxbionicarm64_Dir" DefaultDir="native"/>
     <ROW Directory="native_20_Dir" Directory_Parent="linuxmuslriscv64_Dir" DefaultDir="native"/>
     <ROW Directory="native_21_Dir" Directory_Parent="linuxmuslx64_Dir" DefaultDir="native"/>
     <ROW Directory="native_22_Dir" Directory_Parent="linuxriscv64_Dir" DefaultDir="native"/>
@@ -128,11 +135,14 @@
     <ROW Directory="native_26_Dir" Directory_Parent="winarm64_Dir" DefaultDir="native"/>
     <ROW Directory="native_27_Dir" Directory_Parent="winx64_Dir" DefaultDir="native"/>
     <ROW Directory="native_28_Dir" Directory_Parent="winx86_Dir" DefaultDir="native"/>
+    <ROW Directory="native_2_Dir" Directory_Parent="linuxbionicx64_Dir" DefaultDir="native"/>
+    <ROW Directory="native_3_Dir" Directory_Parent="linuxbionicarm64_1_Dir" DefaultDir="native"/>
     <ROW Directory="native_45_Dir" Directory_Parent="linuxarm_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_46_Dir" Directory_Parent="linuxarm64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_47_Dir" Directory_Parent="linuxloongarch64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_48_Dir" Directory_Parent="linuxmuslarm_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_49_Dir" Directory_Parent="linuxmuslarm64_3_Dir" DefaultDir="native"/>
+    <ROW Directory="native_4_Dir" Directory_Parent="linuxbionicx64_1_Dir" DefaultDir="native"/>
     <ROW Directory="native_50_Dir" Directory_Parent="linuxmuslloongarch64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_51_Dir" Directory_Parent="linuxmuslriscv64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_52_Dir" Directory_Parent="linuxmuslx64_3_Dir" DefaultDir="native"/>
@@ -143,6 +153,7 @@
     <ROW Directory="native_57_Dir" Directory_Parent="winarm64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_58_Dir" Directory_Parent="winx64_3_Dir" DefaultDir="native"/>
     <ROW Directory="native_59_Dir" Directory_Parent="winx86_3_Dir" DefaultDir="native"/>
+    <ROW Directory="native_5_Dir" Directory_Parent="linuxbionicarm64_2_Dir" DefaultDir="native"/>
     <ROW Directory="native_60_Dir" Directory_Parent="linuxarm_4_Dir" DefaultDir="native"/>
     <ROW Directory="native_61_Dir" Directory_Parent="linuxarm64_4_Dir" DefaultDir="native"/>
     <ROW Directory="native_62_Dir" Directory_Parent="linuxloongarch64_4_Dir" DefaultDir="native"/>
@@ -153,6 +164,7 @@
     <ROW Directory="native_67_Dir" Directory_Parent="linuxmuslx64_4_Dir" DefaultDir="native"/>
     <ROW Directory="native_68_Dir" Directory_Parent="linuxriscv64_4_Dir" DefaultDir="native"/>
     <ROW Directory="native_69_Dir" Directory_Parent="linuxx64_4_Dir" DefaultDir="native"/>
+    <ROW Directory="native_6_Dir" Directory_Parent="linuxbionicx64_2_Dir" DefaultDir="native"/>
     <ROW Directory="native_70_Dir" Directory_Parent="linuxx86_4_Dir" DefaultDir="native"/>
     <ROW Directory="native_71_Dir" Directory_Parent="osx_4_Dir" DefaultDir="native"/>
     <ROW Directory="native_72_Dir" Directory_Parent="winarm64_4_Dir" DefaultDir="native"/>
@@ -294,6 +306,8 @@
     <ROW Component="Microsoft.Web.WebView2.Core.dll" ComponentId="{8CF40604-CBDA-4E91-9035-2B2891609E26}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Core.dll"/>
     <ROW Component="Microsoft.Web.WebView2.WinForms.dll" ComponentId="{94F80BEC-9BAD-451E-ABCB-9E3BCFBBB079}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.WinForms.dll"/>
     <ROW Component="Microsoft.Web.WebView2.Wpf.dll" ComponentId="{C668FE2F-8C84-45A7-99FC-81A4BBED4C43}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Web.WebView2.Wpf.dll"/>
+    <ROW Component="Microsoft.Win32.SystemEvents.dll" ComponentId="{7727EF49-5514-484B-9BFC-02265DCDB51F}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Win32.SystemEvents.dll"/>
+    <ROW Component="Microsoft.Win32.SystemEvents.dll_1" ComponentId="{2156CBD8-1AD7-4923-92E1-5B1CC264E00F}" Directory_="net10.0_2_Dir" Attributes="0" KeyPath="Microsoft.Win32.SystemEvents.dll_1"/>
     <ROW Component="Microsoft.Windows.FeatureAPI.dll" ComponentId="{8C039557-F4D9-4BC0-9E20-B23384615CBD}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Windows.FeatureAPI.dll"/>
     <ROW Component="Microsoft.Windows.Ribbon.dll" ComponentId="{7EC1C82D-573D-45EC-A767-24B1EA98751D}" Directory_="APPDIR" Attributes="256" KeyPath="Microsoft.Windows.Ribbon.dll"/>
     <ROW Component="ProductInformation" ComponentId="{4E02C4EE-813B-4457-827A-7B789E9639D5}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
@@ -315,14 +329,17 @@
     <ROW Component="SMRUCC.genomics.Analysis.FBA.Core.dll" ComponentId="{1D548782-BD6D-4818-B4D8-9A6689FA9DD8}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.FBA.Core.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.HTS.DataFrame.dll" ComponentId="{D4305A0B-EF03-45D6-8EAB-9355828A6CCD}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.HTS.DataFrame.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.HTS.GSEA.Fisher.Core.dll" ComponentId="{9BAC271F-AC13-4379-9FD0-FF3EE0E2CE7E}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.HTS.GSEA.Fisher.Core.dll"/>
+    <ROW Component="SMRUCC.genomics.Analysis.Metagenome.MetaFunction.dll" ComponentId="{B08F5933-6CBB-4C1E-AB26-9A6CDE1E6F77}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.Metagenome.MetaFunction.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.Metagenome.dll" ComponentId="{0D7F31D9-C0FD-4335-AAFE-B31F485B39D1}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.Metagenome.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.SequenceAlignment.dll" ComponentId="{9C7E4FB2-F6B1-49FA-AEB9-4AD31C83BAE1}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.SequenceAlignment.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.SequenceT_3_ools.SequenceLogo.dll" ComponentId="{C61679FB-1973-4581-AB80-1F92A7CA11EF}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.SequenceTools.SequenceLogo.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.SequenceT_4_ools.SequencePatterns.Abstract.dll" ComponentId="{A685DEC0-2FAA-4FE0-8D84-B3312B43891E}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.Abstract.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.SequenceT_5_ools.SequencePatterns.dll" ComponentId="{05A840AF-189C-4742-8E37-E0673F9284F7}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.dll"/>
     <ROW Component="SMRUCC.genomics.Analysis.SequenceT_7_ools.SequencePatterns.MotifScanner." ComponentId="{1C60A77D-DC13-47ED-80F3-1ECECBF961AC}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.SequenceTools.SequencePatterns.MotifScanner."/>
+    <ROW Component="SMRUCC.genomics.Analysis.SequenceTools.HMMER.dll" ComponentId="{C85ACFAD-B6B8-4752-A882-EF80A11C582F}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Analysis.SequenceTools.HMMER.dll"/>
     <ROW Component="SMRUCC.genomics.Core.dll" ComponentId="{240C21B9-7B4E-41AA-AB80-908C4AEC05DF}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Core.dll"/>
     <ROW Component="SMRUCC.genomics.Data.GO_OWL.dll" ComponentId="{AF0288B0-3FE1-4B51-80B4-8BCA2AC58710}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Data.GO_OWL.dll"/>
+    <ROW Component="SMRUCC.genomics.Data.Xfam.Pfam.dll" ComponentId="{62222DB2-93BF-4A0D-8D19-885E9ABA6C94}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.Data.Xfam.Pfam.dll"/>
     <ROW Component="SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.dll" ComponentId="{B10EF314-BC9E-4BA6-B546-838ECB9E66CE}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.GCModeller.Assembly.GCMarkupLanguage.dll"/>
     <ROW Component="SMRUCC.genomics.GCModeller.Compile_1_rServices.GPRLink.dll" ComponentId="{0ECAA2BD-3575-44F5-BED8-0670758CE5B4}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.GCModeller.CompilerServices.GPRLink.dll"/>
     <ROW Component="SMRUCC.genomics.GCModeller.CompilerServices.dll" ComponentId="{E4404D00-8D9E-4925-B8C1-9126B81D2F0F}" Directory_="APPDIR" Attributes="256" KeyPath="SMRUCC.genomics.GCModeller.CompilerServices.dll"/>
@@ -384,12 +401,17 @@
     <ROW Component="System.Diagnostics.EventLog.dll_7" ComponentId="{6E66FDD1-DEA5-4217-83A8-9D8140427292}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_7"/>
     <ROW Component="System.Diagnostics.EventLog.dll_8" ComponentId="{ACE888D7-8FC3-496C-B24F-F1ADB2BA4C85}" Directory_="net10.0_2_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_8"/>
     <ROW Component="System.Diagnostics.EventLog.dll_9" ComponentId="{17608C98-ED53-4442-B38E-3347A0A05944}" Directory_="net10.0_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll_9"/>
+    <ROW Component="System.Drawing.Common.dll" ComponentId="{AD40B221-BD6E-4C29-9220-4EB45583BF74}" Directory_="APPDIR" Attributes="0" KeyPath="System.Drawing.Common.dll"/>
     <ROW Component="System.Formats.Nrbf.dll" ComponentId="{8CB9C97C-A2A7-4255-A07B-C96F6E27E46A}" Directory_="APPDIR" Attributes="0" KeyPath="System.Formats.Nrbf.dll"/>
     <ROW Component="System.Formats.Nrbf.dll_3" ComponentId="{C886BC07-AF17-4F81-A78E-6A28DC7230FA}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Formats.Nrbf.dll_3"/>
     <ROW Component="System.Formats.Nrbf.dll_4" ComponentId="{0D0D7EE1-3BC1-46F8-B417-867DE33D0EB5}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Formats.Nrbf.dll_4"/>
     <ROW Component="System.IO.Packaging.dll" ComponentId="{476EA1B9-6FCB-4A11-AC63-E18151A74095}" Directory_="APPDIR" Attributes="0" KeyPath="System.IO.Packaging.dll"/>
     <ROW Component="System.IO.Packaging.dll_3" ComponentId="{FCC42939-95E1-4237-BAE0-5F9A233D63C1}" Directory_="bin_Dir" Attributes="0" KeyPath="System.IO.Packaging.dll_3"/>
     <ROW Component="System.IO.Packaging.dll_4" ComponentId="{D3F68E39-2088-499D-B0D6-8F4BB051A705}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.IO.Packaging.dll_4"/>
+    <ROW Component="System.Management.dll" ComponentId="{F3FD3F08-62AE-4E9D-AB58-F51C409C1373}" Directory_="net10.0_2_Dir" Attributes="0" KeyPath="System.Management.dll"/>
+    <ROW Component="System.Management.dll_1" ComponentId="{A36C3293-A1F3-45B6-9CB3-6D3E1F821705}" Directory_="APPDIR" Attributes="0" KeyPath="System.Management.dll_1"/>
+    <ROW Component="System.Private.Windows.Core.dll" ComponentId="{8F8E0255-B66D-4393-A418-291E888CF9B1}" Directory_="APPDIR" Attributes="0" KeyPath="System.Private.Windows.Core.dll"/>
+    <ROW Component="System.Private.Windows.GdiPlus.dll" ComponentId="{5BD4F360-09D5-4B3A-8051-8BEE8F8B4E2F}" Directory_="APPDIR" Attributes="0" KeyPath="System.Private.Windows.GdiPlus.dll"/>
     <ROW Component="System.Resources.Extensions.dll" ComponentId="{CE0FD71B-F748-4EF7-AACA-08A942CA8576}" Directory_="APPDIR" Attributes="0" KeyPath="System.Resources.Extensions.dll"/>
     <ROW Component="System.Resources.Extensions.dll_3" ComponentId="{44E5C921-72E1-4BEE-83F7-261D7E9EC23B}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Resources.Extensions.dll_3"/>
     <ROW Component="System.Resources.Extensions.dll_4" ComponentId="{AEE7C4F9-5B25-4B63-93E6-9EBF8E993368}" Directory_="bin_2_Dir" Attributes="0" KeyPath="System.Resources.Extensions.dll_4"/>
@@ -437,6 +459,7 @@
     <ROW Component="libSkiaSharp.dylib_3" ComponentId="{2B9005BF-B0B1-459D-A570-3459E1CC9BF1}" Directory_="native_56_Dir" Attributes="0" KeyPath="libSkiaSharp.dylib_3" Type="0"/>
     <ROW Component="libSkiaSharp.dylib_4" ComponentId="{8DF9E22F-6361-49CF-B0BC-4D3ACCCFBF57}" Directory_="native_71_Dir" Attributes="0" KeyPath="libSkiaSharp.dylib_4" Type="0"/>
     <ROW Component="libSkiaSharp.so" ComponentId="{D13FA7E8-0CBA-4C15-8C23-9EC23754AA60}" Directory_="native_Dir" Attributes="0" KeyPath="libSkiaSharp.so" Type="0"/>
+    <ROW Component="libSkiaSharp.so_1" ComponentId="{1A713992-FF39-4B9A-910D-5721D188B8D0}" Directory_="native_1_Dir" Attributes="0" KeyPath="libSkiaSharp.so_1" Type="0"/>
     <ROW Component="libSkiaSharp.so_11" ComponentId="{1336FE4F-9F53-48C9-90F3-6D5BFB7BD564}" Directory_="native_15_Dir" Attributes="0" KeyPath="libSkiaSharp.so_11" Type="0"/>
     <ROW Component="libSkiaSharp.so_12" ComponentId="{5E358B52-797F-4A61-B961-483726B8B579}" Directory_="native_16_Dir" Attributes="0" KeyPath="libSkiaSharp.so_12" Type="0"/>
     <ROW Component="libSkiaSharp.so_13" ComponentId="{4FDB81FF-D70D-46EF-B097-C1A724E0D160}" Directory_="native_17_Dir" Attributes="0" KeyPath="libSkiaSharp.so_13" Type="0"/>
@@ -446,7 +469,9 @@
     <ROW Component="libSkiaSharp.so_17" ComponentId="{33567B5E-5364-4BFA-8D0B-982FE8C3F7F1}" Directory_="native_21_Dir" Attributes="0" KeyPath="libSkiaSharp.so_17" Type="0"/>
     <ROW Component="libSkiaSharp.so_18" ComponentId="{E9D994CD-03E4-4942-AF45-5F8A6AE82A78}" Directory_="native_22_Dir" Attributes="0" KeyPath="libSkiaSharp.so_18" Type="0"/>
     <ROW Component="libSkiaSharp.so_19" ComponentId="{FB30936B-7B82-4F46-B686-F5F9BE7D4A11}" Directory_="native_23_Dir" Attributes="0" KeyPath="libSkiaSharp.so_19" Type="0"/>
+    <ROW Component="libSkiaSharp.so_2" ComponentId="{66E9CCCB-7D22-4442-B915-9DCFCD341F6A}" Directory_="native_2_Dir" Attributes="0" KeyPath="libSkiaSharp.so_2" Type="0"/>
     <ROW Component="libSkiaSharp.so_20" ComponentId="{AF4D180E-06EA-4772-87D5-D7F390A6003D}" Directory_="native_24_Dir" Attributes="0" KeyPath="libSkiaSharp.so_20" Type="0"/>
+    <ROW Component="libSkiaSharp.so_3" ComponentId="{17411315-DF55-42AE-BECC-DEF636497485}" Directory_="native_3_Dir" Attributes="0" KeyPath="libSkiaSharp.so_3" Type="0"/>
     <ROW Component="libSkiaSharp.so_33" ComponentId="{EFE8FC60-5531-455D-9122-0EE65E7006D0}" Directory_="native_45_Dir" Attributes="0" KeyPath="libSkiaSharp.so_33" Type="0"/>
     <ROW Component="libSkiaSharp.so_34" ComponentId="{8714C86A-019A-4356-95A4-790C1F196FB7}" Directory_="native_46_Dir" Attributes="0" KeyPath="libSkiaSharp.so_34" Type="0"/>
     <ROW Component="libSkiaSharp.so_35" ComponentId="{196F66AC-8D2A-49D4-9CDF-9EC90E9A3799}" Directory_="native_47_Dir" Attributes="0" KeyPath="libSkiaSharp.so_35" Type="0"/>
@@ -454,6 +479,7 @@
     <ROW Component="libSkiaSharp.so_37" ComponentId="{F4312694-8F89-4F97-9B5F-803E1325C333}" Directory_="native_49_Dir" Attributes="0" KeyPath="libSkiaSharp.so_37" Type="0"/>
     <ROW Component="libSkiaSharp.so_38" ComponentId="{3B5B8CE0-97B6-4DDD-BC8E-CC50B15029F0}" Directory_="native_50_Dir" Attributes="0" KeyPath="libSkiaSharp.so_38" Type="0"/>
     <ROW Component="libSkiaSharp.so_39" ComponentId="{C5BF9C8F-9F05-4552-8FD2-D66790277072}" Directory_="native_51_Dir" Attributes="0" KeyPath="libSkiaSharp.so_39" Type="0"/>
+    <ROW Component="libSkiaSharp.so_4" ComponentId="{E698D317-7AF6-48C8-901E-104EEA2CA805}" Directory_="native_4_Dir" Attributes="0" KeyPath="libSkiaSharp.so_4" Type="0"/>
     <ROW Component="libSkiaSharp.so_40" ComponentId="{7E32BE28-7410-4E5C-BE71-4E005FE265FF}" Directory_="native_52_Dir" Attributes="0" KeyPath="libSkiaSharp.so_40" Type="0"/>
     <ROW Component="libSkiaSharp.so_41" ComponentId="{05A24D20-9618-47E9-964A-BA35AD14836E}" Directory_="native_53_Dir" Attributes="0" KeyPath="libSkiaSharp.so_41" Type="0"/>
     <ROW Component="libSkiaSharp.so_42" ComponentId="{03E1334A-F7FF-4549-BF20-6C0DAA632F0C}" Directory_="native_54_Dir" Attributes="0" KeyPath="libSkiaSharp.so_42" Type="0"/>
@@ -464,13 +490,15 @@
     <ROW Component="libSkiaSharp.so_47" ComponentId="{33A545AA-D1BE-4D5D-BF1E-1E9F94362DE6}" Directory_="native_63_Dir" Attributes="0" KeyPath="libSkiaSharp.so_47" Type="0"/>
     <ROW Component="libSkiaSharp.so_48" ComponentId="{5AF99F9D-FF9E-4C03-A56B-223F77A3EDBD}" Directory_="native_64_Dir" Attributes="0" KeyPath="libSkiaSharp.so_48" Type="0"/>
     <ROW Component="libSkiaSharp.so_49" ComponentId="{0000E8A2-336C-4865-898A-3316EE068327}" Directory_="native_65_Dir" Attributes="0" KeyPath="libSkiaSharp.so_49" Type="0"/>
+    <ROW Component="libSkiaSharp.so_5" ComponentId="{29C1E048-A066-424C-8E1D-6593D59C0004}" Directory_="native_5_Dir" Attributes="0" KeyPath="libSkiaSharp.so_5" Type="0"/>
     <ROW Component="libSkiaSharp.so_50" ComponentId="{20BC00F1-70D2-430C-B3D5-81CF02725375}" Directory_="native_66_Dir" Attributes="0" KeyPath="libSkiaSharp.so_50" Type="0"/>
     <ROW Component="libSkiaSharp.so_51" ComponentId="{7119E9F2-28E9-4625-9A6A-FEAABB8A219D}" Directory_="native_67_Dir" Attributes="0" KeyPath="libSkiaSharp.so_51" Type="0"/>
     <ROW Component="libSkiaSharp.so_52" ComponentId="{F587EE9D-29EB-4F4C-A23E-EB2CCD282A79}" Directory_="native_68_Dir" Attributes="0" KeyPath="libSkiaSharp.so_52" Type="0"/>
     <ROW Component="libSkiaSharp.so_53" ComponentId="{9D1DCDD2-3678-45A6-B021-C3916A966D4D}" Directory_="native_69_Dir" Attributes="0" KeyPath="libSkiaSharp.so_53" Type="0"/>
     <ROW Component="libSkiaSharp.so_54" ComponentId="{0E292D7D-4778-45BA-AF3D-8C19DEA69812}" Directory_="native_70_Dir" Attributes="0" KeyPath="libSkiaSharp.so_54" Type="0"/>
+    <ROW Component="libSkiaSharp.so_6" ComponentId="{3999DC95-7C38-4C62-8C99-22AD62705967}" Directory_="native_6_Dir" Attributes="0" KeyPath="libSkiaSharp.so_6" Type="0"/>
     <ROW Component="local" ComponentId="{4B5CEC13-48A1-49FD-8A18-66ADA11308B2}" Directory_="local_Dir" Attributes="0"/>
-    <ROW Component="logs" ComponentId="{3F9EB954-4F71-42A7-A462-C795EB42866A}" Directory_="logs_Dir" Attributes="0"/>
+    <ROW Component="logs" ComponentId="{8747D64F-E640-4178-B73A-7B6319E551B7}" Directory_="logs_Dir" Attributes="0"/>
     <ROW Component="regid.zhengyabio.com.xieguigang" ComponentId="{CDF8BCD2-A2CA-4942-B44E-2F3E803661A9}" Directory_="regid.zhengyabio.com.xieguigang_Dir" Attributes="0"/>
     <ROW Component="settings.json" ComponentId="{AE75A348-E9F1-4059-8939-D4474E517243}" Directory_="vscode_Dir" Attributes="0" KeyPath="settings.json" Type="0"/>
   </COMPONENT>
@@ -1109,6 +1137,28 @@
     <ROW File="System.Security.Cryptography.Prote_4_ctedData.dll" Component_="System.Security.Cryptography.Prote_4_ctedData.dll" FileName="SYSTE~11.DLL|System.Security.Cryptography.ProtectedData.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Security.Cryptography.ProtectedData.dll" SelfReg="false"/>
     <ROW File="System.Security.Permissions.dll_4" Component_="System.Security.Permissions.dll_4" FileName="SYSTE~12.DLL|System.Security.Permissions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Security.Permissions.dll" SelfReg="false"/>
     <ROW File="System.Windows.Extensions.dll_10" Component_="System.Windows.Extensions.dll_10" FileName="SYSTE~13.DLL|System.Windows.Extensions.dll" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\System.Windows.Extensions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Win32.SystemEvents.dll" Component_="Microsoft.Win32.SystemEvents.dll" FileName="MICROS~7.DLL|Microsoft.Win32.SystemEvents.dll" Attributes="0" SourcePath="..\App\net10.0-windows\Microsoft.Win32.SystemEvents.dll" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_1" Component_="libSkiaSharp.so_1" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-bionic-arm64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_2" Component_="libSkiaSharp.so_2" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-bionic-x64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_3" Component_="libSkiaSharp.so_3" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\runtimes\linux-bionic-arm64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_4" Component_="libSkiaSharp.so_4" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\runtimes\linux-bionic-x64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="Microsoft.Win32.SystemEvents.dll_1" Component_="Microsoft.Win32.SystemEvents.dll_1" FileName="MICROS~1.DLL|Microsoft.Win32.SystemEvents.dll" Attributes="0" SourcePath="..\App\net10.0-windows\runtimes\win\lib\net10.0\Microsoft.Win32.SystemEvents.dll" SelfReg="false"/>
+    <ROW File="System.Management.dll" Component_="System.Management.dll" FileName="SYSTEM~4.DLL|System.Management.dll" Attributes="0" SourcePath="..\App\net10.0-windows\runtimes\win\lib\net10.0\System.Management.dll" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Analysis.Metagenome.MetaFunction.dll" Component_="SMRUCC.genomics.Analysis.Metagenome.MetaFunction.dll" FileName="SMRUC~34.DLL|SMRUCC.genomics.Analysis.Metagenome.MetaFunction.dll" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Analysis.Metagenome.MetaFunction.dll" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Analysis.Metagenome.MetaFunction.pdb" Component_="SMRUCC.genomics.Analysis.Metagenome.MetaFunction.dll" FileName="SMRUC~34.PDB|SMRUCC.genomics.Analysis.Metagenome.MetaFunction.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Analysis.Metagenome.MetaFunction.pdb" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Analysis.Metagenome.MetaFunction.xml" Component_="CADRegistry.xml" FileName="SMRUC~14.XML|SMRUCC.genomics.Analysis.Metagenome.MetaFunction.xml" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Analysis.Metagenome.MetaFunction.xml" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Analysis.SequenceTools.HMMER.dll" Component_="SMRUCC.genomics.Analysis.SequenceTools.HMMER.dll" FileName="SMRUC~35.DLL|SMRUCC.genomics.Analysis.SequenceTools.HMMER.dll" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Analysis.SequenceTools.HMMER.dll" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Analysis.SequenceTools.HMMER.pdb" Component_="SMRUCC.genomics.Analysis.SequenceTools.HMMER.dll" FileName="SMRUC~35.PDB|SMRUCC.genomics.Analysis.SequenceTools.HMMER.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Analysis.SequenceTools.HMMER.pdb" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Analysis.SequenceTools.HMMER.xml" Component_="CADRegistry.xml" FileName="SMRUC~15.XML|SMRUCC.genomics.Analysis.SequenceTools.HMMER.xml" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Analysis.SequenceTools.HMMER.xml" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Data.Xfam.Pfam.dll" Component_="SMRUCC.genomics.Data.Xfam.Pfam.dll" FileName="SMRUC~36.DLL|SMRUCC.genomics.Data.Xfam.Pfam.dll" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Data.Xfam.Pfam.dll" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Data.Xfam.Pfam.pdb" Component_="SMRUCC.genomics.Data.Xfam.Pfam.dll" FileName="SMRUC~36.PDB|SMRUCC.genomics.Data.Xfam.Pfam.pdb" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Data.Xfam.Pfam.pdb" SelfReg="false"/>
+    <ROW File="SMRUCC.genomics.Data.Xfam.Pfam.xml" Component_="CADRegistry.xml" FileName="SMRUC~34.XML|SMRUCC.genomics.Data.Xfam.Pfam.xml" Attributes="0" SourcePath="..\App\net10.0-windows\SMRUCC.genomics.Data.Xfam.Pfam.xml" SelfReg="false"/>
+    <ROW File="System.Drawing.Common.dll" Component_="System.Drawing.Common.dll" FileName="SYSTEM~8.DLL|System.Drawing.Common.dll" Attributes="0" SourcePath="..\App\net10.0-windows\System.Drawing.Common.dll" SelfReg="false"/>
+    <ROW File="System.Management.dll_1" Component_="System.Management.dll_1" FileName="SYSTEM~9.DLL|System.Management.dll" Attributes="0" SourcePath="..\App\net10.0-windows\System.Management.dll" SelfReg="false"/>
+    <ROW File="System.Private.Windows.Core.dll" Component_="System.Private.Windows.Core.dll" FileName="SYSTE~11.DLL|System.Private.Windows.Core.dll" Attributes="0" SourcePath="..\App\net10.0-windows\System.Private.Windows.Core.dll" SelfReg="false"/>
+    <ROW File="System.Private.Windows.GdiPlus.dll" Component_="System.Private.Windows.GdiPlus.dll" FileName="SYSTE~12.DLL|System.Private.Windows.GdiPlus.dll" Attributes="0" SourcePath="..\App\net10.0-windows\System.Private.Windows.GdiPlus.dll" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_5" Component_="libSkiaSharp.so_5" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-bionic-arm64\native\libSkiaSharp.so" SelfReg="false"/>
+    <ROW File="libSkiaSharp.so_6" Component_="libSkiaSharp.so_6" FileName="LIBSKI~1.SO|libSkiaSharp.so" Attributes="0" SourcePath="..\App\net10.0-windows\rstudio\bin\runtimes\linux-bionic-x64\native\libSkiaSharp.so" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
     <ROW MsiShortcutProperty="Sophia0" Shortcut_="Sophia" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
@@ -1680,7 +1730,23 @@
     <ROW Feature_="MainFeature" Component_="SMRUCC.genomics.Model.MotifGraph.ProteinStructure.dll"/>
     <ROW Feature_="MainFeature" Component_="SMRUCC.genomics.Model.OperonMapper.dll"/>
     <ROW Feature_="MainFeature" Component_="SMRUCC.genomics.SequenceModel.RNAseq.Data.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Win32.SystemEvents.dll"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_1"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_2"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_3"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_4"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Win32.SystemEvents.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Management.dll"/>
+    <ROW Feature_="MainFeature" Component_="SMRUCC.genomics.Analysis.Metagenome.MetaFunction.dll"/>
+    <ROW Feature_="MainFeature" Component_="SMRUCC.genomics.Analysis.SequenceTools.HMMER.dll"/>
+    <ROW Feature_="MainFeature" Component_="SMRUCC.genomics.Data.Xfam.Pfam.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Drawing.Common.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Management.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Private.Windows.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Private.Windows.GdiPlus.dll"/>
     <ROW Feature_="MainFeature" Component_="logs"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_5"/>
+    <ROW Feature_="MainFeature" Component_="libSkiaSharp.so_6"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="ext.exe" SourcePath="..\src\VirtualCell.ico" Index="0"/>
